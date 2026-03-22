@@ -8,6 +8,12 @@ Open-source Codex skills and apps.
 $skill-installer install <skill-github-url>
 ```
 
+Install all skills:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-all-skills.sh)
+```
+
 Then restart Codex.
 
 ## Skills
