@@ -1,0 +1,20 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="15" y1="13" x2="111" y2="113" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#241264"/>
+      <stop offset="1" stop-color="#0B071D"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="44" y1="23" x2="79" y2="102" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A882FF"/>
+      <stop offset="1" stop-color="#59B7FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)"/>
+  <rect x="24" y="24" width="80" height="80" rx="22" fill="#15102B" stroke="#3A2F78" stroke-width="2"/>
+  <path d="M64 24V104" stroke="url(#bolt)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M64 64L86 42" stroke="url(#bolt)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M64 64L86 86" stroke="url(#bolt)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M64 46L44 30V56L64 72" stroke="#E8D8FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M64 56L82 38" stroke="#74C6FF" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="93" cy="93" r="8" fill="#59B7FF"/>
+</svg>

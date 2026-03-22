@@ -1,0 +1,20 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="18" y1="14" x2="112" y2="118" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12304C"/>
+      <stop offset="1" stop-color="#091721"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="36" y1="30" x2="93" y2="91" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#69D2FF"/>
+      <stop offset="1" stop-color="#4DF8A2"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)"/>
+  <rect x="24" y="24" width="80" height="80" rx="22" fill="#0F2334" stroke="#224A67" stroke-width="2"/>
+  <circle cx="64" cy="74" r="6" fill="#4DF8A2"/>
+  <path d="M43 61C48.7 54.9 55.9 52 64 52C72.1 52 79.3 54.9 85 61" stroke="url(#wave)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M35 49C43.1 40.7 53 36 64 36C75 36 84.9 40.7 93 49" stroke="url(#wave)" stroke-opacity=".88" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="38" cy="90" r="4" fill="#69D2FF"/>
+  <circle cx="90" cy="90" r="4" fill="#69D2FF"/>
+  <path d="M42 90H86" stroke="#2E6E93" stroke-width="3" stroke-linecap="round"/>
+</svg>

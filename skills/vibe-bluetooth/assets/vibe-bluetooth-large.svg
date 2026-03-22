@@ -1,0 +1,23 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="card" x1="68" y1="38" x2="562" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#251265"/>
+      <stop offset="1" stop-color="#0A0718"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="116" y1="76" x2="210" y2="248" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A882FF"/>
+      <stop offset="1" stop-color="#59B7FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="36" fill="#060510"/>
+  <rect x="26" y="26" width="588" height="308" rx="30" fill="url(#card)"/>
+  <rect x="54" y="54" width="196" height="196" rx="34" fill="#140F27" stroke="#3A2F78" stroke-width="4"/>
+  <path d="M152 74V230" stroke="url(#bolt)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M152 154L198 108" stroke="url(#bolt)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M152 154L198 200" stroke="url(#bolt)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M152 118L112 86V138L152 170" stroke="#E8D8FF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M152 140L188 104" stroke="#74C6FF" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="216" cy="214" r="14" fill="#59B7FF"/>
+  <text x="286" y="148" fill="white" font-size="42" font-family="Arial, sans-serif" font-weight="700">VibeBluetooth</text>
+  <text x="286" y="190" fill="#C4B3FF" font-size="22" font-family="Arial, sans-serif">Dev skill for the VibeWidget macOS app and widget</text>
+</svg>

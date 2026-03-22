@@ -2,6 +2,10 @@
 
 Open-source Codex skills and apps.
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-111827?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/LICENSE)
+[![Install All](https://img.shields.io/badge/install-all_skills-0f172a?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-all-skills.sh)
+[![Install By Name](https://img.shields.io/badge/install-by_name-1d4ed8?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-skill.sh)
+
 ## Install
 
 One skill by name:
@@ -28,8 +32,8 @@ Then restart Codex.
 
 | Skill | What it does | Install |
 | --- | --- | --- |
-| `network-studio` | macOS LAN monitor with SwiftBar and a dashboard | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio) |
-| `vibe-bluetooth` | Dev skill for the VibeWidget macOS app and widget | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth) |
+| <img src="skills/network-studio/assets/network-studio-small.svg" width="26" alt="Network Studio" /><br/><code>network-studio</code> | macOS LAN monitor with SwiftBar and a dashboard | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio) |
+| <img src="skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg" width="26" alt="VibeBluetooth" /><br/><code>vibe-bluetooth</code> | Dev skill for the VibeWidget macOS app and widget | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth) |
 
 ## Apps
 

@@ -1,4 +1,7 @@
 interface:
   display_name: "Network Studio"
   short_description: "macOS LAN monitor with SwiftBar"
+  icon_small: "./assets/network-studio-small.svg"
+  icon_large: "./assets/network-studio-large.svg"
+  brand_color: "#0F8ED8"
   default_prompt: "Use $network-studio to install or update a local Network Studio workspace and wire SwiftBar if needed."
