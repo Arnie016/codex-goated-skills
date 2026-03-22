@@ -1,0 +1,4 @@
+interface:
+  display_name: "Network Studio"
+  short_description: "macOS LAN monitor with SwiftBar"
+  default_prompt: "Use $network-studio to install or update a local Network Studio workspace and wire SwiftBar if needed."
