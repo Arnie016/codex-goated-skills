@@ -4,8 +4,16 @@ Open-source Codex skills and apps.
 
 ## Install
 
-```text
-$skill-installer install <skill-github-url>
+One skill by name:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-skill.sh) network-studio
+```
+
+List skill names:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-skill.sh) --list
 ```
 
 Install all skills:
