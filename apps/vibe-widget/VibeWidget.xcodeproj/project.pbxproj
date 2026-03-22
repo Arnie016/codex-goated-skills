@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		003CD49A76E035C4D63D31EC /* PermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1710BC7B332B0D26663CCC /* PermissionService.swift */; };
+		0227707BFB0091A1B0E50CFE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D37ABE46FEC76CF6DC8BAAF /* Models.swift */; };
+		0545348D30963436066244D4 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A206C577C8ABE6D194300DFE /* HomeService.swift */; };
+		1B1FDC6F12551B73E796AB01 /* SpotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846CF730290CA481F945E1C /* SpotifyService.swift */; };
+		2178CE53F19C51AE5160BFC0 /* WidgetIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0068F436D257D1664B9EAA /* WidgetIntents.swift */; };
+		274935329DCF345FC3262C24 /* VibeWidgetCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		27F9A47765932C59D87F0534 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F300D7DBF3B26ED037D6306 /* AppModel.swift */; };
+		31934D4239DC773DB11DC7AD /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E0F3B9B0DE0F961D27D3CC /* AppGroup.swift */; };
+		31B3BE47EB58C1F5B4AD6107 /* VibeWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */; };
+		40FDDDAA6BD180644C698715 /* AudioRouteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A99FF6C6C6C4EE2FDAB6B6 /* AudioRouteService.swift */; };
+		4758AB2DE12CCD4F791A6BE0 /* VibeStatusWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145BF93AA2086B735B371DD5 /* VibeStatusWidget.swift */; };
+		4F4C3A7757F74D78CE41268F /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73806476EEB2B97614235A5 /* SharedStore.swift */; };
+		52A91AC44BDE9F35E41188AE /* GlassPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20484AAB1919209947BA3476 /* GlassPanel.swift */; };
+		60CD4E7FF7D3E415002F5B47 /* VibeWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */; };
+		68D9FF898955905C83D1B77E /* VibePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D65667CF0A943EFDBDD4ED /* VibePanelView.swift */; };
+		6C41B80695F1164BAEBA2537 /* VibeWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E270D463B4A294A93A0AC5 /* VibeWidgetBundle.swift */; };
+		6FDE26BA901023E501239E41 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289412B7D50F0F847DFCAFC2 /* RootView.swift */; };
+		7CC117EB25BDD71CDA514595 /* FallbackIntentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF6D0E31100C6C16B881A /* FallbackIntentParser.swift */; };
+		8583DCD729B76CADBCAD4E08 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A661D1C2FDBF07009062F /* OnboardingView.swift */; };
+		8932D115A4DFE886F56EAD45 /* VibeWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */; };
+		AABDEFBC826174718E188F42 /* KeychainSecretStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021A2D3E6EC2F5AAC90B75C3 /* KeychainSecretStore.swift */; };
+		B0DD354B38D726D53538A714 /* FallbackIntentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738220B82861302EAF7578CD /* FallbackIntentParserTests.swift */; };
+		B55C62947B003200C6390EA4 /* SpeechCaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5066A5349319D64D1B58A913 /* SpeechCaptureService.swift */; };
+		B954EED209F26FABD678D3C4 /* AICommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D91097A4B6BFACCABFF40A /* AICommandService.swift */; };
+		C1CFC1ED88E3F583AF8AD4BC /* VibeWidgetCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EAB226174D1569A65F97CD3C /* VibeWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D97D80FBA6E6832E6F28616 /* VibeWidgetApp.swift */; };
+		FCF398C879F83BE7C24189D4 /* VibeWidgetWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 215D755D364F0D4DCA40EA5F /* VibeWidgetWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FF252847A49AB6D315FA3408 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C61EC8C1422F44AF3F2C6 /* DashboardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18F10781DEAFCE16160B59F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD8ED0865C2032AC4624CA1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A77154A16C564120A69CF0D;
+			remoteInfo = VibeWidgetCore;
+		};
+		4DD7ADD0BC8E9E51B7FC764F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD8ED0865C2032AC4624CA1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A77154A16C564120A69CF0D;
+			remoteInfo = VibeWidgetCore;
+		};
+		B82EBA40944BFA55CD605604 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD8ED0865C2032AC4624CA1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A77154A16C564120A69CF0D;
+			remoteInfo = VibeWidgetCore;
+		};
+		BBC935265C7A62E633E04A5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD8ED0865C2032AC4624CA1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E2C005D0E2AFEEBEED9F6DF;
+			remoteInfo = VibeWidgetWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4CB22DD937B9ECD76EFE6F61 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FCF398C879F83BE7C24189D4 /* VibeWidgetWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FBD368AE92CCAEE1ED12923 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				274935329DCF345FC3262C24 /* VibeWidgetCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6700B13D155226D3A209A780 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C1CFC1ED88E3F583AF8AD4BC /* VibeWidgetCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		021A2D3E6EC2F5AAC90B75C3 /* KeychainSecretStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSecretStore.swift; sourceTree = "<group>"; };
+		09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VibeWidgetCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B1710BC7B332B0D26663CCC /* PermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionService.swift; sourceTree = "<group>"; };
+		145BF93AA2086B735B371DD5 /* VibeStatusWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeStatusWidget.swift; sourceTree = "<group>"; };
+		20484AAB1919209947BA3476 /* GlassPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassPanel.swift; sourceTree = "<group>"; };
+		215D755D364F0D4DCA40EA5F /* VibeWidgetWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VibeWidgetWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		289412B7D50F0F847DFCAFC2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		395A661D1C2FDBF07009062F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		39A99FF6C6C6C4EE2FDAB6B6 /* AudioRouteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRouteService.swift; sourceTree = "<group>"; };
+		3F300D7DBF3B26ED037D6306 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		4A7C61EC8C1422F44AF3F2C6 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		5066A5349319D64D1B58A913 /* SpeechCaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechCaptureService.swift; sourceTree = "<group>"; };
+		5C07ED611057AC6D76C3B66B /* VibeWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VibeWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D37ABE46FEC76CF6DC8BAAF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5D97D80FBA6E6832E6F28616 /* VibeWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeWidgetApp.swift; sourceTree = "<group>"; };
+		738220B82861302EAF7578CD /* FallbackIntentParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackIntentParserTests.swift; sourceTree = "<group>"; };
+		76D65667CF0A943EFDBDD4ED /* VibePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibePanelView.swift; sourceTree = "<group>"; };
+		76E0F3B9B0DE0F961D27D3CC /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		840FF6D0E31100C6C16B881A /* FallbackIntentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackIntentParser.swift; sourceTree = "<group>"; };
+		A206C577C8ABE6D194300DFE /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		B9E270D463B4A294A93A0AC5 /* VibeWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeWidgetBundle.swift; sourceTree = "<group>"; };
+		C2D91097A4B6BFACCABFF40A /* AICommandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICommandService.swift; sourceTree = "<group>"; };
+		C73806476EEB2B97614235A5 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
+		C846CF730290CA481F945E1C /* SpotifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyService.swift; sourceTree = "<group>"; };
+		CCBBEAE6F0F7CEFAC0FE87D2 /* VibeWidgetCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibeWidgetCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0068F436D257D1664B9EAA /* WidgetIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetIntents.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6094DC5DEA42D3BD9DFF87D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60CD4E7FF7D3E415002F5B47 /* VibeWidgetCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86852E612215B43A063EA128 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31B3BE47EB58C1F5B4AD6107 /* VibeWidgetCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		874E26D711E0BB42F712DC1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8932D115A4DFE886F56EAD45 /* VibeWidgetCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		023882C47EBA497F6A41CC95 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3F300D7DBF3B26ED037D6306 /* AppModel.swift */,
+				5D97D80FBA6E6832E6F28616 /* VibeWidgetApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		41B700089A019A13F6FFB3CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C07ED611057AC6D76C3B66B /* VibeWidget.app */,
+				09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */,
+				CCBBEAE6F0F7CEFAC0FE87D2 /* VibeWidgetCoreTests.xctest */,
+				215D755D364F0D4DCA40EA5F /* VibeWidgetWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46FAAB35CE89C8EDAEBCBC0C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				20484AAB1919209947BA3476 /* GlassPanel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		615192A5951AB380E6F74879 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C2D91097A4B6BFACCABFF40A /* AICommandService.swift */,
+				39A99FF6C6C6C4EE2FDAB6B6 /* AudioRouteService.swift */,
+				A206C577C8ABE6D194300DFE /* HomeService.swift */,
+				0B1710BC7B332B0D26663CCC /* PermissionService.swift */,
+				5066A5349319D64D1B58A913 /* SpeechCaptureService.swift */,
+				C846CF730290CA481F945E1C /* SpotifyService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B54F9C1CE878C3860A18E8AF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				145BF93AA2086B735B371DD5 /* VibeStatusWidget.swift */,
+				B9E270D463B4A294A93A0AC5 /* VibeWidgetBundle.swift */,
+				CE0068F436D257D1664B9EAA /* WidgetIntents.swift */,
+			);
+			name = Sources;
+			path = VibeWidgetWidget/Sources;
+			sourceTree = "<group>";
+		};
+		B7A762D59108EC62C9D9EAB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A7C61EC8C1422F44AF3F2C6 /* DashboardView.swift */,
+				395A661D1C2FDBF07009062F /* OnboardingView.swift */,
+				289412B7D50F0F847DFCAFC2 /* RootView.swift */,
+				76D65667CF0A943EFDBDD4ED /* VibePanelView.swift */,
+				46FAAB35CE89C8EDAEBCBC0C /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B8ADA0B8FD7D2B78F025BA62 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				738220B82861302EAF7578CD /* FallbackIntentParserTests.swift */,
+			);
+			name = Tests;
+			path = VibeWidgetCore/Tests;
+			sourceTree = "<group>";
+		};
+		E07C577A14EE9C7FB92C4FFF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				76E0F3B9B0DE0F961D27D3CC /* AppGroup.swift */,
+				840FF6D0E31100C6C16B881A /* FallbackIntentParser.swift */,
+				021A2D3E6EC2F5AAC90B75C3 /* KeychainSecretStore.swift */,
+				5D37ABE46FEC76CF6DC8BAAF /* Models.swift */,
+				C73806476EEB2B97614235A5 /* SharedStore.swift */,
+			);
+			name = Sources;
+			path = VibeWidgetCore/Sources;
+			sourceTree = "<group>";
+		};
+		EAB9B679A4AB6115CFE08BE3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				023882C47EBA497F6A41CC95 /* App */,
+				615192A5951AB380E6F74879 /* Services */,
+				B7A762D59108EC62C9D9EAB2 /* Views */,
+			);
+			name = Sources;
+			path = VibeWidgetApp/Sources;
+			sourceTree = "<group>";
+		};
+		FD8B51DC0C8C0686831FA6D5 = {
+			isa = PBXGroup;
+			children = (
+				EAB9B679A4AB6115CFE08BE3 /* Sources */,
+				E07C577A14EE9C7FB92C4FFF /* Sources */,
+				B54F9C1CE878C3860A18E8AF /* Sources */,
+				B8ADA0B8FD7D2B78F025BA62 /* Tests */,
+				41B700089A019A13F6FFB3CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A77154A16C564120A69CF0D /* VibeWidgetCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C97B71AF7A20A886C720A11 /* Build configuration list for PBXNativeTarget "VibeWidgetCore" */;
+			buildPhases = (
+				993843002B4C7F3D62BF5EA7 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VibeWidgetCore;
+			packageProductDependencies = (
+			);
+			productName = VibeWidgetCore;
+			productReference = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		38BA641C230ECD60B5D8DE26 /* VibeWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 384A99497B48A47FB35F5A26 /* Build configuration list for PBXNativeTarget "VibeWidget" */;
+			buildPhases = (
+				7F329632510BF2E0F8952512 /* Sources */,
+				86852E612215B43A063EA128 /* Frameworks */,
+				4CB22DD937B9ECD76EFE6F61 /* Embed Foundation Extensions */,
+				4FBD368AE92CCAEE1ED12923 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23DAE6C6F145648CEBB74D81 /* PBXTargetDependency */,
+				8D9E07D9987AE0053DE5FCF8 /* PBXTargetDependency */,
+			);
+			name = VibeWidget;
+			packageProductDependencies = (
+			);
+			productName = VibeWidget;
+			productReference = 5C07ED611057AC6D76C3B66B /* VibeWidget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3E2C005D0E2AFEEBEED9F6DF /* VibeWidgetWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A223CA96DC9A931350426F3 /* Build configuration list for PBXNativeTarget "VibeWidgetWidget" */;
+			buildPhases = (
+				D06BD21B9BA8E8336FDE3567 /* Sources */,
+				6094DC5DEA42D3BD9DFF87D4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7D9E5374642E96E5CE0A017 /* PBXTargetDependency */,
+			);
+			name = VibeWidgetWidget;
+			packageProductDependencies = (
+			);
+			productName = VibeWidgetWidget;
+			productReference = 215D755D364F0D4DCA40EA5F /* VibeWidgetWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		CF15E246C63CB454AFA3E502 /* VibeWidgetCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70E60BD5C8594AD9A026E8D8 /* Build configuration list for PBXNativeTarget "VibeWidgetCoreTests" */;
+			buildPhases = (
+				D1DD3D866A8B3F0AC3A0919E /* Sources */,
+				874E26D711E0BB42F712DC1A /* Frameworks */,
+				6700B13D155226D3A209A780 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0827FB24BBB513C13682765F /* PBXTargetDependency */,
+			);
+			name = VibeWidgetCoreTests;
+			packageProductDependencies = (
+			);
+			productName = VibeWidgetCoreTests;
+			productReference = CCBBEAE6F0F7CEFAC0FE87D2 /* VibeWidgetCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD8ED0865C2032AC4624CA1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2A77154A16C564120A69CF0D = {
+						ProvisioningStyle = Automatic;
+					};
+					38BA641C230ECD60B5D8DE26 = {
+						ProvisioningStyle = Automatic;
+					};
+					3E2C005D0E2AFEEBEED9F6DF = {
+						ProvisioningStyle = Automatic;
+					};
+					CF15E246C63CB454AFA3E502 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E8FBA672C83DB8E50219286C /* Build configuration list for PBXProject "VibeWidget" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = FD8B51DC0C8C0686831FA6D5;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 41B700089A019A13F6FFB3CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38BA641C230ECD60B5D8DE26 /* VibeWidget */,
+				2A77154A16C564120A69CF0D /* VibeWidgetCore */,
+				CF15E246C63CB454AFA3E502 /* VibeWidgetCoreTests */,
+				3E2C005D0E2AFEEBEED9F6DF /* VibeWidgetWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F329632510BF2E0F8952512 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B954EED209F26FABD678D3C4 /* AICommandService.swift in Sources */,
+				27F9A47765932C59D87F0534 /* AppModel.swift in Sources */,
+				40FDDDAA6BD180644C698715 /* AudioRouteService.swift in Sources */,
+				FF252847A49AB6D315FA3408 /* DashboardView.swift in Sources */,
+				52A91AC44BDE9F35E41188AE /* GlassPanel.swift in Sources */,
+				0545348D30963436066244D4 /* HomeService.swift in Sources */,
+				8583DCD729B76CADBCAD4E08 /* OnboardingView.swift in Sources */,
+				003CD49A76E035C4D63D31EC /* PermissionService.swift in Sources */,
+				6FDE26BA901023E501239E41 /* RootView.swift in Sources */,
+				B55C62947B003200C6390EA4 /* SpeechCaptureService.swift in Sources */,
+				1B1FDC6F12551B73E796AB01 /* SpotifyService.swift in Sources */,
+				68D9FF898955905C83D1B77E /* VibePanelView.swift in Sources */,
+				EAB226174D1569A65F97CD3C /* VibeWidgetApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		993843002B4C7F3D62BF5EA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31934D4239DC773DB11DC7AD /* AppGroup.swift in Sources */,
+				7CC117EB25BDD71CDA514595 /* FallbackIntentParser.swift in Sources */,
+				AABDEFBC826174718E188F42 /* KeychainSecretStore.swift in Sources */,
+				0227707BFB0091A1B0E50CFE /* Models.swift in Sources */,
+				4F4C3A7757F74D78CE41268F /* SharedStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D06BD21B9BA8E8336FDE3567 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4758AB2DE12CCD4F791A6BE0 /* VibeStatusWidget.swift in Sources */,
+				6C41B80695F1164BAEBA2537 /* VibeWidgetBundle.swift in Sources */,
+				2178CE53F19C51AE5160BFC0 /* WidgetIntents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1DD3D866A8B3F0AC3A0919E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0DD354B38D726D53538A714 /* FallbackIntentParserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0827FB24BBB513C13682765F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A77154A16C564120A69CF0D /* VibeWidgetCore */;
+			targetProxy = 18F10781DEAFCE16160B59F7 /* PBXContainerItemProxy */;
+		};
+		23DAE6C6F145648CEBB74D81 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A77154A16C564120A69CF0D /* VibeWidgetCore */;
+			targetProxy = B82EBA40944BFA55CD605604 /* PBXContainerItemProxy */;
+		};
+		8D9E07D9987AE0053DE5FCF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E2C005D0E2AFEEBEED9F6DF /* VibeWidgetWidget */;
+			targetProxy = BBC935265C7A62E633E04A5B /* PBXContainerItemProxy */;
+		};
+		C7D9E5374642E96E5CE0A017 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A77154A16C564120A69CF0D /* VibeWidgetCore */;
+			targetProxy = 4DD7ADD0BC8E9E51B7FC764F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		14D6D84DF2102171192535FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		1C1FD78D977B99AA1AE72464 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.VibeWidgetCoreTests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		213EB5E948378B971DA5E254 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.VibeWidgetCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		4090FDBE36BBA535134F411D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VibeWidgetApp/VibeWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = VibeWidgetApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.VibeWidget;
+				PRODUCT_MODULE_NAME = VibeWidget;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6E50B3388D55CE707F04DE8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = VibeWidgetWidget/VibeWidgetWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = VibeWidgetWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.VibeWidget.widget;
+				PRODUCT_MODULE_NAME = VibeWidgetWidget;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		78131BCE6F2D9E9EC4C78BE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.VibeWidgetCoreTests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9011B19F98B8CBAE4F9E3449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = VibeWidgetWidget/VibeWidgetWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = VibeWidgetWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.VibeWidget.widget;
+				PRODUCT_MODULE_NAME = VibeWidgetWidget;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C416549D5623619706F576B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.VibeWidgetCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		CBD1B8E946B05D906AC42B45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		FA309E639ED6E11EC61AA343 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VibeWidgetApp/VibeWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = VibeWidgetApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.VibeWidget;
+				PRODUCT_MODULE_NAME = VibeWidget;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		384A99497B48A47FB35F5A26 /* Build configuration list for PBXNativeTarget "VibeWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA309E639ED6E11EC61AA343 /* Debug */,
+				4090FDBE36BBA535134F411D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5A223CA96DC9A931350426F3 /* Build configuration list for PBXNativeTarget "VibeWidgetWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9011B19F98B8CBAE4F9E3449 /* Debug */,
+				6E50B3388D55CE707F04DE8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		70E60BD5C8594AD9A026E8D8 /* Build configuration list for PBXNativeTarget "VibeWidgetCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C1FD78D977B99AA1AE72464 /* Debug */,
+				78131BCE6F2D9E9EC4C78BE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7C97B71AF7A20A886C720A11 /* Build configuration list for PBXNativeTarget "VibeWidgetCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C416549D5623619706F576B3 /* Debug */,
+				213EB5E948378B971DA5E254 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E8FBA672C83DB8E50219286C /* Build configuration list for PBXProject "VibeWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBD1B8E946B05D906AC42B45 /* Debug */,
+				14D6D84DF2102171192535FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD8ED0865C2032AC4624CA1B /* Project object */;
+}

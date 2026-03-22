@@ -1,0 +1,115 @@
+name: VibeWidget
+options:
+  minimumXcodeGenVersion: 2.45.3
+  deploymentTarget:
+    macOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+    PRODUCT_NAME: $(TARGET_NAME)
+    CODE_SIGN_STYLE: Automatic
+targets:
+  VibeWidgetCore:
+    type: framework
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: VibeWidgetCore/Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.VibeWidgetCore
+        GENERATE_INFOPLIST_FILE: YES
+        SKIP_INSTALL: YES
+
+  VibeWidget:
+    type: application
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: VibeWidgetApp/Sources
+    dependencies:
+      - target: VibeWidgetCore
+      - target: VibeWidgetWidget
+        embed: true
+    info:
+      path: VibeWidgetApp/Info.plist
+      properties:
+        CFBundleDisplayName: VibeWidget
+        LSApplicationCategoryType: public.app-category.music
+        NSPrincipalClass: NSApplication
+        NSHomeKitUsageDescription: VibeWidget uses Apple Home to dim lights and trigger scenes.
+        NSMicrophoneUsageDescription: VibeWidget uses the microphone for voice vibe commands.
+        NSSpeechRecognitionUsageDescription: VibeWidget converts your voice commands into music and lighting actions.
+        NSAppleEventsUsageDescription: VibeWidget controls Spotify to start vibe playback for your speaker.
+        CFBundleURLTypes:
+          - CFBundleURLName: com.arnav.VibeWidget
+            CFBundleURLSchemes:
+              - vibewidget
+    entitlements:
+      path: VibeWidgetApp/VibeWidget.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.application-groups:
+          - group.com.arnav.VibeWidget
+        com.apple.security.automation.apple-events: true
+        com.apple.developer.homekit: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.VibeWidget
+        INFOPLIST_FILE: VibeWidgetApp/Info.plist
+        PRODUCT_MODULE_NAME: VibeWidget
+
+  VibeWidgetWidget:
+    type: app-extension
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: VibeWidgetWidget/Sources
+    dependencies:
+      - target: VibeWidgetCore
+    info:
+      path: VibeWidgetWidget/Info.plist
+      properties:
+        CFBundleDisplayName: VibeWidget
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).VibeWidgetWidgetBundle
+    entitlements:
+      path: VibeWidgetWidget/VibeWidgetWidget.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.application-groups:
+          - group.com.arnav.VibeWidget
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.VibeWidget.widget
+        INFOPLIST_FILE: VibeWidgetWidget/Info.plist
+        PRODUCT_MODULE_NAME: VibeWidgetWidget
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+
+  VibeWidgetCoreTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: VibeWidgetCore/Tests
+    dependencies:
+      - target: VibeWidgetCore
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.VibeWidgetCoreTests
+
+schemes:
+  VibeWidget:
+    build:
+      targets:
+        VibeWidget: all
+        VibeWidgetWidget: all
+        VibeWidgetCore: all
+        VibeWidgetCoreTests: [test]
+    test:
+      targets:
+        - VibeWidgetCoreTests
