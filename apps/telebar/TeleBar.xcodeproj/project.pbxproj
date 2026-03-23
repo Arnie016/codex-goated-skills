@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		158FB154BAD328B2B9AEBE29 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C115EA5B398AB628369687 /* KeychainStore.swift */; };
+		2032BFCF3D12FF300EA82F15 /* TeleBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485107F6710712EEFE592529 /* TeleBarModel.swift */; };
+		3C112705CB6E5F2F8AD3D862 /* TelegramService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE1DB531EE6349FA18301B /* TelegramService.swift */; };
+		990C2F9D3BFDEEA72B082824 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D3973F416B89CE10ABBA89 /* MenuBarView.swift */; };
+		C538240B1ABE5F348650809B /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB9346AE0C77456BFF6FD2E /* OpenAIService.swift */; };
+		DA44E23CA509B1351A52B9C0 /* TelegramModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ACD479BCCA48885D1C7643 /* TelegramModels.swift */; };
+		DAE4898BDE34165B08FF73B6 /* TeleBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6035E068AF0311ECCB60E352 /* TeleBarApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07EE1DB531EE6349FA18301B /* TelegramService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramService.swift; sourceTree = "<group>"; };
+		485107F6710712EEFE592529 /* TeleBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleBarModel.swift; sourceTree = "<group>"; };
+		6035E068AF0311ECCB60E352 /* TeleBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeleBarApp.swift; sourceTree = "<group>"; };
+		63027C3E7160F2369BF9B9C1 /* TeleBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeleBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C115EA5B398AB628369687 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		92ACD479BCCA48885D1C7643 /* TelegramModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramModels.swift; sourceTree = "<group>"; };
+		E0D3973F416B89CE10ABBA89 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		FFB9346AE0C77456BFF6FD2E /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		07D00C2EEEFB270855BCD9BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92ACD479BCCA48885D1C7643 /* TelegramModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3EE4708352FFE08A74BEEDC3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				63C115EA5B398AB628369687 /* KeychainStore.swift */,
+				FFB9346AE0C77456BFF6FD2E /* OpenAIService.swift */,
+				07EE1DB531EE6349FA18301B /* TelegramService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5E092986C679A869866646CD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6035E068AF0311ECCB60E352 /* TeleBarApp.swift */,
+				485107F6710712EEFE592529 /* TeleBarModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5F65E63E065DB69AAD800B9D = {
+			isa = PBXGroup;
+			children = (
+				AE74CA323A41A87A6A11A29A /* Sources */,
+				E16C7C54959397810665BC6B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4FFC956E1290D6779509B41 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0D3973F416B89CE10ABBA89 /* MenuBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE74CA323A41A87A6A11A29A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5E092986C679A869866646CD /* App */,
+				07D00C2EEEFB270855BCD9BD /* Models */,
+				3EE4708352FFE08A74BEEDC3 /* Services */,
+				A4FFC956E1290D6779509B41 /* Views */,
+			);
+			name = Sources;
+			path = TeleBarApp/Sources;
+			sourceTree = "<group>";
+		};
+		E16C7C54959397810665BC6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63027C3E7160F2369BF9B9C1 /* TeleBar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC48230D7D3E8E04CECD9274 /* TeleBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A5456B285379EF8A9EEAC32 /* Build configuration list for PBXNativeTarget "TeleBar" */;
+			buildPhases = (
+				E42913CC08139525B70F2103 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeleBar;
+			packageProductDependencies = (
+			);
+			productName = TeleBar;
+			productReference = 63027C3E7160F2369BF9B9C1 /* TeleBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58D4B11998FDEB8DA82EC585 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					CC48230D7D3E8E04CECD9274 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3CDEE387059D0FC9A95252D8 /* Build configuration list for PBXProject "TeleBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5F65E63E065DB69AAD800B9D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E16C7C54959397810665BC6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC48230D7D3E8E04CECD9274 /* TeleBar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E42913CC08139525B70F2103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				158FB154BAD328B2B9AEBE29 /* KeychainStore.swift in Sources */,
+				990C2F9D3BFDEEA72B082824 /* MenuBarView.swift in Sources */,
+				C538240B1ABE5F348650809B /* OpenAIService.swift in Sources */,
+				DAE4898BDE34165B08FF73B6 /* TeleBarApp.swift in Sources */,
+				2032BFCF3D12FF300EA82F15 /* TeleBarModel.swift in Sources */,
+				DA44E23CA509B1351A52B9C0 /* TelegramModels.swift in Sources */,
+				3C112705CB6E5F2F8AD3D862 /* TelegramService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2B808C94E66BBDDE5FC0D1DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TeleBarApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.TeleBar;
+				PRODUCT_MODULE_NAME = TeleBar;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		75BAAF588CB42653C379819A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TeleBarApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.TeleBar;
+				PRODUCT_MODULE_NAME = TeleBar;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9D3362F4A7A4A940329B9250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		D4683FFF24A468515375F87C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CDEE387059D0FC9A95252D8 /* Build configuration list for PBXProject "TeleBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D3362F4A7A4A940329B9250 /* Debug */,
+				D4683FFF24A468515375F87C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9A5456B285379EF8A9EEAC32 /* Build configuration list for PBXNativeTarget "TeleBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B808C94E66BBDDE5FC0D1DF /* Debug */,
+				75BAAF588CB42653C379819A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58D4B11998FDEB8DA82EC585 /* Project object */;
+}
