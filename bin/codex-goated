@@ -1,0 +1,172 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SELF_NAME="$(basename "$0")"
+DEST="${CODEX_HOME:-$HOME/.codex}/skills"
+REPO_URL="https://github.com/Arnie016/codex-goated-skills.git"
+REPO_DIR=""
+TEMP_DIR=""
+
+usage() {
+  cat <<EOF
+Usage:
+  $SELF_NAME list
+  $SELF_NAME install [--dest PATH] [--repo-dir PATH] [--repo-url URL] <skill-name> [<skill-name> ...]
+  $SELF_NAME install --all [--dest PATH] [--repo-dir PATH] [--repo-url URL]
+  $SELF_NAME update [--dest PATH] [--repo-dir PATH] [--repo-url URL] <skill-name> [<skill-name> ...]
+  $SELF_NAME update --all [--dest PATH] [--repo-dir PATH] [--repo-url URL]
+
+Examples:
+  $SELF_NAME list
+  $SELF_NAME install network-studio
+  $SELF_NAME install minecraft-essentials vibe-bluetooth
+  $SELF_NAME install --all
+  $SELF_NAME update network-studio
+EOF
+}
+
+die() {
+  printf 'Error: %s\n' "$*" >&2
+  exit 1
+}
+
+cleanup() {
+  if [[ -n "$TEMP_DIR" && -d "$TEMP_DIR" ]]; then
+    rm -rf "$TEMP_DIR"
+  fi
+}
+
+require_tools() {
+  command -v git >/dev/null 2>&1 || die "git is required."
+}
+
+clone_repo() {
+  require_tools
+  TEMP_DIR="$(mktemp -d)"
+  trap cleanup EXIT
+  git clone --depth 1 "$REPO_URL" "$TEMP_DIR/repo" >/dev/null 2>&1 || die "Failed to clone $REPO_URL"
+  REPO_DIR="$TEMP_DIR/repo"
+}
+
+ensure_repo_dir() {
+  if [[ -n "$REPO_DIR" ]]; then
+    [[ -d "$REPO_DIR/skills" ]] || die "No skills directory found in $REPO_DIR"
+    return
+  fi
+
+  if [[ -d "$(cd "$(dirname "$0")/.." && pwd)/skills" ]]; then
+    REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+    return
+  fi
+
+  clone_repo
+}
+
+list_skills() {
+  local skill_dir
+  ensure_repo_dir
+  for skill_dir in "$REPO_DIR/skills"/*; do
+    [[ -d "$skill_dir" ]] || continue
+    basename "$skill_dir"
+  done | sort
+}
+
+copy_skill() {
+  local skill_name="$1"
+  local overwrite="${2:-0}"
+  local source="$REPO_DIR/skills/$skill_name"
+  local target="$DEST/$skill_name"
+
+  [[ -d "$source" ]] || die "Unknown skill: $skill_name"
+  mkdir -p "$DEST"
+
+  if [[ -e "$target" ]]; then
+    if [[ "$overwrite" -eq 1 ]]; then
+      rm -rf "$target"
+    else
+      printf 'Skipped %s (already installed)\n' "$skill_name"
+      return
+    fi
+  fi
+
+  cp -R "$source" "$target"
+  printf 'Installed %s\n' "$skill_name"
+}
+
+copy_all_skills() {
+  local overwrite="${1:-0}"
+  local skill_dir
+  ensure_repo_dir
+  for skill_dir in "$REPO_DIR/skills"/*; do
+    [[ -d "$skill_dir" ]] || continue
+    copy_skill "$(basename "$skill_dir")" "$overwrite"
+  done
+}
+
+COMMAND=""
+OVERWRITE=0
+INSTALL_ALL=0
+SKILL_NAMES=()
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    list|install|update)
+      [[ -z "$COMMAND" ]] || die "Only one command can be used at a time."
+      COMMAND="$1"
+      if [[ "$1" == "update" ]]; then
+        OVERWRITE=1
+      fi
+      shift
+      ;;
+    --all)
+      INSTALL_ALL=1
+      shift
+      ;;
+    --dest)
+      [[ $# -ge 2 ]] || die "--dest requires a path"
+      DEST="$2"
+      shift 2
+      ;;
+    --repo-dir)
+      [[ $# -ge 2 ]] || die "--repo-dir requires a path"
+      REPO_DIR="$2"
+      shift 2
+      ;;
+    --repo-url)
+      [[ $# -ge 2 ]] || die "--repo-url requires a URL"
+      REPO_URL="$2"
+      shift 2
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      SKILL_NAMES+=("$1")
+      shift
+      ;;
+  esac
+done
+
+[[ -n "$COMMAND" ]] || {
+  usage
+  exit 1
+}
+
+case "$COMMAND" in
+  list)
+    list_skills
+    ;;
+  install|update)
+    ensure_repo_dir
+    if [[ "$INSTALL_ALL" -eq 1 ]]; then
+      copy_all_skills "$OVERWRITE"
+    else
+      [[ ${#SKILL_NAMES[@]} -gt 0 ]] || die "Pass at least one skill name, or use --all"
+      for skill_name in "${SKILL_NAMES[@]}"; do
+        copy_skill "$skill_name" "$OVERWRITE"
+      done
+    fi
+    printf 'Restart Codex to pick up new skills.\n'
+    ;;
+esac

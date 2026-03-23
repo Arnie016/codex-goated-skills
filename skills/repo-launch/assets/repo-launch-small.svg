@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Repo Launch</title>
+  <rect width="64" height="64" rx="16" fill="#DBEAFE"/>
+  <path d="M20 20h16a8 8 0 0 1 8 8v16H28a8 8 0 0 1-8-8V20Z" fill="#2563EB"/>
+  <path d="M39 22v8h8" fill="none" stroke="#DBEAFE" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <path d="M26 38h12" fill="none" stroke="#DBEAFE" stroke-linecap="round" stroke-width="4"/>
+  <path d="M32 32v12" fill="none" stroke="#DBEAFE" stroke-linecap="round" stroke-width="4"/>
+</svg>

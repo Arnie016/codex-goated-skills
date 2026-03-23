@@ -1,0 +1,7 @@
+interface:
+  display_name: "Content Pack"
+  short_description: "Turn one project into launch-ready copy assets"
+  icon_small: "./assets/content-pack-small.svg"
+  icon_large: "./assets/content-pack-large.svg"
+  brand_color: "#14B8A6"
+  default_prompt: "Use $content-pack to audit this project and turn it into a tagline, README intro, changelog summary, and launch-ready distribution copy."

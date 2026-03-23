@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title>Brand Kit</title>
+  <rect width="160" height="160" rx="36" fill="#FDF2F8"/>
+  <circle cx="60" cy="62" r="24" fill="#EC4899"/>
+  <circle cx="102" cy="62" r="24" fill="#F59E0B"/>
+  <path d="M40 116c14-18 26-28 40-28s26 10 40 28" fill="none" stroke="#EC4899" stroke-linecap="round" stroke-width="10"/>
+</svg>

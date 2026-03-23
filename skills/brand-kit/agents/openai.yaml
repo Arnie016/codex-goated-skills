@@ -1,0 +1,7 @@
+interface:
+  display_name: "Brand Kit"
+  short_description: "Give a project a sharp, reusable brand system"
+  icon_small: "./assets/brand-kit-small.svg"
+  icon_large: "./assets/brand-kit-large.svg"
+  brand_color: "#EC4899"
+  default_prompt: "Use $brand-kit to audit this project and create a tighter brand direction, logo concept, color system, and launch metadata."

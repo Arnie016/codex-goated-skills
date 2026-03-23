@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0778C830446574FBB4565942 /* WifiWatchtowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CBCFEABB4E868B539C296C /* WifiWatchtowerApp.swift */; };
+		0E0BD13196BDA60CD0F1967F /* WatchtowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36048274617B8D0E105CF2B4 /* WatchtowerModel.swift */; };
+		1EBE0A7D6B9D035249284491 /* WifiInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0971EECB5F790B94797205 /* WifiInspector.swift */; };
+		255F241EB5FC3F94387E1CC6 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75ADDA1C4CEA4837C71AF44 /* DashboardView.swift */; };
+		3A9DC6FBFDB2A59C98DE77B9 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA9FA5D1E2A8A2185BCCF2B /* MenuBarView.swift */; };
+		D0899F026CE13B806719D661 /* NetworkSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2C725ABAA63201CBEC3CBE /* NetworkSnapshot.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1DA9FA5D1E2A8A2185BCCF2B /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		36048274617B8D0E105CF2B4 /* WatchtowerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchtowerModel.swift; sourceTree = "<group>"; };
+		3D2C725ABAA63201CBEC3CBE /* NetworkSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSnapshot.swift; sourceTree = "<group>"; };
+		471D0B128F1E4BC995AAC70E /* WifiWatchtower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WifiWatchtower.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E0971EECB5F790B94797205 /* WifiInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiInspector.swift; sourceTree = "<group>"; };
+		62CBCFEABB4E868B539C296C /* WifiWatchtowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiWatchtowerApp.swift; sourceTree = "<group>"; };
+		F75ADDA1C4CEA4837C71AF44 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0906B7F588FE269A5BE15D0C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				36048274617B8D0E105CF2B4 /* WatchtowerModel.swift */,
+				62CBCFEABB4E868B539C296C /* WifiWatchtowerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3DA610F92F6D44678C9CD55C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5E0971EECB5F790B94797205 /* WifiInspector.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		45E527BD2ECCED09B980865D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				471D0B128F1E4BC995AAC70E /* WifiWatchtower.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DFF60FB9372942C833D19D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F75ADDA1C4CEA4837C71AF44 /* DashboardView.swift */,
+				1DA9FA5D1E2A8A2185BCCF2B /* MenuBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8093E5254C55729897F6AACB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D2C725ABAA63201CBEC3CBE /* NetworkSnapshot.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B757C98F5F258AB096A9229B = {
+			isa = PBXGroup;
+			children = (
+				ECBA54C5D2EB27E1A75EC841 /* Sources */,
+				45E527BD2ECCED09B980865D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECBA54C5D2EB27E1A75EC841 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0906B7F588FE269A5BE15D0C /* App */,
+				8093E5254C55729897F6AACB /* Models */,
+				3DA610F92F6D44678C9CD55C /* Services */,
+				5DFF60FB9372942C833D19D9 /* Views */,
+			);
+			name = Sources;
+			path = WifiWatchtowerApp/Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8906B02A839DC2F1A07D27C /* WifiWatchtower */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA03D53034284FAA8D4FEA14 /* Build configuration list for PBXNativeTarget "WifiWatchtower" */;
+			buildPhases = (
+				29CA5868969C7D7336A087AB /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WifiWatchtower;
+			packageProductDependencies = (
+			);
+			productName = WifiWatchtower;
+			productReference = 471D0B128F1E4BC995AAC70E /* WifiWatchtower.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BE730DA9C9FFA23C30A4356 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					D8906B02A839DC2F1A07D27C = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 301386AAE16DC259F85895CA /* Build configuration list for PBXProject "WifiWatchtower" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = B757C98F5F258AB096A9229B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 45E527BD2ECCED09B980865D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8906B02A839DC2F1A07D27C /* WifiWatchtower */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29CA5868969C7D7336A087AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				255F241EB5FC3F94387E1CC6 /* DashboardView.swift in Sources */,
+				3A9DC6FBFDB2A59C98DE77B9 /* MenuBarView.swift in Sources */,
+				D0899F026CE13B806719D661 /* NetworkSnapshot.swift in Sources */,
+				0E0BD13196BDA60CD0F1967F /* WatchtowerModel.swift in Sources */,
+				1EBE0A7D6B9D035249284491 /* WifiInspector.swift in Sources */,
+				0778C830446574FBB4565942 /* WifiWatchtowerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0820EDE15C4697734E037217 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WifiWatchtowerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.WifiWatchtower;
+				PRODUCT_MODULE_NAME = WifiWatchtower;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4D0BD03F0B4E8C91FE28CE0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		BB752C6C8AFDAC3ADDBE5431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		D69BD88A20849481EFA9833B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WifiWatchtowerApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.WifiWatchtower;
+				PRODUCT_MODULE_NAME = WifiWatchtower;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		301386AAE16DC259F85895CA /* Build configuration list for PBXProject "WifiWatchtower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D0BD03F0B4E8C91FE28CE0D /* Debug */,
+				BB752C6C8AFDAC3ADDBE5431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BA03D53034284FAA8D4FEA14 /* Build configuration list for PBXNativeTarget "WifiWatchtower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0820EDE15C4697734E037217 /* Debug */,
+				D69BD88A20849481EFA9833B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7BE730DA9C9FFA23C30A4356 /* Project object */;
+}

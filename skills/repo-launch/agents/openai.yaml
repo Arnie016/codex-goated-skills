@@ -1,0 +1,7 @@
+interface:
+  display_name: "Repo Launch"
+  short_description: "Turn a rough project into a clean public repo"
+  icon_small: "./assets/repo-launch-small.svg"
+  icon_large: "./assets/repo-launch-large.svg"
+  brand_color: "#2563EB"
+  default_prompt: "Use $repo-launch to audit this project and turn it into a clean GitHub-ready repository with a sharp README, license, and simple start path."

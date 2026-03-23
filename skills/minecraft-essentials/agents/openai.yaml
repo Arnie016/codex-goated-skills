@@ -1,0 +1,7 @@
+interface:
+  display_name: "Minecraft Essentials"
+  short_description: "Run, upgrade, and fix Minecraft Java servers"
+  icon_small: "./assets/minecraft-essentials-small.svg"
+  icon_large: "./assets/minecraft-essentials-large.svg"
+  brand_color: "#4CAF50"
+  default_prompt: "Use $minecraft-essentials to audit this Minecraft server, back it up safely, improve the run setup, and show the right join info."

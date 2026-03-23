@@ -1,0 +1,7 @@
+interface:
+  display_name: "Website Drop"
+  short_description: "Get a local site live with the shortest path"
+  icon_small: "./assets/website-drop-small.svg"
+  icon_large: "./assets/website-drop-large.svg"
+  brand_color: "#F97316"
+  default_prompt: "Use $website-drop to audit this web project, choose the simplest deploy path, and get me to a live URL with minimal config."

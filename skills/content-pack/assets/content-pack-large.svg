@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title>Content Pack</title>
+  <rect width="160" height="160" rx="36" fill="#F0FDFA"/>
+  <rect x="42" y="26" width="76" height="104" rx="20" fill="#14B8A6"/>
+  <path d="M60 56h40" fill="none" stroke="#F0FDFA" stroke-linecap="round" stroke-width="8"/>
+  <path d="M60 78h40" fill="none" stroke="#F0FDFA" stroke-linecap="round" stroke-width="8"/>
+  <path d="M60 100h24" fill="none" stroke="#F0FDFA" stroke-linecap="round" stroke-width="8"/>
+</svg>
