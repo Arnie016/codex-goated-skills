@@ -1,0 +1,33 @@
+name: MinecraftSkinBar
+options:
+  minimumXcodeGenVersion: 2.45.3
+  deploymentTarget:
+    macOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+    PRODUCT_NAME: $(TARGET_NAME)
+    CODE_SIGN_STYLE: Automatic
+targets:
+  MinecraftSkinBar:
+    type: application
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: MinecraftSkinBarApp/Sources
+    info:
+      path: MinecraftSkinBarApp/Info.plist
+      properties:
+        CFBundleDisplayName: Minecraft Skin Bar
+        LSApplicationCategoryType: public.app-category.utilities
+        NSPrincipalClass: NSApplication
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.MinecraftSkinBar
+        INFOPLIST_FILE: MinecraftSkinBarApp/Info.plist
+        PRODUCT_MODULE_NAME: MinecraftSkinBar
+schemes:
+  MinecraftSkinBar:
+    build:
+      targets:
+        MinecraftSkinBar: all

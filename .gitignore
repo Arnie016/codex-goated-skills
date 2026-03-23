@@ -3,6 +3,8 @@ Thumbs.db
 *.swp
 *.tmp
 *.log
+__pycache__/
+*.pyc
 DerivedData/
 build/
 .build-debug/
