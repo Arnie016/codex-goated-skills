@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
   <title>Website Drop</title>
   <rect width="160" height="160" rx="36" fill="#FFF7ED"/>
-  <rect x="28" y="38" width="104" height="64" rx="18" fill="#F97316"/>
-  <path d="M50 59h60" fill="none" stroke="#FFF7ED" stroke-linecap="round" stroke-width="8"/>
-  <path d="M80 52v48" fill="none" stroke="#FFF7ED" stroke-linecap="round" stroke-width="8"/>
-  <path d="M58 126 80 98l22 28" fill="none" stroke="#F97316" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+  <rect x="34" y="36" width="92" height="56" rx="18" fill="#F97316"/>
+  <path d="M50 54h32" fill="none" stroke="#FFF7ED" stroke-linecap="round" stroke-width="8"/>
+  <circle cx="106" cy="54" r="6" fill="#FFF7ED"/>
+  <path d="M58 122h44" fill="none" stroke="#F97316" stroke-linecap="round" stroke-width="10"/>
+  <path d="M80 70v52" fill="none" stroke="#F97316" stroke-linecap="round" stroke-width="10"/>
+  <path d="M58 100 80 122l22-22" fill="none" stroke="#F97316" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
 </svg>

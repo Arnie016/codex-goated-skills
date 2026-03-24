@@ -30,6 +30,7 @@ Best for:
 
 ## Before You Claim It Is Ready
 
+- verify the app actually installs
 - verify install command
 - verify build command
 - verify output directory

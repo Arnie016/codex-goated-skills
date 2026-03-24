@@ -1,19 +1,19 @@
 ---
 name: website-drop
-description: Publish a local website or app with the shortest sensible path to a live URL. Use when Codex needs to prepare a web project for deployment, choose a simple hosting path, and get the user from local code to a shareable link quickly.
+description: Audit a local web app, choose the simplest host, and get it to a live URL fast. Use when Codex needs to prep a site for deploy, confirm the build path, and ship it with minimal hosting overhead.
 ---
 
 # Website Drop
 
-Use this skill when the user wants a website or front-end project to go live fast with a clear deployment path.
+Use this skill when the user wants a web project checked, deployment-ready, and live with the shortest sensible path.
 
 ## Quick Start
 
-1. Detect the app type and current build command before changing deployment config.
-2. Prefer the lightest hosting flow that matches the project and user constraints.
-3. Keep the goal simple: build, deploy, and return the live link.
-4. Add platform-specific config only when the target host actually needs it.
-5. If a deployment-specific skill already fits the stack, route to it instead of reinventing the flow.
+1. Detect the app type, install command, build command, and output directory first.
+2. Prefer the lightest host that matches the project and user constraints.
+3. Keep the goal simple: audit, build, deploy, and return the live link.
+4. Add platform config only when the target host actually needs it.
+5. If a platform-specific deploy skill fits better, route to it instead of duplicating the flow.
 
 ## Workflow
 
@@ -48,7 +48,7 @@ Use this skill when the user wants a website or front-end project to go live fas
 ### Editing Guidance
 
 - Optimize for one repeatable deploy flow, not every possible host.
-- Keep docs short and action-oriented.
+- Keep outputs short, specific, and action-oriented.
 - Return the exact command or handoff needed to get a live URL.
 - Avoid adding deployment clutter for hosts the user is not using.
 
