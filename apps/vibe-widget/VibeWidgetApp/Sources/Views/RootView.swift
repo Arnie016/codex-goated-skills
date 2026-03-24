@@ -16,6 +16,7 @@ struct RootView: View {
                 }
             }
             .padding(32)
+            .frame(maxWidth: 1280, maxHeight: .infinity)
         }
         .sheet(isPresented: $model.isPanelPresented) {
             VibePanelView(model: model)

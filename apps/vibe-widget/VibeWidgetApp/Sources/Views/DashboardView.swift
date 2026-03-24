@@ -3,6 +3,8 @@ import SwiftUI
 struct DashboardView: View {
     @ObservedObject var model: AppModel
 
+    private let adaptiveColumns = [GridItem(.adaptive(minimum: 180), spacing: 14)]
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
@@ -21,18 +23,19 @@ struct DashboardView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Current vibe")
                         .font(.headline)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(VibeTheme.secondaryText)
 
                     Text(model.widgetSnapshot.nowPlaying.title)
                         .font(.system(size: 34, weight: .heavy, design: .rounded))
+                        .foregroundStyle(VibeTheme.primaryText)
 
                     Text(model.widgetSnapshot.nowPlaying.artist)
                         .font(.title3.weight(.medium))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(VibeTheme.secondaryText)
 
                     Text(model.widgetSnapshot.lastActionResult)
                         .font(.callout)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(VibeTheme.tertiaryText)
                 }
 
                 Spacer()
@@ -49,7 +52,7 @@ struct DashboardView: View {
     }
 
     private var actionStrip: some View {
-        HStack(spacing: 14) {
+        LazyVGrid(columns: adaptiveColumns, spacing: 14) {
             QuickActionButton(title: "Dim Bedroom", subtitle: "Night lights", systemImage: "lightbulb.max") {
                 model.performQuickAction(.dimBedroom)
             }
@@ -71,16 +74,18 @@ struct DashboardView: View {
                 HStack {
                     Text("Pinned picks")
                         .font(.title2.weight(.bold))
+                        .foregroundStyle(VibeTheme.primaryText)
                     Spacer()
                     Button("Refresh") {
                         model.performQuickAction(.refreshRecommendations)
                     }
                     .buttonStyle(.borderless)
+                    .foregroundStyle(VibeTheme.secondaryText)
                 }
 
                 if model.recommendations.isEmpty {
                     Text("Your fresh recommendations will appear here after the first vibe query.")
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(VibeTheme.secondaryText)
                 } else {
                     ForEach(model.recommendations) { recommendation in
                         RecommendationRow(recommendation: recommendation, isPinned: recommendation.id == model.topRecommendation?.id)
@@ -91,15 +96,17 @@ struct DashboardView: View {
     }
 
     private var statusGrid: some View {
-        HStack(alignment: .top, spacing: 16) {
+        LazyVGrid(columns: adaptiveColumns, spacing: 16) {
             GlassPanel {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Lighting")
                         .font(.headline)
+                        .foregroundStyle(VibeTheme.secondaryText)
                     Text(model.widgetSnapshot.lightSummary)
                         .font(.title3.weight(.medium))
+                        .foregroundStyle(VibeTheme.primaryText)
                     Text("Default room: \(model.settings.defaultRoomName)")
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(VibeTheme.secondaryText)
                 }
             }
 
@@ -107,8 +114,10 @@ struct DashboardView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Speaker route")
                         .font(.headline)
+                        .foregroundStyle(VibeTheme.secondaryText)
                     Text(model.widgetSnapshot.routeStatus.currentOutput)
                         .font(.title3.weight(.medium))
+                        .foregroundStyle(VibeTheme.primaryText)
                     HStack {
                         Button("Sound Settings") {
                             model.openSoundSettings()
@@ -127,10 +136,12 @@ struct DashboardView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Voice status")
                         .font(.headline)
+                        .foregroundStyle(VibeTheme.secondaryText)
                     Text(model.isListening ? "Listening now" : "Idle")
                         .font(.title3.weight(.medium))
+                        .foregroundStyle(VibeTheme.primaryText)
                     Text(model.statusMessage)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(VibeTheme.secondaryText)
                 }
             }
         }

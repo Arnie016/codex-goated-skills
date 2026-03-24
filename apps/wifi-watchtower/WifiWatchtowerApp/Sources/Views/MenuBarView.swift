@@ -1,6 +1,17 @@
 import AppKit
 import SwiftUI
 
+private enum WatchtowerPalette {
+    static let backgroundTop = Color(red: 0.08, green: 0.09, blue: 0.12)
+    static let backgroundBottom = Color(red: 0.05, green: 0.06, blue: 0.08)
+    static let card = Color(red: 0.12, green: 0.13, blue: 0.17).opacity(0.96)
+    static let raised = Color(red: 0.15, green: 0.16, blue: 0.20).opacity(0.98)
+    static let border = Color.white.opacity(0.08)
+    static let primaryText = Color.white.opacity(0.96)
+    static let secondaryText = Color(red: 0.80, green: 0.84, blue: 0.89)
+    static let mutedText = Color.white.opacity(0.62)
+}
+
 struct MenuBarView: View {
     @ObservedObject var model: WatchtowerModel
 
@@ -8,9 +19,9 @@ struct MenuBarView: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    Color(red: 0.07, green: 0.09, blue: 0.15),
-                    model.snapshot.trustLevel.color.opacity(0.18),
-                    Color.black.opacity(0.96)
+                    WatchtowerPalette.backgroundTop,
+                    model.snapshot.trustLevel.color.opacity(0.12),
+                    WatchtowerPalette.backgroundBottom
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -35,10 +46,10 @@ struct MenuBarView: View {
             VStack(alignment: .leading, spacing: 3) {
                 Text("WiFi Watchtower")
                     .font(.system(size: 18, weight: .black, design: .rounded))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(WatchtowerPalette.primaryText)
                 Text(model.snapshot.networkName)
                     .font(.caption.weight(.semibold))
-                    .foregroundStyle(.white.opacity(0.72))
+                    .foregroundStyle(WatchtowerPalette.secondaryText)
             }
 
             Spacer()
@@ -48,7 +59,7 @@ struct MenuBarView: View {
             } label: {
                 Image(systemName: model.isRefreshing ? "wifi.circle.fill" : "arrow.clockwise")
                     .font(.headline.weight(.bold))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(WatchtowerPalette.primaryText)
             }
             .buttonStyle(.borderless)
         }
@@ -63,7 +74,7 @@ struct MenuBarView: View {
                             .foregroundStyle(model.snapshot.scoreAccent)
                         Text(model.snapshot.trustLevel.title)
                             .font(.title3.weight(.black))
-                            .foregroundStyle(.white)
+                            .foregroundStyle(WatchtowerPalette.primaryText)
                     }
 
                     Text(model.snapshot.shortRecommendation)
@@ -76,10 +87,10 @@ struct MenuBarView: View {
                 VStack(alignment: .trailing, spacing: 2) {
                     Text("Score")
                         .font(.caption2.weight(.bold))
-                        .foregroundStyle(.white.opacity(0.56))
+                        .foregroundStyle(WatchtowerPalette.mutedText)
                     Text("\(model.snapshot.score)")
                         .font(.system(size: 34, weight: .black, design: .rounded))
-                        .foregroundStyle(.white)
+                        .foregroundStyle(WatchtowerPalette.primaryText)
                 }
             }
 
@@ -104,12 +115,13 @@ struct MenuBarView: View {
         .padding(14)
         .background(
             RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(.white.opacity(0.08))
+                .fill(WatchtowerPalette.card)
                 .overlay(
                     RoundedRectangle(cornerRadius: 24, style: .continuous)
                         .stroke(model.snapshot.scoreAccent.opacity(0.9), lineWidth: 1)
                 )
         )
+        .shadow(color: Color.black.opacity(0.28), radius: 22, y: 12)
     }
 
     private var signalBar: some View {
@@ -125,7 +137,7 @@ struct MenuBarView: View {
 
             Text(model.snapshot.subheadline)
                 .font(.caption.weight(.semibold))
-                .foregroundStyle(.white.opacity(0.68))
+                .foregroundStyle(WatchtowerPalette.secondaryText)
         }
         .frame(height: 24, alignment: .bottom)
     }
@@ -150,7 +162,7 @@ struct MenuBarView: View {
             HStack {
                 Text("Nearby Wi-Fi")
                     .font(.caption.weight(.bold))
-                    .foregroundStyle(.white.opacity(0.72))
+                    .foregroundStyle(WatchtowerPalette.secondaryText)
                 Spacer()
                 infoChip("\(model.snapshot.totalNearbyCount) total", tint: .white.opacity(0.08))
                 infoChip("\(model.snapshot.saferNearbyCount) safer", tint: Color.green.opacity(0.14), foreground: .green)
@@ -169,10 +181,10 @@ struct MenuBarView: View {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(network.name)
                                 .font(.subheadline.weight(.bold))
-                                .foregroundStyle(.white)
+                                .foregroundStyle(WatchtowerPalette.primaryText)
                             Text("\(network.security) • \(network.band) • \(network.type)")
                                 .font(.caption)
-                                .foregroundStyle(.white.opacity(0.68))
+                                .foregroundStyle(WatchtowerPalette.secondaryText)
                                 .lineLimit(1)
                         }
 
@@ -184,14 +196,18 @@ struct MenuBarView: View {
                                 .foregroundStyle(network.isRisky ? .orange : .green)
                             Text(network.estimatedDistance)
                                 .font(.caption2.weight(.semibold))
-                                .foregroundStyle(.white.opacity(0.62))
+                                .foregroundStyle(WatchtowerPalette.mutedText)
                         }
                     }
                     .padding(.horizontal, 12)
                     .padding(.vertical, 10)
                     .background(
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .fill(.white.opacity(0.04))
+                            .fill(WatchtowerPalette.raised)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                    .stroke(WatchtowerPalette.border, lineWidth: 1)
+                            )
                     )
                     .help("\(network.name)\nSecurity: \(network.security)\nBand: \(network.band)\nChannel: \(network.channel)\nType: \(network.type)\nEstimated distance: \(network.estimatedDistance)\nRisk probability: \(network.riskProbability)%")
                 }
@@ -210,7 +226,7 @@ struct MenuBarView: View {
                 NSApp.terminate(nil)
             }
             .buttonStyle(.borderless)
-            .foregroundStyle(.white.opacity(0.84))
+            .foregroundStyle(WatchtowerPalette.secondaryText)
 
             Spacer()
         }
@@ -221,11 +237,11 @@ struct MenuBarView: View {
         HStack {
             Text(title)
                 .font(.caption.weight(.bold))
-                .foregroundStyle(.white.opacity(0.72))
+                .foregroundStyle(WatchtowerPalette.secondaryText)
             Spacer()
             Text(trailing)
                 .font(.caption.weight(.bold))
-                .foregroundStyle(.white.opacity(0.58))
+                .foregroundStyle(WatchtowerPalette.mutedText)
         }
     }
 
@@ -237,7 +253,7 @@ struct MenuBarView: View {
             .padding(.vertical, 6)
             .background(
                 Capsule(style: .continuous)
-                    .fill(tint)
+                    .fill(tint.opacity(0.95))
             )
     }
 
@@ -245,15 +261,15 @@ struct MenuBarView: View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title)
                 .font(.caption2.weight(.bold))
-                .foregroundStyle(.white.opacity(0.5))
+                .foregroundStyle(WatchtowerPalette.mutedText)
             Text(value)
                 .font(.headline.weight(.black))
-                .foregroundStyle(.white)
+                .foregroundStyle(WatchtowerPalette.primaryText)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
             Text(detail)
                 .font(.caption2.weight(.semibold))
-                .foregroundStyle(.white.opacity(0.58))
+                .foregroundStyle(WatchtowerPalette.secondaryText)
                 .lineLimit(1)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -261,7 +277,11 @@ struct MenuBarView: View {
         .padding(.vertical, 10)
         .background(
             RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(.white.opacity(0.06))
+                .fill(WatchtowerPalette.raised)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .stroke(WatchtowerPalette.border, lineWidth: 1)
+                )
         )
         .help(metricHelpText(title: title, value: value, detail: detail))
     }
@@ -269,13 +289,13 @@ struct MenuBarView: View {
     private func compactNotice(_ text: String) -> some View {
         Text(text)
             .font(.caption.weight(.semibold))
-            .foregroundStyle(.white.opacity(0.64))
+            .foregroundStyle(WatchtowerPalette.secondaryText)
             .padding(.horizontal, 12)
             .padding(.vertical, 10)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(.white.opacity(0.04))
+                    .fill(WatchtowerPalette.raised)
             )
     }
 
@@ -284,7 +304,7 @@ struct MenuBarView: View {
             HStack(spacing: 10) {
                 Text(factor.title)
                     .font(.subheadline.weight(.bold))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(WatchtowerPalette.primaryText)
 
                 Spacer()
 
@@ -308,7 +328,11 @@ struct MenuBarView: View {
         .padding(.vertical, 10)
         .background(
             RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(.white.opacity(0.05))
+                .fill(WatchtowerPalette.raised)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(WatchtowerPalette.border, lineWidth: 1)
+                )
         )
         .help("\(factor.title): \(factor.label)\n\(factor.detail)")
     }

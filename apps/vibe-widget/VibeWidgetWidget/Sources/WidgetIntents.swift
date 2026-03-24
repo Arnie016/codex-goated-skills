@@ -12,9 +12,9 @@ extension QueuedWidgetIntent where Self: AppIntent {
 }
 
 struct PlayRecommendedVibeIntent: AppIntent, QueuedWidgetIntent {
-    static var title: LocalizedStringResource = "Play Recommended Vibe"
-    static var description = IntentDescription("Open the app and play the pinned recommendation.")
-    static var openAppWhenRun = true
+    static let title: LocalizedStringResource = "Play Recommended Vibe"
+    static let description = IntentDescription("Open the app and play the pinned recommendation.")
+    static let openAppWhenRun = true
 
     var action: QueuedWidgetAction { QueuedWidgetAction(kind: .playRecommended) }
 
@@ -25,9 +25,9 @@ struct PlayRecommendedVibeIntent: AppIntent, QueuedWidgetIntent {
 }
 
 struct DimBedroomIntent: AppIntent, QueuedWidgetIntent {
-    static var title: LocalizedStringResource = "Dim Bedroom"
-    static var description = IntentDescription("Dim the default room lights and open the app.")
-    static var openAppWhenRun = true
+    static let title: LocalizedStringResource = "Dim Bedroom"
+    static let description = IntentDescription("Dim the default room lights and open the app.")
+    static let openAppWhenRun = true
 
     var action: QueuedWidgetAction { QueuedWidgetAction(kind: .dimBedroom) }
 
@@ -38,9 +38,9 @@ struct DimBedroomIntent: AppIntent, QueuedWidgetIntent {
 }
 
 struct RefreshRecommendationsIntent: AppIntent, QueuedWidgetIntent {
-    static var title: LocalizedStringResource = "Refresh Recommendations"
-    static var description = IntentDescription("Fetch fresh top picks for the widget.")
-    static var openAppWhenRun = true
+    static let title: LocalizedStringResource = "Refresh Recommendations"
+    static let description = IntentDescription("Fetch fresh top picks for the widget.")
+    static let openAppWhenRun = true
 
     var action: QueuedWidgetAction { QueuedWidgetAction(kind: .refreshRecommendations) }
 
@@ -51,9 +51,9 @@ struct RefreshRecommendationsIntent: AppIntent, QueuedWidgetIntent {
 }
 
 struct OpenVibePanelIntent: AppIntent, QueuedWidgetIntent {
-    static var title: LocalizedStringResource = "Open Vibe Panel"
-    static var description = IntentDescription("Open the compact app panel for voice and text control.")
-    static var openAppWhenRun = true
+    static let title: LocalizedStringResource = "Open Vibe Panel"
+    static let description = IntentDescription("Open the compact app panel for voice and text control.")
+    static let openAppWhenRun = true
 
     var action: QueuedWidgetAction { QueuedWidgetAction(kind: .openPanel) }
 
@@ -64,9 +64,9 @@ struct OpenVibePanelIntent: AppIntent, QueuedWidgetIntent {
 }
 
 struct SetHomeSceneIntent: AppIntent, QueuedWidgetIntent {
-    static var title: LocalizedStringResource = "Set Home Scene"
-    static var description = IntentDescription("Run an Apple Home scene by name.")
-    static var openAppWhenRun = true
+    static let title: LocalizedStringResource = "Set Home Scene"
+    static let description = IntentDescription("Run an Apple Home scene by name.")
+    static let openAppWhenRun = true
 
     @Parameter(title: "Scene Name")
     var sceneName: String

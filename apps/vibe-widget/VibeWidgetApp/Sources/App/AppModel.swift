@@ -30,10 +30,12 @@ final class AppModel: ObservableObject {
 
     init(store: SharedStore = .shared) {
         self.store = store
-        settings = store.loadSettings()
-        widgetSnapshot = store.loadSnapshot()
-        recommendations = widgetSnapshot.topRecommendation.map { [$0] } ?? []
-        statusMessage = widgetSnapshot.lastActionResult
+        let loadedSettings = store.loadSettings()
+        let loadedSnapshot = store.loadSnapshot()
+        settings = loadedSettings
+        widgetSnapshot = loadedSnapshot
+        recommendations = loadedSnapshot.topRecommendation.map { [$0] } ?? []
+        statusMessage = loadedSnapshot.lastActionResult
     }
 
     var topRecommendation: VibeRecommendation? {

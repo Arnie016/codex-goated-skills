@@ -1,0 +1,27 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="card" x1="64" y1="30" x2="578" y2="334" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11244F"/>
+      <stop offset="1" stop-color="#1A1230"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="112" y1="90" x2="246" y2="242" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8BC3FF"/>
+      <stop offset="1" stop-color="#BBA6FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="36" fill="#0A0F1B"/>
+  <rect x="24" y="24" width="592" height="312" rx="30" fill="url(#card)"/>
+  <rect x="58" y="84" width="132" height="164" rx="26" fill="#F8FBFF" fill-opacity="0.08" stroke="#5D76B8" stroke-width="4"/>
+  <rect x="84" y="68" width="132" height="164" rx="26" fill="#0F1730" stroke="#3557A2" stroke-width="4"/>
+  <rect x="110" y="52" width="132" height="164" rx="26" fill="#101E40" stroke="#8FB5FF" stroke-width="4"/>
+  <rect x="138" y="94" width="76" height="12" rx="6" fill="url(#accent)"/>
+  <rect x="138" y="120" width="56" height="10" rx="5" fill="#7690C5"/>
+  <rect x="138" y="142" width="46" height="10" rx="5" fill="#6079AA"/>
+  <path d="M248 212L276 176L304 212" stroke="#EEF2FF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M276 256V182" stroke="#EEF2FF" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="276" cy="256" r="28" fill="#2D63FF"/>
+  <path d="M262 256H290" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  <text x="338" y="144" fill="white" font-size="42" font-family="Arial, sans-serif" font-weight="700">Deckdrop Studio</text>
+  <text x="338" y="188" fill="#B8C8ED" font-size="22" font-family="Arial, sans-serif">Editable slide workflows for PDFs, docs, decks, and images</text>
+  <text x="338" y="222" fill="#95A8D6" font-size="22" font-family="Arial, sans-serif">Draft first, review in the loop, then export and share</text>
+</svg>

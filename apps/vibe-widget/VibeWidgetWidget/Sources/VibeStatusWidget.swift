@@ -154,9 +154,9 @@ private struct WidgetActionChip<I: AppIntent>: View {
 }
 
 private struct SetRainIntent: AppIntent, QueuedWidgetIntent {
-    static var title: LocalizedStringResource = "Rain"
-    static var description = IntentDescription("Open the app and start a rain-sounds vibe.")
-    static var openAppWhenRun = true
+    static let title: LocalizedStringResource = "Rain"
+    static let description = IntentDescription("Open the app and start a rain-sounds vibe.")
+    static let openAppWhenRun = true
 
     var action: QueuedWidgetAction { QueuedWidgetAction(kind: .rain) }
 

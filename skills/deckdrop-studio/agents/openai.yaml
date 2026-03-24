@@ -1,0 +1,7 @@
+interface:
+  display_name: "Deckdrop Studio"
+  short_description: "Editable slide workflows for mixed-source decks"
+  icon_small: "./assets/deckdrop-studio-small.svg"
+  icon_large: "./assets/deckdrop-studio-large.svg"
+  brand_color: "#4F86FF"
+  default_prompt: "Use $deckdrop-studio to inspect this DeckDrop workspace, keep the draft-review workflow intact, and help me ship an editable slide deck pipeline."

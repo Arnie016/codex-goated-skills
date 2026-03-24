@@ -1,5 +1,13 @@
 import SwiftUI
 
+private enum WatchtowerDashboardPalette {
+    static let background = Color(red: 0.96, green: 0.97, blue: 0.98)
+    static let card = Color.white
+    static let border = Color.black.opacity(0.06)
+    static let primaryText = Color(red: 0.11, green: 0.13, blue: 0.17)
+    static let secondaryText = Color(red: 0.35, green: 0.39, blue: 0.45)
+}
+
 struct DashboardView: View {
     @ObservedObject var model: WatchtowerModel
 
@@ -7,8 +15,8 @@ struct DashboardView: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    Color(red: 0.95, green: 0.97, blue: 1.0),
-                    model.snapshot.trustLevel.color.opacity(0.24),
+                    WatchtowerDashboardPalette.background,
+                    model.snapshot.trustLevel.color.opacity(0.10),
                     Color.white
                 ],
                 startPoint: .topLeading,
@@ -36,9 +44,10 @@ struct DashboardView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text("WiFi Watchtower")
                     .font(.system(size: 38, weight: .black, design: .rounded))
+                    .foregroundStyle(WatchtowerDashboardPalette.primaryText)
                 Text("Checks your current Wi-Fi and explains whether it looks safe, cautionary, or risky.")
                     .font(.title3.weight(.medium))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(WatchtowerDashboardPalette.secondaryText)
 
                 HStack(spacing: 12) {
                     capsuleLabel(model.snapshot.trustLevel.title, color: model.snapshot.trustLevel.color)
@@ -48,7 +57,7 @@ struct DashboardView: View {
 
                 Text(model.snapshot.scoreSummary)
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(WatchtowerDashboardPalette.secondaryText)
 
                 Text("Recommendation: \(model.snapshot.shortRecommendation)")
                     .font(.subheadline.weight(.semibold))
@@ -82,7 +91,7 @@ struct DashboardView: View {
                 .font(.title3.weight(.bold))
             Text("These are the main reasons behind the current trust score.")
                 .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(WatchtowerDashboardPalette.secondaryText)
 
             ForEach(model.snapshot.issues) { issue in
                 HStack(alignment: .top, spacing: 14) {
@@ -94,9 +103,10 @@ struct DashboardView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(issue.title)
                             .font(.headline)
+                            .foregroundStyle(WatchtowerDashboardPalette.primaryText)
                         Text(issue.detail)
                             .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(WatchtowerDashboardPalette.secondaryText)
                     }
 
                     Spacer()
@@ -104,7 +114,11 @@ struct DashboardView: View {
                 .padding(16)
                 .background(
                     RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .fill(.white.opacity(0.7))
+                        .fill(WatchtowerDashboardPalette.card)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                                .stroke(WatchtowerDashboardPalette.border, lineWidth: 1)
+                        )
                 )
             }
         }
@@ -118,28 +132,33 @@ struct DashboardView: View {
                 Spacer()
                 Text("\(model.snapshot.nearbyInsecureCount) insecure nearby")
                     .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(model.snapshot.nearbyInsecureCount == 0 ? Color.secondary : Color.orange)
+                    .foregroundStyle(model.snapshot.nearbyInsecureCount == 0 ? WatchtowerDashboardPalette.secondaryText : Color.orange)
             }
 
             Text("This section looks at nearby open or weakly secured hotspots and uses that as extra context, not proof that your current network is compromised.")
                 .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(WatchtowerDashboardPalette.secondaryText)
 
             ForEach(model.snapshot.nearbyNetworks) { network in
                 HStack {
                     Text(network.security)
                         .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(WatchtowerDashboardPalette.primaryText)
                     Spacer()
                     Text(network.channel)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(WatchtowerDashboardPalette.secondaryText)
                     Text(network.type)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(WatchtowerDashboardPalette.secondaryText)
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 12)
                 .background(
                     RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .fill(.white.opacity(0.66))
+                        .fill(WatchtowerDashboardPalette.card)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                .stroke(WatchtowerDashboardPalette.border, lineWidth: 1)
+                        )
                 )
             }
         }
@@ -149,18 +168,23 @@ struct DashboardView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
                 .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
+                .foregroundStyle(WatchtowerDashboardPalette.secondaryText)
             Text(value)
                 .font(.title3.weight(.bold))
+                .foregroundStyle(WatchtowerDashboardPalette.primaryText)
             Text(subtitle)
                 .font(.caption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(WatchtowerDashboardPalette.secondaryText)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(18)
         .background(
             RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(.white.opacity(0.8))
+                .fill(WatchtowerDashboardPalette.card)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 24, style: .continuous)
+                        .stroke(WatchtowerDashboardPalette.border, lineWidth: 1)
+                )
         )
     }
 
