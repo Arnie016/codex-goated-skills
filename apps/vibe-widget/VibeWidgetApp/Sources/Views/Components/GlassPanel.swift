@@ -1,19 +1,6 @@
 import SwiftUI
 import VibeWidgetCore
 
-enum VibeTheme {
-    static let backgroundTop = Color(red: 0.05, green: 0.06, blue: 0.09)
-    static let backgroundBottom = Color(red: 0.08, green: 0.09, blue: 0.12)
-    static let panel = Color(red: 0.10, green: 0.12, blue: 0.16).opacity(0.96)
-    static let panelRaised = Color(red: 0.13, green: 0.15, blue: 0.20).opacity(0.96)
-    static let border = Color.white.opacity(0.08)
-    static let primaryText = Color.white.opacity(0.96)
-    static let secondaryText = Color(red: 0.80, green: 0.84, blue: 0.90)
-    static let tertiaryText = Color.white.opacity(0.58)
-    static let accent = Color(red: 0.35, green: 0.60, blue: 0.86)
-    static let warmAccent = Color(red: 0.77, green: 0.56, blue: 0.33)
-}
-
 struct GlassPanel<Content: View>: View {
     @ViewBuilder var content: Content
 
@@ -25,13 +12,12 @@ struct GlassPanel<Content: View>: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 30, style: .continuous)
-                .fill(VibeTheme.panel)
+                .fill(.ultraThinMaterial.opacity(0.95))
                 .overlay(
                     RoundedRectangle(cornerRadius: 30, style: .continuous)
-                        .stroke(VibeTheme.border, lineWidth: 1)
+                        .stroke(.white.opacity(0.08), lineWidth: 1)
                 )
         )
-        .shadow(color: Color.black.opacity(0.22), radius: 24, y: 12)
     }
 }
 
@@ -40,20 +26,26 @@ struct VibeBackdrop: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(colors: [VibeTheme.backgroundTop, VibeTheme.backgroundBottom], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(
+                colors: secondaryOnly
+                    ? [Color.black, Color(red: 0.03, green: 0.03, blue: 0.04)]
+                    : [Color(red: 0.01, green: 0.02, blue: 0.03), Color(red: 0.04, green: 0.05, blue: 0.06)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
                 .ignoresSafeArea()
 
             Circle()
-                .fill(VibeTheme.accent.opacity(secondaryOnly ? 0.08 : 0.16))
-                .blur(radius: 34)
-                .frame(width: 360, height: 360)
-                .offset(x: -340, y: -220)
+                .fill(Color(red: 0.12, green: 0.72, blue: 0.36).opacity(secondaryOnly ? 0.1 : 0.14))
+                .blur(radius: secondaryOnly ? 90 : 60)
+                .frame(width: secondaryOnly ? 220 : 300, height: secondaryOnly ? 220 : 300)
+                .offset(x: secondaryOnly ? 118 : -240, y: secondaryOnly ? -170 : -140)
 
             Circle()
-                .fill(VibeTheme.warmAccent.opacity(secondaryOnly ? 0.06 : 0.12))
-                .blur(radius: 52)
-                .frame(width: 420, height: 420)
-                .offset(x: 320, y: 220)
+                .fill(Color.white.opacity(secondaryOnly ? 0.035 : 0.06))
+                .blur(radius: secondaryOnly ? 80 : 55)
+                .frame(width: secondaryOnly ? 180 : 340, height: secondaryOnly ? 180 : 340)
+                .offset(x: secondaryOnly ? -100 : 250, y: secondaryOnly ? 180 : 150)
         }
     }
 }
@@ -69,23 +61,17 @@ struct QuickActionButton: View {
             VStack(alignment: .leading, spacing: 10) {
                 Image(systemName: systemImage)
                     .font(.title2.weight(.bold))
-                    .foregroundStyle(VibeTheme.primaryText)
                 Text(title)
                     .font(.headline)
-                    .foregroundStyle(VibeTheme.primaryText)
                 Text(subtitle)
                     .font(.footnote)
-                    .foregroundStyle(VibeTheme.secondaryText)
+                    .foregroundStyle(.secondary)
             }
             .frame(maxWidth: .infinity, minHeight: 110, alignment: .leading)
             .padding(18)
             .background(
                 RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .fill(VibeTheme.panelRaised)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 24, style: .continuous)
-                            .stroke(VibeTheme.border, lineWidth: 1)
-                    )
+                    .fill(Color.white.opacity(0.08))
             )
         }
         .buttonStyle(.plain)
@@ -101,10 +87,9 @@ struct StatusBadge: View {
         VStack(alignment: .leading, spacing: 6) {
             Text(title)
                 .font(.headline)
-                .foregroundStyle(VibeTheme.primaryText)
             Text(subtitle)
                 .font(.subheadline)
-                .foregroundStyle(VibeTheme.secondaryText)
+                .foregroundStyle(.secondary)
             Text(label)
                 .font(.caption.weight(.bold))
                 .padding(.horizontal, 10)
@@ -118,7 +103,7 @@ struct StatusBadge: View {
         .padding(16)
         .background(
             RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .fill(VibeTheme.panelRaised)
+                .fill(Color.white.opacity(0.06))
         )
     }
 
@@ -160,21 +145,19 @@ struct RecommendationRow: View {
                 HStack {
                     Text(recommendation.title)
                         .font(.headline)
-                        .foregroundStyle(VibeTheme.primaryText)
                     if isPinned {
                         Text("PINNED")
                             .font(.caption2.weight(.black))
                             .padding(.horizontal, 8)
                             .padding(.vertical, 4)
-                            .background(Capsule().fill(VibeTheme.border))
-                            .foregroundStyle(VibeTheme.primaryText)
+                            .background(Capsule().fill(Color.white.opacity(0.12)))
                     }
                 }
                 Text("\(recommendation.artist) • \(recommendation.subtitle)")
-                    .foregroundStyle(VibeTheme.secondaryText)
+                    .foregroundStyle(.secondary)
                 Text(recommendation.reason)
                     .font(.footnote)
-                    .foregroundStyle(VibeTheme.tertiaryText)
+                    .foregroundStyle(.secondary)
             }
 
             Spacer()
@@ -197,8 +180,7 @@ struct PermissionDot: View {
         }
         .padding(.horizontal, 10)
         .padding(.vertical, 6)
-        .background(Capsule().fill(VibeTheme.panelRaised))
-        .foregroundStyle(VibeTheme.primaryText)
+        .background(Capsule().fill(Color.white.opacity(0.06)))
     }
 
     private var color: Color {

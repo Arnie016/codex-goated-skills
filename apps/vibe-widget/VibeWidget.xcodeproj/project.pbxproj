@@ -11,15 +11,21 @@
 		0227707BFB0091A1B0E50CFE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D37ABE46FEC76CF6DC8BAAF /* Models.swift */; };
 		0545348D30963436066244D4 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A206C577C8ABE6D194300DFE /* HomeService.swift */; };
 		1B1FDC6F12551B73E796AB01 /* SpotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846CF730290CA481F945E1C /* SpotifyService.swift */; };
+		1C69EB528AB7E3A7B8F0E67B /* PaperBridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F13143CAAED390F292DA088 /* PaperBridgeView.swift */; };
 		2178CE53F19C51AE5160BFC0 /* WidgetIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0068F436D257D1664B9EAA /* WidgetIntents.swift */; };
 		274935329DCF345FC3262C24 /* VibeWidgetCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		27F9A47765932C59D87F0534 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F300D7DBF3B26ED037D6306 /* AppModel.swift */; };
 		31934D4239DC773DB11DC7AD /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E0F3B9B0DE0F961D27D3CC /* AppGroup.swift */; };
 		31B3BE47EB58C1F5B4AD6107 /* VibeWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */; };
+		32B2157B473FB4A3604E4F9D /* ContextLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98DA6C71F0D48C1F0DDFEEE /* ContextLibraryTests.swift */; };
+		36E97C8EECA55B8E197CD381 /* ContextStudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF111D423F7442ABBAD88569 /* ContextStudioView.swift */; };
 		40FDDDAA6BD180644C698715 /* AudioRouteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A99FF6C6C6C4EE2FDAB6B6 /* AudioRouteService.swift */; };
+		42394A45108E4AF16FA099B9 /* DocumentPrepWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F346DA970A11C79C3B6C62 /* DocumentPrepWidgetView.swift */; };
 		4758AB2DE12CCD4F791A6BE0 /* VibeStatusWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145BF93AA2086B735B371DD5 /* VibeStatusWidget.swift */; };
+		4CF9904CD4DBBB54CB007B79 /* PaperBridgeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F123515BD6CFF2D4AB094D /* PaperBridgeModels.swift */; };
 		4F4C3A7757F74D78CE41268F /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73806476EEB2B97614235A5 /* SharedStore.swift */; };
 		52A91AC44BDE9F35E41188AE /* GlassPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20484AAB1919209947BA3476 /* GlassPanel.swift */; };
+		56B97BC85461005579AC226E /* DiscoveryComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C0D3A432816162B2D1044 /* DiscoveryComponents.swift */; };
 		60CD4E7FF7D3E415002F5B47 /* VibeWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */; };
 		68D9FF898955905C83D1B77E /* VibePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D65667CF0A943EFDBDD4ED /* VibePanelView.swift */; };
 		6C41B80695F1164BAEBA2537 /* VibeWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E270D463B4A294A93A0AC5 /* VibeWidgetBundle.swift */; };
@@ -27,11 +33,23 @@
 		7CC117EB25BDD71CDA514595 /* FallbackIntentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF6D0E31100C6C16B881A /* FallbackIntentParser.swift */; };
 		8583DCD729B76CADBCAD4E08 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395A661D1C2FDBF07009062F /* OnboardingView.swift */; };
 		8932D115A4DFE886F56EAD45 /* VibeWidgetCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */; };
+		8E9EBC90E680FD30F547FB6A /* MindDeclutterPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB37D4D8F0FFA7E1339907A6 /* MindDeclutterPlan.swift */; };
+		A383E300AB8ADA2091A88E18 /* MentalDeclutterMenuBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B632E16FE46E85325C56E /* MentalDeclutterMenuBarIcon.swift */; };
+		A542F045DE05B369BD42D28E /* WorkspacePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FBC8D1DE38F20B2EE7FBFC /* WorkspacePanelView.swift */; };
 		AABDEFBC826174718E188F42 /* KeychainSecretStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021A2D3E6EC2F5AAC90B75C3 /* KeychainSecretStore.swift */; };
 		B0DD354B38D726D53538A714 /* FallbackIntentParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738220B82861302EAF7578CD /* FallbackIntentParserTests.swift */; };
+		B38BA2FD12330B6CF1F12C2F /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12402B222DB67DE90A6FF19D /* MenuBarView.swift */; };
 		B55C62947B003200C6390EA4 /* SpeechCaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5066A5349319D64D1B58A913 /* SpeechCaptureService.swift */; };
 		B954EED209F26FABD678D3C4 /* AICommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D91097A4B6BFACCABFF40A /* AICommandService.swift */; };
+		BB3F367FEFAB404270D60EDE /* ContextIngestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A5219040AF461EABB45AB6 /* ContextIngestionService.swift */; };
+		BE3ED11DC4492080A4F6C410 /* DiscoveryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3586834612303AA1B39016D /* DiscoveryModels.swift */; };
+		BEB4572FC324E48E5652C3F4 /* DocumentPreparationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69167B78EA96C154D270CC52 /* DocumentPreparationService.swift */; };
+		BFC244ACD95BFAF3DD291662 /* DocumentPrepModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39E7C954E16F4F1472C604 /* DocumentPrepModels.swift */; };
 		C1CFC1ED88E3F583AF8AD4BC /* VibeWidgetCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF5F03123B9755165F757801 /* WorkspacePanelRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6141A6A0DDC8348977E46633 /* WorkspacePanelRoute.swift */; };
+		DD48FEDFA2516D51C0C47418 /* ContextComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE9E8D341D98CB67940550A /* ContextComponents.swift */; };
+		E1772DA1368487C7D72B0272 /* ContextLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489782D9CF3579689C86ADBF /* ContextLibrary.swift */; };
+		E544184FED9C6462334F990C /* PaperBridgeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877CF7C86B7F1E68648CFCAE /* PaperBridgeService.swift */; };
 		EAB226174D1569A65F97CD3C /* VibeWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D97D80FBA6E6832E6F28616 /* VibeWidgetApp.swift */; };
 		FCF398C879F83BE7C24189D4 /* VibeWidgetWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 215D755D364F0D4DCA40EA5F /* VibeWidgetWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FF252847A49AB6D315FA3408 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C61EC8C1422F44AF3F2C6 /* DashboardView.swift */; };
@@ -108,29 +126,47 @@
 		021A2D3E6EC2F5AAC90B75C3 /* KeychainSecretStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSecretStore.swift; sourceTree = "<group>"; };
 		09567DF29D60FB93C7D8076C /* VibeWidgetCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VibeWidgetCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B1710BC7B332B0D26663CCC /* PermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionService.swift; sourceTree = "<group>"; };
+		12402B222DB67DE90A6FF19D /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		145BF93AA2086B735B371DD5 /* VibeStatusWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeStatusWidget.swift; sourceTree = "<group>"; };
 		20484AAB1919209947BA3476 /* GlassPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassPanel.swift; sourceTree = "<group>"; };
 		215D755D364F0D4DCA40EA5F /* VibeWidgetWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VibeWidgetWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		22FBC8D1DE38F20B2EE7FBFC /* WorkspacePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspacePanelView.swift; sourceTree = "<group>"; };
 		289412B7D50F0F847DFCAFC2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		395A661D1C2FDBF07009062F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		39A99FF6C6C6C4EE2FDAB6B6 /* AudioRouteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRouteService.swift; sourceTree = "<group>"; };
+		3A9B632E16FE46E85325C56E /* MentalDeclutterMenuBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalDeclutterMenuBarIcon.swift; sourceTree = "<group>"; };
 		3F300D7DBF3B26ED037D6306 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		489782D9CF3579689C86ADBF /* ContextLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextLibrary.swift; sourceTree = "<group>"; };
 		4A7C61EC8C1422F44AF3F2C6 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		5066A5349319D64D1B58A913 /* SpeechCaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechCaptureService.swift; sourceTree = "<group>"; };
 		5C07ED611057AC6D76C3B66B /* VibeWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VibeWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D37ABE46FEC76CF6DC8BAAF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5D97D80FBA6E6832E6F28616 /* VibeWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeWidgetApp.swift; sourceTree = "<group>"; };
+		6141A6A0DDC8348977E46633 /* WorkspacePanelRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspacePanelRoute.swift; sourceTree = "<group>"; };
+		66F346DA970A11C79C3B6C62 /* DocumentPrepWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPrepWidgetView.swift; sourceTree = "<group>"; };
+		69167B78EA96C154D270CC52 /* DocumentPreparationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPreparationService.swift; sourceTree = "<group>"; };
 		738220B82861302EAF7578CD /* FallbackIntentParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackIntentParserTests.swift; sourceTree = "<group>"; };
 		76D65667CF0A943EFDBDD4ED /* VibePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibePanelView.swift; sourceTree = "<group>"; };
 		76E0F3B9B0DE0F961D27D3CC /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		840FF6D0E31100C6C16B881A /* FallbackIntentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallbackIntentParser.swift; sourceTree = "<group>"; };
+		877CF7C86B7F1E68648CFCAE /* PaperBridgeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperBridgeService.swift; sourceTree = "<group>"; };
+		96A5219040AF461EABB45AB6 /* ContextIngestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextIngestionService.swift; sourceTree = "<group>"; };
+		9F13143CAAED390F292DA088 /* PaperBridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperBridgeView.swift; sourceTree = "<group>"; };
 		A206C577C8ABE6D194300DFE /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		A3586834612303AA1B39016D /* DiscoveryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryModels.swift; sourceTree = "<group>"; };
+		AF111D423F7442ABBAD88569 /* ContextStudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextStudioView.swift; sourceTree = "<group>"; };
+		B98DA6C71F0D48C1F0DDFEEE /* ContextLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextLibraryTests.swift; sourceTree = "<group>"; };
 		B9E270D463B4A294A93A0AC5 /* VibeWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeWidgetBundle.swift; sourceTree = "<group>"; };
 		C2D91097A4B6BFACCABFF40A /* AICommandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICommandService.swift; sourceTree = "<group>"; };
 		C73806476EEB2B97614235A5 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
 		C846CF730290CA481F945E1C /* SpotifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyService.swift; sourceTree = "<group>"; };
+		CBE9E8D341D98CB67940550A /* ContextComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextComponents.swift; sourceTree = "<group>"; };
 		CCBBEAE6F0F7CEFAC0FE87D2 /* VibeWidgetCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibeWidgetCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0068F436D257D1664B9EAA /* WidgetIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetIntents.swift; sourceTree = "<group>"; };
+		D1F123515BD6CFF2D4AB094D /* PaperBridgeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperBridgeModels.swift; sourceTree = "<group>"; };
+		D22C0D3A432816162B2D1044 /* DiscoveryComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryComponents.swift; sourceTree = "<group>"; };
+		FA39E7C954E16F4F1472C604 /* DocumentPrepModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPrepModels.swift; sourceTree = "<group>"; };
+		FB37D4D8F0FFA7E1339907A6 /* MindDeclutterPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindDeclutterPlan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +201,12 @@
 			isa = PBXGroup;
 			children = (
 				3F300D7DBF3B26ED037D6306 /* AppModel.swift */,
+				A3586834612303AA1B39016D /* DiscoveryModels.swift */,
+				FA39E7C954E16F4F1472C604 /* DocumentPrepModels.swift */,
+				FB37D4D8F0FFA7E1339907A6 /* MindDeclutterPlan.swift */,
+				D1F123515BD6CFF2D4AB094D /* PaperBridgeModels.swift */,
 				5D97D80FBA6E6832E6F28616 /* VibeWidgetApp.swift */,
+				6141A6A0DDC8348977E46633 /* WorkspacePanelRoute.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -184,6 +225,8 @@
 		46FAAB35CE89C8EDAEBCBC0C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CBE9E8D341D98CB67940550A /* ContextComponents.swift */,
+				D22C0D3A432816162B2D1044 /* DiscoveryComponents.swift */,
 				20484AAB1919209947BA3476 /* GlassPanel.swift */,
 			);
 			path = Components;
@@ -194,7 +237,10 @@
 			children = (
 				C2D91097A4B6BFACCABFF40A /* AICommandService.swift */,
 				39A99FF6C6C6C4EE2FDAB6B6 /* AudioRouteService.swift */,
+				96A5219040AF461EABB45AB6 /* ContextIngestionService.swift */,
+				69167B78EA96C154D270CC52 /* DocumentPreparationService.swift */,
 				A206C577C8ABE6D194300DFE /* HomeService.swift */,
+				877CF7C86B7F1E68648CFCAE /* PaperBridgeService.swift */,
 				0B1710BC7B332B0D26663CCC /* PermissionService.swift */,
 				5066A5349319D64D1B58A913 /* SpeechCaptureService.swift */,
 				C846CF730290CA481F945E1C /* SpotifyService.swift */,
@@ -216,10 +262,16 @@
 		B7A762D59108EC62C9D9EAB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AF111D423F7442ABBAD88569 /* ContextStudioView.swift */,
 				4A7C61EC8C1422F44AF3F2C6 /* DashboardView.swift */,
+				66F346DA970A11C79C3B6C62 /* DocumentPrepWidgetView.swift */,
+				3A9B632E16FE46E85325C56E /* MentalDeclutterMenuBarIcon.swift */,
+				12402B222DB67DE90A6FF19D /* MenuBarView.swift */,
 				395A661D1C2FDBF07009062F /* OnboardingView.swift */,
+				9F13143CAAED390F292DA088 /* PaperBridgeView.swift */,
 				289412B7D50F0F847DFCAFC2 /* RootView.swift */,
 				76D65667CF0A943EFDBDD4ED /* VibePanelView.swift */,
+				22FBC8D1DE38F20B2EE7FBFC /* WorkspacePanelView.swift */,
 				46FAAB35CE89C8EDAEBCBC0C /* Components */,
 			);
 			path = Views;
@@ -228,6 +280,7 @@
 		B8ADA0B8FD7D2B78F025BA62 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				B98DA6C71F0D48C1F0DDFEEE /* ContextLibraryTests.swift */,
 				738220B82861302EAF7578CD /* FallbackIntentParserTests.swift */,
 			);
 			name = Tests;
@@ -238,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				76E0F3B9B0DE0F961D27D3CC /* AppGroup.swift */,
+				489782D9CF3579689C86ADBF /* ContextLibrary.swift */,
 				840FF6D0E31100C6C16B881A /* FallbackIntentParser.swift */,
 				021A2D3E6EC2F5AAC90B75C3 /* KeychainSecretStore.swift */,
 				5D37ABE46FEC76CF6DC8BAAF /* Models.swift */,
@@ -403,16 +457,32 @@
 				B954EED209F26FABD678D3C4 /* AICommandService.swift in Sources */,
 				27F9A47765932C59D87F0534 /* AppModel.swift in Sources */,
 				40FDDDAA6BD180644C698715 /* AudioRouteService.swift in Sources */,
+				DD48FEDFA2516D51C0C47418 /* ContextComponents.swift in Sources */,
+				BB3F367FEFAB404270D60EDE /* ContextIngestionService.swift in Sources */,
+				36E97C8EECA55B8E197CD381 /* ContextStudioView.swift in Sources */,
 				FF252847A49AB6D315FA3408 /* DashboardView.swift in Sources */,
+				56B97BC85461005579AC226E /* DiscoveryComponents.swift in Sources */,
+				BE3ED11DC4492080A4F6C410 /* DiscoveryModels.swift in Sources */,
+				BFC244ACD95BFAF3DD291662 /* DocumentPrepModels.swift in Sources */,
+				42394A45108E4AF16FA099B9 /* DocumentPrepWidgetView.swift in Sources */,
+				BEB4572FC324E48E5652C3F4 /* DocumentPreparationService.swift in Sources */,
 				52A91AC44BDE9F35E41188AE /* GlassPanel.swift in Sources */,
 				0545348D30963436066244D4 /* HomeService.swift in Sources */,
+				A383E300AB8ADA2091A88E18 /* MentalDeclutterMenuBarIcon.swift in Sources */,
+				B38BA2FD12330B6CF1F12C2F /* MenuBarView.swift in Sources */,
+				8E9EBC90E680FD30F547FB6A /* MindDeclutterPlan.swift in Sources */,
 				8583DCD729B76CADBCAD4E08 /* OnboardingView.swift in Sources */,
+				4CF9904CD4DBBB54CB007B79 /* PaperBridgeModels.swift in Sources */,
+				E544184FED9C6462334F990C /* PaperBridgeService.swift in Sources */,
+				1C69EB528AB7E3A7B8F0E67B /* PaperBridgeView.swift in Sources */,
 				003CD49A76E035C4D63D31EC /* PermissionService.swift in Sources */,
 				6FDE26BA901023E501239E41 /* RootView.swift in Sources */,
 				B55C62947B003200C6390EA4 /* SpeechCaptureService.swift in Sources */,
 				1B1FDC6F12551B73E796AB01 /* SpotifyService.swift in Sources */,
 				68D9FF898955905C83D1B77E /* VibePanelView.swift in Sources */,
 				EAB226174D1569A65F97CD3C /* VibeWidgetApp.swift in Sources */,
+				CF5F03123B9755165F757801 /* WorkspacePanelRoute.swift in Sources */,
+				A542F045DE05B369BD42D28E /* WorkspacePanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31934D4239DC773DB11DC7AD /* AppGroup.swift in Sources */,
+				E1772DA1368487C7D72B0272 /* ContextLibrary.swift in Sources */,
 				7CC117EB25BDD71CDA514595 /* FallbackIntentParser.swift in Sources */,
 				AABDEFBC826174718E188F42 /* KeychainSecretStore.swift in Sources */,
 				0227707BFB0091A1B0E50CFE /* Models.swift in Sources */,
@@ -442,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B2157B473FB4A3604E4F9D /* ContextLibraryTests.swift in Sources */,
 				B0DD354B38D726D53538A714 /* FallbackIntentParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,23 +8,20 @@ struct OnboardingView: View {
             VStack(alignment: .leading, spacing: 18) {
                 Text("VibeWidget")
                     .font(.system(size: 54, weight: .black, design: .rounded))
-                    .foregroundStyle(VibeTheme.primaryText)
 
                 Text("Voice-first vibe control for your PartyBox, Spotify flow, and Apple Home lights.")
                     .font(.title3.weight(.medium))
-                    .foregroundStyle(VibeTheme.secondaryText)
+                    .foregroundStyle(.secondary)
                     .frame(maxWidth: 520, alignment: .leading)
 
                 GlassPanel {
                     VStack(alignment: .leading, spacing: 14) {
                         Label("Main flow", systemImage: "waveform.and.sparkles")
-                            .foregroundStyle(VibeTheme.primaryText)
                         Text("Say or type things like \"dim bedroom lights and play rain sounds\" and let the app route the vibe.")
-                            .foregroundStyle(VibeTheme.secondaryText)
+                            .foregroundStyle(.secondary)
                         Label("Output-aware", systemImage: "speaker.wave.3.fill")
-                            .foregroundStyle(VibeTheme.primaryText)
                         Text("The dashboard always shows whether your PartyBox is already the active output or needs a native handoff.")
-                            .foregroundStyle(VibeTheme.secondaryText)
+                            .foregroundStyle(.secondary)
                     }
                     .font(.headline)
                 }
@@ -37,7 +34,6 @@ struct OnboardingView: View {
                 VStack(alignment: .leading, spacing: 18) {
                     Text("First Run Setup")
                         .font(.system(.title, design: .rounded).weight(.bold))
-                        .foregroundStyle(VibeTheme.primaryText)
 
                     Picker("Apple Home", selection: $model.settings.selectedHomeName) {
                         if model.homes.isEmpty {
@@ -74,7 +70,7 @@ struct OnboardingView: View {
 
                     Text(model.statusMessage)
                         .font(.footnote)
-                        .foregroundStyle(VibeTheme.secondaryText)
+                        .foregroundStyle(.secondary)
 
                     Button("Enter VibeWidget") {
                         model.completeOnboarding()

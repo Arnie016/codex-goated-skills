@@ -191,7 +191,7 @@ public struct WidgetSnapshot: Codable, Hashable, Sendable {
         topRecommendation: VibeRecommendation? = nil,
         routeStatus: AudioRouteStatus = AudioRouteStatus(),
         lightSummary: String = "Bedroom lights ready",
-        lastActionResult: String = "Waiting for your next vibe move.",
+        lastActionResult: String = "Scout is on standby for the next obsession.",
         updatedAt: Date = .now
     ) {
         self.nowPlaying = nowPlaying
@@ -212,6 +212,45 @@ public struct AppSettings: Codable, Hashable, Sendable {
     public var spotifyClientID: String
     public var openAIKeyServiceName: String
     public var preferredMoodPreset: String
+    public var githubTokenServiceName: String
+    public var paperRepositoryOwner: String
+    public var paperRepositoryName: String
+    public var paperWorkflowIdentifier: String
+    public var paperRepositoryRef: String
+    public var paperOverleafProjectID: String
+    public var paperArtifactName: String
+    public var paperMainTeXPath: String
+    public var paperLastRunID: Int?
+    public var mindDeclutterEnabled: Bool
+    public var mindDeclutterInboxText: String
+    public var mindDeclutterFocusText: String
+    public var mindDeclutterSessionEndsAt: Date?
+    public var mindDeclutterSessionMinutes: Int
+
+    private enum CodingKeys: String, CodingKey {
+        case hasCompletedOnboarding
+        case selectedHomeID
+        case selectedHomeName
+        case defaultRoomName
+        case preferredSpeakerName
+        case spotifyClientID
+        case openAIKeyServiceName
+        case preferredMoodPreset
+        case githubTokenServiceName
+        case paperRepositoryOwner
+        case paperRepositoryName
+        case paperWorkflowIdentifier
+        case paperRepositoryRef
+        case paperOverleafProjectID
+        case paperArtifactName
+        case paperMainTeXPath
+        case paperLastRunID
+        case mindDeclutterEnabled
+        case mindDeclutterInboxText
+        case mindDeclutterFocusText
+        case mindDeclutterSessionEndsAt
+        case mindDeclutterSessionMinutes
+    }
 
     public init(
         hasCompletedOnboarding: Bool = false,
@@ -221,7 +260,21 @@ public struct AppSettings: Codable, Hashable, Sendable {
         preferredSpeakerName: String = "PartyBox",
         spotifyClientID: String = "",
         openAIKeyServiceName: String = VibeAppGroup.openAIKeyService,
-        preferredMoodPreset: String = "Cool Mix"
+        preferredMoodPreset: String = "Cool Mix",
+        githubTokenServiceName: String = VibeAppGroup.githubTokenService,
+        paperRepositoryOwner: String = "",
+        paperRepositoryName: String = "",
+        paperWorkflowIdentifier: String = "overleaf-bridge.yml",
+        paperRepositoryRef: String = "main",
+        paperOverleafProjectID: String = "",
+        paperArtifactName: String = "paper-output",
+        paperMainTeXPath: String = "main.tex",
+        paperLastRunID: Int? = nil,
+        mindDeclutterEnabled: Bool = false,
+        mindDeclutterInboxText: String = "",
+        mindDeclutterFocusText: String = "",
+        mindDeclutterSessionEndsAt: Date? = nil,
+        mindDeclutterSessionMinutes: Int = 30
     ) {
         self.hasCompletedOnboarding = hasCompletedOnboarding
         self.selectedHomeID = selectedHomeID
@@ -231,6 +284,72 @@ public struct AppSettings: Codable, Hashable, Sendable {
         self.spotifyClientID = spotifyClientID
         self.openAIKeyServiceName = openAIKeyServiceName
         self.preferredMoodPreset = preferredMoodPreset
+        self.githubTokenServiceName = githubTokenServiceName
+        self.paperRepositoryOwner = paperRepositoryOwner
+        self.paperRepositoryName = paperRepositoryName
+        self.paperWorkflowIdentifier = paperWorkflowIdentifier
+        self.paperRepositoryRef = paperRepositoryRef
+        self.paperOverleafProjectID = paperOverleafProjectID
+        self.paperArtifactName = paperArtifactName
+        self.paperMainTeXPath = paperMainTeXPath
+        self.paperLastRunID = paperLastRunID
+        self.mindDeclutterEnabled = mindDeclutterEnabled
+        self.mindDeclutterInboxText = mindDeclutterInboxText
+        self.mindDeclutterFocusText = mindDeclutterFocusText
+        self.mindDeclutterSessionEndsAt = mindDeclutterSessionEndsAt
+        self.mindDeclutterSessionMinutes = mindDeclutterSessionMinutes
+    }
+
+    public init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        hasCompletedOnboarding = try container.decodeIfPresent(Bool.self, forKey: .hasCompletedOnboarding) ?? false
+        selectedHomeID = try container.decodeIfPresent(String.self, forKey: .selectedHomeID)
+        selectedHomeName = try container.decodeIfPresent(String.self, forKey: .selectedHomeName) ?? "My Home"
+        defaultRoomName = try container.decodeIfPresent(String.self, forKey: .defaultRoomName) ?? "Bedroom"
+        preferredSpeakerName = try container.decodeIfPresent(String.self, forKey: .preferredSpeakerName) ?? "PartyBox"
+        spotifyClientID = try container.decodeIfPresent(String.self, forKey: .spotifyClientID) ?? ""
+        openAIKeyServiceName = try container.decodeIfPresent(String.self, forKey: .openAIKeyServiceName) ?? VibeAppGroup.openAIKeyService
+        preferredMoodPreset = try container.decodeIfPresent(String.self, forKey: .preferredMoodPreset) ?? "Cool Mix"
+        githubTokenServiceName = try container.decodeIfPresent(String.self, forKey: .githubTokenServiceName) ?? VibeAppGroup.githubTokenService
+        paperRepositoryOwner = try container.decodeIfPresent(String.self, forKey: .paperRepositoryOwner) ?? ""
+        paperRepositoryName = try container.decodeIfPresent(String.self, forKey: .paperRepositoryName) ?? ""
+        paperWorkflowIdentifier = try container.decodeIfPresent(String.self, forKey: .paperWorkflowIdentifier) ?? "overleaf-bridge.yml"
+        paperRepositoryRef = try container.decodeIfPresent(String.self, forKey: .paperRepositoryRef) ?? "main"
+        paperOverleafProjectID = try container.decodeIfPresent(String.self, forKey: .paperOverleafProjectID) ?? ""
+        paperArtifactName = try container.decodeIfPresent(String.self, forKey: .paperArtifactName) ?? "paper-output"
+        paperMainTeXPath = try container.decodeIfPresent(String.self, forKey: .paperMainTeXPath) ?? "main.tex"
+        paperLastRunID = try container.decodeIfPresent(Int.self, forKey: .paperLastRunID)
+        mindDeclutterEnabled = try container.decodeIfPresent(Bool.self, forKey: .mindDeclutterEnabled) ?? false
+        mindDeclutterInboxText = try container.decodeIfPresent(String.self, forKey: .mindDeclutterInboxText) ?? ""
+        mindDeclutterFocusText = try container.decodeIfPresent(String.self, forKey: .mindDeclutterFocusText) ?? ""
+        mindDeclutterSessionEndsAt = try container.decodeIfPresent(Date.self, forKey: .mindDeclutterSessionEndsAt)
+        mindDeclutterSessionMinutes = try container.decodeIfPresent(Int.self, forKey: .mindDeclutterSessionMinutes) ?? 30
+    }
+
+    public func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(hasCompletedOnboarding, forKey: .hasCompletedOnboarding)
+        try container.encodeIfPresent(selectedHomeID, forKey: .selectedHomeID)
+        try container.encode(selectedHomeName, forKey: .selectedHomeName)
+        try container.encode(defaultRoomName, forKey: .defaultRoomName)
+        try container.encode(preferredSpeakerName, forKey: .preferredSpeakerName)
+        try container.encode(spotifyClientID, forKey: .spotifyClientID)
+        try container.encode(openAIKeyServiceName, forKey: .openAIKeyServiceName)
+        try container.encode(preferredMoodPreset, forKey: .preferredMoodPreset)
+        try container.encode(githubTokenServiceName, forKey: .githubTokenServiceName)
+        try container.encode(paperRepositoryOwner, forKey: .paperRepositoryOwner)
+        try container.encode(paperRepositoryName, forKey: .paperRepositoryName)
+        try container.encode(paperWorkflowIdentifier, forKey: .paperWorkflowIdentifier)
+        try container.encode(paperRepositoryRef, forKey: .paperRepositoryRef)
+        try container.encode(paperOverleafProjectID, forKey: .paperOverleafProjectID)
+        try container.encode(paperArtifactName, forKey: .paperArtifactName)
+        try container.encode(paperMainTeXPath, forKey: .paperMainTeXPath)
+        try container.encodeIfPresent(paperLastRunID, forKey: .paperLastRunID)
+        try container.encode(mindDeclutterEnabled, forKey: .mindDeclutterEnabled)
+        try container.encode(mindDeclutterInboxText, forKey: .mindDeclutterInboxText)
+        try container.encode(mindDeclutterFocusText, forKey: .mindDeclutterFocusText)
+        try container.encodeIfPresent(mindDeclutterSessionEndsAt, forKey: .mindDeclutterSessionEndsAt)
+        try container.encode(mindDeclutterSessionMinutes, forKey: .mindDeclutterSessionMinutes)
     }
 }
 

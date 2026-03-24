@@ -7,6 +7,7 @@ public final class SharedStore: @unchecked Sendable {
         static let snapshot = "widget.snapshot"
         static let settings = "app.settings"
         static let pendingActions = "widget.pending-actions"
+        static let contextLibrary = "context.library"
     }
 
     private let defaults: UserDefaults
@@ -39,6 +40,14 @@ public final class SharedStore: @unchecked Sendable {
 
     public func saveSettings(_ settings: AppSettings) {
         encode(settings, forKey: Keys.settings)
+    }
+
+    public func loadContextLibrary() -> ContextLibrarySnapshot {
+        decode(ContextLibrarySnapshot.self, forKey: Keys.contextLibrary) ?? ContextLibrarySnapshot()
+    }
+
+    public func saveContextLibrary(_ library: ContextLibrarySnapshot) {
+        encode(library, forKey: Keys.contextLibrary)
     }
 
     public func enqueue(action: QueuedWidgetAction) {
