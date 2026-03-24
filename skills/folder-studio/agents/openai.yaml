@@ -1,0 +1,7 @@
+interface:
+  display_name: "Folder Studio"
+  short_description: "Context-aware Finder folder skins and icon workflows"
+  icon_small: "./assets/folder-studio-small.svg"
+  icon_large: "./assets/folder-studio-large.svg"
+  brand_color: "#4C9E5A"
+  default_prompt: "Use $folder-studio to inspect this Folder Studio workspace, keep the menu bar UX compact and professional, and help me ship a polished Finder folder-skin workflow."

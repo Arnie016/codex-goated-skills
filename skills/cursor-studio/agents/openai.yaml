@@ -1,0 +1,7 @@
+interface:
+  display_name: "Cursor Studio"
+  short_description: "Preset-driven cursor pack workflows for macOS"
+  icon_small: "./assets/cursor-studio-small.svg"
+  icon_large: "./assets/cursor-studio-large.svg"
+  brand_color: "#4F86FF"
+  default_prompt: "Use $cursor-studio to inspect this Cursor Studio workspace, keep the menu bar UX compact and professional, and help me ship a polished cursor-pack workflow."
