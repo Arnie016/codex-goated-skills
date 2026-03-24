@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert a PDF or document into a dark-background PDF."""
+"""Convert a PDF, document, or image into a dark-background PDF."""
 
 from __future__ import annotations
 
@@ -9,6 +9,7 @@ import io
 import shutil
 import subprocess
 import tempfile
+import textwrap
 from pathlib import Path
 from typing import Dict, Iterable, Tuple
 
@@ -28,13 +29,14 @@ THEMES: Dict[str, Dict[str, Tuple[int, int, int]]] = {
     },
 }
 
-DOC_EXTENSIONS = {".doc", ".docx", ".rtf", ".odt", ".txt", ".md", ".html", ".htm"}
-IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff", ".bmp"}
+DOCUMENT_EXTENSIONS = {".doc", ".docx", ".rtf", ".odt", ".txt", ".md", ".html", ".htm"}
+TEXT_LIKE_EXTENSIONS = {".txt", ".md"}
+IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff", ".bmp", ".gif", ".heic"}
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Convert a PDF or document into a dark-background PDF."
+        description="Convert a PDF, document, or image into a dark-background PDF."
     )
     parser.add_argument("--input", required=True, help="Input PDF, document, or image path.")
     parser.add_argument("--output", required=True, help="Output dark PDF path.")
@@ -60,9 +62,9 @@ def require_module(name: str, package_hint: str):
         raise SystemExit(f"{name} is required. Install {package_hint} and retry.") from exc
 
 
-def run_command(args: Iterable[str]) -> None:
+def run_command(args: Iterable[str]) -> subprocess.CompletedProcess[bytes]:
     try:
-        subprocess.run(list(args), check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return subprocess.run(list(args), check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     except subprocess.CalledProcessError as exc:
         stderr = exc.stderr.decode("utf-8", errors="ignore").strip()
         raise SystemExit(stderr or f"Command failed: {' '.join(args)}") from exc
@@ -74,21 +76,79 @@ def normalize_to_pdf(input_path: Path, temp_dir: Path) -> Path:
     if suffix == ".pdf":
         return input_path
 
-    if suffix in DOC_EXTENSIONS:
-        soffice = shutil.which("soffice") or shutil.which("libreoffice")
-        if not soffice:
-            raise SystemExit("LibreOffice (`soffice`) is required to convert document inputs into PDF.")
-
-        run_command([soffice, "--headless", "--convert-to", "pdf", "--outdir", str(temp_dir), str(input_path)])
-        converted = temp_dir / f"{input_path.stem}.pdf"
-        if not converted.exists():
-            raise SystemExit("Document conversion finished without producing a PDF.")
-        return converted
-
     if suffix in IMAGE_EXTENSIONS:
         return image_to_pdf(input_path, temp_dir)
 
+    if suffix in DOCUMENT_EXTENSIONS:
+        return document_to_pdf(input_path, temp_dir)
+
     raise SystemExit(f"Unsupported input type: {input_path.suffix or 'no extension'}")
+
+
+def document_to_pdf(input_path: Path, temp_dir: Path) -> Path:
+    text = extract_text_from_document(input_path)
+    out_path = temp_dir / f"{input_path.stem}-normalized.pdf"
+    text_to_pdf(text, out_path)
+    return out_path
+
+
+def extract_text_from_document(input_path: Path) -> str:
+    suffix = input_path.suffix.lower()
+
+    if suffix in TEXT_LIKE_EXTENSIONS:
+        return input_path.read_text(encoding="utf-8", errors="ignore")
+
+    textutil = shutil.which("textutil")
+    if textutil:
+        result = run_command([textutil, "-convert", "txt", "-stdout", str(input_path)])
+        return result.stdout.decode("utf-8", errors="ignore")
+
+    soffice = shutil.which("soffice") or shutil.which("libreoffice")
+    if soffice:
+        with tempfile.TemporaryDirectory(prefix="dark-pdf-doc-") as temp_dir_str:
+            temp_dir = Path(temp_dir_str)
+            run_command([soffice, "--headless", "--convert-to", "txt:Text", "--outdir", str(temp_dir), str(input_path)])
+            converted = temp_dir / f"{input_path.stem}.txt"
+            if converted.exists():
+                return converted.read_text(encoding="utf-8", errors="ignore")
+
+    raise SystemExit("Document conversion needs macOS textutil or LibreOffice.")
+
+
+def text_to_pdf(text: str, out_path: Path) -> None:
+    fitz = require_module("fitz", "PyMuPDF")
+
+    pdf = fitz.open()
+    page_width = 612
+    page_height = 792
+    margin = 54
+    line_height = 15
+    wrap_width = 88
+    max_lines_per_page = int((page_height - margin * 2) / line_height)
+
+    paragraphs = text.replace("\r\n", "\n").split("\n")
+    lines = []
+
+    for paragraph in paragraphs:
+        stripped = paragraph.strip()
+        if not stripped:
+            lines.append("")
+            continue
+        wrapped = textwrap.wrap(stripped, width=wrap_width, break_long_words=False, replace_whitespace=False)
+        lines.extend(wrapped or [""])
+
+    if not lines:
+        lines = [""]
+
+    for start_index in range(0, len(lines), max_lines_per_page):
+        page = pdf.new_page(width=page_width, height=page_height)
+        y = margin
+        for line in lines[start_index:start_index + max_lines_per_page]:
+            page.insert_text((margin, y), line, fontsize=11, fontname="helv", color=(0, 0, 0))
+            y += line_height
+
+    pdf.save(out_path)
+    pdf.close()
 
 
 def image_to_pdf(input_path: Path, temp_dir: Path) -> Path:

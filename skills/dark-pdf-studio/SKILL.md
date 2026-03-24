@@ -1,6 +1,6 @@
 ---
 name: dark-pdf-studio
-description: Convert PDFs and document files into dark-background reading PDFs with a very simple input-to-output workflow. Use when Codex needs to dark-theme a PDF, normalize a doc into PDF first, build or refine a tiny dark-mode export utility, or troubleshoot a dark PDF conversion flow with downloadable output.
+description: Convert PDFs, document files, or images into dark-background reading PDFs with a compact input-to-output workflow. Use when Codex needs to dark-theme a PDF, normalize docs or images into a dark PDF, build or refine a tiny dark-mode export utility, or troubleshoot a dark PDF conversion flow with downloadable output.
 ---
 
 # Dark PDF Studio
@@ -12,11 +12,12 @@ Use this skill when the user wants a simple dark-PDF workflow: one input file, o
 1. Prefer PDF input for layout fidelity.
 2. Run `python3 scripts/dark_pdf.py --input input.pdf --output output-dark.pdf`.
 3. Use `--theme graphite`, `--theme midnight`, or `--theme navy` for the background tone.
-4. For document inputs such as `.docx` or `.rtf`, let the script normalize them to PDF first if LibreOffice is available.
-5. If the user wants a small app, keep the UI to:
-   - choose file
-   - dark theme toggle
+4. For document inputs such as `.docx` or `.rtf`, let the script normalize them through `textutil` first on macOS, or LibreOffice when needed.
+5. If the user wants a small app, keep the UI compact:
+   - choose or drop one file
+   - pick one dark theme
    - export
+   - open or reveal output only after export exists
 
 ## Workflow
 
@@ -31,7 +32,8 @@ Use this skill when the user wants a simple dark-PDF workflow: one input file, o
   - `.txt`
   - `.md`
   - `.html`
-  - common images
+  - `.htm`
+  - common images including `.png`, `.jpg`, `.webp`, `.gif`, `.heic`
 - Prefer converting non-PDF documents into PDF before dark processing so the export contract stays consistent.
 
 ### Output Rules
@@ -41,6 +43,12 @@ Use this skill when the user wants a simple dark-PDF workflow: one input file, o
   - one input
   - one output
   - one theme choice
+- Prefer an essentials-only utility surface:
+  - compact header
+  - source picker / drop target
+  - theme picker
+  - export button
+  - open / reveal only when there is output
 - Treat “downloadable” as a local exported file path that can be opened or shared immediately.
 
 ### Editing Guidance
@@ -48,6 +56,7 @@ Use this skill when the user wants a simple dark-PDF workflow: one input file, o
 - Use `scripts/dark_pdf.py` for the actual conversion path.
 - Keep the conversion deterministic and easy to explain.
 - If a document backend is missing, fail with a clear dependency message instead of pretending the conversion succeeded.
+- Prefer `textutil` on macOS for document-to-text normalization before falling back to LibreOffice.
 - Prefer readable high-contrast results over preserving every original page color exactly.
 
 ### Validation

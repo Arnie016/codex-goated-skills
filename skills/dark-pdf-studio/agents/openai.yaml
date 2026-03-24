@@ -1,7 +1,7 @@
 interface:
   display_name: "Dark PDF Studio"
-  short_description: "Simple dark-background PDF conversion workflows"
+  short_description: "Compact dark-background PDF conversion for PDFs, docs, and images"
   icon_small: "./assets/dark-pdf-studio-small.svg"
   icon_large: "./assets/dark-pdf-studio-large.svg"
   brand_color: "#1D2738"
-  default_prompt: "Use $dark-pdf-studio to convert this file into a clean dark-background PDF, keep the workflow simple, and make sure the exported output is easy to open or share."
+  default_prompt: "Use $dark-pdf-studio to convert this file into a clean dark-background PDF, keep the workflow compact and essential, and make sure the exported output is easy to open or share."
