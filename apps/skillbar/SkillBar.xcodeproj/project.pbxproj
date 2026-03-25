@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		33DE6E7AA68F2F63B4923E05 /* SkillBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC86BC8FCFB8C59CF1B7B00A /* SkillBarApp.swift */; };
+		3D4F6CA9A79DFA8291B21BF0 /* SkillInstallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0DA178C284880A2BD6C177 /* SkillInstallService.swift */; };
+		83714BEA5FD3FDE6C82AC1C8 /* SkillCatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BD951407EF211E3013521 /* SkillCatalogService.swift */; };
+		9752ADC43BC4065CD3108EC1 /* SkillBarMenuIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83236329939A8B4800A512F8 /* SkillBarMenuIcon.swift */; };
+		AF54E6B2F8418870D4A59D6A /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260808DE5C9D6B45AF067E7 /* MenuBarView.swift */; };
+		B11F6799AA33FCC9EA5915C7 /* SkillCatalogServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFA8B0A7C98086A487F30A7 /* SkillCatalogServiceTests.swift */; };
+		B660092B5DE13BD4F62E452F /* SkillBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9201976EED81F8C57512D6 /* SkillBarModel.swift */; };
+		BCCF37FF778D9BAA9C5AA791 /* SkillBarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B942198495C4CB5837281C4 /* SkillBarModels.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B9330220F084CF6557BA2329 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 703A661DAB507429457C7D89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF272BB565A7C20E625101E8;
+			remoteInfo = SkillBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0550F055EC22DB6CFA47432D /* SkillBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1260808DE5C9D6B45AF067E7 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		3B942198495C4CB5837281C4 /* SkillBarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillBarModels.swift; sourceTree = "<group>"; };
+		4E0DA178C284880A2BD6C177 /* SkillInstallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillInstallService.swift; sourceTree = "<group>"; };
+		789E04FC9258A9FA0B80DF0D /* SkillBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83236329939A8B4800A512F8 /* SkillBarMenuIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillBarMenuIcon.swift; sourceTree = "<group>"; };
+		951BD951407EF211E3013521 /* SkillCatalogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCatalogService.swift; sourceTree = "<group>"; };
+		BC86BC8FCFB8C59CF1B7B00A /* SkillBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillBarApp.swift; sourceTree = "<group>"; };
+		DDFA8B0A7C98086A487F30A7 /* SkillCatalogServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCatalogServiceTests.swift; sourceTree = "<group>"; };
+		FB9201976EED81F8C57512D6 /* SkillBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillBarModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		00E72EB7C08C960F4B2B3E08 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				44E2885BDEDEDF8A70839537 /* App */,
+				7A98C0515E6D6BB46320A76D /* Models */,
+				94D053BAF15EAB7F0A2E16EB /* Services */,
+				DAC52F240E608B6A64BF4889 /* Views */,
+			);
+			name = Sources;
+			path = SkillBarApp/Sources;
+			sourceTree = "<group>";
+		};
+		1599E0982DFEE85098776169 = {
+			isa = PBXGroup;
+			children = (
+				00E72EB7C08C960F4B2B3E08 /* Sources */,
+				684E9625331543A1518FBFA4 /* Tests */,
+				C67EBD6E5A2205828609E90A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		44E2885BDEDEDF8A70839537 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BC86BC8FCFB8C59CF1B7B00A /* SkillBarApp.swift */,
+				FB9201976EED81F8C57512D6 /* SkillBarModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		684E9625331543A1518FBFA4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DDFA8B0A7C98086A487F30A7 /* SkillCatalogServiceTests.swift */,
+			);
+			name = Tests;
+			path = SkillBarApp/Tests;
+			sourceTree = "<group>";
+		};
+		7A98C0515E6D6BB46320A76D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3B942198495C4CB5837281C4 /* SkillBarModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		94D053BAF15EAB7F0A2E16EB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				951BD951407EF211E3013521 /* SkillCatalogService.swift */,
+				4E0DA178C284880A2BD6C177 /* SkillInstallService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C67EBD6E5A2205828609E90A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0550F055EC22DB6CFA47432D /* SkillBar.app */,
+				789E04FC9258A9FA0B80DF0D /* SkillBarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAC52F240E608B6A64BF4889 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1260808DE5C9D6B45AF067E7 /* MenuBarView.swift */,
+				83236329939A8B4800A512F8 /* SkillBarMenuIcon.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B1D5013C1EA09EAA36016115 /* SkillBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BDD3B95CF079D85498E60AB /* Build configuration list for PBXNativeTarget "SkillBarTests" */;
+			buildPhases = (
+				25BE9AAA73B7756321CFBB25 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6823A216F73CCA23E2FE0F26 /* PBXTargetDependency */,
+			);
+			name = SkillBarTests;
+			packageProductDependencies = (
+			);
+			productName = SkillBarTests;
+			productReference = 789E04FC9258A9FA0B80DF0D /* SkillBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DF272BB565A7C20E625101E8 /* SkillBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70CD988AFBF0C3E43CE558E7 /* Build configuration list for PBXNativeTarget "SkillBar" */;
+			buildPhases = (
+				0A2FBFD8336B8C800AB20AC8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkillBar;
+			packageProductDependencies = (
+			);
+			productName = SkillBar;
+			productReference = 0550F055EC22DB6CFA47432D /* SkillBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		703A661DAB507429457C7D89 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					B1D5013C1EA09EAA36016115 = {
+						ProvisioningStyle = Automatic;
+					};
+					DF272BB565A7C20E625101E8 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6D19BA97ADF6C03604612E29 /* Build configuration list for PBXProject "SkillBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 1599E0982DFEE85098776169;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C67EBD6E5A2205828609E90A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF272BB565A7C20E625101E8 /* SkillBar */,
+				B1D5013C1EA09EAA36016115 /* SkillBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A2FBFD8336B8C800AB20AC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF54E6B2F8418870D4A59D6A /* MenuBarView.swift in Sources */,
+				33DE6E7AA68F2F63B4923E05 /* SkillBarApp.swift in Sources */,
+				9752ADC43BC4065CD3108EC1 /* SkillBarMenuIcon.swift in Sources */,
+				B660092B5DE13BD4F62E452F /* SkillBarModel.swift in Sources */,
+				BCCF37FF778D9BAA9C5AA791 /* SkillBarModels.swift in Sources */,
+				83714BEA5FD3FDE6C82AC1C8 /* SkillCatalogService.swift in Sources */,
+				3D4F6CA9A79DFA8291B21BF0 /* SkillInstallService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25BE9AAA73B7756321CFBB25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B11F6799AA33FCC9EA5915C7 /* SkillCatalogServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6823A216F73CCA23E2FE0F26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF272BB565A7C20E625101E8 /* SkillBar */;
+			targetProxy = B9330220F084CF6557BA2329 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2D3F69C33B6CCC0C608197AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SkillBarApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.SkillBar;
+				PRODUCT_MODULE_NAME = SkillBar;
+				PRODUCT_NAME = SkillBar;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3EEF9CE41CE868F4C54A8239 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.SkillBarTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkillBar.app/Contents/MacOS/SkillBar";
+			};
+			name = Debug;
+		};
+		56F9DE9662A2CC20E29ADED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		5D1DD16BDC956166FB904B4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.SkillBarTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkillBar.app/Contents/MacOS/SkillBar";
+			};
+			name = Release;
+		};
+		86B4A39BFE3A247587A4BC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		FAB39CBEBF199FB2343A3709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SkillBarApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.SkillBar;
+				PRODUCT_MODULE_NAME = SkillBar;
+				PRODUCT_NAME = SkillBar;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BDD3B95CF079D85498E60AB /* Build configuration list for PBXNativeTarget "SkillBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EEF9CE41CE868F4C54A8239 /* Debug */,
+				5D1DD16BDC956166FB904B4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6D19BA97ADF6C03604612E29 /* Build configuration list for PBXProject "SkillBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86B4A39BFE3A247587A4BC88 /* Debug */,
+				56F9DE9662A2CC20E29ADED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		70CD988AFBF0C3E43CE558E7 /* Build configuration list for PBXNativeTarget "SkillBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAB39CBEBF199FB2343A3709 /* Debug */,
+				2D3F69C33B6CCC0C608197AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 703A661DAB507429457C7D89 /* Project object */;
+}

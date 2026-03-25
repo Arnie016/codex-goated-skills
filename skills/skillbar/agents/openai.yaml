@@ -1,0 +1,7 @@
+interface:
+  display_name: "SkillBar"
+  short_description: "Build and refine the goated skills menu bar manager"
+  icon_small: "./assets/skillbar-small.svg"
+  icon_large: "./assets/skillbar-large.svg"
+  brand_color: "#8AB6FF"
+  default_prompt: "Use $skillbar to work on SkillBar, the macOS menu bar manager for codex-goated-skills, including the catalog UI, preset bundles, metadata parsing, and install or update flows."
