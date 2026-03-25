@@ -1,6 +1,6 @@
 # codex-goated-skills
 
-Community Codex skills and apps for macOS, automation, deployment, design, networking, PDFs, slides, and developer workflows.
+Community Codex skills and apps for macOS, automation, deployment, design, networking, PDFs, slides, developer workflows, and personality-led audience strategy.
 
 Install by name, browse by use case, or pull the full pack when you want a broader toolbox.
 
@@ -9,6 +9,7 @@ Install by name, browse by use case, or pull the full pack when you want a broad
 [![License: MIT](https://img.shields.io/badge/license-MIT-111827?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/LICENSE)
 [![Install All](https://img.shields.io/badge/install-all_skills-0f172a?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-all-skills.sh)
 [![Install By Name](https://img.shields.io/badge/install-by_name-1d4ed8?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-skill.sh)
+[![Install Fandom Pack](https://img.shields.io/badge/install-fandom_pack-e76f51?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-fandom-pack.sh)
 
 ## Install
 
@@ -31,6 +32,7 @@ codex-goated install find-my-phone-studio
 codex-goated install cursor-studio
 codex-goated install folder-studio
 codex-goated install dark-pdf-studio
+codex-goated install fan-canon-miner comment-pulse-board iconography-lab
 codex-goated install --all
 codex-goated update vibe-bluetooth
 ```
@@ -39,6 +41,12 @@ Raw script fallback:
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-skill.sh) network-studio
+```
+
+Install the fandom pack:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-fandom-pack.sh)
 ```
 
 Then restart Codex.
@@ -53,6 +61,7 @@ Then restart Codex.
 - Fix the blocker first with `workspace-doctor`
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
 - Build a utility with `network-studio`, `find-my-phone-studio`, or `clipboard-studio`
+- Build a personality-led audience strategy stack with the [`Fandom Skill Pack`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/fandom-skill-pack.md)
 - Manage the whole pack from the top bar with `skillbar`
 - Create polished outputs with `dark-pdf-studio` and `deckdrop-studio`
 
@@ -61,6 +70,7 @@ Then restart Codex.
 Browse by use case:
 [Launch and Distribution](#launch-and-distribution) ·
 [Productivity and Workflow](#productivity-and-workflow) ·
+[Audience and Fandom Strategy](#audience-and-fandom-strategy) ·
 [macOS Utility Builders](#macos-utility-builders) ·
 [App-Specific Skills](#app-specific-skills) ·
 [Games and Minecraft](#games-and-minecraft)
@@ -84,6 +94,24 @@ Browse by use case:
 | <img src="skills/network-studio/assets/network-studio-small.svg" width="26" alt="Network Studio" /><br/>[`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio) | macOS LAN monitor with SwiftBar and a dashboard | `network-studio` |
 | <img src="skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg" width="26" alt="Dark PDF Studio" /><br/>[`dark-pdf-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/dark-pdf-studio) | Converts PDFs, docs, and images into dark-background reading PDFs with a compact export flow | `dark-pdf-studio` |
 | <img src="skills/deckdrop-studio/assets/deckdrop-studio-small.svg" width="26" alt="Deckdrop Studio" /><br/>[`deckdrop-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/deckdrop-studio) | Builds and refines editable slide deck workflows for mixed-source inputs | `deckdrop-studio` |
+
+### Audience and Fandom Strategy
+
+Collection:
+[`Fandom Skill Pack`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/fandom-skill-pack.md)
+
+| Skill | What it does | Install name |
+| --- | --- | --- |
+| <img src="skills/fan-canon-miner/assets/icon-small.svg" width="26" alt="Fan Canon Miner" /><br/>[`fan-canon-miner`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/fan-canon-miner) | Mines comments, interviews, captions, and fan chatter into a usable canon map | `fan-canon-miner` |
+| <img src="skills/comment-pulse-board/assets/icon-small.svg" width="26" alt="Comment Pulse Board" /><br/>[`comment-pulse-board`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/comment-pulse-board) | Clusters obsession points, recurring questions, sentiment shifts, and backlash signals | `comment-pulse-board` |
+| <img src="skills/clip-to-canon-finder/assets/icon-small.svg" width="26" alt="Clip To Canon Finder" /><br/>[`clip-to-canon-finder`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clip-to-canon-finder) | Scores clips, transcripts, and reactions to find moments that deserve repeat canon | `clip-to-canon-finder` |
+| <img src="skills/iconography-lab/assets/icon-small.svg" width="26" alt="Iconography Lab" /><br/>[`iconography-lab`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/iconography-lab) | Defines the recognizable visual and verbal codes of a personality-led brand | `iconography-lab` |
+| <img src="skills/ritual-engine/assets/icon-small.svg" width="26" alt="Ritual Engine" /><br/>[`ritual-engine`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/ritual-engine) | Designs repeatable fan rituals, loops, naming systems, and recurring formats | `ritual-engine` |
+| <img src="skills/parasocial-studio/assets/icon-small.svg" width="26" alt="Parasocial Studio" /><br/>[`parasocial-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/parasocial-studio) | Shapes safe closeness mechanics and recurring relationship touchpoints | `parasocial-studio` |
+| <img src="skills/lore-drop-planner/assets/icon-small.svg" width="26" alt="Lore Drop Planner" /><br/>[`lore-drop-planner`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/lore-drop-planner) | Plans episodic reveals, callbacks, teasers, and payoff arcs | `lore-drop-planner` |
+| <img src="skills/inner-circle-director/assets/icon-small.svg" width="26" alt="Inner Circle Director" /><br/>[`inner-circle-director`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/inner-circle-director) | Structures tiered access, VIP mechanics, and premium community experiences | `inner-circle-director` |
+| <img src="skills/myth-merch-studio/assets/icon-small.svg" width="26" alt="Myth Merch Studio" /><br/>[`myth-merch-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/myth-merch-studio) | Turns symbols, phrases, and fandom lore into merch and collectible concepts | `myth-merch-studio` |
+| <img src="skills/reputation-heatmap/assets/icon-small.svg" width="26" alt="Reputation Heatmap" /><br/>[`reputation-heatmap`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/reputation-heatmap) | Separates healthy mystique from rumor, overreach, parasocial risk, or brand harm | `reputation-heatmap` |
 
 ### macOS Utility Builders
 
