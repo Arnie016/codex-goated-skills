@@ -6,19 +6,21 @@ Developers, founders, operators, and solo builders who want to measure a real ou
 
 ## Inputs
 
+- repo path plus baseline and current git windows when the user wants commit-backed measurement
 - baseline output total and baseline duration
 - current output total and current duration
 - goal multiplier such as `90x`
-- metric definition such as merged PRs, files shipped, weighted output score, or lines changed
+- metric definition such as git commits, lines changed, files changed, weighted output score, or active days
 - notes on drivers such as GStack, better prompts, team support, or cleaner workflow loops
 - optional checkpoints to show how the multiplier is changing over time
 
 ## Input To Output Flow
 
 1. Confirm one consistent metric definition across the baseline and current periods.
-2. Normalize both periods into per-day or per-week rates.
-3. Calculate the current multiplier and target progress.
-4. Export a gain scorecard with the math, the narrative, and the next checkpoint.
+2. If a repo is available, pull git stats first and let the user choose `commits`, `lines-changed`, `files-changed`, or `active-days`.
+3. Normalize both periods into per-day or per-week rates.
+4. Calculate the current multiplier and target progress.
+5. Export a gain scorecard with the math, the narrative, and the next checkpoint.
 
 ## Artifact Template
 
@@ -45,13 +47,13 @@ Required sections:
 
 ## First Run UX
 
-Ask for the metric definition, the baseline total plus duration, the current total plus duration, and the target multiplier. The first screen should explain that a valid gain score depends on consistent metrics across both periods.
+Ask for the metric definition, the baseline and current windows, and the target multiplier. If the user points at a repo, offer a git-backed mode before asking them to type totals manually.
 
 ## States
 
 ### Empty
 
-Show a simple baseline card with examples such as 2013 output totals, last-80-days totals, and a target like `90x`, plus one primary action: Set Baseline.
+Show a simple baseline card with examples such as 2013 commit totals, last-80-days commit totals, and a target like `90x`, plus one primary action: Set Baseline.
 
 ### Loading
 

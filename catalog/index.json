@@ -194,15 +194,15 @@
     {
       "id": "gain-tracker",
       "display_name": "Gain Tracker",
-      "description": "Track output gains against a historical baseline and a target multiplier, then turn the numbers into a gain scorecard. Use when Codex needs to measure current pace, compare it to an older baseline like 2013, credit the systems driving the lift such as GStack, and show progress toward a goal like 90x.",
-      "short_description": "Track output gains against a baseline and goal",
+      "description": "Track git-commit or output gains against a historical baseline and a target multiplier, then turn the numbers into a gain scorecard. Use when Codex needs to measure current pace, compare it to an older baseline like 2013, credit the systems driving the lift such as GStack, and show progress toward a goal like 90x.",
+      "short_description": "Track git or output gains against a baseline and goal",
       "brand_color": "#0F9D58",
       "path": "skills/gain-tracker",
       "skill_file": "skills/gain-tracker/SKILL.md",
       "openai_yaml": "skills/gain-tracker/agents/openai.yaml",
       "icon_small": "./assets/icon-small.svg",
       "icon_large": "./assets/icon-large.svg",
-      "default_prompt": "Use $gain-tracker to compare my current output against a historical baseline, calculate the multiplier, and turn it into a gain scorecard with progress toward my target.",
+      "default_prompt": "Use $gain-tracker to compare my git commits or output against a historical baseline, calculate the multiplier, and turn it into a gain scorecard with progress toward my target.",
       "packs": [
         "productivity-and-workflow"
       ]
