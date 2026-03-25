@@ -1,4 +1,7 @@
 interface:
   display_name: "Find My Phone Studio"
-  short_description: "macOS menu bar helper for iPhone or Android locate and ring flows"
+  short_description: "macOS helper for iPhone or Android locate and ring flows"
+  icon_small: "./assets/find-my-phone-studio-small.svg"
+  icon_large: "./assets/find-my-phone-studio-large.svg"
+  brand_color: "#3B82F6"
   default_prompt: "Use $find-my-phone-studio to design or build a realistic macOS menu bar app or helper that helps me find my iPhone or Android phone, open its location fast, trigger a ring, and include a clear Quit action."

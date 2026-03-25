@@ -36,6 +36,7 @@ codex-goated install folder-studio
 codex-goated install dark-pdf-studio
 codex-goated install fan-canon-miner comment-pulse-board iconography-lab
 codex-goated search minecraft
+codex-goated catalog check
 codex-goated audit
 codex-goated pack list
 codex-goated pack show fandom-skill-pack
@@ -69,8 +70,20 @@ Then restart Codex.
 
 - Browse all use-case packs in [`collections/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
 - Browse the full audited skill catalog in [`catalog/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/catalog/README.md)
+- Use the machine-readable index at [`catalog/index.json`](https://github.com/Arnie016/codex-goated-skills/blob/main/catalog/index.json)
 - Use `codex-goated search <query>` when you know the problem but not the skill name yet
+- Use `codex-goated catalog check` to confirm the generated catalog is current
 - Use `codex-goated audit` to validate the skill packages and pack coverage locally
+
+## Popular Packs
+
+| Use case | Pack | Install command |
+| --- | --- | --- |
+| Launch a project cleanly | `launch-and-distribution` | `codex-goated pack install launch-and-distribution` |
+| Build out creator and fandom strategy | `creator-and-fandom-stack` | `codex-goated pack install creator-and-fandom-stack` |
+| Install only the personality-led audience suite | `fandom-skill-pack` | `codex-goated pack install fandom-skill-pack` |
+| Build focused Mac utilities | `macos-utility-builders` | `codex-goated pack install macos-utility-builders` |
+| Pull the workflow and local tooling stack | `productivity-and-workflow` | `codex-goated pack install productivity-and-workflow` |
 
 ## Start Here
 

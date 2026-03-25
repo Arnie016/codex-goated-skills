@@ -17,6 +17,8 @@ Usage:
   $SELF_NAME update --all [--dest PATH] [--repo-dir PATH] [--repo-url URL]
   $SELF_NAME search [--repo-dir PATH] [--repo-url URL] <query>
   $SELF_NAME audit [--repo-dir PATH] [--repo-url URL]
+  $SELF_NAME catalog build [--repo-dir PATH] [--output PATH]
+  $SELF_NAME catalog check [--repo-dir PATH] [--output PATH]
   $SELF_NAME pack list [--repo-dir PATH] [--repo-url URL]
   $SELF_NAME pack show [--repo-dir PATH] [--repo-url URL] <pack-name>
   $SELF_NAME pack install [--dest PATH] [--repo-dir PATH] [--repo-url URL] <pack-name>
@@ -30,6 +32,7 @@ Examples:
   $SELF_NAME update network-studio
   $SELF_NAME search fandom
   $SELF_NAME audit
+  $SELF_NAME catalog check
   $SELF_NAME pack list
   $SELF_NAME pack install fandom-skill-pack
 EOF
@@ -86,6 +89,40 @@ skill_description() {
   local skill_file="$REPO_DIR/skills/$skill_name/SKILL.md"
   [[ -f "$skill_file" ]] || return 0
   sed -n 's/^description: //p' "$skill_file" | head -n 1 | sed 's/^"//; s/"$//'
+}
+
+frontmatter_value() {
+  local file_path="$1"
+  local key="$2"
+  [[ -f "$file_path" ]] || return 0
+  awk -v key="$key" '
+    NR == 1 && $0 == "---" { in_frontmatter = 1; next }
+    in_frontmatter && $0 == "---" { exit }
+    in_frontmatter && $0 ~ ("^" key ":") {
+      sub("^" key ":[[:space:]]*", "", $0)
+      gsub(/^"/, "", $0)
+      gsub(/"$/, "", $0)
+      print
+      exit
+    }
+  ' "$file_path"
+}
+
+interface_value() {
+  local file_path="$1"
+  local key="$2"
+  [[ -f "$file_path" ]] || return 0
+  sed -n "s/^[[:space:]]*$key:[[:space:]]*//p" "$file_path" | head -n 1 | sed "s/^['\"]//; s/['\"]$//"
+}
+
+resolve_skill_asset_path() {
+  local skill_dir="$1"
+  local asset_ref="$2"
+  if [[ "$asset_ref" == ./* ]]; then
+    printf '%s/%s\n' "$skill_dir" "${asset_ref#./}"
+  else
+    printf '%s/%s\n' "$skill_dir" "$asset_ref"
+  fi
 }
 
 pack_file_path() {
@@ -162,6 +199,27 @@ show_pack() {
   done < <(read_pack_skills "$pack_name")
 }
 
+run_catalog_builder() {
+  local mode="$1"
+  local script_path
+  ensure_repo_dir
+  script_path="$REPO_DIR/scripts/build-catalog.py"
+  [[ -f "$script_path" ]] || die "Missing catalog builder: $script_path"
+  command -v python3 >/dev/null 2>&1 || die "python3 is required."
+
+  case "$mode" in
+    build)
+      python3 "$script_path" --repo-dir "$REPO_DIR" "${CATALOG_ARGS[@]}"
+      ;;
+    check)
+      python3 "$script_path" --repo-dir "$REPO_DIR" --check "${CATALOG_ARGS[@]}"
+      ;;
+    *)
+      die "Unknown catalog mode: $mode"
+      ;;
+  esac
+}
+
 search_catalog() {
   local query="$*"
   local pack_file pack_name title summary skill_name desc haystack found_pack=0 found_skill=0
@@ -208,8 +266,12 @@ search_catalog() {
 
 audit_repo() {
   local skill_dir skill_name missing small_icon large_icon
-  local pack_file pack_name pack_skill
-  local skill_count=0 package_issue_count=0 pack_count=0 pack_issue_count=0 uncovered_count=0
+  local skill_file openai_file frontmatter_name frontmatter_desc
+  local display_name short_desc icon_small_ref icon_large_ref brand_color default_prompt
+  local icon_small_path icon_large_path
+  local pack_file pack_name pack_skill pack_title pack_summary seen_pack_skills
+  local catalog_issue_count=0
+  local skill_count=0 package_issue_count=0 metadata_issue_count=0 pack_count=0 pack_issue_count=0 uncovered_count=0
   local all_skills_file packed_skills_file uncovered_file
 
   ensure_repo_dir
@@ -220,12 +282,14 @@ audit_repo() {
   for skill_dir in "$REPO_DIR/skills"/*; do
     [[ -d "$skill_dir" ]] || continue
     skill_name="$(basename "$skill_dir")"
+    skill_file="$skill_dir/SKILL.md"
+    openai_file="$skill_dir/agents/openai.yaml"
     skill_count=$((skill_count + 1))
     printf '%s\n' "$skill_name" >> "$all_skills_file"
     missing=""
 
-    [[ -f "$skill_dir/SKILL.md" ]] || missing="$missing SKILL.md"
-    [[ -f "$skill_dir/agents/openai.yaml" ]] || missing="$missing agents/openai.yaml"
+    [[ -f "$skill_file" ]] || missing="$missing SKILL.md"
+    [[ -f "$openai_file" ]] || missing="$missing agents/openai.yaml"
 
     small_icon="$(find "$skill_dir/assets" -maxdepth 1 -type f \( -name '*small.svg' -o -name 'icon-small.svg' \) 2>/dev/null | head -n 1)"
     large_icon="$(find "$skill_dir/assets" -maxdepth 1 -type f \( -name '*large.svg' -o -name 'icon-large.svg' \) 2>/dev/null | head -n 1)"
@@ -237,15 +301,104 @@ audit_repo() {
       printf 'MISSING %s:%s\n' "$skill_name" "$missing"
       package_issue_count=$((package_issue_count + 1))
     fi
+
+    if [[ -f "$skill_file" ]]; then
+      frontmatter_name="$(frontmatter_value "$skill_file" "name")"
+      frontmatter_desc="$(frontmatter_value "$skill_file" "description")"
+      if [[ -z "$frontmatter_name" ]]; then
+        printf 'METADATA %s missing frontmatter name\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      elif [[ "$frontmatter_name" != "$skill_name" ]]; then
+        printf 'METADATA %s frontmatter name mismatch (%s)\n' "$skill_name" "$frontmatter_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      fi
+
+      if [[ -z "$frontmatter_desc" ]]; then
+        printf 'METADATA %s missing frontmatter description\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      fi
+    fi
+
+    if [[ -f "$openai_file" ]]; then
+      display_name="$(interface_value "$openai_file" "display_name")"
+      short_desc="$(interface_value "$openai_file" "short_description")"
+      icon_small_ref="$(interface_value "$openai_file" "icon_small")"
+      icon_large_ref="$(interface_value "$openai_file" "icon_large")"
+      brand_color="$(interface_value "$openai_file" "brand_color")"
+      default_prompt="$(interface_value "$openai_file" "default_prompt")"
+
+      [[ -n "$display_name" ]] || {
+        printf 'METADATA %s missing interface.display_name\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+      [[ -n "$short_desc" ]] || {
+        printf 'METADATA %s missing interface.short_description\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+      [[ -n "$icon_small_ref" ]] || {
+        printf 'METADATA %s missing interface.icon_small\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+      [[ -n "$icon_large_ref" ]] || {
+        printf 'METADATA %s missing interface.icon_large\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+      [[ -n "$brand_color" ]] || {
+        printf 'METADATA %s missing interface.brand_color\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+      [[ -n "$default_prompt" ]] || {
+        printf 'METADATA %s missing interface.default_prompt\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+
+      if [[ -n "$icon_small_ref" ]]; then
+        icon_small_path="$(resolve_skill_asset_path "$skill_dir" "$icon_small_ref")"
+        if [[ ! -f "$icon_small_path" ]]; then
+          printf 'METADATA %s icon_small target missing (%s)\n' "$skill_name" "$icon_small_ref"
+          metadata_issue_count=$((metadata_issue_count + 1))
+        fi
+      fi
+
+      if [[ -n "$icon_large_ref" ]]; then
+        icon_large_path="$(resolve_skill_asset_path "$skill_dir" "$icon_large_ref")"
+        if [[ ! -f "$icon_large_path" ]]; then
+          printf 'METADATA %s icon_large target missing (%s)\n' "$skill_name" "$icon_large_ref"
+          metadata_issue_count=$((metadata_issue_count + 1))
+        fi
+      fi
+
+      if [[ -n "$default_prompt" && "$default_prompt" != *"\$$skill_name"* ]]; then
+        printf 'METADATA %s default_prompt missing $%s invocation\n' "$skill_name" "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      fi
+    fi
   done
 
   if [[ -d "$REPO_DIR/collections" ]]; then
     for pack_file in "$REPO_DIR/collections"/*.txt; do
       [[ -f "$pack_file" ]] || continue
       pack_name="$(basename "$pack_file" .txt)"
+      pack_title="$(pack_metadata_value "$pack_name" "title")"
+      pack_summary="$(pack_metadata_value "$pack_name" "summary")"
       pack_count=$((pack_count + 1))
+      [[ -n "$pack_title" ]] || {
+        printf 'PACK %s missing # title metadata\n' "$pack_name"
+        pack_issue_count=$((pack_issue_count + 1))
+      }
+      [[ -n "$pack_summary" ]] || {
+        printf 'PACK %s missing # summary metadata\n' "$pack_name"
+        pack_issue_count=$((pack_issue_count + 1))
+      }
+      seen_pack_skills="$(mktemp)"
       while IFS= read -r pack_skill; do
         [[ -n "$pack_skill" ]] || continue
+        if grep -Fxq "$pack_skill" "$seen_pack_skills"; then
+          printf 'PACK %s duplicate skill reference -> %s\n' "$pack_name" "$pack_skill"
+          pack_issue_count=$((pack_issue_count + 1))
+          continue
+        fi
+        printf '%s\n' "$pack_skill" >> "$seen_pack_skills"
         if [[ -d "$REPO_DIR/skills/$pack_skill" ]]; then
           printf '%s\n' "$pack_skill" >> "$packed_skills_file"
         else
@@ -253,7 +406,19 @@ audit_repo() {
           pack_issue_count=$((pack_issue_count + 1))
         fi
       done < <(read_pack_skills "$pack_name")
+      rm -f "$seen_pack_skills"
     done
+  fi
+
+  if [[ -f "$REPO_DIR/scripts/build-catalog.py" ]]; then
+    if command -v python3 >/dev/null 2>&1; then
+      if ! python3 "$REPO_DIR/scripts/build-catalog.py" --repo-dir "$REPO_DIR" --check >/dev/null; then
+        printf 'CATALOG catalog/index.json is missing or stale\n'
+        catalog_issue_count=$((catalog_issue_count + 1))
+      fi
+    else
+      printf 'CATALOG skipped freshness check (python3 not found)\n'
+    fi
   fi
 
   if [[ -s "$packed_skills_file" ]]; then
@@ -272,8 +437,10 @@ audit_repo() {
   printf '  Skills audited: %s\n' "$skill_count"
   printf '  Pack files audited: %s\n' "$pack_count"
   printf '  Package issues: %s\n' "$package_issue_count"
+  printf '  Metadata issues: %s\n' "$metadata_issue_count"
   printf '  Broken pack references: %s\n' "$pack_issue_count"
   printf '  Skills not covered by any pack: %s\n' "$uncovered_count"
+  printf '  Stale catalog indexes: %s\n' "$catalog_issue_count"
 
   if [[ "$uncovered_count" -gt 0 ]]; then
     printf 'Uncovered skills:\n'
@@ -285,7 +452,7 @@ audit_repo() {
 
   rm -f "$all_skills_file" "$packed_skills_file" "$uncovered_file"
 
-  if [[ "$package_issue_count" -gt 0 || "$pack_issue_count" -gt 0 || "$uncovered_count" -gt 0 ]]; then
+  if [[ "$package_issue_count" -gt 0 || "$metadata_issue_count" -gt 0 || "$pack_issue_count" -gt 0 || "$uncovered_count" -gt 0 || "$catalog_issue_count" -gt 0 ]]; then
     return 1
   fi
 }
@@ -338,6 +505,7 @@ SUBCOMMAND=""
 OVERWRITE=0
 INSTALL_ALL=0
 SKILL_NAMES=()
+CATALOG_ARGS=()
 
 [[ $# -gt 0 ]] || {
   usage
@@ -349,6 +517,20 @@ case "$1" in
     COMMAND="$1"
     [[ "$1" == "update" ]] && OVERWRITE=1
     shift
+    ;;
+  catalog)
+    COMMAND="catalog"
+    shift
+    [[ $# -gt 0 ]] || die "Pass a catalog subcommand: build or check"
+    case "$1" in
+      build|check)
+        SUBCOMMAND="$1"
+        shift
+        ;;
+      *)
+        die "Unknown catalog subcommand: $1"
+        ;;
+    esac
     ;;
   pack)
     COMMAND="pack"
@@ -396,6 +578,11 @@ while [[ $# -gt 0 ]]; do
       REPO_URL="$2"
       shift 2
       ;;
+    --output)
+      [[ $# -ge 2 ]] || die "--output requires a path"
+      CATALOG_ARGS+=("--output" "$2")
+      shift 2
+      ;;
     -h|--help)
       usage
       exit 0
@@ -434,6 +621,16 @@ case "$COMMAND" in
     ;;
   audit)
     audit_repo
+    ;;
+  catalog)
+    case "$SUBCOMMAND" in
+      build)
+        run_catalog_builder "build"
+        ;;
+      check)
+        run_catalog_builder "check"
+        ;;
+    esac
     ;;
   pack)
     ensure_repo_dir

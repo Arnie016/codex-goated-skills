@@ -2,6 +2,9 @@
 
 This page is the repo's discoverability layer for all installable skills and all downloadable packs.
 
+Machine-readable catalog:
+[`catalog/index.json`](https://github.com/Arnie016/codex-goated-skills/blob/main/catalog/index.json)
+
 ## Snapshot
 
 - Total skills: `27`
@@ -16,6 +19,7 @@ codex-goated search fandom
 codex-goated pack list
 codex-goated pack show launch-and-distribution
 codex-goated pack install creator-and-fandom-stack
+codex-goated catalog check
 codex-goated audit
 ```
 
@@ -33,8 +37,21 @@ Audit snapshot for March 26, 2026:
 Run the live audit locally:
 
 ```bash
+codex-goated catalog build
+codex-goated catalog check
 codex-goated audit
+bash scripts/audit-catalog.sh
 ```
+
+Generated index:
+
+- `catalog/index.json` is built from the skill frontmatter, `agents/openai.yaml`, and pack files.
+- Regenerate it with `codex-goated catalog build`.
+- Validate freshness with `codex-goated catalog check`.
+
+Continuous audit:
+
+- GitHub Actions runs [`.github/workflows/catalog-audit.yml`](https://github.com/Arnie016/codex-goated-skills/blob/main/.github/workflows/catalog-audit.yml) on pushes and pull requests that touch skills, collections, scripts, catalog docs, or the main CLI.
 
 ## Pack Index
 

@@ -1,0 +1,609 @@
+{
+  "repo": "codex-goated-skills",
+  "skill_count": 27,
+  "pack_count": 9,
+  "skills": [
+    {
+      "id": "brand-kit",
+      "display_name": "Brand Kit",
+      "description": "Create lightweight brand assets and launch metadata for a project. Use when Codex needs to give a repo, product, or skill a simple visual identity with a logo direction, banner ideas, social preview copy, and short positioning text.",
+      "short_description": "Give a project a sharp, reusable brand system",
+      "brand_color": "#EC4899",
+      "path": "skills/brand-kit",
+      "skill_file": "skills/brand-kit/SKILL.md",
+      "openai_yaml": "skills/brand-kit/agents/openai.yaml",
+      "icon_small": "./assets/brand-kit-small.svg",
+      "icon_large": "./assets/brand-kit-large.svg",
+      "default_prompt": "Use $brand-kit to audit this project and create a tighter brand direction, logo concept, color system, and launch metadata.",
+      "packs": [
+        "creator-and-fandom-stack",
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "clip-to-canon-finder",
+      "display_name": "Clip to Canon Finder",
+      "description": "Identify short-form moments most likely to turn into fandom artifacts, edits, or memes from clips, transcripts, and reaction data, then output a shortlist with reuse angles. Use when Codex needs to find which moments deserve to become repeatable canon.",
+      "short_description": "Find clips likely to become fandom canon",
+      "brand_color": "#1A9B8C",
+      "path": "skills/clip-to-canon-finder",
+      "skill_file": "skills/clip-to-canon-finder/SKILL.md",
+      "openai_yaml": "skills/clip-to-canon-finder/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $clip-to-canon-finder to analyze these short-form clips, transcripts, and reactions, identify which moments are most likely to become fandom canon, and export a shortlist with reuse angles.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "clipboard-studio",
+      "display_name": "Context Assembly",
+      "description": "Shape, build, or refine Context Assembly, a macOS workflow that turns scattered clips into one structured prompt, remembered export, and fast cross-app handoff. Use when Codex needs to design or implement a clipboard-focused utility, keep the panel compact, or wire local pasteboard actions without leaking sensitive data.",
+      "short_description": "Capture context and live app state across apps, then turn it into one structured prompt or export",
+      "brand_color": "#22C55E",
+      "path": "skills/clipboard-studio",
+      "skill_file": "skills/clipboard-studio/SKILL.md",
+      "openai_yaml": "skills/clipboard-studio/agents/openai.yaml",
+      "icon_small": "./assets/clipboard-studio-small.svg",
+      "icon_large": "./assets/clipboard-studio-large.svg",
+      "default_prompt": "Use $clipboard-studio to shape or build Context Assembly: a macOS menu bar app that captures code, logs, pages, and selections into one structured prompt, resumable app state, Apple Notes export, or remembered Markdown export.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "comment-pulse-board",
+      "display_name": "Comment Pulse Board",
+      "description": "Cluster obsession points, recurring questions, sentiment shifts, and backlash signals across audience chatter to produce a pulse digest. Use when Codex needs a timely view of what a personal-brand audience is amplifying, asking for, or turning against.",
+      "short_description": "Cluster audience chatter into a pulse digest",
+      "brand_color": "#D85A62",
+      "path": "skills/comment-pulse-board",
+      "skill_file": "skills/comment-pulse-board/SKILL.md",
+      "openai_yaml": "skills/comment-pulse-board/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $comment-pulse-board to analyze this audience chatter, cluster the obsession points and recurring questions, spot sentiment shifts or backlash signals, and export a pulse digest.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "content-pack",
+      "display_name": "Content Pack",
+      "description": "Turn a project or product idea into a compact set of launch-ready copy. Use when Codex needs to generate practical messaging such as a tagline, README blurb, changelog summary, tweet or thread copy, release notes, or listing text from a single source idea.",
+      "short_description": "Turn one project into launch-ready copy assets",
+      "brand_color": "#14B8A6",
+      "path": "skills/content-pack",
+      "skill_file": "skills/content-pack/SKILL.md",
+      "openai_yaml": "skills/content-pack/agents/openai.yaml",
+      "icon_small": "./assets/content-pack-small.svg",
+      "icon_large": "./assets/content-pack-large.svg",
+      "default_prompt": "Use $content-pack to audit this project and turn it into a tagline, README intro, changelog summary, and launch-ready distribution copy.",
+      "packs": [
+        "creator-and-fandom-stack",
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "cursor-studio",
+      "display_name": "Cursor Studio",
+      "description": "Build, run, troubleshoot, or extend a Cursor Studio macOS menu bar app that plans custom cursor packs from presets, prompt notes, slot lists, hotspot guidance, and exportable briefs. Use when Codex needs to work on a workspace containing `CursorStudioApp`, keep Cursor Studio separate from Folder Studio, regenerate the Xcode project, or validate the `CursorStudio` scheme and tests.",
+      "short_description": "Preset-driven cursor pack workflows for macOS",
+      "brand_color": "#4F86FF",
+      "path": "skills/cursor-studio",
+      "skill_file": "skills/cursor-studio/SKILL.md",
+      "openai_yaml": "skills/cursor-studio/agents/openai.yaml",
+      "icon_small": "./assets/cursor-studio-small.svg",
+      "icon_large": "./assets/cursor-studio-large.svg",
+      "default_prompt": "Use $cursor-studio to inspect this Cursor Studio workspace, keep the menu bar UX compact and professional, and help me ship a polished cursor-pack workflow.",
+      "packs": [
+        "macos-utility-builders",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "dark-pdf-studio",
+      "display_name": "Dark PDF Studio",
+      "description": "Convert PDFs, document files, or images into dark-background reading PDFs with a compact input-to-output workflow. Use when Codex needs to dark-theme a PDF, normalize docs or images into a dark PDF, build or refine a tiny dark-mode export utility, or troubleshoot a dark PDF conversion flow with downloadable output.",
+      "short_description": "Compact dark-background PDF conversion for PDFs, docs, and images",
+      "brand_color": "#1D2738",
+      "path": "skills/dark-pdf-studio",
+      "skill_file": "skills/dark-pdf-studio/SKILL.md",
+      "openai_yaml": "skills/dark-pdf-studio/agents/openai.yaml",
+      "icon_small": "./assets/dark-pdf-studio-small.svg",
+      "icon_large": "./assets/dark-pdf-studio-large.svg",
+      "default_prompt": "Use $dark-pdf-studio to convert this file into a clean dark-background PDF, keep the workflow compact and essential, and make sure the exported output is easy to open or share.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "deckdrop-studio",
+      "display_name": "Deckdrop Studio",
+      "description": "Build, run, troubleshoot, or extend a DeckDrop-style macOS slide workflow that turns PDFs, docs, presentations, and image sets into editable PowerPoint drafts with human review before export. Use when Codex needs to work on a workspace containing `DeckDropApp`; inspect the ingestion, extraction, planning, review, and export pipeline; regenerate the Xcode project; or validate the DeckDrop app and tests.",
+      "short_description": "Editable slide workflows for mixed-source decks",
+      "brand_color": "#4F86FF",
+      "path": "skills/deckdrop-studio",
+      "skill_file": "skills/deckdrop-studio/SKILL.md",
+      "openai_yaml": "skills/deckdrop-studio/agents/openai.yaml",
+      "icon_small": "./assets/deckdrop-studio-small.svg",
+      "icon_large": "./assets/deckdrop-studio-large.svg",
+      "default_prompt": "Use $deckdrop-studio to inspect this DeckDrop workspace, keep the draft-review workflow intact, and help me ship an editable slide deck pipeline.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "fan-canon-miner",
+      "display_name": "Fan Canon Miner",
+      "description": "Mine comments, interviews, captions, and fan chatter around a creator, celebrity, or founder to identify the symbols, phrases, moments, and myths people repeat, then turn them into a canon map. Use when Codex needs fandom analysis grounded in public or user-authorized material.",
+      "short_description": "Mine fan chatter into a canon map",
+      "brand_color": "#C67A2B",
+      "path": "skills/fan-canon-miner",
+      "skill_file": "skills/fan-canon-miner/SKILL.md",
+      "openai_yaml": "skills/fan-canon-miner/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $fan-canon-miner to analyze this creator's public or user-provided comments, captions, interviews, and fan chatter, then turn the repeated symbols, phrases, moments, and myths into a canon map.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "find-my-phone-studio",
+      "display_name": "Find My Phone Studio",
+      "description": "Build, scaffold, troubleshoot, or product-shape a macOS menu bar app or helper workflow for finding a phone, opening its current location, and triggering a ring through Apple- or Google-supported surfaces. Use when Codex needs to turn \"find my phone\" into a realistic Mac utility, shortcut flow, browser flow, or automation for iPhone or Android without inventing unsupported tracking APIs.",
+      "short_description": "macOS helper for iPhone or Android locate and ring flows",
+      "brand_color": "#3B82F6",
+      "path": "skills/find-my-phone-studio",
+      "skill_file": "skills/find-my-phone-studio/SKILL.md",
+      "openai_yaml": "skills/find-my-phone-studio/agents/openai.yaml",
+      "icon_small": "./assets/find-my-phone-studio-small.svg",
+      "icon_large": "./assets/find-my-phone-studio-large.svg",
+      "default_prompt": "Use $find-my-phone-studio to design or build a realistic macOS menu bar app or helper that helps me find my iPhone or Android phone, open its location fast, trigger a ring, and include a clear Quit action.",
+      "packs": [
+        "macos-utility-builders",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "folder-studio",
+      "display_name": "Folder Studio",
+      "description": "Build, run, troubleshoot, or extend a Folder Studio macOS menu bar app that reads folder context, suggests engravings, colors folders, previews Finder-style skins, and applies custom icons. Use when Codex needs to work on a workspace containing `FolderStudioApp`, keep Folder Studio separate from Cursor Studio, regenerate the Xcode project, or validate the `FolderStudio` scheme and tests.",
+      "short_description": "Context-aware Finder folder skins and icon workflows",
+      "brand_color": "#4C9E5A",
+      "path": "skills/folder-studio",
+      "skill_file": "skills/folder-studio/SKILL.md",
+      "openai_yaml": "skills/folder-studio/agents/openai.yaml",
+      "icon_small": "./assets/folder-studio-small.svg",
+      "icon_large": "./assets/folder-studio-large.svg",
+      "default_prompt": "Use $folder-studio to inspect this Folder Studio workspace, keep the menu bar UX compact and professional, and help me ship a polished Finder folder-skin workflow.",
+      "packs": [
+        "macos-utility-builders",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "iconography-lab",
+      "display_name": "Iconography Lab",
+      "description": "Define the instantly recognizable visual and verbal codes of a public figure, including palette, props, silhouettes, poses, moods, and catchphrases, then output an identity kit. Use when Codex needs to make a personality-led brand recognizable without flattening it into generic branding.",
+      "short_description": "Define the icon system of a public figure",
+      "brand_color": "#3E6DFF",
+      "path": "skills/iconography-lab",
+      "skill_file": "skills/iconography-lab/SKILL.md",
+      "openai_yaml": "skills/iconography-lab/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $iconography-lab to analyze this public figure's visual and verbal codes, then build an identity kit with palette, props, silhouette cues, and catchphrases.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "inner-circle-director",
+      "display_name": "Inner Circle Director",
+      "description": "Structure tiered access, VIP mechanics, recognition systems, and premium community experiences, then output a membership framework. Use when Codex needs to design belonging and access around a personality-led brand without making the structure exploitative, confusing, or socially corrosive.",
+      "short_description": "Design tiers and VIP community access",
+      "brand_color": "#BF9640",
+      "path": "skills/inner-circle-director",
+      "skill_file": "skills/inner-circle-director/SKILL.md",
+      "openai_yaml": "skills/inner-circle-director/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $inner-circle-director to design tiered access, VIP mechanics, and recognition systems for this audience, then export a membership framework.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "lore-drop-planner",
+      "display_name": "Lore Drop Planner",
+      "description": "Plan episodic reveals, callbacks, teasers, and payoff arcs for personality-led brands, then output a lore release schedule. Use when Codex needs to structure anticipation and payoff around a creator or founder's ongoing world-building.",
+      "short_description": "Plan lore reveals and callback-driven drops",
+      "brand_color": "#5A63D8",
+      "path": "skills/lore-drop-planner",
+      "skill_file": "skills/lore-drop-planner/SKILL.md",
+      "openai_yaml": "skills/lore-drop-planner/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $lore-drop-planner to plan episodic reveals, teasers, callbacks, and payoffs for this personality-led brand, then export a lore release schedule.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "minecraft-essentials",
+      "display_name": "Minecraft Essentials",
+      "description": "Install, upgrade, run, migrate, back up, and troubleshoot Minecraft Java servers. Use when Codex needs to work on a Minecraft-only setup such as Vanilla, Paper, Fabric, plugin compatibility, Java versioning, LAN join info, backups, Bedrock bridging, or moving a local server toward a more stable always-on setup.",
+      "short_description": "Run, upgrade, and fix Minecraft Java servers",
+      "brand_color": "#4CAF50",
+      "path": "skills/minecraft-essentials",
+      "skill_file": "skills/minecraft-essentials/SKILL.md",
+      "openai_yaml": "skills/minecraft-essentials/agents/openai.yaml",
+      "icon_small": "./assets/minecraft-essentials-small.svg",
+      "icon_large": "./assets/minecraft-essentials-large.svg",
+      "default_prompt": "Use $minecraft-essentials to audit this Minecraft server, back it up safely, improve the run setup, and show the right join info.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    },
+    {
+      "id": "minecraft-skin-studio",
+      "display_name": "Minecraft Skin Studio",
+      "description": "Draft, clean, preview, and register Minecraft Java player skins from prompts or PNG files. Use when Codex needs to turn a skin idea into a launcher-ready skin sheet, add a custom skin into the local Minecraft Launcher library, render a quick preview image, or help the user iterate on prompt-based Minecraft skins on macOS.",
+      "short_description": "Turn prompts or PNGs into launcher-ready Minecraft skins",
+      "brand_color": "#22C55E",
+      "path": "skills/minecraft-skin-studio",
+      "skill_file": "skills/minecraft-skin-studio/SKILL.md",
+      "openai_yaml": "skills/minecraft-skin-studio/agents/openai.yaml",
+      "icon_small": "./assets/minecraft-skin-studio-small.svg",
+      "icon_large": "./assets/minecraft-skin-studio-large.svg",
+      "default_prompt": "Use $minecraft-skin-studio to draft a Minecraft Java skin from a prompt, save a clean 64x64 PNG, render a preview, and register it into my local Minecraft Launcher custom skins list.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    },
+    {
+      "id": "myth-merch-studio",
+      "display_name": "Myth Merch Studio",
+      "description": "Turn symbols, phrases, and fandom lore into merch, collectible, and limited-drop concepts, then output a merch brief. Use when Codex needs to translate fandom canon into products without stripping the meaning out of the source material or crossing licensing lines.",
+      "short_description": "Turn fandom lore into merch briefs",
+      "brand_color": "#2E9A5F",
+      "path": "skills/myth-merch-studio",
+      "skill_file": "skills/myth-merch-studio/SKILL.md",
+      "openai_yaml": "skills/myth-merch-studio/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $myth-merch-studio to turn this creator or founder's symbols, phrases, and fandom lore into merch concepts and export a merch brief.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "network-studio",
+      "display_name": "Network Studio",
+      "description": "Install or update a macOS local-network device monitor with a SwiftBar menu and browser dashboard. Use when Codex needs to set up, refresh, relocate, or troubleshoot a LAN presence monitor for a network the user owns or administers, especially when they want device watchlists, unknown-device surfacing, change feeds, or a menu bar network status view.",
+      "short_description": "macOS LAN monitor with SwiftBar",
+      "brand_color": "#0F8ED8",
+      "path": "skills/network-studio",
+      "skill_file": "skills/network-studio/SKILL.md",
+      "openai_yaml": "skills/network-studio/agents/openai.yaml",
+      "icon_small": "./assets/network-studio-small.svg",
+      "icon_large": "./assets/network-studio-large.svg",
+      "default_prompt": "Use $network-studio to install or update a local Network Studio workspace and wire SwiftBar if needed.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "parasocial-studio",
+      "display_name": "Parasocial Studio",
+      "description": "Shape safe closeness mechanics like acknowledgements, voice-note drops, recurring touchpoints, and community intimacy patterns, then output a relationship cadence plan. Use when Codex needs to help a public figure feel present and personal without encouraging dependency, false intimacy, or harmful boundary erosion.",
+      "short_description": "Plan safe closeness rhythms for public figures",
+      "brand_color": "#D66B87",
+      "path": "skills/parasocial-studio",
+      "skill_file": "skills/parasocial-studio/SKILL.md",
+      "openai_yaml": "skills/parasocial-studio/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $parasocial-studio to shape safe closeness mechanics for this public figure, including acknowledgements and recurring touchpoints, then output a relationship cadence plan.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "repo-launch",
+      "display_name": "Repo Launch",
+      "description": "Scaffold and polish a GitHub-ready project repository. Use when Codex needs to turn an idea or local project into a clean shareable repo with essentials like a README, license, install steps, contribution basics, and a simple launch-ready structure.",
+      "short_description": "Turn a rough project into a clean public repo",
+      "brand_color": "#2563EB",
+      "path": "skills/repo-launch",
+      "skill_file": "skills/repo-launch/SKILL.md",
+      "openai_yaml": "skills/repo-launch/agents/openai.yaml",
+      "icon_small": "./assets/repo-launch-small.svg",
+      "icon_large": "./assets/repo-launch-large.svg",
+      "default_prompt": "Use $repo-launch to audit this project and turn it into a clean GitHub-ready repository with a sharp README, license, and simple start path.",
+      "packs": [
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "reputation-heatmap",
+      "display_name": "Reputation Heatmap",
+      "description": "Separate healthy mystique from rumor, overreach, parasocial risk, or brand harm, then output a response playbook. Use when Codex needs to map public narrative risk around a creator, celebrity, or founder without amplifying gossip or turning risk review into panic.",
+      "short_description": "Map mystique, rumor, and brand risk",
+      "brand_color": "#D26B4E",
+      "path": "skills/reputation-heatmap",
+      "skill_file": "skills/reputation-heatmap/SKILL.md",
+      "openai_yaml": "skills/reputation-heatmap/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $reputation-heatmap to map healthy mystique, rumor, parasocial risk, and brand harm around this public figure, then export a response playbook.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "ritual-engine",
+      "display_name": "Ritual Engine",
+      "description": "Design repeatable fan rituals, naming systems, participation loops, and recurring community formats, then output a ritual calendar. Use when Codex needs to turn audience energy into recurring formats without making the relationship manipulative or exhausting.",
+      "short_description": "Design rituals and loops for fan participation",
+      "brand_color": "#C96A34",
+      "path": "skills/ritual-engine",
+      "skill_file": "skills/ritual-engine/SKILL.md",
+      "openai_yaml": "skills/ritual-engine/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $ritual-engine to design repeatable fan rituals, naming systems, and participation loops for this audience, then output a ritual calendar.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "skillbar",
+      "display_name": "SkillBar",
+      "description": "Build, refine, or troubleshoot SkillBar, the macOS menu bar manager for codex-goated-skills. Use when Codex needs to work on the SkillBar workspace, update the skill catalog UI, preset bundles, local install flows, or repo-driven metadata parsing for skill management.",
+      "short_description": "Build and refine the goated skills menu bar manager",
+      "brand_color": "#8AB6FF",
+      "path": "skills/skillbar",
+      "skill_file": "skills/skillbar/SKILL.md",
+      "openai_yaml": "skills/skillbar/agents/openai.yaml",
+      "icon_small": "./assets/skillbar-small.svg",
+      "icon_large": "./assets/skillbar-large.svg",
+      "default_prompt": "Use $skillbar to work on SkillBar, the macOS menu bar manager for codex-goated-skills, including the catalog UI, preset bundles, metadata parsing, and install or update flows.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "telebar",
+      "display_name": "TeleBar",
+      "description": "Build, run, troubleshoot, or extend the TeleBar macOS menu bar app. Use when Codex needs to work on a TeleBar workspace, especially the repo app at `apps/telebar`; regenerate the Xcode project; launch the app; run local doctor or build checks; or modify the Telegram inbox, AI writing, setup links, keychain storage, or compact macOS popover UI.",
+      "short_description": "Run and extend the TeleBar menu bar app",
+      "brand_color": "#2B79FF",
+      "path": "skills/telebar",
+      "skill_file": "skills/telebar/SKILL.md",
+      "openai_yaml": "skills/telebar/agents/openai.yaml",
+      "icon_small": "./assets/telebar-small.svg",
+      "icon_large": "./assets/telebar-large.svg",
+      "default_prompt": "Use $telebar to work on the TeleBar macOS menu bar app, regenerate the project if needed, and run local doctor, build, or run checks.",
+      "packs": [
+        "app-specific-skills"
+      ]
+    },
+    {
+      "id": "vibe-bluetooth",
+      "display_name": "VibeBluetooth",
+      "description": "Build, run, troubleshoot, or extend the VibeWidget macOS SwiftUI app and widget. Use when Codex needs to work on a VibeWidget or VibeBluetooth workspace, especially the repo app at `apps/vibe-widget`; regenerate the Xcode project; launch it in Xcode; run local doctor, build, or typecheck checks; or modify the HomeKit, Spotify, widget, voice panel, or shared-core flows.",
+      "short_description": "Run and extend the VibeWidget app",
+      "brand_color": "#6E54FF",
+      "path": "skills/vibe-bluetooth",
+      "skill_file": "skills/vibe-bluetooth/SKILL.md",
+      "openai_yaml": "skills/vibe-bluetooth/agents/openai.yaml",
+      "icon_small": "./assets/vibe-bluetooth-small.svg",
+      "icon_large": "./assets/vibe-bluetooth-large.svg",
+      "default_prompt": "Use $vibe-bluetooth to work on the VibeWidget macOS app, regenerate the project if needed, and run local doctor or typecheck checks.",
+      "packs": [
+        "app-specific-skills",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "website-drop",
+      "display_name": "Website Drop",
+      "description": "Audit a local web app, choose the simplest host, and get it to a live URL fast. Use when Codex needs to prep a site for deploy, confirm the build path, and ship it with minimal hosting overhead.",
+      "short_description": "Audit a web app, pick a host, and ship it live fast",
+      "brand_color": "#F97316",
+      "path": "skills/website-drop",
+      "skill_file": "skills/website-drop/SKILL.md",
+      "openai_yaml": "skills/website-drop/agents/openai.yaml",
+      "icon_small": "./assets/website-drop-small.svg",
+      "icon_large": "./assets/website-drop-large.svg",
+      "default_prompt": "Use $website-drop to audit this web project, choose the simplest stable deploy path, and get me to a live URL with minimal config and a clean handoff.",
+      "packs": [
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "workspace-doctor",
+      "display_name": "Workspace Doctor",
+      "description": "Diagnose local workspace readiness and common setup problems. Use when Codex needs to check project health, missing tools, auth gaps, environment mismatches, broken install steps, or other practical blockers that stop a user from building or running something.",
+      "short_description": "Find the real blocker in a local workspace fast",
+      "brand_color": "#16A34A",
+      "path": "skills/workspace-doctor",
+      "skill_file": "skills/workspace-doctor/SKILL.md",
+      "openai_yaml": "skills/workspace-doctor/agents/openai.yaml",
+      "icon_small": "./assets/workspace-doctor-small.svg",
+      "icon_large": "./assets/workspace-doctor-large.svg",
+      "default_prompt": "Use $workspace-doctor to inspect this workspace, run a quick environment audit, identify the main blocker, and get it into a runnable state.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    }
+  ],
+  "packs": [
+    {
+      "id": "app-specific-skills",
+      "title": "App-Specific Skills",
+      "summary": "Skills tied closely to specific local app codebases and their live product surfaces.",
+      "path": "collections/app-specific-skills.txt",
+      "skill_count": 2,
+      "skills": [
+        "telebar",
+        "vibe-bluetooth"
+      ]
+    },
+    {
+      "id": "audience-and-fandom-strategy",
+      "title": "Audience and Fandom Strategy",
+      "summary": "Personality-led audience analysis, fandom design, and creator-world strategy for public or user-authorized material.",
+      "path": "collections/audience-and-fandom-strategy.txt",
+      "skill_count": 10,
+      "skills": [
+        "fan-canon-miner",
+        "comment-pulse-board",
+        "clip-to-canon-finder",
+        "iconography-lab",
+        "ritual-engine",
+        "parasocial-studio",
+        "lore-drop-planner",
+        "inner-circle-director",
+        "myth-merch-studio",
+        "reputation-heatmap"
+      ]
+    },
+    {
+      "id": "creator-and-fandom-stack",
+      "title": "Creator and Fandom Stack",
+      "summary": "A fuller creator-brand workflow covering canon, rituals, identity, merch, messaging, and launch-ready packaging.",
+      "path": "collections/creator-and-fandom-stack.txt",
+      "skill_count": 12,
+      "skills": [
+        "brand-kit",
+        "content-pack",
+        "fan-canon-miner",
+        "comment-pulse-board",
+        "clip-to-canon-finder",
+        "iconography-lab",
+        "ritual-engine",
+        "parasocial-studio",
+        "lore-drop-planner",
+        "inner-circle-director",
+        "myth-merch-studio",
+        "reputation-heatmap"
+      ]
+    },
+    {
+      "id": "fandom-skill-pack",
+      "title": "Fandom Skill Pack",
+      "summary": "Audience strategy skills for canon mining, community rituals, lore pacing, merch concepts, and narrative risk review.",
+      "path": "collections/fandom-skill-pack.txt",
+      "skill_count": 10,
+      "skills": [
+        "fan-canon-miner",
+        "comment-pulse-board",
+        "clip-to-canon-finder",
+        "iconography-lab",
+        "ritual-engine",
+        "parasocial-studio",
+        "lore-drop-planner",
+        "inner-circle-director",
+        "myth-merch-studio",
+        "reputation-heatmap"
+      ]
+    },
+    {
+      "id": "games-and-minecraft",
+      "title": "Games and Minecraft",
+      "summary": "Minecraft server operations and skin tooling for play, hosting, and customization workflows.",
+      "path": "collections/games-and-minecraft.txt",
+      "skill_count": 2,
+      "skills": [
+        "minecraft-essentials",
+        "minecraft-skin-studio"
+      ]
+    },
+    {
+      "id": "launch-and-distribution",
+      "title": "Launch and Distribution",
+      "summary": "Skills for shaping a project, packaging it well, and getting it ready to publish or ship.",
+      "path": "collections/launch-and-distribution.txt",
+      "skill_count": 4,
+      "skills": [
+        "repo-launch",
+        "website-drop",
+        "brand-kit",
+        "content-pack"
+      ]
+    },
+    {
+      "id": "macos-utility-builders",
+      "title": "macOS Utility Builders",
+      "summary": "Skills for planning, shaping, or refining focused macOS utilities and menu bar tools.",
+      "path": "collections/macos-utility-builders.txt",
+      "skill_count": 3,
+      "skills": [
+        "find-my-phone-studio",
+        "cursor-studio",
+        "folder-studio"
+      ]
+    },
+    {
+      "id": "productivity-and-workflow",
+      "title": "Productivity and Workflow",
+      "summary": "Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.",
+      "path": "collections/productivity-and-workflow.txt",
+      "skill_count": 6,
+      "skills": [
+        "workspace-doctor",
+        "skillbar",
+        "clipboard-studio",
+        "network-studio",
+        "dark-pdf-studio",
+        "deckdrop-studio"
+      ]
+    },
+    {
+      "id": "utility-builder-stack",
+      "title": "Utility Builder Stack",
+      "summary": "A practical bundle for shipping Mac utilities, local monitors, workflow tools, and app-adjacent builders.",
+      "path": "collections/utility-builder-stack.txt",
+      "skill_count": 8,
+      "skills": [
+        "workspace-doctor",
+        "skillbar",
+        "clipboard-studio",
+        "network-studio",
+        "find-my-phone-studio",
+        "cursor-studio",
+        "folder-studio",
+        "vibe-bluetooth"
+      ]
+    }
+  ]
+}
