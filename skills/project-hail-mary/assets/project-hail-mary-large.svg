@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Project Hail Mary">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#220A15"/>
+      <stop offset="100%" stop-color="#6B1D1D"/>
+    </linearGradient>
+    <linearGradient id="flare" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#FACC15"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="150" fill="url(#flare)"/>
+  <path d="M256 86L289 185H394L309 247L341 347L256 286L171 347L203 247L118 185H223L256 86Z" fill="#FFF7ED"/>
+  <path d="M256 146L274 201H333L286 235L304 290L256 255L208 290L226 235L179 201H238L256 146Z" fill="#7C2D12"/>
+  <circle cx="396" cy="128" r="24" fill="#FFF7ED" opacity="0.8"/>
+  <circle cx="120" cy="162" r="14" fill="#FFF7ED" opacity="0.45"/>
+  <circle cx="403" cy="375" r="18" fill="#FFF7ED" opacity="0.35"/>
+</svg>

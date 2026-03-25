@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Hail Mary"
+  short_description: "macOS rescue launcher for crunch mode"
+  default_prompt: "Use $project-hail-mary to build a realistic macOS rescue launcher, ritual script, or menu bar app that can kick off a hype track, open work surfaces, and start a countdown."

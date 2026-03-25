@@ -25,6 +25,7 @@ codex-goated install xbox-studio
 codex-goated install minecraft-essentials
 codex-goated install deckdrop-studio
 codex-goated install clipboard-studio
+codex-goated install project-hail-mary
 codex-goated install find-my-phone-studio
 codex-goated install cursor-studio
 codex-goated install folder-studio
@@ -50,7 +51,7 @@ Then restart Codex.
 
 - Fix the blocker first with `workspace-doctor`
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
-- Build a utility with `network-studio`, `find-my-phone-studio`, or `clipboard-studio`
+- Build a utility with `network-studio`, `find-my-phone-studio`, `clipboard-studio`, or `project-hail-mary`
 - Set up Xbox play, controller, and capture helpers with `xbox-studio`
 - Create polished outputs with `dark-pdf-studio` and `deckdrop-studio`
 
@@ -78,6 +79,7 @@ Browse by use case:
 | --- | --- | --- |
 | <img src="skills/workspace-doctor/assets/workspace-doctor-small.svg" width="26" alt="Workspace Doctor" /><br/>[`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor) | Finds the real local setup blocker and next fix fast | `workspace-doctor` |
 | <img src="skills/clipboard-studio/assets/clipboard-studio-small.svg" width="26" alt="Clipboard Studio" /><br/>[`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio) | Shapes a macOS copy-and-paste power tool with history, pinned snippets, and transforms | `clipboard-studio` |
+| <img src="skills/project-hail-mary/assets/project-hail-mary-small.svg" width="26" alt="Project Hail Mary" /><br/>[`project-hail-mary`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/project-hail-mary) | Builds a macOS rescue launcher that can kick off a hype track, open critical work surfaces, start a countdown, and copy a heads-down status update | `project-hail-mary` |
 | <img src="skills/network-studio/assets/network-studio-small.svg" width="26" alt="Network Studio" /><br/>[`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio) | macOS LAN monitor with SwiftBar and a dashboard | `network-studio` |
 | <img src="skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg" width="26" alt="Dark PDF Studio" /><br/>[`dark-pdf-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/dark-pdf-studio) | Converts PDFs, docs, and images into dark-background reading PDFs with a compact export flow | `dark-pdf-studio` |
 | <img src="skills/deckdrop-studio/assets/deckdrop-studio-small.svg" width="26" alt="Deckdrop Studio" /><br/>[`deckdrop-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/deckdrop-studio) | Builds and refines editable slide deck workflows for mixed-source inputs | `deckdrop-studio` |
