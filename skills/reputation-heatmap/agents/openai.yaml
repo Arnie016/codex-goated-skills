@@ -1,0 +1,7 @@
+interface:
+  display_name: "Reputation Heatmap"
+  short_description: "Map mystique, rumor, and brand risk"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#D26B4E"
+  default_prompt: "Use $reputation-heatmap to map healthy mystique, rumor, parasocial risk, and brand harm around this public figure, then export a response playbook."
