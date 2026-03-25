@@ -1,5 +1,5 @@
-# title: Fandom Skill Pack
-# summary: Audience strategy skills for canon mining, community rituals, lore pacing, merch concepts, and narrative risk review.
+# title: Audience and Fandom Strategy
+# summary: Personality-led audience analysis, fandom design, and creator-world strategy for public or user-authorized material.
 fan-canon-miner
 comment-pulse-board
 clip-to-canon-finder

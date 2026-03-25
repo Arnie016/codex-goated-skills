@@ -1,5 +1,7 @@
-# title: Fandom Skill Pack
-# summary: Audience strategy skills for canon mining, community rituals, lore pacing, merch concepts, and narrative risk review.
+# title: Creator and Fandom Stack
+# summary: A fuller creator-brand workflow covering canon, rituals, identity, merch, messaging, and launch-ready packaging.
+brand-kit
+content-pack
 fan-canon-miner
 comment-pulse-board
 clip-to-canon-finder

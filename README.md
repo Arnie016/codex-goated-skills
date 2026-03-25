@@ -10,6 +10,8 @@ Install by name, browse by use case, or pull the full pack when you want a broad
 [![Install All](https://img.shields.io/badge/install-all_skills-0f172a?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-all-skills.sh)
 [![Install By Name](https://img.shields.io/badge/install-by_name-1d4ed8?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-skill.sh)
 [![Install Fandom Pack](https://img.shields.io/badge/install-fandom_pack-e76f51?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-fandom-pack.sh)
+[![Browse Packs](https://img.shields.io/badge/browse-packs-0ea5e9?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
+[![Catalog Audit](https://img.shields.io/badge/catalog-audit-10b981?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/catalog/README.md)
 
 ## Install
 
@@ -33,9 +35,13 @@ codex-goated install cursor-studio
 codex-goated install folder-studio
 codex-goated install dark-pdf-studio
 codex-goated install fan-canon-miner comment-pulse-board iconography-lab
+codex-goated search minecraft
+codex-goated audit
 codex-goated pack list
 codex-goated pack show fandom-skill-pack
+codex-goated pack show creator-and-fandom-stack
 codex-goated pack install fandom-skill-pack
+codex-goated pack install launch-and-distribution
 codex-goated install --all
 codex-goated update vibe-bluetooth
 ```
@@ -46,10 +52,10 @@ Raw script fallback:
 bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-skill.sh) network-studio
 ```
 
-Install the fandom pack:
+Install a pack:
 
 ```bash
-codex-goated pack install fandom-skill-pack
+bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-pack.sh) creator-and-fandom-stack
 ```
 
 Then restart Codex.
@@ -59,12 +65,20 @@ Then restart Codex.
 - `skills/` are installable Codex skill packages
 - `apps/` are standalone project codebases you can open, build, and run
 
+## Collections and Catalog
+
+- Browse all use-case packs in [`collections/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
+- Browse the full audited skill catalog in [`catalog/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/catalog/README.md)
+- Use `codex-goated search <query>` when you know the problem but not the skill name yet
+- Use `codex-goated audit` to validate the skill packages and pack coverage locally
+
 ## Start Here
 
 - Fix the blocker first with `workspace-doctor`
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
 - Build a utility with `network-studio`, `find-my-phone-studio`, or `clipboard-studio`
 - Build a personality-led audience strategy stack with the [`Fandom Skill Pack`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/fandom-skill-pack.md)
+- Browse all download packs in [`collections/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
 - Manage the whole pack from the top bar with `skillbar`
 - Create polished outputs with `dark-pdf-studio` and `deckdrop-studio`
 
