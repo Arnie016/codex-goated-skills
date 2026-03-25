@@ -1,0 +1,19 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Clipboard Studio</title>
+  <rect x="4" y="4" width="56" height="56" rx="18" fill="#07131A"/>
+  <rect x="5" y="5" width="54" height="54" rx="17" stroke="#1A3330"/>
+  <rect x="17" y="19" width="19" height="24" rx="5" stroke="#7EE7C4" stroke-width="2.2"/>
+  <rect x="25" y="15" width="22" height="28" rx="6" fill="url(#sheet)"/>
+  <rect x="25" y="15" width="22" height="28" rx="6" stroke="#E9FFF6" stroke-width="2.2"/>
+  <path d="M31 23H41" stroke="#083027" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M31 29H39" stroke="#083027" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M37 49H49" stroke="#7EE7C4" stroke-width="3" stroke-linecap="round"/>
+  <path d="M46 45L50 49L46 53" stroke="#7EE7C4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 49H24" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="sheet" x1="28" y1="16" x2="46" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B8F7DB"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+  </defs>
+</svg>

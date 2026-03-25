@@ -1,0 +1,51 @@
+name: ClipboardStudio
+options:
+  minimumXcodeGenVersion: 2.45.3
+  deploymentTarget:
+    macOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+    PRODUCT_NAME: $(TARGET_NAME)
+    CODE_SIGN_STYLE: Automatic
+targets:
+  ClipboardStudio:
+    type: application
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: ClipboardStudioApp/Sources
+    info:
+      path: ClipboardStudioApp/Info.plist
+      properties:
+        CFBundleDisplayName: Clipboard Studio
+        LSApplicationCategoryType: public.app-category.productivity
+        LSUIElement: true
+        NSPrincipalClass: NSApplication
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.ClipboardStudio
+        INFOPLIST_FILE: ClipboardStudioApp/Info.plist
+        PRODUCT_MODULE_NAME: ClipboardStudio
+
+  ClipboardStudioTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: ClipboardStudioApp/Tests
+    dependencies:
+      - target: ClipboardStudio
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.ClipboardStudioTests
+schemes:
+  ClipboardStudio:
+    build:
+      targets:
+        ClipboardStudio: all
+        ClipboardStudioTests: [test]
+    test:
+      targets:
+        - ClipboardStudioTests

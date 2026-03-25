@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05FA86A12E277F82D43B90FF /* InstantContextPackOverlayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D8CDC3B9059ED2CD7D98FC /* InstantContextPackOverlayCoordinator.swift */; };
+		06721F4E438B3FA82700C9A9 /* PackOverlayViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162DD594F812A8DC66ED790 /* PackOverlayViews.swift */; };
+		0B21C455F3FAC7FAC445DD9C /* ClipboardStudioMenuBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2540666C0BFD51997DE042 /* ClipboardStudioMenuBarIcon.swift */; };
+		4C1057417DAF73C7CD4362F0 /* GlobalHotKeyMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B891825C4201F9E5AC284 /* GlobalHotKeyMonitor.swift */; };
+		4C68F00B050CC13A1B7650D1 /* ClipboardStudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE43B009082FEF92B7A0BD /* ClipboardStudioModel.swift */; };
+		4F98F51E42CC5EB95A4CD754 /* ClipboardAutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB1A93B0B7A05C315C7EB1 /* ClipboardAutomationService.swift */; };
+		50469EDC01E450A2862846E0 /* ClipboardStudioDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64925F735F0903712DB2F1F /* ClipboardStudioDomain.swift */; };
+		55EC4138D58E328B3BCC3C89 /* ContextPackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A4B9C763781819E14156C4 /* ContextPackTests.swift */; };
+		5C93A1DFEDF37091992725A0 /* ContextPackFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B6F77300249298CC60FFD /* ContextPackFormatter.swift */; };
+		83AD381C453ACDCAC7C360D6 /* ClipboardStudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08F5D2F33C6CA2F38C2248B /* ClipboardStudioApp.swift */; };
+		A76856A4D6CC0CF2ED1D1E60 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E7B1677B2C5C5E336135F3 /* MenuBarView.swift */; };
+		D849CB1639248E2FD25982CF /* ContextPackFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C064E73F6776841D3B43BF5D /* ContextPackFormatterTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2626A200FC3D6CBC4E0EFE97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5804E314EB917D3945661D59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CFA7DA3FD5704ADBE5315EC;
+			remoteInfo = ClipboardStudio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		154B891825C4201F9E5AC284 /* GlobalHotKeyMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHotKeyMonitor.swift; sourceTree = "<group>"; };
+		3AAB1A93B0B7A05C315C7EB1 /* ClipboardAutomationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardAutomationService.swift; sourceTree = "<group>"; };
+		49DCDABCDD7FC0E04FC26FF9 /* ClipboardStudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClipboardStudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		501B6F77300249298CC60FFD /* ContextPackFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextPackFormatter.swift; sourceTree = "<group>"; };
+		52A4B9C763781819E14156C4 /* ContextPackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextPackTests.swift; sourceTree = "<group>"; };
+		53AE43B009082FEF92B7A0BD /* ClipboardStudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardStudioModel.swift; sourceTree = "<group>"; };
+		61E7B1677B2C5C5E336135F3 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		79D8CDC3B9059ED2CD7D98FC /* InstantContextPackOverlayCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantContextPackOverlayCoordinator.swift; sourceTree = "<group>"; };
+		8162DD594F812A8DC66ED790 /* PackOverlayViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackOverlayViews.swift; sourceTree = "<group>"; };
+		C064E73F6776841D3B43BF5D /* ContextPackFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextPackFormatterTests.swift; sourceTree = "<group>"; };
+		CD2540666C0BFD51997DE042 /* ClipboardStudioMenuBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardStudioMenuBarIcon.swift; sourceTree = "<group>"; };
+		E08F5D2F33C6CA2F38C2248B /* ClipboardStudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardStudioApp.swift; sourceTree = "<group>"; };
+		E4EEF5AF0B0EDE0FFDC7C0BE /* ClipboardStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipboardStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F64925F735F0903712DB2F1F /* ClipboardStudioDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardStudioDomain.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		037064E4B12EF685A6D9D1EA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E08F5D2F33C6CA2F38C2248B /* ClipboardStudioApp.swift */,
+				F64925F735F0903712DB2F1F /* ClipboardStudioDomain.swift */,
+				53AE43B009082FEF92B7A0BD /* ClipboardStudioModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2EB3009A7491F13C44E4431D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C064E73F6776841D3B43BF5D /* ContextPackFormatterTests.swift */,
+				52A4B9C763781819E14156C4 /* ContextPackTests.swift */,
+			);
+			name = Tests;
+			path = ClipboardStudioApp/Tests;
+			sourceTree = "<group>";
+		};
+		429A3F97578C291D43487894 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				037064E4B12EF685A6D9D1EA /* App */,
+				63FD5498C9B7014080EFFD5A /* Services */,
+				8BCFF3275BF70D8012D2F35B /* Views */,
+			);
+			name = Sources;
+			path = ClipboardStudioApp/Sources;
+			sourceTree = "<group>";
+		};
+		63FD5498C9B7014080EFFD5A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3AAB1A93B0B7A05C315C7EB1 /* ClipboardAutomationService.swift */,
+				501B6F77300249298CC60FFD /* ContextPackFormatter.swift */,
+				154B891825C4201F9E5AC284 /* GlobalHotKeyMonitor.swift */,
+				79D8CDC3B9059ED2CD7D98FC /* InstantContextPackOverlayCoordinator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6FF1856E5C1BB8A82309D914 = {
+			isa = PBXGroup;
+			children = (
+				429A3F97578C291D43487894 /* Sources */,
+				2EB3009A7491F13C44E4431D /* Tests */,
+				B1655B89FD283126C40F1495 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BCFF3275BF70D8012D2F35B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD2540666C0BFD51997DE042 /* ClipboardStudioMenuBarIcon.swift */,
+				61E7B1677B2C5C5E336135F3 /* MenuBarView.swift */,
+				8162DD594F812A8DC66ED790 /* PackOverlayViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B1655B89FD283126C40F1495 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4EEF5AF0B0EDE0FFDC7C0BE /* ClipboardStudio.app */,
+				49DCDABCDD7FC0E04FC26FF9 /* ClipboardStudioTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71D650F0E7203BB66DB9E1F3 /* ClipboardStudioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CBCFA07CBF24E7234D038A4 /* Build configuration list for PBXNativeTarget "ClipboardStudioTests" */;
+			buildPhases = (
+				2937E49A23436E77B07C1B64 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08A0519D4B533337F417739A /* PBXTargetDependency */,
+			);
+			name = ClipboardStudioTests;
+			packageProductDependencies = (
+			);
+			productName = ClipboardStudioTests;
+			productReference = 49DCDABCDD7FC0E04FC26FF9 /* ClipboardStudioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9CFA7DA3FD5704ADBE5315EC /* ClipboardStudio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30C5A1D6703D22577E86ED80 /* Build configuration list for PBXNativeTarget "ClipboardStudio" */;
+			buildPhases = (
+				F8D3D114ED2C7F4AADB83662 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClipboardStudio;
+			packageProductDependencies = (
+			);
+			productName = ClipboardStudio;
+			productReference = E4EEF5AF0B0EDE0FFDC7C0BE /* ClipboardStudio.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5804E314EB917D3945661D59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					71D650F0E7203BB66DB9E1F3 = {
+						ProvisioningStyle = Automatic;
+					};
+					9CFA7DA3FD5704ADBE5315EC = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0AEA893C9E88E0FB22CD6E6F /* Build configuration list for PBXProject "ClipboardStudio" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6FF1856E5C1BB8A82309D914;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B1655B89FD283126C40F1495 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CFA7DA3FD5704ADBE5315EC /* ClipboardStudio */,
+				71D650F0E7203BB66DB9E1F3 /* ClipboardStudioTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2937E49A23436E77B07C1B64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D849CB1639248E2FD25982CF /* ContextPackFormatterTests.swift in Sources */,
+				55EC4138D58E328B3BCC3C89 /* ContextPackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8D3D114ED2C7F4AADB83662 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F98F51E42CC5EB95A4CD754 /* ClipboardAutomationService.swift in Sources */,
+				83AD381C453ACDCAC7C360D6 /* ClipboardStudioApp.swift in Sources */,
+				50469EDC01E450A2862846E0 /* ClipboardStudioDomain.swift in Sources */,
+				0B21C455F3FAC7FAC445DD9C /* ClipboardStudioMenuBarIcon.swift in Sources */,
+				4C68F00B050CC13A1B7650D1 /* ClipboardStudioModel.swift in Sources */,
+				5C93A1DFEDF37091992725A0 /* ContextPackFormatter.swift in Sources */,
+				4C1057417DAF73C7CD4362F0 /* GlobalHotKeyMonitor.swift in Sources */,
+				05FA86A12E277F82D43B90FF /* InstantContextPackOverlayCoordinator.swift in Sources */,
+				A76856A4D6CC0CF2ED1D1E60 /* MenuBarView.swift in Sources */,
+				06721F4E438B3FA82700C9A9 /* PackOverlayViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08A0519D4B533337F417739A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CFA7DA3FD5704ADBE5315EC /* ClipboardStudio */;
+			targetProxy = 2626A200FC3D6CBC4E0EFE97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1E1F7C659AB46E040AD70FD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ClipboardStudioApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.ClipboardStudio;
+				PRODUCT_MODULE_NAME = ClipboardStudio;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		26B8BAA5776B1CB2B526F5AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		2FF20C7F1F73ECEEC8F64333 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		9331CC0DA6C01F631D3077AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.ClipboardStudioTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipboardStudio.app/Contents/MacOS/ClipboardStudio";
+			};
+			name = Release;
+		};
+		BC37F6E47924873D9F18486A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ClipboardStudioApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.ClipboardStudio;
+				PRODUCT_MODULE_NAME = ClipboardStudio;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C3734B6A647383ECDA9708AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.ClipboardStudioTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipboardStudio.app/Contents/MacOS/ClipboardStudio";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AEA893C9E88E0FB22CD6E6F /* Build configuration list for PBXProject "ClipboardStudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26B8BAA5776B1CB2B526F5AF /* Debug */,
+				2FF20C7F1F73ECEEC8F64333 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		30C5A1D6703D22577E86ED80 /* Build configuration list for PBXNativeTarget "ClipboardStudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E1F7C659AB46E040AD70FD0 /* Debug */,
+				BC37F6E47924873D9F18486A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6CBCFA07CBF24E7234D038A4 /* Build configuration list for PBXNativeTarget "ClipboardStudioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3734B6A647383ECDA9708AB /* Debug */,
+				9331CC0DA6C01F631D3077AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5804E314EB917D3945661D59 /* Project object */;
+}

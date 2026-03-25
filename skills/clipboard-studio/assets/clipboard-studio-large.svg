@@ -1,0 +1,27 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Clipboard Studio</title>
+  <rect x="12" y="12" width="232" height="232" rx="64" fill="#07131A"/>
+  <rect x="14" y="14" width="228" height="228" rx="62" stroke="#1E3A36" stroke-width="4"/>
+  <circle cx="186" cy="182" r="48" fill="url(#glow)" fill-opacity="0.7"/>
+  <rect x="58" y="78" width="76" height="96" rx="18" stroke="#7EE7C4" stroke-width="8"/>
+  <rect x="94" y="60" width="92" height="116" rx="22" fill="url(#sheet)"/>
+  <rect x="94" y="60" width="92" height="116" rx="22" stroke="#EDFFF7" stroke-width="8"/>
+  <path d="M116 90H157" stroke="#0A342A" stroke-width="10" stroke-linecap="round"/>
+  <path d="M116 116H149" stroke="#0A342A" stroke-width="10" stroke-linecap="round"/>
+  <path d="M116 142H138" stroke="#0A342A" stroke-width="10" stroke-linecap="round"/>
+  <path d="M124 198H204" stroke="#7EE7C4" stroke-width="12" stroke-linecap="round"/>
+  <path d="M178 172L206 198L178 224" stroke="#7EE7C4" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M48 198H92" stroke="#34D399" stroke-width="12" stroke-linecap="round"/>
+  <path d="M162 42L174 26" stroke="#4ADE80" stroke-width="8" stroke-linecap="round"/>
+  <path d="M184 54L202 50" stroke="#4ADE80" stroke-width="8" stroke-linecap="round"/>
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(186 182) rotate(90) scale(48)">
+      <stop stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sheet" x1="104" y1="62" x2="182" y2="174" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C5FCD9"/>
+      <stop offset="1" stop-color="#22C55E"/>
+    </linearGradient>
+  </defs>
+</svg>

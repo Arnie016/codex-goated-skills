@@ -1,0 +1,67 @@
+name: FlightScout
+options:
+  minimumXcodeGenVersion: 2.45.3
+  deploymentTarget:
+    macOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+    PRODUCT_NAME: $(TARGET_NAME)
+    CODE_SIGN_STYLE: Automatic
+targets:
+  VibeWidgetCore:
+    type: framework
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: VibeWidgetCore/Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.VibeWidgetCore
+        GENERATE_INFOPLIST_FILE: YES
+        SKIP_INSTALL: YES
+
+  FlightScout:
+    type: application
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: FlightScoutApp/Sources
+    dependencies:
+      - target: VibeWidgetCore
+    info:
+      path: FlightScoutApp/Info.plist
+      properties:
+        CFBundleDisplayName: Flight Scout
+        LSApplicationCategoryType: public.app-category.travel
+        NSPrincipalClass: NSApplication
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.FlightScout
+        INFOPLIST_FILE: FlightScoutApp/Info.plist
+        PRODUCT_MODULE_NAME: FlightScout
+
+  FlightScoutTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: FlightScoutApp/Tests
+    dependencies:
+      - target: FlightScout
+      - target: VibeWidgetCore
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.FlightScoutTests
+
+schemes:
+  FlightScout:
+    build:
+      targets:
+        FlightScout: all
+        VibeWidgetCore: all
+        FlightScoutTests: [test]
+    test:
+      targets:
+        - FlightScoutTests

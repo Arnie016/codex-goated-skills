@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0970BA6D750193A4F8416475 /* PhoneSpotterTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864C6A53018CD375E9D60F15 /* PhoneSpotterTheme.swift */; };
+		0D88147F0434EC0F5BD14178 /* PhoneSpotterAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B61435D0F28682495609F7 /* PhoneSpotterAppModel.swift */; };
+		210F069F3401716B0A42E2DE /* PhoneSpotterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7535741B51775CF913FD76CF /* PhoneSpotterApp.swift */; };
+		477BAA9E0B794BCCD86A033B /* PhoneSpotterPairingServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919BB77819E7EE2115012DFF /* PhoneSpotterPairingServer.swift */; };
+		5B346C95ACB4725C64C072CD /* PhoneSpotterSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D6DC0248785898AA308C68 /* PhoneSpotterSettingsStore.swift */; };
+		5DC15B8527F13CA3FC86A5E9 /* PhoneSpotterMenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD75DDC3CC6B0C3AD4D128C4 /* PhoneSpotterMenuBarView.swift */; };
+		9691909469AC16BADA8C05BE /* PhoneSpotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B78D10CBA0E50A6802B70B /* PhoneSpotterTests.swift */; };
+		9EE2BEDF54F96EDEEFF593B9 /* PhoneSpotterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB49CA24D1F6639B12335AEB /* PhoneSpotterModels.swift */; };
+		EDEE25FFE0E7F0D4994F9BD6 /* PhoneSpotterStatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10D03A5F75DE9B7B0A8ECAC /* PhoneSpotterStatusBarController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17067D0BBD6ADDB64088505A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4367D59F83CC4130CFC2635D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0F0080E3F34A493D1EAF01A;
+			remoteInfo = PhoneSpotter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A6FCE2F370635A7B635663C /* PhoneSpotterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneSpotterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57B78D10CBA0E50A6802B70B /* PhoneSpotterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSpotterTests.swift; sourceTree = "<group>"; };
+		61D6DC0248785898AA308C68 /* PhoneSpotterSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSpotterSettingsStore.swift; sourceTree = "<group>"; };
+		6E69BBCB9783BE37BCC06429 /* PhoneSpotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneSpotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7535741B51775CF913FD76CF /* PhoneSpotterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSpotterApp.swift; sourceTree = "<group>"; };
+		864C6A53018CD375E9D60F15 /* PhoneSpotterTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSpotterTheme.swift; sourceTree = "<group>"; };
+		86B61435D0F28682495609F7 /* PhoneSpotterAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSpotterAppModel.swift; sourceTree = "<group>"; };
+		919BB77819E7EE2115012DFF /* PhoneSpotterPairingServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSpotterPairingServer.swift; sourceTree = "<group>"; };
+		AB49CA24D1F6639B12335AEB /* PhoneSpotterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSpotterModels.swift; sourceTree = "<group>"; };
+		C10D03A5F75DE9B7B0A8ECAC /* PhoneSpotterStatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSpotterStatusBarController.swift; sourceTree = "<group>"; };
+		FD75DDC3CC6B0C3AD4D128C4 /* PhoneSpotterMenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSpotterMenuBarView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		000BE9F81FBDD17181930244 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD75DDC3CC6B0C3AD4D128C4 /* PhoneSpotterMenuBarView.swift */,
+				864C6A53018CD375E9D60F15 /* PhoneSpotterTheme.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0E8BCA99E524681BA5BD4204 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8C2ACFCAAE567EFA37E9FC6D /* App */,
+				000BE9F81FBDD17181930244 /* Views */,
+			);
+			name = Sources;
+			path = PhoneSpotterApp/Sources;
+			sourceTree = "<group>";
+		};
+		299E56418E1BF82CEFB749EB = {
+			isa = PBXGroup;
+			children = (
+				0E8BCA99E524681BA5BD4204 /* Sources */,
+				581178CE03CB7B70ADF1356C /* Tests */,
+				5E82F0BF9B2AD8D170F5637A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		581178CE03CB7B70ADF1356C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				57B78D10CBA0E50A6802B70B /* PhoneSpotterTests.swift */,
+			);
+			name = Tests;
+			path = PhoneSpotterApp/Tests;
+			sourceTree = "<group>";
+		};
+		5E82F0BF9B2AD8D170F5637A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E69BBCB9783BE37BCC06429 /* PhoneSpotter.app */,
+				3A6FCE2F370635A7B635663C /* PhoneSpotterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C2ACFCAAE567EFA37E9FC6D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7535741B51775CF913FD76CF /* PhoneSpotterApp.swift */,
+				86B61435D0F28682495609F7 /* PhoneSpotterAppModel.swift */,
+				AB49CA24D1F6639B12335AEB /* PhoneSpotterModels.swift */,
+				919BB77819E7EE2115012DFF /* PhoneSpotterPairingServer.swift */,
+				61D6DC0248785898AA308C68 /* PhoneSpotterSettingsStore.swift */,
+				C10D03A5F75DE9B7B0A8ECAC /* PhoneSpotterStatusBarController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5326F28FC343AAC5D1B3ED08 /* PhoneSpotterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBB3C75EDB05823D8A0AFF47 /* Build configuration list for PBXNativeTarget "PhoneSpotterTests" */;
+			buildPhases = (
+				FAADE44B71A1B5E3C8F04F6E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				832E55DEACA27AECA1510676 /* PBXTargetDependency */,
+			);
+			name = PhoneSpotterTests;
+			packageProductDependencies = (
+			);
+			productName = PhoneSpotterTests;
+			productReference = 3A6FCE2F370635A7B635663C /* PhoneSpotterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A0F0080E3F34A493D1EAF01A /* PhoneSpotter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C83DE3402C991049EA04D93 /* Build configuration list for PBXNativeTarget "PhoneSpotter" */;
+			buildPhases = (
+				F770648A918BD174A8422C8C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhoneSpotter;
+			packageProductDependencies = (
+			);
+			productName = PhoneSpotter;
+			productReference = 6E69BBCB9783BE37BCC06429 /* PhoneSpotter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4367D59F83CC4130CFC2635D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5326F28FC343AAC5D1B3ED08 = {
+						ProvisioningStyle = Automatic;
+					};
+					A0F0080E3F34A493D1EAF01A = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 285F43494A1FC0C726C3C3E2 /* Build configuration list for PBXProject "PhoneSpotter" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 299E56418E1BF82CEFB749EB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5E82F0BF9B2AD8D170F5637A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0F0080E3F34A493D1EAF01A /* PhoneSpotter */,
+				5326F28FC343AAC5D1B3ED08 /* PhoneSpotterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F770648A918BD174A8422C8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				210F069F3401716B0A42E2DE /* PhoneSpotterApp.swift in Sources */,
+				0D88147F0434EC0F5BD14178 /* PhoneSpotterAppModel.swift in Sources */,
+				5DC15B8527F13CA3FC86A5E9 /* PhoneSpotterMenuBarView.swift in Sources */,
+				9EE2BEDF54F96EDEEFF593B9 /* PhoneSpotterModels.swift in Sources */,
+				477BAA9E0B794BCCD86A033B /* PhoneSpotterPairingServer.swift in Sources */,
+				5B346C95ACB4725C64C072CD /* PhoneSpotterSettingsStore.swift in Sources */,
+				EDEE25FFE0E7F0D4994F9BD6 /* PhoneSpotterStatusBarController.swift in Sources */,
+				0970BA6D750193A4F8416475 /* PhoneSpotterTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAADE44B71A1B5E3C8F04F6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9691909469AC16BADA8C05BE /* PhoneSpotterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		832E55DEACA27AECA1510676 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0F0080E3F34A493D1EAF01A /* PhoneSpotter */;
+			targetProxy = 17067D0BBD6ADDB64088505A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1303C5C9A8CC21BC92238F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PhoneSpotterApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.PhoneSpotter;
+				PRODUCT_MODULE_NAME = PhoneSpotter;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6E7E19BE7F8EB759BAD76525 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.PhoneSpotterTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneSpotter.app/Contents/MacOS/PhoneSpotter";
+			};
+			name = Release;
+		};
+		8AE0F4C8067BADBC833B433C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		C162BE74C5926F99E41DC1EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PhoneSpotterApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.PhoneSpotter;
+				PRODUCT_MODULE_NAME = PhoneSpotter;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EB0F544D38EC53DE54577596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.PhoneSpotterTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneSpotter.app/Contents/MacOS/PhoneSpotter";
+			};
+			name = Debug;
+		};
+		FC8051040521096798E88206 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C83DE3402C991049EA04D93 /* Build configuration list for PBXNativeTarget "PhoneSpotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1303C5C9A8CC21BC92238F7A /* Debug */,
+				C162BE74C5926F99E41DC1EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		285F43494A1FC0C726C3C3E2 /* Build configuration list for PBXProject "PhoneSpotter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AE0F4C8067BADBC833B433C /* Debug */,
+				FC8051040521096798E88206 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BBB3C75EDB05823D8A0AFF47 /* Build configuration list for PBXNativeTarget "PhoneSpotterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB0F544D38EC53DE54577596 /* Debug */,
+				6E7E19BE7F8EB759BAD76525 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4367D59F83CC4130CFC2635D /* Project object */;
+}

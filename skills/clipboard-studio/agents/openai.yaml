@@ -1,0 +1,7 @@
+interface:
+  display_name: "Clipboard Studio"
+  short_description: "Clipboard history, snippets, and paste transforms for macOS"
+  icon_small: "./assets/clipboard-studio-small.svg"
+  icon_large: "./assets/clipboard-studio-large.svg"
+  brand_color: "#22C55E"
+  default_prompt: "Use $clipboard-studio to shape or build a macOS copy-and-paste power tool with searchable history, pinned snippets, paste transforms, and a tight menu bar workflow."

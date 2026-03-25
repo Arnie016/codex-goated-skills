@@ -1,0 +1,4 @@
+interface:
+  display_name: "Find My Phone Studio"
+  short_description: "macOS menu bar helper for iPhone or Android locate and ring flows"
+  default_prompt: "Use $find-my-phone-studio to design or build a realistic macOS menu bar app or helper that helps me find my iPhone or Android phone, open its location fast, trigger a ring, and include a clear Quit action."
