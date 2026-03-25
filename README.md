@@ -21,6 +21,7 @@ Then use:
 ```bash
 codex-goated list
 codex-goated install network-studio
+codex-goated install xbox-studio
 codex-goated install minecraft-essentials
 codex-goated install deckdrop-studio
 codex-goated install clipboard-studio
@@ -50,6 +51,7 @@ Then restart Codex.
 - Fix the blocker first with `workspace-doctor`
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
 - Build a utility with `network-studio`, `find-my-phone-studio`, or `clipboard-studio`
+- Set up Xbox play, controller, and capture helpers with `xbox-studio`
 - Create polished outputs with `dark-pdf-studio` and `deckdrop-studio`
 
 ## Skills
@@ -59,7 +61,7 @@ Browse by use case:
 [Productivity and Workflow](#productivity-and-workflow) ·
 [macOS Utility Builders](#macos-utility-builders) ·
 [App-Specific Skills](#app-specific-skills) ·
-[Games and Minecraft](#games-and-minecraft)
+[Games and Consoles](#games-and-consoles)
 
 ### Launch and Distribution
 
@@ -95,10 +97,11 @@ Browse by use case:
 | <img src="skills/telebar/assets/telebar-small.svg" width="26" alt="TeleBar" /><br/>[`telebar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/telebar) | Builds and runs the TeleBar Telegram + AI menu bar app | `telebar` |
 | <img src="skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg" width="26" alt="VibeBluetooth" /><br/>[`vibe-bluetooth`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth) | Dev skill for the VibeWidget macOS app and widget | `vibe-bluetooth` |
 
-### Games and Minecraft
+### Games and Consoles
 
 | Skill | What it does | Install name |
 | --- | --- | --- |
+| <img src="skills/xbox-studio/assets/xbox-studio-small.svg" width="26" alt="Xbox Studio" /><br/>[`xbox-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/xbox-studio) | Builds and troubleshoots realistic macOS helpers for Xbox cloud gaming, Remote Play, controller setup, captures, and browser-based account flows | `xbox-studio` |
 | <img src="skills/minecraft-essentials/assets/minecraft-essentials-small.svg" width="26" alt="Minecraft Essentials" /><br/>[`minecraft-essentials`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-essentials) | Runs, upgrades, and troubleshoots Minecraft Java servers | `minecraft-essentials` |
 | <img src="skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg" width="26" alt="Minecraft Skin Studio" /><br/>[`minecraft-skin-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-skin-studio) | Drafts, previews, and registers Minecraft Java skins from prompts or PNGs | `minecraft-skin-studio` |
 
