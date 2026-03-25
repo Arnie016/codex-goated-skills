@@ -33,6 +33,9 @@ codex-goated install cursor-studio
 codex-goated install folder-studio
 codex-goated install dark-pdf-studio
 codex-goated install fan-canon-miner comment-pulse-board iconography-lab
+codex-goated pack list
+codex-goated pack show fandom-skill-pack
+codex-goated pack install fandom-skill-pack
 codex-goated install --all
 codex-goated update vibe-bluetooth
 ```
@@ -46,7 +49,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills
 Install the fandom pack:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-fandom-pack.sh)
+codex-goated pack install fandom-skill-pack
 ```
 
 Then restart Codex.

@@ -15,6 +15,10 @@ Usage:
   $SELF_NAME install --all [--dest PATH] [--repo-dir PATH] [--repo-url URL]
   $SELF_NAME update [--dest PATH] [--repo-dir PATH] [--repo-url URL] <skill-name> [<skill-name> ...]
   $SELF_NAME update --all [--dest PATH] [--repo-dir PATH] [--repo-url URL]
+  $SELF_NAME pack list [--repo-dir PATH] [--repo-url URL]
+  $SELF_NAME pack show [--repo-dir PATH] [--repo-url URL] <pack-name>
+  $SELF_NAME pack install [--dest PATH] [--repo-dir PATH] [--repo-url URL] <pack-name>
+  $SELF_NAME pack update [--dest PATH] [--repo-dir PATH] [--repo-url URL] <pack-name>
 
 Examples:
   $SELF_NAME list
@@ -22,6 +26,8 @@ Examples:
   $SELF_NAME install minecraft-essentials vibe-bluetooth
   $SELF_NAME install --all
   $SELF_NAME update network-studio
+  $SELF_NAME pack list
+  $SELF_NAME pack install fandom-skill-pack
 EOF
 }
 
@@ -71,6 +77,39 @@ list_skills() {
   done | sort
 }
 
+pack_file_path() {
+  local pack_name="$1"
+  ensure_repo_dir
+  if [[ "$pack_name" == *.txt ]]; then
+    printf '%s\n' "$REPO_DIR/collections/$pack_name"
+  else
+    printf '%s\n' "$REPO_DIR/collections/$pack_name.txt"
+  fi
+}
+
+read_pack_skills() {
+  local pack_file
+  pack_file="$(pack_file_path "$1")"
+  [[ -f "$pack_file" ]] || die "Unknown pack: $1"
+  grep -v '^[[:space:]]*$' "$pack_file" | grep -v '^[[:space:]]*#'
+}
+
+list_packs() {
+  local pack_file
+  ensure_repo_dir
+  [[ -d "$REPO_DIR/collections" ]] || return 0
+  for pack_file in "$REPO_DIR/collections"/*.txt; do
+    [[ -f "$pack_file" ]] || continue
+    basename "$pack_file" .txt
+  done | sort
+}
+
+show_pack() {
+  local pack_name="$1"
+  printf '%s\n' "$pack_name"
+  read_pack_skills "$pack_name"
+}
+
 copy_skill() {
   local skill_name="$1"
   local overwrite="${2:-0}"
@@ -103,21 +142,61 @@ copy_all_skills() {
   done
 }
 
+copy_pack() {
+  local pack_name="$1"
+  local overwrite="${2:-0}"
+  local skill_name
+  ensure_repo_dir
+  while IFS= read -r skill_name; do
+    [[ -n "$skill_name" ]] || continue
+    copy_skill "$skill_name" "$overwrite"
+  done < <(read_pack_skills "$pack_name")
+}
+
 COMMAND=""
+SUBCOMMAND=""
 OVERWRITE=0
 INSTALL_ALL=0
 SKILL_NAMES=()
 
+[[ $# -gt 0 ]] || {
+  usage
+  exit 1
+}
+
+case "$1" in
+  list|install|update)
+    COMMAND="$1"
+    [[ "$1" == "update" ]] && OVERWRITE=1
+    shift
+    ;;
+  pack)
+    COMMAND="pack"
+    shift
+    [[ $# -gt 0 ]] || die "Pass a pack subcommand: list, show, install, or update"
+    case "$1" in
+      list|show|install|update)
+        SUBCOMMAND="$1"
+        [[ "$1" == "update" ]] && OVERWRITE=1
+        shift
+        ;;
+      *)
+        die "Unknown pack subcommand: $1"
+        ;;
+    esac
+    ;;
+  -h|--help)
+    usage
+    exit 0
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac
+
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    list|install|update)
-      [[ -z "$COMMAND" ]] || die "Only one command can be used at a time."
-      COMMAND="$1"
-      if [[ "$1" == "update" ]]; then
-        OVERWRITE=1
-      fi
-      shift
-      ;;
     --all)
       INSTALL_ALL=1
       shift
@@ -168,5 +247,22 @@ case "$COMMAND" in
       done
     fi
     printf 'Restart Codex to pick up new skills.\n'
+    ;;
+  pack)
+    ensure_repo_dir
+    case "$SUBCOMMAND" in
+      list)
+        list_packs
+        ;;
+      show)
+        [[ ${#SKILL_NAMES[@]} -eq 1 ]] || die "Pass exactly one pack name"
+        show_pack "${SKILL_NAMES[0]}"
+        ;;
+      install|update)
+        [[ ${#SKILL_NAMES[@]} -eq 1 ]] || die "Pass exactly one pack name"
+        copy_pack "${SKILL_NAMES[0]}" "$OVERWRITE"
+        printf 'Restart Codex to pick up new skills.\n'
+        ;;
+    esac
     ;;
 esac
