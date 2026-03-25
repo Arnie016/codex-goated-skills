@@ -8,6 +8,8 @@ Developers, founders, operators, and solo builders who want to measure a real ou
 
 ## Inputs
 
+- connected GitHub identity from `gh auth`
+- tracked repo list stored under `~/.codex/gain-tracker/config.json`
 - repo path plus baseline and current git windows when the user wants commit-backed measurement
 - baseline output total and baseline duration
 - current output total and current duration
@@ -20,11 +22,12 @@ Developers, founders, operators, and solo builders who want to measure a real ou
 ## Input To Output Flow
 
 1. Confirm one consistent metric definition across the baseline and current periods.
-2. If a repo is available, pull git stats first and let the user choose `commits`, `lines-changed`, `files-changed`, or `active-days`.
-3. For daily mode, calculate today's work, seven-day momentum, thirty-day momentum, and current streak.
-4. Normalize broader comparisons into per-day or per-week rates.
-5. Calculate the current multiplier and target progress.
-6. Export a gain scorecard, a daily reminder story, or both.
+2. Connect once through GitHub CLI and store the identity plus tracked repos.
+3. If a repo is available, pull git stats first and let the user choose `commits`, `lines-changed`, `files-changed`, or `active-days`.
+4. For daily mode, calculate today's work, seven-day momentum, thirty-day momentum, and current streak.
+5. Normalize broader comparisons into per-day or per-week rates.
+6. Calculate the current multiplier and target progress.
+7. Export a gain scorecard, a daily reminder story, or both.
 
 ## Artifact Template
 
@@ -49,33 +52,39 @@ Daily story sections:
 
 - Shell: `MenuBarExtra` with an optional history window.
 - Primary actions:
+  - `Connect`
   - `Today`
   - `Story`
   - `Compare`
   - `Trend`
+- Secondary actions:
   - `Export`
-- Popover priority: today's headline stat first, reminder story second, trend strip third.
+  - `Tracked Repos`
+  - `Settings`
+- Popover priority: connection state first, today's headline stat second, reminder story third, trend strip fourth.
 - Optional window: checkpoint history, comparison modes, driver notes, and export list.
 
 ## UI Direction
 
 - Avoid generic dashboard cards. The popover should feel like a single crafted instrument panel.
+- Lead with a connected-account chip showing avatar, GitHub login, and tracked repo count when available.
 - Use a top hero strip with the daily headline such as `8 commits today` or `1,240 lines moved`.
 - Put the reminder story in a warm editorial block with tighter copy and a little breathing room, not a chat bubble.
 - Use one accent color only: the existing green should feel like signal, not decoration.
 - Make the trend area feel like a compact sparkline or momentum rail instead of a full chart wall.
 - Use large rounded numbers, quieter labels, and a narrow typographic rhythm so the eye lands on the gains immediately.
 - Add one meaningful motion: the top stat should animate in, and the trend rail should reveal from left to right when recalculated.
+- Treat repo chips as slim pills or rows, not boxed cards.
 
 ## First Run UX
 
-Ask for the metric definition, the baseline and current windows, and the target multiplier. If the user points at a repo, offer a git-backed mode before asking them to type totals manually, and suggest daily story mode by default.
+Ask the user to connect GitHub first, then offer to track the current repo or add other repos. After connection, suggest daily story mode by default before asking for any manual totals.
 
 ## States
 
 ### Empty
 
-Show a strong daily pulse surface with examples such as `0 commits yet`, `3 commits today`, or `14-day streak`, plus one primary action: Connect Repo.
+Show a strong daily pulse surface with examples such as `0 commits yet`, `3 commits today`, or `14-day streak`, plus one primary action: Connect GitHub.
 
 ### Loading
 

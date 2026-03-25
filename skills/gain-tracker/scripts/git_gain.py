@@ -12,6 +12,7 @@ from datetime import date
 from pathlib import Path
 
 from gain_math import build_report, positive_number, render_text
+from tracker_config import default_author_pattern, is_git_repo, load_config, repo_entry_from_path, tracked_repo_entries
 
 
 @dataclass
@@ -132,6 +133,8 @@ def metric_total(stats: WindowStats, metric: str) -> float:
 
 def render_git_text(report: dict[str, object], baseline: WindowStats, current: WindowStats, metric: str) -> str:
     lines = [
+        f"Repo: {report.get('repo_label', report['repo'])}",
+        f"Author filter: {report.get('author', '') or 'none'}",
         f"Repo metric: {metric}",
         f"Baseline commits: {baseline.commit_count}",
         f"Baseline active days: {baseline.active_days}",
@@ -147,9 +150,24 @@ def render_git_text(report: dict[str, object], baseline: WindowStats, current: W
     return "\n".join(lines)
 
 
+def resolve_repo(repo_arg: str | None, config: dict[str, object]) -> dict[str, object]:
+    if repo_arg:
+        return repo_entry_from_path(Path(repo_arg))
+
+    cwd = Path.cwd()
+    if is_git_repo(cwd):
+        return repo_entry_from_path(cwd)
+
+    tracked = tracked_repo_entries(config)
+    if tracked:
+        return tracked[0]
+
+    raise RuntimeError("no repo provided and no tracked repos are connected; run github_connect.py connect --repo /path/to/repo")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Compare git productivity across two time windows.")
-    parser.add_argument("--repo", required=True, help="Path to the git repository")
+    parser.add_argument("--repo", help="Path to the git repository. Defaults to the current repo or first tracked repo.")
     parser.add_argument("--baseline-since", required=True, type=parse_iso_date, help="Baseline window start date in YYYY-MM-DD")
     parser.add_argument("--baseline-until", required=True, type=parse_iso_date, help="Baseline window end date in YYYY-MM-DD")
     parser.add_argument("--current-since", required=True, type=parse_iso_date, help="Current window start date in YYYY-MM-DD")
@@ -163,16 +181,16 @@ def main() -> int:
     parser.add_argument("--json", action="store_true", help="Print JSON instead of text")
     args = parser.parse_args()
 
-    repo = Path(args.repo).expanduser().resolve()
-    if not (repo / ".git").exists():
-        print(f"Error: not a git repository: {repo}", file=sys.stderr)
-        return 1
+    config = load_config()
 
     try:
+        repo_entry = resolve_repo(args.repo, config)
+        repo = Path(str(repo_entry["path"])).expanduser().resolve()
+        author = args.author or default_author_pattern(config, repo_entry)
         baseline_days = inclusive_days(args.baseline_since, args.baseline_until)
         current_days = inclusive_days(args.current_since, args.current_until)
-        baseline_stats = collect_window_stats(repo, args.baseline_since, args.baseline_until, args.author, args.branch)
-        current_stats = collect_window_stats(repo, args.current_since, args.current_until, args.author, args.branch)
+        baseline_stats = collect_window_stats(repo, args.baseline_since, args.baseline_until, author, args.branch)
+        current_stats = collect_window_stats(repo, args.current_since, args.current_until, author, args.branch)
         baseline_total = metric_total(baseline_stats, args.metric)
         current_total = metric_total(current_stats, args.metric)
         if baseline_total <= 0 or current_total <= 0:
@@ -196,6 +214,8 @@ def main() -> int:
     report.update(
         {
             "repo": str(repo),
+            "repo_label": str(repo_entry.get("full_name", repo.name)),
+            "author": author,
             "baseline_window": {
                 "since": args.baseline_since.isoformat(),
                 "until": args.baseline_until.isoformat(),

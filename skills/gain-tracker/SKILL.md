@@ -12,11 +12,12 @@ Default product shape: a compact but premium macOS `MenuBarExtra` utility with a
 ## Quick Start
 
 1. Define one stable output metric before comparing time periods.
-2. If a repo is available, prefer git-backed measurement first.
-3. Capture the baseline total and the number of days in that baseline period.
-4. Capture the current total, the current time window, and the target multiplier.
-5. Run `python3 scripts/daily_git_story.py` for a daily repo pulse and reminder story, `python3 scripts/git_gain.py` for baseline-versus-current comparisons, or `python3 scripts/gain_math.py` for manual totals.
-6. Produce either a `daily-gain-story` or a `gain-scorecard`, depending on whether the user wants a daily motivational check-in or a broader baseline comparison.
+2. If GitHub is available, connect once with `python3 scripts/github_connect.py connect --repo "/path/to/repo"`.
+3. If a repo is available, prefer git-backed measurement first.
+4. Capture the baseline total and the number of days in that baseline period.
+5. Capture the current total, the current time window, and the target multiplier.
+6. Run `python3 scripts/daily_git_story.py` for a daily repo pulse and reminder story, `python3 scripts/git_gain.py` for baseline-versus-current comparisons, or `python3 scripts/gain_math.py` for manual totals.
+7. Produce either a `daily-gain-story` or a `gain-scorecard`, depending on whether the user wants a daily motivational check-in or a broader baseline comparison.
 
 ## Accepted Inputs
 
@@ -24,6 +25,7 @@ Default product shape: a compact but premium macOS `MenuBarExtra` utility with a
 - a current period such as the last 30, 80, or 90 days of output and the number of days in that window
 - a target multiplier such as `10x`, `25x`, or `90x`
 - a repo path and date windows when the user wants git-backed measurement
+- a connected GitHub account through `gh` when the user wants saved identity and tracked repos
 - the metric definition, such as git commits, lines changed, files changed, active days, merged PRs, features delivered, or a weighted output score
 - notes on what changed, such as GStack, tooling upgrades, workflow changes, or team support
 - optional checkpoints over time so the gain curve can be tracked, not just a single before and after
@@ -59,11 +61,19 @@ Default `daily-gain-story` sections:
 
 ### Prefer Repo-Backed Mode
 
+- If the user wants the tool to remember who they are and what repos matter, start with `scripts/github_connect.py`.
 - If the user has a git repo, start with `scripts/git_gain.py`.
 - If the user wants a daily snapshot or motivation loop, start with `scripts/daily_git_story.py`.
 - Treat `commits` as the default productivity metric only when the user explicitly wants commit productivity.
 - Offer `lines-changed`, `files-changed`, or `active-days` when commit counts alone feel too noisy.
 - Keep author filtering explicit when the repo has multiple contributors.
+
+### Connect GitHub
+
+- Use `python3 scripts/github_connect.py connect --repo "/path/to/repo"` to detect the logged-in GitHub identity from `gh`, capture the default git author info, and save tracked repos under `~/.codex/gain-tracker/config.json`.
+- Use `python3 scripts/github_connect.py status` to confirm the connected account and tracked repos.
+- After connection, `scripts/daily_git_story.py` can run without `--repo` and aggregate all tracked repos automatically.
+- After connection, `scripts/git_gain.py` can default to the current repo or first tracked repo and use the saved author filter.
 
 ### Calculate The Gain
 
@@ -84,14 +94,16 @@ Default `daily-gain-story` sections:
 ### Mac Product Shape
 
 - Prefer `MenuBarExtra` with these primary actions:
+  - `Connect`
   - `Today`
   - `Story`
   - `Compare`
   - `Trend`
-  - `Export`
+- Keep `Export` as a secondary action in the footer or history window instead of a top-level primary tab.
 - Keep the popover between 340 pt and 390 pt wide with today's headline stat and reminder story visible above the fold.
 - Use an optional history window for checkpoints, notes, exports, and trend comparisons.
 - The first glance should answer:
+  - am I connected
   - what did I do today
   - how strong is the recent streak
   - why should I keep going today
@@ -110,10 +122,13 @@ Default `daily-gain-story` sections:
 - `Use $gain-tracker to turn these baseline and current output totals into a gain scorecard, and note that GStack is the main system behind the lift.`
 - `Use $gain-tracker to compare my git commit productivity in this repo against my 2013 baseline and show how far I am toward 90x.`
 - `Use $gain-tracker to read this repo, tell me what code I shipped today from commits and file churn, and write a short reminder story that keeps me productive.`
+- `Use $gain-tracker to connect to my GitHub account, track my repos automatically, and give me a daily reminder story from my actual git activity.`
 
 ## Resources
 
+- `scripts/github_connect.py`: connect through `gh`, save the GitHub identity, and manage tracked repos.
 - `scripts/daily_git_story.py`: summarize today's git work, recent momentum, and a motivating reminder story.
 - `scripts/git_gain.py`: compare two git windows by commits, lines changed, files changed, or active days.
 - `scripts/gain_math.py`: deterministic multiplier, pace, and goal-progress calculator.
+- `scripts/tracker_config.py`: shared config helpers for saved identity and tracked repos.
 - `references/product-spec.md`: menu bar product shape, artifact template, first-run UX, and icon direction.
