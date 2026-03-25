@@ -79,7 +79,7 @@ Continuous audit:
 ### Productivity and Workflow
 
 - [`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor): Diagnose local setup blockers and workspace readiness issues.
-- [`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker): Track git or output gains against a historical baseline and a target multiplier.
+- [`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker): Track daily git gains or broader output gains against a historical baseline and a target multiplier.
 - [`skillbar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/skillbar): Build and refine the SkillBar macOS top-bar skill manager.
 - [`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio): Turn scattered clips into one structured prompt and export flow.
 - [`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio): Install or update a LAN presence monitor with SwiftBar and a dashboard.

@@ -40,6 +40,14 @@ def inclusive_days(start: date, end: date) -> float:
     return float((end - start).days + 1)
 
 
+def git_since_arg(day: date) -> str:
+    return f"{day.isoformat()} 00:00:00"
+
+
+def git_until_arg(day: date) -> str:
+    return f"{day.isoformat()} 23:59:59"
+
+
 def run_git_log(repo: Path, since: date, until: date, author: str | None, branch: str | None) -> str:
     cmd = [
         "git",
@@ -48,9 +56,9 @@ def run_git_log(repo: Path, since: date, until: date, author: str | None, branch
         "log",
         "--no-merges",
         "--since",
-        since.isoformat(),
+        git_since_arg(since),
         "--until",
-        until.isoformat(),
+        git_until_arg(until),
         "--numstat",
         "--date=short",
         "--pretty=format:__COMMIT__%n%ad",
