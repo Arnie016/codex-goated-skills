@@ -27,14 +27,15 @@ struct MenuBarView: View {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 14) {
                     header
-                    statusCard
-                    quickActions
+                    controllerCard
+                    launchCard
+                    connectivityCard
                     captureCard
                     footer
                 }
                 .padding(16)
             }
-            .frame(width: 388, height: 560)
+            .frame(width: 400, height: 620)
         }
     }
 
@@ -44,7 +45,7 @@ struct MenuBarView: View {
                 Text("Xbox Studio")
                     .font(.system(size: 20, weight: .black, design: .rounded))
                     .foregroundStyle(XboxMenuPalette.primary)
-                Text(model.playerLabel.isEmpty ? "Cloud, remote, controllers, captures" : model.playerLabel)
+                Text(model.playerLabel.isEmpty ? model.controllers.summaryTitle : model.playerLabel)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(XboxMenuPalette.secondary)
             }
@@ -62,30 +63,103 @@ struct MenuBarView: View {
         }
     }
 
-    private var statusCard: some View {
+    private var controllerCard: some View {
+        let card = model.controllers.primaryCard
+
+        return VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack(spacing: 8) {
+                        Image(systemName: card.symbolName)
+                            .foregroundStyle(card.level.color)
+                        Text(card.title)
+                            .font(.headline.weight(.black))
+                            .foregroundStyle(XboxMenuPalette.primary)
+                    }
+
+                    Text(card.detail)
+                        .font(.caption)
+                        .foregroundStyle(XboxMenuPalette.secondary)
+                }
+
+                Spacer()
+
+                if let badge = card.badge {
+                    chip(badge, tint: card.level.color.opacity(0.18), foreground: card.level.color)
+                }
+            }
+
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(card.actions) { action in
+                    controllerActionButton(action)
+                }
+            }
+
+            if model.controllers.controllers.isEmpty {
+                Text("No active controllers in GameController right now.")
+                    .font(.caption)
+                    .foregroundStyle(XboxMenuPalette.muted)
+            } else {
+                ForEach(Array(model.controllers.controllers.prefix(2))) { controller in
+                    HStack(spacing: 10) {
+                        Image(systemName: controller.isXboxFamily ? "gamecontroller.fill" : "gamecontroller")
+                            .foregroundStyle(controller.isXboxFamily ? Color.green.opacity(0.95) : XboxMenuPalette.secondary)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(controller.name)
+                                .font(.subheadline.weight(.bold))
+                                .foregroundStyle(XboxMenuPalette.primary)
+                            Text(controller.detail)
+                                .font(.caption)
+                                .foregroundStyle(XboxMenuPalette.secondary)
+                        }
+                        Spacer()
+                    }
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 8)
+                    .background(raisedBackground)
+                }
+            }
+        }
+        .padding(14)
+        .background(cardBackground)
+    }
+
+    private var launchCard: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Play and Official Surfaces")
+                .font(.caption.weight(.bold))
+                .foregroundStyle(XboxMenuPalette.secondary)
+
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                actionButton("Cloud Gaming", systemImage: "cloud.fill") { model.openCloudGaming() }
+                actionButton("Remote Play", systemImage: "play.tv.fill") { model.openRemotePlay() }
+                actionButton("Xbox Account", systemImage: "person.crop.circle") { model.openAccount() }
+                actionButton("Pairing Guide", systemImage: "book.closed") { model.openApplePairingGuide() }
+            }
+        }
+    }
+
+    private var connectivityCard: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 6) {
                     HStack(spacing: 8) {
                         Image(systemName: model.connectivity.level.symbolName)
                             .foregroundStyle(model.connectivity.level.color)
-                        Text(model.connectivity.headline)
+                        Text("Connectivity")
                             .font(.headline.weight(.black))
                             .foregroundStyle(XboxMenuPalette.primary)
                     }
 
-                    Text(model.connectivity.detail)
-                        .font(.caption)
+                    Text(model.connectivity.headline)
+                        .font(.caption.weight(.semibold))
                         .foregroundStyle(XboxMenuPalette.secondary)
+                    Text("\(model.connectivity.detail) • \(model.connectivity.checkedAtLabel)")
+                        .font(.caption2)
+                        .foregroundStyle(XboxMenuPalette.muted)
                 }
 
                 Spacer()
-            }
-
-            HStack(spacing: 8) {
-                chip(model.controllers.bluetoothTitle, tint: model.controllers.bluetoothLevel.color.opacity(0.18), foreground: model.controllers.bluetoothLevel.color)
-                chip("\(model.controllers.controllerCount) controller(s)", tint: Color.white.opacity(0.12))
-                chip("\(model.captures.count) capture(s)", tint: Color.white.opacity(0.12))
             }
 
             ForEach(model.connectivity.probes) { probe in
@@ -105,44 +179,11 @@ struct MenuBarView: View {
                 }
                 .padding(.horizontal, 10)
                 .padding(.vertical, 8)
-                .background(
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .fill(XboxMenuPalette.raised)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                .stroke(XboxMenuPalette.border, lineWidth: 1)
-                        )
-                )
+                .background(raisedBackground)
             }
-
-            Text(model.connectivity.checkedAtLabel)
-                .font(.caption2.weight(.semibold))
-                .foregroundStyle(XboxMenuPalette.muted)
         }
         .padding(14)
-        .background(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(XboxMenuPalette.card)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .stroke(XboxMenuPalette.border, lineWidth: 1)
-                )
-        )
-    }
-
-    private var quickActions: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Quick Actions")
-                .font(.caption.weight(.bold))
-                .foregroundStyle(XboxMenuPalette.secondary)
-
-            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                actionButton("Cloud Gaming", systemImage: "cloud.fill") { model.openCloudGaming() }
-                actionButton("Remote Play", systemImage: "play.tv.fill") { model.openRemotePlay() }
-                actionButton("Xbox Account", systemImage: "person.crop.circle") { model.openAccount() }
-                actionButton("Bluetooth", systemImage: "dot.radiowaves.left.and.right") { model.openBluetoothSettings() }
-            }
-        }
+        .background(cardBackground)
     }
 
     private var captureCard: some View {
@@ -160,7 +201,7 @@ struct MenuBarView: View {
                 .foregroundStyle(.white)
             }
 
-            Text("Sign in in your browser, download or export clips, then drag them into the dashboard inbox.")
+            Text("Export or download captures in official Xbox or Microsoft surfaces, then drag them into the dashboard inbox.")
                 .font(.caption)
                 .foregroundStyle(XboxMenuPalette.secondary)
 
@@ -193,14 +234,7 @@ struct MenuBarView: View {
                 }
                 .padding(.horizontal, 10)
                 .padding(.vertical, 10)
-                .background(
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .fill(XboxMenuPalette.raised)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                .stroke(XboxMenuPalette.border, lineWidth: 1)
-                        )
-                )
+                .background(raisedBackground)
             } else {
                 Text("No captures in the inbox yet.")
                     .font(.caption)
@@ -208,14 +242,7 @@ struct MenuBarView: View {
             }
         }
         .padding(14)
-        .background(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(XboxMenuPalette.card)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .stroke(XboxMenuPalette.border, lineWidth: 1)
-                )
-        )
+        .background(cardBackground)
     }
 
     private var footer: some View {
@@ -253,6 +280,31 @@ struct MenuBarView: View {
             )
     }
 
+    private func controllerActionButton(_ action: XboxControllerAction) -> some View {
+        Button {
+            model.performControllerAction(action)
+        } label: {
+            HStack(spacing: 8) {
+                Image(systemName: action.systemImage)
+                Text(action.title)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .font(.caption.weight(.semibold))
+            .foregroundStyle(.white)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 10)
+            .background(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(action.isPrimary ? Color.green.opacity(0.42) : Color.white.opacity(0.08))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .stroke(XboxMenuPalette.border, lineWidth: 1)
+                    )
+            )
+        }
+        .buttonStyle(.plain)
+    }
+
     private func actionButton(_ title: String, systemImage: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             VStack(alignment: .leading, spacing: 8) {
@@ -269,15 +321,26 @@ struct MenuBarView: View {
             }
             .frame(maxWidth: .infinity, minHeight: 88, alignment: .leading)
             .padding(12)
-            .background(
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(XboxMenuPalette.card)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .stroke(XboxMenuPalette.border, lineWidth: 1)
-                    )
-            )
+            .background(cardBackground)
         }
         .buttonStyle(.plain)
+    }
+
+    private var cardBackground: some View {
+        RoundedRectangle(cornerRadius: 24, style: .continuous)
+            .fill(XboxMenuPalette.card)
+            .overlay(
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .stroke(XboxMenuPalette.border, lineWidth: 1)
+            )
+    }
+
+    private var raisedBackground: some View {
+        RoundedRectangle(cornerRadius: 14, style: .continuous)
+            .fill(XboxMenuPalette.raised)
+            .overlay(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(XboxMenuPalette.border, lineWidth: 1)
+            )
     }
 }

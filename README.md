@@ -103,7 +103,7 @@ Browse by use case:
 
 | Skill | What it does | Install name |
 | --- | --- | --- |
-| <img src="skills/xbox-studio/assets/xbox-studio-small.svg" width="26" alt="Xbox Studio" /><br/>[`xbox-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/xbox-studio) | Builds and troubleshoots realistic macOS helpers for Xbox cloud gaming, Remote Play, controller setup, captures, and browser-based account flows | `xbox-studio` |
+| <img src="skills/xbox-studio/assets/xbox-studio-small.svg" width="26" alt="Xbox Studio" /><br/>[`xbox-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/xbox-studio) | Builds, runs, and troubleshoots a controller-first macOS Xbox helper for Bluetooth readiness, pairing, cloud gaming, Remote Play, captures, and official account flows | `xbox-studio` |
 | <img src="skills/minecraft-essentials/assets/minecraft-essentials-small.svg" width="26" alt="Minecraft Essentials" /><br/>[`minecraft-essentials`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-essentials) | Runs, upgrades, and troubleshoots Minecraft Java servers | `minecraft-essentials` |
 | <img src="skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg" width="26" alt="Minecraft Skin Studio" /><br/>[`minecraft-skin-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-skin-studio) | Drafts, previews, and registers Minecraft Java skins from prompts or PNGs | `minecraft-skin-studio` |
 
@@ -113,7 +113,7 @@ Browse by use case:
 | --- | --- | --- |
 | `minecraft-skinbar` | macOS menu bar app for generating, importing, and opening Minecraft skins | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/minecraft-skinbar) |
 | `clipboard-studio` | macOS menu bar clipboard context stacker for capture, history, and quick paste back into your editor | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/clipboard-studio) |
-| `xbox-studio` | macOS menu bar Xbox helper for cloud gaming, Remote Play launch, Bluetooth and controller checks, connectivity testing, and drag-and-drop capture imports | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/xbox-studio) |
+| `xbox-studio` | macOS menu bar Xbox control center with Bluetooth and controller readiness first, then cloud gaming, Remote Play launch, connectivity testing, and drag-and-drop capture imports | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/xbox-studio) |
 | `phone-spotter` | macOS menu bar phone recovery utility with QR pairing, saved clues, and Apple or Google provider handoff | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/phone-spotter) |
 | `flight-scout` | macOS menu bar flight watcher with live fare signals, booking deeplinks, and travel risk scoring | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/flight-scout) |
 | `telebar` | macOS Telegram control center for inbox, AI writing, and setup flows | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/telebar) |

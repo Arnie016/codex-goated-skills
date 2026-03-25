@@ -6,6 +6,8 @@ enum XboxLinks {
     static let remotePlay = URL(string: "https://www.xbox.com/remoteplay")!
     static let account = URL(string: "https://account.xbox.com/")!
     static let support = URL(string: "https://support.xbox.com/")!
+    static let applePairingGuide = URL(string: "https://support.apple.com/en-euro/111101")!
+    static let controllerGuide = URL(string: "https://support.xbox.com/en-US/help/hardware-network/controller/update-xbox-wireless-controller")!
 }
 
 final class XboxConnectivityService {

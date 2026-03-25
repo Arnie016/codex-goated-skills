@@ -21,8 +21,9 @@ struct DashboardView: View {
             LinearGradient(
                 colors: [
                     XboxDashboardPalette.backgroundTop,
-                    model.connectivity.level.color.opacity(0.12),
-                    XboxDashboardPalette.backgroundBottom
+                    model.controllers.primaryCard.level.color.opacity(0.14),
+                    model.connectivity.level.color.opacity(0.08),
+                    XboxDashboardPalette.backgroundBottom,
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -30,10 +31,10 @@ struct DashboardView: View {
             .ignoresSafeArea()
 
             ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
+                VStack(alignment: .leading, spacing: 28) {
                     hero
-                    statusGrid
                     controllerSection
+                    connectivitySection
                     capturesSection
                     boundarySection
                 }
@@ -60,7 +61,7 @@ struct DashboardView: View {
                     .font(.system(size: 42, weight: .black, design: .rounded))
                     .foregroundStyle(XboxDashboardPalette.primary)
 
-                Text("A macOS menu bar hub for Xbox cloud gaming, Remote Play launch, controller readiness, connectivity checks, and a drag-and-drop capture inbox.")
+                Text("A controller-first macOS menu bar hub for Bluetooth readiness, Xbox controller pairing, cloud gaming, Remote Play launch, and a local capture inbox.")
                     .font(.title3.weight(.medium))
                     .foregroundStyle(XboxDashboardPalette.secondary)
 
@@ -69,18 +70,18 @@ struct DashboardView: View {
                     .frame(maxWidth: 360)
 
                 HStack(spacing: 10) {
+                    heroButton("Bluetooth Settings", systemImage: "dot.radiowaves.left.and.right") { model.openBluetoothSettings() }
+                    heroButton("Apple Pairing Guide", systemImage: "book.closed") { model.openApplePairingGuide() }
                     heroButton("Cloud Gaming", systemImage: "cloud.fill") { model.openCloudGaming() }
                     heroButton("Remote Play", systemImage: "play.tv.fill") { model.openRemotePlay() }
-                    heroButton("Xbox Account", systemImage: "person.crop.circle") { model.openAccount() }
-                    heroButton("Bluetooth", systemImage: "dot.radiowaves.left.and.right") { model.openBluetoothSettings() }
                 }
             }
 
             Spacer()
 
             VStack(alignment: .trailing, spacing: 12) {
+                capsuleLabel(model.controllers.summaryTitle, color: model.controllers.primaryCard.level.color)
                 capsuleLabel(model.connectivity.headline, color: model.connectivity.level.color)
-                capsuleLabel(model.controllers.bluetoothTitle, color: model.controllers.bluetoothLevel.color)
                 capsuleLabel("\(model.captures.count) captures in inbox", color: XboxDashboardPalette.accent)
                 Button {
                     model.refresh()
@@ -93,97 +94,161 @@ struct DashboardView: View {
         }
     }
 
-    private var statusGrid: some View {
-        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-            dashboardCard(
-                title: "Connectivity",
-                value: model.connectivity.detail,
-                subtitle: model.connectivity.checkedAtLabel,
-                icon: model.connectivity.level.symbolName,
-                tint: model.connectivity.level.color
-            )
-            dashboardCard(
-                title: "Bluetooth",
-                value: model.controllers.bluetoothTitle,
-                subtitle: model.controllers.bluetoothDetail,
-                icon: model.controllers.bluetoothLevel.symbolName,
-                tint: model.controllers.bluetoothLevel.color
-            )
-            dashboardCard(
-                title: "Controllers",
-                value: "\(model.controllers.controllerCount) connected",
-                subtitle: model.controllers.controllerCount == 0 ? "No active game controllers right now." : "GameController framework sees active devices.",
-                icon: "gamecontroller.fill",
-                tint: XboxDashboardPalette.accent
-            )
-            dashboardCard(
-                title: "Capture Inbox",
-                value: model.captureDirectory.lastPathComponent,
-                subtitle: model.captureDirectory.path,
-                icon: "tray.full.fill",
-                tint: XboxDashboardPalette.accent
-            )
-        }
-    }
-
     private var controllerSection: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 16) {
             HStack {
-                Text("Controllers and Local Readiness")
-                    .font(.title3.weight(.bold))
-                    .foregroundStyle(XboxDashboardPalette.primary)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Controller Readiness")
+                        .font(.title2.weight(.bold))
+                        .foregroundStyle(XboxDashboardPalette.primary)
+                    Text("Xbox Studio keeps controller and Bluetooth checks at the top, then hands off into official Apple and Xbox surfaces when you need support.")
+                        .font(.subheadline)
+                        .foregroundStyle(XboxDashboardPalette.secondary)
+                }
                 Spacer()
-                Button("Open Bluetooth Settings") {
-                    model.openBluetoothSettings()
+            }
+
+            controllerStateCard
+
+            HStack(spacing: 10) {
+                heroButton("Open Cloud Gaming", systemImage: "cloud.fill") { model.openCloudGaming() }
+                heroButton("Open Remote Play", systemImage: "play.tv.fill") { model.openRemotePlay() }
+                Button {
+                    model.openXboxControllerGuide()
+                } label: {
+                    Label("Xbox Controller Help", systemImage: "questionmark.circle")
                 }
                 .buttonStyle(.bordered)
             }
 
-            Text("Xbox Studio reads Bluetooth state on the Mac and lists controllers visible through Apple's GameController framework. It does not impersonate a private Xbox console API.")
-                .font(.subheadline)
-                .foregroundStyle(XboxDashboardPalette.secondary)
-
             if model.controllers.controllers.isEmpty {
                 emptyCard(
-                    title: "No connected controllers",
-                    detail: "Turn Bluetooth on, pair a supported Xbox controller in macOS settings, then come back here to verify the connection."
+                    title: "No controller rows yet",
+                    detail: "Once a controller is visible through Apple's GameController framework, it will appear here with an Xbox-family hint and current-device badge."
                 )
             } else {
-                ForEach(model.controllers.controllers) { controller in
-                    HStack(alignment: .center, spacing: 14) {
-                        Image(systemName: controller.isXboxFamily ? "gamecontroller.fill" : "gamecontroller")
-                            .font(.title3)
-                            .foregroundStyle(controller.isXboxFamily ? XboxDashboardPalette.accent : XboxDashboardPalette.secondary)
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Detected Controllers")
+                        .font(.headline.weight(.bold))
+                        .foregroundStyle(XboxDashboardPalette.primary)
 
-                        VStack(alignment: .leading, spacing: 4) {
-                            HStack(spacing: 8) {
-                                Text(controller.name)
-                                    .font(.headline)
-                                    .foregroundStyle(XboxDashboardPalette.primary)
-                                if controller.isCurrent {
-                                    capsuleLabel("Current", color: Color.blue)
+                    ForEach(model.controllers.controllers) { controller in
+                        HStack(alignment: .center, spacing: 14) {
+                            Image(systemName: controller.isXboxFamily ? "gamecontroller.fill" : "gamecontroller")
+                                .font(.title3)
+                                .foregroundStyle(controller.isXboxFamily ? XboxDashboardPalette.accent : XboxDashboardPalette.secondary)
+
+                            VStack(alignment: .leading, spacing: 4) {
+                                HStack(spacing: 8) {
+                                    Text(controller.name)
+                                        .font(.headline)
+                                        .foregroundStyle(XboxDashboardPalette.primary)
+                                    if controller.isCurrent {
+                                        capsuleLabel("Current", color: Color.blue)
+                                    }
+                                    if controller.isXboxFamily {
+                                        capsuleLabel("Xbox", color: XboxDashboardPalette.accent)
+                                    }
                                 }
-                                if controller.isXboxFamily {
-                                    capsuleLabel("Xbox", color: XboxDashboardPalette.accent)
-                                }
+                                Text(controller.detail)
+                                    .font(.subheadline)
+                                    .foregroundStyle(XboxDashboardPalette.secondary)
                             }
-                            Text(controller.detail)
-                                .font(.subheadline)
-                                .foregroundStyle(XboxDashboardPalette.secondary)
-                        }
 
-                        Spacer()
+                            Spacer()
+                        }
+                        .padding(16)
+                        .background(cardBackground)
                     }
-                    .padding(16)
-                    .background(
-                        RoundedRectangle(cornerRadius: 24, style: .continuous)
-                            .fill(XboxDashboardPalette.card)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 24, style: .continuous)
-                                    .stroke(XboxDashboardPalette.border, lineWidth: 1)
-                            )
-                    )
                 }
+            }
+        }
+    }
+
+    private var controllerStateCard: some View {
+        let card = model.controllers.primaryCard
+
+        return VStack(alignment: .leading, spacing: 16) {
+            HStack(alignment: .top, spacing: 14) {
+                Image(systemName: card.symbolName)
+                    .font(.system(size: 28, weight: .bold))
+                    .foregroundStyle(card.level.color)
+
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack(spacing: 8) {
+                        Text(card.title)
+                            .font(.title3.weight(.bold))
+                            .foregroundStyle(XboxDashboardPalette.primary)
+                        if let badge = card.badge {
+                            capsuleLabel(badge, color: card.level.color)
+                        }
+                    }
+
+                    Text(card.detail)
+                        .font(.subheadline)
+                        .foregroundStyle(XboxDashboardPalette.secondary)
+
+                    Text(model.controllers.summaryDetail)
+                        .font(.footnote)
+                        .foregroundStyle(XboxDashboardPalette.secondary.opacity(0.9))
+                }
+
+                Spacer()
+            }
+
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 180), spacing: 10)], spacing: 10) {
+                ForEach(card.actions) { action in
+                    controllerActionButton(action)
+                }
+            }
+        }
+        .padding(20)
+        .background(cardBackground)
+    }
+
+    private var connectivitySection: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack {
+                Text("Connectivity and Official Surfaces")
+                    .font(.title3.weight(.bold))
+                    .foregroundStyle(XboxDashboardPalette.primary)
+                Spacer()
+                Button("Refresh Checks") {
+                    model.refresh()
+                }
+                .buttonStyle(.bordered)
+            }
+
+            dashboardCard(
+                title: "Xbox Web Reachability",
+                value: model.connectivity.headline,
+                subtitle: "\(model.connectivity.detail) • \(model.connectivity.checkedAtLabel)",
+                icon: model.connectivity.level.symbolName,
+                tint: model.connectivity.level.color
+            )
+
+            ForEach(model.connectivity.probes) { probe in
+                HStack(spacing: 12) {
+                    Image(systemName: probe.status.symbolName)
+                        .foregroundStyle(probe.status.color)
+                        .font(.headline)
+
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(probe.name)
+                            .font(.headline)
+                            .foregroundStyle(XboxDashboardPalette.primary)
+                        Text(probe.summary)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(XboxDashboardPalette.secondary)
+                        Text("\(probe.destination) • \(probe.detail)")
+                            .font(.caption)
+                            .foregroundStyle(XboxDashboardPalette.secondary)
+                    }
+
+                    Spacer()
+                }
+                .padding(16)
+                .background(cardBackground)
             }
         }
     }
@@ -205,7 +270,7 @@ struct DashboardView: View {
                 .buttonStyle(.borderedProminent)
             }
 
-            Text("Sign in through official Microsoft or Xbox pages in your browser, export or download captures there, then drag them into this inbox. Xbox Studio organizes the files locally so they are easy to reveal or move anywhere on your Mac.")
+            Text("Sign in through official Microsoft or Xbox pages in your browser, download or export captures there, then drag them into this local inbox for quick reveal in Finder.")
                 .font(.subheadline)
                 .foregroundStyle(XboxDashboardPalette.secondary)
 
@@ -224,7 +289,7 @@ struct DashboardView: View {
             if model.captures.isEmpty {
                 emptyCard(
                     title: "Nothing imported yet",
-                    detail: "The inbox accepts common Xbox-friendly image and video formats such as .mp4, .mov, .png, and .jpg."
+                    detail: "The inbox accepts common Xbox-friendly image and video formats such as .mp4, .mov, .png, .jpg, and .heic."
                 )
             } else {
                 ForEach(model.captures) { asset in
@@ -257,14 +322,7 @@ struct DashboardView: View {
                         .buttonStyle(.bordered)
                     }
                     .padding(16)
-                    .background(
-                        RoundedRectangle(cornerRadius: 24, style: .continuous)
-                            .fill(XboxDashboardPalette.card)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 24, style: .continuous)
-                                    .stroke(XboxDashboardPalette.border, lineWidth: 1)
-                            )
-                    )
+                    .background(cardBackground)
                 }
             }
         }
@@ -277,21 +335,15 @@ struct DashboardView: View {
                 .foregroundStyle(XboxDashboardPalette.primary)
 
             VStack(alignment: .leading, spacing: 10) {
-                bullet("Can open official Xbox cloud gaming, Remote Play, account, and support surfaces quickly from the Mac.")
-                bullet("Can test whether those web surfaces are reachable from your current connection.")
-                bullet("Can show Bluetooth readiness and the controllers macOS currently sees.")
+                bullet("Can keep controller and Bluetooth readiness front and center on the Mac.")
+                bullet("Can open official Apple pairing guidance and Xbox controller help or firmware guidance.")
+                bullet("Can launch official Xbox Cloud Gaming, Remote Play, account, and support surfaces quickly.")
+                bullet("Can test whether the main Xbox web surfaces are reachable from your current connection.")
                 bullet("Can import downloaded or exported captures into a local inbox you can reveal in Finder.")
-                bullet("Cannot silently control console power, library installs, messages, or private capture libraries without documented Microsoft support.")
+                bullet("Cannot silently control console power, installs, messages, or private Xbox libraries without documented Microsoft support.")
             }
             .padding(18)
-            .background(
-                RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .fill(XboxDashboardPalette.card)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 24, style: .continuous)
-                            .stroke(XboxDashboardPalette.border, lineWidth: 1)
-                    )
-            )
+            .background(cardBackground)
         }
     }
 
@@ -305,7 +357,7 @@ struct DashboardView: View {
                     Text(isDropTargeted ? "Release to import captures" : "Drop Xbox clips or screenshots here")
                         .font(.headline)
                         .foregroundStyle(XboxDashboardPalette.primary)
-                    Text("This copies the files into \(model.captureDirectory.lastPathComponent) so you can reveal them later.")
+                    Text("This copies the files into \(model.captureDirectory.lastPathComponent) so the newest captures stay easy to reveal later.")
                         .font(.subheadline)
                         .foregroundStyle(XboxDashboardPalette.secondary)
                 }
@@ -350,6 +402,22 @@ struct DashboardView: View {
         return true
     }
 
+    @ViewBuilder
+    private func controllerActionButton(_ action: XboxControllerAction) -> some View {
+        let button = Button {
+            model.performControllerAction(action)
+        } label: {
+            Label(action.title, systemImage: action.systemImage)
+                .frame(maxWidth: .infinity)
+        }
+
+        if action.isPrimary {
+            button.buttonStyle(.borderedProminent)
+        } else {
+            button.buttonStyle(.bordered)
+        }
+    }
+
     private func dashboardCard(title: String, value: String, subtitle: String, icon: String, tint: Color) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 10) {
@@ -369,14 +437,7 @@ struct DashboardView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(18)
-        .background(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(XboxDashboardPalette.card)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .stroke(XboxDashboardPalette.border, lineWidth: 1)
-                )
-        )
+        .background(cardBackground)
     }
 
     private func emptyCard(title: String, detail: String) -> some View {
@@ -390,14 +451,16 @@ struct DashboardView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(18)
-        .background(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(XboxDashboardPalette.card)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .stroke(XboxDashboardPalette.border, lineWidth: 1)
-                )
-        )
+        .background(cardBackground)
+    }
+
+    private var cardBackground: some View {
+        RoundedRectangle(cornerRadius: 24, style: .continuous)
+            .fill(XboxDashboardPalette.card)
+            .overlay(
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .stroke(XboxDashboardPalette.border, lineWidth: 1)
+            )
     }
 
     private func capsuleLabel(_ value: String, color: Color) -> some View {

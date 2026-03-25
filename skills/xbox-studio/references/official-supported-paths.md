@@ -10,11 +10,14 @@ Use this reference before claiming a direct Xbox capability on macOS.
   Source: https://www.xbox.com/en-US/xbox-on-mobile/
 - Apple documents pairing supported Xbox wireless controllers with Mac through Bluetooth settings.
   Source: https://support.apple.com/en-euro/111101
+- Xbox Support documents controller update and firmware guidance through its controller help surface.
+  Source: https://support.xbox.com/en-US/help/hardware-network/controller/update-xbox-wireless-controller
 
 ## Build Recommendations
 
 ### Good Mac Targets
 
+- Controller-first Xbox menu bar app that keeps Bluetooth readiness, Apple pairing guidance, and Xbox controller help one click away
 - Browser launcher for `xbox.com/play`
 - Menu bar helper that opens cloud gaming, Remote Play, account pages, support pages, and local capture folders
 - Controller pairing or troubleshooting assistant for macOS
@@ -34,12 +37,14 @@ Use this reference before claiming a direct Xbox capability on macOS.
 | --- | --- | --- |
 | Cloud gaming | `xbox.com/play` in browser | Check subscription, browser, and region requirements |
 | Remote Play | `xbox.com/play` Remote Play entry | Console must have remote features enabled |
-| Pair controller | macOS Bluetooth settings | Use Apple pairing steps and Microsoft firmware guidance |
+| Pair controller | macOS Bluetooth settings plus Apple pairing guide | Keep pairing in Apple surfaces and firmware help in Xbox Support |
 | Manage captures | Local folder helper plus official share surface | Safe to automate after export or download |
 | Account or billing | `account.microsoft.com`, `account.xbox.com`, or `xbox.com` | Keep auth in browser |
 
 ## Suggested Menu Actions
 
+- Open Apple Pairing Guide
+- Open Xbox Controller Help
 - Open Cloud Gaming
 - Open Remote Play
 - Pair Controller

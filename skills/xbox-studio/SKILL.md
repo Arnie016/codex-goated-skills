@@ -1,36 +1,36 @@
 ---
 name: xbox-studio
-description: Build, scaffold, troubleshoot, or product-shape a macOS helper workflow for Xbox cloud gaming, Remote Play, controller pairing, captures, and account or console support using official Xbox, Microsoft, Apple, and browser-supported surfaces. Use when Codex needs to turn "control my Xbox stuff" into a realistic menu bar app, browser launcher, shortcut flow, or support workflow without inventing unsupported Xbox APIs.
+description: Build, run, scaffold, troubleshoot, or product-shape a controller-first macOS Xbox helper for Bluetooth readiness, controller pairing, cloud gaming, Remote Play, captures, and account support using official Xbox, Microsoft, Apple, and browser-supported surfaces. Use when Codex needs to turn "control my Xbox stuff from my Mac" into a realistic menu bar app, launcher, or support workflow without inventing unsupported Xbox APIs.
 ---
 
 # Xbox Studio
 
 Use this skill when the user wants a Mac app, menu bar utility, launcher, or troubleshooting flow for Xbox tasks.
 
-Default product shape: a lightweight macOS helper that opens the best supported Xbox or Microsoft surface quickly and makes controller setup, cloud gaming, Remote Play, or capture handling easier.
+Default product shape: the existing `apps/xbox-studio` menu bar app, with controller and Bluetooth readiness as the primary lane and cloud gaming, Remote Play, and captures as secondary flows.
 
 ## Quick Start
 
-1. Choose the lane: `menu-bar-app`, `browser-helper`, `controller-setup`, `capture-helper`, or `support-only`.
-2. Run `python3 scripts/xbox_brief.py --goal "<user request>"` to normalize the request.
-3. Default to a small helper with these actions:
-   - `Open Cloud Gaming`
-   - `Open Remote Play`
-   - `Pair Controller`
-   - `Open Xbox Account`
-   - `Open Captures`
-   - `Quit`
-4. Be explicit about capability boundaries:
+1. Run `python3 scripts/xbox_brief.py --goal "<user request>"` to normalize the request.
+2. If the user is asking for a broad Mac control hub or a controller and Bluetooth check, default to the existing Xbox Studio app in `apps/xbox-studio`.
+3. To build and open the app fast, run `bash scripts/run_xbox_studio.sh` from the repo workspace. Use `bash scripts/run_xbox_studio.sh --build-only` for a smoke build.
+4. Choose the lane only after the brief:
+   - `menu-bar-app`
+   - `browser-helper`
+   - `controller-setup`
+   - `capture-helper`
+   - `support-only`
+5. Be explicit about capability boundaries:
    - keep Microsoft sign-in inside Microsoft-owned browser or account surfaces
    - do not promise a public Xbox console control API unless current official docs prove one exists
-   - on Mac, prefer browser launchers and controller-setup flows; Xbox pages that describe the Xbox mobile app target iOS or Android
-5. If a real app scaffold is requested, prefer a lightweight SwiftUI menu bar app first and add richer views only if the user asks.
+   - on Mac, prefer the local Xbox Studio app, browser launchers, and controller-setup flows; Xbox pages that describe the Xbox mobile app target iOS or Android
+6. If a real app scaffold is requested, prefer the existing SwiftUI menu bar app first and extend it rather than inventing a new Xbox shell.
 
 ## Workflow
 
 ### Choose The Lane
 
-- `menu-bar-app`: build a persistent Mac launcher that keeps Xbox actions one click away and hands off into official web or account surfaces.
+- `menu-bar-app`: extend or run the existing Xbox Studio launcher so controller checks, cloud gaming, Remote Play, and account surfaces stay one click away.
 - `browser-helper`: use the user's signed-in browser session to launch cloud gaming, Remote Play, account pages, or support flows.
 - `controller-setup`: focus on Bluetooth pairing, firmware guidance, and input troubleshooting on macOS.
 - `capture-helper`: organize user-exported or downloaded captures locally and deep link into the official share or account surfaces when needed.
@@ -41,9 +41,12 @@ Default product shape: a lightweight macOS helper that opens the best supported 
 Run the brief script first. Useful commands:
 
 ```bash
+python3 scripts/xbox_brief.py --goal "control my xbox stuff from my mac"
 python3 scripts/xbox_brief.py --goal "make a Mac menu bar app to open Xbox cloud gaming and remote play fast"
 python3 scripts/xbox_brief.py --goal "help me pair my Xbox controller to my Mac" --lane controller-setup --focus controller
 python3 scripts/xbox_brief.py --goal "organize Xbox captures on my Mac and open the official share surface" --lane capture-helper --focus captures
+bash scripts/run_xbox_studio.sh
+bash scripts/run_xbox_studio.sh --repo-root /path/to/codex-goated-skills --build-only
 ```
 
 The brief should capture:
@@ -53,6 +56,7 @@ The brief should capture:
 - required supported surfaces
 - trust boundary for sign-in and automation
 - fallback path if the preferred action is not directly scriptable
+- whether the current request should route into the existing Xbox Studio app
 
 ### Capability Boundaries
 
@@ -66,11 +70,13 @@ The brief should capture:
 ### Menu Bar App Guidance
 
 - Prefer `MenuBarExtra` or an accessory app with an `NSStatusItem`.
+- For broad "control my Xbox stuff from my Mac" requests, default to the existing `apps/xbox-studio` app and improve that experience first.
 - Keep the main surface action-oriented:
-  - open cloud gaming
-  - open Remote Play
+  - show controller and Bluetooth readiness first
+  - open Bluetooth settings or the Apple pairing guide
+  - open Xbox controller help or firmware guidance
+  - open cloud gaming and Remote Play
   - open Xbox account or subscriptions
-  - pair or troubleshoot controller
   - open captures folder or official share surface
 - Prefer a small popover for status and a settings window for console nicknames, saved links, and capture-folder preferences.
 - Treat launch-at-login as optional.
@@ -80,7 +86,15 @@ The brief should capture:
 
 - Use Apple's Bluetooth pairing flow for supported Xbox controllers on Mac.
 - Keep controller firmware updates in Microsoft's documented surfaces.
+- Treat controller troubleshooting as the primary app journey:
+  - Bluetooth off
+  - Bluetooth permission needed
+  - Bluetooth resetting or unknown
+  - no controller detected
+  - non-Xbox controller detected
+  - Xbox controller connected
 - If the user asks for remapping, verify the exact supported tool path first rather than inventing a general-purpose Xbox remapping API on macOS.
+- Load `references/controller-symptom-matrix.md` when shaping UI copy, troubleshooting states, or support actions.
 
 ### Cloud Gaming And Remote Play
 
@@ -105,10 +119,11 @@ The brief should capture:
 
 - Start with the smallest reliable flow that meets the request.
 - Prefer:
+  - existing Xbox Studio app
   - browser launcher or deep link
-  - menu bar wrapper
+  - menu bar wrapper only when extending the existing app is not enough
   - automation last
-- If the user wants a real macOS app scaffold in the local workspace, create a fresh menu bar target rather than overloading an unrelated existing app.
+- If the user wants a real macOS app scaffold in the local workspace, extend `apps/xbox-studio` rather than creating a second Xbox app by default.
 
 ## Required Deliverables
 
@@ -125,4 +140,6 @@ The brief should capture:
 ## Resources
 
 - `scripts/xbox_brief.py`: normalizes the user's request into a build brief.
+- `scripts/run_xbox_studio.sh`: builds and opens the existing Xbox Studio app from a repo workspace, or does a smoke build with `--build-only`.
 - `references/official-supported-paths.md`: concise guardrails for what Xbox officially documents for browser, mobile, and controller flows, plus what to avoid claiming on macOS.
+- `references/controller-symptom-matrix.md`: controller-first symptom map for Bluetooth state, controller detection, and Remote Play readiness copy.

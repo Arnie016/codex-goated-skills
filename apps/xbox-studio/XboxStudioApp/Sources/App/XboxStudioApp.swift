@@ -24,7 +24,7 @@ struct XboxStudioApp: App {
             VStack(alignment: .leading, spacing: 12) {
                 Text("Xbox Studio")
                     .font(.title2.weight(.bold))
-                Text("A grounded macOS helper for Xbox cloud gaming, Remote Play launch, controller readiness, connectivity checks, and capture imports.")
+                Text("A grounded controller-first macOS helper for Bluetooth readiness, Xbox controller setup, cloud gaming, Remote Play launch, and capture imports.")
                     .foregroundStyle(.secondary)
                 Text("Capture inbox: \(model.captureDirectory.path)")
                     .font(.footnote)

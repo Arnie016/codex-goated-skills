@@ -76,20 +76,77 @@ struct XboxControllerRow: Identifiable {
     let isCurrent: Bool
 }
 
+enum XboxControllerActionKind: String {
+    case openBluetoothSettings
+    case openApplePairingGuide
+    case openXboxControllerGuide
+    case refreshChecks
+}
+
+struct XboxControllerAction: Identifiable {
+    let kind: XboxControllerActionKind
+    let title: String
+    let systemImage: String
+    let isPrimary: Bool
+
+    var id: String {
+        "\(kind.rawValue)-\(title)"
+    }
+}
+
+struct XboxControllerStatusCard: Identifiable {
+    let id: String
+    let title: String
+    let detail: String
+    let level: XboxStatusLevel
+    let symbolName: String
+    let badge: String?
+    let actions: [XboxControllerAction]
+}
+
 struct XboxControllerSnapshot {
     var bluetoothTitle: String
     var bluetoothDetail: String
     var bluetoothLevel: XboxStatusLevel
+    var summaryTitle: String
+    var summaryDetail: String
+    var primaryCard: XboxControllerStatusCard
     var controllers: [XboxControllerRow]
 
     var controllerCount: Int {
         controllers.count
     }
 
+    var xboxControllerCount: Int {
+        controllers.filter(\.isXboxFamily).count
+    }
+
+    var hasXboxController: Bool {
+        xboxControllerCount > 0
+    }
+
     static let placeholder = XboxControllerSnapshot(
         bluetoothTitle: "Checking Bluetooth",
         bluetoothDetail: "Looking for controller readiness on this Mac.",
         bluetoothLevel: .neutral,
+        summaryTitle: "Controller readiness is loading",
+        summaryDetail: "Xbox Studio is reading Bluetooth and controller state.",
+        primaryCard: XboxControllerStatusCard(
+            id: "checking",
+            title: "Checking Bluetooth",
+            detail: "Xbox Studio is reading local controller readiness on this Mac.",
+            level: .neutral,
+            symbolName: "bolt.horizontal.circle.fill",
+            badge: "Checking",
+            actions: [
+                XboxControllerAction(
+                    kind: .refreshChecks,
+                    title: "Refresh Checks",
+                    systemImage: "arrow.clockwise",
+                    isPrimary: true
+                )
+            ]
+        ),
         controllers: []
     )
 }
@@ -100,6 +157,7 @@ struct CaptureAsset: Identifiable {
     let title: String
     let subtitle: String
     let badge: String
+    let modifiedAt: Date
 }
 
 @MainActor
@@ -147,21 +205,21 @@ final class XboxStudioModel: ObservableObject {
     }
 
     var menuBarSymbolName: String {
-        if connectivity.level == .critical {
-            return "wifi.slash"
-        }
-        if controllers.controllerCount > 0 {
+        if controllers.hasXboxController {
             return "gamecontroller.fill"
         }
         if controllers.bluetoothLevel == .warning || controllers.bluetoothLevel == .critical {
             return "antenna.radiowaves.left.and.right.slash"
+        }
+        if connectivity.level == .critical {
+            return "wifi.slash"
         }
         return "gamecontroller"
     }
 
     var menuBarHelp: String {
         let player = playerLabel.isEmpty ? "Xbox Studio" : playerLabel
-        return "\(player) • \(controllers.bluetoothTitle) • \(controllers.controllerCount) controller(s) • \(captures.count) capture(s)"
+        return "\(player) • \(controllers.summaryTitle) • \(controllers.controllerCount) controller(s) • \(captures.count) capture(s)"
     }
 
     func refresh() {
@@ -200,6 +258,14 @@ final class XboxStudioModel: ObservableObject {
         controllerService.openBluetoothSettings()
     }
 
+    func openApplePairingGuide() {
+        openExternalURL(XboxLinks.applePairingGuide)
+    }
+
+    func openXboxControllerGuide() {
+        openExternalURL(XboxLinks.controllerGuide)
+    }
+
     func openCaptureFolder() {
         captureService.openCaptureFolder()
     }
@@ -222,6 +288,19 @@ final class XboxStudioModel: ObservableObject {
     func openDashboard() {
         NSApp.activate(ignoringOtherApps: true)
         NSApp.sendAction(#selector(NSWindowController.showWindow(_:)), to: nil, from: nil)
+    }
+
+    func performControllerAction(_ action: XboxControllerAction) {
+        switch action.kind {
+        case .openBluetoothSettings:
+            openBluetoothSettings()
+        case .openApplePairingGuide:
+            openApplePairingGuide()
+        case .openXboxControllerGuide:
+            openXboxControllerGuide()
+        case .refreshChecks:
+            refresh()
+        }
     }
 
     private func openExternalURL(_ url: URL) {

@@ -1,4 +1,4 @@
 interface:
   display_name: "Xbox Studio"
-  short_description: "macOS Xbox helper and control flows"
-  default_prompt: "Use $xbox-studio to build or troubleshoot a realistic macOS workflow for Xbox Remote Play, controller setup, captures, or console helper actions."
+  short_description: "macOS Xbox controller and Bluetooth hub"
+  default_prompt: "Use $xbox-studio to run, build, or improve a realistic macOS Xbox controller and Bluetooth control center, then layer in cloud gaming, Remote Play, captures, or account flows."

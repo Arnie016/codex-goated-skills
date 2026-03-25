@@ -5,11 +5,31 @@ import json
 import re
 
 
+def is_mac_hub_request(goal: str) -> bool:
+    lowered = goal.lower()
+    hub_terms = [
+        "control my xbox stuff",
+        "xbox stuff from my mac",
+        "xbox hub",
+        "xbox control center",
+        "control center",
+        "dashboard",
+        "launcher",
+    ]
+    mentions_mac = any(token in lowered for token in [" mac", "mac ", "menu", "menubar", "status bar", "app"])
+    mentions_hub_intent = re.search(r"\b(control|hub|launcher|dashboard)\b", lowered) is not None
+    return any(term in lowered for term in hub_terms) or (
+        mentions_mac and "xbox" in lowered and mentions_hub_intent
+    )
+
+
 def infer_focus(goal: str, explicit: str | None) -> str:
     if explicit:
         return explicit
     lowered = goal.lower()
     if re.search(r"\b(controller|bluetooth|pair|gamepad|elite|adaptive)\b", lowered):
+        return "controller"
+    if is_mac_hub_request(goal):
         return "controller"
     if re.search(r"\b(capture|captures|clip|clips|recording|recordings|screenshot|share)\b", lowered):
         return "captures"
@@ -26,7 +46,11 @@ def infer_lane(goal: str, explicit: str | None, focus: str) -> str:
     if explicit:
         return explicit
     lowered = goal.lower()
+    if is_mac_hub_request(goal):
+        return "menu-bar-app"
     if focus == "controller":
+        if any(token in lowered for token in ["menu", "menubar", "status bar", "dashboard", "launcher", "app"]):
+            return "menu-bar-app"
         return "controller-setup"
     if focus == "captures":
         return "capture-helper"
@@ -99,7 +123,7 @@ def fallback_for_focus(focus: str) -> str:
 
 def shell_for_lane(lane: str) -> str:
     if lane == "menu-bar-app":
-        return "menu bar popover"
+        return "existing Xbox Studio menu bar app"
     if lane == "browser-helper":
         return "browser launcher"
     if lane == "controller-setup":
@@ -154,6 +178,7 @@ def main() -> None:
         "supported_surfaces": surfaces_for_focus(focus),
         "trust_boundary": boundary_for_focus(focus),
         "fallback": fallback_for_focus(focus),
+        "recommended_app": "apps/xbox-studio" if lane == "menu-bar-app" else None,
     }
 
     if args.format == "json":
@@ -167,6 +192,8 @@ def main() -> None:
     print(f"- Focus: `{brief['focus']}`")
     print(f"- Lane: `{brief['lane']}`")
     print(f"- Default shell: {brief['default_shell']}")
+    if brief["recommended_app"]:
+        print(f"- Recommended app: `{brief['recommended_app']}`")
     print("- Supported surfaces:")
     for surface in brief["supported_surfaces"]:
         print(f"  - {surface}")

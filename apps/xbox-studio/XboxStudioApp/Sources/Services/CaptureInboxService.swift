@@ -7,7 +7,7 @@ enum CaptureInboxError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .unsupportedFiles:
-            return "Drop image or video capture files such as .mp4, .mov, .png, or .jpg."
+            return "Drop image or video capture files such as .mp4, .mov, .png, .jpg, or .heic."
         }
     }
 }
@@ -16,7 +16,9 @@ struct CaptureImportResult {
     let importedCount: Int
 
     var message: String {
-        importedCount == 1 ? "Imported 1 capture into the inbox." : "Imported \(importedCount) captures into the inbox."
+        importedCount == 1
+            ? "Imported 1 capture into the local Xbox Studio inbox."
+            : "Imported \(importedCount) captures into the local Xbox Studio inbox."
     }
 }
 
@@ -71,11 +73,15 @@ final class CaptureInboxService {
                 fileURL: url,
                 title: url.deletingPathExtension().lastPathComponent,
                 subtitle: "\(sizeText) • \(dateText)",
-                badge: badge(for: url)
+                badge: badge(for: url),
+                modifiedAt: values?.contentModificationDate ?? .distantPast
             )
         }
         .sorted { lhs, rhs in
-            lhs.fileURL.lastPathComponent.localizedCaseInsensitiveCompare(rhs.fileURL.lastPathComponent) == .orderedAscending
+            if lhs.modifiedAt != rhs.modifiedAt {
+                return lhs.modifiedAt > rhs.modifiedAt
+            }
+            return lhs.fileURL.lastPathComponent.localizedCaseInsensitiveCompare(rhs.fileURL.lastPathComponent) == .orderedAscending
         }
     }
 
