@@ -29,6 +29,7 @@ codex-goated install network-studio
 codex-goated install minecraft-essentials
 codex-goated install deckdrop-studio
 codex-goated install clipboard-studio
+codex-goated install gain-tracker
 codex-goated install skillbar
 codex-goated install find-my-phone-studio
 codex-goated install cursor-studio
@@ -90,6 +91,7 @@ Then restart Codex.
 - Fix the blocker first with `workspace-doctor`
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
 - Build a utility with `network-studio`, `find-my-phone-studio`, or `clipboard-studio`
+- Track a before-versus-now output climb with `gain-tracker`
 - Build a personality-led audience strategy stack with the [`Fandom Skill Pack`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/fandom-skill-pack.md)
 - Browse all download packs in [`collections/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
 - Manage the whole pack from the top bar with `skillbar`
@@ -119,6 +121,7 @@ Browse by use case:
 | Skill | What it does | Install name |
 | --- | --- | --- |
 | <img src="skills/workspace-doctor/assets/workspace-doctor-small.svg" width="26" alt="Workspace Doctor" /><br/>[`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor) | Finds the real local setup blocker and next fix fast | `workspace-doctor` |
+| <img src="skills/gain-tracker/assets/icon-small.svg" width="26" alt="Gain Tracker" /><br/>[`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker) | Tracks output gains, multipliers, and progress toward a target like 90x | `gain-tracker` |
 | <img src="skills/skillbar/assets/skillbar-small.svg" width="26" alt="SkillBar" /><br/>[`skillbar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/skillbar) | Builds and refines SkillBar, the macOS top-bar manager for the goated skill catalog, installed state, and preset bundles | `skillbar` |
 | <img src="skills/clipboard-studio/assets/clipboard-studio-small.svg" width="26" alt="Context Assembly" /><br/>[`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio) | Shapes Context Assembly on macOS so code, logs, pages, and selections become one structured prompt with resumable state instead of Cmd+C, switch, Cmd+V loops | `clipboard-studio` |
 | <img src="skills/network-studio/assets/network-studio-small.svg" width="26" alt="Network Studio" /><br/>[`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio) | macOS LAN monitor with SwiftBar and a dashboard | `network-studio` |

@@ -24,7 +24,7 @@ bash scripts/install-pack.sh creator-and-fandom-stack
 | Pack | What it is for | Skill count |
 | --- | --- | --- |
 | `launch-and-distribution` | Turning rough projects into launch-ready, public packages | 4 |
-| `productivity-and-workflow` | Workspace setup, document workflows, local tooling, and catalog management | 6 |
+| `productivity-and-workflow` | Workspace setup, document workflows, local tooling, and catalog management | 7 |
 | `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, rituals, merch, and narrative risk work | 10 |
 | `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 10 |
 | `macos-utility-builders` | Menu bar utilities, Mac helpers, and focused utility-app shaping | 3 |
