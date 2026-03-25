@@ -13,11 +13,12 @@ Default product shape: a compact but premium macOS `MenuBarExtra` utility with a
 
 1. Define one stable output metric before comparing time periods.
 2. If GitHub is available, connect once with `python3 scripts/github_connect.py connect --repo "/path/to/repo"`.
-3. If a repo is available, prefer git-backed measurement first.
-4. Capture the baseline total and the number of days in that baseline period.
-5. Capture the current total, the current time window, and the target multiplier.
-6. Run `python3 scripts/daily_git_story.py` for a daily repo pulse and reminder story, `python3 scripts/git_gain.py` for baseline-versus-current comparisons, or `python3 scripts/gain_math.py` for manual totals.
-7. Produce either a `daily-gain-story` or a `gain-scorecard`, depending on whether the user wants a daily motivational check-in or a broader baseline comparison.
+3. If you want to pick up several repos at once, run `python3 scripts/github_connect.py track-dir --dir "~/Desktop" --max-depth 2`.
+4. If a repo is available, prefer git-backed measurement first.
+5. Capture the baseline total and the number of days in that baseline period.
+6. Capture the current total, the current time window, and the target multiplier.
+7. Run `python3 scripts/daily_git_story.py` for a daily repo pulse and reminder story, `python3 scripts/git_gain.py` for baseline-versus-current comparisons, or `python3 scripts/gain_math.py` for manual totals.
+8. Produce either a `daily-gain-story` or a `gain-scorecard`, depending on whether the user wants a daily motivational check-in or a broader baseline comparison.
 
 ## Accepted Inputs
 
@@ -25,6 +26,7 @@ Default product shape: a compact but premium macOS `MenuBarExtra` utility with a
 - a current period such as the last 30, 80, or 90 days of output and the number of days in that window
 - a target multiplier such as `10x`, `25x`, or `90x`
 - a repo path and date windows when the user wants git-backed measurement
+- a workspace folder when the user wants the skill to discover and track multiple local repos at once
 - a connected GitHub account through `gh` when the user wants saved identity and tracked repos
 - the metric definition, such as git commits, lines changed, files changed, active days, merged PRs, features delivered, or a weighted output score
 - notes on what changed, such as GStack, tooling upgrades, workflow changes, or team support
@@ -71,9 +73,11 @@ Default `daily-gain-story` sections:
 ### Connect GitHub
 
 - Use `python3 scripts/github_connect.py connect --repo "/path/to/repo"` to detect the logged-in GitHub identity from `gh`, capture the default git author info, and save tracked repos under `~/.codex/gain-tracker/config.json`.
+- Use `python3 scripts/github_connect.py track-dir --dir "~/Desktop" --max-depth 2` to scan a common workspace root and automatically track GitHub repos found inside it.
 - Use `python3 scripts/github_connect.py status` to confirm the connected account and tracked repos.
 - After connection, `scripts/daily_git_story.py` can run without `--repo` and aggregate all tracked repos automatically.
 - After connection, `scripts/git_gain.py` can default to the current repo or first tracked repo and use the saved author filter.
+- When a scanned folder includes non-GitHub repos or empty directories, keep the skips visible instead of silently pretending they were added.
 
 ### Calculate The Gain
 
@@ -95,11 +99,11 @@ Default `daily-gain-story` sections:
 
 - Prefer `MenuBarExtra` with these primary actions:
   - `Connect`
+  - `Scan Folder`
   - `Today`
   - `Story`
   - `Compare`
-  - `Trend`
-- Keep `Export` as a secondary action in the footer or history window instead of a top-level primary tab.
+- Keep `Trend` and `Export` as secondary actions in the footer or history window instead of top-level primary tabs.
 - Keep the popover between 340 pt and 390 pt wide with today's headline stat and reminder story visible above the fold.
 - Use an optional history window for checkpoints, notes, exports, and trend comparisons.
 - The first glance should answer:
@@ -123,6 +127,7 @@ Default `daily-gain-story` sections:
 - `Use $gain-tracker to compare my git commit productivity in this repo against my 2013 baseline and show how far I am toward 90x.`
 - `Use $gain-tracker to read this repo, tell me what code I shipped today from commits and file churn, and write a short reminder story that keeps me productive.`
 - `Use $gain-tracker to connect to my GitHub account, track my repos automatically, and give me a daily reminder story from my actual git activity.`
+- `Use $gain-tracker to scan my workspace folder for GitHub repos, track them, and give me one combined daily story across everything I touched today.`
 
 ## Resources
 

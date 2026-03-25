@@ -1,7 +1,7 @@
 interface:
   display_name: "Gain Tracker"
-  short_description: "Track daily git gains, trends, and reminder stories"
+  short_description: "Connect GitHub, scan repos, and track daily gains"
   icon_small: "./assets/icon-small.svg"
   icon_large: "./assets/icon-large.svg"
   brand_color: "#0F9D58"
-  default_prompt: "Use $gain-tracker to connect my GitHub account or tracked repos, summarize what code I shipped today from git activity, show the recent trend, and turn it into a reminder story plus gain scorecard with progress toward my target."
+  default_prompt: "Use $gain-tracker to connect my GitHub account, scan a folder for repos I should track, summarize what code I shipped today from git activity, and turn it into a reminder story plus gain scorecard with progress toward my target."

@@ -10,6 +10,7 @@ Developers, founders, operators, and solo builders who want to measure a real ou
 
 - connected GitHub identity from `gh auth`
 - tracked repo list stored under `~/.codex/gain-tracker/config.json`
+- an optional workspace folder to scan for multiple git repos in one pass
 - repo path plus baseline and current git windows when the user wants commit-backed measurement
 - baseline output total and baseline duration
 - current output total and current duration
@@ -23,11 +24,12 @@ Developers, founders, operators, and solo builders who want to measure a real ou
 
 1. Confirm one consistent metric definition across the baseline and current periods.
 2. Connect once through GitHub CLI and store the identity plus tracked repos.
-3. If a repo is available, pull git stats first and let the user choose `commits`, `lines-changed`, `files-changed`, or `active-days`.
-4. For daily mode, calculate today's work, seven-day momentum, thirty-day momentum, and current streak.
-5. Normalize broader comparisons into per-day or per-week rates.
-6. Calculate the current multiplier and target progress.
-7. Export a gain scorecard, a daily reminder story, or both.
+3. Offer a quick folder scan for common workspace roots like `~/Desktop` or `~/Code` so the user can pick up multiple repos without hand-adding each one.
+4. If a repo is available, pull git stats first and let the user choose `commits`, `lines-changed`, `files-changed`, or `active-days`.
+5. For daily mode, calculate today's work, seven-day momentum, thirty-day momentum, and current streak.
+6. Normalize broader comparisons into per-day or per-week rates.
+7. Calculate the current multiplier and target progress.
+8. Export a gain scorecard, a daily reminder story, or both.
 
 ## Artifact Template
 
@@ -53,11 +55,12 @@ Daily story sections:
 - Shell: `MenuBarExtra` with an optional history window.
 - Primary actions:
   - `Connect`
+  - `Scan Folder`
   - `Today`
   - `Story`
   - `Compare`
-  - `Trend`
 - Secondary actions:
+  - `Trend`
   - `Export`
   - `Tracked Repos`
   - `Settings`
@@ -78,7 +81,7 @@ Daily story sections:
 
 ## First Run UX
 
-Ask the user to connect GitHub first, then offer to track the current repo or add other repos. After connection, suggest daily story mode by default before asking for any manual totals.
+Ask the user to connect GitHub first, then offer to track the current repo or scan a common workspace folder for more repos. After connection, suggest daily story mode by default before asking for any manual totals.
 
 ## States
 
@@ -92,7 +95,7 @@ Display today's work, recent trend context, and a short note that the system is 
 
 ### Error
 
-Explain whether the issue came from a missing repo, invalid dates, zero-day windows, or an invalid goal multiplier, then preserve the entered numbers for retry.
+Explain whether the issue came from a missing repo, no repos found in the scanned folder, unsupported remotes, invalid dates, zero-day windows, or an invalid goal multiplier, then preserve the entered numbers for retry.
 
 ## Icon Brief
 
@@ -106,5 +109,6 @@ Use a stacked bar plus rising arrow glyph to signal compounding output gains. Th
 
 - Keep the current multiplier pinned near the top in a bold stat row.
 - Keep today's headline work stat above the fold next to a compact streak badge.
+- Keep a compact tracked-repo shelf near the bottom so the user can confirm what the daily story actually covers.
 - Use one comparison rail for `Today`, `7D`, `30D`, and `Goal` instead of a mosaic of tiles.
 - Make the export affordance lightweight: Markdown, plain text, or a short snapshot card.

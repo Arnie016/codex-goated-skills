@@ -216,6 +216,35 @@ def tracked_repo_entries(config: dict[str, object]) -> list[dict[str, object]]:
     return repos
 
 
+def discover_git_repos(root: Path, max_depth: int = 3) -> list[Path]:
+    root = root.expanduser().resolve()
+    if not root.exists():
+        raise RuntimeError(f"directory does not exist: {root}")
+    if not root.is_dir():
+        raise RuntimeError(f"not a directory: {root}")
+    if max_depth < 0:
+        raise RuntimeError(f"max_depth must be non-negative: {max_depth}")
+    repos: list[Path] = []
+    skip_names = {".git", "node_modules", "DerivedData", ".build", ".next", "dist"}
+
+    for current_root, dir_names, _ in os.walk(root):
+        current_path = Path(current_root)
+        depth = len(current_path.relative_to(root).parts)
+        if depth > max_depth:
+            dir_names[:] = []
+            continue
+
+        if (current_path / ".git").exists():
+            repos.append(current_path)
+            dir_names[:] = []
+            continue
+
+        dir_names[:] = [name for name in dir_names if name not in skip_names]
+
+    repos.sort()
+    return repos
+
+
 def default_author_pattern(config: dict[str, object], repo_entry: dict[str, object] | None = None) -> str | None:
     github = config.get("github", {}) if isinstance(config.get("github"), dict) else {}
     repo_entry = repo_entry or {}
