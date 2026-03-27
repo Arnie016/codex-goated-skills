@@ -1,0 +1,52 @@
+name: OnThisDayBar
+options:
+  minimumXcodeGenVersion: 2.45.3
+  deploymentTarget:
+    macOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+    PRODUCT_NAME: $(TARGET_NAME)
+    CODE_SIGN_STYLE: Automatic
+targets:
+  OnThisDayBar:
+    type: application
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: OnThisDayBarApp/Sources
+    info:
+      path: OnThisDayBarApp/Info.plist
+      properties:
+        CFBundleDisplayName: On This Day Bar
+        LSApplicationCategoryType: public.app-category.utilities
+        LSUIElement: true
+        NSPrincipalClass: NSApplication
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.OnThisDayBar
+        INFOPLIST_FILE: OnThisDayBarApp/Info.plist
+        PRODUCT_MODULE_NAME: OnThisDayBar
+
+  OnThisDayBarTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: OnThisDayBarApp/Tests
+    dependencies:
+      - target: OnThisDayBar
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.OnThisDayBarTests
+
+schemes:
+  OnThisDayBar:
+    build:
+      targets:
+        OnThisDayBar: all
+        OnThisDayBarTests: [test]
+    test:
+      targets:
+        - OnThisDayBarTests
