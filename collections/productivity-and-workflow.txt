@@ -2,6 +2,7 @@
 # summary: Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.
 workspace-doctor
 gain-tracker
+on-this-day-studio
 skillbar
 clipboard-studio
 network-studio

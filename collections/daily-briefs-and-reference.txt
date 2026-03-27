@@ -1,0 +1,7 @@
+# title: Daily Briefs and Reference
+# summary: Skills for daily historical context, git momentum check-ins, local monitoring, and readable exports.
+on-this-day-studio
+gain-tracker
+network-studio
+dark-pdf-studio
+deckdrop-studio

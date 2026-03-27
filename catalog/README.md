@@ -7,16 +7,17 @@ Machine-readable catalog:
 
 ## Snapshot
 
-- Total skills: `28`
-- Total packs: `9`
+- Total skills: `29`
+- Total packs: `10`
 - Main pack folder: [`collections/`](https://github.com/Arnie016/codex-goated-skills/tree/main/collections)
 - Main install CLI: [`bin/codex-goated`](https://github.com/Arnie016/codex-goated-skills/blob/main/bin/codex-goated)
 
 Quick commands:
 
 ```bash
-codex-goated search fandom
+codex-goated search history
 codex-goated pack list
+codex-goated pack show daily-briefs-and-reference
 codex-goated pack show launch-and-distribution
 codex-goated pack install creator-and-fandom-stack
 codex-goated catalog check
@@ -25,14 +26,14 @@ codex-goated audit
 
 ## Audit Status
 
-Audit snapshot for March 26, 2026:
+Audit snapshot for March 27, 2026:
 
-- `28/28` skills include `SKILL.md`
-- `28/28` skills include `agents/openai.yaml`
-- `28/28` skills include a small SVG icon
-- `28/28` skills include a large SVG icon
-- `9/9` pack files resolve to valid skill directories
-- `28/28` skills are covered by at least one pack
+- `29/29` skills include `SKILL.md`
+- `29/29` skills include `agents/openai.yaml`
+- `29/29` skills include a small SVG icon
+- `29/29` skills include a large SVG icon
+- `10/10` pack files resolve to valid skill directories
+- `29/29` skills are covered by at least one pack
 
 Run the live audit locally:
 
@@ -58,7 +59,8 @@ Continuous audit:
 | Pack | Purpose | Skill count |
 | --- | --- | --- |
 | `launch-and-distribution` | Launch rough projects, package them cleanly, and get them ready to share | 4 |
-| `productivity-and-workflow` | Workspace setup, document workflows, monitoring, and repo-driven skill management | 7 |
+| `productivity-and-workflow` | Workspace setup, document workflows, monitoring, daily reference, and repo-driven skill management | 8 |
+| `daily-briefs-and-reference` | Daily context, historical lookup, local pulse, and readable export workflows | 5 |
 | `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, lore pacing, merch, and risk review | 10 |
 | `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 10 |
 | `macos-utility-builders` | Mac utility planning and menu bar helper workflows | 3 |
@@ -80,6 +82,7 @@ Continuous audit:
 
 - [`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor): Diagnose local setup blockers and workspace readiness issues.
 - [`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker): Connect GitHub, scan repo folders, track daily git gains or broader output gains, and turn them into reminder stories and baseline comparisons.
+- [`on-this-day-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day-studio): Pull the official Wikimedia On This Day feed into a polished daily history brief or Mac-style day browser workflow.
 - [`skillbar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/skillbar): Build and refine the SkillBar macOS top-bar skill manager.
 - [`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio): Turn scattered clips into one structured prompt and export flow.
 - [`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio): Install or update a LAN presence monitor with SwiftBar and a dashboard.

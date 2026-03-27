@@ -1,7 +1,7 @@
 {
   "repo": "codex-goated-skills",
-  "skill_count": 28,
-  "pack_count": 9,
+  "skill_count": 29,
+  "pack_count": 10,
   "skills": [
     {
       "id": "brand-kit",
@@ -120,6 +120,7 @@
       "icon_large": "./assets/dark-pdf-studio-large.svg",
       "default_prompt": "Use $dark-pdf-studio to convert this file into a clean dark-background PDF, keep the workflow compact and essential, and make sure the exported output is easy to open or share.",
       "packs": [
+        "daily-briefs-and-reference",
         "productivity-and-workflow"
       ]
     },
@@ -136,6 +137,7 @@
       "icon_large": "./assets/deckdrop-studio-large.svg",
       "default_prompt": "Use $deckdrop-studio to inspect this DeckDrop workspace, keep the draft-review workflow intact, and help me ship an editable slide deck pipeline.",
       "packs": [
+        "daily-briefs-and-reference",
         "productivity-and-workflow"
       ]
     },
@@ -204,6 +206,7 @@
       "icon_large": "./assets/icon-large.svg",
       "default_prompt": "Use $gain-tracker to connect my GitHub account, scan a folder for repos I should track, summarize what code I shipped today from git activity, and turn it into a reminder story plus gain scorecard with progress toward my target.",
       "packs": [
+        "daily-briefs-and-reference",
         "productivity-and-workflow"
       ]
     },
@@ -324,8 +327,26 @@
       "icon_large": "./assets/network-studio-large.svg",
       "default_prompt": "Use $network-studio to install or update a local Network Studio workspace and wire SwiftBar if needed.",
       "packs": [
+        "daily-briefs-and-reference",
         "productivity-and-workflow",
         "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "on-this-day-studio",
+      "display_name": "On This Day Studio",
+      "description": "Fetch the official Wikimedia On This Day feed for a given date, then turn it into a polished daily history brief, a source-linked digest, or a refined macOS-style day browser. Use when Codex needs reliable same-day historical events, births, deaths, or holidays without inventing facts or losing the presentation layer.",
+      "short_description": "Daily history brief and Mac-style day browser",
+      "brand_color": "#D88B2C",
+      "path": "skills/on-this-day-studio",
+      "skill_file": "skills/on-this-day-studio/SKILL.md",
+      "openai_yaml": "skills/on-this-day-studio/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $on-this-day-studio to fetch the official On This Day feed for today in Singapore, pick the most interesting entries, and turn them into a polished source-linked brief or refine the matching macOS-style web app.",
+      "packs": [
+        "daily-briefs-and-reference",
+        "productivity-and-workflow"
       ]
     },
     {
@@ -535,6 +556,20 @@
       ]
     },
     {
+      "id": "daily-briefs-and-reference",
+      "title": "Daily Briefs and Reference",
+      "summary": "Skills for daily historical context, git momentum check-ins, local monitoring, and readable exports.",
+      "path": "collections/daily-briefs-and-reference.txt",
+      "skill_count": 5,
+      "skills": [
+        "on-this-day-studio",
+        "gain-tracker",
+        "network-studio",
+        "dark-pdf-studio",
+        "deckdrop-studio"
+      ]
+    },
+    {
       "id": "fandom-skill-pack",
       "title": "Fandom Skill Pack",
       "summary": "Audience strategy skills for canon mining, community rituals, lore pacing, merch concepts, and narrative risk review.",
@@ -594,10 +629,11 @@
       "title": "Productivity and Workflow",
       "summary": "Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.",
       "path": "collections/productivity-and-workflow.txt",
-      "skill_count": 7,
+      "skill_count": 8,
       "skills": [
         "workspace-doctor",
         "gain-tracker",
+        "on-this-day-studio",
         "skillbar",
         "clipboard-studio",
         "network-studio",

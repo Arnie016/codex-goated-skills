@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>On This Day Studio</title>
+    <meta
+      name="description"
+      content="macOS-style daily history browser powered by the official Wikimedia On This Day feed."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+    <div class="ambient ambient-c"></div>
+
+    <main class="app-shell">
+      <header class="window-chrome panel">
+        <div class="traffic-lights" aria-hidden="true">
+          <span class="light light-red"></span>
+          <span class="light light-yellow"></span>
+          <span class="light light-green"></span>
+        </div>
+        <div class="chrome-title">
+          <span class="chrome-title-kicker">Daily historical briefing</span>
+          <strong>On This Day Studio</strong>
+        </div>
+        <div class="chrome-actions">
+          <button id="today-button" class="pill-button ghost">Today</button>
+          <button id="random-button" class="pill-button">Random Day</button>
+        </div>
+      </header>
+
+      <section class="hero panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Wikimedia-powered day browser</p>
+          <h1 id="hero-title">Loading the archive…</h1>
+          <p id="hero-subtitle" class="hero-subtitle">
+            Pulling the official On This Day feed and shaping it into a tighter
+            Mac-style briefing.
+          </p>
+          <div class="hero-status-row">
+            <span id="data-state" class="status-chip status-loading">Syncing</span>
+            <span class="status-chip subtle">English Wikipedia</span>
+            <span id="day-progress" class="status-chip subtle">Day signal</span>
+          </div>
+        </div>
+
+        <div class="hero-controls">
+          <label class="field">
+            <span class="field-label">Choose day</span>
+            <input id="date-input" class="date-input" type="date" />
+          </label>
+
+          <div class="nav-cluster">
+            <button id="previous-button" class="pill-button ghost">Previous</button>
+            <button id="next-button" class="pill-button ghost">Next</button>
+            <button id="copy-button" class="pill-button">Copy Brief</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <aside class="control-rail">
+          <section class="panel rail-section">
+            <div class="section-head">
+              <div>
+                <p class="section-kicker">View</p>
+                <h2>Choose the slice</h2>
+              </div>
+            </div>
+            <div id="type-segmented" class="segmented-control" role="tablist"></div>
+          </section>
+
+          <section class="panel rail-section">
+            <div class="section-head">
+              <div>
+                <p class="section-kicker">Curation depth</p>
+                <h2>Stories shown</h2>
+              </div>
+              <output id="limit-value" class="numeric-pill">6</output>
+            </div>
+            <input
+              id="limit-range"
+              class="range-input"
+              type="range"
+              min="3"
+              max="10"
+              step="1"
+              value="6"
+            />
+            <div class="range-legend">
+              <span>Focused</span>
+              <span>Deep browse</span>
+            </div>
+          </section>
+
+          <section class="panel rail-section">
+            <div class="section-head">
+              <div>
+                <p class="section-kicker">Day profile</p>
+                <h2>At a glance</h2>
+              </div>
+            </div>
+            <div id="overview-grid" class="overview-grid"></div>
+          </section>
+
+          <section class="panel rail-section spotlight-card">
+            <div class="section-head">
+              <div>
+                <p class="section-kicker">Spotlight</p>
+                <h2 id="spotlight-title">Stand by</h2>
+              </div>
+              <button id="shuffle-button" class="icon-button" title="Shuffle spotlight">
+                Shuffle
+              </button>
+            </div>
+            <p id="spotlight-text" class="spotlight-text">
+              Once the feed lands, this panel will pin the most compelling anchor
+              event for the current view.
+            </p>
+            <div class="spotlight-meta">
+              <span id="spotlight-kind" class="mini-tag">Timeline</span>
+              <span id="spotlight-year" class="mini-tag">Year</span>
+            </div>
+            <a
+              id="spotlight-link"
+              class="spotlight-link"
+              href="https://api.wikimedia.org/wiki/Feed_API/Reference/On_this_day"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open source page
+            </a>
+          </section>
+        </aside>
+
+        <section class="panel story-panel">
+          <div class="section-head story-head">
+            <div>
+              <p class="section-kicker">Timeline</p>
+              <h2 id="story-heading">Historical signal</h2>
+            </div>
+            <button id="retry-button" class="pill-button ghost">Refresh</button>
+          </div>
+
+          <div id="story-grid" class="story-grid" aria-live="polite"></div>
+
+          <div id="empty-state" class="empty-state hidden">
+            <h3>No entries for this view yet</h3>
+            <p id="empty-message">
+              If the live request stalls, the app will try cached data next. You
+              can also switch categories or pick another date.
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer-row">
+        <p>
+          Source: the official Wikimedia Feed API for "On this day". Facts stay
+          linked back to their underlying Wikipedia pages.
+        </p>
+        <a
+          href="https://api.wikimedia.org/wiki/Feed_API/Reference/On_this_day"
+          target="_blank"
+          rel="noreferrer"
+        >
+          API reference
+        </a>
+      </footer>
+
+      <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+    </main>
+
+    <template id="story-card-template">
+      <article class="story-card">
+        <div class="story-card-accent"></div>
+        <div class="story-card-body">
+          <div class="story-meta-row">
+            <span class="story-year">0000</span>
+            <span class="story-kind">Curated</span>
+          </div>
+          <div class="story-content">
+            <div class="story-copy">
+              <h3 class="story-title">Historical event</h3>
+              <p class="story-text">Loading historical event text.</p>
+              <div class="story-page-tags"></div>
+            </div>
+            <div class="story-visual">
+              <img class="story-image hidden" alt="" />
+              <div class="story-placeholder">Archive</div>
+            </div>
+          </div>
+          <div class="story-actions">
+            <p class="story-description"></p>
+            <a class="story-link" target="_blank" rel="noreferrer">Open on Wikipedia</a>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
