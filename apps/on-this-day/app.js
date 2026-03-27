@@ -1,4 +1,4 @@
-const STORAGE_PREFIX = "on-this-day-studio";
+const STORAGE_PREFIX = "on-this-day";
 const CACHE_PREFIX = `${STORAGE_PREFIX}:cache:`;
 const TIME_ZONE = "Asia/Singapore";
 
@@ -38,6 +38,7 @@ function bindElements() {
   elements.heroSubtitle = document.getElementById("hero-subtitle");
   elements.dataState = document.getElementById("data-state");
   elements.dayProgress = document.getElementById("day-progress");
+  elements.heroMetrics = document.getElementById("hero-metrics");
   elements.dateInput = document.getElementById("date-input");
   elements.todayButton = document.getElementById("today-button");
   elements.randomButton = document.getElementById("random-button");
@@ -51,12 +52,14 @@ function bindElements() {
   elements.limitValue = document.getElementById("limit-value");
   elements.overviewGrid = document.getElementById("overview-grid");
   elements.storyHeading = document.getElementById("story-heading");
+  elements.storySummary = document.getElementById("story-summary");
   elements.storyGrid = document.getElementById("story-grid");
   elements.emptyState = document.getElementById("empty-state");
   elements.emptyMessage = document.getElementById("empty-message");
   elements.storyCardTemplate = document.getElementById("story-card-template");
   elements.spotlightTitle = document.getElementById("spotlight-title");
   elements.spotlightText = document.getElementById("spotlight-text");
+  elements.briefList = document.getElementById("brief-list");
   elements.spotlightKind = document.getElementById("spotlight-kind");
   elements.spotlightYear = document.getElementById("spotlight-year");
   elements.spotlightLink = document.getElementById("spotlight-link");
@@ -207,9 +210,11 @@ function render() {
   syncControlsFromState();
   renderDataState();
   renderHero();
+  renderHeroMetrics();
   renderCounts();
   renderStories();
   renderSpotlight();
+  renderBriefList();
 }
 
 function renderDataState() {
@@ -240,6 +245,7 @@ function renderDataState() {
 function renderHero() {
   elements.heroTitle.textContent = formatDisplayDate(state.date);
   elements.dayProgress.textContent = daySignal(state.date);
+  const { kind, items } = selectedStorySet();
 
   if (state.loading && !state.feed) {
     elements.heroSubtitle.textContent =
@@ -250,7 +256,8 @@ function renderHero() {
   const selectedCount = itemCount("selected");
   const eventsCount = itemCount("events");
   const holidaysCount = itemCount("holidays");
-  const active = kindLabel(state.activeKind);
+  const active = kindLabel(kind);
+  const spanLabel = visibleYearSpan(items, kind);
 
   const fragments = [
     `${selectedCount} curated picks`,
@@ -258,8 +265,41 @@ function renderHero() {
     `${holidaysCount} observances`,
   ];
 
-  const summary = `${active} view for ${formatShortDate(state.date)}. ${fragments.join(", ")}.`;
+  const summary = `${active} view for ${formatShortDate(state.date)}, spanning ${spanLabel}. ${fragments.join(", ")}.`;
   elements.heroSubtitle.textContent = state.note ? `${summary} ${state.note}` : summary;
+}
+
+function renderHeroMetrics() {
+  const { kind, items } = selectedStorySet();
+  const stats = [
+    {
+      label: "Visible now",
+      value: String(items.length),
+      note: `${kindLabel(kind)} entries`,
+    },
+    {
+      label: "Year span",
+      value: visibleYearSpan(items, kind),
+      note: numericYearCount(items) ? "Across this slice" : "Non-numeric archive view",
+    },
+    {
+      label: "Feed mode",
+      value: state.loading ? "Syncing" : state.sourceMode,
+      note: "Official Wikimedia source",
+    },
+  ];
+
+  elements.heroMetrics.innerHTML = stats
+    .map(
+      (stat) => `
+        <article class="metric-card">
+          <span class="metric-label">${stat.label}</span>
+          <strong class="metric-value">${stat.value}</strong>
+          <span class="metric-note">${stat.note}</span>
+        </article>
+      `,
+    )
+    .join("");
 }
 
 function renderCounts() {
@@ -290,6 +330,9 @@ function renderCounts() {
 function renderStories() {
   const { kind, items } = selectedStorySet();
   elements.storyHeading.textContent = `${kindLabel(kind)} on ${formatMonthDay(state.date)}`;
+  elements.storySummary.textContent = items.length
+    ? `${items.length} ${items.length === 1 ? "entry" : "entries"} · ${visibleYearSpan(items, kind)} · ${state.sourceMode.toLowerCase()} feed`
+    : state.note || `No ${kindLabel(kind).toLowerCase()} entries surfaced for this date.`;
   elements.storyGrid.innerHTML = "";
 
   if (!items.length) {
@@ -371,6 +414,27 @@ function renderSpotlight() {
     spotlight.url || "https://api.wikimedia.org/wiki/Feed_API/Reference/On_this_day";
 }
 
+function renderBriefList() {
+  const { kind, items } = selectedStorySet();
+  if (!items.length) {
+    elements.briefList.innerHTML = "";
+    return;
+  }
+
+  elements.briefList.innerHTML = items
+    .slice(0, 3)
+    .map((item) => {
+      const meta = normalizeItem(item, kind);
+      return `
+        <li class="brief-item">
+          <span class="brief-year">${meta.yearLabel}</span>
+          <span class="brief-copy">${meta.heading}</span>
+        </li>
+      `;
+    })
+    .join("");
+}
+
 function selectedStorySet() {
   const directItems = currentItems(state.activeKind);
   if (directItems.length > 0) {
@@ -446,7 +510,7 @@ function choosePrimaryPage(pages) {
 function buildDigest() {
   const { kind, items } = selectedStorySet();
   const lines = [
-    `On This Day Studio · ${formatDisplayDate(state.date)}`,
+    `On This Day · ${formatDisplayDate(state.date)}`,
     `${kindLabel(kind)} · ${state.sourceMode}`,
     "",
   ];
@@ -540,6 +604,25 @@ function kindLabel(kindId) {
   return KINDS.find((kind) => kind.id === kindId)?.label || "Timeline";
 }
 
+function numericYearCount(items) {
+  return items.filter((item) => Number.isFinite(Number(item?.year))).length;
+}
+
+function visibleYearSpan(items, kind) {
+  const years = items
+    .map((item) => Number(item?.year))
+    .filter((year) => Number.isFinite(year))
+    .sort((left, right) => left - right);
+
+  if (!years.length) {
+    return kind === "holidays" ? "Observance window" : "Open archive";
+  }
+
+  const first = years[0];
+  const last = years[years.length - 1];
+  return first === last ? String(first) : `${first}-${last}`;
+}
+
 function todayInTimeZone(timeZone) {
   const formatter = new Intl.DateTimeFormat("en-CA", {
     timeZone,
@@ -583,7 +666,7 @@ function daySignal(isoDate) {
   const date = isoToSafeDate(isoDate);
   const start = Date.UTC(date.getUTCFullYear(), 0, 1);
   const ordinal = Math.floor((date.getTime() - start) / 86400000) + 1;
-  return `Day ${ordinal} in the annual timeline`;
+  return `Day ${ordinal} of the annual timeline`;
 }
 
 function isoToSafeDate(isoDate) {

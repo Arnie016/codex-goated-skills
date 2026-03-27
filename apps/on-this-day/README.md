@@ -1,6 +1,6 @@
-# On This Day Studio
+# On This Day
 
-On This Day Studio is a polished macOS-style web app for opening a daily historical briefing, browsing notable events for any date, and jumping straight into the relevant Wikipedia pages.
+On This Day is a polished macOS-style web app for opening a daily historical briefing, browsing notable events for any date, and jumping straight into the relevant Wikipedia pages.
 
 It uses the official Wikimedia Feed API endpoint for "On this day":
 
@@ -17,7 +17,7 @@ It uses the official Wikimedia Feed API endpoint for "On this day":
 ## Local Run
 
 ```bash
-cd apps/on-this-day-studio
+cd apps/on-this-day
 python3 -m http.server 4173
 open http://localhost:4173
 ```

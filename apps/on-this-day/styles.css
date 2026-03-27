@@ -253,6 +253,45 @@ a {
   line-height: 1.55;
 }
 
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.metric-card {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+    rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  gap: 6px;
+}
+
+.metric-label,
+.metric-note,
+.story-summary {
+  color: var(--muted);
+}
+
+.metric-label {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.metric-value {
+  font-size: 1.3rem;
+  letter-spacing: -0.04em;
+}
+
+.metric-note {
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .status-chip,
 .numeric-pill,
 .mini-tag {
@@ -468,6 +507,37 @@ a {
   margin: 0;
 }
 
+.brief-list {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.brief-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 9px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.brief-year {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 48px;
+}
+
+.brief-copy {
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
 .spotlight-link,
 .story-link {
   display: inline-flex;
@@ -483,6 +553,12 @@ a {
 
 .story-head {
   margin-bottom: 20px;
+}
+
+.story-summary {
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .story-grid {
@@ -689,6 +765,10 @@ a {
 
   .story-visual {
     justify-self: start;
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
   }
 }
 

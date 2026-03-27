@@ -1,9 +1,9 @@
 ---
-name: on-this-day-studio
+name: on-this-day
 description: Fetch the official Wikimedia On This Day feed for a given date, then turn it into a polished daily history brief, a source-linked digest, or a refined macOS-style day browser. Use when Codex needs reliable same-day historical events, births, deaths, or holidays without inventing facts or losing the presentation layer.
 ---
 
-# On This Day Studio
+# On This Day
 
 Use this skill when the user wants a same-day historical briefing, a beautifully presented "today in history" experience, or help building and refining the matching macOS-style web app.
 
@@ -15,7 +15,7 @@ Default product shape: a desktop-first web app that feels at home on macOS, with
 2. Prefer the official Wikimedia Feed API endpoint for the day:
    - `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/{MM}/{DD}`
 3. If you need a deterministic local helper, run `python3 scripts/fetch_on_this_day.py --date 2026-03-27 --type selected --limit 5`.
-4. If the user wants a product surface, open or refine the static app in `apps/on-this-day-studio/`.
+4. If the user wants a product surface, open or refine the static app in `apps/on-this-day/`.
 5. Return either an `on-this-day-brief`, a `history-day-digest`, or an `app-refresh-plan`, depending on the request.
 
 ## Accepted Inputs
@@ -84,7 +84,7 @@ Default `app-refresh-plan` sections:
   - strongest entries next
   - secondary context after that
 - Use restrained motion and strong spacing instead of generic card spam.
-- Preserve a desktop-first macOS feel when editing the app in `apps/on-this-day-studio/`.
+- Preserve a desktop-first macOS feel when editing the app in `apps/on-this-day/`.
 
 ### Handle Failure Honestly
 
@@ -112,13 +112,13 @@ Default `app-refresh-plan` sections:
 
 ## Example Prompts
 
-- `Use $on-this-day-studio to fetch today's official On This Day feed in Singapore and turn it into a polished daily history brief with five entries and source links.`
-- `Use $on-this-day-studio to build a macOS-style day browser that lets me switch between curated events, births, deaths, and holidays for any date.`
-- `Use $on-this-day-studio to give me the most interesting March 27 historical events, explain why they matter, and keep the output grounded in the official Wikimedia feed.`
-- `Use $on-this-day-studio to refine the web app UI, improve empty and error states, and keep the design professional on Mac.`
+- `Use $on-this-day to fetch today's official On This Day feed in Singapore and turn it into a polished daily history brief with five entries and source links.`
+- `Use $on-this-day to build a macOS-style day browser that lets me switch between curated events, births, deaths, and holidays for any date.`
+- `Use $on-this-day to give me the most interesting March 27 historical events, explain why they matter, and keep the output grounded in the official Wikimedia feed.`
+- `Use $on-this-day to refine the web app UI, improve empty and error states, and keep the design professional on Mac.`
 
 ## Resources
 
 - `scripts/fetch_on_this_day.py`: deterministic CLI helper for the official On This Day feed
 - `references/product-spec.md`: product shape, fetch model, fallback states, and visual direction
-- `../../apps/on-this-day-studio/`: the matching web app codebase
+- `../../apps/on-this-day/`: the matching web app codebase

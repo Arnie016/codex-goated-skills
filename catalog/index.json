@@ -333,17 +333,17 @@
       ]
     },
     {
-      "id": "on-this-day-studio",
-      "display_name": "On This Day Studio",
+      "id": "on-this-day",
+      "display_name": "On This Day",
       "description": "Fetch the official Wikimedia On This Day feed for a given date, then turn it into a polished daily history brief, a source-linked digest, or a refined macOS-style day browser. Use when Codex needs reliable same-day historical events, births, deaths, or holidays without inventing facts or losing the presentation layer.",
       "short_description": "Daily history brief and Mac-style day browser",
       "brand_color": "#D88B2C",
-      "path": "skills/on-this-day-studio",
-      "skill_file": "skills/on-this-day-studio/SKILL.md",
-      "openai_yaml": "skills/on-this-day-studio/agents/openai.yaml",
+      "path": "skills/on-this-day",
+      "skill_file": "skills/on-this-day/SKILL.md",
+      "openai_yaml": "skills/on-this-day/agents/openai.yaml",
       "icon_small": "./assets/icon-small.svg",
       "icon_large": "./assets/icon-large.svg",
-      "default_prompt": "Use $on-this-day-studio to fetch the official On This Day feed for today in Singapore, pick the most interesting entries, and turn them into a polished source-linked brief or refine the matching macOS-style web app.",
+      "default_prompt": "Use $on-this-day to fetch the official On This Day feed for today in Singapore, pick the most interesting entries, and turn them into a polished source-linked brief or refine the matching macOS-style web app.",
       "packs": [
         "daily-briefs-and-reference",
         "productivity-and-workflow"
@@ -562,7 +562,7 @@
       "path": "collections/daily-briefs-and-reference.txt",
       "skill_count": 5,
       "skills": [
-        "on-this-day-studio",
+        "on-this-day",
         "gain-tracker",
         "network-studio",
         "dark-pdf-studio",
@@ -633,7 +633,7 @@
       "skills": [
         "workspace-doctor",
         "gain-tracker",
-        "on-this-day-studio",
+        "on-this-day",
         "skillbar",
         "clipboard-studio",
         "network-studio",

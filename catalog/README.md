@@ -82,7 +82,7 @@ Continuous audit:
 
 - [`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor): Diagnose local setup blockers and workspace readiness issues.
 - [`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker): Connect GitHub, scan repo folders, track daily git gains or broader output gains, and turn them into reminder stories and baseline comparisons.
-- [`on-this-day-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day-studio): Pull the official Wikimedia On This Day feed into a polished daily history brief or Mac-style day browser workflow.
+- [`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day): Pull the official Wikimedia On This Day feed into a polished daily history brief or Mac-style day browser workflow.
 - [`skillbar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/skillbar): Build and refine the SkillBar macOS top-bar skill manager.
 - [`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio): Turn scattered clips into one structured prompt and export flow.
 - [`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio): Install or update a LAN presence monitor with SwiftBar and a dashboard.

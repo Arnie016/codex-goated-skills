@@ -1,4 +1,4 @@
-# On This Day Studio Product Spec
+# On This Day Product Spec
 
 ## Product Promise
 

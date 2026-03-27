@@ -13,7 +13,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 API_TEMPLATE = "https://api.wikimedia.org/feed/v1/wikipedia/{language}/onthisday/all/{month}/{day}"
-USER_AGENT = "codex-goated-skills/on-this-day-studio (https://github.com/Arnie016/codex-goated-skills)"
+USER_AGENT = "codex-goated-skills/on-this-day (https://github.com/Arnie016/codex-goated-skills)"
 ALLOWED_TYPES = ("selected", "events", "births", "deaths", "holidays")
 
 

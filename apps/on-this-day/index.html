@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>On This Day Studio</title>
+    <title>On This Day</title>
     <meta
       name="description"
       content="macOS-style daily history browser powered by the official Wikimedia On This Day feed."
@@ -27,7 +27,7 @@
         </div>
         <div class="chrome-title">
           <span class="chrome-title-kicker">Daily historical briefing</span>
-          <strong>On This Day Studio</strong>
+          <strong>On This Day</strong>
         </div>
         <div class="chrome-actions">
           <button id="today-button" class="pill-button ghost">Today</button>
@@ -48,6 +48,7 @@
             <span class="status-chip subtle">English Wikipedia</span>
             <span id="day-progress" class="status-chip subtle">Day signal</span>
           </div>
+          <div id="hero-metrics" class="hero-metrics"></div>
         </div>
 
         <div class="hero-controls">
@@ -123,6 +124,7 @@
               Once the feed lands, this panel will pin the most compelling anchor
               event for the current view.
             </p>
+            <ul id="brief-list" class="brief-list"></ul>
             <div class="spotlight-meta">
               <span id="spotlight-kind" class="mini-tag">Timeline</span>
               <span id="spotlight-year" class="mini-tag">Year</span>
@@ -144,6 +146,7 @@
             <div>
               <p class="section-kicker">Timeline</p>
               <h2 id="story-heading">Historical signal</h2>
+              <p id="story-summary" class="story-summary">Loading the historical timeline.</p>
             </div>
             <button id="retry-button" class="pill-button ghost">Refresh</button>
           </div>

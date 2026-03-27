@@ -30,7 +30,7 @@ codex-goated install minecraft-essentials
 codex-goated install deckdrop-studio
 codex-goated install clipboard-studio
 codex-goated install gain-tracker
-codex-goated install on-this-day-studio
+codex-goated install on-this-day
 codex-goated install skillbar
 codex-goated install find-my-phone-studio
 codex-goated install cursor-studio
@@ -96,7 +96,7 @@ Then restart Codex.
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
 - Build a utility with `network-studio`, `find-my-phone-studio`, or `clipboard-studio`
 - Connect GitHub, scan a workspace folder for repos, track daily git gains, and measure a before-versus-now output climb with `gain-tracker`
-- Open a same-day historical briefing ritual with `on-this-day-studio`
+- Open a same-day historical briefing ritual with `on-this-day`
 - Build a personality-led audience strategy stack with the [`Fandom Skill Pack`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/fandom-skill-pack.md)
 - Browse all download packs in [`collections/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
 - Manage the whole pack from the top bar with `skillbar`
@@ -127,7 +127,7 @@ Browse by use case:
 | --- | --- | --- |
 | <img src="skills/workspace-doctor/assets/workspace-doctor-small.svg" width="26" alt="Workspace Doctor" /><br/>[`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor) | Finds the real local setup blocker and next fix fast | `workspace-doctor` |
 | <img src="skills/gain-tracker/assets/icon-small.svg" width="26" alt="Gain Tracker" /><br/>[`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker) | Connects GitHub, scans local repo folders, and turns daily git gains into reminder stories and progress toward 90x | `gain-tracker` |
-| <img src="skills/on-this-day-studio/assets/icon-small.svg" width="26" alt="On This Day Studio" /><br/>[`on-this-day-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day-studio) | Pulls the official Wikimedia day feed into a polished historical briefing and Mac-style day browser workflow | `on-this-day-studio` |
+| <img src="skills/on-this-day/assets/icon-small.svg" width="26" alt="On This Day" /><br/>[`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day) | Pulls the official Wikimedia day feed into a polished historical briefing and Mac-style day browser workflow | `on-this-day` |
 | <img src="skills/skillbar/assets/skillbar-small.svg" width="26" alt="SkillBar" /><br/>[`skillbar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/skillbar) | Builds and refines SkillBar, the macOS top-bar manager for the goated skill catalog, installed state, and preset bundles | `skillbar` |
 | <img src="skills/clipboard-studio/assets/clipboard-studio-small.svg" width="26" alt="Context Assembly" /><br/>[`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio) | Shapes Context Assembly on macOS so code, logs, pages, and selections become one structured prompt with resumable state instead of Cmd+C, switch, Cmd+V loops | `clipboard-studio` |
 | <img src="skills/network-studio/assets/network-studio-small.svg" width="26" alt="Network Studio" /><br/>[`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio) | macOS LAN monitor with SwiftBar and a dashboard | `network-studio` |
@@ -182,7 +182,7 @@ Collection:
 | `clipboard-studio` | Context Assembly, a macOS menu bar app that turns code, logs, pages, and saved app state into one structured prompt, Apple Note, or Markdown export instead of manual copy-paste switching | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/clipboard-studio) |
 | `phone-spotter` | macOS menu bar phone recovery utility with QR pairing, saved clues, and Apple or Google provider handoff | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/phone-spotter) |
 | `flight-scout` | macOS menu bar flight watcher with live fare signals, booking deeplinks, and travel risk scoring | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/flight-scout) |
-| `on-this-day-studio` | macOS-style daily history web app with official Wikimedia same-day events, births, deaths, and holidays | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/on-this-day-studio) |
+| `on-this-day` | macOS-style daily history web app with official Wikimedia same-day events, births, deaths, and holidays | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/on-this-day) |
 | `skillbar` | macOS menu bar manager for browsing the goated skill catalog, installed local skills, and preset bundles | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/skillbar) |
 | `telebar` | macOS Telegram control center for inbox, AI writing, and setup flows | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/telebar) |
 | `wifi-watchtower` | macOS menu bar Wi-Fi trust monitor with nearby scan grading | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/wifi-watchtower) |
