@@ -17,8 +17,12 @@ Default product shapes:
 2. Prefer the official Wikimedia Feed API endpoint for the day:
    - `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/{MM}/{DD}`
 3. If you need a deterministic local helper, run `python3 scripts/fetch_on_this_day.py --date 2026-03-27 --type selected --limit 5`.
-4. If the user wants a product surface, open or refine the static app in `apps/on-this-day/` or the native menu bar app in `apps/on-this-day-bar/`.
-5. Return either an `on-this-day-brief`, a `history-day-digest`, or an `app-refresh-plan`, depending on the request.
+4. If the user wants the native menu bar app, run `bash scripts/run_on_this_day_bar.sh doctor`.
+5. Run `bash scripts/run_on_this_day_bar.sh inspect` before editing the native app.
+6. Use `bash scripts/run_on_this_day_bar.sh generate` after changing `apps/on-this-day-bar/project.yml`.
+7. Use `bash scripts/run_on_this_day_bar.sh test` after model, fetch, cache, or menu bar UI changes.
+8. If the user wants the static app instead, open or refine `apps/on-this-day/`.
+9. Return either an `on-this-day-brief`, a `history-day-digest`, or an `app-refresh-plan`, depending on the request.
 
 ## Accepted Inputs
 
@@ -88,6 +92,20 @@ Default `app-refresh-plan` sections:
 - Use restrained motion and strong spacing instead of generic card spam.
 - Preserve a desktop-first macOS feel when editing the web app in `apps/on-this-day/` or the native menu bar app in `apps/on-this-day-bar/`.
 
+### Native App Workflow
+
+- Use the local runner before typing `xcodegen` or `xcodebuild` manually:
+  - `bash scripts/run_on_this_day_bar.sh <command>`
+- Run `doctor` first when the machine or workspace state is unclear.
+- Run `inspect` before editing so the fetch, store, model, and view split stays visible.
+- Run `generate` after `project.yml` changes.
+- Run `test` after changes to:
+  - feed parsing
+  - cache or persistence behavior
+  - date selection or category state
+  - menu bar view output
+- Use `run` only when you need the built app relaunched from the local `.build-debug` product.
+
 ### Handle Failure Honestly
 
 - If the live feed fails, prefer cached data in the web app and label it clearly.
@@ -129,6 +147,8 @@ Default `app-refresh-plan` sections:
 ## Resources
 
 - `scripts/fetch_on_this_day.py`: deterministic CLI helper for the official On This Day feed
+- `scripts/run_on_this_day_bar.sh`: local doctor, inspect, generate, open, build, test, and run helper for `apps/on-this-day-bar`
 - `references/product-spec.md`: product shape, fetch model, fallback states, and visual direction
+- `references/project-map.md`: native app target map, main files, and build notes
 - `../../apps/on-this-day/`: the matching web app codebase
 - `../../apps/on-this-day-bar/`: the matching native menu bar app codebase
