@@ -1,7 +1,7 @@
 interface:
   display_name: "Minecraft Skin Studio"
-  short_description: "Turn prompts or PNGs into launcher-ready Minecraft skins"
+  short_description: "Build launcher-ready skins or the bundled Minecraft Skin Bar app"
   icon_small: "./assets/minecraft-skin-studio-small.svg"
   icon_large: "./assets/minecraft-skin-studio-large.svg"
   brand_color: "#22C55E"
-  default_prompt: "Use $minecraft-skin-studio to draft a Minecraft Java skin from a prompt, save a clean 64x64 PNG, render a preview, and register it into my local Minecraft Launcher custom skins list."
+  default_prompt: "Use $minecraft-skin-studio to draft or import a Minecraft Java skin, save a clean 64x64 PNG, render a preview, register it into my local Minecraft Launcher custom skins list, or work on the bundled Minecraft Skin Bar menu bar app."
