@@ -12,13 +12,16 @@ Default product shape: a compact but premium macOS `MenuBarExtra` utility with a
 ## Quick Start
 
 1. Define one stable output metric before comparing time periods.
-2. If GitHub is available, connect once with `python3 scripts/github_connect.py connect --repo "/path/to/repo"`.
-3. If you want to pick up several repos at once, run `python3 scripts/github_connect.py track-dir --dir "~/Desktop" --max-depth 2`.
-4. If a repo is available, prefer git-backed measurement first.
-5. Capture the baseline total and the number of days in that baseline period.
-6. Capture the current total, the current time window, and the target multiplier.
-7. Run `python3 scripts/daily_git_story.py` for a daily repo pulse and reminder story, `python3 scripts/git_gain.py` for baseline-versus-current comparisons, or `python3 scripts/gain_math.py` for manual totals.
-8. Produce either a `daily-gain-story` or a `gain-scorecard`, depending on whether the user wants a daily motivational check-in or a broader baseline comparison.
+2. Start with `bash scripts/run_gain_tracker.sh doctor` to confirm Python, git, `gh`, config state, and the current repo context.
+3. Use `bash scripts/run_gain_tracker.sh status` to check saved GitHub identity and tracked repos without making network changes.
+4. If GitHub is available, connect once with `bash scripts/run_gain_tracker.sh connect --track-cwd` or `bash scripts/run_gain_tracker.sh connect --repo "/path/to/repo"`.
+5. If you want to pick up several repos at once, run `bash scripts/run_gain_tracker.sh track-dir --dir "~/Desktop" --max-depth 2`.
+6. If a repo is available, prefer git-backed measurement first.
+7. Capture the baseline total and the number of days in that baseline period.
+8. Capture the current total, the current time window, and the target multiplier.
+9. Use `bash scripts/run_gain_tracker.sh daily` for a daily repo pulse and reminder story, `bash scripts/run_gain_tracker.sh compare` for baseline-versus-current comparisons, or `bash scripts/run_gain_tracker.sh math` for manual totals.
+10. Run `bash scripts/run_gain_tracker.sh validate` after changing the helper scripts.
+11. Produce either a `daily-gain-story` or a `gain-scorecard`, depending on whether the user wants a daily motivational check-in or a broader baseline comparison.
 
 ## Accepted Inputs
 
@@ -63,27 +66,27 @@ Default `daily-gain-story` sections:
 
 ### Prefer Repo-Backed Mode
 
-- If the user wants the tool to remember who they are and what repos matter, start with `scripts/github_connect.py`.
-- If the user has a git repo, start with `scripts/git_gain.py`.
-- If the user wants a daily snapshot or motivation loop, start with `scripts/daily_git_story.py`.
+- If the user wants the tool to remember who they are and what repos matter, start with `bash scripts/run_gain_tracker.sh status` or `bash scripts/run_gain_tracker.sh connect`.
+- If the user has a git repo, start with `bash scripts/run_gain_tracker.sh compare`.
+- If the user wants a daily snapshot or motivation loop, start with `bash scripts/run_gain_tracker.sh daily`.
 - Treat `commits` as the default productivity metric only when the user explicitly wants commit productivity.
 - Offer `lines-changed`, `files-changed`, or `active-days` when commit counts alone feel too noisy.
 - Keep author filtering explicit when the repo has multiple contributors.
 
 ### Connect GitHub
 
-- Use `python3 scripts/github_connect.py connect --repo "/path/to/repo"` to detect the logged-in GitHub identity from `gh`, capture the default git author info, and save tracked repos under `~/.codex/gain-tracker/config.json`.
-- Use `python3 scripts/github_connect.py track-dir --dir "~/Desktop" --max-depth 2` to scan a common workspace root and automatically track GitHub repos found inside it.
-- Use `python3 scripts/github_connect.py status` to confirm the connected account and tracked repos.
+- Use `bash scripts/run_gain_tracker.sh connect --repo "/path/to/repo"` to detect the logged-in GitHub identity from `gh`, capture the default git author info, and save tracked repos under `~/.codex/gain-tracker/config.json`.
+- Use `bash scripts/run_gain_tracker.sh track-dir --dir "~/Desktop" --max-depth 2` to scan a common workspace root and automatically track GitHub repos found inside it.
+- Use `bash scripts/run_gain_tracker.sh status` to confirm the connected account and tracked repos.
 - After connection, `scripts/daily_git_story.py` can run without `--repo` and aggregate all tracked repos automatically.
 - After connection, `scripts/git_gain.py` can default to the current repo or first tracked repo and use the saved author filter.
 - When a scanned folder includes non-GitHub repos or empty directories, keep the skips visible instead of silently pretending they were added.
 
 ### Calculate The Gain
 
-- Start with the helper script when the user has numeric totals and day counts.
-- Start with the git helper when the user wants the comparison grounded in commit history.
-- Start with the daily story helper when the user wants a today-focused check-in with trend context.
+- Start with `bash scripts/run_gain_tracker.sh math` when the user has numeric totals and day counts.
+- Start with `bash scripts/run_gain_tracker.sh compare` when the user wants the comparison grounded in commit history.
+- Start with `bash scripts/run_gain_tracker.sh daily` when the user wants a today-focused check-in with trend context.
 - Report current multiplier, rate delta, target progress, and remaining gap to the goal.
 - Keep the math visible enough that the user can trust the result.
 
@@ -131,6 +134,7 @@ Default `daily-gain-story` sections:
 
 ## Resources
 
+- `scripts/run_gain_tracker.sh`: repo-native doctor, status, connect, compare, daily-story, math, and validation entrypoint.
 - `scripts/github_connect.py`: connect through `gh`, save the GitHub identity, and manage tracked repos.
 - `scripts/daily_git_story.py`: summarize today's git work, recent momentum, and a motivating reminder story.
 - `scripts/git_gain.py`: compare two git windows by commits, lines changed, files changed, or active days.
