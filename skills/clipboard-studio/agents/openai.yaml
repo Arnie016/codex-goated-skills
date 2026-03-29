@@ -1,7 +1,7 @@
 interface:
-  display_name: "Clipboard Studio"
-  short_description: "Clipboard history, snippets, and paste transforms for macOS"
+  display_name: "Context Assembly"
+  short_description: "Build and validate the Context Assembly menu bar app for capture, export, and fast cross-app handoff"
   icon_small: "./assets/clipboard-studio-small.svg"
   icon_large: "./assets/clipboard-studio-large.svg"
   brand_color: "#22C55E"
-  default_prompt: "Use $clipboard-studio to shape or build a macOS copy-and-paste power tool with searchable history, pinned snippets, paste transforms, and a tight menu bar workflow."
+  default_prompt: "Use $clipboard-studio to work on the bundled Context Assembly macOS app in apps/clipboard-studio: inspect the workspace, run the local doctor and test flow, and improve clipboard capture, current-focus snapshots, or Notes/Markdown export without weakening privacy boundaries."
