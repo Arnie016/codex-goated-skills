@@ -3,28 +3,49 @@
 ## Workspace
 
 - App workspace: `apps/skillbar`
-- Umbrella skill package: `skills/skillbar`
+- Paired skill package: `skills/skillbar`
+- CLI dependency: `bin/codex-goated`
 
 ## Core Responsibilities
 
-- Read repo skills from `skills/*`
-- Read installed state from `~/.codex/skills`
-- Run `bin/codex-goated install` and `bin/codex-goated update`
-- Expose curated presets that bundle existing skills
+- Read skill metadata from the local repo under `skills/*`
+- Read installed state from `~/.codex/skills` or a user-selected destination
+- Run `bin/codex-goated install` and `bin/codex-goated update` with explicit repo and destination paths
+- Expose compact preset bundles that map to existing skills
 
 ## Main Files
 
-- `SkillBarApp/Sources/App/SkillBarModel.swift`
-  - state, setup paths, refresh, install, and preset actions
-- `SkillBarApp/Sources/Services/SkillCatalogService.swift`
-  - metadata parsing and repo discovery
-- `SkillBarApp/Sources/Services/SkillInstallService.swift`
-  - deterministic command descriptor and process execution
-- `SkillBarApp/Sources/Views/MenuBarView.swift`
-  - compact menu bar UI
+- `apps/skillbar/project.yml`
+  - XcodeGen spec for the app and unit-test bundle
+- `apps/skillbar/SkillBarApp/Sources/App/SkillBarApp.swift`
+  - `MenuBarExtra` entrypoint
+- `apps/skillbar/SkillBarApp/Sources/App/SkillBarModel.swift`
+  - app state, path setup, refresh, install, and preset actions
+- `apps/skillbar/SkillBarApp/Sources/Models/SkillBarModels.swift`
+  - shared catalog, preset, and command models
+- `apps/skillbar/SkillBarApp/Sources/Services/SkillCatalogService.swift`
+  - repo-root discovery and metadata parsing
+- `apps/skillbar/SkillBarApp/Sources/Services/SkillInstallService.swift`
+  - deterministic process descriptor and CLI execution
+- `apps/skillbar/SkillBarApp/Sources/Views/MenuBarView.swift`
+  - compact menu bar UI, setup surface, and preset confirmation flow
+- `apps/skillbar/SkillBarApp/Tests/SkillCatalogServiceTests.swift`
+  - parser, command descriptor, and preset coverage
+
+## Validation Path
+
+- `bash skills/skillbar/scripts/run_skillbar.sh doctor`
+  - confirm workspace shape, CLI presence, and Xcode readiness
+- `bash skills/skillbar/scripts/run_skillbar.sh inspect`
+  - print the main app files before editing
+- `bash skills/skillbar/scripts/run_skillbar.sh smoke-install skillbar`
+  - prove one real install path through `bin/codex-goated`
+- `bash skills/skillbar/scripts/run_skillbar.sh test`
+  - run the unit tests once Xcode is ready
 
 ## Guardrails
 
-- Do not add token storage for other products here.
-- Keep install logic delegated to existing CLI tooling.
-- Keep preset bundles static and understandable in v1.
+- Keep SkillBar menu-bar-first and local-first.
+- Do not bypass `bin/codex-goated` with parallel install logic.
+- Do not turn preset bundles into dynamic marketplace state.
+- Do not add secrets or remote sync responsibilities that belong to other tools.

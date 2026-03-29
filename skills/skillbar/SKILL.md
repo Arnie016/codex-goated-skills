@@ -1,58 +1,69 @@
 ---
 name: skillbar
-description: Build, refine, or troubleshoot SkillBar, the macOS menu bar manager for codex-goated-skills. Use when Codex needs to work on the SkillBar workspace, update the skill catalog UI, preset bundles, local install flows, or repo-driven metadata parsing for skill management.
+description: Build, run, troubleshoot, or extend SkillBar, the codex-goated-skills macOS menu bar manager. Use when Codex needs to work on the `apps/skillbar` workspace, validate repo-driven catalog parsing, exercise install or update wiring through `bin/codex-goated`, or keep the local preset and installed-state flows honest.
 ---
 
 # SkillBar
 
-Use this skill when the user wants to work on the unified `SkillBar` experience: one umbrella skill plus one compact macOS menu bar app for browsing, installing, updating, and enabling goated skill presets.
+Use this skill when the user wants to work on the real SkillBar product surface in `apps/skillbar`. Do not route general skill-authoring, pack curation, or repo marketing work here unless the request is specifically about the SkillBar app or its local install flows.
+
+If the current repo contains `apps/skillbar`, use that workspace by default. Otherwise, pass `--workspace /path/to/skillbar` to the runner script.
 
 ## Quick Start
 
-1. Use the local app workspace at `apps/skillbar`.
-2. Treat `skills/*` in the repo as the catalog source of truth.
-3. Treat `~/.codex/skills` as the installed-state source of truth unless the user picks another destination.
-4. Reuse `bin/codex-goated` for install and update actions instead of inventing parallel tooling.
-5. Keep the UI compact, professional, and menu-bar-native.
+1. Use `bash scripts/run_skillbar.sh doctor` from the repo root, or pass `--workspace /path/to/skillbar` if the app lives elsewhere.
+2. Use `bash scripts/run_skillbar.sh inspect` before editing so the app model, services, tests, and CLI entrypoint stay visible.
+3. Use `bash scripts/run_skillbar.sh smoke-install skillbar` to verify one real install path against a temporary destination.
+4. Use `bash scripts/run_skillbar.sh generate` after changing `project.yml`.
+5. Use `bash scripts/run_skillbar.sh test` once Xcode is ready.
+6. Use `bash scripts/run_skillbar.sh run` after UI changes so the menu bar app relaunches from the local build output.
 
 ## Workflow
+
+### Before Editing
+
+- Read `references/project-map.md` for the actual app layout and validation path.
+- If the task changes project settings or app metadata, inspect `apps/skillbar/project.yml` and `apps/skillbar/SkillBarApp/Info.plist` first.
+- Treat `skills/*` in the repo as the catalog source of truth.
+- Treat `~/.codex/skills` as the installed-state source of truth unless the user picks another destination.
 
 ### Product Boundary
 
 - SkillBar owns:
-  - skill catalog discovery from the local repo
+  - local catalog discovery from the repo checkout
   - installed-state visibility
-  - install and update actions
-  - curated preset bundles
-  - setup for repo path and Codex skills path
+  - install and update actions delegated to `bin/codex-goated`
+  - curated preset bundles built from existing skills
+  - setup for repo path and installed-skills path
 - SkillBar does not own:
-  - secrets for other tools
-  - Telegram bot token storage
+  - skill creation or editing outside the app workflow
   - remote marketplace sync
-  - arbitrary third-party skill registries
+  - third-party registries
+  - secrets for unrelated tools
 
 ### Editing Guidance
 
-- Preserve a restrained menu bar layout:
-  - strong hierarchy
-  - compact rows
-  - one monochrome top icon
-  - minimal scrolling friction
-- Keep action labels simple:
-  - `Install`
-  - `Update`
-  - `Enable Preset`
-  - `Choose`
-- Prefer deterministic metadata parsing with graceful fallback when optional fields are missing.
-- Presets should bundle existing skills; avoid making presets feel like a second catalog system.
+- Keep the experience menu-bar-first and compact. Do not turn SkillBar into a full dashboard app unless the user asks.
+- Reuse `bin/codex-goated` for install and update actions instead of inventing parallel tooling.
+- Preserve deterministic metadata parsing with graceful fallback when optional fields are missing.
+- Keep preset bundles static and understandable; they should not become a second catalog system.
+- If you touch install flows, run `smoke-install` before calling the work complete.
 
 ### Validation
 
-- Regenerate the Xcode project after changing `project.yml`.
-- Run a build and tests before calling the work complete.
-- Validate at least one install flow against a temporary destination so the command wiring stays honest.
+- Prefer the local runner script before manual `xcodegen` or `xcodebuild` commands.
+- Run `doctor` first if the machine may be missing Xcode setup.
+- Run `smoke-install` for at least one skill when the work touches install wiring, CLI integration, or repo-root resolution.
+- Run `test` before calling the work complete when Xcode is ready. If Xcode is blocked, report the exact blocker from the runner.
+
+## Example Prompts
+
+- `Use $skillbar to inspect the SkillBar workspace, tighten the preset flow, and validate one real install path.`
+- `Use $skillbar to run doctor, test the app, and fix the local catalog parser.`
+- `Use $skillbar to improve the menu bar UI without breaking the repo-driven install and update actions.`
 
 ## Resources
 
-- `references/project-map.md`: app shape, metadata sources, preset rules, and validation expectations.
-- `scripts/run_skillbar.sh`: local doctor, generate, build, test, and run helper for the SkillBar workspace.
+- `scripts/run_skillbar.sh`: local doctor, inspect, generate, open, build, test, run, and smoke-install helper for the SkillBar workspace.
+- `references/project-map.md`: target map, key files, and validation expectations.
+- `../../bin/codex-goated`: the CLI that SkillBar should continue delegating install and update work to.
