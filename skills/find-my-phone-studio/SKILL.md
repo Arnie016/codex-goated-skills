@@ -1,38 +1,56 @@
 ---
 name: find-my-phone-studio
-description: Build, scaffold, troubleshoot, or product-shape a macOS menu bar app or helper workflow for finding a phone, opening its current location, and triggering a ring through Apple- or Google-supported surfaces. Use when Codex needs to turn "find my phone" into a realistic Mac utility, shortcut flow, browser flow, or automation for iPhone or Android without inventing unsupported tracking APIs.
+description: Build, run, troubleshoot, or refine a realistic Mac phone-recovery workflow, especially the bundled `apps/phone-spotter` menu bar app. Use when Codex needs a repo-native path for locate, ring, pairing, directions, or provider handoff on iPhone or Android without inventing unsupported tracking APIs.
 ---
 
 # Find My Phone Studio
 
-Use this skill when the user wants a Mac app, menu bar icon, or helper flow to locate their phone and ring it.
+Use this skill when the user wants to work on a realistic phone-recovery workflow on macOS. If the current repo contains `apps/phone-spotter`, use that workspace by default.
 
-Default product shape: an always-available macOS menu bar utility that helps the user jump into the best available Apple or Google action quickly.
+Default product shape: an always-available macOS menu bar utility that helps the user jump into the best available Apple or Google action quickly, keeps local clues and pairing state on-device, and exposes a clear Quit path.
 
 ## Quick Start
 
-1. Choose the lane: `menu-bar-app`, `shortcut-helper`, `browser-helper`, or `support-only`.
-2. Run `python3 scripts/find_my_phone_brief.py --goal "<user request>"` to normalize the request.
-3. Default to a menu bar extra with these actions:
+1. If this repo contains `apps/phone-spotter`, use that workspace first.
+2. Run `bash scripts/run_phone_spotter.sh doctor`.
+3. Run `bash scripts/run_phone_spotter.sh inspect`.
+4. Use `bash scripts/run_phone_spotter.sh generate` after changing `project.yml`.
+5. Use `bash scripts/run_phone_spotter.sh test` after model, pairing, or UI changes.
+6. Use `bash scripts/run_phone_spotter.sh run` when you need the local menu bar build relaunched.
+7. When the request is still exploratory, run `python3 scripts/find_my_phone_brief.py --goal "<user request>"` to normalize the product brief.
+8. Default to a menu bar extra with these actions:
    - `Locate Phone`
    - `Ring Phone`
    - `Open Provider`
    - `Copy last known location`
    - `Quit`
-4. Be explicit about capability boundaries:
+9. Be explicit about capability boundaries:
    - do not promise a public Find My control API unless the current Apple docs prove one exists
    - do not claim "exact" coordinates beyond what Apple's own surface provides
    - keep Apple ID credentials in Apple-owned surfaces when possible
-5. If a real app scaffold is requested, prefer a lightweight SwiftUI menu bar app first and add richer views only if the user asks.
+10. Only scaffold a new app when the bundled `Phone Spotter` workspace is missing or clearly not a fit.
 
 ## Workflow
 
 ### Choose The Lane
 
+- `phone-spotter-workspace`: use and extend the bundled `apps/phone-spotter` menu bar app.
 - `menu-bar-app`: build a persistent Mac menu bar app that opens supported Apple or Google surfaces, runs approved local helpers, and keeps "find" actions one click away.
 - `shortcut-helper`: use Shortcuts or AppleScript glue when the user wants quick local automation and is comfortable with Apple-managed prompts or permissions.
 - `browser-helper`: use browser automation only when the user explicitly wants the iCloud web flow and accepts sign-in in their own browser session.
 - `support-only`: explain the most reliable user path without building a local app.
+
+### Work The Bundled App First
+
+- Read `references/project-map.md` before editing the app workspace.
+- If the task changes project settings or app metadata, inspect `project.yml` and `PhoneSpotterApp/Info.plist` first.
+- Keep `Phone Spotter` compact and menu-bar-first.
+- Preserve local-first behavior:
+  - pairing state and clues stay on-device
+  - provider handoff remains explicit
+  - no covert tracking or silent background surveillance flows
+- Prefer the local runner script before typing `xcodegen` or `xcodebuild` manually.
+- If `doctor` reports Xcode is not ready, stop and use the command it prints before trying `build`, `test`, or `run`.
 
 ### Build The Brief
 
@@ -78,6 +96,11 @@ The brief should capture:
   - Google web handoff
   - Shortcuts helper
   - signed-in browser helper
+- If you are editing the bundled repo app, preserve its current split:
+  - status item plus popover
+  - settings scene
+  - QR pairing page on the same Wi-Fi
+  - local clue timeline and summary copy actions
 
 ### Security And Privacy
 
@@ -90,6 +113,7 @@ The brief should capture:
 
 - Start with the smallest reliable flow that meets the request.
 - Prefer:
+  - the bundled `apps/phone-spotter` workspace when it fits
   - deep links or app handoff
   - Shortcuts or AppleScript glue
   - browser automation last
@@ -112,5 +136,7 @@ The brief should capture:
 
 ## Resources
 
+- `scripts/run_phone_spotter.sh`: local doctor, inspect, generate, open, build, test, and run helper for the Phone Spotter workspace.
 - `scripts/find_my_phone_brief.py`: normalizes the user's request into an implementation brief.
+- `references/project-map.md`: default workspace, main files, and guardrails for the bundled app.
 - `references/apple-supported-paths.md`: guidance on supported surfaces, trust boundaries, and phrasing around location precision.
