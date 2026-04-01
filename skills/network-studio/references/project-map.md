@@ -8,14 +8,16 @@ Default workspace: use `apps/wifi-watchtower` when working inside this repositor
 
 ## Main Files
 
-- `project.yml`: XcodeGen spec for the app target
+- `project.yml`: XcodeGen spec for the app and unit-test targets
 - `WifiWatchtowerApp/Info.plist`: app metadata for the menu bar utility
 - `WifiWatchtowerApp/Sources/App/WifiWatchtowerApp.swift`: app entry point, dashboard window, and menu bar scene
 - `WifiWatchtowerApp/Sources/App/WatchtowerModel.swift`: refresh loop, top-level app state, and dashboard handoff
 - `WifiWatchtowerApp/Sources/Models/NetworkSnapshot.swift`: trust-level enums, scoring models, and snapshot presentation helpers
 - `WifiWatchtowerApp/Sources/Services/WifiInspector.swift`: CoreWLAN capture, routing checks, nearby-network scoring, and recommendation logic
+- `WifiWatchtowerApp/Sources/Services/WifiTrustScorer.swift`: testable trust-scoring helper used by the inspector and unit tests
 - `WifiWatchtowerApp/Sources/Views/MenuBarView.swift`: compact menu bar panel
 - `WifiWatchtowerApp/Sources/Views/DashboardView.swift`: larger dashboard view for explanations and nearby-network context
+- `WifiWatchtowerApp/Tests/WifiTrustScorerTests.swift`: deterministic coverage for open-network avoidance and secure-hotspot scoring
 
 ## Run And Build Notes
 
@@ -26,6 +28,7 @@ Default workspace: use `apps/wifi-watchtower` when working inside this repositor
 - `generate` uses `xcodegen`.
 - `open` launches `WifiWatchtower.xcodeproj`.
 - `build` uses `xcodebuild` with a local `.build-debug` derived-data folder.
+- `test` uses `xcodebuild test` against the `WifiWatchtowerTests` bundle.
 - `run` builds and opens `WifiWatchtower.app` from `.build-debug/Build/Products/Debug`.
 
 ## Constraints

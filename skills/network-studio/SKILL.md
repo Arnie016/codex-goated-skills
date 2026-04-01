@@ -26,6 +26,7 @@ When this repo contains `apps/wifi-watchtower`, use that workspace first for nat
    - run `bash scripts/run_wifi_watchtower.sh inspect`
    - use `bash scripts/run_wifi_watchtower.sh generate` after changing `apps/wifi-watchtower/project.yml`
    - use `bash scripts/run_wifi_watchtower.sh build` after model, CoreWLAN, scoring, or view changes
+   - use `bash scripts/run_wifi_watchtower.sh test` after logic or scoring changes when Xcode is ready
    - use `bash scripts/run_wifi_watchtower.sh run` when you need the menu bar app relaunched from the local build
 4. After a watcher install, run `bash "<workspace>/.swiftbar-support/open-network-studio.sh"` to trigger a fresh scan and open the dashboard.
 5. For a continuous watcher, run `bash "<workspace>/network-watch.sh"` or add flags such as `--interval 30 --resolve`.
@@ -51,6 +52,7 @@ When this repo contains `apps/wifi-watchtower`, use that workspace first for nat
   - menu bar presentation
   - dashboard layout
   - app lifecycle or refresh timing
+- Run `test` after changing scoring helpers, network heuristics, or snapshot presentation logic.
 - If `doctor` reports that Xcode is not ready, stop and use the exact command it prints before trying `build` or `run`.
 
 ### Install Or Update The Portable Workspace
@@ -91,6 +93,6 @@ When this repo contains `apps/wifi-watchtower`, use that workspace first for nat
 ## Resources
 
 - `scripts/install_network_studio.py`: copies the portable workspace, preserves user state, and optionally installs a SwiftBar wrapper.
-- `scripts/run_wifi_watchtower.sh`: local doctor, inspect, generate, open, build, and run helper for `apps/wifi-watchtower`.
+- `scripts/run_wifi_watchtower.sh`: local doctor, inspect, generate, open, build, test, and run helper for `apps/wifi-watchtower`.
 - `references/project-map.md`: default workspace, main files, and validation notes for the bundled native app.
 - `assets/workspace/`: bundled template for the watcher, dashboard builder, and SwiftBar plugin. Read or patch these files only when setup or behavior needs to change.

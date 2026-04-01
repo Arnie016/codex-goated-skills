@@ -21,6 +21,7 @@ Commands:
   generate   Regenerate the Xcode project from project.yml
   open       Generate if needed, then open the Xcode project
   build      Build the WifiWatchtower scheme with xcodebuild
+  test       Run the WifiWatchtower unit tests
   run        Build and relaunch the WiFi Watchtower menu bar app
 
 Examples:
@@ -146,6 +147,12 @@ doctor() {
   else
     printf 'no\n'
   fi
+  printf 'Unit tests dir: '
+  if [[ -d "$WORKSPACE/WifiWatchtowerApp/Tests" ]]; then
+    printf 'yes\n'
+  else
+    printf 'no\n'
+  fi
   printf 'Inspector service: '
   if [[ -f "$WORKSPACE/WifiWatchtowerApp/Sources/Services/WifiInspector.swift" ]]; then
     printf 'yes\n'
@@ -170,8 +177,10 @@ Main files:
 - $WORKSPACE/WifiWatchtowerApp/Sources/App/WatchtowerModel.swift
 - $WORKSPACE/WifiWatchtowerApp/Sources/Models/NetworkSnapshot.swift
 - $WORKSPACE/WifiWatchtowerApp/Sources/Services/WifiInspector.swift
+- $WORKSPACE/WifiWatchtowerApp/Sources/Services/WifiTrustScorer.swift
 - $WORKSPACE/WifiWatchtowerApp/Sources/Views/MenuBarView.swift
 - $WORKSPACE/WifiWatchtowerApp/Sources/Views/DashboardView.swift
+- $WORKSPACE/WifiWatchtowerApp/Tests/WifiTrustScorerTests.swift
 EOF
 }
 
@@ -204,6 +213,24 @@ build_project() {
       -derivedDataPath .build-debug \
       -destination 'platform=macOS' \
       build
+  )
+}
+
+test_project() {
+  require_tools
+  require_tool xcodebuild
+  ensure_workspace
+  [[ -d "$WORKSPACE/$PROJECT_NAME" ]] || generate_project
+  ensure_xcode_ready
+  (
+    cd "$WORKSPACE" &&
+    DEVELOPER_DIR="$XCODE_DIR" xcodebuild \
+      -project "$PROJECT_NAME" \
+      -scheme "$SCHEME" \
+      -configuration Debug \
+      -derivedDataPath .build-debug \
+      -destination 'platform=macOS' \
+      test
   )
 }
 
@@ -248,6 +275,9 @@ case "$COMMAND" in
     ;;
   build)
     build_project
+    ;;
+  test)
+    test_project
     ;;
   run)
     run_app
