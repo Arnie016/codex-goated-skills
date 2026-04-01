@@ -7,7 +7,7 @@ Machine-readable catalog:
 
 ## Snapshot
 
-- Total skills: `29`
+- Total skills: `31`
 - Total packs: `10`
 - Main pack folder: [`collections/`](https://github.com/Arnie016/codex-goated-skills/tree/main/collections)
 - Main install CLI: [`bin/codex-goated`](https://github.com/Arnie016/codex-goated-skills/blob/main/bin/codex-goated)
@@ -26,14 +26,14 @@ codex-goated audit
 
 ## Audit Status
 
-Audit snapshot for March 27, 2026:
+Audit snapshot for April 1, 2026:
 
-- `29/29` skills include `SKILL.md`
-- `29/29` skills include `agents/openai.yaml`
-- `29/29` skills include a small SVG icon
-- `29/29` skills include a large SVG icon
+- `31/31` skills include `SKILL.md`
+- `31/31` skills include `agents/openai.yaml`
+- `31/31` skills include a small SVG icon
+- `31/31` skills include a large SVG icon
 - `10/10` pack files resolve to valid skill directories
-- `29/29` skills are covered by at least one pack
+- `31/31` skills are covered by at least one pack
 
 Run the live audit locally:
 
@@ -59,12 +59,12 @@ Continuous audit:
 | Pack | Purpose | Skill count |
 | --- | --- | --- |
 | `launch-and-distribution` | Launch rough projects, package them cleanly, and get them ready to share | 4 |
-| `productivity-and-workflow` | Workspace setup, document workflows, monitoring, daily reference, and repo-driven skill management | 8 |
-| `daily-briefs-and-reference` | Daily context, historical lookup, local pulse, and readable export workflows | 5 |
+| `productivity-and-workflow` | Workspace setup, document workflows, monitoring, daily reference, and repo-driven skill management | 9 |
+| `daily-briefs-and-reference` | Daily context, historical lookup, local pulse, readable export workflows, and market-reading archives | 6 |
 | `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, lore pacing, merch, and risk review | 10 |
 | `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 10 |
 | `macos-utility-builders` | Mac utility planning and menu bar helper workflows | 3 |
-| `app-specific-skills` | Skills tied closely to live local app codebases | 2 |
+| `app-specific-skills` | Skills tied closely to live local app codebases | 3 |
 | `games-and-minecraft` | Minecraft hosting, operations, and skin tooling | 2 |
 | `creator-and-fandom-stack` | Creator brand strategy plus launch-ready packaging support | 12 |
 | `utility-builder-stack` | A broader Mac utility-building stack across workflow and app surfaces | 8 |
@@ -83,6 +83,7 @@ Continuous audit:
 - [`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor): Diagnose local setup blockers and workspace readiness issues.
 - [`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker): Connect GitHub, scan repo folders, track daily git gains or broader output gains, and turn them into reminder stories and baseline comparisons.
 - [`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day): Pull the official Wikimedia On This Day feed into a polished daily history brief, Mac-style day browser, or native menu bar workflow.
+- [`trading-archive`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/trading-archive): Build a dependable archive of trading and macro articles from public feeds, then surface a reading queue, source health, or native menu bar workflow.
 - [`skillbar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/skillbar): Build and refine the SkillBar macOS top-bar skill manager.
 - [`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio): Turn scattered clips into one structured prompt and export flow.
 - [`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio): Install or update a LAN presence monitor with SwiftBar and a dashboard.
@@ -111,6 +112,7 @@ Continuous audit:
 ### App-Specific Skills
 
 - [`telebar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/telebar): Build and run the TeleBar Telegram and AI menu bar app.
+- [`flight-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/flight-scout): Build and run the Flight Scout macOS menu bar app.
 - [`vibe-bluetooth`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth): Build, run, and troubleshoot the VibeWidget macOS app and widget.
 
 ### Games and Minecraft

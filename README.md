@@ -31,6 +31,7 @@ codex-goated install deckdrop-studio
 codex-goated install clipboard-studio
 codex-goated install gain-tracker
 codex-goated install on-this-day
+codex-goated install trading-archive
 codex-goated install skillbar
 codex-goated install find-my-phone-studio
 codex-goated install flight-scout
@@ -87,7 +88,7 @@ Then restart Codex.
 | Launch a project cleanly | `launch-and-distribution` | `codex-goated pack install launch-and-distribution` |
 | Build out creator and fandom strategy | `creator-and-fandom-stack` | `codex-goated pack install creator-and-fandom-stack` |
 | Install only the personality-led audience suite | `fandom-skill-pack` | `codex-goated pack install fandom-skill-pack` |
-| Build a daily ritual stack for facts and pulse | `daily-briefs-and-reference` | `codex-goated pack install daily-briefs-and-reference` |
+| Build a daily ritual stack for facts, pulse, and market-reading archives | `daily-briefs-and-reference` | `codex-goated pack install daily-briefs-and-reference` |
 | Build focused Mac utilities | `macos-utility-builders` | `codex-goated pack install macos-utility-builders` |
 | Pull the workflow and local tooling stack | `productivity-and-workflow` | `codex-goated pack install productivity-and-workflow` |
 

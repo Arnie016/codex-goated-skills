@@ -3,6 +3,7 @@
 workspace-doctor
 gain-tracker
 on-this-day
+trading-archive
 skillbar
 clipboard-studio
 network-studio

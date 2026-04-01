@@ -1,0 +1,7 @@
+interface:
+  display_name: "Trading Archive"
+  short_description: "Trading article archive, reading queue, and menu bar app"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#2FAE7F"
+  default_prompt: "Use $trading-archive to fetch public trading or macro feeds, build a reliable reading archive, surface the strongest articles for the current moment, or refine the matching macOS menu bar app."

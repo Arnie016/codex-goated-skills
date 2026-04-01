@@ -471,7 +471,7 @@
     {
       "id": "trading-archive",
       "display_name": "Trading Archive",
-      "description": "Browse, refresh, filter, and resurface archived trading articles from RSS or Atom feeds, saved links, and local caches, then turn them into a reading queue, archive digest, source-health report, or a refined native menu bar workflow. Use when Codex needs a dependable trading research archive instead of ad hoc finance tabs and half-lost bookmarks.",
+      "description": "Build, run, troubleshoot, or refine Trading Archive, especially the bundled `apps/trading-archive-bar` macOS menu bar app and its feed-ingest helper. Use when Codex needs a dependable trading research archive instead of ad hoc finance tabs and half-lost bookmarks.",
       "short_description": "Trading article archive, reading queue, and menu bar app",
       "brand_color": "#2FAE7F",
       "path": "skills/trading-archive",
@@ -592,7 +592,7 @@
     {
       "id": "daily-briefs-and-reference",
       "title": "Daily Briefs and Reference",
-      "summary": "Skills for daily historical context, git momentum check-ins, local monitoring, and readable exports.",
+      "summary": "Skills for daily historical context, market-reading archives, git momentum check-ins, local monitoring, and readable exports.",
       "path": "collections/daily-briefs-and-reference.txt",
       "skill_count": 6,
       "skills": [

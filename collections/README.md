@@ -25,8 +25,8 @@ bash scripts/install-pack.sh creator-and-fandom-stack
 | Pack | What it is for | Skill count |
 | --- | --- | --- |
 | `launch-and-distribution` | Turning rough projects into launch-ready, public packages | 4 |
-| `productivity-and-workflow` | Workspace setup, document workflows, local tooling, daily reference, and catalog management | 8 |
-| `daily-briefs-and-reference` | Daily context, historical lookup, local pulse, and readable export workflows | 5 |
+| `productivity-and-workflow` | Workspace setup, document workflows, local tooling, daily reference, and catalog management | 9 |
+| `daily-briefs-and-reference` | Daily context, historical lookup, market-reading archives, local pulse, and readable export workflows | 6 |
 | `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, rituals, merch, and narrative risk work | 10 |
 | `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 10 |
 | `macos-utility-builders` | Menu bar utilities, Mac helpers, and focused utility-app shaping | 3 |
@@ -42,7 +42,7 @@ bash scripts/install-pack.sh creator-and-fandom-stack
 | Ship a project or repo | `codex-goated pack install launch-and-distribution` |
 | Build a creator or fandom strategy stack | `codex-goated pack install creator-and-fandom-stack` |
 | Install only the audience strategy suite | `codex-goated pack install fandom-skill-pack` |
-| Build a daily ritual stack for facts, pulse, and exports | `codex-goated pack install daily-briefs-and-reference` |
+| Build a daily ritual stack for facts, pulse, and market-reading archives | `codex-goated pack install daily-briefs-and-reference` |
 | Build focused Mac helpers and menu bar utilities | `codex-goated pack install macos-utility-builders` |
 | Grab a broader utility-building setup | `codex-goated pack install utility-builder-stack` |
 | Pull the workspace and monitoring toolkit | `codex-goated pack install productivity-and-workflow` |
