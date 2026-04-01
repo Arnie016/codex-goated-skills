@@ -24,6 +24,7 @@ Commands:
   test                      Run the SkillBar unit tests
   run                       Build and relaunch the SkillBar menu bar app
   smoke-install [skill-id]  Install one skill into a temporary destination via bin/codex-goated
+  smoke-update [skill-id]    Refresh one installed skill through a temporary overwrite path
 
 Examples:
   bash run_skillbar.sh doctor
@@ -306,6 +307,58 @@ smoke_install() {
   rm -rf "$temp_dir"
 }
 
+smoke_update() {
+  ensure_workspace
+
+  local skill_name repo_root cli_path temp_dir source_repo dest_dir installed_skill pre_fingerprint post_fingerprint marker
+  skill_name="${1:-skillbar}"
+  repo_root="$(resolve_repo_root)"
+  cli_path="$repo_root/bin/codex-goated"
+  [[ -x "$cli_path" ]] || die "Missing executable CLI at $cli_path"
+
+  temp_dir="$(mktemp -d)"
+  source_repo="$temp_dir/repo"
+  dest_dir="$temp_dir/skills"
+  marker="skillbar-smoke-update"
+
+  mkdir -p "$source_repo/bin" "$source_repo/skills" "$dest_dir"
+  cp "$cli_path" "$source_repo/bin/codex-goated"
+  cp -R "$repo_root/skills/$skill_name" "$source_repo/skills/$skill_name"
+
+  if ! "$source_repo/bin/codex-goated" install --repo-dir "$source_repo" --dest "$dest_dir" "$skill_name"; then
+    rm -rf "$temp_dir"
+    die "Smoke update setup failed for $skill_name"
+  fi
+
+  installed_skill="$dest_dir/$skill_name/SKILL.md"
+  [[ -f "$installed_skill" ]] || {
+    rm -rf "$temp_dir"
+    die "Smoke update did not produce $installed_skill"
+  }
+
+  pre_fingerprint="$(cksum < "$installed_skill")"
+  printf '\n<!-- %s -->\n' "$marker" >> "$source_repo/skills/$skill_name/SKILL.md"
+
+  if ! "$source_repo/bin/codex-goated" update --repo-dir "$source_repo" --dest "$dest_dir" "$skill_name"; then
+    rm -rf "$temp_dir"
+    die "Smoke update command failed for $skill_name"
+  fi
+
+  post_fingerprint="$(cksum < "$installed_skill")"
+  if [[ "$pre_fingerprint" == "$post_fingerprint" ]]; then
+    rm -rf "$temp_dir"
+    die "Smoke update did not refresh $installed_skill"
+  fi
+
+  if ! grep -Fq "<!-- $marker -->" "$installed_skill"; then
+    rm -rf "$temp_dir"
+    die "Smoke update did not copy the updated marker into $installed_skill"
+  fi
+
+  printf 'Smoke update OK: %s\n' "$installed_skill"
+  rm -rf "$temp_dir"
+}
+
 COMMAND=""
 COMMAND_ARG=""
 
@@ -358,6 +411,9 @@ case "$COMMAND" in
     ;;
   smoke-install)
     smoke_install "$COMMAND_ARG"
+    ;;
+  smoke-update)
+    smoke_update "$COMMAND_ARG"
     ;;
   *)
     usage

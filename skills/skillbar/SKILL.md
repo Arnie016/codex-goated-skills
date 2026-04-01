@@ -14,9 +14,10 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 1. Use `bash scripts/run_skillbar.sh doctor` from the repo root, or pass `--workspace /path/to/skillbar` if the app lives elsewhere.
 2. Use `bash scripts/run_skillbar.sh inspect` before editing so the app model, services, tests, and CLI entrypoint stay visible.
 3. Use `bash scripts/run_skillbar.sh smoke-install skillbar` to verify one real install path against a temporary destination.
-4. Use `bash scripts/run_skillbar.sh generate` after changing `project.yml`.
-5. Use `bash scripts/run_skillbar.sh test` once Xcode is ready.
-6. Use `bash scripts/run_skillbar.sh run` after UI changes so the menu bar app relaunches from the local build output.
+4. Use `bash scripts/run_skillbar.sh smoke-update skillbar` to verify the overwrite path after update wiring changes.
+5. Use `bash scripts/run_skillbar.sh generate` after changing `project.yml`.
+6. Use `bash scripts/run_skillbar.sh test` once Xcode is ready.
+7. Use `bash scripts/run_skillbar.sh run` after UI changes so the menu bar app relaunches from the local build output.
 
 ## Workflow
 
@@ -48,12 +49,14 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 - Preserve deterministic metadata parsing with graceful fallback when optional fields are missing.
 - Keep preset bundles static and understandable; they should not become a second catalog system.
 - If you touch install flows, run `smoke-install` before calling the work complete.
+- If you touch update flows, run `smoke-update` to prove overwrite behavior through `bin/codex-goated`.
 
 ### Validation
 
 - Prefer the local runner script before manual `xcodegen` or `xcodebuild` commands.
 - Run `doctor` first if the machine may be missing Xcode setup.
 - Run `smoke-install` for at least one skill when the work touches install wiring, CLI integration, or repo-root resolution.
+- Run `smoke-update` when the work touches update wiring, overwrite behavior, or refresh semantics.
 - Run `test` before calling the work complete when Xcode is ready. If Xcode is blocked, report the exact blocker from the runner.
 
 ## Example Prompts
@@ -64,6 +67,6 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 
 ## Resources
 
-- `scripts/run_skillbar.sh`: local doctor, inspect, generate, open, build, test, run, and smoke-install helper for the SkillBar workspace.
+- `scripts/run_skillbar.sh`: local doctor, inspect, generate, open, build, test, run, smoke-install, and smoke-update helper for the SkillBar workspace.
 - `references/project-map.md`: target map, key files, and validation expectations.
 - `../../bin/codex-goated`: the CLI that SkillBar should continue delegating install and update work to.

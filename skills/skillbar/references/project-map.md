@@ -40,6 +40,8 @@
   - print the main app files before editing
 - `bash skills/skillbar/scripts/run_skillbar.sh smoke-install skillbar`
   - prove one real install path through `bin/codex-goated`
+- `bash skills/skillbar/scripts/run_skillbar.sh smoke-update skillbar`
+  - prove the overwrite path through `bin/codex-goated update`
 - `bash skills/skillbar/scripts/run_skillbar.sh test`
   - run the unit tests once Xcode is ready
 
