@@ -45,10 +45,7 @@ struct SkillCatalogService {
         var url = URL(fileURLWithPath: path, isDirectory: true)
 
         while true {
-            let isRepoName = url.lastPathComponent == "codex-goated-skills"
-            let hasSkillsDir = fileManager.fileExists(atPath: url.appendingPathComponent("skills").path)
-            let hasBin = fileManager.fileExists(atPath: url.appendingPathComponent("bin/codex-goated").path)
-            if isRepoName && hasSkillsDir && hasBin {
+            if isRepoRoot(at: url, fileManager: fileManager) {
                 return url.path
             }
 
@@ -56,6 +53,16 @@ struct SkillCatalogService {
             if parent.path == url.path { return nil }
             url = parent
         }
+    }
+
+    func isRepoRoot(at path: String) -> Bool {
+        isRepoRoot(at: URL(fileURLWithPath: path, isDirectory: true))
+    }
+
+    private func isRepoRoot(at url: URL, fileManager: FileManager = .default) -> Bool {
+        let skillsDir = url.appendingPathComponent("skills", isDirectory: true)
+        let codexGoated = url.appendingPathComponent("bin/codex-goated")
+        return fileManager.fileExists(atPath: skillsDir.path) && fileManager.isExecutableFile(atPath: codexGoated.path)
     }
 
     private func loadEntry(skillURL: URL, installedSkillsPath: String) throws -> SkillCatalogEntry? {

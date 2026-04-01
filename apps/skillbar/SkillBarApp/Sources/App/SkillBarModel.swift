@@ -59,7 +59,7 @@ final class SkillBarModel: ObservableObject {
 
     var hasValidRepo: Bool {
         guard let repoRootPath else { return false }
-        return FileManager.default.fileExists(atPath: URL(fileURLWithPath: repoRootPath).appendingPathComponent("skills").path)
+        return catalogService.isRepoRoot(at: repoRootPath)
     }
 
     var menuBarHelp: String {
@@ -81,8 +81,8 @@ final class SkillBarModel: ObservableObject {
 
         guard let repoRootPath, hasValidRepo else {
             entries = []
-            statusHeadline = "Choose your codex-goated-skills repo."
-            statusDetail = "SkillBar needs a local repo clone before it can show the catalog."
+            statusHeadline = "Choose a full repo clone."
+            statusDetail = "SkillBar needs a local clone with `skills/` and `bin/codex-goated` before it can show the catalog or install skills."
             return
         }
 
@@ -159,7 +159,7 @@ final class SkillBarModel: ObservableObject {
     private func run(request: SkillCommandRequest, label: String) {
         guard hasValidRepo else {
             statusHeadline = "Repo path missing"
-            statusDetail = "Choose your local codex-goated-skills repo first."
+            statusDetail = "Choose a local clone with `skills/` and `bin/codex-goated` first."
             selectedSection = .setup
             return
         }

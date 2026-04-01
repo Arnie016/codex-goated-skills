@@ -41,6 +41,31 @@ struct SkillCatalogServiceTests {
     }
 
     @Test
+    func detectsRepoRootsWithoutDependingOnTheFolderName() throws {
+        let tempRoot = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString)
+        let nestedPath = tempRoot.appendingPathComponent("workspace/deeper", isDirectory: true)
+        let skillsDir = tempRoot.appendingPathComponent("skills", isDirectory: true)
+        let binDir = tempRoot.appendingPathComponent("bin", isDirectory: true)
+        let cliURL = binDir.appendingPathComponent("codex-goated")
+
+        try FileManager.default.createDirectory(at: nestedPath, withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(at: skillsDir, withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(at: binDir, withIntermediateDirectories: true)
+        let created = FileManager.default.createFile(
+            atPath: cliURL.path,
+            contents: Data("#!/usr/bin/env bash\nexit 0\n".utf8),
+            attributes: [.posixPermissions: 0o755]
+        )
+
+        #expect(created)
+
+        let service = SkillCatalogService()
+
+        #expect(service.nearestRepoRoot(startingAt: nestedPath.path) == tempRoot.path)
+        #expect(service.isRepoRoot(at: tempRoot.path))
+    }
+
+    @Test
     func commandDescriptorUsesCodexGoatedBinaryAndExplicitPaths() {
         let service = SkillInstallService()
         let descriptor = service.commandDescriptor(for: SkillCommandRequest(
