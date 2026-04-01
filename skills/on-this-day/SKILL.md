@@ -1,15 +1,17 @@
 ---
 name: on-this-day
-description: Fetch the official Wikimedia On This Day feed for a given date, then turn it into a polished daily history brief, a source-linked digest, a refined macOS-style day browser, or a native menu bar experience. Use when Codex needs reliable same-day historical events, births, deaths, or holidays without inventing facts or losing the presentation layer.
+description: Fetch the official Wikimedia On This Day feed for a given date, then turn it into a polished daily history brief or a refined macOS-style web app. Use when Codex needs reliable same-day historical events, births, deaths, or holidays without inventing facts or losing the presentation layer.
 ---
 
 # On This Day
 
-Use this skill when the user wants a same-day historical briefing, a beautifully presented "today in history" experience, or help building and refining the matching macOS-style web app or native menu bar app.
+Use this skill when the user wants a same-day historical briefing, a source-linked digest, or help building and refining the matching macOS-style web app.
+
+Use `on-this-day-bar` for the native menu bar app.
 
 Default product shapes:
 - a desktop-first web app that feels at home on macOS, with glass panels, a date picker, curated historical cards, strong source linking, and resilient fallback behavior
-- a native `MenuBarExtra` app with a compact daily spotlight, category switching, cached fallback, and one-click article handoff
+- a deterministic helper that renders a compact brief or JSON snapshot from the official Wikimedia feed
 
 ## Quick Start
 
@@ -17,12 +19,9 @@ Default product shapes:
 2. Prefer the official Wikimedia Feed API endpoint for the day:
    - `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/{MM}/{DD}`
 3. If you need a deterministic local helper, run `python3 scripts/fetch_on_this_day.py --date 2026-03-27 --type selected --limit 5`.
-4. If the user wants the native menu bar app, run `bash scripts/run_on_this_day_bar.sh doctor`.
-5. Run `bash scripts/run_on_this_day_bar.sh inspect` before editing the native app.
-6. Use `bash scripts/run_on_this_day_bar.sh generate` after changing `apps/on-this-day-bar/project.yml`.
-7. Use `bash scripts/run_on_this_day_bar.sh test` after model, fetch, cache, or menu bar UI changes.
-8. If the user wants the static app instead, open or refine `apps/on-this-day/`.
-9. Return either an `on-this-day-brief`, a `history-day-digest`, or an `app-refresh-plan`, depending on the request.
+4. If the user wants the native menu bar app, hand them to `on-this-day-bar`.
+5. Open or refine `apps/on-this-day/` for the web surface.
+6. Return either an `on-this-day-brief`, a `history-day-digest`, or an `app-refresh-plan`, depending on the request.
 
 ## Accepted Inputs
 
@@ -90,21 +89,14 @@ Default `app-refresh-plan` sections:
   - strongest entries next
   - secondary context after that
 - Use restrained motion and strong spacing instead of generic card spam.
-- Preserve a desktop-first macOS feel when editing the web app in `apps/on-this-day/` or the native menu bar app in `apps/on-this-day-bar/`.
+- Preserve a desktop-first macOS feel when editing the web app in `apps/on-this-day/`.
 
-### Native App Workflow
+### Web App Workflow
 
-- Use the local runner before typing `xcodegen` or `xcodebuild` manually:
-  - `bash scripts/run_on_this_day_bar.sh <command>`
-- Run `doctor` first when the machine or workspace state is unclear.
-- Run `inspect` before editing so the fetch, store, model, and view split stays visible.
-- Run `generate` after `project.yml` changes.
-- Run `test` after changes to:
-  - feed parsing
-  - cache or persistence behavior
-  - date selection or category state
-  - menu bar view output
-- Use `run` only when you need the built app relaunched from the local `.build-debug` product.
+- Open `apps/on-this-day/README.md` before editing the browser surface.
+- Use `python3 -m http.server 4173` from `apps/on-this-day/` when you need a local preview with real fetch behavior.
+- Run `python3 scripts/fetch_on_this_day.py --date YYYY-MM-DD --type selected --limit 5` after changing feed logic, date handling, or digest formatting.
+- Keep the static app desktop-first and honest about live versus cached data.
 
 ### Handle Failure Honestly
 
@@ -122,12 +114,6 @@ Default `app-refresh-plan` sections:
   - a spotlight card and a scrollable historical timeline
 - Keep the main layout readable between 1280 px desktop widths and narrower laptop screens.
 - Use local storage for last date, last category, and cached day snapshots so the app feels dependable.
-- Prefer a polished native menu bar app with:
-  - a compact `MenuBarExtra` title or icon
-  - `Today`, previous, next, and random-day controls
-  - a highlighted lead story plus 3-5 curated entries
-  - a settings window for category defaults and story depth
-  - cached fallback with explicit stale-data messaging
 
 ### Safety Boundaries
 
@@ -142,13 +128,10 @@ Default `app-refresh-plan` sections:
 - `Use $on-this-day to build a macOS-style day browser that lets me switch between curated events, births, deaths, and holidays for any date.`
 - `Use $on-this-day to give me the most interesting March 27 historical events, explain why they matter, and keep the output grounded in the official Wikimedia feed.`
 - `Use $on-this-day to refine the web app UI, improve empty and error states, and keep the design professional on Mac.`
-- `Use $on-this-day to build or improve a native macOS menu bar app that surfaces the best same-day history entries with cached fallback and article handoff.`
 
 ## Resources
 
 - `scripts/fetch_on_this_day.py`: deterministic CLI helper for the official On This Day feed
-- `scripts/run_on_this_day_bar.sh`: local doctor, inspect, generate, open, build, test, and run helper for `apps/on-this-day-bar`
-- `references/product-spec.md`: product shape, fetch model, fallback states, and visual direction
-- `references/project-map.md`: native app target map, main files, and build notes
+- `references/product-spec.md`: product family spec, fetch model, fallback states, and visual direction
+- `references/project-map.md`: web app target map, main files, and preview notes
 - `../../apps/on-this-day/`: the matching web app codebase
-- `../../apps/on-this-day-bar/`: the matching native menu bar app codebase

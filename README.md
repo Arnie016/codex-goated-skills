@@ -31,6 +31,7 @@ codex-goated install deckdrop-studio
 codex-goated install clipboard-studio
 codex-goated install gain-tracker
 codex-goated install on-this-day
+codex-goated install on-this-day-bar
 codex-goated install trading-archive
 codex-goated install skillbar
 codex-goated install find-my-phone-studio
@@ -98,7 +99,7 @@ Then restart Codex.
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
 - Build a utility with `network-studio`, `find-my-phone-studio`, or `clipboard-studio`
 - Connect GitHub, scan a workspace folder for repos, track daily git gains, and measure a before-versus-now output climb with `gain-tracker`
-- Open a same-day historical briefing ritual with `on-this-day`
+- Open a same-day historical briefing ritual with `on-this-day` or `on-this-day-bar`
 - Build a reusable market-reading archive with `trading-archive`
 - Build a personality-led audience strategy stack with the [`Fandom Skill Pack`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/fandom-skill-pack.md)
 - Browse all download packs in [`collections/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
@@ -130,7 +131,7 @@ Browse by use case:
 | --- | --- | --- |
 | <img src="skills/workspace-doctor/assets/workspace-doctor-small.svg" width="26" alt="Workspace Doctor" /><br/>[`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor) | Finds the real local setup blocker and next fix fast | `workspace-doctor` |
 | <img src="skills/gain-tracker/assets/icon-small.svg" width="26" alt="Gain Tracker" /><br/>[`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker) | Connects GitHub, scans local repo folders, and turns daily git gains into reminder stories and progress toward 90x | `gain-tracker` |
-| <img src="skills/on-this-day/assets/icon-small.svg" width="26" alt="On This Day" /><br/>[`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day) | Pulls the official Wikimedia day feed into a polished historical briefing, Mac-style day browser, or native menu bar workflow | `on-this-day` |
+| <img src="skills/on-this-day/assets/icon-small.svg" width="26" alt="On This Day" /><br/>[`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day) | Pulls the official Wikimedia day feed into a polished historical briefing or Mac-style day browser | `on-this-day` |
 | <img src="skills/trading-archive/assets/icon-small.svg" width="26" alt="Trading Archive" /><br/>[`trading-archive`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/trading-archive) | Builds a saved archive of trading articles from public feeds, then surfaces a reading queue, source health, and a native menu bar workflow | `trading-archive` |
 | <img src="skills/skillbar/assets/skillbar-small.svg" width="26" alt="SkillBar" /><br/>[`skillbar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/skillbar) | Builds and refines SkillBar, the macOS top-bar manager for the goated skill catalog, installed state, and preset bundles | `skillbar` |
 | <img src="skills/clipboard-studio/assets/clipboard-studio-small.svg" width="26" alt="Context Assembly" /><br/>[`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio) | Shapes Context Assembly on macOS so code, logs, pages, and selections become one structured prompt with resumable state instead of Cmd+C, switch, Cmd+V loops | `clipboard-studio` |
@@ -170,6 +171,7 @@ Collection:
 | --- | --- | --- |
 | <img src="skills/telebar/assets/telebar-small.svg" width="26" alt="TeleBar" /><br/>[`telebar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/telebar) | Builds and runs the TeleBar Telegram + AI menu bar app | `telebar` |
 | <img src="skills/flight-scout/assets/flight-scout-small.svg" width="26" alt="Flight Scout" /><br/>[`flight-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/flight-scout) | Builds and runs the Flight Scout menu bar app | `flight-scout` |
+| <img src="skills/on-this-day-bar/assets/icon-small.svg" width="26" alt="On This Day Bar" /><br/>[`on-this-day-bar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day-bar) | Builds and runs the On This Day Bar macOS menu bar app | `on-this-day-bar` |
 | <img src="skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg" width="26" alt="VibeBluetooth" /><br/>[`vibe-bluetooth`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth) | Dev skill for the VibeWidget macOS app and widget | `vibe-bluetooth` |
 
 ### Games and Minecraft

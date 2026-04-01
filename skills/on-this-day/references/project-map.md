@@ -1,38 +1,32 @@
-# On This Day Bar Project Map
+# On This Day Web Project Map
 
-Default workspace: use `apps/on-this-day-bar` when working inside this repository. Otherwise pass `--workspace /path/to/on-this-day-bar` to the runner.
+Default workspace: use `apps/on-this-day` when working inside this repository.
 
 ## Target
 
-- `OnThisDayBar`: macOS SwiftUI menu bar app with cached-feed fallback and a settings scene
+- `On This Day`: desktop-first macOS-style web app for source-linked daily history briefs
 
 ## Main Files
 
-- `project.yml`: XcodeGen spec for the app and unit-test target
-- `OnThisDayBarApp/Info.plist`: menu-bar-only metadata
-- `OnThisDayBarApp/Sources/App/OnThisDayBarApp.swift`: app entry point and settings scene wiring
-- `OnThisDayBarApp/Sources/App/OnThisDayBarAppModel.swift`: date navigation, category selection, and user-facing state
-- `OnThisDayBarApp/Sources/App/OnThisDayBarModels.swift`: feed and presentation models
-- `OnThisDayBarApp/Sources/Services/OnThisDayFeedService.swift`: live Wikimedia fetch and decode path
-- `OnThisDayBarApp/Sources/Services/OnThisDayStore.swift`: local cache and fallback state
-- `OnThisDayBarApp/Sources/Views/OnThisDayBarMenuBarView.swift`: compact menu bar UI
-- `OnThisDayBarApp/Sources/Views/OnThisDayBarSettingsView.swift`: default-category and story-depth settings
-- `OnThisDayBarApp/Sources/Views/OnThisDayBarTheme.swift`: app-level styling tokens
-- `OnThisDayBarApp/Tests/OnThisDayBarTests.swift`: date, feed, and view-model coverage
+- `README.md`: local run guidance and product overview
+- `app.js`: feed loading, date navigation, caching, digest assembly, and rendering
+- `index.html`: app shell, controls, and article cards
+- `styles.css`: macOS-style layout, glass panels, motion, and responsive presentation
+- `../scripts/fetch_on_this_day.py`: deterministic official Wikimedia feed helper
 
-## Run And Build Notes
+## Run And Preview Notes
 
-- Use the runner script first:
-  `bash scripts/run_on_this_day_bar.sh <command>`
-- If the app lives outside the current repo, use:
-  `bash scripts/run_on_this_day_bar.sh --workspace /path/to/on-this-day-bar <command>`
-- `generate` uses `xcodegen`.
-- `open` launches `OnThisDayBar.xcodeproj`.
-- `build` and `test` use `xcodebuild` with a local `.build-debug` derived-data folder.
-- `run` builds and opens `OnThisDayBar.app` from `.build-debug/Build/Products/Debug`.
+- Use the web app README first:
+  `apps/on-this-day/README.md`
+- For a quick local preview, run:
+  `cd apps/on-this-day && python3 -m http.server 4173`
+- Open `http://localhost:4173` after starting the server.
+- Use the helper script when you need a deterministic feed snapshot or markdown digest:
+  `python3 scripts/fetch_on_this_day.py --date YYYY-MM-DD --type selected --limit 5`
 
 ## Constraints
 
-- Keep the app grounded in the official Wikimedia feed; do not add invented summaries or unverified fallback facts.
-- Preserve explicit stale-data messaging when cache is used.
-- Keep the popover compact and menu-bar-first instead of turning it into a large history browser window.
+- Keep the app desktop-first and Mac-like.
+- Preserve explicit live-versus-cached behavior.
+- Do not invent historical facts or source links.
+- Keep the web app separate from the native `on-this-day-bar` workspace.

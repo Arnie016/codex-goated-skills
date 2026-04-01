@@ -1,6 +1,6 @@
 {
   "repo": "codex-goated-skills",
-  "skill_count": 31,
+  "skill_count": 32,
   "pack_count": 10,
   "skills": [
     {
@@ -351,18 +351,34 @@
     {
       "id": "on-this-day",
       "display_name": "On This Day",
-      "description": "Fetch the official Wikimedia On This Day feed for a given date, then turn it into a polished daily history brief, a source-linked digest, a refined macOS-style day browser, or a native menu bar experience. Use when Codex needs reliable same-day historical events, births, deaths, or holidays without inventing facts or losing the presentation layer.",
-      "short_description": "Daily history brief, Mac browser, and menu bar app",
+      "description": "Fetch the official Wikimedia On This Day feed for a given date, then turn it into a polished daily history brief or a refined macOS-style web app. Use when Codex needs reliable same-day historical events, births, deaths, or holidays without inventing facts or losing the presentation layer.",
+      "short_description": "Daily history brief and macOS-style web app",
       "brand_color": "#D88B2C",
       "path": "skills/on-this-day",
       "skill_file": "skills/on-this-day/SKILL.md",
       "openai_yaml": "skills/on-this-day/agents/openai.yaml",
       "icon_small": "./assets/icon-small.svg",
       "icon_large": "./assets/icon-large.svg",
-      "default_prompt": "Use $on-this-day to fetch the official On This Day feed for today in Singapore, pick the most interesting entries, and turn them into a polished source-linked brief or refine the matching macOS-style web or menu bar app.",
+      "default_prompt": "Use $on-this-day to fetch the official On This Day feed for today in Singapore, pick the most interesting entries, and turn them into a polished source-linked brief or refine the matching macOS-style web app.",
       "packs": [
         "daily-briefs-and-reference",
         "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "on-this-day-bar",
+      "display_name": "On This Day Bar",
+      "description": "Build, run, troubleshoot, or refine the native On This Day Bar macOS menu bar app in `apps/on-this-day-bar`. Use when Codex needs to work on the daily history bar app, regenerate the XcodeGen project, run doctor/build/test checks, or improve the compact cached-feed menu bar workflow.",
+      "short_description": "Run and refine the native daily history menu bar app",
+      "brand_color": "#D88B2C",
+      "path": "skills/on-this-day-bar",
+      "skill_file": "skills/on-this-day-bar/SKILL.md",
+      "openai_yaml": "skills/on-this-day-bar/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $on-this-day-bar to work on the native On This Day Bar macOS app in apps/on-this-day-bar: inspect the workspace, run doctor, and validate build or test changes around the cached daily history menu bar workflow.",
+      "packs": [
+        "app-specific-skills"
       ]
     },
     {
@@ -542,10 +558,11 @@
       "title": "App-Specific Skills",
       "summary": "Skills tied closely to specific local app codebases and their live product surfaces.",
       "path": "collections/app-specific-skills.txt",
-      "skill_count": 3,
+      "skill_count": 4,
       "skills": [
         "telebar",
         "flight-scout",
+        "on-this-day-bar",
         "vibe-bluetooth"
       ]
     },
