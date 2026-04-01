@@ -25,6 +25,7 @@ Then use:
 
 ```bash
 codex-goated list
+codex-goated doctor
 codex-goated install network-studio
 codex-goated install minecraft-essentials
 codex-goated install deckdrop-studio
@@ -95,7 +96,7 @@ Then restart Codex.
 
 ## Start Here
 
-- Fix the blocker first with `workspace-doctor`
+- Fix the blocker first with `codex-goated doctor` or `workspace-doctor`
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
 - Build a utility with `network-studio`, `find-my-phone-studio`, or `clipboard-studio`
 - Connect GitHub, scan a workspace folder for repos, track daily git gains, and measure a before-versus-now output climb with `gain-tracker`

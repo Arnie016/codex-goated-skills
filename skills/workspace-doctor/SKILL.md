@@ -16,7 +16,7 @@ It is especially useful in this repo when the task touches:
 
 ## Quick Start
 
-1. Run `bash scripts/workspace_doctor.sh` from the skill folder, or point it at a target workspace with `bash scripts/workspace_doctor.sh --workspace /path/to/workspace`.
+1. Run `bash scripts/workspace_doctor.sh` from the skill folder, or use `codex-goated doctor` from the repo root for the same audit path.
 2. Reproduce the problem with the smallest safe command that reveals the issue.
 3. Check the local environment before blaming the code.
 4. Explain blockers in plain language and prefer direct fixes over abstract advice.
@@ -29,7 +29,7 @@ It is especially useful in this repo when the task touches:
 - Inspect the current workspace layout, package manager files, and toolchain markers.
 - Check versions, missing CLIs, missing secrets, and obvious environment mismatches.
 - Prefer targeted commands that confirm one hypothesis at a time.
-- Start with `bash scripts/workspace_doctor.sh` when you want a fast machine and repo inventory.
+- Start with `bash scripts/workspace_doctor.sh` or `codex-goated doctor` when you want a fast machine and repo inventory.
 - When the target is a macOS app workspace, let the script tell you whether Xcode, XcodeGen, and the paired repo runner are available before you try a full build.
 
 ### Follow Repo-Native Entry Points
@@ -72,4 +72,5 @@ It is especially useful in this repo when the task touches:
 - `agents/openai.yaml`: UI metadata and default invocation prompt.
 - `assets/`: branded icons for repo listings and skill chips.
 - `scripts/workspace_doctor.sh`: repo-aware doctor script that checks workspace markers, toolchains, Xcode readiness, and local runner paths.
+- `../../bin/codex-goated`: repo-root command that exposes the same doctor flow as `codex-goated doctor`.
 - `references/diagnostic-order.md`: preferred order for narrowing environment and setup issues.

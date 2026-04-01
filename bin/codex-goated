@@ -11,6 +11,7 @@ usage() {
   cat <<EOF
 Usage:
   $SELF_NAME list
+  $SELF_NAME doctor [--repo-dir PATH] [--workspace PATH]
   $SELF_NAME install [--dest PATH] [--repo-dir PATH] [--repo-url URL] <skill-name> [<skill-name> ...]
   $SELF_NAME install --all [--dest PATH] [--repo-dir PATH] [--repo-url URL]
   $SELF_NAME update [--dest PATH] [--repo-dir PATH] [--repo-url URL] <skill-name> [<skill-name> ...]
@@ -26,6 +27,8 @@ Usage:
 
 Examples:
   $SELF_NAME list
+  $SELF_NAME doctor
+  $SELF_NAME doctor --workspace apps/flight-scout
   $SELF_NAME install network-studio
   $SELF_NAME install minecraft-essentials vibe-bluetooth
   $SELF_NAME install --all
@@ -457,6 +460,15 @@ audit_repo() {
   fi
 }
 
+run_workspace_doctor() {
+  local script_path
+
+  ensure_repo_dir
+  script_path="$REPO_DIR/skills/workspace-doctor/scripts/workspace_doctor.sh"
+  [[ -f "$script_path" ]] || die "Missing workspace doctor script: $script_path"
+  bash "$script_path" "${DOCTOR_ARGS[@]}"
+}
+
 copy_skill() {
   local skill_name="$1"
   local overwrite="${2:-0}"
@@ -505,6 +517,7 @@ SUBCOMMAND=""
 OVERWRITE=0
 INSTALL_ALL=0
 SKILL_NAMES=()
+DOCTOR_ARGS=()
 CATALOG_ARGS=()
 
 [[ $# -gt 0 ]] || {
@@ -513,7 +526,7 @@ CATALOG_ARGS=()
 }
 
 case "$1" in
-  list|install|update|search|audit)
+  list|doctor|install|update|search|audit)
     COMMAND="$1"
     [[ "$1" == "update" ]] && OVERWRITE=1
     shift
@@ -557,42 +570,72 @@ case "$1" in
     ;;
 esac
 
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-    --all)
-      INSTALL_ALL=1
-      shift
-      ;;
-    --dest)
-      [[ $# -ge 2 ]] || die "--dest requires a path"
-      DEST="$2"
-      shift 2
-      ;;
-    --repo-dir)
-      [[ $# -ge 2 ]] || die "--repo-dir requires a path"
-      REPO_DIR="$2"
-      shift 2
-      ;;
-    --repo-url)
-      [[ $# -ge 2 ]] || die "--repo-url requires a URL"
-      REPO_URL="$2"
-      shift 2
-      ;;
-    --output)
-      [[ $# -ge 2 ]] || die "--output requires a path"
-      CATALOG_ARGS+=("--output" "$2")
-      shift 2
-      ;;
-    -h|--help)
-      usage
-      exit 0
-      ;;
-    *)
-      SKILL_NAMES+=("$1")
-      shift
-      ;;
-  esac
-done
+if [[ "$COMMAND" == "doctor" ]]; then
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --repo-dir)
+        [[ $# -ge 2 ]] || die "--repo-dir requires a path"
+        REPO_DIR="$2"
+        shift 2
+        ;;
+      --repo-url)
+        [[ $# -ge 2 ]] || die "--repo-url requires a URL"
+        REPO_URL="$2"
+        shift 2
+        ;;
+      --workspace)
+        [[ $# -ge 2 ]] || die "--workspace requires a path"
+        DOCTOR_ARGS+=("--workspace" "$2")
+        shift 2
+        ;;
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      *)
+        DOCTOR_ARGS+=("$1")
+        shift
+        ;;
+    esac
+  done
+else
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --all)
+        INSTALL_ALL=1
+        shift
+        ;;
+      --dest)
+        [[ $# -ge 2 ]] || die "--dest requires a path"
+        DEST="$2"
+        shift 2
+        ;;
+      --repo-dir)
+        [[ $# -ge 2 ]] || die "--repo-dir requires a path"
+        REPO_DIR="$2"
+        shift 2
+        ;;
+      --repo-url)
+        [[ $# -ge 2 ]] || die "--repo-url requires a URL"
+        REPO_URL="$2"
+        shift 2
+        ;;
+      --output)
+        [[ $# -ge 2 ]] || die "--output requires a path"
+        CATALOG_ARGS+=("--output" "$2")
+        shift 2
+        ;;
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      *)
+        SKILL_NAMES+=("$1")
+        shift
+        ;;
+    esac
+  done
+fi
 
 [[ -n "$COMMAND" ]] || {
   usage
@@ -602,6 +645,9 @@ done
 case "$COMMAND" in
   list)
     list_skills
+    ;;
+  doctor)
+    run_workspace_doctor
     ;;
   install|update)
     ensure_repo_dir
