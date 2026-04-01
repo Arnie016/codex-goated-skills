@@ -3,7 +3,7 @@ import SwiftUI
 
 private final class ClipboardOverlayPanel: NSPanel {
     override var canBecomeKey: Bool { true }
-    override var canBecomeMain: Bool { false }
+    override var canBecomeMain: Bool { true }
 }
 
 @MainActor
@@ -36,7 +36,7 @@ final class InstantContextPackOverlayCoordinator: NSObject, NSWindowDelegate {
     private lazy var editorPanel: ClipboardOverlayPanel = {
         let panel = ClipboardOverlayPanel(
             contentRect: NSRect(x: 0, y: 0, width: 560, height: 700),
-            styleMask: [.titled, .closable, .fullSizeContentView, .nonactivatingPanel],
+            styleMask: [.titled, .closable, .fullSizeContentView],
             backing: .buffered,
             defer: false
         )
@@ -60,6 +60,13 @@ final class InstantContextPackOverlayCoordinator: NSObject, NSWindowDelegate {
 
     init(model: ClipboardStudioModel) {
         self.model = model
+        super.init()
+        NSWorkspace.shared.notificationCenter.addObserver(
+            self,
+            selector: #selector(handleWorkspaceActivation(_:)),
+            name: NSWorkspace.didActivateApplicationNotification,
+            object: nil
+        )
     }
 
     func presentToast() {
@@ -81,6 +88,11 @@ final class InstantContextPackOverlayCoordinator: NSObject, NSWindowDelegate {
 
     func showPackEditor() {
         positionEditorPanel()
+        refreshEditorPanelBehavior()
+        NSApp.activate(ignoringOtherApps: true)
+        if model.keepsAssemblyWindowVisible {
+            editorPanel.orderFrontRegardless()
+        }
         editorPanel.makeKeyAndOrderFront(nil)
     }
 
@@ -101,6 +113,34 @@ final class InstantContextPackOverlayCoordinator: NSObject, NSWindowDelegate {
         if notification.object as AnyObject? === editorPanel {
             model.packEditorDidDismissExternally()
         }
+    }
+
+    func refreshEditorPanelBehavior() {
+        if model.keepsAssemblyWindowVisible {
+            editorPanel.level = .statusBar
+            editorPanel.collectionBehavior = [
+                .canJoinAllSpaces,
+                .fullScreenAuxiliary,
+                .moveToActiveSpace,
+                .stationary,
+                .ignoresCycle
+            ]
+            editorPanel.hidesOnDeactivate = false
+        } else {
+            editorPanel.level = .floating
+            editorPanel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .moveToActiveSpace]
+            editorPanel.hidesOnDeactivate = false
+        }
+
+        if editorPanel.isVisible, model.keepsAssemblyWindowVisible {
+            editorPanel.orderFrontRegardless()
+        }
+    }
+
+    @objc private func handleWorkspaceActivation(_ notification: Notification) {
+        guard model.keepsAssemblyWindowVisible,
+              editorPanel.isVisible else { return }
+        editorPanel.orderFrontRegardless()
     }
 
     private func scheduleToastDismissal() {

@@ -32,7 +32,7 @@ struct CaptureToastOverlayView: View {
                     }
 
                     if let sourceAppName = toast.sourceAppName {
-                        Text(sourceAppName)
+                        Text("From \(sourceAppName)")
                             .font(.caption2.weight(.bold))
                             .foregroundStyle(ClipboardStudioPalette.accent)
                             .padding(.horizontal, 10)
@@ -59,7 +59,7 @@ struct CaptureToastOverlayView: View {
                             model.sendCurrentPack()
                         }
 
-                        toastAction("Open Pack", systemName: "square.stack.3d.up.fill") {
+                        toastAction("Open Assembly", systemName: "square.stack.3d.up.fill") {
                             model.openPackEditor()
                         }
                     }
@@ -87,15 +87,9 @@ struct CaptureToastOverlayView: View {
         Button(action: action) {
             Label(title, systemImage: systemName)
                 .font(.caption.weight(.bold))
-                .padding(.horizontal, 10)
-                .padding(.vertical, 8)
                 .frame(maxWidth: .infinity)
-                .background(
-                    Capsule(style: .continuous)
-                        .fill(Color.white.opacity(0.08))
-                )
         }
-        .buttonStyle(.plain)
+        .buttonStyle(ContextAssemblyCapsuleButtonStyle())
         .foregroundStyle(ClipboardStudioPalette.primaryText)
     }
 }
@@ -118,6 +112,7 @@ struct PackEditorOverlayView: View {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 16) {
                     header
+                    currentFocusCard
                     objectiveCard
                     packItemsCard
                     promptPreviewCard
@@ -126,20 +121,38 @@ struct PackEditorOverlayView: View {
                 .padding(18)
             }
         }
-        .frame(width: 560, height: 700)
+        .frame(width: 540, height: 664)
+        .onAppear {
+            model.refreshCurrentFocusSilently()
+        }
     }
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
-                Text("Instant Context Pack")
+                Text("Context Assembly")
                     .font(.system(size: 21, weight: .black, design: .rounded))
                     .foregroundStyle(ClipboardStudioPalette.primaryText)
                 Spacer()
-                statusChip(model.contextPack.isEmpty ? "Pack Empty" : "\(model.contextPack.count) Ready")
+                if model.keepsAssemblyWindowVisible {
+                    statusChip("Stays Visible")
+                }
+                Button {
+                    model.toggleAssemblyWindowVisibilityPin()
+                } label: {
+                    Image(systemName: model.keepsAssemblyWindowVisible ? "pin.fill" : "pin")
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(
+                            model.keepsAssemblyWindowVisible
+                                ? ClipboardStudioPalette.accent
+                                : ClipboardStudioPalette.secondaryText
+                        )
+                }
+                .buttonStyle(ContextAssemblyIconButtonStyle())
+                statusChip(model.contextPack.isEmpty ? "Assembly Empty" : "\(model.contextPack.count) Step\(model.contextPack.count == 1 ? "" : "s")")
             }
 
-            Text("Capture from your IDEs and browsers with \(ClipboardStudioShortcut.captureSelection.keyChord), then send the whole prompt pack with \(ClipboardStudioShortcut.sendPack.keyChord).")
+            Text("Capture from IDEs or browsers with \(ClipboardStudioShortcut.captureSelection.keyChord). When pinned, this window stays on screen while you highlight the next bit of context.")
                 .font(.caption)
                 .foregroundStyle(ClipboardStudioPalette.secondaryText)
         }
@@ -151,7 +164,7 @@ struct PackEditorOverlayView: View {
                 .font(.caption.weight(.bold))
                 .foregroundStyle(ClipboardStudioPalette.secondaryText)
 
-            TextField("What do you want the AI to help with?", text: $model.packObjective)
+            TextField("What do you want help with?", text: $model.packObjective)
                 .textFieldStyle(.plain)
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(ClipboardStudioPalette.primaryText)
@@ -172,13 +185,147 @@ struct PackEditorOverlayView: View {
         .background(overlayPanelBackground)
     }
 
-    private var packItemsCard: some View {
+    private var currentFocusCard: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Text("Captured Context")
+                Text("Current Focus")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(ClipboardStudioPalette.secondaryText)
                 Spacer()
+                statusChip(model.currentFocusSnapshot?.statusLabel ?? "Waiting")
+            }
+
+            if let snapshot = model.currentFocusSnapshot {
+                HStack(spacing: 6) {
+                    statusChip("From \(snapshot.sourceLabel)")
+
+                    Spacer()
+
+                    Text(relativeDate(snapshot.capturedAt))
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(ClipboardStudioPalette.mutedText)
+                }
+
+                Text(snapshot.primaryTitle)
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(ClipboardStudioPalette.primaryText)
+                    .lineLimit(2)
+
+                if let detailLine = snapshot.detailLine, detailLine != snapshot.prettyURL {
+                    Text(detailLine)
+                        .font(.caption)
+                        .foregroundStyle(ClipboardStudioPalette.secondaryText)
+                        .lineLimit(2)
+                }
+
+                if let selectionPreview = snapshot.selectionPreview {
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Text("Selected Right Now")
+                                .font(.caption2.weight(.black))
+                                .foregroundStyle(ClipboardStudioPalette.primaryText)
+                            Spacer()
+                            statusChip("Live")
+                        }
+
+                        Text(selectionPreview)
+                            .font(.system(size: 12.5, weight: .medium, design: .monospaced))
+                            .foregroundStyle(ClipboardStudioPalette.primaryText)
+                            .lineLimit(5)
+
+                        HStack(spacing: 8) {
+                            overlayAction("Use Selection", systemName: "plus.rectangle.on.rectangle") {
+                                model.addCurrentSelectionToPack()
+                            }
+
+                            overlayAction("Merge Selection", systemName: "arrow.triangle.merge") {
+                                model.mergeCurrentSelectionWithLatestItem()
+                            }
+                        }
+
+                        HStack(spacing: 8) {
+                            overlayAction("Save Selection", systemName: "square.stack.3d.down.forward") {
+                                model.saveCurrentSelectionToHistory()
+                            }
+
+                            overlayAction("Copy Selection", systemName: "doc.on.doc") {
+                                model.copyCurrentSelection()
+                            }
+                        }
+                    }
+                    .padding(12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .fill(ClipboardStudioPalette.raised)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                    .stroke(ClipboardStudioPalette.accent.opacity(0.24), lineWidth: 1)
+                            )
+                    )
+                }
+
+                HStack(spacing: 8) {
+                    overlayAction("Use State", systemName: "plus.rectangle.on.rectangle") {
+                        model.addCurrentFocusToPack()
+                    }
+
+                    overlayAction("Merge State", systemName: "arrow.triangle.merge") {
+                        model.mergeCurrentFocusWithLatestItem()
+                    }
+
+                    overlayAction(snapshot.resumeLabel, systemName: "arrow.clockwise.circle") {
+                        model.resumeCurrentFocus()
+                    }
+                }
+
+                HStack(spacing: 8) {
+                    overlayAction("Copy State", systemName: "doc.on.doc") {
+                        model.copyCurrentFocus()
+                    }
+
+                    overlayAction("Refresh", systemName: "arrow.clockwise") {
+                        model.refreshCurrentFocusManually()
+                    }
+
+                    overlayAction(model.isResearching ? "Thinking..." : "Research", systemName: "sparkle.magnifyingglass") {
+                        model.researchCurrentFocus()
+                    }
+                }
+            } else {
+                Text("The latest page, document, or selection will appear here so it can be reused or resumed later.")
+                    .font(.caption)
+                    .foregroundStyle(ClipboardStudioPalette.secondaryText)
+
+                HStack(spacing: 8) {
+                    overlayAction("Refresh", systemName: "arrow.clockwise") {
+                        model.refreshCurrentFocusManually()
+                    }
+
+                    overlayAction("Capture", systemName: "text.cursor") {
+                        model.captureSelectionIntoPack()
+                    }
+                }
+            }
+        }
+        .padding(14)
+        .background(overlayPanelBackground)
+    }
+
+    private var packItemsCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text("Capture Timeline")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(ClipboardStudioPalette.secondaryText)
+                Spacer()
+                if model.contextPack.count >= 2 {
+                    Button("Merge Top 2") {
+                        model.mergeLatestAssemblySteps()
+                    }
+                    .buttonStyle(.borderless)
+                    .foregroundStyle(ClipboardStudioPalette.secondaryText)
+                }
                 Button("Clear") {
                     model.clearPack()
                 }
@@ -187,49 +334,16 @@ struct PackEditorOverlayView: View {
             }
 
             if model.contextPack.items.isEmpty {
-                Text("Use \(ClipboardStudioShortcut.captureSelection.keyChord) while highlighting code, logs, or notes. Each capture lands here without pulling you out of flow.")
+                Text("Use \(ClipboardStudioShortcut.captureSelection.keyChord) while highlighting code, logs, or notes. Each capture lands here.")
                     .font(.caption)
                     .foregroundStyle(ClipboardStudioPalette.secondaryText)
             } else {
-                ForEach(model.contextPack.items) { item in
-                    VStack(alignment: .leading, spacing: 8) {
-                        HStack(alignment: .top) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(item.title)
-                                    .font(.subheadline.weight(.bold))
-                                    .foregroundStyle(ClipboardStudioPalette.primaryText)
-                                    .lineLimit(2)
-
-                                HStack(spacing: 6) {
-                                    if let sourceAppName = item.sourceAppName {
-                                        statusChip(sourceAppName)
-                                    }
-                                    Text(relativeDate(item.capturedAt))
-                                        .font(.caption2)
-                                        .foregroundStyle(ClipboardStudioPalette.mutedText)
-                                }
-                            }
-
-                            Spacer()
-
-                            Button {
-                                model.removePackItem(item)
-                            } label: {
-                                Image(systemName: "xmark.circle.fill")
-                                    .foregroundStyle(ClipboardStudioPalette.mutedText)
-                            }
-                            .buttonStyle(.plain)
-                        }
-
-                        Text(item.text)
-                            .font(.caption)
-                            .foregroundStyle(ClipboardStudioPalette.secondaryText)
-                            .lineLimit(4)
-                    }
-                    .padding(12)
-                    .background(
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
-                            .fill(ClipboardStudioPalette.raised)
+                let timelineItems = Array(model.assemblyTimelineItems.enumerated())
+                ForEach(timelineItems, id: \.element.id) { index, item in
+                    timelineRow(
+                        item,
+                        step: index + 1,
+                        showsConnector: index < timelineItems.count - 1
                     )
                 }
             }
@@ -240,22 +354,22 @@ struct PackEditorOverlayView: View {
 
     private var promptPreviewCard: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Prompt Preview")
-                .font(.caption.weight(.bold))
-                .foregroundStyle(ClipboardStudioPalette.secondaryText)
+                Text("Preview")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(ClipboardStudioPalette.secondaryText)
 
             ZStack(alignment: .topLeading) {
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
                     .fill(ClipboardStudioPalette.raised)
 
                 ScrollView(showsIndicators: false) {
-                    Text(model.formattedPackPreview.isEmpty ? "Your formatted AI prompt pack will appear here." : model.formattedPackPreview)
+                    Text(model.formattedPackPreview.isEmpty ? "Your structured assembly appears here." : model.formattedPackPreview)
                         .font(.system(size: 12.5, weight: .medium, design: .monospaced))
                         .foregroundStyle(model.formattedPackPreview.isEmpty ? ClipboardStudioPalette.mutedText : ClipboardStudioPalette.primaryText)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(12)
                 }
-                .frame(height: 190)
+                .frame(height: 176)
             }
         }
         .padding(14)
@@ -267,7 +381,7 @@ struct PackEditorOverlayView: View {
             Button {
                 model.sendCurrentPack()
             } label: {
-                Label("Send Pack", systemImage: "arrow.right.circle.fill")
+                Label(model.sendActionTitle, systemImage: "arrow.right.circle.fill")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
@@ -276,10 +390,31 @@ struct PackEditorOverlayView: View {
             Button {
                 model.copyCurrentPackToClipboard()
             } label: {
-                Label("Copy Pack", systemImage: "doc.on.doc.fill")
+                Label("Copy Assembly", systemImage: "doc.on.doc.fill")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.bordered)
+            .disabled(model.contextPack.isEmpty)
+
+            Menu {
+                Button("Export To Notes") {
+                    model.exportAssemblyToNotes()
+                }
+
+                Button(model.markdownExportActionTitle) {
+                    model.exportAssemblyMarkdown()
+                }
+
+                Divider()
+
+                Button(model.markdownExportFolderName == nil ? "Choose Markdown Folder..." : "Choose Different Folder...") {
+                    model.chooseMarkdownExportFolder()
+                }
+            } label: {
+                Label("Export", systemImage: "square.and.arrow.up")
+                    .frame(maxWidth: .infinity)
+            }
+            .menuStyle(.borderedButton)
             .disabled(model.contextPack.isEmpty)
 
             Button("Close") {
@@ -287,6 +422,75 @@ struct PackEditorOverlayView: View {
             }
             .buttonStyle(.bordered)
         }
+    }
+
+    private func timelineRow(_ item: PackItem, step: Int, showsConnector: Bool) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            VStack(spacing: 0) {
+                ZStack {
+                    Circle()
+                        .fill(ClipboardStudioPalette.accent.opacity(0.18))
+                        .frame(width: 28, height: 28)
+
+                    Text("\(step)")
+                        .font(.caption2.weight(.black))
+                        .foregroundStyle(ClipboardStudioPalette.accent)
+                }
+
+                if showsConnector {
+                    Capsule(style: .continuous)
+                        .fill(ClipboardStudioPalette.border)
+                        .frame(width: 2, height: 40)
+                        .padding(.top, 4)
+                }
+            }
+            .padding(.top, 2)
+
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(spacing: 6) {
+                    statusChip("From \(item.sourceLabel)")
+
+                    Text(shortTime(item.capturedAt))
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(ClipboardStudioPalette.mutedText)
+                }
+
+                Text(item.title)
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(ClipboardStudioPalette.primaryText)
+                    .lineLimit(2)
+
+                Text(item.text)
+                    .font(.caption)
+                    .foregroundStyle(ClipboardStudioPalette.secondaryText)
+                    .lineLimit(2)
+            }
+
+            Spacer(minLength: 8)
+
+            Button {
+                model.removePackItem(item)
+            } label: {
+                Image(systemName: "xmark.circle.fill")
+                    .foregroundStyle(ClipboardStudioPalette.mutedText)
+            }
+            .buttonStyle(ContextAssemblyIconButtonStyle())
+        }
+        .padding(12)
+        .background(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(ClipboardStudioPalette.raised)
+        )
+    }
+
+    private func overlayAction(_ title: String, systemName: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Label(title, systemImage: systemName)
+                .font(.caption.weight(.semibold))
+                .frame(maxWidth: .infinity)
+        }
+        .buttonStyle(ContextAssemblyCapsuleButtonStyle())
+        .foregroundStyle(ClipboardStudioPalette.primaryText)
     }
 
     private func statusChip(_ text: String) -> some View {
@@ -314,5 +518,12 @@ struct PackEditorOverlayView: View {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .short
         return formatter.localizedString(for: date, relativeTo: Date())
+    }
+
+    private func shortTime(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        formatter.dateStyle = .none
+        return formatter.string(from: date)
     }
 }
