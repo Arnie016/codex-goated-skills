@@ -10,10 +10,12 @@ Use this skill for the VibeWidget app workspace. If the current repo contains `a
 ## Quick Start
 
 1. Use `bash scripts/run_vibe_bluetooth.sh doctor` from the repo root, or pass `--workspace /path/to/vibe-widget` if the app lives elsewhere.
-2. Use `bash scripts/run_vibe_bluetooth.sh generate` after project spec changes.
-3. Use `bash scripts/run_vibe_bluetooth.sh open` to open the Xcode project.
-4. Use `bash scripts/run_vibe_bluetooth.sh typecheck` for a lightweight local sanity pass.
-5. Use `bash scripts/run_vibe_bluetooth.sh build` only after the Xcode license has been accepted on the machine.
+2. Use `bash scripts/run_vibe_bluetooth.sh inspect` before editing so the app, widget, and core-test layout stay visible.
+3. Use `bash scripts/run_vibe_bluetooth.sh generate` after project spec changes.
+4. Use `bash scripts/run_vibe_bluetooth.sh open` to open the Xcode project.
+5. Use `bash scripts/run_vibe_bluetooth.sh typecheck` for a lightweight local sanity pass.
+6. Use `bash scripts/run_vibe_bluetooth.sh test` after core, widget, parser, or shared-state changes.
+7. Use `bash scripts/run_vibe_bluetooth.sh build` only after the Xcode license has been accepted on the machine.
 
 ## Workflow
 
@@ -27,6 +29,7 @@ Use this skill for the VibeWidget app workspace. If the current repo contains `a
 
 - Prefer the local runner script before manually typing `xcodegen` or `xcodebuild`.
 - If `doctor` reports the Xcode license is not accepted, stop and tell the user to run `sudo xcodebuild -license`.
+- Use `test` after changes to `VibeWidgetCore`, widget intents, or app orchestration when you want the repo's unit coverage before a full build.
 - If `generate` succeeds but `build` fails only under Command Line Tools, switch to full Xcode and rerun.
 
 ### Editing Guidance
@@ -39,5 +42,5 @@ Use this skill for the VibeWidget app workspace. If the current repo contains `a
 
 ## Resources
 
-- `scripts/run_vibe_bluetooth.sh`: local doctor/generate/open/build/typecheck runner for the VibeWidget workspace.
+- `scripts/run_vibe_bluetooth.sh`: local doctor/inspect/generate/open/build/test/typecheck runner for the VibeWidget workspace.
 - `references/project-map.md`: target map, key files, and run/build caveats.

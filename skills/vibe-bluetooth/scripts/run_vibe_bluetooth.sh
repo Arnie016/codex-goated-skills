@@ -6,6 +6,7 @@ WORKSPACE=""
 XCODE_DIR="/Applications/Xcode.app/Contents/Developer"
 PROJECT_NAME="VibeWidget.xcodeproj"
 PROJECT_SPEC="project.yml"
+SCHEME="VibeWidget"
 
 usage() {
   cat <<'EOF'
@@ -14,13 +15,17 @@ Usage:
 
 Commands:
   doctor     Check local prerequisites and project state
+  inspect    Print the main VibeWidget files for quick orientation
   generate   Regenerate the Xcode project from project.yml
   open       Generate if needed, then open the Xcode project
   build      Build the VibeWidget scheme with xcodebuild
+  test       Run the VibeWidgetCoreTests unit tests
   typecheck  Run lightweight local Swift type checks
 
 Examples:
   bash run_vibe_bluetooth.sh doctor
+  bash run_vibe_bluetooth.sh inspect
+  bash run_vibe_bluetooth.sh test
   bash run_vibe_bluetooth.sh --workspace /path/to/vibe-widget open
 EOF
 }
@@ -93,12 +98,50 @@ doctor() {
   else
     printf 'no\n'
   fi
+  printf 'Main source dir: '
+  if [[ -d "$WORKSPACE/VibeWidgetApp/Sources" ]]; then
+    printf 'yes\n'
+  else
+    printf 'no\n'
+  fi
+  printf 'Widget source dir: '
+  if [[ -d "$WORKSPACE/VibeWidgetWidget/Sources" ]]; then
+    printf 'yes\n'
+  else
+    printf 'no\n'
+  fi
+  printf 'Core tests dir: '
+  if [[ -d "$WORKSPACE/VibeWidgetCore/Tests" ]]; then
+    printf 'yes\n'
+  else
+    printf 'no\n'
+  fi
   printf 'Xcode license: '
   if check_xcode_license; then
     printf 'accepted\n'
   else
     printf 'not ready\n'
   fi
+}
+
+inspect_workspace() {
+  ensure_workspace
+  cat <<EOF
+Workspace: $WORKSPACE
+Main files:
+- $WORKSPACE/project.yml
+- $WORKSPACE/VibeWidgetApp/Info.plist
+- $WORKSPACE/VibeWidgetApp/Sources/App/AppModel.swift
+- $WORKSPACE/VibeWidgetApp/Sources/App/VibeWidgetApp.swift
+- $WORKSPACE/VibeWidgetApp/Sources/Services/
+- $WORKSPACE/VibeWidgetApp/Sources/Views/
+- $WORKSPACE/VibeWidgetWidget/Sources/VibeWidgetBundle.swift
+- $WORKSPACE/VibeWidgetWidget/Sources/VibeStatusWidget.swift
+- $WORKSPACE/VibeWidgetCore/Sources/Models.swift
+- $WORKSPACE/VibeWidgetCore/Sources/SharedStore.swift
+- $WORKSPACE/VibeWidgetCore/Tests/ContextLibraryTests.swift
+- $WORKSPACE/VibeWidgetCore/Tests/FallbackIntentParserTests.swift
+EOF
 }
 
 open_project() {
@@ -114,28 +157,63 @@ build_project() {
   ensure_workspace
   [[ -d "$WORKSPACE/$PROJECT_NAME" ]] || generate_project
   check_xcode_license
-  (cd "$WORKSPACE" && DEVELOPER_DIR="$XCODE_DIR" xcodebuild -project "$PROJECT_NAME" -scheme VibeWidget -destination 'platform=macOS' build)
+  # Keep local validation usable without a development certificate.
+  (
+    cd "$WORKSPACE" &&
+    DEVELOPER_DIR="$XCODE_DIR" xcodebuild \
+      -project "$PROJECT_NAME" \
+      -scheme "$SCHEME" \
+      -configuration Debug \
+      -derivedDataPath .build-debug \
+      -destination 'platform=macOS' \
+      CODE_SIGNING_ALLOWED=NO \
+      CODE_SIGNING_REQUIRED=NO \
+      build
+  )
+}
+
+test_project() {
+  require_tools
+  ensure_workspace
+  [[ -d "$WORKSPACE/$PROJECT_NAME" ]] || generate_project
+  check_xcode_license
+  # Keep local validation usable without a development certificate.
+  (
+    cd "$WORKSPACE" &&
+    DEVELOPER_DIR="$XCODE_DIR" xcodebuild \
+      -project "$PROJECT_NAME" \
+      -scheme "$SCHEME" \
+      -configuration Debug \
+      -derivedDataPath .build-debug \
+      -destination 'platform=macOS' \
+      CODE_SIGNING_ALLOWED=NO \
+      CODE_SIGNING_REQUIRED=NO \
+      test
+  )
 }
 
 typecheck_project() {
   require_tools
   ensure_workspace
-  local sdkroot buildcheck
+  local sdkroot buildcheck module_cache
   sdkroot="$(xcrun --show-sdk-path)"
-  buildcheck="$WORKSPACE/.buildcheck"
+  buildcheck="$WORKSPACE/.build-debug/typecheck"
+  module_cache="$buildcheck/ModuleCache"
   rm -rf "$buildcheck"
   mkdir -p "$buildcheck"
+  mkdir -p "$module_cache"
 
   (
     cd "$WORKSPACE"
     swiftc -emit-module -parse-as-library -sdk "$sdkroot" -target arm64-apple-macosx15.0 \
+      -module-cache-path "$module_cache" \
       -module-name VibeWidgetCore VibeWidgetCore/Sources/*.swift \
       -emit-module-path "$buildcheck/VibeWidgetCore.swiftmodule"
 
-    swiftc -typecheck -sdk "$sdkroot" -target arm64-apple-macosx15.0 -I "$buildcheck" \
+    swiftc -typecheck -sdk "$sdkroot" -target arm64-apple-macosx15.0 -module-cache-path "$module_cache" -I "$buildcheck" \
       VibeWidgetWidget/Sources/*.swift
 
-    swiftc -typecheck -sdk "$sdkroot" -target arm64-apple-macosx15.0 -I "$buildcheck" \
+    swiftc -typecheck -sdk "$sdkroot" -target arm64-apple-macosx15.0 -module-cache-path "$module_cache" -I "$buildcheck" \
       VibeWidgetApp/Sources/App/*.swift \
       VibeWidgetApp/Sources/Services/*.swift \
       VibeWidgetApp/Sources/Views/*.swift \
@@ -167,6 +245,9 @@ case "$COMMAND" in
   doctor)
     doctor
     ;;
+  inspect)
+    inspect_workspace
+    ;;
   generate)
     generate_project
     ;;
@@ -175,6 +256,9 @@ case "$COMMAND" in
     ;;
   build)
     build_project
+    ;;
+  test)
+    test_project
     ;;
   typecheck)
     typecheck_project
