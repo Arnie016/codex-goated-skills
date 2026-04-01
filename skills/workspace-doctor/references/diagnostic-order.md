@@ -20,6 +20,8 @@ Use this order to keep debugging focused.
 - build command
 - test command
 - doctor or setup script if present
+- repo-native runner script if the workspace already has one
+- for `project.yml` app workspaces, confirm whether XcodeGen and Xcode are actually ready before assuming the app is broken
 
 ## 4. Confirm Secrets Or Auth
 
