@@ -24,8 +24,10 @@ Default workspace: use `apps/telebar` when working inside this repository. Other
   `bash scripts/run_telebar.sh <command>`
 - If the app lives outside the current repo, use:
   `bash scripts/run_telebar.sh --workspace /path/to/telebar <command>`
+- `inspect` prints the main TeleBar files before editing.
 - `generate` uses `xcodegen`.
 - `open` launches `TeleBar.xcodeproj`.
+- `typecheck` runs a lightweight `swiftc` pass over `TeleBarApp/Sources` with its module cache in `/tmp`.
 - `build` uses `xcodebuild` with a local derived-data folder.
 - `run` builds and opens `TeleBar.app` from `.build-debug/Build/Products/Debug`.
 
