@@ -23,10 +23,12 @@ Commands:
   generate   Regenerate the Xcode project from project.yml
   open       Generate if needed, then open the Xcode project
   build      Build the MinecraftSkinBar scheme with xcodebuild
+  test       Run deterministic helper smoke checks
   run        Build and relaunch the Minecraft Skin Bar app
 
 Examples:
   bash run_minecraft_skinbar.sh doctor
+  bash run_minecraft_skinbar.sh test
   bash run_minecraft_skinbar.sh --workspace /path/to/minecraft-skinbar build
 EOF
 }
@@ -274,6 +276,11 @@ case "$COMMAND" in
     ;;
   build)
     build_project
+    ;;
+  test)
+    ensure_workspace
+    command -v python3 >/dev/null 2>&1 || die "python3 is not available on this Mac."
+    python3 "$SKILL_SCRIPT" test
     ;;
   run)
     run_app

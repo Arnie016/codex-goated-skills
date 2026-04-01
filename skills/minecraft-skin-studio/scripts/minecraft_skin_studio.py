@@ -69,6 +69,11 @@ def die(message: str, code: int = 1) -> None:
     raise SystemExit(code)
 
 
+def require(condition: bool, message: str) -> None:
+    if not condition:
+        die(message)
+
+
 def slugify(text: str) -> str:
     slug = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
     return slug or "minecraft-skin"
@@ -436,6 +441,72 @@ def cmd_go(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_test(_: argparse.Namespace) -> int:
+    with tempfile.TemporaryDirectory(prefix="mc-skin-test-") as tmpdir:
+        root = Path(tmpdir)
+
+        require(slugify("  Fancy Skin!!! ") == "fancy-skin", "Slugify should normalize skin names.")
+        require(slugify("") == "minecraft-skin", "Slugify should fall back for empty labels.")
+
+        raw_sheet = root / "raw-sheet.png"
+        cleaned_sheet = root / "cleaned-sheet.png"
+        preview_path = root / "preview.png"
+        register_path = root / "launcher_custom_skins.json"
+        legacy_skin_path = root / "legacy-skin.png"
+        registered_preview_path = root / "registered-preview.png"
+
+        raw_image = Image.new("RGBA", SKIN_SIZE, (0, 0, 0, 0))
+        raw_image.putpixel((4, 4), (255, 0, 0, 255))
+        raw_image.putpixel((60, 24), (0, 0, 255, 255))
+        raw_image.save(raw_sheet)
+
+        clean_skin_sheet(raw_sheet, cleaned_sheet)
+        cleaned_image = load_rgba(cleaned_sheet)
+        require(cleaned_image.getpixel((4, 4))[3] == 255, "Legal skin pixels should survive cleaning.")
+        require(cleaned_image.getpixel((60, 24))[3] == 0, "Illegal skin pixels should be masked out.")
+
+        save_preview(cleaned_sheet, preview_path, slim=False)
+        require(load_rgba(preview_path).size == PREVIEW_SIZE, "Preview rendering should use the expected size.")
+
+        legacy_skin = Image.new("RGBA", (64, 32), (0, 0, 0, 0))
+        legacy_skin.putpixel((8, 8), (34, 197, 94, 255))
+        legacy_skin.save(legacy_skin_path)
+
+        target_id = register_skin(
+            skin_path=legacy_skin_path,
+            name="Test Skin",
+            slim=False,
+            launcher_json=register_path,
+            preview_path=registered_preview_path,
+            replace=False,
+        )
+
+        require(target_id == "skin_1", "New launcher registrations should start at skin_1.")
+        require(load_rgba(legacy_skin_path).size == (64, 64), "Legacy 64x32 skins should upgrade in place.")
+        require(registered_preview_path.exists(), "Registration should write a preview image.")
+        require(load_rgba(registered_preview_path).size == PREVIEW_SIZE, "Registered previews should use the preview size.")
+
+        with register_path.open("r", encoding="utf-8") as handle:
+            state = json.load(handle)
+
+        custom_skins = state.get("customSkins", {})
+        record = custom_skins.get("skin_1", {})
+        require(state.get("version") == 1, "Launcher JSON should include version 1.")
+        require(record.get("name") == "Test Skin", "Launcher registration should preserve the skin name.")
+        require(record.get("slim") is False, "Launcher registration should preserve the model choice.")
+        require(
+            isinstance(record.get("skinImage"), str) and record["skinImage"].startswith("data:image/png;base64,"),
+            "Launcher registration should encode the skin image.",
+        )
+        require(
+            isinstance(record.get("modelImage"), str) and record["modelImage"].startswith("data:image/png;base64,"),
+            "Launcher registration should encode the preview image.",
+        )
+
+    print("Minecraft Skin Studio helper smoke test passed.")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=REPO_NAME)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -463,6 +534,9 @@ def build_parser() -> argparse.ArgumentParser:
     reg.add_argument("--slim", action="store_true")
     reg.add_argument("--replace", action="store_true")
     reg.set_defaults(func=cmd_register)
+
+    test = sub.add_parser("test", help="Run deterministic smoke checks for the skin helper")
+    test.set_defaults(func=cmd_test)
 
     go = sub.add_parser("go", help="Generate a skin from a prompt and register it in the local launcher")
     go.add_argument("--prompt", required=True)

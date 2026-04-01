@@ -13,12 +13,13 @@ Use this skill when the user wants a Minecraft Java skin workflow, not a server 
 2. If the request touches the bundled app, run `bash scripts/run_minecraft_skinbar.sh doctor` first.
 3. Run `bash scripts/run_minecraft_skinbar.sh inspect` before editing the app.
 4. Use `bash scripts/run_minecraft_skinbar.sh generate` after changing `apps/minecraft-skinbar/project.yml`.
-5. Use `bash scripts/run_minecraft_skinbar.sh build` after app UI, model, CLI wiring, or keychain changes.
-6. Use `bash scripts/run_minecraft_skinbar.sh run` when you need the local menu bar app relaunched.
-7. Prefer registering skins through the launcher's local custom-skins file instead of brittle UI clicking.
-8. If the user has a prompt only, generate a draft skin sheet first, then clean it into a usable `64x64` skin.
-9. Be honest that prompt-to-perfect skin generation is still draft-quality and may need a second pass.
-10. If the user already has a PNG, skip generation and register it directly.
+5. Use `bash scripts/run_minecraft_skinbar.sh test` after changing the Python helper, preview rendering, or launcher registration contract.
+6. Use `bash scripts/run_minecraft_skinbar.sh build` after app UI, model, CLI wiring, or keychain changes.
+7. Use `bash scripts/run_minecraft_skinbar.sh run` when you need the local menu bar app relaunched.
+8. Prefer registering skins through the launcher's local custom-skins file instead of brittle UI clicking.
+9. If the user has a prompt only, generate a draft skin sheet first, then clean it into a usable `64x64` skin.
+10. Be honest that prompt-to-perfect skin generation is still draft-quality and may need a second pass.
+11. If the user already has a PNG, skip generation and register it directly.
 
 ## Workflow
 
@@ -41,7 +42,7 @@ Use this skill when the user wants a Minecraft Java skin workflow, not a server 
   - `MenuBarView` stays focused on prompt, import, preview, and launcher handoff
 - Keep OpenAI API keys in Keychain or environment variables only. Do not add plaintext config storage.
 - Keep skin output local in `~/Pictures/Minecraft Skins` unless the user explicitly asks for another path.
-- The current app project has no unit-test target, so use `build` as the strongest native validation and keep the Python helper honest with direct CLI checks when you change its contract.
+- The current app project has no Xcode unit-test target, so use `test` for the helper smoke path and `build` as the strongest native validation.
 
 ### Skin Rules
 
@@ -76,7 +77,7 @@ Use this skill when the user wants a Minecraft Java skin workflow, not a server 
 ## Resources
 
 - `scripts/minecraft_skin_studio.py`: generate, clean, preview, and register skins.
-- `scripts/run_minecraft_skinbar.sh`: local doctor, inspect, generate, open, build, and run helper for `apps/minecraft-skinbar`.
+- `scripts/run_minecraft_skinbar.sh`: local doctor, inspect, generate, test, open, build, and run helper for `apps/minecraft-skinbar`.
 - `references/launcher-flow.md`: launcher storage path, workflow boundaries, and practical limits.
 - `references/project-map.md`: bundled app target map, main files, and validation notes.
 - `../../apps/minecraft-skinbar/`: the bundled macOS menu bar app workspace.

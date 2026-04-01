@@ -25,8 +25,9 @@ Default workspace: use `apps/minecraft-skinbar` when working inside this reposit
 - `generate` uses `xcodegen`.
 - `open` launches `MinecraftSkinBar.xcodeproj`.
 - `build` uses `xcodebuild` with a local `.build-debug` derived-data folder.
+- `test` runs deterministic helper smoke checks for skin cleanup, preview rendering, and launcher JSON registration.
 - `run` builds and opens `MinecraftSkinBar.app` from `.build-debug/Build/Products/Debug`.
-- The current project does not define a unit-test target, so `build` is the strongest app-local validation path.
+- The current project does not define an Xcode unit-test target, so `test` covers the helper contract and `build` is still the strongest app-local validation path.
 
 ## Runtime Dependencies
 
