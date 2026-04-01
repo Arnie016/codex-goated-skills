@@ -1,4 +1,5 @@
 # title: App-Specific Skills
 # summary: Skills tied closely to specific local app codebases and their live product surfaces.
 telebar
+flight-scout
 vibe-bluetooth

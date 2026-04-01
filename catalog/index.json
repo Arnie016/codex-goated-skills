@@ -1,6 +1,6 @@
 {
   "repo": "codex-goated-skills",
-  "skill_count": 29,
+  "skill_count": 31,
   "pack_count": 10,
   "skills": [
     {
@@ -41,15 +41,15 @@
     {
       "id": "clipboard-studio",
       "display_name": "Context Assembly",
-      "description": "Shape, build, or refine Context Assembly, a macOS workflow that turns scattered clips into one structured prompt, remembered export, and fast cross-app handoff. Use when Codex needs to design or implement a clipboard-focused utility, keep the panel compact, or wire local pasteboard actions without leaking sensitive data.",
-      "short_description": "Capture context and live app state across apps, then turn it into one structured prompt or export",
+      "description": "Build, run, troubleshoot, or refine Context Assembly, especially the bundled `apps/clipboard-studio` macOS menu bar app. Use when Codex needs to work on clipboard-heavy context assembly, keep the panel compact, wire pasteboard or app-state capture, or validate the local Xcode workspace and tests without leaking sensitive data.",
+      "short_description": "Build and validate the Context Assembly menu bar app for capture, export, and fast cross-app handoff",
       "brand_color": "#22C55E",
       "path": "skills/clipboard-studio",
       "skill_file": "skills/clipboard-studio/SKILL.md",
       "openai_yaml": "skills/clipboard-studio/agents/openai.yaml",
       "icon_small": "./assets/clipboard-studio-small.svg",
       "icon_large": "./assets/clipboard-studio-large.svg",
-      "default_prompt": "Use $clipboard-studio to shape or build Context Assembly: a macOS menu bar app that captures code, logs, pages, and selections into one structured prompt, resumable app state, Apple Notes export, or remembered Markdown export.",
+      "default_prompt": "Use $clipboard-studio to work on the bundled Context Assembly macOS app in apps/clipboard-studio: inspect the workspace, run the local doctor and test flow, and improve clipboard capture, current-focus snapshots, or Notes/Markdown export without weakening privacy boundaries.",
       "packs": [
         "productivity-and-workflow",
         "utility-builder-stack"
@@ -162,7 +162,7 @@
     {
       "id": "find-my-phone-studio",
       "display_name": "Find My Phone Studio",
-      "description": "Build, scaffold, troubleshoot, or product-shape a macOS menu bar app or helper workflow for finding a phone, opening its current location, and triggering a ring through Apple- or Google-supported surfaces. Use when Codex needs to turn \"find my phone\" into a realistic Mac utility, shortcut flow, browser flow, or automation for iPhone or Android without inventing unsupported tracking APIs.",
+      "description": "Build, run, troubleshoot, or refine a realistic Mac phone-recovery workflow, especially the bundled `apps/phone-spotter` menu bar app. Use when Codex needs a repo-native path for locate, ring, pairing, directions, or provider handoff on iPhone or Android without inventing unsupported tracking APIs.",
       "short_description": "macOS helper for iPhone or Android locate and ring flows",
       "brand_color": "#3B82F6",
       "path": "skills/find-my-phone-studio",
@@ -174,6 +174,22 @@
       "packs": [
         "macos-utility-builders",
         "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "flight-scout",
+      "display_name": "Flight Scout",
+      "description": "Build, run, troubleshoot, or extend the Flight Scout macOS menu bar app. Use when working in `apps/flight-scout`, regenerating the XcodeGen project, running local doctor/build/test checks, or editing route watching, live fare signals, booking deeplinks, travel-risk scoring, or the board and menu bar UI.",
+      "short_description": "Run and extend the Flight Scout app",
+      "brand_color": "#1D7DD7",
+      "path": "skills/flight-scout",
+      "skill_file": "skills/flight-scout/SKILL.md",
+      "openai_yaml": "skills/flight-scout/agents/openai.yaml",
+      "icon_small": "./assets/flight-scout-small.svg",
+      "icon_large": "./assets/flight-scout-large.svg",
+      "default_prompt": "Use $flight-scout to work on the Flight Scout macOS menu bar app, regenerate the project if needed, and run local doctor, build, or test checks.",
+      "packs": [
+        "app-specific-skills"
       ]
     },
     {
@@ -283,15 +299,15 @@
     {
       "id": "minecraft-skin-studio",
       "display_name": "Minecraft Skin Studio",
-      "description": "Draft, clean, preview, and register Minecraft Java player skins from prompts or PNG files. Use when Codex needs to turn a skin idea into a launcher-ready skin sheet, add a custom skin into the local Minecraft Launcher library, render a quick preview image, or help the user iterate on prompt-based Minecraft skins on macOS.",
-      "short_description": "Turn prompts or PNGs into launcher-ready Minecraft skins",
+      "description": "Draft, clean, preview, register, or build a Minecraft Java skin workflow, including the bundled `apps/minecraft-skinbar` menu bar app. Use when Codex needs to turn a skin idea into launcher-ready files, wire the local Minecraft Launcher skin library, render previews, or refine the repo-native macOS skin workflow.",
+      "short_description": "Build launcher-ready skins or the bundled Minecraft Skin Bar app",
       "brand_color": "#22C55E",
       "path": "skills/minecraft-skin-studio",
       "skill_file": "skills/minecraft-skin-studio/SKILL.md",
       "openai_yaml": "skills/minecraft-skin-studio/agents/openai.yaml",
       "icon_small": "./assets/minecraft-skin-studio-small.svg",
       "icon_large": "./assets/minecraft-skin-studio-large.svg",
-      "default_prompt": "Use $minecraft-skin-studio to draft a Minecraft Java skin from a prompt, save a clean 64x64 PNG, render a preview, and register it into my local Minecraft Launcher custom skins list.",
+      "default_prompt": "Use $minecraft-skin-studio to draft or import a Minecraft Java skin, save a clean 64x64 PNG, render a preview, register it into my local Minecraft Launcher custom skins list, or work on the bundled Minecraft Skin Bar menu bar app.",
       "packs": [
         "games-and-minecraft"
       ]
@@ -317,15 +333,15 @@
     {
       "id": "network-studio",
       "display_name": "Network Studio",
-      "description": "Install or update a macOS local-network device monitor with a SwiftBar menu and browser dashboard. Use when Codex needs to set up, refresh, relocate, or troubleshoot a LAN presence monitor for a network the user owns or administers, especially when they want device watchlists, unknown-device surfacing, change feeds, or a menu bar network status view.",
-      "short_description": "macOS LAN monitor with SwiftBar",
+      "description": "Install or update a macOS local-network monitor workspace, or build and troubleshoot the bundled `apps/wifi-watchtower` menu bar app. Use when Codex needs a repo-native path for LAN presence, Wi-Fi trust scanning, SwiftBar wiring, local dashboards, or compact macOS network safety surfaces on networks the user owns or administers.",
+      "short_description": "LAN monitor installer plus WiFi Watchtower app workflow",
       "brand_color": "#0F8ED8",
       "path": "skills/network-studio",
       "skill_file": "skills/network-studio/SKILL.md",
       "openai_yaml": "skills/network-studio/agents/openai.yaml",
       "icon_small": "./assets/network-studio-small.svg",
       "icon_large": "./assets/network-studio-large.svg",
-      "default_prompt": "Use $network-studio to install or update a local Network Studio workspace and wire SwiftBar if needed.",
+      "default_prompt": "Use $network-studio to install or update a local Network Studio workspace, wire SwiftBar if needed, or work on the bundled WiFi Watchtower macOS menu bar app with repo-native doctor and build flows.",
       "packs": [
         "daily-briefs-and-reference",
         "productivity-and-workflow",
@@ -422,7 +438,7 @@
     {
       "id": "skillbar",
       "display_name": "SkillBar",
-      "description": "Build, refine, or troubleshoot SkillBar, the macOS menu bar manager for codex-goated-skills. Use when Codex needs to work on the SkillBar workspace, update the skill catalog UI, preset bundles, local install flows, or repo-driven metadata parsing for skill management.",
+      "description": "Build, run, troubleshoot, or extend SkillBar, the codex-goated-skills macOS menu bar manager. Use when Codex needs to work on the `apps/skillbar` workspace, validate repo-driven catalog parsing, exercise install or update wiring through `bin/codex-goated`, or keep the local preset and installed-state flows honest.",
       "short_description": "Build and refine the goated skills menu bar manager",
       "brand_color": "#8AB6FF",
       "path": "skills/skillbar",
@@ -450,6 +466,23 @@
       "default_prompt": "Use $telebar to work on the TeleBar macOS menu bar app, regenerate the project if needed, and run local doctor, build, or run checks.",
       "packs": [
         "app-specific-skills"
+      ]
+    },
+    {
+      "id": "trading-archive",
+      "display_name": "Trading Archive",
+      "description": "Browse, refresh, filter, and resurface archived trading articles from RSS or Atom feeds, saved links, and local caches, then turn them into a reading queue, archive digest, source-health report, or a refined native menu bar workflow. Use when Codex needs a dependable trading research archive instead of ad hoc finance tabs and half-lost bookmarks.",
+      "short_description": "Trading article archive, reading queue, and menu bar app",
+      "brand_color": "#2FAE7F",
+      "path": "skills/trading-archive",
+      "skill_file": "skills/trading-archive/SKILL.md",
+      "openai_yaml": "skills/trading-archive/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $trading-archive to fetch public trading or macro feeds, build a reliable reading archive, surface the strongest articles for the current moment, or refine the matching macOS menu bar app.",
+      "packs": [
+        "daily-briefs-and-reference",
+        "productivity-and-workflow"
       ]
     },
     {
@@ -488,15 +521,15 @@
     {
       "id": "workspace-doctor",
       "display_name": "Workspace Doctor",
-      "description": "Diagnose local workspace readiness and common setup problems. Use when Codex needs to check project health, missing tools, auth gaps, environment mismatches, broken install steps, or other practical blockers that stop a user from building or running something.",
-      "short_description": "Find the real blocker in a local workspace fast",
+      "description": "Diagnose local workspace readiness and common setup problems, then point to the right repo-native next command. Use when Codex needs to check project health, missing tools, Xcode or XcodeGen blockers, auth gaps, environment mismatches, broken install steps, or other practical issues that stop a user from building or running something.",
+      "short_description": "Find the real blocker and next repo-native command fast",
       "brand_color": "#16A34A",
       "path": "skills/workspace-doctor",
       "skill_file": "skills/workspace-doctor/SKILL.md",
       "openai_yaml": "skills/workspace-doctor/agents/openai.yaml",
       "icon_small": "./assets/workspace-doctor-small.svg",
       "icon_large": "./assets/workspace-doctor-large.svg",
-      "default_prompt": "Use $workspace-doctor to inspect this workspace, run a quick environment audit, identify the main blocker, and get it into a runnable state.",
+      "default_prompt": "Use $workspace-doctor to inspect this workspace, run a quick environment audit, identify the main blocker, and point me at the right local doctor, build, or runner command.",
       "packs": [
         "productivity-and-workflow",
         "utility-builder-stack"
@@ -509,9 +542,10 @@
       "title": "App-Specific Skills",
       "summary": "Skills tied closely to specific local app codebases and their live product surfaces.",
       "path": "collections/app-specific-skills.txt",
-      "skill_count": 2,
+      "skill_count": 3,
       "skills": [
         "telebar",
+        "flight-scout",
         "vibe-bluetooth"
       ]
     },
@@ -560,9 +594,10 @@
       "title": "Daily Briefs and Reference",
       "summary": "Skills for daily historical context, git momentum check-ins, local monitoring, and readable exports.",
       "path": "collections/daily-briefs-and-reference.txt",
-      "skill_count": 5,
+      "skill_count": 6,
       "skills": [
         "on-this-day",
+        "trading-archive",
         "gain-tracker",
         "network-studio",
         "dark-pdf-studio",
@@ -629,11 +664,12 @@
       "title": "Productivity and Workflow",
       "summary": "Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.",
       "path": "collections/productivity-and-workflow.txt",
-      "skill_count": 8,
+      "skill_count": 9,
       "skills": [
         "workspace-doctor",
         "gain-tracker",
         "on-this-day",
+        "trading-archive",
         "skillbar",
         "clipboard-studio",
         "network-studio",

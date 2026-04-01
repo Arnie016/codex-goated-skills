@@ -30,7 +30,7 @@ bash scripts/install-pack.sh creator-and-fandom-stack
 | `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, rituals, merch, and narrative risk work | 10 |
 | `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 10 |
 | `macos-utility-builders` | Menu bar utilities, Mac helpers, and focused utility-app shaping | 3 |
-| `app-specific-skills` | Repo-specific app implementation skills | 2 |
+| `app-specific-skills` | Repo-specific app implementation skills | 3 |
 | `games-and-minecraft` | Minecraft operations and customization | 2 |
 | `creator-and-fandom-stack` | Creator brand strategy plus launch/packaging support | 12 |
 | `utility-builder-stack` | A broader Mac utility-building bundle across workflow and app surfaces | 8 |
