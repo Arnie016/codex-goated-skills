@@ -80,7 +80,7 @@ Continuous audit:
 
 ### Productivity and Workflow
 
-- [`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor): Diagnose local setup blockers and workspace readiness issues.
+- [`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor): Diagnose local workspace readiness, generated catalog freshness, and common setup problems.
 - [`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker): Connect GitHub, scan repo folders, track daily git gains or broader output gains, and turn them into reminder stories and baseline comparisons.
 - [`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day): Pull the official Wikimedia On This Day feed into a polished daily history brief or Mac-style day browser.
 - [`trading-archive`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/trading-archive): Build a dependable archive of trading and macro articles from public feeds, then surface a reading queue, source health, or native menu bar workflow.

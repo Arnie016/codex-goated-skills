@@ -1,6 +1,6 @@
 ---
 name: workspace-doctor
-description: Diagnose local workspace readiness and common setup problems, then point to the right repo-native next command. Use when Codex needs to check project health, missing tools, Xcode or XcodeGen blockers, auth gaps, environment mismatches, broken install steps, or other practical issues that stop a user from building or running something.
+description: Diagnose local workspace readiness, generated catalog freshness, and common setup problems, then point to the right repo-native next command. Use when Codex needs to check project health, missing tools, Xcode or XcodeGen blockers, auth gaps, environment mismatches, broken install steps, or other practical issues that stop a user from building or running something.
 ---
 
 # Workspace Doctor
@@ -16,7 +16,7 @@ It is especially useful in this repo when the task touches:
 
 ## Quick Start
 
-1. Run `bash scripts/workspace_doctor.sh` from the skill folder, or use `codex-goated doctor` from the repo root for the same audit path.
+1. Run `bash scripts/workspace_doctor.sh` from the skill folder, or use `codex-goated doctor` from the repo root for the same audit path and catalog freshness check.
 2. Reproduce the problem with the smallest safe command that reveals the issue.
 3. Check the local environment before blaming the code.
 4. Explain blockers in plain language and prefer direct fixes over abstract advice.
@@ -28,6 +28,7 @@ It is especially useful in this repo when the task touches:
 
 - Inspect the current workspace layout, package manager files, and toolchain markers.
 - Check versions, missing CLIs, missing secrets, and obvious environment mismatches.
+- Check generated catalog freshness when the workspace includes this repo's skills and packs; stale metadata can break discoverability even if the app still builds.
 - Prefer targeted commands that confirm one hypothesis at a time.
 - Start with `bash scripts/workspace_doctor.sh` or `codex-goated doctor` when you want a fast machine and repo inventory.
 - When the target is a macOS app workspace, let the script tell you whether Xcode, XcodeGen, and the paired repo runner are available before you try a full build.
@@ -37,7 +38,7 @@ It is especially useful in this repo when the task touches:
 - If the workspace lives inside this repo, prefer the local runner script the doctor output names.
 - For bundled app workspaces, the doctor output should surface the correct `run_*.sh` helper when one exists.
 - If a bundled app has `project.yml` but no paired runner, treat that as a real gap and use the fallback `xcodegen` plus `xcodebuild` commands the doctor script prints.
-- For repo-root checks, use the surfaced `bin/codex-goated` or `scripts/audit-catalog.sh` commands instead of ad hoc equivalents.
+- For repo-root checks, use the surfaced `bin/codex-goated`, `bin/codex-goated catalog check`, or `scripts/audit-catalog.sh` commands instead of ad hoc equivalents.
 
 ### Fix Carefully
 

@@ -12,6 +12,8 @@ PAIRED_RUNNER=""
 XCODE_STATUS="not checked"
 XCODE_DETAIL=""
 XCODE_LOG="/tmp/workspace-doctor-xcode-$$.log"
+CATALOG_STATUS="not checked"
+CATALOG_DETAIL=""
 
 usage() {
   cat <<'EOF'
@@ -237,6 +239,39 @@ check_xcode_state() {
   fi
 }
 
+check_catalog_state() {
+  CATALOG_STATUS="not checked"
+  CATALOG_DETAIL=""
+
+  [[ -n "$REPO_ROOT" ]] || return 0
+
+  if [[ ! -f "$REPO_ROOT/scripts/build-catalog.py" ]]; then
+    CATALOG_STATUS="missing"
+    CATALOG_DETAIL="scripts/build-catalog.py is missing"
+    return 0
+  fi
+
+  if [[ ! -f "$REPO_ROOT/catalog/index.json" ]]; then
+    CATALOG_STATUS="missing"
+    CATALOG_DETAIL="catalog/index.json is missing"
+    return 0
+  fi
+
+  if ! command -v python3 >/dev/null 2>&1; then
+    CATALOG_STATUS="skipped"
+    CATALOG_DETAIL="python3 is missing, so catalog freshness could not be checked"
+    return 0
+  fi
+
+  if python3 "$REPO_ROOT/scripts/build-catalog.py" --repo-dir "$REPO_ROOT" --check >/dev/null 2>&1; then
+    CATALOG_STATUS="current"
+    CATALOG_DETAIL="catalog/index.json matches the current skill and pack files"
+  else
+    CATALOG_STATUS="stale"
+    CATALOG_DETAIL="run: bash $REPO_ROOT/bin/codex-goated catalog build --repo-dir $REPO_ROOT"
+  fi
+}
+
 path_is_tracked() {
   local repo_relative="$1"
   if [[ -d "$REPO_ROOT/.git" ]] && command -v git >/dev/null 2>&1; then
@@ -329,6 +364,7 @@ print_repo_summary() {
   if [[ -f "$REPO_ROOT/scripts/audit-catalog.sh" ]]; then
     item "catalog audit: bash $REPO_ROOT/scripts/audit-catalog.sh --repo-dir $REPO_ROOT"
   fi
+  item "catalog index: $CATALOG_STATUS${CATALOG_DETAIL:+ ($CATALOG_DETAIL)}"
 
   if [[ "$WORKSPACE_TYPE" == "repo-root" ]]; then
     if find "$REPO_ROOT/skills" -path '*/scripts/run_*.sh' -type f | grep -q .; then
@@ -382,6 +418,13 @@ print_blockers() {
     printed=1
   fi
 
+  case "$CATALOG_STATUS" in
+    stale|missing)
+      item "Generated catalog is not current: $CATALOG_DETAIL"
+      printed=1
+      ;;
+  esac
+
   if [[ "$printed" -eq 0 ]]; then
     item "No obvious machine-level blocker detected from the local audit."
   fi
@@ -391,6 +434,12 @@ print_recommendations() {
   local app_name
 
   section "Recommended Next Commands"
+
+  case "$CATALOG_STATUS" in
+    stale|missing)
+      item "bash $REPO_ROOT/bin/codex-goated catalog build --repo-dir $REPO_ROOT"
+      ;;
+  esac
 
   case "$WORKSPACE_TYPE" in
     repo-root)
@@ -474,6 +523,7 @@ REPO_ROOT="$(find_repo_root "$WORKSPACE" || true)"
 detect_workspace_type
 detect_project_details
 check_xcode_state
+check_catalog_state
 
 printf 'Workspace: %s\n' "$WORKSPACE"
 printf 'Workspace type: %s\n' "$WORKSPACE_TYPE"

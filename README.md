@@ -130,7 +130,7 @@ Browse by use case:
 
 | Skill | What it does | Install name |
 | --- | --- | --- |
-| <img src="skills/workspace-doctor/assets/workspace-doctor-small.svg" width="26" alt="Workspace Doctor" /><br/>[`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor) | Finds the real local setup blocker and next fix fast | `workspace-doctor` |
+| <img src="skills/workspace-doctor/assets/workspace-doctor-small.svg" width="26" alt="Workspace Doctor" /><br/>[`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor) | Finds the real blocker, catalog freshness, and next repo-native command fast | `workspace-doctor` |
 | <img src="skills/gain-tracker/assets/icon-small.svg" width="26" alt="Gain Tracker" /><br/>[`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker) | Connects GitHub, scans local repo folders, and turns daily git gains into reminder stories and progress toward 90x | `gain-tracker` |
 | <img src="skills/on-this-day/assets/icon-small.svg" width="26" alt="On This Day" /><br/>[`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day) | Pulls the official Wikimedia day feed into a polished historical briefing or Mac-style day browser | `on-this-day` |
 | <img src="skills/trading-archive/assets/icon-small.svg" width="26" alt="Trading Archive" /><br/>[`trading-archive`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/trading-archive) | Builds a saved archive of trading articles from public feeds, then surfaces a reading queue, source health, and a native menu bar workflow | `trading-archive` |
