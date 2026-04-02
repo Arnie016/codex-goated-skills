@@ -35,6 +35,7 @@ Default workspace: use `apps/flight-scout` when working inside this repository. 
 - If the app lives outside the current repo, use: `bash scripts/run_flight_scout.sh --workspace /path/to/flight-scout <command>`
 - `generate` uses `xcodegen`.
 - `open` launches `FlightScout.xcodeproj`.
+- `typecheck` runs a fast Swift source check over `VibeWidgetCore/Sources` and `FlightScoutApp/Sources`.
 - `build` and `test` use `xcodebuild` with a local `.build-debug` derived-data folder.
 - `run` builds and opens `FlightScout.app` from `.build-debug/Build/Products/Debug`.
 

@@ -20,6 +20,7 @@ Commands:
   inspect    Print the main Flight Scout files for quick orientation
   generate   Regenerate the Xcode project from project.yml
   open       Generate if needed, then open the Xcode project
+  typecheck  Run a lightweight Swift source check
   build      Build the FlightScout scheme with xcodebuild
   test       Run the FlightScout test bundle
   run        Build and relaunch the Flight Scout menu bar app
@@ -183,6 +184,7 @@ doctor() {
   else
     printf 'no\n'
   fi
+  printf 'xcrun: %s\n' "$(print_tool xcrun)"
   printf 'xcodegen: %s\n' "$(print_tool xcodegen)"
   printf 'swiftc: %s\n' "$(print_tool swiftc)"
   printf 'xcodebuild: %s\n' "$(print_tool xcodebuild)"
@@ -234,6 +236,55 @@ build_project() {
       -derivedDataPath .build-debug \
       -destination 'platform=macOS' \
       build
+  )
+}
+
+typecheck_project() {
+  require_tool swiftc
+  require_tool xcrun
+  ensure_workspace
+
+  local sdkroot typecheck_dir module_cache
+  local core_sources=()
+  local app_sources=()
+
+  sdkroot="$(xcrun --sdk macosx --show-sdk-path)"
+  typecheck_dir="$(mktemp -d /tmp/flight-scout-typecheck-XXXXXX)"
+  module_cache="$typecheck_dir/ModuleCache"
+  trap 'rm -rf "$typecheck_dir"' RETURN
+  mkdir -p "$module_cache"
+
+  while IFS= read -r file; do
+    core_sources+=("$file")
+  done < <(find "$WORKSPACE/VibeWidgetCore/Sources" -name '*.swift' | sort)
+
+  while IFS= read -r file; do
+    app_sources+=("$file")
+  done < <(find "$WORKSPACE/FlightScoutApp/Sources" -name '*.swift' | sort)
+
+  [[ ${#core_sources[@]} -gt 0 ]] || die "No Swift sources found in $WORKSPACE/VibeWidgetCore/Sources"
+  [[ ${#app_sources[@]} -gt 0 ]] || die "No Swift sources found in $WORKSPACE/FlightScoutApp/Sources"
+
+  (
+    cd "$WORKSPACE"
+
+    swiftc -emit-module -parse-as-library \
+      -sdk "$sdkroot" \
+      -target arm64-apple-macosx15.0 \
+      -D DEBUG \
+      -module-cache-path "$module_cache" \
+      -module-name VibeWidgetCore \
+      "${core_sources[@]}" \
+      -emit-module-path "$typecheck_dir/VibeWidgetCore.swiftmodule"
+
+    swiftc -typecheck \
+      -sdk "$sdkroot" \
+      -target arm64-apple-macosx15.0 \
+      -D DEBUG \
+      -module-cache-path "$module_cache" \
+      -I "$typecheck_dir" \
+      -module-name FlightScout \
+      "${app_sources[@]}"
   )
 }
 
@@ -297,6 +348,9 @@ case "$COMMAND" in
     ;;
   build)
     build_project
+    ;;
+  typecheck)
+    typecheck_project
     ;;
   test)
     test_project
