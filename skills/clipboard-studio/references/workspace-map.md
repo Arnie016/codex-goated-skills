@@ -43,7 +43,9 @@ Use the local runner instead of raw commands when possible:
 bash skills/clipboard-studio/scripts/run_clipboard_studio.sh doctor
 bash skills/clipboard-studio/scripts/run_clipboard_studio.sh inspect
 bash skills/clipboard-studio/scripts/run_clipboard_studio.sh generate
+bash skills/clipboard-studio/scripts/run_clipboard_studio.sh typecheck
 bash skills/clipboard-studio/scripts/run_clipboard_studio.sh test
 ```
 
+Use `typecheck` for the fastest source-only sanity pass when you do not need the full test bundle.
 Prefer `test` after changes to pack formatting, focus snapshots, exports, or automation flows. Use `run` only when you need the rebuilt menu bar app relaunched locally.

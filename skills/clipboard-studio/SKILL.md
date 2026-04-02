@@ -15,11 +15,12 @@ Instead of manually doing Cmd+C, switching apps, and Cmd+V over and over, the go
 2. Run `bash scripts/run_clipboard_studio.sh doctor`.
 3. Run `bash scripts/run_clipboard_studio.sh inspect`.
 4. Use `bash scripts/run_clipboard_studio.sh generate` after changing `project.yml`.
-5. Use `bash scripts/run_clipboard_studio.sh test` after model, export, automation, or menu bar UI changes.
-6. Use `bash scripts/run_clipboard_studio.sh run` when you need the local menu bar build relaunched.
-7. Keep the main loop fast: capture, search, transform, and paste.
-8. Default to local-first storage and explicit privacy boundaries.
-9. Make the menu bar surface compact and action-first.
+5. Use `bash scripts/run_clipboard_studio.sh typecheck` for a fast source-level sanity pass before the full test bundle.
+6. Use `bash scripts/run_clipboard_studio.sh test` after model, export, automation, or menu bar UI changes.
+7. Use `bash scripts/run_clipboard_studio.sh run` when you need the local menu bar build relaunched.
+8. Keep the main loop fast: capture, search, transform, and paste.
+9. Default to local-first storage and explicit privacy boundaries.
+10. Make the menu bar surface compact and action-first.
 
 ## Workflow
 
@@ -43,6 +44,7 @@ Instead of manually doing Cmd+C, switching apps, and Cmd+V over and over, the go
   - explicit settings window
   - fast send or export actions
   - minimal scroll friction
+- Use `typecheck` when you only need a quick source-level sanity pass or when you want feedback before the full test bundle.
 - Run `test` after changes to:
   - clipboard capture or dedup logic
   - focus snapshot capture

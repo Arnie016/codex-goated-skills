@@ -4,4 +4,4 @@ interface:
   icon_small: "./assets/clipboard-studio-small.svg"
   icon_large: "./assets/clipboard-studio-large.svg"
   brand_color: "#22C55E"
-  default_prompt: "Use $clipboard-studio to work on the bundled Context Assembly macOS app in apps/clipboard-studio: inspect the workspace, run the local doctor and test flow, and improve clipboard capture, current-focus snapshots, or Notes/Markdown export without weakening privacy boundaries."
+  default_prompt: "Use $clipboard-studio to work on the bundled Context Assembly macOS app in apps/clipboard-studio: inspect the workspace, run the local doctor and typecheck or test flow, and improve clipboard capture, current-focus snapshots, or Notes/Markdown export without weakening privacy boundaries."

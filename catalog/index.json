@@ -49,7 +49,7 @@
       "openai_yaml": "skills/clipboard-studio/agents/openai.yaml",
       "icon_small": "./assets/clipboard-studio-small.svg",
       "icon_large": "./assets/clipboard-studio-large.svg",
-      "default_prompt": "Use $clipboard-studio to work on the bundled Context Assembly macOS app in apps/clipboard-studio: inspect the workspace, run the local doctor and test flow, and improve clipboard capture, current-focus snapshots, or Notes/Markdown export without weakening privacy boundaries.",
+      "default_prompt": "Use $clipboard-studio to work on the bundled Context Assembly macOS app in apps/clipboard-studio: inspect the workspace, run the local doctor and typecheck or test flow, and improve clipboard capture, current-focus snapshots, or Notes/Markdown export without weakening privacy boundaries.",
       "packs": [
         "productivity-and-workflow",
         "utility-builder-stack"
@@ -179,7 +179,7 @@
     {
       "id": "flight-scout",
       "display_name": "Flight Scout",
-      "description": "Build, run, troubleshoot, or extend the Flight Scout macOS menu bar app. Use when working in `apps/flight-scout`, regenerating the XcodeGen project, running local doctor/build/test checks, or editing route watching, live fare signals, booking deeplinks, travel-risk scoring, or the board and menu bar UI.",
+      "description": "Build, run, troubleshoot, or extend the Flight Scout macOS menu bar app. Use when working in `apps/flight-scout`, regenerating the XcodeGen project, running local doctor/typecheck/build/test checks, or editing route watching, live fare signals, booking deeplinks, travel-risk scoring, or the board and menu bar UI.",
       "short_description": "Run and extend the Flight Scout app",
       "brand_color": "#1D7DD7",
       "path": "skills/flight-scout",
@@ -187,7 +187,7 @@
       "openai_yaml": "skills/flight-scout/agents/openai.yaml",
       "icon_small": "./assets/flight-scout-small.svg",
       "icon_large": "./assets/flight-scout-large.svg",
-      "default_prompt": "Use $flight-scout to work on the Flight Scout macOS menu bar app, regenerate the project if needed, and run local doctor, build, or test checks.",
+      "default_prompt": "Use $flight-scout to work on the Flight Scout macOS menu bar app, regenerate the project if needed, and run local doctor, typecheck, build, or test checks.",
       "packs": [
         "app-specific-skills"
       ]

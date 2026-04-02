@@ -21,6 +21,7 @@ Commands:
   inspect    Print the main Context Assembly files for quick orientation
   generate   Regenerate the Xcode project from project.yml
   open       Generate if needed, then open the Xcode project
+  typecheck  Run a lightweight Swift source check
   build      Build the ClipboardStudio scheme with xcodebuild
   test       Run the ClipboardStudio unit tests
   run        Build and relaunch the Context Assembly menu bar app
@@ -34,6 +35,10 @@ EOF
 die() {
   printf 'Error: %s\n' "$*" >&2
   exit 1
+}
+
+require_tool() {
+  command -v "$1" >/dev/null 2>&1 || die "$1 is required for this command."
 }
 
 guess_workspace() {
@@ -142,6 +147,12 @@ doctor() {
   else
     printf 'no\n'
   fi
+  printf 'xcrun: '
+  if command -v xcrun >/dev/null 2>&1; then
+    printf '%s\n' "$(xcrun --version 2>&1 | head -n 1)"
+  else
+    printf 'missing\n'
+  fi
   printf 'Xcode readiness: '
   print_xcode_status
 }
@@ -189,6 +200,39 @@ build_project() {
       -derivedDataPath .build-debug \
       -destination 'platform=macOS' \
       build
+  )
+}
+
+typecheck_project() {
+  require_tools
+  require_tool xcrun
+  ensure_workspace
+
+  local sdkroot typecheck_dir module_cache
+  local sources=()
+
+  sdkroot="$(xcrun --sdk macosx --show-sdk-path)"
+  typecheck_dir="$WORKSPACE/.build-debug/typecheck"
+  module_cache="$typecheck_dir/ModuleCache"
+
+  rm -rf "$typecheck_dir"
+  mkdir -p "$module_cache"
+
+  while IFS= read -r file; do
+    sources+=("$file")
+  done < <(find "$WORKSPACE/ClipboardStudioApp/Sources" -name '*.swift' | sort)
+
+  [[ ${#sources[@]} -gt 0 ]] || die "No Swift sources found in $WORKSPACE/ClipboardStudioApp/Sources"
+
+  (
+    cd "$WORKSPACE" &&
+    swiftc -typecheck \
+      -sdk "$sdkroot" \
+      -target arm64-apple-macosx15.0 \
+      -D DEBUG \
+      -module-cache-path "$module_cache" \
+      -module-name ClipboardStudio \
+      "${sources[@]}"
   )
 }
 
@@ -250,6 +294,9 @@ case "$COMMAND" in
     ;;
   build)
     build_project
+    ;;
+  typecheck)
+    typecheck_project
     ;;
   test)
     test_project
