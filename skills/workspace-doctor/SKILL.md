@@ -17,10 +17,11 @@ It is especially useful in this repo when the task touches:
 ## Quick Start
 
 1. Run `bash scripts/workspace_doctor.sh` from the skill folder, or use `codex-goated doctor` from the repo root for the same audit path and catalog freshness check.
-2. Reproduce the problem with the smallest safe command that reveals the issue.
-3. Check the local environment before blaming the code.
-4. Explain blockers in plain language and prefer direct fixes over abstract advice.
-5. Distinguish between missing tools, auth problems, dependency issues, and actual code errors.
+2. From the repo root, expect the inventory to prioritize `apps/skillbar` as the local manager hub and to show each tracked app workspace with its paired runner command.
+3. Reproduce the problem with the smallest safe command that reveals the issue.
+4. Check the local environment before blaming the code.
+5. Explain blockers in plain language and prefer direct fixes over abstract advice.
+6. Distinguish between missing tools, auth problems, dependency issues, and actual code errors.
 
 ## Workflow
 

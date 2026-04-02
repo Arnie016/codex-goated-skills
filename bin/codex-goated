@@ -28,7 +28,7 @@ Usage:
 Examples:
   $SELF_NAME list
   $SELF_NAME doctor
-  $SELF_NAME doctor --workspace apps/flight-scout
+  $SELF_NAME doctor --workspace apps/skillbar
   $SELF_NAME install network-studio
   $SELF_NAME install minecraft-essentials vibe-bluetooth
   $SELF_NAME install --all

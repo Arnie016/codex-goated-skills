@@ -114,7 +114,7 @@ detect_project_details() {
   fi
 
   if [[ -n "$REPO_ROOT" && "$WORKSPACE_TYPE" == "xcodegen-app" ]]; then
-    PAIRED_RUNNER="$(find_paired_runner "$(basename "$WORKSPACE")" "$PROJECT_NAME" || true)"
+    PAIRED_RUNNER="$(find_paired_runner "$(basename "$WORKSPACE")" "$PROJECT_NAME" "$WORKSPACE" || true)"
   fi
 }
 
@@ -284,25 +284,93 @@ path_is_tracked() {
 find_paired_runner() {
   local app_name="$1"
   local project_name="$2"
-  local runner
+  local workspace_path="${3:-$WORKSPACE}"
+  local runner best_runner="" score best_score=0 marker
 
   while IFS= read -r runner; do
     [[ -n "$runner" ]] || continue
+    score=0
     if grep -Eq "apps/$app_name" "$runner"; then
-      printf '%s\n' "$runner"
-      return 0
+      score=$((score + 3))
     fi
     if [[ -n "$project_name" ]] && grep -Eq "${project_name}(\\.xcodeproj|App|Widget|Tests|Settings)" "$runner"; then
-      printf '%s\n' "$runner"
-      return 0
+      score=$((score + 5))
+    fi
+    if [[ -n "$workspace_path" && -d "$workspace_path" ]]; then
+      while IFS= read -r marker; do
+        [[ -n "$marker" ]] || continue
+        if grep -Fq "$marker" "$runner"; then
+          score=$((score + 2))
+        fi
+      done < <(find "$workspace_path" -mindepth 1 -maxdepth 1 -type d | sed 's#.*/##' | sort)
+    fi
+    if [[ "$score" -gt "$best_score" ]]; then
+      best_score="$score"
+      best_runner="$runner"
     fi
   done < <(find "$REPO_ROOT/skills" -path '*/scripts/run_*.sh' -type f | sort)
+
+  if [[ "$best_score" -gt 0 && -n "$best_runner" ]]; then
+    printf '%s\n' "$best_runner"
+    return 0
+  fi
 
   return 1
 }
 
-list_repo_runners() {
-  find "$REPO_ROOT/skills" -path '*/scripts/run_*.sh' -type f | sort
+preferred_root_workspace() {
+  local candidate app_dir app_name
+
+  candidate="$REPO_ROOT/apps/skillbar"
+  if [[ -d "$candidate" && -f "$candidate/project.yml" ]]; then
+    printf '%s\n' "$candidate"
+    return 0
+  fi
+
+  while IFS= read -r app_dir; do
+    [[ -n "$app_dir" ]] || continue
+    if ! path_is_tracked "${app_dir#$REPO_ROOT/}/project.yml"; then
+      continue
+    fi
+    app_name="$(basename "$app_dir")"
+    if find_paired_runner "$app_name" "" "$app_dir" >/dev/null 2>&1; then
+      printf '%s\n' "$app_dir"
+      return 0
+    fi
+  done < <(find "$REPO_ROOT/apps" -mindepth 1 -maxdepth 1 -type d | sort)
+
+  return 1
+}
+
+print_tracked_app_runner_inventory() {
+  local app_dir app_name runner printed_any=0 missing_any=0
+
+  while IFS= read -r app_dir; do
+    [[ -n "$app_dir" ]] || continue
+    app_name="$(basename "$app_dir")"
+    if ! path_is_tracked "${app_dir#$REPO_ROOT/}/project.yml"; then
+      continue
+    fi
+    runner="$(find_paired_runner "$app_name" "" "$app_dir" 2>/dev/null || true)"
+    if [[ -n "$runner" ]]; then
+      if [[ "$printed_any" -eq 0 ]]; then
+        item "tracked app workspaces and runner commands:"
+        printed_any=1
+      fi
+      printf '  - %s -> bash %s doctor\n' "$app_name" "$runner"
+      continue
+    fi
+
+    if [[ "$missing_any" -eq 0 ]]; then
+      item "tracked app workspaces without a detected paired runner:"
+      missing_any=1
+    fi
+    printf '  - %s\n' "$app_name"
+  done < <(find "$REPO_ROOT/apps" -mindepth 1 -maxdepth 1 -type d | sort)
+
+  if [[ "$printed_any" -eq 0 && "$missing_any" -eq 0 ]]; then
+    item "no tracked app workspaces found"
+  fi
 }
 
 print_marker_summary() {
@@ -355,8 +423,6 @@ print_app_workspace_summary() {
 }
 
 print_repo_summary() {
-  local runner app_dir app_name relative_project missing_any=0
-
   section "Repo Entry Points"
   if [[ -f "$REPO_ROOT/bin/codex-goated" ]]; then
     item "cli: bash $REPO_ROOT/bin/codex-goated"
@@ -367,27 +433,7 @@ print_repo_summary() {
   item "catalog index: $CATALOG_STATUS${CATALOG_DETAIL:+ ($CATALOG_DETAIL)}"
 
   if [[ "$WORKSPACE_TYPE" == "repo-root" ]]; then
-    if find "$REPO_ROOT/skills" -path '*/scripts/run_*.sh' -type f | grep -q .; then
-      item "repo-native runner scripts:"
-      while IFS= read -r runner; do
-        [[ -n "$runner" ]] || continue
-        printf '  - bash %s doctor\n' "$runner"
-      done < <(list_repo_runners)
-    fi
-
-    while IFS= read -r app_dir; do
-      [[ -n "$app_dir" ]] || continue
-      app_name="$(basename "$app_dir")"
-      relative_project="${app_dir#$REPO_ROOT/}/project.yml"
-      path_is_tracked "$relative_project" || continue
-      if ! find_paired_runner "$app_name" "" >/dev/null 2>&1; then
-        if [[ "$missing_any" -eq 0 ]]; then
-          item "tracked app workspaces without a detected paired runner:"
-          missing_any=1
-        fi
-        printf '  - %s\n' "$app_dir"
-      fi
-    done < <(find "$REPO_ROOT/apps" -mindepth 1 -maxdepth 1 -type d | sort)
+    print_tracked_app_runner_inventory
   fi
 }
 
@@ -431,7 +477,7 @@ print_blockers() {
 }
 
 print_recommendations() {
-  local app_name
+  local app_name focus_workspace=""
 
   section "Recommended Next Commands"
 
@@ -450,10 +496,8 @@ print_recommendations() {
         item "bash $WORKSPACE/scripts/audit-catalog.sh --repo-dir $WORKSPACE"
       fi
       if [[ -f "$WORKSPACE/skills/workspace-doctor/scripts/workspace_doctor.sh" ]]; then
-        if [[ -d "$WORKSPACE/apps/flight-scout" ]]; then
-          item "bash $WORKSPACE/skills/workspace-doctor/scripts/workspace_doctor.sh --workspace $WORKSPACE/apps/flight-scout"
-        else
-          item "bash $WORKSPACE/skills/workspace-doctor/scripts/workspace_doctor.sh --workspace $WORKSPACE/apps/skillbar"
+        if focus_workspace="$(preferred_root_workspace)"; then
+          item "bash $WORKSPACE/skills/workspace-doctor/scripts/workspace_doctor.sh --workspace $focus_workspace"
         fi
       fi
       ;;
