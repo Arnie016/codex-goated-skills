@@ -22,6 +22,7 @@ Commands:
   fetch      Run the deterministic feed helper and emit a snapshot
   generate   Regenerate the Xcode project from project.yml
   open       Generate if needed, then open the Xcode project
+  typecheck  Run a lightweight Swift source check
   build      Build the TradingArchiveBar scheme with xcodebuild
   test       Run the TradingArchiveBar unit tests
   run        Build and relaunch the Trading Archive Bar menu bar app
@@ -245,6 +246,33 @@ build_project() {
   )
 }
 
+typecheck_project() {
+  require_tool swiftc
+  require_tool xcrun
+  ensure_workspace
+
+  local sdkroot cache_dir
+  local sources=()
+
+  sdkroot="$(xcrun --sdk macosx --show-sdk-path)"
+  cache_dir="$(mktemp -d /tmp/trading-archive-typecheck-XXXXXX)"
+  trap 'rm -rf "$cache_dir"' RETURN
+
+  while IFS= read -r file; do
+    sources+=("$file")
+  done < <(find "$WORKSPACE/TradingArchiveBarApp/Sources" -name '*.swift' | sort)
+
+  [[ ${#sources[@]} -gt 0 ]] || die "No Swift sources found in $WORKSPACE/TradingArchiveBarApp/Sources"
+
+  swiftc -typecheck \
+    -sdk "$sdkroot" \
+    -target arm64-apple-macosx15.0 \
+    -D DEBUG \
+    -module-cache-path "$cache_dir" \
+    -module-name TradingArchiveBar \
+    "${sources[@]}"
+}
+
 test_project() {
   require_tool xcodegen
   require_tool swiftc
@@ -306,6 +334,9 @@ case "$COMMAND" in
     ;;
   open)
     open_project
+    ;;
+  typecheck)
+    typecheck_project
     ;;
   build)
     build_project

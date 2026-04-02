@@ -21,9 +21,10 @@ Default product shapes:
 6. If the user wants a product surface, open or refine `apps/trading-archive-bar/`.
 7. Use `bash scripts/run_trading_archive.sh open` to jump into Xcode when you need the local project open.
 8. Use `bash scripts/run_trading_archive.sh generate` after changing `apps/trading-archive-bar/project.yml`.
-9. Use `bash scripts/run_trading_archive.sh test` after model, service, or UI changes.
-10. Use `bash scripts/run_trading_archive.sh run` when you need the menu bar app relaunched.
-11. Return either a `trading-archive-digest`, `reading-queue`, `source-health-report`, or `app-refresh-plan`.
+9. Use `bash scripts/run_trading_archive.sh typecheck` for a fast Swift source sanity pass before a full build.
+10. Use `bash scripts/run_trading_archive.sh test` after model, service, or UI changes.
+11. Use `bash scripts/run_trading_archive.sh run` when you need the menu bar app relaunched.
+12. Return either a `trading-archive-digest`, `reading-queue`, `source-health-report`, or `app-refresh-plan`.
 
 ## Accepted Inputs
 
@@ -103,6 +104,7 @@ Default `source-health-report` sections:
 - Read `references/project-map.md` before editing the app.
 - If the task changes project settings or app metadata, inspect `apps/trading-archive-bar/project.yml` and `apps/trading-archive-bar/TradingArchiveBarApp/Info.plist` first.
 - Prefer the local runner before typing `xcodegen` or `xcodebuild` manually.
+- Use `typecheck` when you want the fastest source-level validation before a full build or test run.
 - Run `test` after ingest, cache, export, or menu bar UI changes.
 
 ### Safety Boundaries
@@ -121,7 +123,7 @@ Default `source-health-report` sections:
 
 ## Resources
 
-- `scripts/run_trading_archive.sh`: local doctor, inspect, fetch, generate, open, build, test, and run helper for `apps/trading-archive-bar`
+- `scripts/run_trading_archive.sh`: local doctor, inspect, fetch, generate, open, typecheck, build, test, and run helper for `apps/trading-archive-bar`
 - `scripts/fetch_trading_feeds.py`: deterministic RSS and Atom ingest helper
 - `references/project-map.md`: app shape, main files, and validation checkpoints
 - `references/product-spec.md`: app shape, fallback behavior, settings UX, and artifact expectations

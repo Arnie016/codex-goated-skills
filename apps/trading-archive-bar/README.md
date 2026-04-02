@@ -13,7 +13,7 @@ Trading Archive Bar is a native macOS menu bar app for browsing an archive of tr
 ## Local Run
 
 ```bash
-cd apps/trading-archive-bar
-xcodegen generate
-xcodebuild -project TradingArchiveBar.xcodeproj -scheme TradingArchiveBar -destination 'platform=macOS' test
+bash skills/trading-archive/scripts/run_trading_archive.sh doctor
+bash skills/trading-archive/scripts/run_trading_archive.sh typecheck
+bash skills/trading-archive/scripts/run_trading_archive.sh test
 ```

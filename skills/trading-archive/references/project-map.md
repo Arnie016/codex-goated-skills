@@ -31,6 +31,7 @@ Default workspace: use `apps/trading-archive-bar` when working inside this repos
 - `fetch` runs the deterministic feed helper and can emit markdown or JSON snapshots.
 - `generate` uses `xcodegen`.
 - `open` launches `TradingArchiveBar.xcodeproj`.
+- `typecheck` runs a fast `swiftc -typecheck` pass over the app sources without waiting for a full Xcode build.
 - `build` and `test` use `xcodebuild` with a local `.build-debug` derived-data folder.
 - `run` builds and opens `TradingArchiveBar.app` from `.build-debug/Build/Products/Debug`.
 
