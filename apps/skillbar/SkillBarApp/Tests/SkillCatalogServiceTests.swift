@@ -41,6 +41,37 @@ struct SkillCatalogServiceTests {
     }
 
     @Test
+    func parsesPackFilesAndInstalledState() throws {
+        let tempRoot = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString)
+        let collectionsDir = tempRoot.appendingPathComponent("collections", isDirectory: true)
+        let installedDir = tempRoot.appendingPathComponent("installed", isDirectory: true)
+
+        try FileManager.default.createDirectory(at: collectionsDir, withIntermediateDirectories: true)
+        try FileManager.default.createDirectory(at: installedDir, withIntermediateDirectories: true)
+
+        try """
+        # title: Demo Pack
+        # summary: Demo pack summary
+        demo-skill-a
+        demo-skill-b
+        """.write(to: collectionsDir.appendingPathComponent("demo-pack.txt"), atomically: true, encoding: .utf8)
+
+        try FileManager.default.createDirectory(at: installedDir.appendingPathComponent("demo-skill-a"), withIntermediateDirectories: true)
+
+        let service = SkillCatalogService()
+        let packs = try service.loadPacks(repoRootPath: tempRoot.path, installedSkillsPath: installedDir.path)
+
+        #expect(packs.count == 1)
+        #expect(packs[0].id == "demo-pack")
+        #expect(packs[0].title == "Demo Pack")
+        #expect(packs[0].summary == "Demo pack summary")
+        #expect(packs[0].includedSkillIDs == ["demo-skill-a", "demo-skill-b"])
+        #expect(packs[0].installedSkillCount == 1)
+        #expect(!packs[0].isComplete)
+        #expect(packs[0].statusLabel == "1/2 installed")
+    }
+
+    @Test
     func detectsRepoRootsWithoutDependingOnTheFolderName() throws {
         let tempRoot = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(UUID().uuidString)
         let nestedPath = tempRoot.appendingPathComponent("workspace/deeper", isDirectory: true)

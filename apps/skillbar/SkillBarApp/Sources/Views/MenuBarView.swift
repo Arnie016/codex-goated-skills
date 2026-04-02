@@ -103,7 +103,7 @@ struct MenuBarView: View {
             HStack(spacing: 8) {
                 compactMetric("Catalog", "\(model.availableCount)")
                 compactMetric("Installed", "\(model.installedCount)")
-                compactMetric("Presets", "\(model.presets.count)")
+                compactMetric("Packs", "\(model.packCount)")
                 Spacer(minLength: 0)
                 statusChip(
                     model.hasValidRepo ? "repo ready" : "pick repo",
@@ -166,6 +166,8 @@ struct MenuBarView: View {
             }
         case .presets:
             presetsPanel
+        case .packs:
+            packsPanel
         case .setup:
             setupPanel
         }
@@ -177,6 +179,20 @@ struct MenuBarView: View {
             ForEach(Array(model.presets.enumerated()), id: \.element.id) { index, preset in
                 if index > 0 { Divider().overlay(SkillBarPalette.separator) }
                 presetRow(preset)
+            }
+        }
+    }
+
+    private var packsPanel: some View {
+        groupedPanel {
+            sectionLabel("Repo Packs", trailing: "\(model.filteredPackEntries.count)")
+            if model.filteredPackEntries.isEmpty {
+                emptyState("No packs match the current search or repo filters.")
+            } else {
+                ForEach(Array(model.filteredPackEntries.enumerated()), id: \.element.id) { index, pack in
+                    if index > 0 { Divider().overlay(SkillBarPalette.separator) }
+                    packRow(pack)
+                }
             }
         }
     }
@@ -238,7 +254,7 @@ struct MenuBarView: View {
     }
 
     private var footer: some View {
-        Text("SkillBar reads your local codex-goated-skills repo and manages what is installed in ~/.codex/skills. Presets only bundle existing skills; they do not own secrets or tokens.")
+        Text("SkillBar reads your local codex-goated-skills repo and manages what is installed in ~/.codex/skills. Presets stay app-owned, while repo packs mirror collections and bundle existing skills; they do not own secrets or tokens.")
             .font(.caption2)
             .foregroundStyle(SkillBarPalette.mutedText)
             .padding(.horizontal, 4)
@@ -278,6 +294,76 @@ struct MenuBarView: View {
                         .font(.caption2.weight(.semibold))
                         .foregroundStyle(SkillBarPalette.mutedText)
                 }
+            }
+        }
+        .padding(.vertical, 2)
+    }
+
+    private func packRow(_ pack: SkillPackEntry) -> some View {
+        let members = model.packMembers(for: pack)
+        return VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top, spacing: 10) {
+                Image(systemName: "shippingbox.fill")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundStyle(SkillBarPalette.accentSoft)
+                    .frame(width: 28, height: 28)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                            .fill(SkillBarPalette.accentSoft.opacity(0.12))
+                    )
+
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                        Text(pack.title)
+                            .font(.subheadline.weight(.bold))
+                            .foregroundStyle(SkillBarPalette.primaryText)
+                        statusChip(
+                            pack.statusLabel,
+                            tint: pack.isComplete ? SkillBarPalette.installed.opacity(0.18) : SkillBarPalette.warm.opacity(0.16),
+                            foreground: pack.isComplete ? SkillBarPalette.installed : SkillBarPalette.warm
+                        )
+                    }
+
+                    Text(pack.primaryDescription)
+                        .font(.caption)
+                        .foregroundStyle(SkillBarPalette.secondaryText)
+                        .lineLimit(2)
+                }
+
+                Spacer(minLength: 0)
+
+                if pack.isComplete {
+                    Button {
+                        model.runAction(for: pack)
+                    } label: {
+                        Text(model.action(for: pack).buttonTitle)
+                            .font(.caption.weight(.bold))
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                    .disabled(model.isBusy || !model.hasValidRepo)
+                } else {
+                    Button {
+                        model.runAction(for: pack)
+                    } label: {
+                        Text(model.action(for: pack).buttonTitle)
+                            .font(.caption.weight(.bold))
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.small)
+                    .disabled(model.isBusy || !model.hasValidRepo)
+                }
+            }
+
+            if !members.isEmpty {
+                Text(members.map(\.displayName).joined(separator: " • "))
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(SkillBarPalette.mutedText)
+                    .lineLimit(2)
+            } else {
+                Text("\(pack.includedSkillIDs.count) bundled skills")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(SkillBarPalette.mutedText)
             }
         }
         .padding(.vertical, 2)

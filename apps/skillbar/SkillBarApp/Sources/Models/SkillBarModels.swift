@@ -52,10 +52,39 @@ struct SkillPreset: Identifiable, Hashable, Codable {
     let includedSkillIDs: [String]
 }
 
+struct SkillPackEntry: Identifiable, Hashable, Codable {
+    let id: String
+    let title: String
+    let summary: String
+    let includedSkillIDs: [String]
+    let installedSkillCount: Int
+
+    var isComplete: Bool {
+        !includedSkillIDs.isEmpty && installedSkillCount == includedSkillIDs.count
+    }
+
+    var primaryDescription: String {
+        summary.isEmpty ? includedSkillIDs.joined(separator: ", ") : summary
+    }
+
+    var statusLabel: String {
+        if includedSkillIDs.isEmpty {
+            return "Empty"
+        }
+
+        if isComplete {
+            return "Ready"
+        }
+
+        return "\(installedSkillCount)/\(includedSkillIDs.count) installed"
+    }
+}
+
 enum SkillBarSection: String, CaseIterable, Identifiable {
     case discover = "Discover"
     case installed = "Installed"
     case presets = "Presets"
+    case packs = "Packs"
     case setup = "Setup"
 
     var id: String { rawValue }

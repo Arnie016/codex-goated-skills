@@ -40,6 +40,25 @@ struct SkillCatalogService {
         }
     }
 
+    func loadPacks(repoRootPath: String, installedSkillsPath: String) throws -> [SkillPackEntry] {
+        let collectionsRoot = URL(fileURLWithPath: repoRootPath, isDirectory: true).appendingPathComponent("collections", isDirectory: true)
+        let fileManager = FileManager.default
+
+        guard fileManager.fileExists(atPath: collectionsRoot.path) else {
+            return []
+        }
+
+        let entries = try fileManager.contentsOfDirectory(at: collectionsRoot, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles])
+            .filter { url in
+                url.pathExtension == "txt" && !url.hasDirectoryPath
+            }
+            .sorted { $0.lastPathComponent.localizedCaseInsensitiveCompare($1.lastPathComponent) == .orderedAscending }
+
+        return try entries.compactMap { packURL in
+            try loadPackEntry(packURL: packURL, installedSkillsPath: installedSkillsPath)
+        }
+    }
+
     func nearestRepoRoot(startingAt path: String) -> String? {
         let fileManager = FileManager.default
         var url = URL(fileURLWithPath: path, isDirectory: true)
@@ -95,6 +114,50 @@ struct SkillCatalogService {
         )
     }
 
+    private func loadPackEntry(packURL: URL, installedSkillsPath: String) throws -> SkillPackEntry? {
+        let fileManager = FileManager.default
+        guard fileManager.fileExists(atPath: packURL.path) else { return nil }
+
+        let lines = try String(contentsOf: packURL, encoding: .utf8).components(separatedBy: .newlines)
+        var title = ""
+        var summary = ""
+        var skillIDs: [String] = []
+
+        for rawLine in lines {
+            let line = rawLine.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !line.isEmpty else { continue }
+
+            if line.hasPrefix("# title:") {
+                title = stripQuotes(String(line.dropFirst("# title:".count)).trimmingCharacters(in: .whitespaces))
+                continue
+            }
+
+            if line.hasPrefix("# summary:") {
+                summary = stripQuotes(String(line.dropFirst("# summary:".count)).trimmingCharacters(in: .whitespaces))
+                continue
+            }
+
+            if line.hasPrefix("#") {
+                continue
+            }
+
+            skillIDs.append(line)
+        }
+
+        let installedRoot = URL(fileURLWithPath: installedSkillsPath, isDirectory: true)
+        let installedCount = skillIDs.filter { skillID in
+            fileManager.fileExists(atPath: installedRoot.appendingPathComponent(skillID).path)
+        }.count
+
+        return SkillPackEntry(
+            id: packURL.deletingPathExtension().lastPathComponent,
+            title: title.isEmpty ? packURL.deletingPathExtension().lastPathComponent : title,
+            summary: summary,
+            includedSkillIDs: skillIDs,
+            installedSkillCount: installedCount
+        )
+    }
+
     private func parseFrontmatter(_ markdown: String) -> [String: String] {
         let lines = markdown.components(separatedBy: .newlines)
         guard lines.first == "---" else { return [:] }
@@ -108,6 +171,14 @@ struct SkillCatalogService {
             values[key] = value
         }
         return values
+    }
+
+    private func stripQuotes(_ value: String) -> String {
+        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard trimmed.count >= 2, let first = trimmed.first, first == trimmed.last, first == "\"" || first == "'" else {
+            return trimmed
+        }
+        return String(trimmed.dropFirst().dropLast())
     }
 
     private func parseOpenAIInterface(at url: URL) -> [String: String] {

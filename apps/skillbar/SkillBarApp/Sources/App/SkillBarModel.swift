@@ -17,11 +17,12 @@ final class SkillBarModel: ObservableObject {
         didSet { defaults.set(searchText, forKey: DefaultsKey.searchText) }
     }
     @Published private(set) var entries: [SkillCatalogEntry] = []
+    @Published private(set) var packEntries: [SkillPackEntry] = []
     @Published private(set) var presets: [SkillPreset] = []
     @Published private(set) var repoRootPath: String?
     @Published var installedSkillsPath: String
-    @Published private(set) var statusHeadline = "Ready to manage goated skills."
-    @Published private(set) var statusDetail = "Browse, install, update, and run repo health checks from the top bar."
+    @Published private(set) var statusHeadline = "Ready to manage goated skills and packs."
+    @Published private(set) var statusDetail = "Browse, install, update, and refresh skills or packs from the top bar."
     @Published private(set) var isBusy = false
     @Published private(set) var activeCommandLabel: String?
     @Published var pendingPreset: SkillPreset?
@@ -57,6 +58,17 @@ final class SkillBarModel: ObservableObject {
     var discoverEntries: [SkillCatalogEntry] { filteredEntries }
     var installedEntries: [SkillCatalogEntry] { filteredEntries.filter(\.isInstalled) }
 
+    var filteredPackEntries: [SkillPackEntry] {
+        guard !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return packEntries }
+        let query = searchText.lowercased()
+        return packEntries.filter { entry in
+            entry.id.lowercased().contains(query) ||
+            entry.title.lowercased().contains(query) ||
+            entry.primaryDescription.lowercased().contains(query) ||
+            entry.includedSkillIDs.joined(separator: " ").lowercased().contains(query)
+        }
+    }
+
     var hasValidRepo: Bool {
         guard let repoRootPath else { return false }
         return catalogService.isRepoRoot(at: repoRootPath)
@@ -71,9 +83,15 @@ final class SkillBarModel: ObservableObject {
 
     var installedCount: Int { entries.filter(\.isInstalled).count }
     var availableCount: Int { entries.count }
+    var packCount: Int { packEntries.count }
+    var installedPackCount: Int { packEntries.filter(\.isComplete).count }
 
     func action(for entry: SkillCatalogEntry) -> SkillCommandAction {
         entry.isInstalled ? .update : .install
+    }
+
+    func action(for pack: SkillPackEntry) -> SkillCommandAction {
+        pack.isComplete ? .update : .install
     }
 
     func refreshCatalog() {
@@ -81,6 +99,7 @@ final class SkillBarModel: ObservableObject {
 
         guard let repoRootPath, hasValidRepo else {
             entries = []
+            packEntries = []
             statusHeadline = "Choose a full repo clone."
             statusDetail = "SkillBar needs a local clone with `skills/` and `bin/codex-goated` before it can show the catalog or install skills."
             return
@@ -88,13 +107,25 @@ final class SkillBarModel: ObservableObject {
 
         do {
             entries = try catalogService.loadCatalog(repoRootPath: repoRootPath, installedSkillsPath: installedSkillsPath)
-            statusHeadline = "Catalog ready"
-            statusDetail = "\(entries.count) skills found, \(installedCount) currently installed."
         } catch {
             entries = []
+            packEntries = []
             statusHeadline = "Couldn’t load the skill catalog."
             statusDetail = error.localizedDescription
+            return
         }
+
+        do {
+            packEntries = try catalogService.loadPacks(repoRootPath: repoRootPath, installedSkillsPath: installedSkillsPath)
+        } catch {
+            packEntries = []
+            statusHeadline = "Catalog ready"
+            statusDetail = "\(entries.count) skills found, pack metadata could not be loaded: \(error.localizedDescription)"
+            return
+        }
+
+        statusHeadline = "Catalog ready"
+        statusDetail = "\(entries.count) skills and \(packEntries.count) packs found, \(installedCount) skills installed, \(installedPackCount) packs ready."
     }
 
     func chooseRepoRoot() {
@@ -134,6 +165,15 @@ final class SkillBarModel: ObservableObject {
             repoRootPath: repoRootPath ?? "",
             destinationPath: installedSkillsPath
         ), label: "\(action(for: entry).buttonTitle) \(entry.displayName)")
+    }
+
+    func runAction(for pack: SkillPackEntry) {
+        run(request: SkillCommandRequest(
+            action: action(for: pack),
+            skillIDs: pack.includedSkillIDs,
+            repoRootPath: repoRootPath ?? "",
+            destinationPath: installedSkillsPath
+        ), label: "\(action(for: pack).buttonTitle) \(pack.title)")
     }
 
     func runCatalogCheck() {
@@ -197,6 +237,10 @@ final class SkillBarModel: ObservableObject {
 
     func presetEntries(_ preset: SkillPreset) -> [SkillCatalogEntry] {
         preset.includedSkillIDs.compactMap { id in entries.first(where: { $0.id == id }) }
+    }
+
+    func packMembers(for pack: SkillPackEntry) -> [SkillCatalogEntry] {
+        pack.includedSkillIDs.compactMap { id in entries.first(where: { $0.id == id }) }
     }
 
     private func runRepoHealthAction(action: SkillCommandAction, label: String) {

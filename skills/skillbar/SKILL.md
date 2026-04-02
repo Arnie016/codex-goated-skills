@@ -1,6 +1,6 @@
 ---
 name: skillbar
-description: Build, run, troubleshoot, or extend SkillBar, the codex-goated-skills macOS menu bar manager. Use when Codex needs to work on the `apps/skillbar` workspace, validate repo-driven catalog parsing, exercise install or update wiring through `bin/codex-goated`, or keep the local preset and installed-state flows honest.
+description: Build, run, troubleshoot, or extend SkillBar, the codex-goated-skills macOS menu bar manager. Use when Codex needs to work on the `apps/skillbar` workspace, validate repo-driven catalog parsing, exercise install or update wiring through `bin/codex-goated`, or keep the local preset, pack, and installed-state flows honest.
 ---
 
 # SkillBar
@@ -39,6 +39,7 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
   - installed-state visibility
   - install and update actions delegated to `bin/codex-goated`
   - curated preset bundles built from existing skills
+  - repo pack browsing and pack install/update actions built from `collections/*`
   - setup for repo path and installed-skills path
 - SkillBar does not own:
   - skill creation or editing outside the app workflow
@@ -52,6 +53,7 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 - Reuse `bin/codex-goated` for install and update actions instead of inventing parallel tooling.
 - Preserve deterministic metadata parsing with graceful fallback when optional fields are missing.
 - Keep preset bundles static and understandable; they should not become a second catalog system.
+- Treat repo packs as read-only catalog entries that install or refresh their bundled skills.
 - If you touch install flows, run `smoke-install` before calling the work complete.
 - If you touch update flows, run `smoke-update` to prove overwrite behavior through `bin/codex-goated`.
 - If you touch skill or pack metadata, run `catalog-check`; if you touch repo-wide catalog plumbing, run `audit` too.
@@ -73,9 +75,11 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 - `Use $skillbar to inspect the SkillBar workspace, tighten the preset flow, and validate one real install path.`
 - `Use $skillbar to run doctor, test the app, and fix the local catalog parser.`
 - `Use $skillbar to improve the menu bar UI without breaking the repo-driven install and update actions.`
+- `Use $skillbar to add repo-pack browsing and keep the pack install path honest.`
 
 ## Resources
 
 - `scripts/run_skillbar.sh`: local doctor, inspect, generate, open, build, typecheck, test, run, smoke-install, smoke-update, catalog-check, and audit helper for the SkillBar workspace.
 - `references/project-map.md`: target map, key files, and validation expectations.
 - `../../bin/codex-goated`: the CLI that SkillBar should continue delegating install and update work to.
+- `../../collections/`: repo-pack source files that SkillBar now surfaces in its pack browser.

@@ -23,13 +23,13 @@
 - `apps/skillbar/SkillBarApp/Sources/App/SkillBarModel.swift`
   - app state, path setup, refresh, install, repo-health, and preset actions
 - `apps/skillbar/SkillBarApp/Sources/Models/SkillBarModels.swift`
-  - shared catalog, preset, and command models
+  - shared catalog, preset, pack, and command models
 - `apps/skillbar/SkillBarApp/Sources/Services/SkillCatalogService.swift`
-  - repo-root discovery and metadata parsing
+  - repo-root discovery plus skill and pack metadata parsing
 - `apps/skillbar/SkillBarApp/Sources/Services/SkillInstallService.swift`
   - deterministic process descriptor and CLI execution
 - `apps/skillbar/SkillBarApp/Sources/Views/MenuBarView.swift`
-  - compact menu bar UI, setup surface, repo-health actions, and preset confirmation flow
+  - compact menu bar UI, setup surface, repo-health actions, pack browsing, and preset confirmation flow
 - `apps/skillbar/SkillBarApp/Tests/SkillCatalogServiceTests.swift`
   - parser, command descriptor, and preset coverage
 
