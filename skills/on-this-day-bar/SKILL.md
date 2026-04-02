@@ -43,7 +43,7 @@ Use this skill when the user wants to work on the native menu bar app, not the w
 
 ## Resources
 
-- `../../skills/on-this-day/scripts/run_on_this_day_bar.sh`: local doctor, inspect, generate, open, build, test, and run helper
+- `scripts/run_on_this_day_bar.sh`: local doctor, inspect, generate, open, build, test, and run helper for the On This Day Bar workspace
 - `references/project-map.md`: native app target map, main files, and build notes
 - `../../apps/on-this-day-bar/`: the matching native menu bar app codebase
-- `../../skills/on-this-day/scripts/fetch_on_this_day.py`: deterministic helper for official Wikimedia feed snapshots
+- `scripts/fetch_on_this_day.py`: deterministic helper for official Wikimedia feed snapshots

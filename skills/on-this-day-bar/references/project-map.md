@@ -31,6 +31,13 @@ Default workspace: use `apps/on-this-day-bar` when working inside this repositor
 - `build` and `test` use `xcodebuild` with a local `.build-debug` derived-data folder.
 - `run` builds and opens `OnThisDayBar.app` from `.build-debug/Build/Products/Debug`.
 
+## Helper Scripts
+
+- `scripts/run_on_this_day_bar.sh`
+  - local wrapper for doctor, inspect, generate, open, build, test, and run
+- `scripts/fetch_on_this_day.py`
+  - local wrapper for deterministic Wikimedia feed snapshots
+
 ## Constraints
 
 - Keep the app menu-bar-first and compact.
