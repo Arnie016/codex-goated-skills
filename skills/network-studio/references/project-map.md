@@ -8,6 +8,7 @@ Default workspace: install into a user-chosen folder, usually `~/Network Studio`
 
 ## Main Files
 
+- `scripts/run_network_studio.sh`: repo-native doctor, inspect, install, refresh, open, and watch wrapper for the portable workspace
 - `scripts/install_network_studio.py`: installs or refreshes the workspace template and optional SwiftBar wrapper
 - `assets/workspace/network-watch.sh`: continuous LAN watcher and CSV logger
 - `assets/workspace/swiftbar/network-monitor.1m.sh`: SwiftBar entrypoint that renders the menu bar snapshot
@@ -20,15 +21,19 @@ Default workspace: install into a user-chosen folder, usually `~/Network Studio`
 
 ## Run And Install Notes
 
-- Use the installer first:
-  `python3 scripts/install_network_studio.py <workspace>`
+- Start with the repo-native wrapper:
+  `bash scripts/run_network_studio.sh doctor`
+- Install or refresh the workspace:
+  `bash scripts/run_network_studio.sh install <workspace>`
 - Add `--swiftbar-plugins-dir ~/SwiftBarPlugins` when you want a thin SwiftBar wrapper installed for the workspace.
-- After install, run:
-  `bash "<workspace>/.swiftbar-support/open-network-studio.sh"`
+- Inspect the portable workspace:
+  `bash scripts/run_network_studio.sh inspect`
+- Open the dashboard after install:
+  `bash scripts/run_network_studio.sh --workspace <workspace> open`
 - For a continuous watcher, run:
-  `bash "<workspace>/network-watch.sh"`
-- `network-watch.sh --once` performs a single scan and exits.
-- `network-watch.sh --interval 30 --resolve` enables a faster loop with hostname lookups.
+  `bash scripts/run_network_studio.sh --workspace <workspace> watch --interval 30 --resolve`
+- `watch --once` performs a single scan and exits.
+- `refresh --scan` rebuilds the dashboard and SwiftBar output after a fresh discovery pass.
 
 ## Constraints
 
