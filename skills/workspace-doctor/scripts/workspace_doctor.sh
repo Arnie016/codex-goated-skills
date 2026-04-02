@@ -318,6 +318,31 @@ find_paired_runner() {
   return 1
 }
 
+runner_supports_command() {
+  local runner="$1"
+  local command="$2"
+
+  grep -Eq "^[[:space:]]*$command\\)" "$runner" 2>/dev/null
+}
+
+runner_command_summary() {
+  local runner="$1"
+  local command
+  local commands=()
+
+  for command in doctor inspect generate open build typecheck test run; do
+    if runner_supports_command "$runner" "$command"; then
+      commands+=("$command")
+    fi
+  done
+
+  if [[ "${#commands[@]}" -eq 0 ]]; then
+    printf 'none detected'
+  else
+    printf '%s' "${commands[*]}"
+  fi
+}
+
 preferred_root_workspace() {
   local candidate app_dir app_name
 
@@ -357,7 +382,7 @@ print_tracked_app_runner_inventory() {
         item "tracked app workspaces and runner commands:"
         printed_any=1
       fi
-      printf '  - %s -> bash %s doctor\n' "$app_name" "$runner"
+      printf '  - %s -> bash %s doctor (commands: %s)\n' "$app_name" "$runner" "$(runner_command_summary "$runner")"
       continue
     fi
 
@@ -504,15 +529,21 @@ print_recommendations() {
     xcodegen-app)
       if [[ -n "$PAIRED_RUNNER" ]]; then
         item "bash $PAIRED_RUNNER doctor"
-        if grep -Eq 'inspect' "$PAIRED_RUNNER"; then
+        if runner_supports_command "$PAIRED_RUNNER" inspect; then
           item "bash $PAIRED_RUNNER inspect"
         fi
-        if grep -Eq 'test' "$PAIRED_RUNNER"; then
+        if runner_supports_command "$PAIRED_RUNNER" open; then
+          item "bash $PAIRED_RUNNER open"
+        fi
+        if runner_supports_command "$PAIRED_RUNNER" test; then
           item "bash $PAIRED_RUNNER test"
-        elif grep -Eq 'typecheck' "$PAIRED_RUNNER"; then
+        elif runner_supports_command "$PAIRED_RUNNER" typecheck; then
           item "bash $PAIRED_RUNNER typecheck"
         else
           item "bash $PAIRED_RUNNER build"
+        fi
+        if runner_supports_command "$PAIRED_RUNNER" run; then
+          item "bash $PAIRED_RUNNER run"
         fi
       else
         app_name="$(basename "$WORKSPACE")"
