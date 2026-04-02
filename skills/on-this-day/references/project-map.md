@@ -18,11 +18,13 @@ Default workspace: use `apps/on-this-day` when working inside this repository.
 
 - Use the web app README first:
   `apps/on-this-day/README.md`
-- For a quick local preview, run:
-  `cd apps/on-this-day && python3 -m http.server 4173`
-- Open `http://localhost:4173` after starting the server.
-- Use the helper script when you need a deterministic feed snapshot or markdown digest:
-  `python3 scripts/fetch_on_this_day.py --date YYYY-MM-DD --type selected --limit 5`
+- Use the runner script first:
+  `bash scripts/run_on_this_day.sh <command>`
+- If the app lives outside the current repo, use:
+  `bash scripts/run_on_this_day.sh --workspace /path/to/apps/on-this-day <command>`
+- `fetch` runs the deterministic feed helper and can emit markdown or JSON snapshots.
+- `run` starts a local preview server on `http://localhost:4173`, opens the browser, and reuses an existing background server when one is already running. If the port is unavailable, it falls back to opening `index.html` directly.
+- `serve` runs the same preview server in the foreground when you want to keep the terminal attached.
 
 ## Constraints
 

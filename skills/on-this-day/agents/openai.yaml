@@ -1,7 +1,7 @@
 interface:
   display_name: "On This Day"
-  short_description: "Daily history brief and macOS-style web app"
+  short_description: "Daily history brief, feed helper, and macOS-style web app"
   icon_small: "./assets/icon-small.svg"
   icon_large: "./assets/icon-large.svg"
   brand_color: "#D88B2C"
-  default_prompt: "Use $on-this-day to fetch the official On This Day feed for today in Singapore, pick the most interesting entries, and turn them into a polished source-linked brief or refine the matching macOS-style web app."
+  default_prompt: "Use $on-this-day to fetch the official On This Day feed for today in Singapore, turn it into a polished source-linked brief, or refine the matching macOS-style web app with the repo-native fetch and run flow."

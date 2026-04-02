@@ -18,10 +18,12 @@ Default product shapes:
 1. Decide the exact day, timezone, and feed slice the user wants.
 2. Prefer the official Wikimedia Feed API endpoint for the day:
    - `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/{MM}/{DD}`
-3. If you need a deterministic local helper, run `python3 scripts/fetch_on_this_day.py --date 2026-03-27 --type selected --limit 5`.
-4. If the user wants the native menu bar app, hand them to `on-this-day-bar`.
-5. Open or refine `apps/on-this-day/` for the web surface.
-6. Return either an `on-this-day-brief`, a `history-day-digest`, or an `app-refresh-plan`, depending on the request.
+3. Run `bash scripts/run_on_this_day.sh doctor` before editing the web app or checking local preview readiness.
+4. Run `bash scripts/run_on_this_day.sh inspect` before changing `apps/on-this-day/`.
+5. Use `bash scripts/run_on_this_day.sh fetch --date 2026-03-27 --type selected --limit 5` for a deterministic local snapshot.
+6. Use `bash scripts/run_on_this_day.sh run` when you need the web app preview server and browser handoff. If the port cannot be bound, the runner falls back to opening `index.html` directly.
+7. If the user wants the native menu bar app, hand them to `on-this-day-bar`.
+8. Return either an `on-this-day-brief`, a `history-day-digest`, or an `app-refresh-plan`, depending on the request.
 
 ## Accepted Inputs
 
@@ -94,8 +96,8 @@ Default `app-refresh-plan` sections:
 ### Web App Workflow
 
 - Open `apps/on-this-day/README.md` before editing the browser surface.
-- Use `python3 -m http.server 4173` from `apps/on-this-day/` when you need a local preview with real fetch behavior.
-- Run `python3 scripts/fetch_on_this_day.py --date YYYY-MM-DD --type selected --limit 5` after changing feed logic, date handling, or digest formatting.
+- Prefer `bash scripts/run_on_this_day.sh run` over a manual `python3 -m http.server 4173` preview. When the machine cannot bind the preview port, the runner falls back to opening `index.html` directly.
+- Use `bash scripts/run_on_this_day.sh fetch --date YYYY-MM-DD --type selected --limit 5` after changing feed logic, date handling, or digest formatting.
 - Keep the static app desktop-first and honest about live versus cached data.
 
 ### Handle Failure Honestly
@@ -131,6 +133,7 @@ Default `app-refresh-plan` sections:
 
 ## Resources
 
+- `scripts/run_on_this_day.sh`: local doctor, inspect, fetch, serve, run, and stop helper for `apps/on-this-day`.
 - `scripts/fetch_on_this_day.py`: deterministic CLI helper for the official On This Day feed
 - `references/product-spec.md`: product family spec, fetch model, fallback states, and visual direction
 - `references/project-map.md`: web app target map, main files, and preview notes

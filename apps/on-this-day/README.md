@@ -18,8 +18,8 @@ It uses the official Wikimedia Feed API endpoint for "On this day":
 
 ```bash
 cd apps/on-this-day
-python3 -m http.server 4173
-open http://localhost:4173
+bash ../../skills/on-this-day/scripts/run_on_this_day.sh run
 ```
 
-You can also open `index.html` directly, but a tiny local server is the most reliable path for browser fetch behavior.
+Use `bash ../../skills/on-this-day/scripts/run_on_this_day.sh fetch --date YYYY-MM-DD --type selected --limit 5`
+when you want a deterministic Wikimedia snapshot, or `serve` if you want the preview server to stay attached to the terminal. If the runner cannot bind the local preview port, it falls back to opening `index.html` directly.
