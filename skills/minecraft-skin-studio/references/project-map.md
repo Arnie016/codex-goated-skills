@@ -22,9 +22,11 @@ Default workspace: use `apps/minecraft-skinbar` when working inside this reposit
   `bash scripts/run_minecraft_skinbar.sh <command>`
 - If the app lives outside the current repo, use:
   `bash scripts/run_minecraft_skinbar.sh --workspace /path/to/minecraft-skinbar <command>`
+- `doctor` reports workspace shape, tool availability, and Xcode readiness without blocking on a missing optional tool.
 - `generate` uses `xcodegen`.
 - `open` launches `MinecraftSkinBar.xcodeproj`.
 - `build` uses `xcodebuild` with a local `.build-debug` derived-data folder.
+- `typecheck` runs `bash -n` on the runner and `python3 -m py_compile` on `minecraft_skin_studio.py`.
 - `test` runs deterministic helper smoke checks for skin cleanup, preview rendering, and launcher JSON registration.
 - `run` builds and opens `MinecraftSkinBar.app` from `.build-debug/Build/Products/Debug`.
 - The current project does not define an Xcode unit-test target, so `test` covers the helper contract and `build` is still the strongest app-local validation path.

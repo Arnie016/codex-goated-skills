@@ -24,6 +24,7 @@ Commands:
   open       Generate if needed, then open the Xcode project
   build      Build the MinecraftSkinBar scheme with xcodebuild
   test       Run deterministic helper smoke checks
+  typecheck  Run shell and Python syntax checks
   run        Build and relaunch the Minecraft Skin Bar app
 
 Examples:
@@ -54,6 +55,10 @@ guess_workspace() {
 }
 
 xcode_is_ready() {
+  if ! command -v xcodebuild >/dev/null 2>&1; then
+    return 1
+  fi
+
   if DEVELOPER_DIR="$XCODE_DIR" xcodebuild -version >/dev/null 2>&1 && \
      DEVELOPER_DIR="$XCODE_DIR" xcodebuild -list -project "$WORKSPACE/$PROJECT_NAME" >/dev/null 2>&1; then
     return 0
@@ -66,6 +71,11 @@ xcode_is_ready() {
 }
 
 print_xcode_status() {
+  if ! command -v xcodebuild >/dev/null 2>&1; then
+    printf 'missing\n'
+    return 1
+  fi
+
   if xcode_is_ready; then
     printf 'ready\n'
     return 0
@@ -86,6 +96,10 @@ print_xcode_status() {
 }
 
 ensure_xcode_ready() {
+  if ! command -v xcodebuild >/dev/null 2>&1; then
+    die "xcodebuild is not available on this Mac."
+  fi
+
   if xcode_is_ready; then
     return 0
   fi
@@ -101,8 +115,12 @@ ensure_xcode_ready() {
   die "xcodebuild is not ready. Inspect $XCODE_CHECK_LOG for details."
 }
 
-require_tools() {
+require_xcodegen() {
   command -v xcodegen >/dev/null 2>&1 || die "xcodegen is not installed. Run: brew install xcodegen"
+}
+
+require_build_tools() {
+  require_xcodegen
   command -v swiftc >/dev/null 2>&1 || die "swiftc is not available on this Mac."
 }
 
@@ -137,14 +155,13 @@ ensure_workspace() {
 }
 
 generate_project() {
-  require_tools
+  require_xcodegen
   ensure_workspace
   (cd "$WORKSPACE" && xcodegen generate)
 }
 
 doctor() {
   local uv_path=""
-  require_tools
   ensure_workspace
   if uv_path="$(resolve_uv 2>/dev/null)"; then
     :
@@ -155,6 +172,10 @@ doctor() {
   printf 'Workspace: %s\n' "$WORKSPACE"
   printf 'Project spec: %s\n' "$WORKSPACE/$PROJECT_SPEC"
   printf 'Xcode path: %s\n' "$XCODE_DIR"
+  printf 'python3: %s\n' "$(command -v python3 || echo missing)"
+  printf 'xcodegen: %s\n' "$(command -v xcodegen || echo missing)"
+  printf 'swiftc: %s\n' "$(command -v swiftc || echo missing)"
+  printf 'xcodebuild: %s\n' "$(command -v xcodebuild || echo missing)"
   printf 'Project present: '
   if [[ -d "$WORKSPACE/$PROJECT_NAME" ]]; then
     printf 'yes\n'
@@ -219,7 +240,7 @@ open_project() {
 }
 
 build_project() {
-  require_tools
+  require_build_tools
   ensure_workspace
   [[ -d "$WORKSPACE/$PROJECT_NAME" ]] || generate_project
   ensure_xcode_ready
@@ -239,6 +260,14 @@ run_app() {
   build_project
   pkill -f "$WORKSPACE/$APP_BUNDLE/Contents/MacOS/MinecraftSkinBar" || true
   open "$WORKSPACE/$APP_BUNDLE"
+}
+
+typecheck() {
+  ensure_workspace
+  command -v python3 >/dev/null 2>&1 || die "python3 is not available on this Mac."
+  bash -n "$0"
+  python3 -m py_compile "$SKILL_SCRIPT"
+  printf 'Typecheck OK: shell runner and Python helper parse cleanly.\n'
 }
 
 while [[ $# -gt 0 ]]; do
@@ -281,6 +310,9 @@ case "$COMMAND" in
     ensure_workspace
     command -v python3 >/dev/null 2>&1 || die "python3 is not available on this Mac."
     python3 "$SKILL_SCRIPT" test
+    ;;
+  typecheck)
+    typecheck
     ;;
   run)
     run_app
