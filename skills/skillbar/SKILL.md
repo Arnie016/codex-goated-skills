@@ -15,8 +15,8 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 2. Use `bash scripts/run_skillbar.sh inspect` before editing so the app model, services, tests, and CLI entrypoint stay visible.
 3. Use `bash scripts/run_skillbar.sh smoke-install skillbar` to verify one real install path against a temporary destination.
 4. Use `bash scripts/run_skillbar.sh smoke-update skillbar` to verify the overwrite path after update wiring changes.
-5. Use `bash scripts/run_skillbar.sh catalog-check` when you touch skill or pack metadata and need to verify the generated catalog is current.
-6. Use `bash scripts/run_skillbar.sh audit` for the full repo skill and pack integrity sweep.
+5. Use the repo-health actions in SkillBar itself, or `bash scripts/run_skillbar.sh catalog-check`, when you touch skill or pack metadata and need to verify the generated catalog is current.
+6. Use the repo-health actions in SkillBar itself, or `bash scripts/run_skillbar.sh audit`, for the full repo skill and pack integrity sweep.
 7. Use `bash scripts/run_skillbar.sh generate` after changing `project.yml`.
 8. Use `bash scripts/run_skillbar.sh typecheck` for a fast source-level sanity pass before a full build.
 9. Use `bash scripts/run_skillbar.sh test` once Xcode is ready.

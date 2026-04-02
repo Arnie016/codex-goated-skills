@@ -64,16 +64,47 @@ enum SkillBarSection: String, CaseIterable, Identifiable {
 enum SkillCommandAction: String, Hashable {
     case install
     case update
+    case catalogCheck
+    case audit
 
     var buttonTitle: String {
         switch self {
         case .install: return "Install"
         case .update: return "Update"
+        case .catalogCheck: return "Catalog Check"
+        case .audit: return "Audit"
         }
     }
 
-    var cliVerb: String {
-        rawValue
+    var cliArguments: [String] {
+        switch self {
+        case .install:
+            return ["install"]
+        case .update:
+            return ["update"]
+        case .catalogCheck:
+            return ["catalog", "check"]
+        case .audit:
+            return ["audit"]
+        }
+    }
+
+    var includesDestinationPath: Bool {
+        switch self {
+        case .install, .update:
+            return true
+        case .catalogCheck, .audit:
+            return false
+        }
+    }
+
+    var includesSkillIDs: Bool {
+        switch self {
+        case .install, .update:
+            return true
+        case .catalogCheck, .audit:
+            return false
+        }
     }
 }
 

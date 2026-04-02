@@ -8,11 +8,10 @@ struct SkillInstallService {
 
         return SkillCommandDescriptor(
             executablePath: executable,
-            arguments: [
-                request.action.cliVerb,
-                "--repo-dir", request.repoRootPath,
-                "--dest", request.destinationPath
-            ] + request.skillIDs
+            arguments: request.action.cliArguments
+                + ["--repo-dir", request.repoRootPath]
+                + (request.action.includesDestinationPath ? ["--dest", request.destinationPath] : [])
+                + (request.action.includesSkillIDs ? request.skillIDs : [])
         )
     }
 

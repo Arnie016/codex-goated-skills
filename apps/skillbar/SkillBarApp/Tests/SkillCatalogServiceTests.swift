@@ -80,6 +80,30 @@ struct SkillCatalogServiceTests {
     }
 
     @Test
+    func commandDescriptorBuildsRepoHealthCommands() {
+        let service = SkillInstallService()
+
+        let catalogCheck = service.commandDescriptor(for: SkillCommandRequest(
+            action: .catalogCheck,
+            skillIDs: [],
+            repoRootPath: "/tmp/repo",
+            destinationPath: "/tmp/skills"
+        ))
+
+        let audit = service.commandDescriptor(for: SkillCommandRequest(
+            action: .audit,
+            skillIDs: [],
+            repoRootPath: "/tmp/repo",
+            destinationPath: "/tmp/skills"
+        ))
+
+        #expect(catalogCheck.executablePath == "/tmp/repo/bin/codex-goated")
+        #expect(catalogCheck.arguments == ["catalog", "check", "--repo-dir", "/tmp/repo"])
+        #expect(audit.executablePath == "/tmp/repo/bin/codex-goated")
+        #expect(audit.arguments == ["audit", "--repo-dir", "/tmp/repo"])
+    }
+
+    @Test
     @MainActor
     func defaultPresetsIncludeTelegramOpsBundle() {
         let preset = SkillBarModel.defaultPresets.first(where: { $0.id == "telegram-ops" })

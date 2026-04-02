@@ -21,7 +21,7 @@ final class SkillBarModel: ObservableObject {
     @Published private(set) var repoRootPath: String?
     @Published var installedSkillsPath: String
     @Published private(set) var statusHeadline = "Ready to manage goated skills."
-    @Published private(set) var statusDetail = "Browse, install, and enable preset bundles from the top bar."
+    @Published private(set) var statusDetail = "Browse, install, update, and run repo health checks from the top bar."
     @Published private(set) var isBusy = false
     @Published private(set) var activeCommandLabel: String?
     @Published var pendingPreset: SkillPreset?
@@ -136,6 +136,14 @@ final class SkillBarModel: ObservableObject {
         ), label: "\(action(for: entry).buttonTitle) \(entry.displayName)")
     }
 
+    func runCatalogCheck() {
+        runRepoHealthAction(action: .catalogCheck, label: "Catalog Check")
+    }
+
+    func runAudit() {
+        runRepoHealthAction(action: .audit, label: "Audit")
+    }
+
     func requestPresetEnable(_ preset: SkillPreset) {
         pendingPreset = preset
     }
@@ -189,6 +197,15 @@ final class SkillBarModel: ObservableObject {
 
     func presetEntries(_ preset: SkillPreset) -> [SkillCatalogEntry] {
         preset.includedSkillIDs.compactMap { id in entries.first(where: { $0.id == id }) }
+    }
+
+    private func runRepoHealthAction(action: SkillCommandAction, label: String) {
+        run(request: SkillCommandRequest(
+            action: action,
+            skillIDs: [],
+            repoRootPath: repoRootPath ?? "",
+            destinationPath: installedSkillsPath
+        ), label: label)
     }
 
     static let defaultPresets: [SkillPreset] = [

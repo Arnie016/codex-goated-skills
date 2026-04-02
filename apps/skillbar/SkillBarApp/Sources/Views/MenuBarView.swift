@@ -195,6 +195,35 @@ struct MenuBarView: View {
                 model.chooseInstalledSkillsFolder()
             }
 
+            Divider().overlay(SkillBarPalette.separator)
+
+            VStack(alignment: .leading, spacing: 8) {
+                sectionLabel("Repo Health", trailing: model.hasValidRepo ? "ready" : "needs repo")
+
+                HStack(spacing: 8) {
+                    Button("Catalog Check") {
+                        model.runCatalogCheck()
+                    }
+                    .buttonStyle(.bordered)
+                    .disabled(model.isBusy || !model.hasValidRepo)
+                    .help("Run codex-goated catalog check against the selected repo clone.")
+
+                    Button("Audit") {
+                        model.runAudit()
+                    }
+                    .buttonStyle(.bordered)
+                    .disabled(model.isBusy || !model.hasValidRepo)
+                    .help("Run codex-goated audit against the selected repo clone.")
+
+                    Spacer(minLength: 0)
+                }
+
+                Text("Check catalog freshness and repo integrity from inside SkillBar instead of switching to the shell.")
+                    .font(.caption2)
+                    .foregroundStyle(SkillBarPalette.mutedText)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
             if !model.lastCommandOutput.isEmpty {
                 Divider().overlay(SkillBarPalette.separator)
                 Text("Recent Command Output")

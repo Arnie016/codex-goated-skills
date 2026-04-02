@@ -21,7 +21,7 @@
 - `apps/skillbar/SkillBarApp/Sources/App/SkillBarApp.swift`
   - `MenuBarExtra` entrypoint
 - `apps/skillbar/SkillBarApp/Sources/App/SkillBarModel.swift`
-  - app state, path setup, refresh, install, and preset actions
+  - app state, path setup, refresh, install, repo-health, and preset actions
 - `apps/skillbar/SkillBarApp/Sources/Models/SkillBarModels.swift`
   - shared catalog, preset, and command models
 - `apps/skillbar/SkillBarApp/Sources/Services/SkillCatalogService.swift`
@@ -29,7 +29,7 @@
 - `apps/skillbar/SkillBarApp/Sources/Services/SkillInstallService.swift`
   - deterministic process descriptor and CLI execution
 - `apps/skillbar/SkillBarApp/Sources/Views/MenuBarView.swift`
-  - compact menu bar UI, setup surface, and preset confirmation flow
+  - compact menu bar UI, setup surface, repo-health actions, and preset confirmation flow
 - `apps/skillbar/SkillBarApp/Tests/SkillCatalogServiceTests.swift`
   - parser, command descriptor, and preset coverage
 
