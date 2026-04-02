@@ -1,6 +1,6 @@
 {
   "repo": "codex-goated-skills",
-  "skill_count": 32,
+  "skill_count": 33,
   "pack_count": 10,
   "skills": [
     {
@@ -333,15 +333,15 @@
     {
       "id": "network-studio",
       "display_name": "Network Studio",
-      "description": "Install or update a macOS local-network monitor workspace, or build and troubleshoot the bundled `apps/wifi-watchtower` menu bar app. Use when Codex needs a repo-native path for LAN presence, Wi-Fi trust scanning, SwiftBar wiring, local dashboards, or compact macOS network safety surfaces on networks the user owns or administers.",
-      "short_description": "LAN monitor installer plus WiFi Watchtower app workflow",
+      "description": "Install or update a macOS local-network monitor workspace and SwiftBar plugin. Use when Codex needs a repo-native path for LAN presence, device logging, local dashboards, or compact macOS network safety surfaces on networks the user owns or administers.",
+      "short_description": "Portable LAN monitor installer and SwiftBar workspace",
       "brand_color": "#0F8ED8",
       "path": "skills/network-studio",
       "skill_file": "skills/network-studio/SKILL.md",
       "openai_yaml": "skills/network-studio/agents/openai.yaml",
       "icon_small": "./assets/network-studio-small.svg",
       "icon_large": "./assets/network-studio-large.svg",
-      "default_prompt": "Use $network-studio to install or update a local Network Studio workspace, wire SwiftBar if needed, or work on the bundled WiFi Watchtower macOS menu bar app with repo-native doctor, typecheck, and build flows.",
+      "default_prompt": "Use $network-studio to install or update a portable Network Studio workspace, wire SwiftBar if needed, and keep the local dashboard and watcher flows honest.",
       "packs": [
         "daily-briefs-and-reference",
         "productivity-and-workflow",
@@ -535,6 +535,22 @@
       ]
     },
     {
+      "id": "wifi-watchtower",
+      "display_name": "WiFi Watchtower",
+      "description": "Build, run, troubleshoot, or refine the WiFi Watchtower macOS menu bar app in `apps/wifi-watchtower`. Use when Codex needs the exact app workspace, repo-native doctor/typecheck/build/test flows, or menu bar and dashboard changes for local Wi-Fi trust scoring.",
+      "short_description": "Run and refine the WiFi Watchtower menu bar app",
+      "brand_color": "#0EA5E9",
+      "path": "skills/wifi-watchtower",
+      "skill_file": "skills/wifi-watchtower/SKILL.md",
+      "openai_yaml": "skills/wifi-watchtower/agents/openai.yaml",
+      "icon_small": "./assets/wifi-watchtower-small.svg",
+      "icon_large": "./assets/wifi-watchtower-large.svg",
+      "default_prompt": "Use $wifi-watchtower to work on the WiFi Watchtower macOS menu bar app in apps/wifi-watchtower: inspect the workspace, run doctor, and validate build or test changes around trust scoring, nearby Wi-Fi context, and the menu bar dashboard.",
+      "packs": [
+        "app-specific-skills"
+      ]
+    },
+    {
       "id": "workspace-doctor",
       "display_name": "Workspace Doctor",
       "description": "Diagnose local workspace readiness, generated catalog freshness, and common setup problems, then point to the right repo-native next command. Use when Codex needs to check project health, missing tools, Xcode or XcodeGen blockers, auth gaps, environment mismatches, broken install steps, or other practical issues that stop a user from building or running something.",
@@ -558,12 +574,13 @@
       "title": "App-Specific Skills",
       "summary": "Skills tied closely to specific local app codebases and their live product surfaces.",
       "path": "collections/app-specific-skills.txt",
-      "skill_count": 4,
+      "skill_count": 5,
       "skills": [
         "telebar",
         "flight-scout",
         "on-this-day-bar",
-        "vibe-bluetooth"
+        "vibe-bluetooth",
+        "wifi-watchtower"
       ]
     },
     {

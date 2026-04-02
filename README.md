@@ -27,6 +27,7 @@ Then use:
 codex-goated list
 codex-goated doctor
 codex-goated install network-studio
+codex-goated install wifi-watchtower
 codex-goated install minecraft-essentials
 codex-goated install deckdrop-studio
 codex-goated install clipboard-studio
@@ -98,7 +99,7 @@ Then restart Codex.
 
 - Fix the blocker first with `codex-goated doctor` or `workspace-doctor`
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
-- Build a utility with `network-studio`, `find-my-phone-studio`, or `clipboard-studio`
+- Build a utility with `network-studio`, `wifi-watchtower`, `find-my-phone-studio`, or `clipboard-studio`
 - Connect GitHub, scan a workspace folder for repos, track daily git gains, and measure a before-versus-now output climb with `gain-tracker`
 - Open a same-day historical briefing ritual with `on-this-day` or `on-this-day-bar`
 - Build a reusable market-reading archive with `trading-archive`
@@ -174,6 +175,7 @@ Collection:
 | <img src="skills/flight-scout/assets/flight-scout-small.svg" width="26" alt="Flight Scout" /><br/>[`flight-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/flight-scout) | Builds and runs the Flight Scout menu bar app | `flight-scout` |
 | <img src="skills/on-this-day-bar/assets/icon-small.svg" width="26" alt="On This Day Bar" /><br/>[`on-this-day-bar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day-bar) | Builds and runs the On This Day Bar macOS menu bar app | `on-this-day-bar` |
 | <img src="skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg" width="26" alt="VibeBluetooth" /><br/>[`vibe-bluetooth`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth) | Dev skill for the VibeWidget macOS app and widget | `vibe-bluetooth` |
+| <img src="skills/wifi-watchtower/assets/wifi-watchtower-small.svg" width="26" alt="WiFi Watchtower" /><br/>[`wifi-watchtower`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/wifi-watchtower) | Builds and runs the WiFi Watchtower macOS menu bar app | `wifi-watchtower` |
 
 ### Games and Minecraft
 

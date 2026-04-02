@@ -1,40 +1,38 @@
-# WiFi Watchtower Project Map
+# Network Studio Workspace Map
 
-Default workspace: use `apps/wifi-watchtower` when working inside this repository. Otherwise pass `--workspace /path/to/wifi-watchtower` to the runner.
+Default workspace: install into a user-chosen folder, usually `~/Network Studio`.
 
 ## Target
 
-- `WifiWatchtower`: macOS SwiftUI menu bar app with a dashboard window and `MenuBarExtra` entry point
+- Portable Network Studio workspace with a local watcher loop, dashboard output, and optional SwiftBar wrapper
 
 ## Main Files
 
-- `project.yml`: XcodeGen spec for the app and unit-test targets
-- `WifiWatchtowerApp/Info.plist`: app metadata for the menu bar utility
-- `WifiWatchtowerApp/Sources/App/WifiWatchtowerApp.swift`: app entry point, dashboard window, and menu bar scene
-- `WifiWatchtowerApp/Sources/App/WatchtowerModel.swift`: refresh loop, top-level app state, and dashboard handoff
-- `WifiWatchtowerApp/Sources/Models/NetworkSnapshot.swift`: trust-level enums, scoring models, and snapshot presentation helpers
-- `WifiWatchtowerApp/Sources/Services/WifiInspector.swift`: CoreWLAN capture, routing checks, nearby-network scoring, and recommendation logic
-- `WifiWatchtowerApp/Sources/Services/WifiTrustScorer.swift`: testable trust-scoring helper used by the inspector and unit tests
-- `WifiWatchtowerApp/Sources/Views/MenuBarView.swift`: compact menu bar panel
-- `WifiWatchtowerApp/Sources/Views/DashboardView.swift`: larger dashboard view for explanations and nearby-network context
-- `WifiWatchtowerApp/Tests/WifiTrustScorerTests.swift`: deterministic coverage for open-network avoidance and secure-hotspot scoring
+- `scripts/install_network_studio.py`: installs or refreshes the workspace template and optional SwiftBar wrapper
+- `assets/workspace/network-watch.sh`: continuous LAN watcher and CSV logger
+- `assets/workspace/swiftbar/network-monitor.1m.sh`: SwiftBar entrypoint that renders the menu bar snapshot
+- `assets/workspace/.swiftbar-support/open-network-studio.sh`: dashboard opener used after install
+- `assets/workspace/.swiftbar-support/refresh-network-studio.sh`: refresh helper that rebuilds the dashboard and menu output
+- `assets/workspace/.swiftbar-support/render-dashboard.py`: dashboard renderer for the installed workspace
+- `assets/workspace/.swiftbar-support/render-swiftbar-menu.py`: SwiftBar menu renderer for the installed workspace
+- `assets/workspace/.swiftbar-support/manual-rescan.sh`: helper for one-off refreshes
+- `assets/workspace/device-labels.json`: optional persistent labels preserved on update
 
-## Run And Build Notes
+## Run And Install Notes
 
-- Use the runner script first:
-  `bash scripts/run_wifi_watchtower.sh <command>`
-- If the app lives outside the current repo, use:
-  `bash scripts/run_wifi_watchtower.sh --workspace /path/to/wifi-watchtower <command>`
-- `generate` uses `xcodegen`.
-- `open` launches `WifiWatchtower.xcodeproj`.
-- `typecheck` runs `swiftc` against `WifiWatchtowerApp/Sources` for a fast source-level pass.
-- `build` uses `xcodebuild` with a local `.build-debug` derived-data folder.
-- `test` uses `xcodebuild test` against the `WifiWatchtowerTests` bundle.
-- `run` builds and opens `WifiWatchtower.app` from `.build-debug/Build/Products/Debug`.
+- Use the installer first:
+  `python3 scripts/install_network_studio.py <workspace>`
+- Add `--swiftbar-plugins-dir ~/SwiftBarPlugins` when you want a thin SwiftBar wrapper installed for the workspace.
+- After install, run:
+  `bash "<workspace>/.swiftbar-support/open-network-studio.sh"`
+- For a continuous watcher, run:
+  `bash "<workspace>/network-watch.sh"`
+- `network-watch.sh --once` performs a single scan and exits.
+- `network-watch.sh --interval 30 --resolve` enables a faster loop with hostname lookups.
 
 ## Constraints
 
-- Keep the app menu-bar-first and compact.
-- Preserve local-only Wi-Fi inspection and scoring. Do not add remote telemetry or account-bound sync by default.
-- Treat trust grades as guidance, not proof of compromise.
-- Keep current-network trust signals separate from nearby-network context so the UI stays honest.
+- Keep monitoring local-first and limited to networks the user owns or administers.
+- Treat the workspace as LAN presence monitoring, not deep packet inspection.
+- Recommend `brew install nmap` for more reliable discovery, but do not block on it.
+- Preserve `device-labels.json` and `logs/` contents on refresh so user state survives updates.

@@ -7,7 +7,7 @@ Machine-readable catalog:
 
 ## Snapshot
 
-- Total skills: `32`
+- Total skills: `33`
 - Total packs: `10`
 - Main pack folder: [`collections/`](https://github.com/Arnie016/codex-goated-skills/tree/main/collections)
 - Main install CLI: [`bin/codex-goated`](https://github.com/Arnie016/codex-goated-skills/blob/main/bin/codex-goated)
@@ -28,12 +28,12 @@ codex-goated audit
 
 Audit snapshot for April 2, 2026:
 
-- `32/32` skills include `SKILL.md`
-- `32/32` skills include `agents/openai.yaml`
-- `32/32` skills include a small SVG icon
-- `32/32` skills include a large SVG icon
+- `33/33` skills include `SKILL.md`
+- `33/33` skills include `agents/openai.yaml`
+- `33/33` skills include a small SVG icon
+- `33/33` skills include a large SVG icon
 - `10/10` pack files resolve to valid skill directories
-- `32/32` skills are covered by at least one pack
+- `33/33` skills are covered by at least one pack
 
 Run the live audit locally:
 
@@ -64,7 +64,7 @@ Continuous audit:
 | `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, lore pacing, merch, and risk review | 10 |
 | `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 10 |
 | `macos-utility-builders` | Mac utility planning and menu bar helper workflows | 3 |
-| `app-specific-skills` | Skills tied closely to live local app codebases | 4 |
+| `app-specific-skills` | Skills tied closely to live local app codebases | 5 |
 | `games-and-minecraft` | Minecraft hosting, operations, and skin tooling | 2 |
 | `creator-and-fandom-stack` | Creator brand strategy plus launch-ready packaging support | 12 |
 | `utility-builder-stack` | A broader Mac utility-building stack across workflow and app surfaces | 8 |
@@ -115,6 +115,7 @@ Continuous audit:
 - [`flight-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/flight-scout): Build and run the Flight Scout macOS menu bar app.
 - [`on-this-day-bar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day-bar): Build and run the On This Day Bar macOS menu bar app.
 - [`vibe-bluetooth`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth): Build, run, and troubleshoot the VibeWidget macOS app and widget.
+- [`wifi-watchtower`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/wifi-watchtower): Build and run the WiFi Watchtower macOS menu bar app.
 
 ### Games and Minecraft
 

@@ -1,0 +1,7 @@
+interface:
+  display_name: "WiFi Watchtower"
+  short_description: "Run and refine the WiFi Watchtower menu bar app"
+  icon_small: "./assets/wifi-watchtower-small.svg"
+  icon_large: "./assets/wifi-watchtower-large.svg"
+  brand_color: "#0EA5E9"
+  default_prompt: "Use $wifi-watchtower to work on the WiFi Watchtower macOS menu bar app in apps/wifi-watchtower: inspect the workspace, run doctor, and validate build or test changes around trust scoring, nearby Wi-Fi context, and the menu bar dashboard."
