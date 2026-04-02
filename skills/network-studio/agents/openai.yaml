@@ -4,4 +4,4 @@ interface:
   icon_small: "./assets/network-studio-small.svg"
   icon_large: "./assets/network-studio-large.svg"
   brand_color: "#0F8ED8"
-  default_prompt: "Use $network-studio to install or update a local Network Studio workspace, wire SwiftBar if needed, or work on the bundled WiFi Watchtower macOS menu bar app with repo-native doctor and build flows."
+  default_prompt: "Use $network-studio to install or update a local Network Studio workspace, wire SwiftBar if needed, or work on the bundled WiFi Watchtower macOS menu bar app with repo-native doctor, typecheck, and build flows."

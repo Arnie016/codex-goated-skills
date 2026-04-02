@@ -25,6 +25,7 @@ When this repo contains `apps/wifi-watchtower`, use that workspace first for nat
    - run `bash scripts/run_wifi_watchtower.sh doctor`
    - run `bash scripts/run_wifi_watchtower.sh inspect`
    - use `bash scripts/run_wifi_watchtower.sh generate` after changing `apps/wifi-watchtower/project.yml`
+   - use `bash scripts/run_wifi_watchtower.sh typecheck` for a lightweight Swift source pass
    - use `bash scripts/run_wifi_watchtower.sh build` after model, CoreWLAN, scoring, or view changes
    - use `bash scripts/run_wifi_watchtower.sh test` after logic or scoring changes when Xcode is ready
    - use `bash scripts/run_wifi_watchtower.sh run` when you need the menu bar app relaunched from the local build
@@ -46,6 +47,7 @@ When this repo contains `apps/wifi-watchtower`, use that workspace first for nat
 - If the task changes project settings or app metadata, inspect `apps/wifi-watchtower/project.yml` and `apps/wifi-watchtower/WifiWatchtowerApp/Info.plist` first.
 - Keep `WiFi Watchtower` compact and menu-bar-first.
 - Prefer the local runner before typing `xcodegen` or `xcodebuild` manually.
+- Run `typecheck` after changes to `WifiWatchtowerApp/Sources` when you want the fastest local sanity pass.
 - Run `build` after changes to:
   - CoreWLAN capture logic
   - network scoring or issue explanations
@@ -93,6 +95,6 @@ When this repo contains `apps/wifi-watchtower`, use that workspace first for nat
 ## Resources
 
 - `scripts/install_network_studio.py`: copies the portable workspace, preserves user state, and optionally installs a SwiftBar wrapper.
-- `scripts/run_wifi_watchtower.sh`: local doctor, inspect, generate, open, build, test, and run helper for `apps/wifi-watchtower`.
+- `scripts/run_wifi_watchtower.sh`: local doctor, inspect, generate, open, typecheck, build, test, and run helper for `apps/wifi-watchtower`.
 - `references/project-map.md`: default workspace, main files, and validation notes for the bundled native app.
 - `assets/workspace/`: bundled template for the watcher, dashboard builder, and SwiftBar plugin. Read or patch these files only when setup or behavior needs to change.

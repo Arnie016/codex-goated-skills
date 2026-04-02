@@ -27,6 +27,7 @@ Default workspace: use `apps/wifi-watchtower` when working inside this repositor
   `bash scripts/run_wifi_watchtower.sh --workspace /path/to/wifi-watchtower <command>`
 - `generate` uses `xcodegen`.
 - `open` launches `WifiWatchtower.xcodeproj`.
+- `typecheck` runs `swiftc` against `WifiWatchtowerApp/Sources` for a fast source-level pass.
 - `build` uses `xcodebuild` with a local `.build-debug` derived-data folder.
 - `test` uses `xcodebuild test` against the `WifiWatchtowerTests` bundle.
 - `run` builds and opens `WifiWatchtower.app` from `.build-debug/Build/Products/Debug`.

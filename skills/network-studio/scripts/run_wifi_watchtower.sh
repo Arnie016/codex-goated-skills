@@ -20,12 +20,14 @@ Commands:
   inspect    Print the main WiFi Watchtower files for quick orientation
   generate   Regenerate the Xcode project from project.yml
   open       Generate if needed, then open the Xcode project
+  typecheck  Run a lightweight Swift source check
   build      Build the WifiWatchtower scheme with xcodebuild
   test       Run the WifiWatchtower unit tests
   run        Build and relaunch the WiFi Watchtower menu bar app
 
 Examples:
   bash run_wifi_watchtower.sh doctor
+  bash run_wifi_watchtower.sh typecheck
   bash run_wifi_watchtower.sh --workspace /path/to/wifi-watchtower build
 EOF
 }
@@ -161,6 +163,7 @@ doctor() {
   fi
   printf 'xcodegen: %s\n' "$(command -v xcodegen || echo missing)"
   printf 'swiftc: %s\n' "$(command -v swiftc || echo missing)"
+  printf 'xcrun: %s\n' "$(command -v xcrun || echo missing)"
   printf 'xcodebuild: %s\n' "$(command -v xcodebuild || echo missing)"
   printf 'Xcode readiness: '
   print_xcode_status
@@ -214,6 +217,32 @@ build_project() {
       -destination 'platform=macOS' \
       build
   )
+}
+
+typecheck_project() {
+  require_tool swiftc
+  require_tool xcrun
+  ensure_workspace
+
+  local sdkroot cache_dir
+  local sources=()
+
+  sdkroot="$(xcrun --sdk macosx --show-sdk-path)"
+  cache_dir="$(mktemp -d /tmp/wifi-watchtower-typecheck-XXXXXX)"
+  trap 'rm -rf "$cache_dir"' RETURN
+
+  while IFS= read -r file; do
+    sources+=("$file")
+  done < <(find "$WORKSPACE/WifiWatchtowerApp/Sources" -name '*.swift' | sort)
+
+  [[ ${#sources[@]} -gt 0 ]] || die "No Swift sources found in $WORKSPACE/WifiWatchtowerApp/Sources"
+
+  swiftc -typecheck \
+    -sdk "$sdkroot" \
+    -target arm64-apple-macosx15.0 \
+    -module-name WifiWatchtower \
+    -module-cache-path "$cache_dir" \
+    "${sources[@]}"
 }
 
 test_project() {
@@ -275,6 +304,9 @@ case "$COMMAND" in
     ;;
   build)
     build_project
+    ;;
+  typecheck)
+    typecheck_project
     ;;
   test)
     test_project
