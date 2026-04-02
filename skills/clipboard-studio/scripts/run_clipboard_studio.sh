@@ -124,7 +124,6 @@ generate_project() {
 }
 
 doctor() {
-  require_tools
   ensure_workspace
   printf 'Workspace: %s\n' "$WORKSPACE"
   printf 'Project spec: %s\n' "$WORKSPACE/$PROJECT_SPEC"
@@ -153,6 +152,8 @@ doctor() {
   else
     printf 'missing\n'
   fi
+  printf 'xcodegen: %s\n' "$(command -v xcodegen || echo missing)"
+  printf 'swiftc: %s\n' "$(command -v swiftc || echo missing)"
   printf 'Xcode readiness: '
   print_xcode_status
 }

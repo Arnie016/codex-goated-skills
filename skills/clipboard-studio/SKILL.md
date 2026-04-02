@@ -12,7 +12,7 @@ Instead of manually doing Cmd+C, switching apps, and Cmd+V over and over, the go
 ## Quick Start
 
 1. If this repo contains `apps/clipboard-studio`, use that workspace first.
-2. Run `bash scripts/run_clipboard_studio.sh doctor`.
+2. Run `bash scripts/run_clipboard_studio.sh doctor` to check workspace shape and tool readiness without failing on missing build tools.
 3. Run `bash scripts/run_clipboard_studio.sh inspect`.
 4. Use `bash scripts/run_clipboard_studio.sh generate` after changing `project.yml`.
 5. Use `bash scripts/run_clipboard_studio.sh typecheck` for a fast source-level sanity pass before the full test bundle.
