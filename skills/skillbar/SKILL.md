@@ -15,10 +15,12 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 2. Use `bash scripts/run_skillbar.sh inspect` before editing so the app model, services, tests, and CLI entrypoint stay visible.
 3. Use `bash scripts/run_skillbar.sh smoke-install skillbar` to verify one real install path against a temporary destination.
 4. Use `bash scripts/run_skillbar.sh smoke-update skillbar` to verify the overwrite path after update wiring changes.
-5. Use `bash scripts/run_skillbar.sh generate` after changing `project.yml`.
-6. Use `bash scripts/run_skillbar.sh typecheck` for a fast source-level sanity pass before a full build.
-7. Use `bash scripts/run_skillbar.sh test` once Xcode is ready.
-8. Use `bash scripts/run_skillbar.sh run` after UI changes so the menu bar app relaunches from the local build output.
+5. Use `bash scripts/run_skillbar.sh catalog-check` when you touch skill or pack metadata and need to verify the generated catalog is current.
+6. Use `bash scripts/run_skillbar.sh audit` for the full repo skill and pack integrity sweep.
+7. Use `bash scripts/run_skillbar.sh generate` after changing `project.yml`.
+8. Use `bash scripts/run_skillbar.sh typecheck` for a fast source-level sanity pass before a full build.
+9. Use `bash scripts/run_skillbar.sh test` once Xcode is ready.
+10. Use `bash scripts/run_skillbar.sh run` after UI changes so the menu bar app relaunches from the local build output.
 
 ## Workflow
 
@@ -28,6 +30,7 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 - If the task changes project settings or app metadata, inspect `apps/skillbar/project.yml` and `apps/skillbar/SkillBarApp/Info.plist` first.
 - Treat `skills/*` in the repo as the catalog source of truth.
 - Treat `~/.codex/skills` as the installed-state source of truth unless the user picks another destination.
+- Treat `bin/codex-goated catalog check` and `bin/codex-goated audit` as the repo-health checks for skill metadata and pack integrity.
 
 ### Product Boundary
 
@@ -51,6 +54,7 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 - Keep preset bundles static and understandable; they should not become a second catalog system.
 - If you touch install flows, run `smoke-install` before calling the work complete.
 - If you touch update flows, run `smoke-update` to prove overwrite behavior through `bin/codex-goated`.
+- If you touch skill or pack metadata, run `catalog-check`; if you touch repo-wide catalog plumbing, run `audit` too.
 - Use `typecheck` when you only need a fast source-level sanity check before a full build.
 
 ### Validation
@@ -59,6 +63,8 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 - Run `doctor` first if the machine may be missing Xcode setup.
 - Run `smoke-install` for at least one skill when the work touches install wiring, CLI integration, or repo-root resolution.
 - Run `smoke-update` when the work touches update wiring, overwrite behavior, or refresh semantics.
+- Run `catalog-check` when the work touches skill metadata, pack membership, or generated catalog freshness.
+- Run `audit` when the work touches repo-wide catalog plumbing or you want the stronger integrity sweep.
 - Run `typecheck` when you want the fastest local check of the app sources or when Xcode is not fully ready.
 - Run `test` before calling the work complete when Xcode is ready. If Xcode is blocked, report the exact blocker from the runner.
 
@@ -70,6 +76,6 @@ If the current repo contains `apps/skillbar`, use that workspace by default. Oth
 
 ## Resources
 
-- `scripts/run_skillbar.sh`: local doctor, inspect, generate, open, build, typecheck, test, run, smoke-install, and smoke-update helper for the SkillBar workspace.
+- `scripts/run_skillbar.sh`: local doctor, inspect, generate, open, build, typecheck, test, run, smoke-install, smoke-update, catalog-check, and audit helper for the SkillBar workspace.
 - `references/project-map.md`: target map, key files, and validation expectations.
 - `../../bin/codex-goated`: the CLI that SkillBar should continue delegating install and update work to.

@@ -24,6 +24,8 @@ Commands:
   typecheck                 Run a lightweight Swift source check
   test                      Run the SkillBar unit tests
   run                       Build and relaunch the SkillBar menu bar app
+  catalog-check             Verify the generated catalog index is current
+  audit                     Run the repo-wide skill and pack integrity audit
   smoke-install [skill-id]  Install one skill into a temporary destination via bin/codex-goated
   smoke-update [skill-id]    Refresh one installed skill through a temporary overwrite path
 
@@ -388,6 +390,32 @@ smoke_update() {
   rm -rf "$temp_dir"
 }
 
+catalog_check() {
+  ensure_workspace
+
+  local repo_root cli_path
+  repo_root="$(resolve_repo_root)"
+  cli_path="$repo_root/bin/codex-goated"
+  [[ -x "$cli_path" ]] || die "Missing executable CLI at $cli_path"
+
+  if ! "$cli_path" catalog check --repo-dir "$repo_root"; then
+    die "Catalog check failed for $repo_root"
+  fi
+}
+
+audit_repo() {
+  ensure_workspace
+
+  local repo_root cli_path
+  repo_root="$(resolve_repo_root)"
+  cli_path="$repo_root/bin/codex-goated"
+  [[ -x "$cli_path" ]] || die "Missing executable CLI at $cli_path"
+
+  if ! "$cli_path" audit --repo-dir "$repo_root"; then
+    die "Repo audit failed for $repo_root"
+  fi
+}
+
 COMMAND=""
 COMMAND_ARG=""
 
@@ -446,6 +474,12 @@ case "$COMMAND" in
     ;;
   smoke-update)
     smoke_update "$COMMAND_ARG"
+    ;;
+  catalog-check)
+    catalog_check
+    ;;
+  audit)
+    audit_repo
     ;;
   *)
     usage

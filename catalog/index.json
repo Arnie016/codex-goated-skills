@@ -462,7 +462,7 @@
       "openai_yaml": "skills/skillbar/agents/openai.yaml",
       "icon_small": "./assets/skillbar-small.svg",
       "icon_large": "./assets/skillbar-large.svg",
-      "default_prompt": "Use $skillbar to work on SkillBar, the macOS menu bar manager for codex-goated-skills, including the catalog UI, preset bundles, metadata parsing, and install or update flows.",
+      "default_prompt": "Use $skillbar to work on SkillBar, the macOS menu bar manager for codex-goated-skills, including the catalog UI, preset bundles, metadata parsing, install or update flows, and repo catalog or integrity checks.",
       "packs": [
         "productivity-and-workflow",
         "utility-builder-stack"

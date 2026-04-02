@@ -11,6 +11,7 @@
 - Read skill metadata from the local repo under `skills/*`
 - Read installed state from `~/.codex/skills` or a user-selected destination
 - Run `bin/codex-goated install` and `bin/codex-goated update` with explicit repo and destination paths
+- Run `bin/codex-goated catalog check` and `bin/codex-goated audit` for repo-health validation
 - Expose compact preset bundles that map to existing skills
 
 ## Main Files
@@ -44,6 +45,10 @@
   - prove one real install path through `bin/codex-goated`
 - `bash skills/skillbar/scripts/run_skillbar.sh smoke-update skillbar`
   - prove the overwrite path through `bin/codex-goated update`
+- `bash skills/skillbar/scripts/run_skillbar.sh catalog-check`
+  - confirm the generated catalog index is current
+- `bash skills/skillbar/scripts/run_skillbar.sh audit`
+  - run the repo-wide skill and pack integrity audit
 - `bash skills/skillbar/scripts/run_skillbar.sh test`
   - run the unit tests once Xcode is ready
 
