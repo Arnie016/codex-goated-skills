@@ -20,6 +20,7 @@ Commands:
   inspect    Print the main Phone Spotter files for quick orientation
   generate   Regenerate the Xcode project from project.yml
   open       Generate if needed, then open the Xcode project
+  typecheck  Run a lightweight Swift source check
   build      Build the PhoneSpotter scheme with xcodebuild
   test       Run the PhoneSpotter unit tests
   run        Build and relaunch the Phone Spotter menu bar app
@@ -33,6 +34,10 @@ EOF
 die() {
   printf 'Error: %s\n' "$*" >&2
   exit 1
+}
+
+require_tool() {
+  command -v "$1" >/dev/null 2>&1 || die "$1 is required for this command."
 }
 
 guess_workspace() {
@@ -141,6 +146,12 @@ doctor() {
   else
     printf 'no\n'
   fi
+  printf 'xcrun: '
+  if command -v xcrun >/dev/null 2>&1; then
+    printf '%s\n' "$(xcrun --version 2>&1 | head -n 1)"
+  else
+    printf 'missing\n'
+  fi
   printf 'Xcode readiness: '
   print_xcode_status
 }
@@ -185,6 +196,33 @@ build_project() {
       -destination 'platform=macOS' \
       build
   )
+}
+
+typecheck_project() {
+  require_tool swiftc
+  require_tool xcrun
+  ensure_workspace
+
+  local sdkroot cache_dir
+  local sources=()
+
+  sdkroot="$(xcrun --sdk macosx --show-sdk-path)"
+  cache_dir="$(mktemp -d /tmp/phone-spotter-typecheck-XXXXXX)"
+  trap 'rm -rf "$cache_dir"' RETURN
+
+  while IFS= read -r file; do
+    sources+=("$file")
+  done < <(find "$WORKSPACE/PhoneSpotterApp/Sources" -name '*.swift' | sort)
+
+  [[ ${#sources[@]} -gt 0 ]] || die "No Swift sources found in $WORKSPACE/PhoneSpotterApp/Sources"
+
+  swiftc -typecheck \
+    -sdk "$sdkroot" \
+    -target arm64-apple-macosx15.0 \
+    -D DEBUG \
+    -module-cache-path "$cache_dir" \
+    -module-name PhoneSpotter \
+    "${sources[@]}"
 }
 
 test_project() {
@@ -242,6 +280,9 @@ case "$COMMAND" in
     ;;
   open)
     open_project
+    ;;
+  typecheck)
+    typecheck_project
     ;;
   build)
     build_project

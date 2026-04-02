@@ -15,20 +15,21 @@ Default product shape: an always-available macOS menu bar utility that helps the
 2. Run `bash scripts/run_phone_spotter.sh doctor`.
 3. Run `bash scripts/run_phone_spotter.sh inspect`.
 4. Use `bash scripts/run_phone_spotter.sh generate` after changing `project.yml`.
-5. Use `bash scripts/run_phone_spotter.sh test` after model, pairing, or UI changes.
-6. Use `bash scripts/run_phone_spotter.sh run` when you need the local menu bar build relaunched.
-7. When the request is still exploratory, run `python3 scripts/find_my_phone_brief.py --goal "<user request>"` to normalize the product brief.
-8. Default to a menu bar extra with these actions:
+5. Use `bash scripts/run_phone_spotter.sh typecheck` for a fast source-level sanity pass before a full build.
+6. Use `bash scripts/run_phone_spotter.sh test` after model, pairing, or UI changes.
+7. Use `bash scripts/run_phone_spotter.sh run` when you need the local menu bar build relaunched.
+8. When the request is still exploratory, run `python3 scripts/find_my_phone_brief.py --goal "<user request>"` to normalize the product brief.
+9. Default to a menu bar extra with these actions:
    - `Locate Phone`
    - `Ring Phone`
    - `Open Provider`
    - `Copy last known location`
    - `Quit`
-9. Be explicit about capability boundaries:
+10. Be explicit about capability boundaries:
    - do not promise a public Find My control API unless the current Apple docs prove one exists
    - do not claim "exact" coordinates beyond what Apple's own surface provides
    - keep Apple ID credentials in Apple-owned surfaces when possible
-10. Only scaffold a new app when the bundled `Phone Spotter` workspace is missing or clearly not a fit.
+11. Only scaffold a new app when the bundled `Phone Spotter` workspace is missing or clearly not a fit.
 
 ## Workflow
 
@@ -51,6 +52,7 @@ Default product shape: an always-available macOS menu bar utility that helps the
   - no covert tracking or silent background surveillance flows
 - Prefer the local runner script before typing `xcodegen` or `xcodebuild` manually.
 - If `doctor` reports Xcode is not ready, stop and use the command it prints before trying `build`, `test`, or `run`.
+- Use `typecheck` when you want the fastest local validation of the Swift sources without waiting for a full build.
 
 ### Build The Brief
 

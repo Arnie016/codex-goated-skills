@@ -26,6 +26,7 @@ Default workspace: use `apps/phone-spotter` when working inside this repository.
   `bash scripts/run_phone_spotter.sh --workspace /path/to/phone-spotter <command>`
 - `generate` uses `xcodegen`.
 - `open` launches `PhoneSpotter.xcodeproj`.
+- `typecheck` runs a fast `swiftc -typecheck` pass against `PhoneSpotterApp/Sources`.
 - `build` and `test` use `xcodebuild` with a local `.build-debug` derived-data folder.
 - `run` builds and opens `PhoneSpotter.app` from `.build-debug/Build/Products/Debug`.
 
