@@ -38,6 +38,8 @@
   - confirm workspace shape, CLI presence, and Xcode readiness
 - `bash skills/skillbar/scripts/run_skillbar.sh inspect`
   - print the main app files before editing
+- `bash skills/skillbar/scripts/run_skillbar.sh typecheck`
+  - run a fast source-only sanity check before a full build
 - `bash skills/skillbar/scripts/run_skillbar.sh smoke-install skillbar`
   - prove one real install path through `bin/codex-goated`
 - `bash skills/skillbar/scripts/run_skillbar.sh smoke-update skillbar`
