@@ -1,6 +1,6 @@
 ---
 name: find-my-phone-studio
-description: Build, run, troubleshoot, or refine a realistic Mac phone-recovery workflow, especially the bundled `apps/phone-spotter` menu bar app. Use when Codex needs a repo-native path for locate, ring, pairing, directions, or provider handoff on iPhone or Android without inventing unsupported tracking APIs.
+description: Build, run, troubleshoot, or refine a realistic Mac phone-recovery workflow, especially the bundled `apps/phone-spotter` menu bar app. Use when Codex needs a repo-native path for locate, ring, call, pairing, directions, or provider handoff on iPhone or Android without inventing unsupported tracking APIs.
 ---
 
 # Find My Phone Studio
@@ -22,7 +22,9 @@ Default product shape: an always-available macOS menu bar utility that helps the
 9. Default to a menu bar extra with these actions:
    - `Locate Phone`
    - `Ring Phone`
+   - `Call Phone`
    - `Open Provider`
+   - `Open Directions`
    - `Copy last known location`
    - `Quit`
 10. Be explicit about capability boundaries:
@@ -60,14 +62,14 @@ Run the brief script first. Useful commands:
 
 ```bash
 python3 scripts/find_my_phone_brief.py --goal "make a Mac menu bar app to find and ring my iPhone"
-python3 scripts/find_my_phone_brief.py --goal "open my phone's location fast from the menu bar" --surface menu-bar-app --device iPhone
-python3 scripts/find_my_phone_brief.py --goal "ring my phone from icloud web" --surface browser-helper --action ring
+python3 scripts/find_my_phone_brief.py --goal "call my phone from the menu bar" --surface menu-bar-app --action call
+python3 scripts/find_my_phone_brief.py --goal "open the provider flow for my phone" --surface menu-bar-app --action open-provider
 ```
 
 The brief should capture:
 
 - device type and likely Apple surface
-- primary action: `locate`, `ring`, `directions`, or `nearby`
+- primary action: `locate`, `ring`, `call`, `open-provider`, `directions`, or `nearby`
 - requested shell: menu bar app, popover, settings window, or no app shell
 - trust boundary for sign-in and automation
 - fallback path if the preferred action is not scriptable
@@ -89,7 +91,9 @@ The brief should capture:
   - latest device status
   - open location
   - ring device
+  - call the phone when a number is stored
   - hand off to directions
+  - open the provider surface
 - Prefer a small popover for status and a settings window for account, automation, and fallback options.
 - Treat launch-at-login as optional.
 - Always include a clear quit path in the UI.
@@ -134,6 +138,7 @@ The brief should capture:
 - The fastest user path to:
   - see phone location
   - ring the phone
+  - call the phone when allowed
   - hand off to directions when possible
 
 ## Resources
