@@ -1,6 +1,6 @@
 ---
 name: repo-launch
-description: Scaffold and polish a GitHub-ready project repository. Use when Codex needs to turn an idea or local project into a clean shareable repo with essentials like a README, license, install steps, contribution basics, and a simple launch-ready structure.
+description: Audit and polish a GitHub-ready repository. Use when Codex needs to classify a rough project, choose the right README shape, and add only the minimum launch essentials needed for a clean shareable repo.
 ---
 
 # Repo Launch
@@ -9,7 +9,7 @@ Use this skill when a project needs to go from loose files or a rough prototype 
 
 ## Quick Start
 
-1. Inspect the current project shape before adding files or changing structure.
+1. Run `python3 scripts/repo_launch_audit.py --repo-dir .` before editing so the repo shape and launch gaps are explicit.
 2. Choose a repository mode first: app repo, skill catalog, library, template, or multi-project collection.
 3. Create only the minimum repo essentials the project actually needs.
 4. Prefer a short, scannable `README.md` with one clear install or usage path.
@@ -17,6 +17,12 @@ Use this skill when a project needs to go from loose files or a rough prototype 
 6. Keep names, commands, and folder structure simple enough for first-time visitors.
 
 ## Workflow
+
+### Repo Audit
+
+- Use the audit helper to classify the repo before changing files.
+- If the repo is a skill catalog or multi-project collection, keep the top-level README compact and avoid repeating shared setup across subprojects.
+- If the repo is a single app, make the install or run path obvious on the first screen.
 
 ### Repository Basics
 
@@ -35,6 +41,7 @@ Use this skill when a project needs to go from loose files or a rough prototype 
 
 ### Required Deliverables
 
+- A classified repo mode and gap list from `python3 scripts/repo_launch_audit.py --repo-dir .`.
 - A top-level `README.md` that answers:
   - what this is
   - how to run or install it
@@ -60,6 +67,7 @@ Use this skill when a project needs to go from loose files or a rough prototype 
 
 ## Resources
 
+- `scripts/repo_launch_audit.py`: deterministic repo-shape audit helper for rough projects, skill catalogs, and multi-project collections.
 - `agents/openai.yaml`: UI metadata and default invocation prompt.
 - `assets/`: branded icons for repo listings and skill chips.
-- `references/repo-patterns.md`: lightweight patterns for app repos, catalog repos, templates, and libraries.
+- `references/repo-patterns.md`: lightweight patterns for app repos, catalog repos, multi-project collections, templates, and libraries.
