@@ -9,7 +9,7 @@ Use this skill when a project needs to go from loose files or a rough prototype 
 
 ## Quick Start
 
-1. Run `python3 scripts/repo_launch_audit.py --repo-dir .` before editing so the repo shape and launch gaps are explicit.
+1. Run `python3 scripts/repo_launch_audit.py --repo-dir .` before editing so the repo shape, app-to-skill overlap, runner command coverage, and launch gaps are explicit.
 2. Choose a repository mode first: app repo, skill catalog, library, template, or multi-project collection.
 3. Create only the minimum repo essentials the project actually needs.
 4. Prefer a short, scannable `README.md` with one clear install or usage path.
@@ -21,6 +21,7 @@ Use this skill when a project needs to go from loose files or a rough prototype 
 ### Repo Audit
 
 - Use the audit helper to classify the repo before changing files.
+- Read the overlap map before editing so exact app pairs, near-equivalent skill names, and shared runner command families are obvious.
 - If the repo is a skill catalog or multi-project collection, keep the top-level README compact and avoid repeating shared setup across subprojects.
 - If the repo is a single app, make the install or run path obvious on the first screen.
 
@@ -41,7 +42,7 @@ Use this skill when a project needs to go from loose files or a rough prototype 
 
 ### Required Deliverables
 
-- A classified repo mode and gap list from `python3 scripts/repo_launch_audit.py --repo-dir .`.
+- A classified repo mode, gap list, and overlap map from `python3 scripts/repo_launch_audit.py --repo-dir .`.
 - A top-level `README.md` that answers:
   - what this is
   - how to run or install it
@@ -67,7 +68,7 @@ Use this skill when a project needs to go from loose files or a rough prototype 
 
 ## Resources
 
-- `scripts/repo_launch_audit.py`: deterministic repo-shape audit helper for rough projects, skill catalogs, and multi-project collections.
+- `scripts/repo_launch_audit.py`: deterministic repo-shape audit helper with app/skill overlap and runner command inventory for rough projects, skill catalogs, and multi-project collections.
 - `agents/openai.yaml`: UI metadata and default invocation prompt.
 - `assets/`: branded icons for repo listings and skill chips.
 - `references/repo-patterns.md`: lightweight patterns for app repos, catalog repos, multi-project collections, templates, and libraries.
