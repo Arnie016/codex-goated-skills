@@ -16,6 +16,7 @@ Use this skill for the VibeWidget app workspace. If the current repo contains `a
 5. Use `bash scripts/run_vibe_bluetooth.sh typecheck` for a lightweight local sanity pass.
 6. Use `bash scripts/run_vibe_bluetooth.sh test` after core, widget, parser, or shared-state changes.
 7. Use `bash scripts/run_vibe_bluetooth.sh build` only after the Xcode license has been accepted on the machine.
+8. Use `bash scripts/run_vibe_bluetooth.sh run` when you need the built app relaunched from the local build output.
 
 ## Workflow
 
@@ -30,6 +31,7 @@ Use this skill for the VibeWidget app workspace. If the current repo contains `a
 - Prefer the local runner script before manually typing `xcodegen` or `xcodebuild`.
 - If `doctor` reports the Xcode license is not accepted, stop and tell the user to run `sudo xcodebuild -license`.
 - Use `test` after changes to `VibeWidgetCore`, widget intents, or app orchestration when you want the repo's unit coverage before a full build.
+- Use `run` after app UI or launch-path changes so you can verify the relaunch path from the local build output.
 - If `generate` succeeds but `build` fails only under Command Line Tools, switch to full Xcode and rerun.
 
 ### Editing Guidance

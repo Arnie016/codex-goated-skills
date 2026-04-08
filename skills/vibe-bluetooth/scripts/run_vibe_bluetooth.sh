@@ -7,6 +7,7 @@ XCODE_DIR="/Applications/Xcode.app/Contents/Developer"
 PROJECT_NAME="VibeWidget.xcodeproj"
 PROJECT_SPEC="project.yml"
 SCHEME="VibeWidget"
+APP_BUNDLE=".build-debug/Build/Products/Debug/VibeWidget.app"
 
 usage() {
   cat <<'EOF'
@@ -21,6 +22,7 @@ Commands:
   build      Build the VibeWidget scheme with xcodebuild
   test       Run the VibeWidgetCoreTests unit tests
   typecheck  Run lightweight local Swift type checks
+  run        Build and relaunch the VibeWidget menu bar app
 
 Examples:
   bash run_vibe_bluetooth.sh doctor
@@ -172,6 +174,21 @@ build_project() {
   )
 }
 
+run_app() {
+  build_project
+  local app_binary="$WORKSPACE/$APP_BUNDLE/Contents/MacOS/VibeWidget"
+
+  pkill -f "$app_binary" || true
+
+  if open "$WORKSPACE/$APP_BUNDLE"; then
+    return
+  fi
+
+  printf 'Launch Services refused the bundle; starting the app binary directly.\n'
+  [[ -x "$app_binary" ]] || die "Built app binary not found: $app_binary"
+  nohup "$app_binary" >/dev/null 2>&1 &
+}
+
 test_project() {
   require_tools
   ensure_workspace
@@ -256,6 +273,9 @@ case "$COMMAND" in
     ;;
   build)
     build_project
+    ;;
+  run)
+    run_app
     ;;
   test)
     test_project

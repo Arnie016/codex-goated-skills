@@ -31,6 +31,7 @@ Default workspace: use `apps/vibe-widget` when working inside this repository. O
 - `typecheck` uses the local SDK, a temporary core module, and a workspace-local module cache for a lightweight sanity pass.
 - `test` runs the `VibeWidgetCoreTests` bundle with `xcodebuild test` and unsigned local validation.
 - `build` uses the workspace-local `.build-debug` folder and unsigned local validation so it stays usable without a development certificate, while still requiring full Xcode.
+- `run` builds the app, stops any existing `VibeWidget` process, and opens the local app bundle from `.build-debug/Build/Products/Debug/VibeWidget.app`.
 
 ## Constraints
 
