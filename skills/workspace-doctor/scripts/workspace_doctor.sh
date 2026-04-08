@@ -462,6 +462,30 @@ print_repo_summary() {
   fi
 }
 
+print_repo_overlap_map() {
+  [[ "$WORKSPACE_TYPE" == "repo-root" ]] || return 0
+
+  section "Repo Overlap"
+
+  if ! command -v python3 >/dev/null 2>&1; then
+    item "python3 is missing, so the repo overlap map could not be generated."
+    return 0
+  fi
+
+  if [[ ! -f "$REPO_ROOT/scripts/repo_launch_audit.py" ]]; then
+    item "repo_launch_audit.py is missing, so the overlap map could not be generated."
+    return 0
+  fi
+
+  python3 "$REPO_ROOT/scripts/repo_launch_audit.py" --repo-dir "$REPO_ROOT" | awk '
+    /^Overlap map:$/ { printing = 1 }
+    /^README surface:$/ { printing = 0 }
+    /^Launch gaps:$/ { gaps = 1 }
+    /^Recommended next commands:$/ { gaps = 0 }
+    printing || gaps { print }
+  '
+}
+
 print_blockers() {
   local printed=0
 
@@ -615,6 +639,7 @@ fi
 
 if [[ -n "$REPO_ROOT" ]]; then
   print_repo_summary
+  print_repo_overlap_map
 fi
 
 print_blockers

@@ -17,7 +17,7 @@ It is especially useful in this repo when the task touches:
 ## Quick Start
 
 1. Run `bash scripts/workspace_doctor.sh` from the skill folder, or use `codex-goated doctor` from the repo root for the same audit path and catalog freshness check.
-2. From the repo root, expect the inventory to prioritize `apps/skillbar` as the local manager hub and to show each tracked app workspace with its paired runner command set.
+2. From the repo root, expect the inventory to prioritize `apps/skillbar` as the local manager hub, to show each tracked app workspace with its paired runner command set, and to print the app-to-skill overlap map plus runner command families.
 3. Reproduce the problem with the smallest safe command that reveals the issue.
 4. Check the local environment before blaming the code.
 5. Explain blockers in plain language and prefer direct fixes over abstract advice.
@@ -29,7 +29,7 @@ It is especially useful in this repo when the task touches:
 
 - Inspect the current workspace layout, package manager files, and toolchain markers.
 - Check versions, missing CLIs, missing secrets, and obvious environment mismatches.
-- Check generated catalog freshness when the workspace includes this repo's skills and packs; stale metadata can break discoverability even if the app still builds.
+- Check generated catalog freshness and the repo overlap map when the workspace includes this repo's skills and packs; stale metadata or hidden near-equivalents can both break discoverability even if the app still builds.
 - Prefer targeted commands that confirm one hypothesis at a time.
 - Start with `bash scripts/workspace_doctor.sh` or `codex-goated doctor` when you want a fast machine and repo inventory.
 - When the target is a macOS app workspace, let the script tell you whether Xcode, XcodeGen, and the paired repo runner are available before you try a full build.
@@ -39,7 +39,7 @@ It is especially useful in this repo when the task touches:
 - If the workspace lives inside this repo, prefer the local runner script the doctor output names.
 - For bundled app workspaces, the doctor output should surface the correct `run_*.sh` helper when one exists.
 - If a bundled app has `project.yml` but no paired runner, treat that as a real gap and use the fallback `xcodegen` plus `xcodebuild` commands the doctor script prints.
-- For repo-root checks, use the surfaced `bin/codex-goated`, `bin/codex-goated catalog check`, or `scripts/audit-catalog.sh` commands instead of ad hoc equivalents.
+- For repo-root checks, use the surfaced `bin/codex-goated`, `bin/codex-goated catalog check`, `scripts/audit-catalog.sh`, or overlap-map section instead of ad hoc equivalents.
 
 ### Fix Carefully
 
@@ -74,5 +74,6 @@ It is especially useful in this repo when the task touches:
 - `agents/openai.yaml`: UI metadata and default invocation prompt.
 - `assets/`: branded icons for repo listings and skill chips.
 - `scripts/workspace_doctor.sh`: repo-aware doctor script that checks workspace markers, toolchains, Xcode readiness, and local runner paths.
+- `scripts/repo_launch_audit.py`: repo launch audit helper that powers the overlap map and runner-family summary.
 - `../../bin/codex-goated`: repo-root command that exposes the same doctor flow as `codex-goated doctor`.
 - `references/diagnostic-order.md`: preferred order for narrowing environment and setup issues.
