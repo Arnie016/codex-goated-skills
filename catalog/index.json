@@ -162,15 +162,15 @@
     {
       "id": "find-my-phone-studio",
       "display_name": "Find My Phone Studio",
-      "description": "Build, run, troubleshoot, or refine a realistic Mac phone-recovery workflow, especially the bundled `apps/phone-spotter` menu bar app. Use when Codex needs a repo-native path for locate, ring, pairing, directions, or provider handoff on iPhone or Android without inventing unsupported tracking APIs.",
-      "short_description": "macOS helper for iPhone or Android locate and ring flows",
+      "description": "Build, run, troubleshoot, or refine a realistic Mac phone-recovery workflow, especially the bundled `apps/phone-spotter` menu bar app. Use when Codex needs a repo-native path for locate, ring, call, pairing, directions, or provider handoff on iPhone or Android without inventing unsupported tracking APIs.",
+      "short_description": "macOS helper for iPhone or Android locate, ring, call, and handoff flows",
       "brand_color": "#3B82F6",
       "path": "skills/find-my-phone-studio",
       "skill_file": "skills/find-my-phone-studio/SKILL.md",
       "openai_yaml": "skills/find-my-phone-studio/agents/openai.yaml",
       "icon_small": "./assets/find-my-phone-studio-small.svg",
       "icon_large": "./assets/find-my-phone-studio-large.svg",
-      "default_prompt": "Use $find-my-phone-studio to design or build a realistic macOS menu bar app or helper that helps me find my iPhone or Android phone, open its location fast, trigger a ring, and include a clear Quit action.",
+      "default_prompt": "Use $find-my-phone-studio to design or build a realistic macOS menu bar app or helper that helps me find my iPhone or Android phone, open its location fast, ring it, call it when a number is stored, hand off to provider or directions flows, and include a clear Quit action.",
       "packs": [
         "macos-utility-builders",
         "utility-builder-stack"
@@ -402,7 +402,7 @@
     {
       "id": "repo-launch",
       "display_name": "Repo Launch",
-      "description": "Scaffold and polish a GitHub-ready project repository. Use when Codex needs to turn an idea or local project into a clean shareable repo with essentials like a README, license, install steps, contribution basics, and a simple launch-ready structure.",
+      "description": "Audit and polish a GitHub-ready repository. Use when Codex needs to classify a rough project, choose the right README shape, and add only the minimum launch essentials needed for a clean shareable repo.",
       "short_description": "Turn a rough project into a clean public repo",
       "brand_color": "#2563EB",
       "path": "skills/repo-launch",
@@ -410,7 +410,7 @@
       "openai_yaml": "skills/repo-launch/agents/openai.yaml",
       "icon_small": "./assets/repo-launch-small.svg",
       "icon_large": "./assets/repo-launch-large.svg",
-      "default_prompt": "Use $repo-launch to audit this project and turn it into a clean GitHub-ready repository with a sharp README, license, and simple start path.",
+      "default_prompt": "Use $repo-launch to audit this repo shape first, then add only the minimum README, license, and start-path polish needed to make it GitHub-ready.",
       "packs": [
         "launch-and-distribution"
       ]
