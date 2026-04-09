@@ -107,6 +107,8 @@ MACOS_ICON_BARS_TRACKING=0 bash <(curl -fsSL https://raw.githubusercontent.com/A
 ./scripts/show_macos_icon_bars_metrics.sh
 ```
 
+- Public repo tracker page: [`MACOS_ICON_BARS_METRICS.md`](https://github.com/Arnie016/codex-goated-skills/blob/codex/macos-icon-bars-plugin/MACOS_ICON_BARS_METRICS.md)
+
 ## Skills vs Apps
 
 - `skills/` are installable Codex skill packages
