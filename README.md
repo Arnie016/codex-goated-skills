@@ -82,6 +82,14 @@ cd codex-goated-skills
 
 That installs the `macOS Icon Bars` plugin into `~/plugins/macos-icon-bars`, registers it in `~/.agents/plugins/marketplace.json`, and makes this repo's bundled skills available through one Codex plugin.
 
+One-command branch installer:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/codex/macos-icon-bars-plugin/scripts/install_macos_icon_bars_from_github.sh)
+```
+
+After install, fully quit and reopen Codex, then ask: `What can macOS Icon Bars do?`
+
 ## Skills vs Apps
 
 - `skills/` are installable Codex skill packages
