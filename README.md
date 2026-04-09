@@ -70,6 +70,18 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills
 
 Then restart Codex.
 
+## Install the Codex plugin
+
+Clone the repo, run the plugin installer, then reopen Codex:
+
+```bash
+git clone https://github.com/Arnie016/codex-goated-skills.git
+cd codex-goated-skills
+./scripts/install_macos_icon_bars.sh
+```
+
+That installs the `macOS Icon Bars` plugin into `~/plugins/macos-icon-bars`, registers it in `~/.agents/plugins/marketplace.json`, and makes this repo's bundled skills available through one Codex plugin.
+
 ## Skills vs Apps
 
 - `skills/` are installable Codex skill packages

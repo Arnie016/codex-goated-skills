@@ -1,0 +1,39 @@
+{
+  "name": "macos-icon-bars",
+  "version": "0.1.0",
+  "description": "Local Codex plugin for the macOS utility, menu bar, workflow, document, and creative skills in this repository.",
+  "author": {
+    "name": "Arnav",
+    "url": "https://github.com/Arnie016"
+  },
+  "homepage": "https://github.com/Arnie016/codex-goated-skills",
+  "repository": "https://github.com/Arnie016/codex-goated-skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "macOS",
+    "workflow",
+    "menu-bar",
+    "utility"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "macOS Icon Bars",
+    "shortDescription": "One Codex plugin that exposes this repo's macOS and workflow skills.",
+    "longDescription": "Adds the repository's bundled macOS utilities, menu bar ideas, clipboard flows, docs helpers, network tools, and creative workflow skills to Codex through one local plugin install.",
+    "developerName": "Arnav",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/Arnie016/codex-goated-skills",
+    "defaultPrompt": [
+      "What can macOS Icon Bars do?",
+      "I do not know the skill name. Help me pick the right tool for this task.",
+      "Show me the best starting workflows in this pack."
+    ],
+    "brandColor": "#111827"
+  }
+}
