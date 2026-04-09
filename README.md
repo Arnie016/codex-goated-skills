@@ -90,6 +90,23 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills
 
 After install, fully quit and reopen Codex, then ask: `What can macOS Icon Bars do?`
 
+Tracking notes:
+
+- The installer sends anonymous aggregate counters for starts and successful installs.
+- Approximate unique installs are counted once per Mac by storing a tiny local state file under `~/Library/Application Support/macos-icon-bars/`.
+- No username, hostname, or local file paths are sent.
+- Disable tracking for a run with:
+
+```bash
+MACOS_ICON_BARS_TRACKING=0 bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/refs/heads/codex/macos-icon-bars-plugin/scripts/install_macos_icon_bars_from_github.sh)
+```
+
+- View the current counters locally with:
+
+```bash
+./scripts/show_macos_icon_bars_metrics.sh
+```
+
 ## Skills vs Apps
 
 - `skills/` are installable Codex skill packages

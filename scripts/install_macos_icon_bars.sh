@@ -7,6 +7,10 @@ REPO_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
 PLUGIN_NAME="macos-icon-bars"
 SOURCE_MANIFEST="${REPO_ROOT}/plugins/${PLUGIN_NAME}/.codex-plugin/plugin.json"
 SOURCE_SKILLS_DIR="${REPO_ROOT}/skills"
+TRACKING_ENABLED="${MACOS_ICON_BARS_TRACKING:-1}"
+COUNTER_API_BASE="${MACOS_ICON_BARS_COUNTER_API_BASE:-https://api.counterapi.dev/v1}"
+COUNTER_NAMESPACE="${MACOS_ICON_BARS_COUNTER_NAMESPACE:-arnie016-codex-goated-skills}"
+COUNTER_PREFIX="${MACOS_ICON_BARS_COUNTER_PREFIX:-macos-icon-bars}"
 
 TARGET_ROOT="${HOME}/plugins"
 TARGET_PLUGIN_DIR="${TARGET_ROOT}/${PLUGIN_NAME}"
@@ -17,6 +21,77 @@ AGENTS_DIR="${HOME}/.agents/plugins"
 AGENTS_PLUGIN_DIR="${AGENTS_DIR}/plugins"
 AGENTS_PLUGIN_LINK="${AGENTS_PLUGIN_DIR}/${PLUGIN_NAME}"
 MARKETPLACE_JSON="${AGENTS_DIR}/marketplace.json"
+TRACKING_STATE_DIR="${HOME}/Library/Application Support/${PLUGIN_NAME}"
+TRACKING_STATE_FILE="${TRACKING_STATE_DIR}/tracking.json"
+
+SCRIPT_FAILED=1
+REPORT_UNIQUE_INSTALL=0
+
+track_event() {
+  local event_name="$1"
+  if [[ "${TRACKING_ENABLED}" == "0" ]]; then
+    return 0
+  fi
+  curl -fsSL --max-time 4 -o /dev/null \
+    "${COUNTER_API_BASE}/${COUNTER_NAMESPACE}/${COUNTER_PREFIX}-${event_name}/up" >/dev/null 2>&1 || true
+}
+
+prepare_tracking_state() {
+  mkdir -p "${TRACKING_STATE_DIR}"
+  REPORT_UNIQUE_INSTALL="$(python3 - "${TRACKING_STATE_FILE}" <<'PY'
+import json
+import pathlib
+import sys
+
+path = pathlib.Path(sys.argv[1])
+if not path.exists():
+    print("1")
+    raise SystemExit
+
+try:
+    data = json.loads(path.read_text())
+except Exception:
+    print("1")
+    raise SystemExit
+
+print("0" if data.get("unique_install_reported") else "1")
+PY
+)"
+}
+
+write_tracking_state() {
+  mkdir -p "${TRACKING_STATE_DIR}"
+  python3 - "${TRACKING_STATE_FILE}" <<'PY'
+import json
+import pathlib
+import sys
+from datetime import datetime, timezone
+
+path = pathlib.Path(sys.argv[1])
+payload = {
+    "plugin": "macos-icon-bars",
+    "unique_install_reported": True,
+    "last_success_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+}
+path.write_text(json.dumps(payload, indent=2) + "\n")
+PY
+}
+
+finish() {
+  if [[ "${SCRIPT_FAILED}" -eq 0 ]]; then
+    track_event "install-success"
+    if [[ "${REPORT_UNIQUE_INSTALL}" == "1" ]]; then
+      track_event "install-unique-success"
+      write_tracking_state
+    fi
+  else
+    track_event "install-failure"
+  fi
+}
+trap finish EXIT
+
+prepare_tracking_state
+track_event "install-start"
 
 if [[ ! -f "${SOURCE_MANIFEST}" ]]; then
   echo "Missing plugin manifest at ${SOURCE_MANIFEST}" >&2
@@ -109,6 +184,11 @@ marketplace_path.parent.mkdir(parents=True, exist_ok=True)
 marketplace_path.write_text(json.dumps(data, indent=2) + "\n")
 PY
 
+SCRIPT_FAILED=0
+
 echo "Installed ${PLUGIN_NAME} into ${TARGET_PLUGIN_DIR}"
 echo "Marketplace registered at ${MARKETPLACE_JSON}"
+if [[ "${TRACKING_ENABLED}" != "0" ]]; then
+  echo "Anonymous install counters updated via ${COUNTER_API_BASE}/${COUNTER_NAMESPACE}"
+fi
 echo "Next: fully quit and reopen Codex, then ask: What can macOS Icon Bars do?"
