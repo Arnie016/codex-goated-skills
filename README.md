@@ -72,21 +72,23 @@ Then restart Codex.
 
 ## Install the Codex plugin
 
-Clone the repo, run the plugin installer, then reopen Codex:
+The fastest way to use `macOS Icon Bars` is the one-command installer. You do not need to clone the repo just to use the plugin.
+
+Install the plugin directly:
 
 ```bash
-git clone https://github.com/Arnie016/codex-goated-skills.git
+bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/refs/heads/codex/macos-icon-bars-plugin/scripts/install_macos_icon_bars_from_github.sh)
+```
+
+Want the repo too? Clone it if you want the source, apps, and every skill folder locally, then run the local installer:
+
+```bash
+git clone --branch codex/macos-icon-bars-plugin https://github.com/Arnie016/codex-goated-skills.git
 cd codex-goated-skills
 ./scripts/install_macos_icon_bars.sh
 ```
 
 That installs the `macOS Icon Bars` plugin into `~/plugins/macos-icon-bars`, registers it in `~/.agents/plugins/marketplace.json`, and makes this repo's bundled skills available through one Codex plugin.
-
-One-command branch installer:
-
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/refs/heads/codex/macos-icon-bars-plugin/scripts/install_macos_icon_bars_from_github.sh)
-```
 
 After install, fully quit and reopen Codex, then ask: `What can macOS Icon Bars do?`
 
