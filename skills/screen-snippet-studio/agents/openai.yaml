@@ -1,0 +1,10 @@
+interface:
+  display_name: "Screen Snippet Studio"
+  short_description: "Premium menu-bar screen snippet studio"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#5E5CE6"
+  default_prompt: "Use $screen-snippet-studio to build a polished macOS menu-bar capture utility for turning screen snippets into clean prompts, tickets, or handoffs."
+
+policy:
+  allow_implicit_invocation: true

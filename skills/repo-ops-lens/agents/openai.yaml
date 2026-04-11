@@ -1,0 +1,10 @@
+interface:
+  display_name: "Repo Ops Lens"
+  short_description: "Premium menu-bar repo ops lens"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#30D158"
+  default_prompt: "Use $repo-ops-lens to build a polished macOS menu-bar utility for a repo audit panel that turns a github link into a crisp operating brief, risk pass, and next-step suggestion."
+
+policy:
+  allow_implicit_invocation: true

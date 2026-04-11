@@ -1,0 +1,10 @@
+interface:
+  display_name: "Launch Deck Lift"
+  short_description: "Premium menu-bar launch deck lift"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#FFD60A"
+  default_prompt: "Use $launch-deck-lift to build a polished macOS menu-bar utility for a presentation helper that turns a rough idea into a clean launch deck starter."
+
+policy:
+  allow_implicit_invocation: true

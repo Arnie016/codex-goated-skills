@@ -1,0 +1,10 @@
+interface:
+  display_name: "Doc Drop Bridge"
+  short_description: "Premium menu-bar doc drop bridge"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#64D2FF"
+  default_prompt: "Use $doc-drop-bridge to build a polished macOS menu-bar utility for a document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files."
+
+policy:
+  allow_implicit_invocation: true

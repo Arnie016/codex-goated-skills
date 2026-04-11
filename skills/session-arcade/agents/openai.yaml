@@ -1,0 +1,10 @@
+interface:
+  display_name: "Session Arcade"
+  short_description: "Premium menu-bar session arcade"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#32ADE6"
+  default_prompt: "Use $session-arcade to build a polished macOS menu-bar utility for a launch-night helper for game sessions, cloud gaming, and quick console handoffs."
+
+policy:
+  allow_implicit_invocation: true

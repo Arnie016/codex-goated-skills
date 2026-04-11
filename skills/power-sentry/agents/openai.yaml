@@ -1,0 +1,10 @@
+interface:
+  display_name: "Power Sentry"
+  short_description: "Premium menu-bar power sentry"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#FF453A"
+  default_prompt: "Use $power-sentry to build a polished macOS menu-bar utility for a battery-and-power watch that helps you read drain, charging, and energy mode at a glance."
+
+policy:
+  allow_implicit_invocation: true

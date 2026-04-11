@@ -3,3 +3,8 @@
 find-my-phone-studio
 cursor-studio
 folder-studio
+handoff-courier
+phone-handoff-panel
+battery-trend-scout
+power-sentry
+chrome-tab-sweeper

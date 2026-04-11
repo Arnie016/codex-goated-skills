@@ -1,0 +1,27 @@
+{
+  "id": "battery-trend-scout",
+  "name": "Battery Trend Scout",
+  "category": "System Monitoring",
+  "status": "active",
+  "stars": 5,
+  "short_description": "Calm Mac-style battery panel with charge, power source, energy mode, and trend context.",
+  "audience": [
+    "Mac laptop users",
+    "Remote workers",
+    "System builders"
+  ],
+  "tags": [
+    "battery",
+    "menu bar",
+    "macOS",
+    "power",
+    "energy mode",
+    "trend"
+  ],
+  "install_command": "codex-skillctl install battery-trend-scout",
+  "docs_paths": [
+    "skills/battery-trend-scout/SKILL.md",
+    "skills/battery-trend-scout/manifest.json",
+    "skills/battery-trend-scout/agents/openai.yaml"
+  ]
+}

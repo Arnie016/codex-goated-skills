@@ -1,0 +1,45 @@
+{
+  "id": "repo-ops-lens",
+  "name": "Repo Ops Lens",
+  "category": "Developer Tools",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion.",
+  "audience": [
+    "Maintainers",
+    "AI-assisted coders",
+    "People reviewing repos quickly"
+  ],
+  "tags": [
+    "repo",
+    "audit",
+    "GitHub",
+    "analysis",
+    "menu bar",
+    "workflow"
+  ],
+  "install_command": "codex-skillctl install repo-ops-lens",
+  "docs_paths": [
+    "skills/repo-ops-lens/SKILL.md",
+    "skills/repo-ops-lens/manifest.json",
+    "skills/repo-ops-lens/agents/openai.yaml",
+    "skills/repo-ops-lens/assets/icon.svg",
+    "skills/repo-ops-lens/assets/preview.svg",
+    "skills/repo-ops-lens/prototype/README.md",
+    "skills/repo-ops-lens/prototype/SkillMenuBarApp.swift",
+    "skills/repo-ops-lens/prototype/SkillMenuBarView.swift",
+    "skills/repo-ops-lens/prototype/SkillDetailView.swift",
+    "skills/repo-ops-lens/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Takes a repository URL and reduces it to what matters next.",
+    "Makes risk and architecture notes visible without a long read.",
+    "Builds a clean bridge between research and action."
+  ],
+  "file_path_hints": [
+    "skills/repo-ops-lens/prototype/README.md",
+    "skills/repo-ops-lens/prototype/SkillMenuBarApp.swift",
+    "skills/repo-ops-lens/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "magnifyingglass.circle.fill"
+}

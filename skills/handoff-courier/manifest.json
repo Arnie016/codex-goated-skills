@@ -1,0 +1,46 @@
+{
+  "id": "handoff-courier",
+  "name": "Handoff Courier",
+  "category": "Mac OS",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics.",
+  "audience": [
+    "Mac power users",
+    "Founders and operators",
+    "People juggling files across chat and browser apps"
+  ],
+  "tags": [
+    "macOS",
+    "menu bar",
+    "handoff",
+    "files",
+    "clipboard",
+    "exports",
+    "workflow"
+  ],
+  "install_command": "codex-skillctl install handoff-courier",
+  "docs_paths": [
+    "skills/handoff-courier/SKILL.md",
+    "skills/handoff-courier/manifest.json",
+    "skills/handoff-courier/agents/openai.yaml",
+    "skills/handoff-courier/assets/icon.svg",
+    "skills/handoff-courier/assets/preview.svg",
+    "skills/handoff-courier/prototype/README.md",
+    "skills/handoff-courier/prototype/SkillMenuBarApp.swift",
+    "skills/handoff-courier/prototype/SkillMenuBarView.swift",
+    "skills/handoff-courier/prototype/SkillDetailView.swift",
+    "skills/handoff-courier/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Collects files, text, and export bundles into a single calm handoff tray.",
+    "Shows the next destination and the cleanest transfer path before you commit.",
+    "Keeps the transfer UI minimal so it feels native on macOS instead of bolted on."
+  ],
+  "file_path_hints": [
+    "skills/handoff-courier/prototype/README.md",
+    "skills/handoff-courier/prototype/SkillMenuBarApp.swift",
+    "skills/handoff-courier/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "tray.and.arrow.down.fill"
+}

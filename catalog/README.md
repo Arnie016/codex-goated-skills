@@ -77,15 +77,24 @@ Continuous audit:
 - [`website-drop`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/website-drop): Audit a web app, choose a host, and get it live fast.
 - [`brand-kit`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/brand-kit): Build lightweight brand assets and launch metadata.
 - [`content-pack`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/content-pack): Generate launch-ready messaging, README blurbs, and release copy.
+- [`release-ramp`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/release-ramp): Turn a shipping checklist into a compact launch lane.
+- [`launch-deck-lift`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/launch-deck-lift): Shape a rough idea into a cleaner launch-deck starter.
 
 ### Productivity and Workflow
 
 - [`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor): Diagnose local workspace readiness, generated catalog freshness, and common setup problems.
+- [`context-shelf`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/context-shelf): Park the current tab, clipboard snippet, and scratch note so resuming after a task switch is one glance instead of a rebuild.
+- [`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway): Start the next work block with less setup and less context switching.
+- [`front-tab-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/front-tab-relay): Capture the front browser tab and format it for prompts, notes, tickets, or chat handoffs.
+- [`screen-snippet-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/screen-snippet-studio): Turn screen snippets into clean prompts, tickets, or handoffs from a menu bar capture flow.
+- [`doc-drop-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/doc-drop-bridge): Package notes, markdown, and fragments into share-ready handoff files.
 - [`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker): Connect GitHub, scan repo folders, track daily git gains or broader output gains, and turn them into reminder stories and baseline comparisons.
 - [`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day): Pull the official Wikimedia On This Day feed into a polished daily history brief or Mac-style day browser.
 - [`trading-archive`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/trading-archive): Build a dependable archive of trading and macro articles from public feeds, then surface a reading queue, source health, or native menu bar workflow.
 - [`skillbar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/skillbar): Build and refine the SkillBar macOS top-bar skill manager.
 - [`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio): Turn scattered clips into one structured prompt and export flow.
+- [`repo-ops-lens`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/repo-ops-lens): Turn a GitHub link into a crisp operating brief, risk pass, and next-step suggestion.
+- [`patch-pilot`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/patch-pilot): Turn a diff, staged change list, or review thread into a fix brief, risk scan, and next command.
 - [`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio): Install or update a LAN presence monitor with SwiftBar and a dashboard.
 - [`dark-pdf-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/dark-pdf-studio): Convert PDFs, docs, and images into dark-background reading PDFs.
 - [`deckdrop-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/deckdrop-studio): Shape editable PowerPoint generation flows from mixed-source inputs.
@@ -102,12 +111,18 @@ Continuous audit:
 - [`inner-circle-director`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/inner-circle-director): Structure tiered access, VIP mechanics, and premium community experiences.
 - [`myth-merch-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/myth-merch-studio): Turn fandom canon into merch, collectible, and limited-drop concepts.
 - [`reputation-heatmap`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/reputation-heatmap): Separate healthy mystique from rumor, overreach, parasocial risk, or brand harm.
+- [`story-arc-board`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/story-arc-board): Capture recurring phrases, symbols, and post ideas before they disappear into notes and comment sprawl.
 
 ### macOS Utility Builders
 
 - [`find-my-phone-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/find-my-phone-studio): Shape a realistic Mac phone-finder utility or helper flow.
 - [`cursor-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/cursor-studio): Build and refine a cursor-pack planning app for macOS.
 - [`folder-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/folder-studio): Build and refine a Finder folder-skin app and icon workflow.
+- [`handoff-courier`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/handoff-courier): Move files, snippets, and exports between apps without window gymnastics.
+- [`phone-handoff-panel`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/phone-handoff-panel): Keep your phone handoff close with open, locate, and continue actions from the Mac menu bar.
+- [`battery-trend-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/battery-trend-scout): Show charge, power source, energy mode, and local drain trends in a calm battery panel.
+- [`power-sentry`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/power-sentry): Give a compact at-a-glance read of charging, drain, and energy mode from the menu bar.
+- [`chrome-tab-sweeper`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/chrome-tab-sweeper): List overloaded Chrome tabs, group the mess, and close explicit selected batches safely.
 
 ### App-Specific Skills
 
@@ -121,3 +136,4 @@ Continuous audit:
 
 - [`minecraft-essentials`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-essentials): Install, upgrade, back up, and troubleshoot Minecraft Java servers.
 - [`minecraft-skin-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-skin-studio): Draft, preview, and register Minecraft Java skins.
+- [`session-arcade`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/session-arcade): Help launch the next game session or console handoff without extra setup loops.

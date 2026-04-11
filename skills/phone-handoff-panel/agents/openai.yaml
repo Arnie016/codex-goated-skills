@@ -1,0 +1,10 @@
+interface:
+  display_name: "Phone Handoff Panel"
+  short_description: "Premium menu-bar phone handoff panel"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#FF9F0A"
+  default_prompt: "Use $phone-handoff-panel to build a polished macOS menu-bar utility for a device handoff panel for opening your phone, jump-starting a task, and keeping the mac in the loop."
+
+policy:
+  allow_implicit_invocation: true

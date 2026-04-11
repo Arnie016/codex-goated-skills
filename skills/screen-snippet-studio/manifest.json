@@ -1,0 +1,45 @@
+{
+  "id": "screen-snippet-studio",
+  "name": "Screen Snippet Studio",
+  "category": "Workflow Automation",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A menu-bar capture studio for clipping the current screen into clean prompts, tickets, or handoffs.",
+  "audience": [
+    "Engineers",
+    "Product builders",
+    "People who turn screenshots into tasks"
+  ],
+  "tags": [
+    "screenshot",
+    "prompt",
+    "capture",
+    "menu bar",
+    "workflow",
+    "handoff"
+  ],
+  "install_command": "codex-skillctl install screen-snippet-studio",
+  "docs_paths": [
+    "skills/screen-snippet-studio/SKILL.md",
+    "skills/screen-snippet-studio/manifest.json",
+    "skills/screen-snippet-studio/agents/openai.yaml",
+    "skills/screen-snippet-studio/assets/icon.svg",
+    "skills/screen-snippet-studio/assets/preview.svg",
+    "skills/screen-snippet-studio/prototype/README.md",
+    "skills/screen-snippet-studio/prototype/SkillMenuBarApp.swift",
+    "skills/screen-snippet-studio/prototype/SkillMenuBarView.swift",
+    "skills/screen-snippet-studio/prototype/SkillDetailView.swift",
+    "skills/screen-snippet-studio/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Turns a quick screen shot into a usable prompt or note without extra context switching.",
+    "Keeps the capture flow one click away in the menu bar.",
+    "Pairs well with AI review, bug reports, and launch handoffs."
+  ],
+  "file_path_hints": [
+    "skills/screen-snippet-studio/prototype/README.md",
+    "skills/screen-snippet-studio/prototype/SkillMenuBarApp.swift",
+    "skills/screen-snippet-studio/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "viewfinder"
+}

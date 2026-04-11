@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Chrome Tab Sweeper">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101820"/>
+      <stop offset="100%" stop-color="#050708"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="392" cy="116" r="88" fill="#22C55E" opacity="0.16"/>
+  <circle cx="116" cy="392" r="108" fill="#0EA5E9" opacity="0.12"/>
+  <rect x="82" y="110" width="348" height="270" rx="44" fill="#111827" stroke="#FFFFFF" stroke-opacity="0.1"/>
+  <rect x="112" y="142" width="288" height="52" rx="18" fill="#1F2937"/>
+  <circle cx="142" cy="168" r="8" fill="#EF4444"/>
+  <circle cx="166" cy="168" r="8" fill="#F59E0B"/>
+  <circle cx="190" cy="168" r="8" fill="#22C55E"/>
+  <rect x="114" y="224" width="284" height="32" rx="12" fill="#182232"/>
+  <rect x="114" y="270" width="214" height="32" rx="12" fill="#182232"/>
+  <rect x="114" y="316" width="250" height="32" rx="12" fill="#182232"/>
+  <rect x="250" y="234" width="168" height="134" rx="38" fill="url(#accent)"/>
+  <text x="334" y="318" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="68" font-weight="800" fill="#FFFFFF">TS</text>
+  <path d="M92 408h328" stroke="#22C55E" stroke-width="18" stroke-linecap="round"/>
+</svg>

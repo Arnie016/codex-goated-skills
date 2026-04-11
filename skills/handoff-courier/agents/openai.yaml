@@ -1,0 +1,10 @@
+interface:
+  display_name: "Handoff Courier"
+  short_description: "Premium menu-bar handoff courier"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#0A84FF"
+  default_prompt: "Use $handoff-courier to build a polished macOS menu-bar utility for a polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics."
+
+policy:
+  allow_implicit_invocation: true

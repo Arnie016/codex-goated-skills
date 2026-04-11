@@ -4,3 +4,5 @@ repo-launch
 website-drop
 brand-kit
 content-pack
+release-ramp
+launch-deck-lift

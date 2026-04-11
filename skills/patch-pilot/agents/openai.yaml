@@ -1,0 +1,10 @@
+interface:
+  display_name: "Patch Pilot"
+  short_description: "Premium menu-bar diff triage"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#30D158"
+  default_prompt: "Use $patch-pilot to turn a local diff, staged change list, or review thread into a clear fix brief, risk scan, and next command."
+
+policy:
+  allow_implicit_invocation: true

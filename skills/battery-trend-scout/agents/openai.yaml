@@ -1,0 +1,10 @@
+interface:
+  display_name: "Battery Trend Scout"
+  short_description: "Premium menu-bar battery and drain scout"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#0A84FF"
+  default_prompt: "Use $battery-trend-scout to build a polished macOS battery menu-bar utility with charge, power source, energy mode, and trend context."
+
+policy:
+  allow_implicit_invocation: true

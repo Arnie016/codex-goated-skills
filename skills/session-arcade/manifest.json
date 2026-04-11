@@ -1,0 +1,44 @@
+{
+  "id": "session-arcade",
+  "name": "Session Arcade",
+  "category": "Games and Consoles",
+  "status": "active",
+  "stars": 4,
+  "short_description": "A launch-night helper for game sessions, cloud gaming, and quick console handoffs.",
+  "audience": [
+    "Casual gamers",
+    "Console owners",
+    "People who launch and switch play sessions often"
+  ],
+  "tags": [
+    "games",
+    "console",
+    "launch",
+    "menu bar",
+    "session"
+  ],
+  "install_command": "codex-skillctl install session-arcade",
+  "docs_paths": [
+    "skills/session-arcade/SKILL.md",
+    "skills/session-arcade/manifest.json",
+    "skills/session-arcade/agents/openai.yaml",
+    "skills/session-arcade/assets/icon.svg",
+    "skills/session-arcade/assets/preview.svg",
+    "skills/session-arcade/prototype/README.md",
+    "skills/session-arcade/prototype/SkillMenuBarApp.swift",
+    "skills/session-arcade/prototype/SkillMenuBarView.swift",
+    "skills/session-arcade/prototype/SkillDetailView.swift",
+    "skills/session-arcade/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Keeps the next game or session within a few clicks.",
+    "Makes it easier to move from launcher to play mode.",
+    "Feels like a fun utility instead of a generic gaming dashboard."
+  ],
+  "file_path_hints": [
+    "skills/session-arcade/prototype/README.md",
+    "skills/session-arcade/prototype/SkillMenuBarApp.swift",
+    "skills/session-arcade/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "gamecontroller.fill"
+}

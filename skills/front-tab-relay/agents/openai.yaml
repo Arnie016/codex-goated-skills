@@ -1,0 +1,10 @@
+interface:
+  display_name: "Front Tab Relay"
+  short_description: "Premium menu-bar front tab relay"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#5E5CE6"
+  default_prompt: "Use $front-tab-relay to build a polished macOS menu-bar utility for a menu-bar relay for grabbing the front browser tab and routing its title and url into prompts, notes, or tickets without losing your place."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,44 @@
+{
+  "id": "launch-deck-lift",
+  "name": "Launch Deck Lift",
+  "category": "Presentation",
+  "status": "active",
+  "stars": 4,
+  "short_description": "A presentation helper that turns a rough idea into a clean launch deck starter.",
+  "audience": [
+    "Founders",
+    "Designers",
+    "People who need a sharp deck quickly"
+  ],
+  "tags": [
+    "deck",
+    "presentation",
+    "launch",
+    "story",
+    "menu bar"
+  ],
+  "install_command": "codex-skillctl install launch-deck-lift",
+  "docs_paths": [
+    "skills/launch-deck-lift/SKILL.md",
+    "skills/launch-deck-lift/manifest.json",
+    "skills/launch-deck-lift/agents/openai.yaml",
+    "skills/launch-deck-lift/assets/icon.svg",
+    "skills/launch-deck-lift/assets/preview.svg",
+    "skills/launch-deck-lift/prototype/README.md",
+    "skills/launch-deck-lift/prototype/SkillMenuBarApp.swift",
+    "skills/launch-deck-lift/prototype/SkillMenuBarView.swift",
+    "skills/launch-deck-lift/prototype/SkillDetailView.swift",
+    "skills/launch-deck-lift/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Helps you move from idea to slide order without losing the thread.",
+    "Focuses on the one-page summary and the opening story first.",
+    "Keeps the UI approachable for fast deck prep."
+  ],
+  "file_path_hints": [
+    "skills/launch-deck-lift/prototype/README.md",
+    "skills/launch-deck-lift/prototype/SkillMenuBarApp.swift",
+    "skills/launch-deck-lift/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "rectangle.3.group.fill"
+}
