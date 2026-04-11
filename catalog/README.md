@@ -7,7 +7,7 @@ Machine-readable catalog:
 
 ## Snapshot
 
-- Total skills: `33`
+- Total skills: `46`
 - Total packs: `10`
 - Main pack folder: [`collections/`](https://github.com/Arnie016/codex-goated-skills/tree/main/collections)
 - Main install CLI: [`bin/codex-goated`](https://github.com/Arnie016/codex-goated-skills/blob/main/bin/codex-goated)
@@ -26,14 +26,14 @@ codex-goated audit
 
 ## Audit Status
 
-Audit snapshot for April 2, 2026:
+Audit snapshot for April 11, 2026:
 
-- `33/33` skills include `SKILL.md`
-- `33/33` skills include `agents/openai.yaml`
-- `33/33` skills include a small SVG icon
-- `33/33` skills include a large SVG icon
+- `46/46` skills include `SKILL.md`
+- `46/46` skills include `agents/openai.yaml`
+- `46/46` skills include a small SVG icon
+- `46/46` skills include a large SVG icon
 - `10/10` pack files resolve to valid skill directories
-- `33/33` skills are covered by at least one pack
+- `46/46` skills are covered by at least one pack
 
 Run the live audit locally:
 
@@ -58,16 +58,16 @@ Continuous audit:
 
 | Pack | Purpose | Skill count |
 | --- | --- | --- |
-| `launch-and-distribution` | Launch rough projects, package them cleanly, and get them ready to share | 4 |
-| `productivity-and-workflow` | Workspace setup, document workflows, monitoring, daily reference, and repo-driven skill management | 9 |
+| `launch-and-distribution` | Launch rough projects, package them cleanly, and get them ready to share | 7 |
+| `productivity-and-workflow` | Workspace setup, document workflows, monitoring, daily reference, and repo-driven skill management | 14 |
 | `daily-briefs-and-reference` | Daily context, historical lookup, local pulse, readable export workflows, and market-reading archives | 6 |
-| `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, lore pacing, merch, and risk review | 10 |
-| `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 10 |
-| `macos-utility-builders` | Mac utility planning and menu bar helper workflows | 3 |
+| `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, lore pacing, merch, and risk review | 11 |
+| `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 11 |
+| `macos-utility-builders` | Mac utility planning and menu bar helper workflows | 6 |
 | `app-specific-skills` | Skills tied closely to live local app codebases | 5 |
-| `games-and-minecraft` | Minecraft hosting, operations, and skin tooling | 2 |
-| `creator-and-fandom-stack` | Creator brand strategy plus launch-ready packaging support | 12 |
-| `utility-builder-stack` | A broader Mac utility-building stack across workflow and app surfaces | 8 |
+| `games-and-minecraft` | Minecraft hosting, operations, and skin tooling | 3 |
+| `creator-and-fandom-stack` | Creator brand strategy plus launch-ready packaging support | 13 |
+| `utility-builder-stack` | A broader Mac utility-building stack across workflow and app surfaces | 16 |
 
 ## Full Skill Index
 
@@ -77,6 +77,9 @@ Continuous audit:
 - [`website-drop`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/website-drop): Audit a web app, choose a host, and get it live fast.
 - [`brand-kit`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/brand-kit): Build lightweight brand assets and launch metadata.
 - [`content-pack`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/content-pack): Generate launch-ready messaging, README blurbs, and release copy.
+- [`release-ramp`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/release-ramp): Turn a shipping checklist into a clean launch lane.
+- [`repo-ops-lens`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/repo-ops-lens): Reduce a GitHub repo to a crisp operating brief, risk pass, and next-step suggestion.
+- [`launch-deck-lift`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/launch-deck-lift): Turn a rough idea into a cleaner launch deck starter.
 
 ### Productivity and Workflow
 
@@ -89,6 +92,11 @@ Continuous audit:
 - [`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio): Install or update a LAN presence monitor with SwiftBar and a dashboard.
 - [`dark-pdf-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/dark-pdf-studio): Convert PDFs, docs, and images into dark-background reading PDFs.
 - [`deckdrop-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/deckdrop-studio): Shape editable PowerPoint generation flows from mixed-source inputs.
+- [`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway): Start the next work block with less setup and less context switching.
+- [`screen-snippet-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/screen-snippet-studio): Turn screen snippets into prompts, tickets, and handoff artifacts.
+- [`doc-drop-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/doc-drop-bridge): Turn notes, markdown, and fragments into share-ready handoff files.
+- [`battery-trend-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/battery-trend-scout): Build a polished battery utility with charge, power source, energy mode, and drain trends.
+- [`power-sentry`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/power-sentry): Keep battery drain, charging, and energy mode visible at a glance.
 
 ### Audience and Fandom Strategy
 
@@ -102,12 +110,16 @@ Continuous audit:
 - [`inner-circle-director`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/inner-circle-director): Structure tiered access, VIP mechanics, and premium community experiences.
 - [`myth-merch-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/myth-merch-studio): Turn fandom canon into merch, collectible, and limited-drop concepts.
 - [`reputation-heatmap`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/reputation-heatmap): Separate healthy mystique from rumor, overreach, parasocial risk, or brand harm.
+- [`story-arc-board`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/story-arc-board): Catch recurring hooks from notes, captions, and comments before they disappear into app sprawl.
 
 ### macOS Utility Builders
 
 - [`find-my-phone-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/find-my-phone-studio): Shape a realistic Mac phone-finder utility or helper flow.
 - [`cursor-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/cursor-studio): Build and refine a cursor-pack planning app for macOS.
 - [`folder-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/folder-studio): Build and refine a Finder folder-skin app and icon workflow.
+- [`handoff-courier`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/handoff-courier): Move files, snippets, and exports between apps without window gymnastics.
+- [`phone-handoff-panel`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/phone-handoff-panel): Keep a compact phone handoff surface close from the Mac menu bar.
+- [`chrome-tab-sweeper`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/chrome-tab-sweeper): Review overloaded Chrome tabs and close selected tab batches safely.
 
 ### App-Specific Skills
 
@@ -121,3 +133,4 @@ Continuous audit:
 
 - [`minecraft-essentials`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-essentials): Install, upgrade, back up, and troubleshoot Minecraft Java servers.
 - [`minecraft-skin-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-skin-studio): Draft, preview, and register Minecraft Java skins.
+- [`session-arcade`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/session-arcade): Keep game sessions, cloud gaming, and quick console handoffs within a few clicks.

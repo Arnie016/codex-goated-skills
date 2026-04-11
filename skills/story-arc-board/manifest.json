@@ -1,0 +1,45 @@
+{
+  "id": "story-arc-board",
+  "name": "Story Arc Board",
+  "category": "Community & Narrative",
+  "status": "active",
+  "stars": 4,
+  "short_description": "A menu-bar board for capturing repeated hooks from notes, captions, and comments before they disappear into app sprawl.",
+  "audience": [
+    "Creators",
+    "Community builders",
+    "People mapping recurring narrative beats"
+  ],
+  "tags": [
+    "narrative",
+    "community",
+    "tracking",
+    "canon",
+    "menu bar",
+    "snippets"
+  ],
+  "install_command": "codex-skillctl install story-arc-board",
+  "docs_paths": [
+    "skills/story-arc-board/SKILL.md",
+    "skills/story-arc-board/manifest.json",
+    "skills/story-arc-board/agents/openai.yaml",
+    "skills/story-arc-board/assets/icon.svg",
+    "skills/story-arc-board/assets/preview.svg",
+    "skills/story-arc-board/prototype/README.md",
+    "skills/story-arc-board/prototype/SkillMenuBarApp.swift",
+    "skills/story-arc-board/prototype/SkillMenuBarView.swift",
+    "skills/story-arc-board/prototype/SkillDetailView.swift",
+    "skills/story-arc-board/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Pulls recurring phrases, symbols, and post ideas into one compact Mac surface.",
+    "Cuts the tab-hopping between Notes, social drafts, and comment threads when shaping the next beat.",
+    "Keeps the board lightweight so it feels like a real menu-bar relay instead of a full social dashboard."
+  ],
+  "file_path_hints": [
+    "skills/story-arc-board/prototype/README.md",
+    "skills/story-arc-board/prototype/SkillMenuBarApp.swift",
+    "skills/story-arc-board/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "bubble.left.and.bubble.right.fill"
+}

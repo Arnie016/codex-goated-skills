@@ -12,3 +12,4 @@ lore-drop-planner
 inner-circle-director
 myth-merch-studio
 reputation-heatmap
+story-arc-board

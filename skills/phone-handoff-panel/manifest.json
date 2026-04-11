@@ -1,0 +1,44 @@
+{
+  "id": "phone-handoff-panel",
+  "name": "Phone Handoff Panel",
+  "category": "Connectivity",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A device handoff panel for opening your phone, jump-starting a task, and keeping the Mac in the loop.",
+  "audience": [
+    "Cross-device workers",
+    "People coordinating between phone and Mac",
+    "Remote operators"
+  ],
+  "tags": [
+    "phone",
+    "handoff",
+    "connectivity",
+    "macOS",
+    "menu bar"
+  ],
+  "install_command": "codex-skillctl install phone-handoff-panel",
+  "docs_paths": [
+    "skills/phone-handoff-panel/SKILL.md",
+    "skills/phone-handoff-panel/manifest.json",
+    "skills/phone-handoff-panel/agents/openai.yaml",
+    "skills/phone-handoff-panel/assets/icon.svg",
+    "skills/phone-handoff-panel/assets/preview.svg",
+    "skills/phone-handoff-panel/prototype/README.md",
+    "skills/phone-handoff-panel/prototype/SkillMenuBarApp.swift",
+    "skills/phone-handoff-panel/prototype/SkillMenuBarView.swift",
+    "skills/phone-handoff-panel/prototype/SkillDetailView.swift",
+    "skills/phone-handoff-panel/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Puts the phone-centric actions behind a quick Mac surface.",
+    "Keeps a compact link between the desk and the device in your pocket.",
+    "Feels more like a coordination tool than a gadget dashboard."
+  ],
+  "file_path_hints": [
+    "skills/phone-handoff-panel/prototype/README.md",
+    "skills/phone-handoff-panel/prototype/SkillMenuBarApp.swift",
+    "skills/phone-handoff-panel/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "iphone"
+}

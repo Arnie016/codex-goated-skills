@@ -24,16 +24,16 @@ bash scripts/install-pack.sh creator-and-fandom-stack
 
 | Pack | What it is for | Skill count |
 | --- | --- | --- |
-| `launch-and-distribution` | Turning rough projects into launch-ready, public packages | 4 |
-| `productivity-and-workflow` | Workspace setup, document workflows, local tooling, daily reference, and catalog management | 9 |
+| `launch-and-distribution` | Turning rough projects into launch-ready, public packages | 7 |
+| `productivity-and-workflow` | Workspace setup, document workflows, local tooling, daily reference, and catalog management | 14 |
 | `daily-briefs-and-reference` | Daily context, historical lookup, market-reading archives, local pulse, and readable export workflows | 6 |
-| `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, rituals, merch, and narrative risk work | 10 |
-| `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 10 |
-| `macos-utility-builders` | Menu bar utilities, Mac helpers, and focused utility-app shaping | 3 |
+| `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, rituals, merch, and narrative risk work | 11 |
+| `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 11 |
+| `macos-utility-builders` | Menu bar utilities, Mac helpers, and focused utility-app shaping | 6 |
 | `app-specific-skills` | Repo-specific app implementation skills | 5 |
-| `games-and-minecraft` | Minecraft operations and customization | 2 |
-| `creator-and-fandom-stack` | Creator brand strategy plus launch/packaging support | 12 |
-| `utility-builder-stack` | A broader Mac utility-building bundle across workflow and app surfaces | 8 |
+| `games-and-minecraft` | Minecraft operations and customization | 3 |
+| `creator-and-fandom-stack` | Creator brand strategy plus launch/packaging support | 13 |
+| `utility-builder-stack` | A broader Mac utility-building bundle across workflow and app surfaces | 16 |
 
 ## Quick Install
 

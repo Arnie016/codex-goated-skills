@@ -1,8 +1,25 @@
 {
   "repo": "codex-goated-skills",
-  "skill_count": 33,
+  "skill_count": 46,
   "pack_count": 10,
   "skills": [
+    {
+      "id": "battery-trend-scout",
+      "display_name": "Battery Trend Scout",
+      "description": "Build a polished macOS battery utility that shows charge, power source, energy mode, significant energy users, and local drain trends from a menu bar surface.",
+      "short_description": "Premium menu-bar battery and drain scout",
+      "brand_color": "#0A84FF",
+      "path": "skills/battery-trend-scout",
+      "skill_file": "skills/battery-trend-scout/SKILL.md",
+      "openai_yaml": "skills/battery-trend-scout/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $battery-trend-scout to build a polished macOS battery menu-bar utility with charge, power source, energy mode, and trend context.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
     {
       "id": "brand-kit",
       "display_name": "Brand Kit",
@@ -18,6 +35,23 @@
       "packs": [
         "creator-and-fandom-stack",
         "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "chrome-tab-sweeper",
+      "display_name": "Chrome Tab Sweeper",
+      "description": "Build or operate a macOS menu-bar Chrome tab control surface that lists overloaded browser tabs, groups them by domain or task, and closes explicit selected tab batches with a safe review step.",
+      "short_description": "Mac menu-bar control for overloaded Chrome tabs",
+      "brand_color": "#22C55E",
+      "path": "skills/chrome-tab-sweeper",
+      "skill_file": "skills/chrome-tab-sweeper/SKILL.md",
+      "openai_yaml": "skills/chrome-tab-sweeper/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $chrome-tab-sweeper to build a macOS menu-bar utility that lists Chrome tabs, groups the mess by domain, and closes explicit selected tab batches safely.",
+      "packs": [
+        "macos-utility-builders",
+        "utility-builder-stack"
       ]
     },
     {
@@ -142,6 +176,23 @@
       ]
     },
     {
+      "id": "doc-drop-bridge",
+      "display_name": "Doc Drop Bridge",
+      "description": "A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.",
+      "short_description": "Premium menu-bar doc drop bridge",
+      "brand_color": "#64D2FF",
+      "path": "skills/doc-drop-bridge",
+      "skill_file": "skills/doc-drop-bridge/SKILL.md",
+      "openai_yaml": "skills/doc-drop-bridge/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $doc-drop-bridge to build a polished macOS menu-bar utility for a document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
       "id": "fan-canon-miner",
       "display_name": "Fan Canon Miner",
       "description": "Mine comments, interviews, captions, and fan chatter around a creator, celebrity, or founder to identify the symbols, phrases, moments, and myths people repeat, then turn them into a canon map. Use when Codex needs fandom analysis grounded in public or user-authorized material.",
@@ -193,6 +244,23 @@
       ]
     },
     {
+      "id": "focus-runway",
+      "display_name": "Focus Runway",
+      "description": "A quiet focus launcher that trims context switching and starts the next working block cleanly.",
+      "short_description": "Premium menu-bar focus runway",
+      "brand_color": "#64D2FF",
+      "path": "skills/focus-runway",
+      "skill_file": "skills/focus-runway/SKILL.md",
+      "openai_yaml": "skills/focus-runway/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $focus-runway to build a polished macOS menu-bar utility for a quiet focus launcher that trims context switching and starts the next working block cleanly.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
       "id": "folder-studio",
       "display_name": "Folder Studio",
       "description": "Build, run, troubleshoot, or extend a Folder Studio macOS menu bar app that reads folder context, suggests engravings, colors folders, previews Finder-style skins, and applies custom icons. Use when Codex needs to work on a workspace containing `FolderStudioApp`, keep Folder Studio separate from Cursor Studio, regenerate the Xcode project, or validate the `FolderStudio` scheme and tests.",
@@ -224,6 +292,23 @@
       "packs": [
         "daily-briefs-and-reference",
         "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "handoff-courier",
+      "display_name": "Handoff Courier",
+      "description": "A polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics.",
+      "short_description": "Premium menu-bar handoff courier",
+      "brand_color": "#0A84FF",
+      "path": "skills/handoff-courier",
+      "skill_file": "skills/handoff-courier/SKILL.md",
+      "openai_yaml": "skills/handoff-courier/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $handoff-courier to build a polished macOS menu-bar utility for a polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics.",
+      "packs": [
+        "macos-utility-builders",
+        "utility-builder-stack"
       ]
     },
     {
@@ -260,6 +345,22 @@
         "audience-and-fandom-strategy",
         "creator-and-fandom-stack",
         "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "launch-deck-lift",
+      "display_name": "Launch Deck Lift",
+      "description": "A presentation helper that turns a rough idea into a clean launch deck starter.",
+      "short_description": "Premium menu-bar launch deck lift",
+      "brand_color": "#FFD60A",
+      "path": "skills/launch-deck-lift",
+      "skill_file": "skills/launch-deck-lift/SKILL.md",
+      "openai_yaml": "skills/launch-deck-lift/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $launch-deck-lift to build a polished macOS menu-bar utility for a presentation helper that turns a rough idea into a clean launch deck starter.",
+      "packs": [
+        "launch-and-distribution"
       ]
     },
     {
@@ -400,6 +501,56 @@
       ]
     },
     {
+      "id": "phone-handoff-panel",
+      "display_name": "Phone Handoff Panel",
+      "description": "A device handoff panel for opening your phone, jump-starting a task, and keeping the Mac in the loop.",
+      "short_description": "Premium menu-bar phone handoff panel",
+      "brand_color": "#FF9F0A",
+      "path": "skills/phone-handoff-panel",
+      "skill_file": "skills/phone-handoff-panel/SKILL.md",
+      "openai_yaml": "skills/phone-handoff-panel/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $phone-handoff-panel to build a polished macOS menu-bar utility for a device handoff panel for opening your phone, jump-starting a task, and keeping the mac in the loop.",
+      "packs": [
+        "macos-utility-builders",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "power-sentry",
+      "display_name": "Power Sentry",
+      "description": "A battery-and-power watch that helps you read drain, charging, and energy mode at a glance.",
+      "short_description": "Premium menu-bar power sentry",
+      "brand_color": "#FF453A",
+      "path": "skills/power-sentry",
+      "skill_file": "skills/power-sentry/SKILL.md",
+      "openai_yaml": "skills/power-sentry/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $power-sentry to build a polished macOS menu-bar utility for a battery-and-power watch that helps you read drain, charging, and energy mode at a glance.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "release-ramp",
+      "display_name": "Release Ramp",
+      "description": "A release-prep board that turns a shipping checklist into a clean launch lane.",
+      "short_description": "Premium menu-bar release ramp",
+      "brand_color": "#BF5AF2",
+      "path": "skills/release-ramp",
+      "skill_file": "skills/release-ramp/SKILL.md",
+      "openai_yaml": "skills/release-ramp/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $release-ramp to build a polished macOS menu-bar utility for a release-prep board that turns a shipping checklist into a clean launch lane.",
+      "packs": [
+        "launch-and-distribution"
+      ]
+    },
+    {
       "id": "repo-launch",
       "display_name": "Repo Launch",
       "description": "Audit and polish a GitHub-ready repository. Use when Codex needs to classify a rough project, choose the right README shape, and add only the minimum launch essentials needed for a clean shareable repo.",
@@ -411,6 +562,22 @@
       "icon_small": "./assets/repo-launch-small.svg",
       "icon_large": "./assets/repo-launch-large.svg",
       "default_prompt": "Use $repo-launch to audit this repo shape first, then add only the minimum README, license, and start-path polish needed to make it GitHub-ready.",
+      "packs": [
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "repo-ops-lens",
+      "display_name": "Repo Ops Lens",
+      "description": "A repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion.",
+      "short_description": "Premium menu-bar repo ops lens",
+      "brand_color": "#30D158",
+      "path": "skills/repo-ops-lens",
+      "skill_file": "skills/repo-ops-lens/SKILL.md",
+      "openai_yaml": "skills/repo-ops-lens/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $repo-ops-lens to build a polished macOS menu-bar utility for a repo audit panel that turns a github link into a crisp operating brief, risk pass, and next-step suggestion.",
       "packs": [
         "launch-and-distribution"
       ]
@@ -452,6 +619,39 @@
       ]
     },
     {
+      "id": "screen-snippet-studio",
+      "display_name": "Screen Snippet Studio",
+      "description": "A menu-bar capture studio for clipping the current screen into clean prompts, tickets, or handoffs.",
+      "short_description": "Premium menu-bar screen snippet studio",
+      "brand_color": "#5E5CE6",
+      "path": "skills/screen-snippet-studio",
+      "skill_file": "skills/screen-snippet-studio/SKILL.md",
+      "openai_yaml": "skills/screen-snippet-studio/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $screen-snippet-studio to build a polished macOS menu-bar capture utility for turning screen snippets into clean prompts, tickets, or handoffs.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "session-arcade",
+      "display_name": "Session Arcade",
+      "description": "A launch-night helper for game sessions, cloud gaming, and quick console handoffs.",
+      "short_description": "Premium menu-bar session arcade",
+      "brand_color": "#32ADE6",
+      "path": "skills/session-arcade",
+      "skill_file": "skills/session-arcade/SKILL.md",
+      "openai_yaml": "skills/session-arcade/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $session-arcade to build a polished macOS menu-bar utility for a launch-night helper for game sessions, cloud gaming, and quick console handoffs.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    },
+    {
       "id": "skillbar",
       "display_name": "SkillBar",
       "description": "Build, run, troubleshoot, or extend SkillBar, the codex-goated-skills macOS menu bar manager. Use when Codex needs to work on the `apps/skillbar` workspace, validate repo-driven catalog parsing, exercise install or update wiring through `bin/codex-goated`, or keep the local preset, pack, and installed-state flows honest.",
@@ -466,6 +666,24 @@
       "packs": [
         "productivity-and-workflow",
         "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "story-arc-board",
+      "display_name": "Story Arc Board",
+      "description": "A menu-bar board for capturing repeated hooks from notes, captions, and comments before they disappear into app sprawl.",
+      "short_description": "Menu-bar relay for recurring hooks",
+      "brand_color": "#FF375F",
+      "path": "skills/story-arc-board",
+      "skill_file": "skills/story-arc-board/SKILL.md",
+      "openai_yaml": "skills/story-arc-board/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $story-arc-board to build a polished macOS menu-bar utility that captures recurring hooks from notes, captions, and comments without forcing extra tab switching.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
       ]
     },
     {
@@ -588,7 +806,7 @@
       "title": "Audience and Fandom Strategy",
       "summary": "Personality-led audience analysis, fandom design, and creator-world strategy for public or user-authorized material.",
       "path": "collections/audience-and-fandom-strategy.txt",
-      "skill_count": 10,
+      "skill_count": 11,
       "skills": [
         "fan-canon-miner",
         "comment-pulse-board",
@@ -599,7 +817,8 @@
         "lore-drop-planner",
         "inner-circle-director",
         "myth-merch-studio",
-        "reputation-heatmap"
+        "reputation-heatmap",
+        "story-arc-board"
       ]
     },
     {
@@ -607,7 +826,7 @@
       "title": "Creator and Fandom Stack",
       "summary": "A fuller creator-brand workflow covering canon, rituals, identity, merch, messaging, and launch-ready packaging.",
       "path": "collections/creator-and-fandom-stack.txt",
-      "skill_count": 12,
+      "skill_count": 13,
       "skills": [
         "brand-kit",
         "content-pack",
@@ -620,7 +839,8 @@
         "lore-drop-planner",
         "inner-circle-director",
         "myth-merch-studio",
-        "reputation-heatmap"
+        "reputation-heatmap",
+        "story-arc-board"
       ]
     },
     {
@@ -643,7 +863,7 @@
       "title": "Fandom Skill Pack",
       "summary": "Audience strategy skills for canon mining, community rituals, lore pacing, merch concepts, and narrative risk review.",
       "path": "collections/fandom-skill-pack.txt",
-      "skill_count": 10,
+      "skill_count": 11,
       "skills": [
         "fan-canon-miner",
         "comment-pulse-board",
@@ -654,7 +874,8 @@
         "lore-drop-planner",
         "inner-circle-director",
         "myth-merch-studio",
-        "reputation-heatmap"
+        "reputation-heatmap",
+        "story-arc-board"
       ]
     },
     {
@@ -662,10 +883,11 @@
       "title": "Games and Minecraft",
       "summary": "Minecraft server operations and skin tooling for play, hosting, and customization workflows.",
       "path": "collections/games-and-minecraft.txt",
-      "skill_count": 2,
+      "skill_count": 3,
       "skills": [
         "minecraft-essentials",
-        "minecraft-skin-studio"
+        "minecraft-skin-studio",
+        "session-arcade"
       ]
     },
     {
@@ -673,12 +895,15 @@
       "title": "Launch and Distribution",
       "summary": "Skills for shaping a project, packaging it well, and getting it ready to publish or ship.",
       "path": "collections/launch-and-distribution.txt",
-      "skill_count": 4,
+      "skill_count": 7,
       "skills": [
         "repo-launch",
         "website-drop",
         "brand-kit",
-        "content-pack"
+        "content-pack",
+        "release-ramp",
+        "repo-ops-lens",
+        "launch-deck-lift"
       ]
     },
     {
@@ -686,11 +911,14 @@
       "title": "macOS Utility Builders",
       "summary": "Skills for planning, shaping, or refining focused macOS utilities and menu bar tools.",
       "path": "collections/macos-utility-builders.txt",
-      "skill_count": 3,
+      "skill_count": 6,
       "skills": [
         "find-my-phone-studio",
         "cursor-studio",
-        "folder-studio"
+        "folder-studio",
+        "handoff-courier",
+        "phone-handoff-panel",
+        "chrome-tab-sweeper"
       ]
     },
     {
@@ -698,7 +926,7 @@
       "title": "Productivity and Workflow",
       "summary": "Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.",
       "path": "collections/productivity-and-workflow.txt",
-      "skill_count": 9,
+      "skill_count": 14,
       "skills": [
         "workspace-doctor",
         "gain-tracker",
@@ -708,7 +936,12 @@
         "clipboard-studio",
         "network-studio",
         "dark-pdf-studio",
-        "deckdrop-studio"
+        "deckdrop-studio",
+        "focus-runway",
+        "screen-snippet-studio",
+        "doc-drop-bridge",
+        "battery-trend-scout",
+        "power-sentry"
       ]
     },
     {
@@ -716,7 +949,7 @@
       "title": "Utility Builder Stack",
       "summary": "A practical bundle for shipping Mac utilities, local monitors, workflow tools, and app-adjacent builders.",
       "path": "collections/utility-builder-stack.txt",
-      "skill_count": 8,
+      "skill_count": 16,
       "skills": [
         "workspace-doctor",
         "skillbar",
@@ -725,7 +958,15 @@
         "find-my-phone-studio",
         "cursor-studio",
         "folder-studio",
-        "vibe-bluetooth"
+        "vibe-bluetooth",
+        "battery-trend-scout",
+        "chrome-tab-sweeper",
+        "doc-drop-bridge",
+        "focus-runway",
+        "handoff-courier",
+        "phone-handoff-panel",
+        "power-sentry",
+        "screen-snippet-studio"
       ]
     }
   ]

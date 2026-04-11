@@ -1,0 +1,44 @@
+{
+  "id": "focus-runway",
+  "name": "Focus Runway",
+  "category": "Productivity",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A quiet focus launcher that trims context switching and starts the next working block cleanly.",
+  "audience": [
+    "Deep workers",
+    "Students",
+    "People who need less switching and more flow"
+  ],
+  "tags": [
+    "focus",
+    "productivity",
+    "launch",
+    "menu bar",
+    "workflow"
+  ],
+  "install_command": "codex-skillctl install focus-runway",
+  "docs_paths": [
+    "skills/focus-runway/SKILL.md",
+    "skills/focus-runway/manifest.json",
+    "skills/focus-runway/agents/openai.yaml",
+    "skills/focus-runway/assets/icon.svg",
+    "skills/focus-runway/assets/preview.svg",
+    "skills/focus-runway/prototype/README.md",
+    "skills/focus-runway/prototype/SkillMenuBarApp.swift",
+    "skills/focus-runway/prototype/SkillMenuBarView.swift",
+    "skills/focus-runway/prototype/SkillDetailView.swift",
+    "skills/focus-runway/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Starts the next work block with less setup and fewer interruptions.",
+    "Keeps just enough context visible to begin quickly.",
+    "Prefers one calm action over a stack of settings."
+  ],
+  "file_path_hints": [
+    "skills/focus-runway/prototype/README.md",
+    "skills/focus-runway/prototype/SkillMenuBarApp.swift",
+    "skills/focus-runway/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "arrow.clockwise"
+}

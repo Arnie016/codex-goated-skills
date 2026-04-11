@@ -1,0 +1,44 @@
+{
+  "id": "release-ramp",
+  "name": "Release Ramp",
+  "category": "Distribution",
+  "status": "active",
+  "stars": 4,
+  "short_description": "A release-prep board that turns a shipping checklist into a clean launch lane.",
+  "audience": [
+    "Solo founders",
+    "Open-source maintainers",
+    "Launch operators"
+  ],
+  "tags": [
+    "release",
+    "distribution",
+    "checklist",
+    "launch",
+    "menu bar"
+  ],
+  "install_command": "codex-skillctl install release-ramp",
+  "docs_paths": [
+    "skills/release-ramp/SKILL.md",
+    "skills/release-ramp/manifest.json",
+    "skills/release-ramp/agents/openai.yaml",
+    "skills/release-ramp/assets/icon.svg",
+    "skills/release-ramp/assets/preview.svg",
+    "skills/release-ramp/prototype/README.md",
+    "skills/release-ramp/prototype/SkillMenuBarApp.swift",
+    "skills/release-ramp/prototype/SkillMenuBarView.swift",
+    "skills/release-ramp/prototype/SkillDetailView.swift",
+    "skills/release-ramp/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Turns the shipping checklist into something visible and manageable.",
+    "Highlights missing steps before a release goes live.",
+    "Feels like a small launch control panel instead of a giant PM app."
+  ],
+  "file_path_hints": [
+    "skills/release-ramp/prototype/README.md",
+    "skills/release-ramp/prototype/SkillMenuBarApp.swift",
+    "skills/release-ramp/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "shippingbox.fill"
+}

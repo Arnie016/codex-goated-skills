@@ -1,0 +1,10 @@
+interface:
+  display_name: "Story Arc Board"
+  short_description: "Menu-bar relay for recurring hooks"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#FF375F"
+  default_prompt: "Use $story-arc-board to build a polished macOS menu-bar utility that captures recurring hooks from notes, captions, and comments without forcing extra tab switching."
+
+policy:
+  allow_implicit_invocation: true

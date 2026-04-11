@@ -2,3 +2,4 @@
 # summary: Minecraft server operations and skin tooling for play, hosting, and customization workflows.
 minecraft-essentials
 minecraft-skin-studio
+session-arcade

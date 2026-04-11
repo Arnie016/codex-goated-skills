@@ -1,0 +1,44 @@
+{
+  "id": "power-sentry",
+  "name": "Power Sentry",
+  "category": "System Monitoring",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A battery-and-power watch that helps you read drain, charging, and energy mode at a glance.",
+  "audience": [
+    "Mac laptop users",
+    "Travelers",
+    "People who care about battery life"
+  ],
+  "tags": [
+    "battery",
+    "power",
+    "energy mode",
+    "monitoring",
+    "menu bar"
+  ],
+  "install_command": "codex-skillctl install power-sentry",
+  "docs_paths": [
+    "skills/power-sentry/SKILL.md",
+    "skills/power-sentry/manifest.json",
+    "skills/power-sentry/agents/openai.yaml",
+    "skills/power-sentry/assets/icon.svg",
+    "skills/power-sentry/assets/preview.svg",
+    "skills/power-sentry/prototype/README.md",
+    "skills/power-sentry/prototype/SkillMenuBarApp.swift",
+    "skills/power-sentry/prototype/SkillMenuBarView.swift",
+    "skills/power-sentry/prototype/SkillDetailView.swift",
+    "skills/power-sentry/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Shows battery state and energy mode without the noise of a diagnostics dump.",
+    "Pairs well with lightweight trend cues and significant energy usage.",
+    "Stays calm enough to live in the menu bar all day."
+  ],
+  "file_path_hints": [
+    "skills/power-sentry/prototype/README.md",
+    "skills/power-sentry/prototype/SkillMenuBarApp.swift",
+    "skills/power-sentry/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "battery.100"
+}

@@ -1,0 +1,10 @@
+interface:
+  display_name: "Chrome Tab Sweeper"
+  short_description: "Mac menu-bar control for overloaded Chrome tabs"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#22C55E"
+  default_prompt: "Use $chrome-tab-sweeper to build a macOS menu-bar utility that lists Chrome tabs, groups the mess by domain, and closes explicit selected tab batches safely."
+
+policy:
+  allow_implicit_invocation: true

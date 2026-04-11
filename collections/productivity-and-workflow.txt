@@ -9,3 +9,8 @@ clipboard-studio
 network-studio
 dark-pdf-studio
 deckdrop-studio
+focus-runway
+screen-snippet-studio
+doc-drop-bridge
+battery-trend-scout
+power-sentry

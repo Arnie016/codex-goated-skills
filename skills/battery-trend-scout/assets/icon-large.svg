@@ -1,0 +1,60 @@
+<svg width="1280" height="800" viewBox="0 0 1280 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="74" x2="1140" y2="728" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#050816"/>
+      <stop offset="1" stop-color="#101827"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="210" y1="156" x2="1080" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#0B1220" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0A84FF"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1280" height="800" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="800" rx="48" fill="url(#bg)"/>
+  <circle cx="1030" cy="150" r="220" fill="#0B3B68" opacity="0.28"/>
+  <circle cx="250" cy="640" r="180" fill="#123B2F" opacity="0.20"/>
+
+  <g filter="url(#shadow)">
+    <rect x="110" y="110" width="1060" height="580" rx="40" fill="url(#glass)" stroke="#253046" stroke-width="2"/>
+  </g>
+
+  <text x="168" y="188" fill="#F8FAFC" font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif" font-size="64" font-weight="700">Battery Trend Scout</text>
+  <text x="168" y="238" fill="#94A3B8" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="500">A polished menu-bar battery surface with calm status, trend context, and useful fallbacks.</text>
+
+  <rect x="170" y="292" width="104" height="40" rx="20" fill="#0A84FF" fill-opacity="0.18" stroke="#0A84FF" stroke-opacity="0.45"/>
+  <text x="196" y="319" fill="#D6EAFE" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="600">ACTIVE</text>
+
+  <rect x="170" y="352" width="500" height="286" rx="32" fill="#0B1220" stroke="#223146" stroke-width="2"/>
+  <text x="202" y="404" fill="#E5E7EB" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="600">Current state</text>
+  <text x="202" y="498" fill="#F8FAFC" font-family="SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif" font-size="104" font-weight="700">68%</text>
+  <text x="202" y="544" fill="#94A3B8" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif" font-size="26" font-weight="500">Battery • Automatic • Charging</text>
+  <rect x="202" y="580" width="176" height="16" rx="8" fill="#1F2937"/>
+  <rect x="202" y="580" width="118" height="16" rx="8" fill="url(#accent)"/>
+  <text x="202" y="622" fill="#CBD5E1" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="500">1h 42m until full</text>
+
+  <rect x="722" y="352" width="388" height="286" rx="32" fill="#0B1220" stroke="#223146" stroke-width="2"/>
+  <text x="754" y="404" fill="#E5E7EB" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="600">Trend view</text>
+  <text x="754" y="440" fill="#94A3B8" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="500">Recent drain stays local and legible.</text>
+  <path d="M764 548C820 540 846 564 892 552C940 540 962 448 1004 456C1048 464 1072 420 1094 398" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M764 548H1094" stroke="#203047" stroke-width="2"/>
+  <circle cx="764" cy="548" r="8" fill="#0A84FF"/>
+  <circle cx="892" cy="552" r="8" fill="#34D399"/>
+  <circle cx="1004" cy="456" r="8" fill="#F59E0B"/>
+  <circle cx="1094" cy="398" r="8" fill="#F8FAFC"/>
+
+  <rect x="722" y="468" width="112" height="38" rx="19" fill="#0A84FF" fill-opacity="0.18"/>
+  <text x="746" y="493" fill="#CBE3FF" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="600">Battery</text>
+
+  <rect x="846" y="468" width="128" height="38" rx="19" fill="#34D399" fill-opacity="0.16"/>
+  <text x="872" y="493" fill="#D9FAE7" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="600">Automatic</text>
+
+  <rect x="986" y="468" width="122" height="38" rx="19" fill="#F59E0B" fill-opacity="0.16"/>
+  <text x="1014" y="493" fill="#FDECC8" font-family="SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="600">Charging</text>
+</svg>

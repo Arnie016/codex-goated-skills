@@ -3,3 +3,6 @@
 find-my-phone-studio
 cursor-studio
 folder-studio
+handoff-courier
+phone-handoff-panel
+chrome-tab-sweeper
