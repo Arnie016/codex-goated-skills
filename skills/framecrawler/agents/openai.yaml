@@ -1,0 +1,7 @@
+interface:
+  display_name: "FrameCrawler"
+  short_description: "Prompt-to-Blender SceneSpec and blockout workflow"
+  icon_small: "./assets/framecrawler-small.svg"
+  icon_large: "./assets/framecrawler-large.svg"
+  brand_color: "#80E2B8"
+  default_prompt: "Use $framecrawler to work on the FrameCrawler prompt-to-Blender workflow, keep the watched scene_spec.json path aligned with Blender, and tell me exactly what to click next in Blender."

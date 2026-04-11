@@ -98,6 +98,7 @@ Browse by use case:
 | --- | --- | --- |
 | <img src="skills/telebar/assets/telebar-small.svg" width="26" alt="TeleBar" /><br/>[`telebar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/telebar) | Builds and runs the TeleBar Telegram + AI menu bar app | `telebar` |
 | <img src="skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg" width="26" alt="VibeBluetooth" /><br/>[`vibe-bluetooth`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth) | Dev skill for the VibeWidget macOS app and widget | `vibe-bluetooth` |
+| <img src="skills/framecrawler/assets/framecrawler-small.svg" width="26" alt="FrameCrawler" /><br/>[`framecrawler`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/framecrawler) | Builds and extends the FrameCrawler prompt-to-Blender SceneSpec workflow, menu bar app, and Blender handoff | `framecrawler` |
 
 ### Games and Consoles
 
