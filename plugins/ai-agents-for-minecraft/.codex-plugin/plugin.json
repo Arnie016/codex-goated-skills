@@ -1,0 +1,46 @@
+{
+  "name": "ai-agents-for-minecraft",
+  "version": "0.2.0",
+  "description": "Operate and extend AI-powered Minecraft Paper servers with autonomous builders, server helpers, in-game command coaching, and Codex guidance.",
+  "author": {
+    "name": "Arnav",
+    "url": "https://github.com/Arnie016"
+  },
+  "homepage": "https://github.com/Arnie016/codex-goated-skills/tree/main/plugins/ai-agents-for-minecraft",
+  "repository": "https://github.com/Arnie016/codex-goated-skills",
+  "license": "MIT",
+  "keywords": [
+    "minecraft",
+    "paper",
+    "spigot",
+    "worldedit",
+    "ai",
+    "server"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI Agents for Minecraft",
+    "shortDescription": "Run AI Minecraft servers and guide players",
+    "longDescription": "Use this plugin to help Codex install, launch, upgrade, and operate Minecraft Paper servers with AI builder workflows, recurring build jobs, local server tooling, and in-game guidance for commands like WorldEdit, claims, and AI building.",
+    "developerName": "Arnav",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/Arnie016/codex-goated-skills/tree/main/plugins/ai-agents-for-minecraft",
+    "privacyPolicyURL": "",
+    "termsOfServiceURL": "",
+    "defaultPrompt": [
+      "Find my Paper server and install the AI builder plugin",
+      "Launch my local Minecraft server and verify the AI agent commands work",
+      "Add a new AI builder feature to my Minecraft server plugin",
+      "Explain this Minecraft command error and tell me what to try next"
+    ],
+    "brandColor": "#58C16F",
+    "composerIcon": "./assets/minecraft-studio.svg",
+    "logo": "./assets/minecraft-studio.svg",
+    "screenshots": []
+  }
+}
