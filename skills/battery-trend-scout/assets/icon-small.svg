@@ -1,0 +1,23 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shell" x1="42" y1="26" x2="210" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="fill" x1="72" y1="74" x2="184" y2="172" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A84FF"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <filter id="glow" x="0" y="0" width="256" height="256" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.039 0 0 0 0 0.518 0 0 0 0 1 0 0 0 0.35 0"/>
+    </filter>
+  </defs>
+  <rect x="14" y="14" width="228" height="228" rx="56" fill="url(#shell)"/>
+  <rect x="54" y="78" width="132" height="82" rx="20" stroke="#E5E7EB" stroke-width="8" opacity="0.98"/>
+  <rect x="190" y="104" width="10" height="22" rx="4" fill="#E5E7EB" opacity="0.98"/>
+  <rect x="64" y="88" width="92" height="62" rx="14" fill="url(#fill)"/>
+  <path d="M80 162H176" stroke="#8FD3FF" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+  <path d="M80 162L104 146L126 154L148 124L174 134" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="128" cy="128" r="74" fill="#0A84FF" opacity="0.12" filter="url(#glow)"/>
+</svg>

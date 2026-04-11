@@ -1,0 +1,10 @@
+interface:
+  display_name: "Focus Runway"
+  short_description: "Premium menu-bar focus runway"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#64D2FF"
+  default_prompt: "Use $focus-runway to build a polished macOS menu-bar utility for a quiet focus launcher that trims context switching and starts the next working block cleanly."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Chrome Tab Sweeper preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1117"/>
+      <stop offset="100%" stop-color="#050708"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="42" fill="url(#bg)"/>
+  <circle cx="1010" cy="118" r="140" fill="#22C55E" opacity="0.12"/>
+  <circle cx="130" cy="520" r="160" fill="#0EA5E9" opacity="0.1"/>
+  <rect x="72" y="76" width="1056" height="478" rx="34" fill="#111827" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <text x="112" y="148" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="24" font-weight="700" fill="#94A3B8">Mac menu-bar browser control</text>
+  <text x="112" y="236" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="64" font-weight="800" fill="#FFFFFF">Chrome Tab Sweeper</text>
+  <text x="112" y="292" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="28" fill="#D1D5DB">Understand the tab mess, then close selected piles in one shot.</text>
+  <rect x="112" y="342" width="330" height="10" rx="5" fill="url(#accent)"/>
+  <text x="112" y="414" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="24" fill="#D1D5DB">List every Chrome tab from the top-bar icon.</text>
+  <text x="112" y="462" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="24" fill="#D1D5DB">Group overloaded windows by domain and task.</text>
+  <text x="112" y="510" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="24" fill="#D1D5DB">Close explicit tab tokens only after review.</text>
+  <rect x="806" y="134" width="244" height="330" rx="32" fill="#0B1220" stroke="#FFFFFF" stroke-opacity="0.1"/>
+  <rect x="834" y="164" width="188" height="46" rx="18" fill="#182232"/>
+  <rect x="834" y="238" width="188" height="38" rx="14" fill="#132033"/>
+  <rect x="834" y="298" width="136" height="38" rx="14" fill="#132033"/>
+  <rect x="834" y="358" width="164" height="38" rx="14" fill="#132033"/>
+  <rect x="864" y="420" width="128" height="42" rx="16" fill="url(#accent)"/>
+  <text x="928" y="448" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="19" font-weight="700" fill="#FFFFFF">Sweep 12</text>
+</svg>

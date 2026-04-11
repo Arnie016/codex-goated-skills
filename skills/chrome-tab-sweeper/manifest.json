@@ -1,0 +1,47 @@
+{
+  "id": "chrome-tab-sweeper",
+  "name": "Chrome Tab Sweeper",
+  "category": "Mac OS",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A Mac menu-bar tab control surface for understanding overloaded Chrome windows and closing selected tab piles in one shot.",
+  "audience": [
+    "People with too many Chrome tabs open",
+    "Mac power users",
+    "AI-assisted operators cleaning browser context"
+  ],
+  "tags": [
+    "Chrome",
+    "tabs",
+    "menu bar",
+    "macOS",
+    "browser control",
+    "cleanup",
+    "AppleScript"
+  ],
+  "install_command": "codex-skillctl install chrome-tab-sweeper",
+  "docs_paths": [
+    "skills/chrome-tab-sweeper/SKILL.md",
+    "skills/chrome-tab-sweeper/manifest.json",
+    "skills/chrome-tab-sweeper/agents/openai.yaml",
+    "skills/chrome-tab-sweeper/assets/icon.svg",
+    "skills/chrome-tab-sweeper/assets/preview.svg",
+    "skills/chrome-tab-sweeper/scripts/chrome_tab_sweeper.py",
+    "skills/chrome-tab-sweeper/prototype/README.md",
+    "skills/chrome-tab-sweeper/prototype/SkillMenuBarApp.swift",
+    "skills/chrome-tab-sweeper/prototype/SkillMenuBarView.swift",
+    "skills/chrome-tab-sweeper/prototype/SkillDetailView.swift",
+    "skills/chrome-tab-sweeper/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Lists every Chrome window and tab from a top-bar control surface.",
+    "Groups the overload by domain so the mess becomes readable fast.",
+    "Closes only explicit tab tokens, making one-shot cleanup deliberate instead of scary."
+  ],
+  "file_path_hints": [
+    "skills/chrome-tab-sweeper/scripts/chrome_tab_sweeper.py",
+    "skills/chrome-tab-sweeper/prototype/SkillMenuBarView.swift",
+    "skills/chrome-tab-sweeper/prototype/SkillDetailView.swift"
+  ],
+  "system_symbol": "rectangle.stack.badge.minus"
+}

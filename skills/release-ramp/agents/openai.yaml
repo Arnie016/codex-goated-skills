@@ -1,0 +1,10 @@
+interface:
+  display_name: "Release Ramp"
+  short_description: "Premium menu-bar release ramp"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#BF5AF2"
+  default_prompt: "Use $release-ramp to build a polished macOS menu-bar utility for a release-prep board that turns a shipping checklist into a clean launch lane."
+
+policy:
+  allow_implicit_invocation: true

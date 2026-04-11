@@ -1,0 +1,45 @@
+{
+  "id": "doc-drop-bridge",
+  "name": "Doc Drop Bridge",
+  "category": "Documents",
+  "status": "active",
+  "stars": 4,
+  "short_description": "A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.",
+  "audience": [
+    "Writers",
+    "Operators",
+    "People moving content between apps"
+  ],
+  "tags": [
+    "documents",
+    "PDF",
+    "handoff",
+    "export",
+    "menu bar",
+    "packaging"
+  ],
+  "install_command": "codex-skillctl install doc-drop-bridge",
+  "docs_paths": [
+    "skills/doc-drop-bridge/SKILL.md",
+    "skills/doc-drop-bridge/manifest.json",
+    "skills/doc-drop-bridge/agents/openai.yaml",
+    "skills/doc-drop-bridge/assets/icon.svg",
+    "skills/doc-drop-bridge/assets/preview.svg",
+    "skills/doc-drop-bridge/prototype/README.md",
+    "skills/doc-drop-bridge/prototype/SkillMenuBarApp.swift",
+    "skills/doc-drop-bridge/prototype/SkillMenuBarView.swift",
+    "skills/doc-drop-bridge/prototype/SkillDetailView.swift",
+    "skills/doc-drop-bridge/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Makes it easy to wrap a working note into a shareable artifact.",
+    "Keeps PDF, markdown, and plain-text exports close at hand.",
+    "Focuses on fast delivery rather than a giant document suite."
+  ],
+  "file_path_hints": [
+    "skills/doc-drop-bridge/prototype/README.md",
+    "skills/doc-drop-bridge/prototype/SkillMenuBarApp.swift",
+    "skills/doc-drop-bridge/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "doc.fill"
+}
