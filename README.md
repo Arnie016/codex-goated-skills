@@ -158,19 +158,23 @@ MACOS_ICON_BARS_TRACKING=0 bash <(curl -fsSL https://raw.githubusercontent.com/A
 
 These newer skills are now synced into this repo from the skill-factory lane. They also work as lightweight market intelligence for where this pack can keep winning: AI-assisted developer tooling, browser-native creative handoffs, and compact OSS-flavored utilities that are obvious in under 10 seconds.
 
-- AI infra for developers: `repo-ops-lens`, `screen-snippet-studio`, and `chrome-tab-sweeper`
-- Browser-native creative and handoff tools: `launch-deck-lift`, `doc-drop-bridge`, and `handoff-courier`
+- AI infra for developers: `repo-ops-lens`, `patch-pilot`, `screen-snippet-studio`, and `chrome-tab-sweeper`
+- Browser-native creative and handoff tools: `front-tab-relay`, `launch-deck-lift`, `doc-drop-bridge`, and `handoff-courier`
 - Compact Mac utilities with obvious value fast: `battery-trend-scout`, `power-sentry`, `focus-runway`, and `phone-handoff-panel`
+- Quiet productivity helpers for task switching: `context-shelf`, `focus-runway`, and `doc-drop-bridge`
 
 | Skill | Category | What it does |
 | --- | --- | --- |
 | [`battery-trend-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/battery-trend-scout) | System Monitoring | Calm Mac-style battery panel with charge, power source, energy mode, and trend context. |
 | [`chrome-tab-sweeper`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/chrome-tab-sweeper) | Mac OS | A Mac menu-bar tab control surface for understanding overloaded Chrome windows and closing selected tab piles in one shot. |
+| [`context-shelf`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/context-shelf) | Productivity | A menu-bar shelf for parking the current tab, clipboard snippet, and scratch note before you switch tasks, so resuming takes one glance instead of a rebuild. |
 | [`doc-drop-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/doc-drop-bridge) | Documents | A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files. |
 | [`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway) | Productivity | A quiet focus launcher that trims context switching and starts the next working block cleanly. |
+| [`front-tab-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/front-tab-relay) | Workflow Automation | Build or operate a macOS menu-bar relay that captures the front browser tab and formats it for prompts, notes, tickets, or chat handoffs. |
 | [`handoff-courier`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/handoff-courier) | Mac OS | A polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics. |
 | [`launch-deck-lift`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/launch-deck-lift) | Presentation | A presentation helper that turns a rough idea into a clean launch deck starter. |
 | [`phone-handoff-panel`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/phone-handoff-panel) | Connectivity | A device handoff panel for opening your phone, jump-starting a task, and keeping the Mac in the loop. |
+| [`patch-pilot`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/patch-pilot) | Developer Tools | A menu-bar diff triage panel that turns a patch or file list into a crisp fix brief, risk scan, and next command. |
 | [`power-sentry`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/power-sentry) | System Monitoring | A battery-and-power watch that helps you read drain, charging, and energy mode at a glance. |
 | [`release-ramp`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/release-ramp) | Distribution | A release-prep board that turns a shipping checklist into a clean launch lane. |
 | [`repo-ops-lens`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/repo-ops-lens) | Developer Tools | A repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion. |
@@ -213,9 +217,12 @@ Browse by use case:
 | <img src="skills/network-studio/assets/network-studio-small.svg" width="26" alt="Network Studio" /><br/>[`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio) | macOS LAN monitor with SwiftBar and a dashboard | `network-studio` |
 | <img src="skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg" width="26" alt="Dark PDF Studio" /><br/>[`dark-pdf-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/dark-pdf-studio) | Converts PDFs, docs, and images into dark-background reading PDFs with a compact export flow | `dark-pdf-studio` |
 | <img src="skills/deckdrop-studio/assets/deckdrop-studio-small.svg" width="26" alt="Deckdrop Studio" /><br/>[`deckdrop-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/deckdrop-studio) | Builds and refines editable slide deck workflows for mixed-source inputs | `deckdrop-studio` |
+| <img src="skills/context-shelf/assets/icon.svg" width="26" alt="Context Shelf" /><br/>[`context-shelf`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/context-shelf) | A menu-bar shelf for parking the current tab, clipboard snippet, and scratch note before you switch tasks, so resuming takes one glance instead of a rebuild | `context-shelf` |
 | <img src="skills/focus-runway/assets/icon.svg" width="26" alt="Focus Runway" /><br/>[`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway) | A quiet focus launcher that trims context switching and starts the next working block cleanly | `focus-runway` |
+| <img src="skills/front-tab-relay/assets/icon.svg" width="26" alt="Front Tab Relay" /><br/>[`front-tab-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/front-tab-relay) | Build or operate a macOS menu-bar relay that captures the front browser tab and formats it for prompts, notes, tickets, or chat handoffs | `front-tab-relay` |
 | <img src="skills/screen-snippet-studio/assets/icon.svg" width="26" alt="Screen Snippet Studio" /><br/>[`screen-snippet-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/screen-snippet-studio) | A menu-bar capture studio for clipping the current screen into clean prompts, tickets, or handoffs | `screen-snippet-studio` |
 | <img src="skills/doc-drop-bridge/assets/icon.svg" width="26" alt="Doc Drop Bridge" /><br/>[`doc-drop-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/doc-drop-bridge) | A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files | `doc-drop-bridge` |
+| <img src="skills/patch-pilot/assets/icon.svg" width="26" alt="Patch Pilot" /><br/>[`patch-pilot`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/patch-pilot) | A menu-bar diff triage panel that turns a patch or file list into a crisp fix brief, risk scan, and next command | `patch-pilot` |
 | <img src="skills/battery-trend-scout/assets/icon.svg" width="26" alt="Battery Trend Scout" /><br/>[`battery-trend-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/battery-trend-scout) | Calm Mac-style battery panel with charge, power source, energy mode, and trend context | `battery-trend-scout` |
 | <img src="skills/power-sentry/assets/icon.svg" width="26" alt="Power Sentry" /><br/>[`power-sentry`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/power-sentry) | A battery-and-power watch that helps you read drain, charging, and energy mode at a glance | `power-sentry` |
 

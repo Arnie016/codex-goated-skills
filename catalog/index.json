@@ -1,6 +1,6 @@
 {
   "repo": "codex-goated-skills",
-  "skill_count": 46,
+  "skill_count": 49,
   "pack_count": 10,
   "skills": [
     {
@@ -122,6 +122,22 @@
       "packs": [
         "creator-and-fandom-stack",
         "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "context-shelf",
+      "display_name": "Context Shelf",
+      "description": "A menu-bar shelf for parking the current tab, clipboard snippet, and scratch note before you switch tasks, so resuming takes one glance instead of a rebuild.",
+      "short_description": "Park work context in a menu-bar shelf",
+      "brand_color": "#30D158",
+      "path": "skills/context-shelf",
+      "skill_file": "skills/context-shelf/SKILL.md",
+      "openai_yaml": "skills/context-shelf/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $context-shelf to build a polished macOS menu-bar utility that parks the current tab, clipboard snippet, and scratch note before a task switch, then makes resuming fast and calm.",
+      "packs": [
+        "productivity-and-workflow"
       ]
     },
     {
@@ -275,6 +291,22 @@
       "packs": [
         "macos-utility-builders",
         "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "front-tab-relay",
+      "display_name": "Front Tab Relay",
+      "description": "Build or operate a macOS menu-bar relay that captures the front browser tab and formats it for prompts, notes, tickets, or chat handoffs.",
+      "short_description": "Premium menu-bar front tab relay",
+      "brand_color": "#5E5CE6",
+      "path": "skills/front-tab-relay",
+      "skill_file": "skills/front-tab-relay/SKILL.md",
+      "openai_yaml": "skills/front-tab-relay/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $front-tab-relay to build a polished macOS menu-bar utility for a menu-bar relay for grabbing the front browser tab and routing its title and url into prompts, notes, or tickets without losing your place.",
+      "packs": [
+        "productivity-and-workflow"
       ]
     },
     {
@@ -498,6 +530,22 @@
         "audience-and-fandom-strategy",
         "creator-and-fandom-stack",
         "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "patch-pilot",
+      "display_name": "Patch Pilot",
+      "description": "A menu-bar diff triage panel that turns a patch or file list into a crisp fix brief, risk scan, and next command.",
+      "short_description": "Premium menu-bar diff triage",
+      "brand_color": "#30D158",
+      "path": "skills/patch-pilot",
+      "skill_file": "skills/patch-pilot/SKILL.md",
+      "openai_yaml": "skills/patch-pilot/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $patch-pilot to turn a local diff, staged change list, or review thread into a clear fix brief, risk scan, and next command.",
+      "packs": [
+        "productivity-and-workflow"
       ]
     },
     {
@@ -926,9 +974,10 @@
       "title": "Productivity and Workflow",
       "summary": "Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.",
       "path": "collections/productivity-and-workflow.txt",
-      "skill_count": 14,
+      "skill_count": 17,
       "skills": [
         "workspace-doctor",
+        "context-shelf",
         "gain-tracker",
         "on-this-day",
         "trading-archive",
@@ -938,8 +987,10 @@
         "dark-pdf-studio",
         "deckdrop-studio",
         "focus-runway",
+        "front-tab-relay",
         "screen-snippet-studio",
         "doc-drop-bridge",
+        "patch-pilot",
         "battery-trend-scout",
         "power-sentry"
       ]
