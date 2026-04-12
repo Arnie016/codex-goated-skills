@@ -7,7 +7,7 @@ Machine-readable catalog:
 
 ## Snapshot
 
-- Total skills: `46`
+- Total skills: `51`
 - Total packs: `10`
 - Main pack folder: [`collections/`](https://github.com/Arnie016/codex-goated-skills/tree/main/collections)
 - Main install CLI: [`bin/codex-goated`](https://github.com/Arnie016/codex-goated-skills/blob/main/bin/codex-goated)
@@ -26,14 +26,14 @@ codex-goated audit
 
 ## Audit Status
 
-Audit snapshot for April 11, 2026:
+Audit snapshot for April 13, 2026:
 
-- `46/46` skills include `SKILL.md`
-- `46/46` skills include `agents/openai.yaml`
-- `46/46` skills include a small SVG icon
-- `46/46` skills include a large SVG icon
+- `51/51` skills include `SKILL.md`
+- `51/51` skills include `agents/openai.yaml`
+- `51/51` skills include a small SVG icon
+- `51/51` skills include a large SVG icon
 - `10/10` pack files resolve to valid skill directories
-- `46/46` skills are covered by at least one pack
+- `51/51` skills are covered by at least one pack
 
 Run the live audit locally:
 
@@ -59,7 +59,7 @@ Continuous audit:
 | Pack | Purpose | Skill count |
 | --- | --- | --- |
 | `launch-and-distribution` | Launch rough projects, package them cleanly, and get them ready to share | 7 |
-| `productivity-and-workflow` | Workspace setup, document workflows, monitoring, daily reference, and repo-driven skill management | 14 |
+| `productivity-and-workflow` | Workspace setup, workflow handoffs, document flows, monitoring, daily reference, and repo-driven skill management | 19 |
 | `daily-briefs-and-reference` | Daily context, historical lookup, local pulse, readable export workflows, and market-reading archives | 6 |
 | `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, lore pacing, merch, and risk review | 11 |
 | `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 11 |
@@ -83,25 +83,37 @@ Continuous audit:
 
 ### Productivity and Workflow
 
+Workflow skills are grouped into smaller browse lanes here on purpose so new additions land in the main catalog instead of a separate recent bucket.
+
+#### Workspace and Daily Context
+
 - [`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor): Diagnose local workspace readiness, generated catalog freshness, and common setup problems.
-- [`context-shelf`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/context-shelf): Park the current tab, clipboard snippet, and scratch note so resuming after a task switch is one glance instead of a rebuild.
 - [`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker): Connect GitHub, scan repo folders, track daily git gains or broader output gains, and turn them into reminder stories and baseline comparisons.
 - [`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day): Pull the official Wikimedia On This Day feed into a polished daily history brief or Mac-style day browser.
 - [`trading-archive`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/trading-archive): Build a dependable archive of trading and macro articles from public feeds, then surface a reading queue, source health, or native menu bar workflow.
 - [`skillbar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/skillbar): Build and refine the SkillBar macOS top-bar skill manager.
+
+#### Workflow Handoffs and Automation
+
+- [`context-shelf`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/context-shelf): Park the current tab, clipboard snippet, and scratch note so resuming after a task switch is one glance instead of a rebuild.
+- [`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway): Start the next work block with less setup and less context switching.
+- [`front-tab-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/front-tab-relay): Capture the front browser tab and format it for prompts, notes, tickets, or chat handoffs.
+- [`meeting-link-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/meeting-link-bridge): Turn the current Teams or browser meeting link into a clean join note, email snippet, or fast open action.
+- [`excel-range-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/excel-range-relay): Turn the copied Excel selection into clean markdown, CSV, JSON, or prompt context without rebuilding the table by hand.
+- [`screen-snippet-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/screen-snippet-studio): Turn screen snippets into prompts, tickets, and handoff artifacts.
+- [`doc-drop-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/doc-drop-bridge): Turn notes, markdown, and fragments into share-ready handoff files.
+- [`patch-pilot`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/patch-pilot): Turn a patch or file list into a crisp fix brief, risk scan, and next command.
+
+#### Document and Local Utility Flows
+
 - [`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio): Turn scattered clips into one structured prompt and export flow.
 - [`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio): Install or update a LAN presence monitor with SwiftBar and a dashboard.
 - [`dark-pdf-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/dark-pdf-studio): Convert PDFs, docs, and images into dark-background reading PDFs.
 - [`deckdrop-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/deckdrop-studio): Shape editable PowerPoint generation flows from mixed-source inputs.
-- [`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway): Start the next work block with less setup and less context switching.
-- [`front-tab-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/front-tab-relay): Capture the front browser tab and format it for prompts, notes, tickets, or chat handoffs.
-- [`screen-snippet-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/screen-snippet-studio): Turn screen snippets into prompts, tickets, and handoff artifacts.
-- [`doc-drop-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/doc-drop-bridge): Turn notes, markdown, and fragments into share-ready handoff files.
-- [`patch-pilot`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/patch-pilot): Turn a patch or file list into a crisp fix brief, risk scan, and next command.
 - [`battery-trend-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/battery-trend-scout): Build a polished battery utility with charge, power source, energy mode, and drain trends.
 - [`power-sentry`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/power-sentry): Keep battery drain, charging, and energy mode visible at a glance.
 
-### Audience and Fandom Strategy
+### Audience and Narrative
 
 - [`fan-canon-miner`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/fan-canon-miner): Mine comments, interviews, captions, and chatter into a canon map.
 - [`comment-pulse-board`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/comment-pulse-board): Cluster obsession points, recurring questions, sentiment shifts, and backlash signals.

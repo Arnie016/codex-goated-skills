@@ -1,6 +1,6 @@
 {
   "repo": "codex-goated-skills",
-  "skill_count": 49,
+  "skill_count": 51,
   "pack_count": 10,
   "skills": [
     {
@@ -209,6 +209,22 @@
       ]
     },
     {
+      "id": "excel-range-relay",
+      "display_name": "Excel Range Relay",
+      "description": "A menu-bar Excel relay for turning the copied sheet selection into clean markdown, CSV, JSON, or prompt context without rebuilding the table by hand.",
+      "short_description": "Premium menu-bar excel range relay",
+      "brand_color": "#107C41",
+      "path": "skills/excel-range-relay",
+      "skill_file": "skills/excel-range-relay/SKILL.md",
+      "openai_yaml": "skills/excel-range-relay/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $excel-range-relay to build a polished macOS menu-bar utility for a menu-bar excel relay for turning the copied sheet selection into clean markdown, csv, json, or prompt context without rebuilding the table by hand.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
       "id": "fan-canon-miner",
       "display_name": "Fan Canon Miner",
       "description": "Mine comments, interviews, captions, and fan chatter around a creator, celebrity, or founder to identify the symbols, phrases, moments, and myths people repeat, then turn them into a canon map. Use when Codex needs fandom analysis grounded in public or user-authorized material.",
@@ -411,6 +427,22 @@
         "audience-and-fandom-strategy",
         "creator-and-fandom-stack",
         "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "meeting-link-bridge",
+      "display_name": "Meeting Link Bridge",
+      "description": "Build or operate a macOS menu-bar bridge that turns the current meeting join link into a clean handoff for notes, chat, email, or a fast open action, with extra weight for Microsoft Teams and browser-based meeting flows.",
+      "short_description": "Meeting join relay for Teams and browser tabs",
+      "brand_color": "#4F6BED",
+      "path": "skills/meeting-link-bridge",
+      "skill_file": "skills/meeting-link-bridge/SKILL.md",
+      "openai_yaml": "skills/meeting-link-bridge/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $meeting-link-bridge to build a polished macOS menu-bar utility that turns the current Teams or browser meeting link into a clean handoff for notes, chat, email, or a fast join action.",
+      "packs": [
+        "productivity-and-workflow"
       ]
     },
     {
@@ -974,7 +1006,7 @@
       "title": "Productivity and Workflow",
       "summary": "Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.",
       "path": "collections/productivity-and-workflow.txt",
-      "skill_count": 17,
+      "skill_count": 19,
       "skills": [
         "workspace-doctor",
         "context-shelf",
@@ -988,6 +1020,8 @@
         "deckdrop-studio",
         "focus-runway",
         "front-tab-relay",
+        "meeting-link-bridge",
+        "excel-range-relay",
         "screen-snippet-studio",
         "doc-drop-bridge",
         "patch-pilot",

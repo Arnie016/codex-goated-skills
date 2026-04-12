@@ -12,6 +12,8 @@ dark-pdf-studio
 deckdrop-studio
 focus-runway
 front-tab-relay
+meeting-link-bridge
+excel-range-relay
 screen-snippet-studio
 doc-drop-bridge
 patch-pilot

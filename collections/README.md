@@ -25,7 +25,7 @@ bash scripts/install-pack.sh creator-and-fandom-stack
 | Pack | What it is for | Skill count |
 | --- | --- | --- |
 | `launch-and-distribution` | Turning rough projects into launch-ready, public packages | 7 |
-| `productivity-and-workflow` | Workspace setup, document workflows, local tooling, daily reference, and catalog management | 14 |
+| `productivity-and-workflow` | Workspace setup, workflow handoffs, document flows, local tooling, daily reference, and catalog management | 19 |
 | `daily-briefs-and-reference` | Daily context, historical lookup, market-reading archives, local pulse, and readable export workflows | 6 |
 | `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, rituals, merch, and narrative risk work | 11 |
 | `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 11 |
@@ -46,6 +46,14 @@ bash scripts/install-pack.sh creator-and-fandom-stack
 | Build focused Mac helpers and menu bar utilities | `codex-goated pack install macos-utility-builders` |
 | Grab a broader utility-building setup | `codex-goated pack install utility-builder-stack` |
 | Pull the workspace and monitoring toolkit | `codex-goated pack install productivity-and-workflow` |
+
+Primary browse lanes:
+
+- `launch-and-distribution`, `productivity-and-workflow`, `audience-and-fandom-strategy`, `macos-utility-builders`, `app-specific-skills`, and `games-and-minecraft`
+
+Alias and stack packs:
+
+- `daily-briefs-and-reference`, `fandom-skill-pack`, `creator-and-fandom-stack`, and `utility-builder-stack`
 
 ## Maintenance Notes
 
