@@ -5,3 +5,4 @@ flight-scout
 on-this-day-bar
 vibe-bluetooth
 wifi-watchtower
+framecrawler

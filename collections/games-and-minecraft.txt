@@ -1,5 +1,6 @@
 # title: Games and Minecraft
-# summary: Minecraft server operations and skin tooling for play, hosting, and customization workflows.
+# summary: Game-console helpers plus Minecraft server operations and skin tooling for play, hosting, and customization workflows.
+xbox-studio
 minecraft-essentials
 minecraft-skin-studio
 session-arcade

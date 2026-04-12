@@ -1,0 +1,7 @@
+interface:
+  display_name: "Project Hail Mary"
+  short_description: "macOS rescue launcher for crunch mode"
+  icon_small: "./assets/project-hail-mary-small.svg"
+  icon_large: "./assets/project-hail-mary-large.svg"
+  brand_color: "#F97316"
+  default_prompt: "Use $project-hail-mary to build a realistic macOS rescue launcher, ritual script, or menu bar app that can kick off a hype track, open work surfaces, and start a countdown."

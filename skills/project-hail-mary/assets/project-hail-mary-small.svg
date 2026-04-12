@@ -1,0 +1,6 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Project Hail Mary">
+  <rect width="128" height="128" rx="28" fill="#170A14"/>
+  <circle cx="64" cy="64" r="40" fill="#F97316"/>
+  <path d="M64 28L73 54H100L78 69L87 96L64 80L41 96L50 69L28 54H55L64 28Z" fill="#FFF7ED"/>
+  <path d="M64 41L69 56H85L72 65L77 81L64 71L51 81L56 65L43 56H59L64 41Z" fill="#7C2D12"/>
+</svg>

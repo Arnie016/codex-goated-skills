@@ -1,6 +1,6 @@
 # codex-goated-skills
 
-Community Codex skills and apps for macOS, automation, deployment, design, networking, PDFs, slides, developer workflows, personality-led audience strategy, and game-side helpers.
+Community Codex skills and apps for macOS, automation, deployment, design, networking, PDFs, slides, developer workflows, creator-side tooling, personality-led audience strategy, and game-side helpers.
 
 Install by name, browse by use case, or pull the full pack when you want a broader toolbox.
 
@@ -32,11 +32,12 @@ codex-goated install meeting-link-bridge
 codex-goated install excel-range-relay
 codex-goated install repo-ops-lens
 codex-goated install screen-snippet-studio
-codex-goated install wifi-watchtower
+codex-goated install xbox-studio
 codex-goated install minecraft-essentials
 codex-goated install session-arcade
 codex-goated install deckdrop-studio
 codex-goated install clipboard-studio
+codex-goated install project-hail-mary
 codex-goated install gain-tracker
 codex-goated install on-this-day
 codex-goated install on-this-day-bar
@@ -47,6 +48,7 @@ codex-goated install flight-scout
 codex-goated install cursor-studio
 codex-goated install folder-studio
 codex-goated install dark-pdf-studio
+codex-goated install wifi-watchtower
 codex-goated install fan-canon-miner comment-pulse-board iconography-lab
 codex-goated search minecraft
 codex-goated catalog check
@@ -146,9 +148,10 @@ MACOS_ICON_BARS_TRACKING=0 bash <(curl -fsSL https://raw.githubusercontent.com/A
 
 - Fix the blocker first with `codex-goated doctor` or `workspace-doctor`
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
-- Build a utility with `network-studio`, `wifi-watchtower`, `find-my-phone-studio`, or `clipboard-studio`
-- Tighten handoffs and AI-assisted workflows with `handoff-courier`, `screen-snippet-studio`, `repo-ops-lens`, or `focus-runway`
+- Build a utility with `network-studio`, `wifi-watchtower`, `find-my-phone-studio`, `clipboard-studio`, or `project-hail-mary`
+- Tighten Mac handoffs and AI-assisted workflows with `handoff-courier`, `screen-snippet-studio`, `repo-ops-lens`, or `focus-runway`
 - Keep Teams/browser join links and Excel table slices ready for the next prompt, note, or email with `meeting-link-bridge` and `excel-range-relay`
+- Set up controller, cloud-play, and capture helpers with `xbox-studio`
 - Connect GitHub, scan a workspace folder for repos, track daily git gains, and measure a before-versus-now output climb with `gain-tracker`
 - Open a same-day historical briefing ritual with `on-this-day` or `on-this-day-bar`
 - Build a reusable market-reading archive with `trading-archive`
@@ -165,7 +168,7 @@ Browse by use case:
 [Audience and Narrative](#audience-and-narrative) ·
 [macOS Utility Builders](#macos-utility-builders) ·
 [App-Specific Skills](#app-specific-skills) ·
-[Games and Minecraft](#games-and-minecraft)
+[Games and Consoles](#games-and-consoles)
 
 ### Launch and Distribution
 
@@ -198,6 +201,7 @@ New skill-factory additions are folded into the main workflow lanes below so the
 | Skill | What it does | Install name |
 | --- | --- | --- |
 | <img src="skills/context-shelf/assets/icon.svg" width="26" alt="Context Shelf" /><br/>[`context-shelf`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/context-shelf) | A menu-bar shelf for parking the current tab, clipboard snippet, and scratch note before you switch tasks, so resuming takes one glance instead of a rebuild | `context-shelf` |
+| <img src="skills/project-hail-mary/assets/project-hail-mary-small.svg" width="26" alt="Project Hail Mary" /><br/>[`project-hail-mary`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/project-hail-mary) | A macOS rescue launcher that can kick off a hype track, open critical work surfaces, and start a countdown | `project-hail-mary` |
 | <img src="skills/focus-runway/assets/icon.svg" width="26" alt="Focus Runway" /><br/>[`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway) | A quiet focus launcher that trims context switching and starts the next working block cleanly | `focus-runway` |
 | <img src="skills/front-tab-relay/assets/icon.svg" width="26" alt="Front Tab Relay" /><br/>[`front-tab-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/front-tab-relay) | A macOS menu-bar relay that captures the front browser tab and formats it for prompts, notes, tickets, or chat handoffs | `front-tab-relay` |
 | <img src="skills/meeting-link-bridge/assets/icon.svg" width="26" alt="Meeting Link Bridge" /><br/>[`meeting-link-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/meeting-link-bridge) | A menu-bar handoff bridge that turns the current Teams or browser meeting link into a clean join note, email snippet, or fast open action | `meeting-link-bridge` |
@@ -256,11 +260,13 @@ Collection:
 | <img src="skills/on-this-day-bar/assets/icon-small.svg" width="26" alt="On This Day Bar" /><br/>[`on-this-day-bar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day-bar) | Builds and runs the On This Day Bar macOS menu bar app | `on-this-day-bar` |
 | <img src="skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg" width="26" alt="VibeBluetooth" /><br/>[`vibe-bluetooth`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth) | Dev skill for the VibeWidget macOS app and widget | `vibe-bluetooth` |
 | <img src="skills/wifi-watchtower/assets/wifi-watchtower-small.svg" width="26" alt="WiFi Watchtower" /><br/>[`wifi-watchtower`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/wifi-watchtower) | Builds and runs the WiFi Watchtower macOS menu bar app | `wifi-watchtower` |
+| <img src="skills/framecrawler/assets/framecrawler-small.svg" width="26" alt="FrameCrawler" /><br/>[`framecrawler`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/framecrawler) | Builds and extends the FrameCrawler prompt-to-Blender SceneSpec workflow and handoff surface | `framecrawler` |
 
-### Games and Minecraft
+### Games and Consoles
 
 | Skill | What it does | Install name |
 | --- | --- | --- |
+| <img src="skills/xbox-studio/assets/xbox-studio-small.svg" width="26" alt="Xbox Studio" /><br/>[`xbox-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/xbox-studio) | Builds, runs, and troubleshoots a controller-first macOS Xbox helper for Bluetooth readiness, pairing, cloud gaming, Remote Play, captures, and official account flows | `xbox-studio` |
 | <img src="skills/minecraft-essentials/assets/minecraft-essentials-small.svg" width="26" alt="Minecraft Essentials" /><br/>[`minecraft-essentials`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-essentials) | Runs, upgrades, and troubleshoots Minecraft Java servers | `minecraft-essentials` |
 | <img src="skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg" width="26" alt="Minecraft Skin Studio" /><br/>[`minecraft-skin-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-skin-studio) | Drafts, previews, and registers Minecraft Java skins from prompts or PNGs | `minecraft-skin-studio` |
 | <img src="skills/session-arcade/assets/icon.svg" width="26" alt="Session Arcade" /><br/>[`session-arcade`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/session-arcade) | A launch-night helper for game sessions, cloud gaming, and quick console handoffs | `session-arcade` |
@@ -271,6 +277,7 @@ Collection:
 | --- | --- | --- |
 | `minecraft-skinbar` | macOS menu bar app for generating, importing, and opening Minecraft skins | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/minecraft-skinbar) |
 | `clipboard-studio` | Context Assembly, a macOS menu bar app that turns code, logs, pages, and saved app state into one structured prompt, Apple Note, or Markdown export instead of manual copy-paste switching | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/clipboard-studio) |
+| `xbox-studio` | macOS menu bar Xbox control center with Bluetooth and controller readiness first, then cloud gaming, Remote Play launch, connectivity testing, and drag-and-drop capture imports | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/xbox-studio) |
 | `phone-spotter` | macOS menu bar phone recovery utility with QR pairing, saved clues, and Apple or Google provider handoff | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/phone-spotter) |
 | `flight-scout` | macOS menu bar flight watcher with live fare signals, booking deeplinks, and travel risk scoring | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/flight-scout) |
 | `on-this-day` | macOS-style daily history web app with official Wikimedia same-day events, births, deaths, and holidays | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/on-this-day) |

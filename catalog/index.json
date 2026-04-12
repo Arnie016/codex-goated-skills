@@ -1,6 +1,6 @@
 {
   "repo": "codex-goated-skills",
-  "skill_count": 51,
+  "skill_count": 54,
   "pack_count": 10,
   "skills": [
     {
@@ -310,6 +310,22 @@
       ]
     },
     {
+      "id": "framecrawler",
+      "display_name": "FrameCrawler",
+      "description": "Build, run, troubleshoot, or extend FrameCrawler, including the local prompt UI, Codex plugin, SceneSpec generator, macOS menu-bar inspector, and Blender add-on handoff flow. Use when Codex needs to turn prompts into Blender-ready SceneSpec output or refine the editable blockout workflow.",
+      "short_description": "Prompt-to-Blender SceneSpec and blockout workflow",
+      "brand_color": "#80E2B8",
+      "path": "skills/framecrawler",
+      "skill_file": "skills/framecrawler/SKILL.md",
+      "openai_yaml": "skills/framecrawler/agents/openai.yaml",
+      "icon_small": "./assets/framecrawler-small.svg",
+      "icon_large": "./assets/framecrawler-large.svg",
+      "default_prompt": "Use $framecrawler to work on the FrameCrawler prompt-to-Blender workflow, keep the watched scene_spec.json path aligned with Blender, and tell me exactly what to click next in Blender.",
+      "packs": [
+        "app-specific-skills"
+      ]
+    },
+    {
       "id": "front-tab-relay",
       "display_name": "Front Tab Relay",
       "description": "Build or operate a macOS menu-bar relay that captures the front browser tab and formats it for prompts, notes, tickets, or chat handoffs.",
@@ -615,6 +631,23 @@
       ]
     },
     {
+      "id": "project-hail-mary",
+      "display_name": "Project Hail Mary",
+      "description": "Build, scaffold, troubleshoot, or product-shape a macOS rescue launcher, focus ritual, or last-minute shipping workflow that can start a hype song, open critical apps and docs, start a countdown, and copy a heads-down status update. Use when Codex needs to turn \"Project Hail Mary\", \"panic mode\", or \"play Sign of the Times and open everything I need\" into a realistic menu bar app, shortcut, script, or launch sequence without inventing unsupported music or messaging APIs.",
+      "short_description": "macOS rescue launcher for crunch mode",
+      "brand_color": "#F97316",
+      "path": "skills/project-hail-mary",
+      "skill_file": "skills/project-hail-mary/SKILL.md",
+      "openai_yaml": "skills/project-hail-mary/agents/openai.yaml",
+      "icon_small": "./assets/project-hail-mary-small.svg",
+      "icon_large": "./assets/project-hail-mary-large.svg",
+      "default_prompt": "Use $project-hail-mary to build a realistic macOS rescue launcher, ritual script, or menu bar app that can kick off a hype track, open work surfaces, and start a countdown.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
       "id": "release-ramp",
       "display_name": "Release Ramp",
       "description": "A release-prep board that turns a shipping checklist into a clean launch lane.",
@@ -864,6 +897,22 @@
         "productivity-and-workflow",
         "utility-builder-stack"
       ]
+    },
+    {
+      "id": "xbox-studio",
+      "display_name": "Xbox Studio",
+      "description": "Build, run, scaffold, troubleshoot, or product-shape a controller-first macOS Xbox helper for Bluetooth readiness, controller pairing, cloud gaming, Remote Play, captures, and account support using official Xbox, Microsoft, Apple, and browser-supported surfaces. Use when Codex needs to turn \"control my Xbox stuff from my Mac\" into a realistic menu bar app, launcher, or support workflow without inventing unsupported Xbox APIs.",
+      "short_description": "macOS Xbox controller and Bluetooth hub",
+      "brand_color": "#107C10",
+      "path": "skills/xbox-studio",
+      "skill_file": "skills/xbox-studio/SKILL.md",
+      "openai_yaml": "skills/xbox-studio/agents/openai.yaml",
+      "icon_small": "./assets/xbox-studio-small.svg",
+      "icon_large": "./assets/xbox-studio-large.svg",
+      "default_prompt": "Use $xbox-studio to run, build, or improve a realistic macOS Xbox controller and Bluetooth control center, then layer in cloud gaming, Remote Play, captures, or account flows.",
+      "packs": [
+        "games-and-minecraft"
+      ]
     }
   ],
   "packs": [
@@ -872,13 +921,14 @@
       "title": "App-Specific Skills",
       "summary": "Skills tied closely to specific local app codebases and their live product surfaces.",
       "path": "collections/app-specific-skills.txt",
-      "skill_count": 5,
+      "skill_count": 6,
       "skills": [
         "telebar",
         "flight-scout",
         "on-this-day-bar",
         "vibe-bluetooth",
-        "wifi-watchtower"
+        "wifi-watchtower",
+        "framecrawler"
       ]
     },
     {
@@ -961,10 +1011,11 @@
     {
       "id": "games-and-minecraft",
       "title": "Games and Minecraft",
-      "summary": "Minecraft server operations and skin tooling for play, hosting, and customization workflows.",
+      "summary": "Game-console helpers plus Minecraft server operations and skin tooling for play, hosting, and customization workflows.",
       "path": "collections/games-and-minecraft.txt",
-      "skill_count": 3,
+      "skill_count": 4,
       "skills": [
+        "xbox-studio",
         "minecraft-essentials",
         "minecraft-skin-studio",
         "session-arcade"
@@ -1006,10 +1057,11 @@
       "title": "Productivity and Workflow",
       "summary": "Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.",
       "path": "collections/productivity-and-workflow.txt",
-      "skill_count": 19,
+      "skill_count": 20,
       "skills": [
         "workspace-doctor",
         "context-shelf",
+        "project-hail-mary",
         "gain-tracker",
         "on-this-day",
         "trading-archive",
@@ -1034,9 +1086,10 @@
       "title": "Utility Builder Stack",
       "summary": "A practical bundle for shipping Mac utilities, local monitors, workflow tools, and app-adjacent builders.",
       "path": "collections/utility-builder-stack.txt",
-      "skill_count": 16,
+      "skill_count": 17,
       "skills": [
         "workspace-doctor",
+        "project-hail-mary",
         "skillbar",
         "clipboard-studio",
         "network-studio",

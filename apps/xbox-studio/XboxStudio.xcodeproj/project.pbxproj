@@ -1,0 +1,336 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E816BF7F99C0647FF66AF5A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDFD28822A27EBD7AE04CE6 /* DashboardView.swift */; };
+		571DE23B8AD79E68024553D3 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A27D211DA6BCD522CD65157 /* MenuBarView.swift */; };
+		5B8B45711B8684A7439853DB /* CaptureInboxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D364413141C987FEB66023FF /* CaptureInboxService.swift */; };
+		9060B98CB3F8DF4CE7E192DF /* XboxConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EA701C518F8843696A5626 /* XboxConnectivityService.swift */; };
+		992DA3B0E8204A647CB6F872 /* XboxControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1AC8D6EE4E7CEFBCD305BF /* XboxControllerService.swift */; };
+		C6FD5AF425F26043A1646423 /* XboxStudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB1B925911A4F5EF29AAF4 /* XboxStudioApp.swift */; };
+		DA755A0D21CDD0B43257EC84 /* XboxStudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F5D907C302D2F1A745EEA /* XboxStudioModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E1AC8D6EE4E7CEFBCD305BF /* XboxControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XboxControllerService.swift; sourceTree = "<group>"; };
+		4A27D211DA6BCD522CD65157 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		C8BB1B925911A4F5EF29AAF4 /* XboxStudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XboxStudioApp.swift; sourceTree = "<group>"; };
+		CBDFD28822A27EBD7AE04CE6 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		D364413141C987FEB66023FF /* CaptureInboxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureInboxService.swift; sourceTree = "<group>"; };
+		DE0F5D907C302D2F1A745EEA /* XboxStudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XboxStudioModel.swift; sourceTree = "<group>"; };
+		E0A9BC2DC9ACA5886B8BD38A /* XboxStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XboxStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2EA701C518F8843696A5626 /* XboxConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XboxConnectivityService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		41A1ECA12FC4E6DF42DEC775 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CBDFD28822A27EBD7AE04CE6 /* DashboardView.swift */,
+				4A27D211DA6BCD522CD65157 /* MenuBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46B839E312D3D5972316DF58 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F71F9BCF67BA7F2951127386 /* App */,
+				8EAD24B9A54ECA9F40191732 /* Services */,
+				41A1ECA12FC4E6DF42DEC775 /* Views */,
+			);
+			name = Sources;
+			path = XboxStudioApp/Sources;
+			sourceTree = "<group>";
+		};
+		5C5E10DED4B278576BFF891C = {
+			isa = PBXGroup;
+			children = (
+				46B839E312D3D5972316DF58 /* Sources */,
+				91DF20170AF6EA5A43837341 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8EAD24B9A54ECA9F40191732 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D364413141C987FEB66023FF /* CaptureInboxService.swift */,
+				F2EA701C518F8843696A5626 /* XboxConnectivityService.swift */,
+				2E1AC8D6EE4E7CEFBCD305BF /* XboxControllerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		91DF20170AF6EA5A43837341 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0A9BC2DC9ACA5886B8BD38A /* XboxStudio.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F71F9BCF67BA7F2951127386 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C8BB1B925911A4F5EF29AAF4 /* XboxStudioApp.swift */,
+				DE0F5D907C302D2F1A745EEA /* XboxStudioModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		046E1E496C5474984B505C82 /* XboxStudio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA1F0D69321DBBB00DD95D1D /* Build configuration list for PBXNativeTarget "XboxStudio" */;
+			buildPhases = (
+				37925421D488C9758A2C28F2 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XboxStudio;
+			packageProductDependencies = (
+			);
+			productName = XboxStudio;
+			productReference = E0A9BC2DC9ACA5886B8BD38A /* XboxStudio.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64E52CB4830842CE4AD99C70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					046E1E496C5474984B505C82 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C30218F7A7E049C813FF8A17 /* Build configuration list for PBXProject "XboxStudio" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5C5E10DED4B278576BFF891C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 91DF20170AF6EA5A43837341 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				046E1E496C5474984B505C82 /* XboxStudio */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37925421D488C9758A2C28F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8B45711B8684A7439853DB /* CaptureInboxService.swift in Sources */,
+				4E816BF7F99C0647FF66AF5A /* DashboardView.swift in Sources */,
+				571DE23B8AD79E68024553D3 /* MenuBarView.swift in Sources */,
+				9060B98CB3F8DF4CE7E192DF /* XboxConnectivityService.swift in Sources */,
+				992DA3B0E8204A647CB6F872 /* XboxControllerService.swift in Sources */,
+				C6FD5AF425F26043A1646423 /* XboxStudioApp.swift in Sources */,
+				DA755A0D21CDD0B43257EC84 /* XboxStudioModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7FD7012373CF8DC7E93411E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = XboxStudioApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.XboxStudio;
+				PRODUCT_MODULE_NAME = XboxStudio;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B1C0235DC43BFD36438892F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		EC301BFBA25BFFB3745ED046 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		FE24F8BE90CF7BFAA327408B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = XboxStudioApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.XboxStudio;
+				PRODUCT_MODULE_NAME = XboxStudio;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA1F0D69321DBBB00DD95D1D /* Build configuration list for PBXNativeTarget "XboxStudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FD7012373CF8DC7E93411E3 /* Debug */,
+				FE24F8BE90CF7BFAA327408B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C30218F7A7E049C813FF8A17 /* Build configuration list for PBXProject "XboxStudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1C0235DC43BFD36438892F3 /* Debug */,
+				EC301BFBA25BFFB3745ED046 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64E52CB4830842CE4AD99C70 /* Project object */;
+}

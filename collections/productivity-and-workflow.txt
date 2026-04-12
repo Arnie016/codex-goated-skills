@@ -2,6 +2,7 @@
 # summary: Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.
 workspace-doctor
 context-shelf
+project-hail-mary
 gain-tracker
 on-this-day
 trading-archive

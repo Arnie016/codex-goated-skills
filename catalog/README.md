@@ -7,7 +7,7 @@ Machine-readable catalog:
 
 ## Snapshot
 
-- Total skills: `51`
+- Total skills: `54`
 - Total packs: `10`
 - Main pack folder: [`collections/`](https://github.com/Arnie016/codex-goated-skills/tree/main/collections)
 - Main install CLI: [`bin/codex-goated`](https://github.com/Arnie016/codex-goated-skills/blob/main/bin/codex-goated)
@@ -28,12 +28,12 @@ codex-goated audit
 
 Audit snapshot for April 13, 2026:
 
-- `51/51` skills include `SKILL.md`
-- `51/51` skills include `agents/openai.yaml`
-- `51/51` skills include a small SVG icon
-- `51/51` skills include a large SVG icon
+- `54/54` skills include `SKILL.md`
+- `54/54` skills include `agents/openai.yaml`
+- `54/54` skills include a small SVG icon
+- `54/54` skills include a large SVG icon
 - `10/10` pack files resolve to valid skill directories
-- `51/51` skills are covered by at least one pack
+- `54/54` skills are covered by at least one pack
 
 Run the live audit locally:
 
@@ -59,15 +59,15 @@ Continuous audit:
 | Pack | Purpose | Skill count |
 | --- | --- | --- |
 | `launch-and-distribution` | Launch rough projects, package them cleanly, and get them ready to share | 7 |
-| `productivity-and-workflow` | Workspace setup, workflow handoffs, document flows, monitoring, daily reference, and repo-driven skill management | 19 |
+| `productivity-and-workflow` | Workspace setup, workflow handoffs, document flows, monitoring, daily reference, and repo-driven skill management | 20 |
 | `daily-briefs-and-reference` | Daily context, historical lookup, local pulse, readable export workflows, and market-reading archives | 6 |
 | `audience-and-fandom-strategy` | Personality-led audience strategy, fandom analysis, lore pacing, merch, and risk review | 11 |
 | `fandom-skill-pack` | Friendly alias for the fandom strategy bundle | 11 |
 | `macos-utility-builders` | Mac utility planning and menu bar helper workflows | 6 |
-| `app-specific-skills` | Skills tied closely to live local app codebases | 5 |
-| `games-and-minecraft` | Minecraft hosting, operations, and skin tooling | 3 |
+| `app-specific-skills` | Skills tied closely to live local app codebases | 6 |
+| `games-and-minecraft` | Console helpers plus Minecraft hosting, operations, and skin tooling | 4 |
 | `creator-and-fandom-stack` | Creator brand strategy plus launch-ready packaging support | 13 |
-| `utility-builder-stack` | A broader Mac utility-building stack across workflow and app surfaces | 16 |
+| `utility-builder-stack` | A broader Mac utility-building stack across workflow and app surfaces | 17 |
 
 ## Full Skill Index
 
@@ -96,6 +96,7 @@ Workflow skills are grouped into smaller browse lanes here on purpose so new add
 #### Workflow Handoffs and Automation
 
 - [`context-shelf`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/context-shelf): Park the current tab, clipboard snippet, and scratch note so resuming after a task switch is one glance instead of a rebuild.
+- [`project-hail-mary`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/project-hail-mary): Kick off a realistic crunch-mode rescue launcher with a hype track, critical work surfaces, and a countdown.
 - [`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway): Start the next work block with less setup and less context switching.
 - [`front-tab-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/front-tab-relay): Capture the front browser tab and format it for prompts, notes, tickets, or chat handoffs.
 - [`meeting-link-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/meeting-link-bridge): Turn the current Teams or browser meeting link into a clean join note, email snippet, or fast open action.
@@ -143,9 +144,11 @@ Workflow skills are grouped into smaller browse lanes here on purpose so new add
 - [`on-this-day-bar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day-bar): Build and run the On This Day Bar macOS menu bar app.
 - [`vibe-bluetooth`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth): Build, run, and troubleshoot the VibeWidget macOS app and widget.
 - [`wifi-watchtower`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/wifi-watchtower): Build and run the WiFi Watchtower macOS menu bar app.
+- [`framecrawler`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/framecrawler): Build and extend the FrameCrawler prompt-to-Blender SceneSpec workflow and handoff surface.
 
-### Games and Minecraft
+### Games and Consoles
 
+- [`xbox-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/xbox-studio): Build and run a controller-first macOS Xbox helper for Bluetooth readiness, pairing, cloud gaming, Remote Play, captures, and account flows.
 - [`minecraft-essentials`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-essentials): Install, upgrade, back up, and troubleshoot Minecraft Java servers.
 - [`minecraft-skin-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-skin-studio): Draft, preview, and register Minecraft Java skins.
 - [`session-arcade`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/session-arcade): Keep game sessions, cloud gaming, and quick console handoffs within a few clicks.
