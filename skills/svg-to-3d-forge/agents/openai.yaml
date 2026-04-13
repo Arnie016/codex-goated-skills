@@ -1,0 +1,10 @@
+interface:
+  display_name: "SVG To 3D Forge"
+  short_description: "Local SVG scaffold and Blender-based STL, OBJ, or GLB export"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#F97316"
+  default_prompt: "Use $svg-to-3d-forge to scaffold a simple SVG asset or turn an existing SVG into a local STL, OBJ, or GLB export with explicit Blender-based extrusion settings."
+
+policy:
+  allow_implicit_invocation: true
