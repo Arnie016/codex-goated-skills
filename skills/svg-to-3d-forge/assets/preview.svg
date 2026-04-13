@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="SVG To 3D Forge">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12151A"/>
+      <stop offset="100%" stop-color="#06080C"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#FDBA74"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="40" fill="url(#bg)"/>
+  <circle cx="980" cy="112" r="128" fill="#F97316" opacity="0.12"/>
+  <rect x="70" y="66" width="1060" height="498" rx="34" fill="#0F1318" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <text x="110" y="160" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="24" font-weight="700" fill="#A1A1AA">Generated macOS skill prototype</text>
+  <text x="110" y="248" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="62" font-weight="800" fill="#FFFFFF">SVG To 3D Forge</text>
+  <text x="110" y="302" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="28" fill="#D4D4D8">Scaffold simple SVG assets and extrude them into local STL, OBJ, or GLB exports.</text>
+  <text x="110" y="368" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="24" fill="#FFFFFF">Vector preset + Blender extrusion + model handoff, without pretending it is full CAD.</text>
+  <rect x="110" y="404" width="300" height="8" rx="4" fill="url(#accent)"/>
+  <text x="110" y="458" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="22" fill="#D4D4D8">Use a deterministic badge, coin, plaque, or keycap SVG template before export.</text>
+  <text x="110" y="500" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="22" fill="#D4D4D8">Adjust depth, bevel, and size explicitly, then export STL for printing or GLB for viewers.</text>
+  <rect x="786" y="134" width="250" height="292" rx="30" fill="#171B22" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <path d="M836 196h84l32 38-32 38h-84l30-38z" fill="none" stroke="url(#accent)" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M926 192l86 30v102l-86 30-86-30V222z" fill="none" stroke="#FFFFFF" stroke-opacity="0.84" stroke-width="16" stroke-linejoin="round"/>
+  <path d="M926 192v102" fill="none" stroke="url(#accent)" stroke-width="16"/>
+  <path d="M840 222l86 30 86-30" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="16" stroke-linejoin="round"/>
+  <text x="822" y="386" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">SVG To 3D Forge</text>
+  <text x="822" y="420" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="18" fill="#D4D4D8">Mac-first vector to mesh workflow</text>
+</svg>
