@@ -1,0 +1,24 @@
+{
+  "id": "project-hail-mary",
+  "name": "Project Hail Mary",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "Build, scaffold, troubleshoot, or product-shape a macOS rescue launcher, focus ritual, or last-minute shipping workflow that can start a hype song, open critical apps and docs, start a countdown, and copy a heads-down status update. Use when Codex needs to turn \"Project Hail Mary\", \"panic mode\", or \"play Sign of the Times and open everything I need\" into a realistic menu bar app, shortcut, script, or launch sequence without inventing unsupported music or messaging APIs.",
+  "short_description": "macOS rescue launcher for crunch mode",
+  "brand_color": "#F97316",
+  "icon_small": "skills/project-hail-mary/assets/project-hail-mary-small.svg",
+  "icon_large": "skills/project-hail-mary/assets/project-hail-mary-large.svg",
+  "default_prompt": "Use $project-hail-mary to build a realistic macOS rescue launcher, ritual script, or menu bar app that can kick off a hype track, open work surfaces, and start a countdown.",
+  "install_command": "codex-goated install project-hail-mary",
+  "packs": [
+    "productivity-and-workflow",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/project-hail-mary/SKILL.md",
+    "skills/project-hail-mary/manifest.json",
+    "skills/project-hail-mary/agents/openai.yaml",
+    "skills/project-hail-mary/assets/project-hail-mary-small.svg",
+    "skills/project-hail-mary/assets/project-hail-mary-large.svg"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "folder-studio",
+  "name": "Folder Studio",
+  "category": "macOS Utility Builders",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend a Folder Studio macOS menu bar app that reads folder context, suggests engravings, colors folders, previews Finder-style skins, and applies custom icons. Use when Codex needs to work on a workspace containing `FolderStudioApp`, keep Folder Studio separate from Cursor Studio, regenerate the Xcode project, or validate the `FolderStudio` scheme and tests.",
+  "short_description": "Context-aware Finder folder skins and icon workflows",
+  "brand_color": "#4C9E5A",
+  "icon_small": "skills/folder-studio/assets/folder-studio-small.svg",
+  "icon_large": "skills/folder-studio/assets/folder-studio-large.svg",
+  "default_prompt": "Use $folder-studio to inspect this Folder Studio workspace, keep the menu bar UX compact and professional, and help me ship a polished Finder folder-skin workflow.",
+  "install_command": "codex-goated install folder-studio",
+  "packs": [
+    "macos-utility-builders",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/folder-studio/SKILL.md",
+    "skills/folder-studio/manifest.json",
+    "skills/folder-studio/agents/openai.yaml",
+    "skills/folder-studio/assets/folder-studio-small.svg",
+    "skills/folder-studio/assets/folder-studio-large.svg"
+  ]
+}

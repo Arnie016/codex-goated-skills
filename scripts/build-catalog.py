@@ -56,6 +56,10 @@ def parse_openai_interface(openai_file: Path) -> dict[str, str]:
     return values
 
 
+def parse_manifest(manifest_file: Path) -> dict[str, object]:
+    return json.loads(manifest_file.read_text(encoding="utf-8"))
+
+
 def parse_pack(pack_file: Path) -> dict[str, object]:
     title = ""
     summary = ""
@@ -97,22 +101,31 @@ def build_catalog(repo_dir: Path) -> dict[str, object]:
     for skill_dir in sorted(path for path in skills_dir.iterdir() if path.is_dir()):
         skill_file = skill_dir / "SKILL.md"
         openai_file = skill_dir / "agents" / "openai.yaml"
+        manifest_file = skill_dir / "manifest.json"
         frontmatter = parse_frontmatter(skill_file) if skill_file.is_file() else {}
         interface = parse_openai_interface(openai_file) if openai_file.is_file() else {}
+        manifest = parse_manifest(manifest_file) if manifest_file.is_file() else {}
 
         skills.append(
             {
                 "id": skill_dir.name,
-                "display_name": interface.get("display_name", ""),
-                "description": frontmatter.get("description", ""),
-                "short_description": interface.get("short_description", ""),
-                "brand_color": interface.get("brand_color", ""),
+                "display_name": str(manifest.get("name") or interface.get("display_name", "")),
+                "category": str(manifest.get("category", "")),
+                "status": str(manifest.get("status", "")),
+                "description": str(manifest.get("description") or frontmatter.get("description", "")),
+                "short_description": str(manifest.get("short_description") or interface.get("short_description", "")),
+                "brand_color": str(manifest.get("brand_color") or interface.get("brand_color", "")),
                 "path": str(skill_dir.relative_to(repo_dir)).replace("\\", "/"),
                 "skill_file": str(skill_file.relative_to(repo_dir)).replace("\\", "/"),
+                "manifest_file": str(manifest_file.relative_to(repo_dir)).replace("\\", "/"),
                 "openai_yaml": str(openai_file.relative_to(repo_dir)).replace("\\", "/"),
-                "icon_small": interface.get("icon_small", ""),
-                "icon_large": interface.get("icon_large", ""),
-                "default_prompt": interface.get("default_prompt", ""),
+                "icon_small": str(manifest.get("icon_small") or interface.get("icon_small", "")),
+                "icon_large": str(manifest.get("icon_large") or interface.get("icon_large", "")),
+                "default_prompt": str(manifest.get("default_prompt") or interface.get("default_prompt", "")),
+                "install_command": str(manifest.get("install_command", f"codex-goated install {skill_dir.name}")),
+                "docs_paths": manifest.get("docs_paths", []),
+                "tags": manifest.get("tags", []),
+                "system_symbol": str(manifest.get("system_symbol", "")),
                 "packs": sorted(pack_membership.get(skill_dir.name, [])),
             }
         )

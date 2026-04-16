@@ -1,0 +1,24 @@
+{
+  "id": "clipboard-studio",
+  "name": "Context Assembly",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or refine Context Assembly, especially the bundled `apps/clipboard-studio` macOS menu bar app. Use when Codex needs to work on clipboard-heavy context assembly, keep the panel compact, wire pasteboard or app-state capture, or validate the local Xcode workspace and tests without leaking sensitive data.",
+  "short_description": "Build and validate the Context Assembly menu bar app for capture, export, and fast cross-app handoff",
+  "brand_color": "#22C55E",
+  "icon_small": "skills/clipboard-studio/assets/clipboard-studio-small.svg",
+  "icon_large": "skills/clipboard-studio/assets/clipboard-studio-large.svg",
+  "default_prompt": "Use $clipboard-studio to work on the bundled Context Assembly macOS app in apps/clipboard-studio: inspect the workspace, run the local doctor and typecheck or test flow, and improve clipboard capture, current-focus snapshots, or Notes/Markdown export without weakening privacy boundaries.",
+  "install_command": "codex-goated install clipboard-studio",
+  "packs": [
+    "productivity-and-workflow",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/clipboard-studio/SKILL.md",
+    "skills/clipboard-studio/manifest.json",
+    "skills/clipboard-studio/agents/openai.yaml",
+    "skills/clipboard-studio/assets/clipboard-studio-small.svg",
+    "skills/clipboard-studio/assets/clipboard-studio-large.svg"
+  ]
+}

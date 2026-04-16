@@ -1,10 +1,33 @@
 {
   "id": "launch-deck-lift",
   "name": "Launch Deck Lift",
-  "category": "Presentation",
+  "category": "Launch and Distribution",
   "status": "active",
-  "stars": 4,
+  "description": "A presentation helper that turns a rough idea into a clean launch deck starter.",
   "short_description": "A presentation helper that turns a rough idea into a clean launch deck starter.",
+  "brand_color": "#FFD60A",
+  "icon_small": "skills/launch-deck-lift/assets/icon-small.svg",
+  "icon_large": "skills/launch-deck-lift/assets/icon-large.svg",
+  "default_prompt": "Use $launch-deck-lift to build a polished macOS menu-bar utility for a presentation helper that turns a rough idea into a clean launch deck starter.",
+  "install_command": "codex-goated install launch-deck-lift",
+  "packs": [
+    "launch-and-distribution"
+  ],
+  "docs_paths": [
+    "skills/launch-deck-lift/SKILL.md",
+    "skills/launch-deck-lift/manifest.json",
+    "skills/launch-deck-lift/agents/openai.yaml",
+    "skills/launch-deck-lift/assets/icon-small.svg",
+    "skills/launch-deck-lift/assets/icon-large.svg",
+    "skills/launch-deck-lift/assets/icon.svg",
+    "skills/launch-deck-lift/assets/preview.svg",
+    "skills/launch-deck-lift/prototype/README.md",
+    "skills/launch-deck-lift/prototype/SkillMenuBarApp.swift",
+    "skills/launch-deck-lift/prototype/SkillMenuBarView.swift",
+    "skills/launch-deck-lift/prototype/SkillDetailView.swift",
+    "skills/launch-deck-lift/prototype/SkillTheme.swift"
+  ],
+  "stars": 4,
   "audience": [
     "Founders",
     "Designers",
@@ -16,19 +39,6 @@
     "launch",
     "story",
     "menu bar"
-  ],
-  "install_command": "codex-skillctl install launch-deck-lift",
-  "docs_paths": [
-    "skills/launch-deck-lift/SKILL.md",
-    "skills/launch-deck-lift/manifest.json",
-    "skills/launch-deck-lift/agents/openai.yaml",
-    "skills/launch-deck-lift/assets/icon.svg",
-    "skills/launch-deck-lift/assets/preview.svg",
-    "skills/launch-deck-lift/prototype/README.md",
-    "skills/launch-deck-lift/prototype/SkillMenuBarApp.swift",
-    "skills/launch-deck-lift/prototype/SkillMenuBarView.swift",
-    "skills/launch-deck-lift/prototype/SkillDetailView.swift",
-    "skills/launch-deck-lift/prototype/SkillTheme.swift"
   ],
   "detail_lines": [
     "Helps you move from idea to slide order without losing the thread.",

@@ -1,0 +1,23 @@
+{
+  "id": "flight-scout",
+  "name": "Flight Scout",
+  "category": "App-Specific Skills",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend the Flight Scout macOS menu bar app. Use when working in `apps/flight-scout`, regenerating the XcodeGen project, running local doctor/typecheck/build/test checks, or editing route watching, live fare signals, booking deeplinks, travel-risk scoring, or the board and menu bar UI.",
+  "short_description": "Run and extend the Flight Scout app",
+  "brand_color": "#1D7DD7",
+  "icon_small": "skills/flight-scout/assets/flight-scout-small.svg",
+  "icon_large": "skills/flight-scout/assets/flight-scout-large.svg",
+  "default_prompt": "Use $flight-scout to work on the Flight Scout macOS menu bar app, regenerate the project if needed, and run local doctor, typecheck, build, or test checks.",
+  "install_command": "codex-goated install flight-scout",
+  "packs": [
+    "app-specific-skills"
+  ],
+  "docs_paths": [
+    "skills/flight-scout/SKILL.md",
+    "skills/flight-scout/manifest.json",
+    "skills/flight-scout/agents/openai.yaml",
+    "skills/flight-scout/assets/flight-scout-small.svg",
+    "skills/flight-scout/assets/flight-scout-large.svg"
+  ]
+}

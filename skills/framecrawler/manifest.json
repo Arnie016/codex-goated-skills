@@ -1,0 +1,23 @@
+{
+  "id": "framecrawler",
+  "name": "FrameCrawler",
+  "category": "App-Specific Skills",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend FrameCrawler, including the local prompt UI, Codex plugin, SceneSpec generator, macOS menu-bar inspector, and Blender add-on handoff flow. Use when Codex needs to turn prompts into Blender-ready SceneSpec output or refine the editable blockout workflow.",
+  "short_description": "Prompt-to-Blender SceneSpec and blockout workflow",
+  "brand_color": "#80E2B8",
+  "icon_small": "skills/framecrawler/assets/framecrawler-small.svg",
+  "icon_large": "skills/framecrawler/assets/framecrawler-large.svg",
+  "default_prompt": "Use $framecrawler to work on the FrameCrawler prompt-to-Blender workflow, keep the watched scene_spec.json path aligned with Blender, and tell me exactly what to click next in Blender.",
+  "install_command": "codex-goated install framecrawler",
+  "packs": [
+    "app-specific-skills"
+  ],
+  "docs_paths": [
+    "skills/framecrawler/SKILL.md",
+    "skills/framecrawler/manifest.json",
+    "skills/framecrawler/agents/openai.yaml",
+    "skills/framecrawler/assets/framecrawler-small.svg",
+    "skills/framecrawler/assets/framecrawler-large.svg"
+  ]
+}

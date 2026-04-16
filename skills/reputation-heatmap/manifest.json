@@ -1,0 +1,25 @@
+{
+  "id": "reputation-heatmap",
+  "name": "Reputation Heatmap",
+  "category": "Audience and Fandom Strategy",
+  "status": "active",
+  "description": "Separate healthy mystique from rumor, overreach, parasocial risk, or brand harm, then output a response playbook. Use when Codex needs to map public narrative risk around a creator, celebrity, or founder without amplifying gossip or turning risk review into panic.",
+  "short_description": "Map mystique, rumor, and brand risk",
+  "brand_color": "#D26B4E",
+  "icon_small": "skills/reputation-heatmap/assets/icon-small.svg",
+  "icon_large": "skills/reputation-heatmap/assets/icon-large.svg",
+  "default_prompt": "Use $reputation-heatmap to map healthy mystique, rumor, parasocial risk, and brand harm around this public figure, then export a response playbook.",
+  "install_command": "codex-goated install reputation-heatmap",
+  "packs": [
+    "audience-and-fandom-strategy",
+    "creator-and-fandom-stack",
+    "fandom-skill-pack"
+  ],
+  "docs_paths": [
+    "skills/reputation-heatmap/SKILL.md",
+    "skills/reputation-heatmap/manifest.json",
+    "skills/reputation-heatmap/agents/openai.yaml",
+    "skills/reputation-heatmap/assets/icon-small.svg",
+    "skills/reputation-heatmap/assets/icon-large.svg"
+  ]
+}

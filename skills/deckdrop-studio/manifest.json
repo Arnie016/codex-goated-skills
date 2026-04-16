@@ -1,0 +1,24 @@
+{
+  "id": "deckdrop-studio",
+  "name": "Deckdrop Studio",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend a DeckDrop-style macOS slide workflow that turns PDFs, docs, presentations, and image sets into editable PowerPoint drafts with human review before export. Use when Codex needs to work on a workspace containing `DeckDropApp`; inspect the ingestion, extraction, planning, review, and export pipeline; regenerate the Xcode project; or validate the DeckDrop app and tests.",
+  "short_description": "Editable slide workflows for mixed-source decks",
+  "brand_color": "#4F86FF",
+  "icon_small": "skills/deckdrop-studio/assets/deckdrop-studio-small.svg",
+  "icon_large": "skills/deckdrop-studio/assets/deckdrop-studio-large.svg",
+  "default_prompt": "Use $deckdrop-studio to inspect this DeckDrop workspace, keep the draft-review workflow intact, and help me ship an editable slide deck pipeline.",
+  "install_command": "codex-goated install deckdrop-studio",
+  "packs": [
+    "daily-briefs-and-reference",
+    "productivity-and-workflow"
+  ],
+  "docs_paths": [
+    "skills/deckdrop-studio/SKILL.md",
+    "skills/deckdrop-studio/manifest.json",
+    "skills/deckdrop-studio/agents/openai.yaml",
+    "skills/deckdrop-studio/assets/deckdrop-studio-small.svg",
+    "skills/deckdrop-studio/assets/deckdrop-studio-large.svg"
+  ]
+}

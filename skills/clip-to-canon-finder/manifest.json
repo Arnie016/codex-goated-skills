@@ -1,0 +1,25 @@
+{
+  "id": "clip-to-canon-finder",
+  "name": "Clip to Canon Finder",
+  "category": "Audience and Fandom Strategy",
+  "status": "active",
+  "description": "Identify short-form moments most likely to turn into fandom artifacts, edits, or memes from clips, transcripts, and reaction data, then output a shortlist with reuse angles. Use when Codex needs to find which moments deserve to become repeatable canon.",
+  "short_description": "Find clips likely to become fandom canon",
+  "brand_color": "#1A9B8C",
+  "icon_small": "skills/clip-to-canon-finder/assets/icon-small.svg",
+  "icon_large": "skills/clip-to-canon-finder/assets/icon-large.svg",
+  "default_prompt": "Use $clip-to-canon-finder to analyze these short-form clips, transcripts, and reactions, identify which moments are most likely to become fandom canon, and export a shortlist with reuse angles.",
+  "install_command": "codex-goated install clip-to-canon-finder",
+  "packs": [
+    "audience-and-fandom-strategy",
+    "creator-and-fandom-stack",
+    "fandom-skill-pack"
+  ],
+  "docs_paths": [
+    "skills/clip-to-canon-finder/SKILL.md",
+    "skills/clip-to-canon-finder/manifest.json",
+    "skills/clip-to-canon-finder/agents/openai.yaml",
+    "skills/clip-to-canon-finder/assets/icon-small.svg",
+    "skills/clip-to-canon-finder/assets/icon-large.svg"
+  ]
+}

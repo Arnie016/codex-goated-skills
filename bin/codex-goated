@@ -269,11 +269,11 @@ search_catalog() {
 
 audit_repo() {
   local skill_dir skill_name missing small_icon large_icon
-  local skill_file openai_file frontmatter_name frontmatter_desc
+  local skill_file openai_file manifest_sync_script frontmatter_name frontmatter_desc
   local display_name short_desc icon_small_ref icon_large_ref brand_color default_prompt
   local icon_small_path icon_large_path
   local pack_file pack_name pack_skill pack_title pack_summary seen_pack_skills
-  local catalog_issue_count=0
+  local catalog_issue_count=0 manifest_issue_count=0
   local skill_count=0 package_issue_count=0 metadata_issue_count=0 pack_count=0 pack_issue_count=0 uncovered_count=0
   local all_skills_file packed_skills_file uncovered_file
 
@@ -281,6 +281,7 @@ audit_repo() {
   all_skills_file="$(mktemp)"
   packed_skills_file="$(mktemp)"
   uncovered_file="$(mktemp)"
+  manifest_sync_script="$REPO_DIR/scripts/sync-skill-manifests.py"
 
   for skill_dir in "$REPO_DIR/skills"/*; do
     [[ -d "$skill_dir" ]] || continue
@@ -292,6 +293,7 @@ audit_repo() {
     missing=""
 
     [[ -f "$skill_file" ]] || missing="$missing SKILL.md"
+    [[ -f "$skill_dir/manifest.json" ]] || missing="$missing manifest.json"
     [[ -f "$openai_file" ]] || missing="$missing agents/openai.yaml"
 
     small_icon="$(find "$skill_dir/assets" -maxdepth 1 -type f \( -name '*small.svg' -o -name 'icon-small.svg' \) 2>/dev/null | head -n 1)"
@@ -415,6 +417,12 @@ audit_repo() {
 
   if [[ -f "$REPO_DIR/scripts/build-catalog.py" ]]; then
     if command -v python3 >/dev/null 2>&1; then
+      if [[ -f "$manifest_sync_script" ]]; then
+        if ! python3 "$manifest_sync_script" --repo-dir "$REPO_DIR" --check >/dev/null; then
+          printf 'CATALOG skill manifests are missing or stale\n'
+          manifest_issue_count=$((manifest_issue_count + 1))
+        fi
+      fi
       if ! python3 "$REPO_DIR/scripts/build-catalog.py" --repo-dir "$REPO_DIR" --check >/dev/null; then
         printf 'CATALOG catalog/index.json is missing or stale\n'
         catalog_issue_count=$((catalog_issue_count + 1))
@@ -443,6 +451,7 @@ audit_repo() {
   printf '  Metadata issues: %s\n' "$metadata_issue_count"
   printf '  Broken pack references: %s\n' "$pack_issue_count"
   printf '  Skills not covered by any pack: %s\n' "$uncovered_count"
+  printf '  Stale manifest files: %s\n' "$manifest_issue_count"
   printf '  Stale catalog indexes: %s\n' "$catalog_issue_count"
 
   if [[ "$uncovered_count" -gt 0 ]]; then
@@ -455,7 +464,7 @@ audit_repo() {
 
   rm -f "$all_skills_file" "$packed_skills_file" "$uncovered_file"
 
-  if [[ "$package_issue_count" -gt 0 || "$metadata_issue_count" -gt 0 || "$pack_issue_count" -gt 0 || "$uncovered_count" -gt 0 || "$catalog_issue_count" -gt 0 ]]; then
+  if [[ "$package_issue_count" -gt 0 || "$metadata_issue_count" -gt 0 || "$pack_issue_count" -gt 0 || "$uncovered_count" -gt 0 || "$manifest_issue_count" -gt 0 || "$catalog_issue_count" -gt 0 ]]; then
     return 1
   fi
 }

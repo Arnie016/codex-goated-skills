@@ -1,10 +1,33 @@
 {
   "id": "context-shelf",
   "name": "Context Shelf",
-  "category": "Productivity",
+  "category": "Productivity and Workflow",
   "status": "active",
-  "stars": 5,
+  "description": "A menu-bar shelf for parking the current tab, clipboard snippet, and scratch note before you switch tasks, so resuming takes one glance instead of a rebuild.",
   "short_description": "A menu-bar shelf for parking the current tab, clipboard snippet, and scratch note before you switch tasks, so resuming takes one glance instead of a rebuild.",
+  "brand_color": "#30D158",
+  "icon_small": "skills/context-shelf/assets/icon-small.svg",
+  "icon_large": "skills/context-shelf/assets/icon-large.svg",
+  "default_prompt": "Use $context-shelf to build a polished macOS menu-bar utility that parks the current tab, clipboard snippet, and scratch note before a task switch, then makes resuming fast and calm.",
+  "install_command": "codex-goated install context-shelf",
+  "packs": [
+    "productivity-and-workflow"
+  ],
+  "docs_paths": [
+    "skills/context-shelf/SKILL.md",
+    "skills/context-shelf/manifest.json",
+    "skills/context-shelf/agents/openai.yaml",
+    "skills/context-shelf/assets/icon-small.svg",
+    "skills/context-shelf/assets/icon-large.svg",
+    "skills/context-shelf/assets/icon.svg",
+    "skills/context-shelf/assets/preview.svg",
+    "skills/context-shelf/prototype/README.md",
+    "skills/context-shelf/prototype/SkillMenuBarApp.swift",
+    "skills/context-shelf/prototype/SkillMenuBarView.swift",
+    "skills/context-shelf/prototype/SkillDetailView.swift",
+    "skills/context-shelf/prototype/SkillTheme.swift"
+  ],
+  "stars": 5,
   "audience": [
     "Mac users who get interrupted and need to resume fast",
     "Researchers and operators juggling browser tabs, notes, and chat",
@@ -18,19 +41,6 @@
     "browser",
     "notes",
     "resume"
-  ],
-  "install_command": "codex-skillctl install context-shelf",
-  "docs_paths": [
-    "skills/context-shelf/SKILL.md",
-    "skills/context-shelf/manifest.json",
-    "skills/context-shelf/agents/openai.yaml",
-    "skills/context-shelf/assets/icon.svg",
-    "skills/context-shelf/assets/preview.svg",
-    "skills/context-shelf/prototype/README.md",
-    "skills/context-shelf/prototype/SkillMenuBarApp.swift",
-    "skills/context-shelf/prototype/SkillMenuBarView.swift",
-    "skills/context-shelf/prototype/SkillDetailView.swift",
-    "skills/context-shelf/prototype/SkillTheme.swift"
   ],
   "detail_lines": [
     "Parks the front tab, clipboard text, and a short scratch note into one compact resume bundle.",

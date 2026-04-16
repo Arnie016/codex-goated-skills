@@ -1,0 +1,25 @@
+{
+  "id": "network-studio",
+  "name": "Network Studio",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "Install or update a macOS local-network monitor workspace and SwiftBar plugin. Use when Codex needs a repo-native path for LAN presence, device logging, local dashboards, or compact macOS network safety surfaces on networks the user owns or administers.",
+  "short_description": "Portable LAN monitor installer and SwiftBar workspace",
+  "brand_color": "#0F8ED8",
+  "icon_small": "skills/network-studio/assets/network-studio-small.svg",
+  "icon_large": "skills/network-studio/assets/network-studio-large.svg",
+  "default_prompt": "Use $network-studio to install or update a portable Network Studio workspace, wire SwiftBar if needed, and keep the local dashboard and watcher flows honest.",
+  "install_command": "codex-goated install network-studio",
+  "packs": [
+    "daily-briefs-and-reference",
+    "productivity-and-workflow",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/network-studio/SKILL.md",
+    "skills/network-studio/manifest.json",
+    "skills/network-studio/agents/openai.yaml",
+    "skills/network-studio/assets/network-studio-small.svg",
+    "skills/network-studio/assets/network-studio-large.svg"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "minecraft-essentials",
+  "name": "Minecraft Essentials",
+  "category": "Games and Minecraft",
+  "status": "active",
+  "description": "Install, upgrade, run, migrate, back up, and troubleshoot Minecraft Java servers. Use when Codex needs to work on a Minecraft-only setup such as Vanilla, Paper, Fabric, plugin compatibility, Java versioning, LAN join info, backups, Bedrock bridging, or moving a local server toward a more stable always-on setup.",
+  "short_description": "Run, upgrade, and fix Minecraft Java servers",
+  "brand_color": "#4CAF50",
+  "icon_small": "skills/minecraft-essentials/assets/minecraft-essentials-small.svg",
+  "icon_large": "skills/minecraft-essentials/assets/minecraft-essentials-large.svg",
+  "default_prompt": "Use $minecraft-essentials to audit this Minecraft server, back it up safely, improve the run setup, and show the right join info.",
+  "install_command": "codex-goated install minecraft-essentials",
+  "packs": [
+    "games-and-minecraft"
+  ],
+  "docs_paths": [
+    "skills/minecraft-essentials/SKILL.md",
+    "skills/minecraft-essentials/manifest.json",
+    "skills/minecraft-essentials/agents/openai.yaml",
+    "skills/minecraft-essentials/assets/minecraft-essentials-small.svg",
+    "skills/minecraft-essentials/assets/minecraft-essentials-large.svg"
+  ]
+}

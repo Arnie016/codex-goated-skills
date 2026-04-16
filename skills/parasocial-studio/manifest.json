@@ -1,0 +1,25 @@
+{
+  "id": "parasocial-studio",
+  "name": "Parasocial Studio",
+  "category": "Audience and Fandom Strategy",
+  "status": "active",
+  "description": "Shape safe closeness mechanics like acknowledgements, voice-note drops, recurring touchpoints, and community intimacy patterns, then output a relationship cadence plan. Use when Codex needs to help a public figure feel present and personal without encouraging dependency, false intimacy, or harmful boundary erosion.",
+  "short_description": "Plan safe closeness rhythms for public figures",
+  "brand_color": "#D66B87",
+  "icon_small": "skills/parasocial-studio/assets/icon-small.svg",
+  "icon_large": "skills/parasocial-studio/assets/icon-large.svg",
+  "default_prompt": "Use $parasocial-studio to shape safe closeness mechanics for this public figure, including acknowledgements and recurring touchpoints, then output a relationship cadence plan.",
+  "install_command": "codex-goated install parasocial-studio",
+  "packs": [
+    "audience-and-fandom-strategy",
+    "creator-and-fandom-stack",
+    "fandom-skill-pack"
+  ],
+  "docs_paths": [
+    "skills/parasocial-studio/SKILL.md",
+    "skills/parasocial-studio/manifest.json",
+    "skills/parasocial-studio/agents/openai.yaml",
+    "skills/parasocial-studio/assets/icon-small.svg",
+    "skills/parasocial-studio/assets/icon-large.svg"
+  ]
+}

@@ -1,10 +1,34 @@
 {
   "id": "doc-drop-bridge",
   "name": "Doc Drop Bridge",
-  "category": "Documents",
+  "category": "Productivity and Workflow",
   "status": "active",
-  "stars": 4,
+  "description": "A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.",
   "short_description": "A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.",
+  "brand_color": "#64D2FF",
+  "icon_small": "skills/doc-drop-bridge/assets/icon-small.svg",
+  "icon_large": "skills/doc-drop-bridge/assets/icon-large.svg",
+  "default_prompt": "Use $doc-drop-bridge to build a polished macOS menu-bar utility for a document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.",
+  "install_command": "codex-goated install doc-drop-bridge",
+  "packs": [
+    "productivity-and-workflow",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/doc-drop-bridge/SKILL.md",
+    "skills/doc-drop-bridge/manifest.json",
+    "skills/doc-drop-bridge/agents/openai.yaml",
+    "skills/doc-drop-bridge/assets/icon-small.svg",
+    "skills/doc-drop-bridge/assets/icon-large.svg",
+    "skills/doc-drop-bridge/assets/icon.svg",
+    "skills/doc-drop-bridge/assets/preview.svg",
+    "skills/doc-drop-bridge/prototype/README.md",
+    "skills/doc-drop-bridge/prototype/SkillMenuBarApp.swift",
+    "skills/doc-drop-bridge/prototype/SkillMenuBarView.swift",
+    "skills/doc-drop-bridge/prototype/SkillDetailView.swift",
+    "skills/doc-drop-bridge/prototype/SkillTheme.swift"
+  ],
+  "stars": 4,
   "audience": [
     "Writers",
     "Operators",
@@ -17,19 +41,6 @@
     "export",
     "menu bar",
     "packaging"
-  ],
-  "install_command": "codex-skillctl install doc-drop-bridge",
-  "docs_paths": [
-    "skills/doc-drop-bridge/SKILL.md",
-    "skills/doc-drop-bridge/manifest.json",
-    "skills/doc-drop-bridge/agents/openai.yaml",
-    "skills/doc-drop-bridge/assets/icon.svg",
-    "skills/doc-drop-bridge/assets/preview.svg",
-    "skills/doc-drop-bridge/prototype/README.md",
-    "skills/doc-drop-bridge/prototype/SkillMenuBarApp.swift",
-    "skills/doc-drop-bridge/prototype/SkillMenuBarView.swift",
-    "skills/doc-drop-bridge/prototype/SkillDetailView.swift",
-    "skills/doc-drop-bridge/prototype/SkillTheme.swift"
   ],
   "detail_lines": [
     "Makes it easy to wrap a working note into a shareable artifact.",

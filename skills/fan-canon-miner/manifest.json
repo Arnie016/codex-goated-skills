@@ -1,0 +1,25 @@
+{
+  "id": "fan-canon-miner",
+  "name": "Fan Canon Miner",
+  "category": "Audience and Fandom Strategy",
+  "status": "active",
+  "description": "Mine comments, interviews, captions, and fan chatter around a creator, celebrity, or founder to identify the symbols, phrases, moments, and myths people repeat, then turn them into a canon map. Use when Codex needs fandom analysis grounded in public or user-authorized material.",
+  "short_description": "Mine fan chatter into a canon map",
+  "brand_color": "#C67A2B",
+  "icon_small": "skills/fan-canon-miner/assets/icon-small.svg",
+  "icon_large": "skills/fan-canon-miner/assets/icon-large.svg",
+  "default_prompt": "Use $fan-canon-miner to analyze this creator's public or user-provided comments, captions, interviews, and fan chatter, then turn the repeated symbols, phrases, moments, and myths into a canon map.",
+  "install_command": "codex-goated install fan-canon-miner",
+  "packs": [
+    "audience-and-fandom-strategy",
+    "creator-and-fandom-stack",
+    "fandom-skill-pack"
+  ],
+  "docs_paths": [
+    "skills/fan-canon-miner/SKILL.md",
+    "skills/fan-canon-miner/manifest.json",
+    "skills/fan-canon-miner/agents/openai.yaml",
+    "skills/fan-canon-miner/assets/icon-small.svg",
+    "skills/fan-canon-miner/assets/icon-large.svg"
+  ]
+}

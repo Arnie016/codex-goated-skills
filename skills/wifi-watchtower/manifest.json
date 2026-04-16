@@ -1,0 +1,23 @@
+{
+  "id": "wifi-watchtower",
+  "name": "WiFi Watchtower",
+  "category": "App-Specific Skills",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or refine the WiFi Watchtower macOS menu bar app in `apps/wifi-watchtower`. Use when Codex needs the exact app workspace, repo-native doctor/typecheck/build/test flows, or menu bar and dashboard changes for local Wi-Fi trust scoring.",
+  "short_description": "Run and refine the WiFi Watchtower menu bar app",
+  "brand_color": "#0EA5E9",
+  "icon_small": "skills/wifi-watchtower/assets/wifi-watchtower-small.svg",
+  "icon_large": "skills/wifi-watchtower/assets/wifi-watchtower-large.svg",
+  "default_prompt": "Use $wifi-watchtower to work on the WiFi Watchtower macOS menu bar app in apps/wifi-watchtower: inspect the workspace, run doctor, and validate build or test changes around trust scoring, nearby Wi-Fi context, and the menu bar dashboard.",
+  "install_command": "codex-goated install wifi-watchtower",
+  "packs": [
+    "app-specific-skills"
+  ],
+  "docs_paths": [
+    "skills/wifi-watchtower/SKILL.md",
+    "skills/wifi-watchtower/manifest.json",
+    "skills/wifi-watchtower/agents/openai.yaml",
+    "skills/wifi-watchtower/assets/wifi-watchtower-small.svg",
+    "skills/wifi-watchtower/assets/wifi-watchtower-large.svg"
+  ]
+}

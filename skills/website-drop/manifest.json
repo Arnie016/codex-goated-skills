@@ -1,0 +1,23 @@
+{
+  "id": "website-drop",
+  "name": "Website Drop",
+  "category": "Launch and Distribution",
+  "status": "active",
+  "description": "Audit a local web app, choose the simplest host, and get it to a live URL fast. Use when Codex needs to prep a site for deploy, confirm the build path, and ship it with minimal hosting overhead.",
+  "short_description": "Audit a web app, pick a host, and ship it live fast",
+  "brand_color": "#F97316",
+  "icon_small": "skills/website-drop/assets/website-drop-small.svg",
+  "icon_large": "skills/website-drop/assets/website-drop-large.svg",
+  "default_prompt": "Use $website-drop to audit this web project, choose the simplest stable deploy path, and get me to a live URL with minimal config and a clean handoff.",
+  "install_command": "codex-goated install website-drop",
+  "packs": [
+    "launch-and-distribution"
+  ],
+  "docs_paths": [
+    "skills/website-drop/SKILL.md",
+    "skills/website-drop/manifest.json",
+    "skills/website-drop/agents/openai.yaml",
+    "skills/website-drop/assets/website-drop-small.svg",
+    "skills/website-drop/assets/website-drop-large.svg"
+  ]
+}

@@ -26,8 +26,9 @@ codex-goated audit
 
 ## Audit Status
 
-Audit snapshot for April 13, 2026:
+Audit snapshot for April 16, 2026:
 
+- `54/54` skills include `manifest.json`
 - `54/54` skills include `SKILL.md`
 - `54/54` skills include `agents/openai.yaml`
 - `54/54` skills include a small SVG icon
@@ -38,6 +39,7 @@ Audit snapshot for April 13, 2026:
 Run the live audit locally:
 
 ```bash
+python3 scripts/sync-skill-manifests.py --check
 codex-goated catalog build
 codex-goated catalog check
 codex-goated audit
@@ -46,7 +48,7 @@ bash scripts/audit-catalog.sh
 
 Generated index:
 
-- `catalog/index.json` is built from the skill frontmatter, `agents/openai.yaml`, and pack files.
+- `catalog/index.json` is built from `skills/*/manifest.json`, skill frontmatter, `agents/openai.yaml`, and pack files.
 - Regenerate it with `codex-goated catalog build`.
 - Validate freshness with `codex-goated catalog check`.
 

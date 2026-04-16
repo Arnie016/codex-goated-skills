@@ -1,0 +1,25 @@
+{
+  "id": "myth-merch-studio",
+  "name": "Myth Merch Studio",
+  "category": "Audience and Fandom Strategy",
+  "status": "active",
+  "description": "Turn symbols, phrases, and fandom lore into merch, collectible, and limited-drop concepts, then output a merch brief. Use when Codex needs to translate fandom canon into products without stripping the meaning out of the source material or crossing licensing lines.",
+  "short_description": "Turn fandom lore into merch briefs",
+  "brand_color": "#2E9A5F",
+  "icon_small": "skills/myth-merch-studio/assets/icon-small.svg",
+  "icon_large": "skills/myth-merch-studio/assets/icon-large.svg",
+  "default_prompt": "Use $myth-merch-studio to turn this creator or founder's symbols, phrases, and fandom lore into merch concepts and export a merch brief.",
+  "install_command": "codex-goated install myth-merch-studio",
+  "packs": [
+    "audience-and-fandom-strategy",
+    "creator-and-fandom-stack",
+    "fandom-skill-pack"
+  ],
+  "docs_paths": [
+    "skills/myth-merch-studio/SKILL.md",
+    "skills/myth-merch-studio/manifest.json",
+    "skills/myth-merch-studio/agents/openai.yaml",
+    "skills/myth-merch-studio/assets/icon-small.svg",
+    "skills/myth-merch-studio/assets/icon-large.svg"
+  ]
+}

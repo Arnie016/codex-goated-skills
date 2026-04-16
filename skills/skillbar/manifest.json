@@ -1,0 +1,24 @@
+{
+  "id": "skillbar",
+  "name": "SkillBar",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend SkillBar, the codex-goated-skills macOS menu bar manager. Use when Codex needs to work on the `apps/skillbar` workspace, validate repo-driven catalog parsing, exercise install or update wiring through `bin/codex-goated`, or keep the local preset, pack, and installed-state flows honest.",
+  "short_description": "Build and refine the goated skills and pack menu bar manager",
+  "brand_color": "#8AB6FF",
+  "icon_small": "skills/skillbar/assets/skillbar-small.svg",
+  "icon_large": "skills/skillbar/assets/skillbar-large.svg",
+  "default_prompt": "Use $skillbar to work on SkillBar, the macOS menu bar manager for codex-goated-skills, including the catalog UI, preset bundles, repo pack browsing, metadata parsing, install or update flows, and repo catalog or integrity checks.",
+  "install_command": "codex-goated install skillbar",
+  "packs": [
+    "productivity-and-workflow",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/skillbar/SKILL.md",
+    "skills/skillbar/manifest.json",
+    "skills/skillbar/agents/openai.yaml",
+    "skills/skillbar/assets/skillbar-small.svg",
+    "skills/skillbar/assets/skillbar-large.svg"
+  ]
+}

@@ -59,6 +59,7 @@ Alias and stack packs:
 
 - Pack files are simple text lists with optional comment metadata.
 - `# title:` and `# summary:` lines drive CLI discoverability.
+- The six primary packs also define the repo's top-level browse categories and manifest `category` values.
 - Every pack should reference only existing directories under `skills/`.
 - Every skill in the repo should belong to at least one pack.
 - The generated machine-readable index lives at [`catalog/index.json`](https://github.com/Arnie016/codex-goated-skills/blob/main/catalog/index.json).

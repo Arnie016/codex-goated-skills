@@ -1,0 +1,23 @@
+{
+  "id": "xbox-studio",
+  "name": "Xbox Studio",
+  "category": "Games and Minecraft",
+  "status": "active",
+  "description": "Build, run, scaffold, troubleshoot, or product-shape a controller-first macOS Xbox helper for Bluetooth readiness, controller pairing, cloud gaming, Remote Play, captures, and account support using official Xbox, Microsoft, Apple, and browser-supported surfaces. Use when Codex needs to turn \"control my Xbox stuff from my Mac\" into a realistic menu bar app, launcher, or support workflow without inventing unsupported Xbox APIs.",
+  "short_description": "macOS Xbox controller and Bluetooth hub",
+  "brand_color": "#107C10",
+  "icon_small": "skills/xbox-studio/assets/xbox-studio-small.svg",
+  "icon_large": "skills/xbox-studio/assets/xbox-studio-large.svg",
+  "default_prompt": "Use $xbox-studio to run, build, or improve a realistic macOS Xbox controller and Bluetooth control center, then layer in cloud gaming, Remote Play, captures, or account flows.",
+  "install_command": "codex-goated install xbox-studio",
+  "packs": [
+    "games-and-minecraft"
+  ],
+  "docs_paths": [
+    "skills/xbox-studio/SKILL.md",
+    "skills/xbox-studio/manifest.json",
+    "skills/xbox-studio/agents/openai.yaml",
+    "skills/xbox-studio/assets/xbox-studio-small.svg",
+    "skills/xbox-studio/assets/xbox-studio-large.svg"
+  ]
+}

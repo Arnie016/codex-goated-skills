@@ -1,0 +1,25 @@
+{
+  "id": "iconography-lab",
+  "name": "Iconography Lab",
+  "category": "Audience and Fandom Strategy",
+  "status": "active",
+  "description": "Define the instantly recognizable visual and verbal codes of a public figure, including palette, props, silhouettes, poses, moods, and catchphrases, then output an identity kit. Use when Codex needs to make a personality-led brand recognizable without flattening it into generic branding.",
+  "short_description": "Define the icon system of a public figure",
+  "brand_color": "#3E6DFF",
+  "icon_small": "skills/iconography-lab/assets/icon-small.svg",
+  "icon_large": "skills/iconography-lab/assets/icon-large.svg",
+  "default_prompt": "Use $iconography-lab to analyze this public figure's visual and verbal codes, then build an identity kit with palette, props, silhouette cues, and catchphrases.",
+  "install_command": "codex-goated install iconography-lab",
+  "packs": [
+    "audience-and-fandom-strategy",
+    "creator-and-fandom-stack",
+    "fandom-skill-pack"
+  ],
+  "docs_paths": [
+    "skills/iconography-lab/SKILL.md",
+    "skills/iconography-lab/manifest.json",
+    "skills/iconography-lab/agents/openai.yaml",
+    "skills/iconography-lab/assets/icon-small.svg",
+    "skills/iconography-lab/assets/icon-large.svg"
+  ]
+}

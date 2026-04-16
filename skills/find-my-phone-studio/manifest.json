@@ -1,0 +1,24 @@
+{
+  "id": "find-my-phone-studio",
+  "name": "Find My Phone Studio",
+  "category": "macOS Utility Builders",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or refine a realistic Mac phone-recovery workflow, especially the bundled `apps/phone-spotter` menu bar app. Use when Codex needs a repo-native path for locate, ring, call, pairing, directions, or provider handoff on iPhone or Android without inventing unsupported tracking APIs.",
+  "short_description": "macOS helper for iPhone or Android locate, ring, call, and handoff flows",
+  "brand_color": "#3B82F6",
+  "icon_small": "skills/find-my-phone-studio/assets/find-my-phone-studio-small.svg",
+  "icon_large": "skills/find-my-phone-studio/assets/find-my-phone-studio-large.svg",
+  "default_prompt": "Use $find-my-phone-studio to design or build a realistic macOS menu bar app or helper that helps me find my iPhone or Android phone, open its location fast, ring it, call it when a number is stored, hand off to provider or directions flows, and include a clear Quit action.",
+  "install_command": "codex-goated install find-my-phone-studio",
+  "packs": [
+    "macos-utility-builders",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/find-my-phone-studio/SKILL.md",
+    "skills/find-my-phone-studio/manifest.json",
+    "skills/find-my-phone-studio/agents/openai.yaml",
+    "skills/find-my-phone-studio/assets/find-my-phone-studio-small.svg",
+    "skills/find-my-phone-studio/assets/find-my-phone-studio-large.svg"
+  ]
+}
