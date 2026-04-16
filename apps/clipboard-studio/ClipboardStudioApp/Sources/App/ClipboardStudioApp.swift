@@ -47,23 +47,53 @@ private struct SettingsView: View {
     @ObservedObject var model: ClipboardStudioModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Text("Clipboard Studio")
+        VStack(alignment: .leading, spacing: 18) {
+            Text(ContextAssemblyBrand.appName)
                 .font(.title2.weight(.bold))
-            Text("Build AI-ready context packs without leaving your flow. Capture from Xcode, Cursor, VS Code, Terminal, or the browser, then send the whole prompt pack straight back into the app you were using.")
+            Text("Capture code, logs, pages, and notes from Xcode, Cursor, VS Code, Terminal, browsers, or documents, then paste or export one structured assembly without losing your place.")
                 .foregroundStyle(.secondary)
             VStack(alignment: .leading, spacing: 6) {
                 Text("Default hot actions")
                     .font(.headline)
-                Text("\(ClipboardStudioShortcut.captureSelection.keyChord) Capture the current selection into the prompt pack.")
-                Text("\(ClipboardStudioShortcut.sendPack.keyChord) Send the active pack to the last app you were working in.")
-                Text("\(ClipboardStudioShortcut.openPack.keyChord) Open the floating pack editor.")
-                Text("Direct send uses Accessibility. If macOS blocks automation, Clipboard Studio falls back to copying the pack to your clipboard.")
+                Text("\(ClipboardStudioShortcut.captureSelection.keyChord) Capture the current selection and start the assembly timeline if it is empty.")
+                Text("\(ClipboardStudioShortcut.sendPack.keyChord) Paste the active assembly into the app you were just using.")
+                Text("\(ClipboardStudioShortcut.openPack.keyChord) Open or close the floating assembly window.")
+                Text("Current Focus keeps the latest page, window, or selection at the top and remembers it across relaunches.")
+                Text("Recent States let you reopen a saved browser page or bring an app back to the front later.")
+                Text("Export sends the current assembly to Apple Notes or saves Markdown straight into a remembered folder.")
+                Text("Direct send uses Accessibility. Browser page details may also ask macOS for Automation access.")
             }
             .font(.footnote)
             .foregroundStyle(.secondary)
+
+            Divider()
+
+            VStack(alignment: .leading, spacing: 10) {
+                Text("OpenAI Research")
+                    .font(.headline)
+
+                Text("Save an API key to let Context Assembly turn the current page or selection into a compact research brief and add it to the assembly.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+
+                SecureField("OpenAI API Key", text: $model.openAIKeyInput)
+
+                HStack(spacing: 10) {
+                    Button(model.hasStoredOpenAIKey ? "Update Key" : "Save Key") {
+                        model.saveOpenAIKey()
+                    }
+                    .buttonStyle(.borderedProminent)
+
+                    if model.hasStoredOpenAIKey {
+                        Button("Remove Stored Key") {
+                            model.clearStoredOpenAIKey()
+                        }
+                        .buttonStyle(.bordered)
+                    }
+                }
+            }
         }
         .padding(24)
-        .frame(width: 460)
+        .frame(width: 500)
     }
 }

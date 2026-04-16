@@ -1,0 +1,57 @@
+{
+  "id": "front-tab-relay",
+  "name": "Front Tab Relay",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "Build or operate a macOS menu-bar relay that captures the front browser tab and formats it for prompts, notes, tickets, or chat handoffs.",
+  "short_description": "A menu-bar relay for grabbing the front browser tab and routing its title and URL into prompts, notes, or tickets without losing your place.",
+  "brand_color": "#5E5CE6",
+  "icon_small": "skills/front-tab-relay/assets/icon-small.svg",
+  "icon_large": "skills/front-tab-relay/assets/icon-large.svg",
+  "default_prompt": "Use $front-tab-relay to build a polished macOS menu-bar utility for a menu-bar relay for grabbing the front browser tab and routing its title and url into prompts, notes, or tickets without losing your place.",
+  "install_command": "codex-goated install front-tab-relay",
+  "packs": [
+    "productivity-and-workflow"
+  ],
+  "docs_paths": [
+    "skills/front-tab-relay/SKILL.md",
+    "skills/front-tab-relay/manifest.json",
+    "skills/front-tab-relay/agents/openai.yaml",
+    "skills/front-tab-relay/assets/icon-small.svg",
+    "skills/front-tab-relay/assets/icon-large.svg",
+    "skills/front-tab-relay/assets/icon.svg",
+    "skills/front-tab-relay/assets/preview.svg",
+    "skills/front-tab-relay/scripts/front_tab_relay.py",
+    "skills/front-tab-relay/prototype/README.md",
+    "skills/front-tab-relay/prototype/SkillMenuBarApp.swift",
+    "skills/front-tab-relay/prototype/SkillMenuBarView.swift",
+    "skills/front-tab-relay/prototype/SkillDetailView.swift",
+    "skills/front-tab-relay/prototype/SkillTheme.swift"
+  ],
+  "stars": 5,
+  "audience": [
+    "Mac users who hand browser context into other tools",
+    "Researchers and operators moving links into notes or tickets",
+    "AI-assisted builders who keep bouncing between browser, chat, and docs"
+  ],
+  "tags": [
+    "browser",
+    "URL",
+    "handoff",
+    "menu bar",
+    "workflow",
+    "AppleScript",
+    "clipboard"
+  ],
+  "detail_lines": [
+    "Reads the visible front tab from Safari or common Chrome-family browsers without network access.",
+    "Formats the title and URL for markdown, prompts, tickets, or plain-text notes in one step.",
+    "Keeps the relay action close to the menu bar so browser context leaves the tab strip cleanly."
+  ],
+  "file_path_hints": [
+    "skills/front-tab-relay/scripts/front_tab_relay.py",
+    "skills/front-tab-relay/prototype/SkillMenuBarView.swift",
+    "skills/front-tab-relay/prototype/SkillDetailView.swift"
+  ],
+  "system_symbol": "link.badge.plus"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "brand-kit",
+  "name": "Brand Kit",
+  "category": "Launch and Distribution",
+  "status": "active",
+  "description": "Create lightweight brand assets and launch metadata for a project. Use when Codex needs to give a repo, product, or skill a simple visual identity with a logo direction, banner ideas, social preview copy, and short positioning text.",
+  "short_description": "Give a project a sharp, reusable brand system",
+  "brand_color": "#EC4899",
+  "icon_small": "skills/brand-kit/assets/brand-kit-small.svg",
+  "icon_large": "skills/brand-kit/assets/brand-kit-large.svg",
+  "default_prompt": "Use $brand-kit to audit this project and create a tighter brand direction, logo concept, color system, and launch metadata.",
+  "install_command": "codex-goated install brand-kit",
+  "packs": [
+    "creator-and-fandom-stack",
+    "launch-and-distribution"
+  ],
+  "docs_paths": [
+    "skills/brand-kit/SKILL.md",
+    "skills/brand-kit/manifest.json",
+    "skills/brand-kit/agents/openai.yaml",
+    "skills/brand-kit/assets/brand-kit-small.svg",
+    "skills/brand-kit/assets/brand-kit-large.svg"
+  ]
+}

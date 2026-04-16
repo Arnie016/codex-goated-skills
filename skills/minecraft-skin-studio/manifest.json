@@ -1,0 +1,23 @@
+{
+  "id": "minecraft-skin-studio",
+  "name": "Minecraft Skin Studio",
+  "category": "Games and Minecraft",
+  "status": "active",
+  "description": "Draft, clean, preview, register, or build a Minecraft Java skin workflow, including the bundled `apps/minecraft-skinbar` menu bar app. Use when Codex needs to turn a skin idea into launcher-ready files, wire the local Minecraft Launcher skin library, render previews, or refine the repo-native macOS skin workflow.",
+  "short_description": "Build launcher-ready skins or the bundled Minecraft Skin Bar app",
+  "brand_color": "#22C55E",
+  "icon_small": "skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg",
+  "icon_large": "skills/minecraft-skin-studio/assets/minecraft-skin-studio-large.svg",
+  "default_prompt": "Use $minecraft-skin-studio to draft or import a Minecraft Java skin, save a clean 64x64 PNG, render a preview, register it into my local Minecraft Launcher custom skins list, or work on the bundled Minecraft Skin Bar menu bar app.",
+  "install_command": "codex-goated install minecraft-skin-studio",
+  "packs": [
+    "games-and-minecraft"
+  ],
+  "docs_paths": [
+    "skills/minecraft-skin-studio/SKILL.md",
+    "skills/minecraft-skin-studio/manifest.json",
+    "skills/minecraft-skin-studio/agents/openai.yaml",
+    "skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg",
+    "skills/minecraft-skin-studio/assets/minecraft-skin-studio-large.svg"
+  ]
+}

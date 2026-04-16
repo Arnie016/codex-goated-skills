@@ -1,0 +1,19 @@
+# title: Utility Builder Stack
+# summary: A practical bundle for shipping Mac utilities, local monitors, workflow tools, and app-adjacent builders.
+workspace-doctor
+project-hail-mary
+skillbar
+clipboard-studio
+network-studio
+find-my-phone-studio
+cursor-studio
+folder-studio
+vibe-bluetooth
+battery-trend-scout
+chrome-tab-sweeper
+doc-drop-bridge
+focus-runway
+handoff-courier
+phone-handoff-panel
+power-sentry
+screen-snippet-studio

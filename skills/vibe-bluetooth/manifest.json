@@ -1,0 +1,24 @@
+{
+  "id": "vibe-bluetooth",
+  "name": "VibeBluetooth",
+  "category": "App-Specific Skills",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend the VibeWidget macOS SwiftUI app and widget. Use when Codex needs to work on a VibeWidget or VibeBluetooth workspace, especially the repo app at `apps/vibe-widget`; regenerate the Xcode project; launch it in Xcode; run local doctor, build, or typecheck checks; or modify the HomeKit, Spotify, widget, voice panel, or shared-core flows.",
+  "short_description": "Run and extend the VibeWidget app",
+  "brand_color": "#6E54FF",
+  "icon_small": "skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg",
+  "icon_large": "skills/vibe-bluetooth/assets/vibe-bluetooth-large.svg",
+  "default_prompt": "Use $vibe-bluetooth to work on the VibeWidget macOS app, regenerate the project if needed, and run local doctor, typecheck, or app relaunch commands.",
+  "install_command": "codex-goated install vibe-bluetooth",
+  "packs": [
+    "app-specific-skills",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/vibe-bluetooth/SKILL.md",
+    "skills/vibe-bluetooth/manifest.json",
+    "skills/vibe-bluetooth/agents/openai.yaml",
+    "skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg",
+    "skills/vibe-bluetooth/assets/vibe-bluetooth-large.svg"
+  ]
+}

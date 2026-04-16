@@ -1,0 +1,22 @@
+# title: Productivity and Workflow
+# summary: Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.
+workspace-doctor
+context-shelf
+project-hail-mary
+gain-tracker
+on-this-day
+trading-archive
+skillbar
+clipboard-studio
+network-studio
+dark-pdf-studio
+deckdrop-studio
+focus-runway
+front-tab-relay
+meeting-link-bridge
+excel-range-relay
+screen-snippet-studio
+doc-drop-bridge
+patch-pilot
+battery-trend-scout
+power-sentry

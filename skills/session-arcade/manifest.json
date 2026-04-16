@@ -1,10 +1,33 @@
 {
   "id": "session-arcade",
   "name": "Session Arcade",
-  "category": "Games and Consoles",
+  "category": "Games and Minecraft",
   "status": "active",
-  "stars": 4,
+  "description": "A launch-night helper for game sessions, cloud gaming, and quick console handoffs.",
   "short_description": "A launch-night helper for game sessions, cloud gaming, and quick console handoffs.",
+  "brand_color": "#32ADE6",
+  "icon_small": "skills/session-arcade/assets/icon-small.svg",
+  "icon_large": "skills/session-arcade/assets/icon-large.svg",
+  "default_prompt": "Use $session-arcade to build a polished macOS menu-bar utility for a launch-night helper for game sessions, cloud gaming, and quick console handoffs.",
+  "install_command": "codex-goated install session-arcade",
+  "packs": [
+    "games-and-minecraft"
+  ],
+  "docs_paths": [
+    "skills/session-arcade/SKILL.md",
+    "skills/session-arcade/manifest.json",
+    "skills/session-arcade/agents/openai.yaml",
+    "skills/session-arcade/assets/icon-small.svg",
+    "skills/session-arcade/assets/icon-large.svg",
+    "skills/session-arcade/assets/icon.svg",
+    "skills/session-arcade/assets/preview.svg",
+    "skills/session-arcade/prototype/README.md",
+    "skills/session-arcade/prototype/SkillMenuBarApp.swift",
+    "skills/session-arcade/prototype/SkillMenuBarView.swift",
+    "skills/session-arcade/prototype/SkillDetailView.swift",
+    "skills/session-arcade/prototype/SkillTheme.swift"
+  ],
+  "stars": 4,
   "audience": [
     "Casual gamers",
     "Console owners",
@@ -16,19 +39,6 @@
     "launch",
     "menu bar",
     "session"
-  ],
-  "install_command": "codex-skillctl install session-arcade",
-  "docs_paths": [
-    "skills/session-arcade/SKILL.md",
-    "skills/session-arcade/manifest.json",
-    "skills/session-arcade/agents/openai.yaml",
-    "skills/session-arcade/assets/icon.svg",
-    "skills/session-arcade/assets/preview.svg",
-    "skills/session-arcade/prototype/README.md",
-    "skills/session-arcade/prototype/SkillMenuBarApp.swift",
-    "skills/session-arcade/prototype/SkillMenuBarView.swift",
-    "skills/session-arcade/prototype/SkillDetailView.swift",
-    "skills/session-arcade/prototype/SkillTheme.swift"
   ],
   "detail_lines": [
     "Keeps the next game or session within a few clicks.",

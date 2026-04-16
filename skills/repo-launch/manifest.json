@@ -1,0 +1,23 @@
+{
+  "id": "repo-launch",
+  "name": "Repo Launch",
+  "category": "Launch and Distribution",
+  "status": "active",
+  "description": "Audit and polish a GitHub-ready repository. Use when Codex needs to classify a rough project, choose the right README shape, and add only the minimum launch essentials needed for a clean shareable repo.",
+  "short_description": "Turn a rough project into a clean public repo",
+  "brand_color": "#2563EB",
+  "icon_small": "skills/repo-launch/assets/repo-launch-small.svg",
+  "icon_large": "skills/repo-launch/assets/repo-launch-large.svg",
+  "default_prompt": "Use $repo-launch to audit this repo shape first, then add only the minimum README, license, and start-path polish needed to make it GitHub-ready.",
+  "install_command": "codex-goated install repo-launch",
+  "packs": [
+    "launch-and-distribution"
+  ],
+  "docs_paths": [
+    "skills/repo-launch/SKILL.md",
+    "skills/repo-launch/manifest.json",
+    "skills/repo-launch/agents/openai.yaml",
+    "skills/repo-launch/assets/repo-launch-small.svg",
+    "skills/repo-launch/assets/repo-launch-large.svg"
+  ]
+}

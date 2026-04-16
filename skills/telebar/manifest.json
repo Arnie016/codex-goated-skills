@@ -1,0 +1,23 @@
+{
+  "id": "telebar",
+  "name": "TeleBar",
+  "category": "App-Specific Skills",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend the TeleBar macOS menu bar app. Use when Codex needs to work on a TeleBar workspace, especially the repo app at `apps/telebar`; regenerate the Xcode project; launch the app; run local doctor or build checks; or modify the Telegram inbox, AI writing, setup links, keychain storage, or compact macOS popover UI.",
+  "short_description": "Run and extend the TeleBar menu bar app",
+  "brand_color": "#2B79FF",
+  "icon_small": "skills/telebar/assets/telebar-small.svg",
+  "icon_large": "skills/telebar/assets/telebar-large.svg",
+  "default_prompt": "Use $telebar to work on the TeleBar macOS menu bar app, regenerate the project if needed, and run local doctor, build, or run checks.",
+  "install_command": "codex-goated install telebar",
+  "packs": [
+    "app-specific-skills"
+  ],
+  "docs_paths": [
+    "skills/telebar/SKILL.md",
+    "skills/telebar/manifest.json",
+    "skills/telebar/agents/openai.yaml",
+    "skills/telebar/assets/telebar-small.svg",
+    "skills/telebar/assets/telebar-large.svg"
+  ]
+}

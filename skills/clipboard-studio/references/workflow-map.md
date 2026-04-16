@@ -1,22 +1,22 @@
-# Clipboard Studio Workflow Map
+# Context Assembly Workflow Map
 
-Default workspace: if the current repo contains `ClipboardStudioApp` and `project.yml`, use it. Otherwise, treat the request as product shaping or a new macOS clipboard utility.
+Default workspace: if the current repo contains `apps/clipboard-studio/project.yml`, use `apps/clipboard-studio`. Otherwise, treat the request as product shaping or a new macOS context-assembly utility. Read `workspace-map.md` when the request is about the bundled app workspace.
 
 ## Core Jobs
 
-- capture new clipboard items quickly
+- capture selected context quickly
+- assemble code, logs, notes, and links into one result
 - search recent history without friction
 - pin reusable snippets and slots
-- transform text before re-copy or paste
-- trigger quick paste actions from a compact menu bar panel
+- send or export the assembled result from a compact menu bar panel
 
 ## Product Contract
 
-- Clipboard Studio should make copy and paste feel faster, safer, and easier to control.
+- Context Assembly should make cross-app copy and paste feel faster, safer, and easier to control.
 - The core loop is:
-  - detect clipboard change
-  - classify and preview the item
-  - let the user search, pin, transform, or paste it
+  - capture or observe text
+  - preview and assemble the important parts
+  - let the user search, pin, send, or export it
 - Support common item types clearly:
   - plain text
   - links
@@ -35,32 +35,29 @@ Default workspace: if the current repo contains `ClipboardStudioApp` and `projec
 
 - Header:
   - current status
-  - search field
+  - info or quick-help surface
+  - shortcut summary
   - pause or private toggle
+- Current assembly:
+  - one clear objective field
+  - newest captures first
+  - one-tap send, copy, and export actions
 - Recent history:
   - newest items first
   - compact previews
-  - one-tap copy, paste, and pin actions
-- Transform strip:
-  - plain text
-  - cleanup
-  - case conversion
-  - slugify or format helpers
-- Pinned section:
-  - stable snippets
-  - reorder support
-  - shortcut-friendly labels
+  - one-tap add, copy, paste, and pin actions
 
 ## Icon Language
 
-- Use stacked cards or sheets to signal clipboard history and duplication.
-- Add one clear forward-motion cue such as an arrow, streak, or thrust shape to signal paste speed.
+- Use a restrained clipboard or list metaphor that still reads clearly at menu bar size.
+- Add one subtle readiness cue rather than multiple decorative states.
 - Keep the silhouette legible at tiny sizes.
 - Favor one bright accent on a dark base instead of a crowded multicolor mark.
 
 ## Validation
 
+- Prefer `scripts/run_clipboard_studio.sh` for `doctor`, `inspect`, `generate`, `build`, `test`, and `run`.
 - History ordering should stay newest-first and deterministic.
 - Dedup or retention rules should be explicit and testable.
-- Transform previews should not silently overwrite the clipboard before confirmation.
+- Export should be deterministic and remember its Markdown folder once chosen.
 - Pin, unpin, and reorder behavior should remain stable across relaunches.

@@ -1,0 +1,25 @@
+{
+  "id": "ritual-engine",
+  "name": "Ritual Engine",
+  "category": "Audience and Fandom Strategy",
+  "status": "active",
+  "description": "Design repeatable fan rituals, naming systems, participation loops, and recurring community formats, then output a ritual calendar. Use when Codex needs to turn audience energy into recurring formats without making the relationship manipulative or exhausting.",
+  "short_description": "Design rituals and loops for fan participation",
+  "brand_color": "#C96A34",
+  "icon_small": "skills/ritual-engine/assets/icon-small.svg",
+  "icon_large": "skills/ritual-engine/assets/icon-large.svg",
+  "default_prompt": "Use $ritual-engine to design repeatable fan rituals, naming systems, and participation loops for this audience, then output a ritual calendar.",
+  "install_command": "codex-goated install ritual-engine",
+  "packs": [
+    "audience-and-fandom-strategy",
+    "creator-and-fandom-stack",
+    "fandom-skill-pack"
+  ],
+  "docs_paths": [
+    "skills/ritual-engine/SKILL.md",
+    "skills/ritual-engine/manifest.json",
+    "skills/ritual-engine/agents/openai.yaml",
+    "skills/ritual-engine/assets/icon-small.svg",
+    "skills/ritual-engine/assets/icon-large.svg"
+  ]
+}

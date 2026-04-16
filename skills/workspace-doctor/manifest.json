@@ -1,0 +1,24 @@
+{
+  "id": "workspace-doctor",
+  "name": "Workspace Doctor",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "Diagnose local workspace readiness, generated catalog freshness, and common setup problems, then point to the right repo-native next command. Use when Codex needs to check project health, missing tools, Xcode or XcodeGen blockers, auth gaps, environment mismatches, broken install steps, or other practical issues that stop a user from building or running something.",
+  "short_description": "Find the real blocker, catalog freshness, overlap map, and next command fast",
+  "brand_color": "#16A34A",
+  "icon_small": "skills/workspace-doctor/assets/workspace-doctor-small.svg",
+  "icon_large": "skills/workspace-doctor/assets/workspace-doctor-large.svg",
+  "default_prompt": "Use $workspace-doctor to inspect this workspace, run a quick environment audit, check generated catalog freshness when this repo ships skills or packs, surface the app-skill overlap map and runner families at the repo root, identify the main blocker, and point me at the right local doctor, build, or runner command.",
+  "install_command": "codex-goated install workspace-doctor",
+  "packs": [
+    "productivity-and-workflow",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/workspace-doctor/SKILL.md",
+    "skills/workspace-doctor/manifest.json",
+    "skills/workspace-doctor/agents/openai.yaml",
+    "skills/workspace-doctor/assets/workspace-doctor-small.svg",
+    "skills/workspace-doctor/assets/workspace-doctor-large.svg"
+  ]
+}

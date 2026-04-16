@@ -1,0 +1,24 @@
+{
+  "id": "trading-archive",
+  "name": "Trading Archive",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or refine Trading Archive, especially the bundled `apps/trading-archive-bar` macOS menu bar app and its feed-ingest helper. Use when Codex needs a dependable trading research archive instead of ad hoc finance tabs and half-lost bookmarks.",
+  "short_description": "Trading article archive, reading queue, and menu bar app",
+  "brand_color": "#2FAE7F",
+  "icon_small": "skills/trading-archive/assets/icon-small.svg",
+  "icon_large": "skills/trading-archive/assets/icon-large.svg",
+  "default_prompt": "Use $trading-archive to fetch public trading or macro feeds, build a reliable reading archive, surface the strongest articles for the current moment, or refine the matching macOS menu bar app.",
+  "install_command": "codex-goated install trading-archive",
+  "packs": [
+    "daily-briefs-and-reference",
+    "productivity-and-workflow"
+  ],
+  "docs_paths": [
+    "skills/trading-archive/SKILL.md",
+    "skills/trading-archive/manifest.json",
+    "skills/trading-archive/agents/openai.yaml",
+    "skills/trading-archive/assets/icon-small.svg",
+    "skills/trading-archive/assets/icon-large.svg"
+  ]
+}

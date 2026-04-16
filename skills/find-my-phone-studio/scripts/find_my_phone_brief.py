@@ -11,7 +11,11 @@ def infer_action(goal: str, explicit: str | None) -> str:
     lowered = goal.lower()
     if re.search(r"\b(ring|play sound|ping)\b", lowered):
         return "ring"
-    if re.search(r"\b(direction|navigate|map)\b", lowered):
+    if re.search(r"\b(call|dial|facetime)\b", lowered):
+        return "call"
+    if re.search(r"\b(provider|handoff)\b", lowered) or "icloud.com/find" in lowered or "android.com/find" in lowered:
+        return "open-provider"
+    if re.search(r"\b(direction|directions|navigate|map)\b", lowered):
         return "directions"
     if re.search(r"\b(nearby|precision|exact)\b", lowered):
         return "nearby"
@@ -26,6 +30,12 @@ def infer_surface(goal: str, explicit: str | None) -> str:
         return "browser-helper"
     if "shortcut" in lowered or "applescript" in lowered or "automation" in lowered:
         return "shortcut-helper"
+    # Phone-recovery requests should default to the bundled menu bar app unless
+    # the user explicitly asks for browser or shortcut routing.
+    if re.search(r"\b(find|locate|ring|call|dial|directions|map|provider|pair|paired|qr|code|lost|recover)\b", lowered):
+        return "menu-bar-app"
+    if "phone" in lowered or "iphone" in lowered or "android" in lowered:
+        return "menu-bar-app"
     if "app" in lowered or "menu" in lowered or "icon" in lowered or "mac" in lowered:
         return "menu-bar-app"
     return "support-only"
@@ -44,7 +54,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--action",
-        choices=["locate", "ring", "directions", "nearby"],
+        choices=["locate", "ring", "call", "open-provider", "directions", "nearby"],
         help="Primary action override",
     )
     parser.add_argument(
@@ -52,14 +62,15 @@ def main() -> None:
     )
     args = parser.parse_args()
 
+    surface = infer_surface(args.goal, args.surface)
+    action = infer_action(args.goal, args.action)
+
     brief = {
         "goal": args.goal.strip(),
         "device": args.device,
-        "surface": infer_surface(args.goal, args.surface),
-        "primary_action": infer_action(args.goal, args.action),
-        "default_shell": "menu bar popover"
-        if infer_surface(args.goal, args.surface) == "menu-bar-app"
-        else "none",
+        "surface": surface,
+        "primary_action": action,
+        "default_shell": "menu bar popover" if surface == "menu-bar-app" else "none",
         "trust_boundary": "Prefer Apple-managed sign-in and device actions. Avoid custom credential storage.",
         "fallback": "If direct automation is unavailable, open the Apple-managed surface and optimize time-to-action.",
     }

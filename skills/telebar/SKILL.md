@@ -10,10 +10,12 @@ Use this skill for the TeleBar menu bar app. If the current repo contains `apps/
 ## Quick Start
 
 1. Use `bash scripts/run_telebar.sh doctor` from the repo root, or pass `--workspace /path/to/telebar` if the app lives elsewhere.
-2. Use `bash scripts/run_telebar.sh generate` after changing `project.yml`.
-3. Use `bash scripts/run_telebar.sh open` to open the Xcode project.
-4. Use `bash scripts/run_telebar.sh run` to build and relaunch the menu bar app locally.
-5. Use `bash scripts/run_telebar.sh build` for a plain xcodebuild pass when you only need validation.
+2. Use `bash scripts/run_telebar.sh inspect` before editing so the app layout stays visible.
+3. Use `bash scripts/run_telebar.sh generate` after changing `project.yml`.
+4. Use `bash scripts/run_telebar.sh open` to open the Xcode project.
+5. Use `bash scripts/run_telebar.sh typecheck` for a lightweight source check before a full build.
+6. Use `bash scripts/run_telebar.sh run` to build and relaunch the menu bar app locally.
+7. Use `bash scripts/run_telebar.sh build` for a plain xcodebuild pass when you only need validation.
 
 ## Workflow
 
@@ -35,6 +37,7 @@ Use this skill for the TeleBar menu bar app. If the current repo contains `apps/
 ### Running The App
 
 - Prefer the local runner script before typing `xcodegen` or `xcodebuild` manually.
+- Use `inspect` for quick orientation and `typecheck` when you want a faster source-level sanity pass than a full build.
 - If `doctor` reports the Xcode license is not accepted, stop and tell the user to run `sudo xcodebuild -license`.
 - Use `run` after UI changes so the new menu bar popover is relaunched from the built app bundle.
 

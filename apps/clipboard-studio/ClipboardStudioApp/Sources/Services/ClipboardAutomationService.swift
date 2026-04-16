@@ -68,6 +68,36 @@ enum ClipboardAutomationService {
         throw AutomationError.noSelectionFound
     }
 
+    static func currentSelectionText(from app: NSRunningApplication) -> String? {
+        guard isTrusted() else { return nil }
+        return readSelectedText(from: app)
+    }
+
+    static func focusedWindowTitle(from app: NSRunningApplication) -> String? {
+        let appElement = AXUIElementCreateApplication(app.processIdentifier)
+        guard let focusedWindowValue = copyAttribute(kAXFocusedWindowAttribute as CFString, from: appElement),
+              CFGetTypeID(focusedWindowValue) == AXUIElementGetTypeID() else {
+            return nil
+        }
+
+        let focusedWindow = unsafeDowncast(focusedWindowValue, to: AXUIElement.self)
+        if let title = copyAttribute(kAXTitleAttribute as CFString, from: focusedWindow) as? String {
+            let trimmed = title.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !trimmed.isEmpty {
+                return trimmed
+            }
+        }
+
+        if let document = copyAttribute(kAXDocumentAttribute as CFString, from: focusedWindow) as? String {
+            let trimmed = document.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !trimmed.isEmpty {
+                return trimmed
+            }
+        }
+
+        return nil
+    }
+
     static func pasteClipboardContents(into app: NSRunningApplication) async throws {
         guard isTrusted() else {
             throw AutomationError.accessibilityRequired

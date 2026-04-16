@@ -1,0 +1,58 @@
+{
+  "id": "excel-range-relay",
+  "name": "Excel Range Relay",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "A menu-bar Excel relay for turning the copied sheet selection into clean markdown, CSV, JSON, or prompt context without rebuilding the table by hand.",
+  "short_description": "A menu-bar Excel relay for turning the copied sheet selection into clean markdown, CSV, JSON, or prompt context without rebuilding the table by hand.",
+  "brand_color": "#107C41",
+  "icon_small": "skills/excel-range-relay/assets/icon-small.svg",
+  "icon_large": "skills/excel-range-relay/assets/icon-large.svg",
+  "default_prompt": "Use $excel-range-relay to build a polished macOS menu-bar utility for a menu-bar excel relay for turning the copied sheet selection into clean markdown, csv, json, or prompt context without rebuilding the table by hand.",
+  "install_command": "codex-goated install excel-range-relay",
+  "packs": [
+    "productivity-and-workflow"
+  ],
+  "docs_paths": [
+    "skills/excel-range-relay/SKILL.md",
+    "skills/excel-range-relay/manifest.json",
+    "skills/excel-range-relay/agents/openai.yaml",
+    "skills/excel-range-relay/assets/icon-small.svg",
+    "skills/excel-range-relay/assets/icon-large.svg",
+    "skills/excel-range-relay/assets/icon.svg",
+    "skills/excel-range-relay/assets/preview.svg",
+    "skills/excel-range-relay/scripts/excel_range_relay.py",
+    "skills/excel-range-relay/prototype/README.md",
+    "skills/excel-range-relay/prototype/SkillMenuBarApp.swift",
+    "skills/excel-range-relay/prototype/SkillMenuBarView.swift",
+    "skills/excel-range-relay/prototype/SkillDetailView.swift",
+    "skills/excel-range-relay/prototype/SkillTheme.swift"
+  ],
+  "stars": 5,
+  "audience": [
+    "Mac users who hand spreadsheet slices into prompts or docs",
+    "Operators working between Excel, chat, and notes",
+    "People who need one clean spreadsheet handoff instead of manual cleanup"
+  ],
+  "tags": [
+    "Excel",
+    "Microsoft Excel",
+    "spreadsheet",
+    "clipboard",
+    "markdown",
+    "CSV",
+    "menu bar",
+    "workflow"
+  ],
+  "detail_lines": [
+    "Reads the copied Excel selection from the clipboard and preserves the table shape for markdown, CSV, JSON, or prompt-ready output.",
+    "Uses lightweight macOS automation only for workbook, sheet, and range labels when Microsoft Excel is frontmost.",
+    "Keeps the next step obvious with one preview card and fast copy actions instead of another spreadsheet editor."
+  ],
+  "file_path_hints": [
+    "skills/excel-range-relay/scripts/excel_range_relay.py",
+    "skills/excel-range-relay/prototype/SkillMenuBarView.swift",
+    "skills/excel-range-relay/prototype/SkillDetailView.swift"
+  ],
+  "system_symbol": "tablecells"
+}

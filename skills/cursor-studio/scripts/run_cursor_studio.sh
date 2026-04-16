@@ -2,6 +2,8 @@
 set -euo pipefail
 
 WORKSPACE=""
+PROJECT_NAME="CursorStudio.xcodeproj"
+PROJECT_SPEC="project.yml"
 
 usage() {
   cat <<'EOF'
@@ -25,17 +27,17 @@ detect_workspace() {
     return 0
   fi
 
-  if [[ -f "$PWD/project.yml" && -d "$PWD/CursorStudioApp" ]]; then
+  if [[ -f "$PWD/$PROJECT_SPEC" && -d "$PWD/CursorStudioApp" ]]; then
     printf '%s\n' "$PWD"
     return 0
   fi
 
-  if [[ -f "$PWD/apps/vibe-widget/project.yml" && -d "$PWD/apps/vibe-widget/CursorStudioApp" ]]; then
+  if [[ -f "$PWD/apps/vibe-widget/$PROJECT_SPEC" && -d "$PWD/apps/vibe-widget/CursorStudioApp" ]]; then
     printf '%s\n' "$PWD/apps/vibe-widget"
     return 0
   fi
 
-  if [[ -n "${CURSOR_STUDIO_WORKSPACE:-}" && -f "${CURSOR_STUDIO_WORKSPACE}/project.yml" && -d "${CURSOR_STUDIO_WORKSPACE}/CursorStudioApp" ]]; then
+  if [[ -n "${CURSOR_STUDIO_WORKSPACE:-}" && -f "${CURSOR_STUDIO_WORKSPACE}/$PROJECT_SPEC" && -d "${CURSOR_STUDIO_WORKSPACE}/CursorStudioApp" ]]; then
     printf '%s\n' "${CURSOR_STUDIO_WORKSPACE}"
     return 0
   fi
@@ -43,9 +45,27 @@ detect_workspace() {
   die "Could not find a Cursor Studio workspace. Re-run with --workspace /path/to/workspace."
 }
 
+find_project_file() {
+  local workspace="$1"
+  local candidate
+
+  if [[ -d "$workspace/$PROJECT_NAME" ]]; then
+    printf '%s\n' "$workspace/$PROJECT_NAME"
+    return 0
+  fi
+
+  for candidate in "$workspace"/*.xcodeproj; do
+    [[ -d "$candidate" ]] || continue
+    printf '%s\n' "$candidate"
+    return 0
+  done
+
+  return 1
+}
+
 validate_workspace() {
   local workspace="$1"
-  [[ -f "$workspace/project.yml" ]] || die "Missing project.yml in $workspace"
+  [[ -f "$workspace/$PROJECT_SPEC" ]] || die "Missing $PROJECT_SPEC in $workspace"
   [[ -d "$workspace/CursorStudioApp" ]] || die "Missing CursorStudioApp/ in $workspace"
 }
 
@@ -57,10 +77,16 @@ print_status() {
 
 doctor() {
   local workspace="$1"
+  local found_project_file=""
+  local project_file="missing"
+
   print_status "workspace" "$workspace"
-  print_status "project.yml" "$(test -f "$workspace/project.yml" && echo yes || echo no)"
+  print_status "project.yml" "$(test -f "$workspace/$PROJECT_SPEC" && echo yes || echo no)"
   print_status "CursorStudio" "$(test -d "$workspace/CursorStudioApp" && echo yes || echo no)"
-  print_status "xcodeproj" "$(test -d "$workspace/VibeWidget.xcodeproj" && echo yes || echo no)"
+  if found_project_file="$(find_project_file "$workspace" 2>/dev/null)"; then
+    project_file="$(basename "$found_project_file")"
+  fi
+  print_status "xcodeproj" "$project_file"
   print_status "xcodegen" "$(command -v xcodegen || echo missing)"
   print_status "xcodebuild" "$(command -v xcodebuild || echo missing)"
 }
@@ -68,7 +94,15 @@ doctor() {
 inspect() {
   local workspace="$1"
   local base="$workspace/CursorStudioApp"
+  local found_project_file=""
+  local project_file="missing"
+
+  if found_project_file="$(find_project_file "$workspace" 2>/dev/null)"; then
+    project_file="$found_project_file"
+  fi
+
   print_status "workspace" "$workspace"
+  print_status "project" "$project_file"
   print_status "model" "$base/Sources/App/CursorStudioAppModel.swift"
   print_status "statusbar" "$base/Sources/App/CursorStudioStatusBarController.swift"
   print_status "views" "$base/Sources/Views"
@@ -86,19 +120,40 @@ generate() {
 
 open_project() {
   local workspace="$1"
-  open "$workspace/VibeWidget.xcodeproj"
+  local project_file
+
+  if ! project_file="$(find_project_file "$workspace" 2>/dev/null)"; then
+    generate "$workspace"
+    project_file="$(find_project_file "$workspace")" || die "Missing xcodeproj in $workspace after generation."
+  fi
+
+  open "$project_file"
 }
 
 build() {
   local workspace="$1"
+  local project_file
+
   require_tool xcodebuild
-  xcodebuild -project "$workspace/VibeWidget.xcodeproj" -scheme CursorStudio -destination 'platform=macOS' build
+  if ! project_file="$(find_project_file "$workspace" 2>/dev/null)"; then
+    generate "$workspace"
+    project_file="$(find_project_file "$workspace")" || die "Missing xcodeproj in $workspace after generation."
+  fi
+
+  xcodebuild -project "$project_file" -scheme CursorStudio -destination 'platform=macOS' build
 }
 
 test_workspace() {
   local workspace="$1"
+  local project_file
+
   require_tool xcodebuild
-  xcodebuild -project "$workspace/VibeWidget.xcodeproj" -scheme CursorStudio -destination 'platform=macOS' test
+  if ! project_file="$(find_project_file "$workspace" 2>/dev/null)"; then
+    generate "$workspace"
+    project_file="$(find_project_file "$workspace")" || die "Missing xcodeproj in $workspace after generation."
+  fi
+
+  xcodebuild -project "$project_file" -scheme CursorStudio -destination 'platform=macOS' test
 }
 
 COMMAND=""

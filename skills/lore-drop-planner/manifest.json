@@ -1,0 +1,25 @@
+{
+  "id": "lore-drop-planner",
+  "name": "Lore Drop Planner",
+  "category": "Audience and Fandom Strategy",
+  "status": "active",
+  "description": "Plan episodic reveals, callbacks, teasers, and payoff arcs for personality-led brands, then output a lore release schedule. Use when Codex needs to structure anticipation and payoff around a creator or founder's ongoing world-building.",
+  "short_description": "Plan lore reveals and callback-driven drops",
+  "brand_color": "#5A63D8",
+  "icon_small": "skills/lore-drop-planner/assets/icon-small.svg",
+  "icon_large": "skills/lore-drop-planner/assets/icon-large.svg",
+  "default_prompt": "Use $lore-drop-planner to plan episodic reveals, teasers, callbacks, and payoffs for this personality-led brand, then export a lore release schedule.",
+  "install_command": "codex-goated install lore-drop-planner",
+  "packs": [
+    "audience-and-fandom-strategy",
+    "creator-and-fandom-stack",
+    "fandom-skill-pack"
+  ],
+  "docs_paths": [
+    "skills/lore-drop-planner/SKILL.md",
+    "skills/lore-drop-planner/manifest.json",
+    "skills/lore-drop-planner/agents/openai.yaml",
+    "skills/lore-drop-planner/assets/icon-small.svg",
+    "skills/lore-drop-planner/assets/icon-large.svg"
+  ]
+}

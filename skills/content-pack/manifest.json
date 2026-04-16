@@ -1,0 +1,24 @@
+{
+  "id": "content-pack",
+  "name": "Content Pack",
+  "category": "Launch and Distribution",
+  "status": "active",
+  "description": "Turn a project or product idea into a compact set of launch-ready copy. Use when Codex needs to generate practical messaging such as a tagline, README blurb, changelog summary, tweet or thread copy, release notes, or listing text from a single source idea.",
+  "short_description": "Turn one project into launch-ready copy assets",
+  "brand_color": "#14B8A6",
+  "icon_small": "skills/content-pack/assets/content-pack-small.svg",
+  "icon_large": "skills/content-pack/assets/content-pack-large.svg",
+  "default_prompt": "Use $content-pack to audit this project and turn it into a tagline, README intro, changelog summary, and launch-ready distribution copy.",
+  "install_command": "codex-goated install content-pack",
+  "packs": [
+    "creator-and-fandom-stack",
+    "launch-and-distribution"
+  ],
+  "docs_paths": [
+    "skills/content-pack/SKILL.md",
+    "skills/content-pack/manifest.json",
+    "skills/content-pack/agents/openai.yaml",
+    "skills/content-pack/assets/content-pack-small.svg",
+    "skills/content-pack/assets/content-pack-large.svg"
+  ]
+}

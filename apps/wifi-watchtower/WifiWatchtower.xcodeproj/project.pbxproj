@@ -12,8 +12,20 @@
 		1EBE0A7D6B9D035249284491 /* WifiInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0971EECB5F790B94797205 /* WifiInspector.swift */; };
 		255F241EB5FC3F94387E1CC6 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75ADDA1C4CEA4837C71AF44 /* DashboardView.swift */; };
 		3A9DC6FBFDB2A59C98DE77B9 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA9FA5D1E2A8A2185BCCF2B /* MenuBarView.swift */; };
+		7BA23CCDA2AC1614AE8A8ABE /* WifiTrustScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FCDF1F9CE7707F73057670 /* WifiTrustScorer.swift */; };
+		8F3B49C1115D0F8C07344F7B /* WifiTrustScorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616730289C60EF3C40585B5E /* WifiTrustScorerTests.swift */; };
 		D0899F026CE13B806719D661 /* NetworkSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2C725ABAA63201CBEC3CBE /* NetworkSnapshot.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92AF70A21CFF7BCFCFF4FB0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BE730DA9C9FFA23C30A4356 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8906B02A839DC2F1A07D27C;
+			remoteInfo = WifiWatchtower;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1DA9FA5D1E2A8A2185BCCF2B /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
@@ -21,7 +33,10 @@
 		3D2C725ABAA63201CBEC3CBE /* NetworkSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSnapshot.swift; sourceTree = "<group>"; };
 		471D0B128F1E4BC995AAC70E /* WifiWatchtower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WifiWatchtower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0971EECB5F790B94797205 /* WifiInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiInspector.swift; sourceTree = "<group>"; };
+		616730289C60EF3C40585B5E /* WifiTrustScorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiTrustScorerTests.swift; sourceTree = "<group>"; };
 		62CBCFEABB4E868B539C296C /* WifiWatchtowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiWatchtowerApp.swift; sourceTree = "<group>"; };
+		C3FCDF1F9CE7707F73057670 /* WifiTrustScorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiTrustScorer.swift; sourceTree = "<group>"; };
+		F37BA6CBF4B136E031A0B187 /* WifiWatchtowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WifiWatchtowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75ADDA1C4CEA4837C71AF44 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				5E0971EECB5F790B94797205 /* WifiInspector.swift */,
+				C3FCDF1F9CE7707F73057670 /* WifiTrustScorer.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -47,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				471D0B128F1E4BC995AAC70E /* WifiWatchtower.app */,
+				F37BA6CBF4B136E031A0B187 /* WifiWatchtowerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,10 +85,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A3854F3CB11CB637647432DE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				616730289C60EF3C40585B5E /* WifiTrustScorerTests.swift */,
+			);
+			name = Tests;
+			path = WifiWatchtowerApp/Tests;
+			sourceTree = "<group>";
+		};
 		B757C98F5F258AB096A9229B = {
 			isa = PBXGroup;
 			children = (
 				ECBA54C5D2EB27E1A75EC841 /* Sources */,
+				A3854F3CB11CB637647432DE /* Tests */,
 				45E527BD2ECCED09B980865D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +118,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		03FBA4297A5E17E3E5F9522C /* WifiWatchtowerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC2C8BA9D99A4C6868A14582 /* Build configuration list for PBXNativeTarget "WifiWatchtowerTests" */;
+			buildPhases = (
+				97E25775FB44B3894B691DE0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F284605CE881110343311544 /* PBXTargetDependency */,
+			);
+			name = WifiWatchtowerTests;
+			packageProductDependencies = (
+			);
+			productName = WifiWatchtowerTests;
+			productReference = F37BA6CBF4B136E031A0B187 /* WifiWatchtowerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D8906B02A839DC2F1A07D27C /* WifiWatchtower */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA03D53034284FAA8D4FEA14 /* Build configuration list for PBXNativeTarget "WifiWatchtower" */;
@@ -117,6 +162,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					03FBA4297A5E17E3E5F9522C = {
+						ProvisioningStyle = Automatic;
+					};
 					D8906B02A839DC2F1A07D27C = {
 						ProvisioningStyle = Automatic;
 					};
@@ -137,6 +185,7 @@
 			projectRoot = "";
 			targets = (
 				D8906B02A839DC2F1A07D27C /* WifiWatchtower */,
+				03FBA4297A5E17E3E5F9522C /* WifiWatchtowerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -151,11 +200,28 @@
 				D0899F026CE13B806719D661 /* NetworkSnapshot.swift in Sources */,
 				0E0BD13196BDA60CD0F1967F /* WatchtowerModel.swift in Sources */,
 				1EBE0A7D6B9D035249284491 /* WifiInspector.swift in Sources */,
+				7BA23CCDA2AC1614AE8A8ABE /* WifiTrustScorer.swift in Sources */,
 				0778C830446574FBB4565942 /* WifiWatchtowerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		97E25775FB44B3894B691DE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F3B49C1115D0F8C07344F7B /* WifiTrustScorerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F284605CE881110343311544 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8906B02A839DC2F1A07D27C /* WifiWatchtower */;
+			targetProxy = 92AF70A21CFF7BCFCFF4FB0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0820EDE15C4697734E037217 /* Debug */ = {
@@ -174,6 +240,24 @@
 				SDKROOT = macosx;
 			};
 			name = Debug;
+		};
+		3348D2B2FF9670F42EBD42A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.WifiWatchtowerTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WifiWatchtower.app/Contents/MacOS/WifiWatchtower";
+			};
+			name = Release;
 		};
 		4D0BD03F0B4E8C91FE28CE0D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -236,6 +320,24 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		75C3ED1B73F942ECBAD20380 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.WifiWatchtowerTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WifiWatchtower.app/Contents/MacOS/WifiWatchtower";
 			};
 			name = Debug;
 		};
@@ -330,6 +432,15 @@
 			buildConfigurations = (
 				0820EDE15C4697734E037217 /* Debug */,
 				D69BD88A20849481EFA9833B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CC2C8BA9D99A4C6868A14582 /* Build configuration list for PBXNativeTarget "WifiWatchtowerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75C3ED1B73F942ECBAD20380 /* Debug */,
+				3348D2B2FF9670F42EBD42A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

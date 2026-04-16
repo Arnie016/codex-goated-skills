@@ -1,10 +1,33 @@
 {
   "id": "release-ramp",
   "name": "Release Ramp",
-  "category": "Distribution",
+  "category": "Launch and Distribution",
   "status": "active",
-  "stars": 4,
+  "description": "A release-prep board that turns a shipping checklist into a clean launch lane.",
   "short_description": "A release-prep board that turns a shipping checklist into a clean launch lane.",
+  "brand_color": "#BF5AF2",
+  "icon_small": "skills/release-ramp/assets/icon-small.svg",
+  "icon_large": "skills/release-ramp/assets/icon-large.svg",
+  "default_prompt": "Use $release-ramp to build a polished macOS menu-bar utility for a release-prep board that turns a shipping checklist into a clean launch lane.",
+  "install_command": "codex-goated install release-ramp",
+  "packs": [
+    "launch-and-distribution"
+  ],
+  "docs_paths": [
+    "skills/release-ramp/SKILL.md",
+    "skills/release-ramp/manifest.json",
+    "skills/release-ramp/agents/openai.yaml",
+    "skills/release-ramp/assets/icon-small.svg",
+    "skills/release-ramp/assets/icon-large.svg",
+    "skills/release-ramp/assets/icon.svg",
+    "skills/release-ramp/assets/preview.svg",
+    "skills/release-ramp/prototype/README.md",
+    "skills/release-ramp/prototype/SkillMenuBarApp.swift",
+    "skills/release-ramp/prototype/SkillMenuBarView.swift",
+    "skills/release-ramp/prototype/SkillDetailView.swift",
+    "skills/release-ramp/prototype/SkillTheme.swift"
+  ],
+  "stars": 4,
   "audience": [
     "Solo founders",
     "Open-source maintainers",
@@ -16,19 +39,6 @@
     "checklist",
     "launch",
     "menu bar"
-  ],
-  "install_command": "codex-skillctl install release-ramp",
-  "docs_paths": [
-    "skills/release-ramp/SKILL.md",
-    "skills/release-ramp/manifest.json",
-    "skills/release-ramp/agents/openai.yaml",
-    "skills/release-ramp/assets/icon.svg",
-    "skills/release-ramp/assets/preview.svg",
-    "skills/release-ramp/prototype/README.md",
-    "skills/release-ramp/prototype/SkillMenuBarApp.swift",
-    "skills/release-ramp/prototype/SkillMenuBarView.swift",
-    "skills/release-ramp/prototype/SkillDetailView.swift",
-    "skills/release-ramp/prototype/SkillTheme.swift"
   ],
   "detail_lines": [
     "Turns the shipping checklist into something visible and manageable.",

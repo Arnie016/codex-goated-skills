@@ -1,0 +1,24 @@
+{
+  "id": "dark-pdf-studio",
+  "name": "Dark PDF Studio",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "Convert PDFs, document files, or images into dark-background reading PDFs with a compact input-to-output workflow. Use when Codex needs to dark-theme a PDF, normalize docs or images into a dark PDF, build or refine a tiny dark-mode export utility, or troubleshoot a dark PDF conversion flow with downloadable output.",
+  "short_description": "Compact dark-background PDF conversion for PDFs, docs, and images",
+  "brand_color": "#1D2738",
+  "icon_small": "skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg",
+  "icon_large": "skills/dark-pdf-studio/assets/dark-pdf-studio-large.svg",
+  "default_prompt": "Use $dark-pdf-studio to convert this file into a clean dark-background PDF, keep the workflow compact and essential, and make sure the exported output is easy to open or share.",
+  "install_command": "codex-goated install dark-pdf-studio",
+  "packs": [
+    "daily-briefs-and-reference",
+    "productivity-and-workflow"
+  ],
+  "docs_paths": [
+    "skills/dark-pdf-studio/SKILL.md",
+    "skills/dark-pdf-studio/manifest.json",
+    "skills/dark-pdf-studio/agents/openai.yaml",
+    "skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg",
+    "skills/dark-pdf-studio/assets/dark-pdf-studio-large.svg"
+  ]
+}

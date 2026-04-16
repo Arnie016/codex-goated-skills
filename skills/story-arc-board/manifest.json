@@ -1,10 +1,35 @@
 {
   "id": "story-arc-board",
   "name": "Story Arc Board",
-  "category": "Community & Narrative",
+  "category": "Audience and Fandom Strategy",
   "status": "active",
-  "stars": 4,
+  "description": "A menu-bar board for capturing repeated hooks from notes, captions, and comments before they disappear into app sprawl.",
   "short_description": "A menu-bar board for capturing repeated hooks from notes, captions, and comments before they disappear into app sprawl.",
+  "brand_color": "#FF375F",
+  "icon_small": "skills/story-arc-board/assets/icon-small.svg",
+  "icon_large": "skills/story-arc-board/assets/icon-large.svg",
+  "default_prompt": "Use $story-arc-board to build a polished macOS menu-bar utility that captures recurring hooks from notes, captions, and comments without forcing extra tab switching.",
+  "install_command": "codex-goated install story-arc-board",
+  "packs": [
+    "audience-and-fandom-strategy",
+    "creator-and-fandom-stack",
+    "fandom-skill-pack"
+  ],
+  "docs_paths": [
+    "skills/story-arc-board/SKILL.md",
+    "skills/story-arc-board/manifest.json",
+    "skills/story-arc-board/agents/openai.yaml",
+    "skills/story-arc-board/assets/icon-small.svg",
+    "skills/story-arc-board/assets/icon-large.svg",
+    "skills/story-arc-board/assets/icon.svg",
+    "skills/story-arc-board/assets/preview.svg",
+    "skills/story-arc-board/prototype/README.md",
+    "skills/story-arc-board/prototype/SkillMenuBarApp.swift",
+    "skills/story-arc-board/prototype/SkillMenuBarView.swift",
+    "skills/story-arc-board/prototype/SkillDetailView.swift",
+    "skills/story-arc-board/prototype/SkillTheme.swift"
+  ],
+  "stars": 4,
   "audience": [
     "Creators",
     "Community builders",
@@ -17,19 +42,6 @@
     "canon",
     "menu bar",
     "snippets"
-  ],
-  "install_command": "codex-skillctl install story-arc-board",
-  "docs_paths": [
-    "skills/story-arc-board/SKILL.md",
-    "skills/story-arc-board/manifest.json",
-    "skills/story-arc-board/agents/openai.yaml",
-    "skills/story-arc-board/assets/icon.svg",
-    "skills/story-arc-board/assets/preview.svg",
-    "skills/story-arc-board/prototype/README.md",
-    "skills/story-arc-board/prototype/SkillMenuBarApp.swift",
-    "skills/story-arc-board/prototype/SkillMenuBarView.swift",
-    "skills/story-arc-board/prototype/SkillDetailView.swift",
-    "skills/story-arc-board/prototype/SkillTheme.swift"
   ],
   "detail_lines": [
     "Pulls recurring phrases, symbols, and post ideas into one compact Mac surface.",

@@ -1,0 +1,24 @@
+{
+  "id": "cursor-studio",
+  "name": "Cursor Studio",
+  "category": "macOS Utility Builders",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend a Cursor Studio macOS menu bar app that plans custom cursor packs from presets, prompt notes, slot lists, hotspot guidance, and exportable briefs. Use when Codex needs to work on a workspace containing `CursorStudioApp`, keep Cursor Studio separate from Folder Studio, regenerate the Xcode project, or validate the `CursorStudio` scheme and tests.",
+  "short_description": "Preset-driven cursor pack workflows for macOS",
+  "brand_color": "#4F86FF",
+  "icon_small": "skills/cursor-studio/assets/cursor-studio-small.svg",
+  "icon_large": "skills/cursor-studio/assets/cursor-studio-large.svg",
+  "default_prompt": "Use $cursor-studio to inspect this Cursor Studio workspace, keep the menu bar UX compact and professional, and help me ship a polished cursor-pack workflow.",
+  "install_command": "codex-goated install cursor-studio",
+  "packs": [
+    "macos-utility-builders",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/cursor-studio/SKILL.md",
+    "skills/cursor-studio/manifest.json",
+    "skills/cursor-studio/agents/openai.yaml",
+    "skills/cursor-studio/assets/cursor-studio-small.svg",
+    "skills/cursor-studio/assets/cursor-studio-large.svg"
+  ]
+}

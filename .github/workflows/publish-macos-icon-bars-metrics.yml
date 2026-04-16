@@ -1,0 +1,47 @@
+name: Publish macOS Icon Bars Metrics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+  push:
+    branches:
+      - codex/macos-icon-bars-plugin
+    paths:
+      - ".github/workflows/publish-macos-icon-bars-metrics.yml"
+      - "scripts/render_macos_icon_bars_metrics.py"
+      - "scripts/install_macos_icon_bars.sh"
+      - "scripts/install_macos_icon_bars_from_github.sh"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: codex/macos-icon-bars-plugin
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Render metrics page
+        run: python3 scripts/render_macos_icon_bars_metrics.py
+
+      - name: Commit metrics page if changed
+        run: |
+          if git diff --quiet -- MACOS_ICON_BARS_METRICS.md; then
+            echo "No metrics changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add MACOS_ICON_BARS_METRICS.md
+          git commit -m "Refresh macOS Icon Bars metrics"
+          git push

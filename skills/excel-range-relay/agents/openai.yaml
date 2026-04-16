@@ -1,0 +1,10 @@
+interface:
+  display_name: "Excel Range Relay"
+  short_description: "Premium menu-bar excel range relay"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#107C41"
+  default_prompt: "Use $excel-range-relay to build a polished macOS menu-bar utility for a menu-bar excel relay for turning the copied sheet selection into clean markdown, csv, json, or prompt context without rebuilding the table by hand."
+
+policy:
+  allow_implicit_invocation: true

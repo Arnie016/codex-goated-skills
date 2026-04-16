@@ -1,0 +1,44 @@
+name: Catalog Audit
+
+on:
+  push:
+    paths:
+      - ".github/workflows/catalog-audit.yml"
+      - "README.md"
+      - "bin/codex-goated"
+      - "catalog/**"
+      - "collections/**"
+      - "scripts/**"
+      - "skills/**"
+  pull_request:
+    paths:
+      - ".github/workflows/catalog-audit.yml"
+      - "README.md"
+      - "bin/codex-goated"
+      - "catalog/**"
+      - "collections/**"
+      - "scripts/**"
+      - "skills/**"
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Make scripts executable
+        run: chmod +x bin/codex-goated scripts/audit-catalog.sh scripts/build-catalog.py scripts/install-pack.sh scripts/install-fandom-pack.sh scripts/install-skill.sh
+
+      - name: Audit catalog and packs
+        run: bash scripts/audit-catalog.sh --repo-dir "$GITHUB_WORKSPACE"
+
+      - name: Smoke test catalog build
+        run: bash bin/codex-goated catalog build --repo-dir "$GITHUB_WORKSPACE"
+
+      - name: Smoke test pack discovery
+        run: bash bin/codex-goated pack list --repo-dir "$GITHUB_WORKSPACE"
+
+      - name: Smoke test search
+        run: bash bin/codex-goated search --repo-dir "$GITHUB_WORKSPACE" fandom

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Iconography Lab"
+  short_description: "Define the icon system of a public figure"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#3E6DFF"
+  default_prompt: "Use $iconography-lab to analyze this public figure's visual and verbal codes, then build an identity kit with palette, props, silhouette cues, and catchphrases."

@@ -1,10 +1,33 @@
 {
   "id": "repo-ops-lens",
   "name": "Repo Ops Lens",
-  "category": "Developer Tools",
+  "category": "Launch and Distribution",
   "status": "active",
-  "stars": 5,
+  "description": "A repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion.",
   "short_description": "A repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion.",
+  "brand_color": "#30D158",
+  "icon_small": "skills/repo-ops-lens/assets/icon-small.svg",
+  "icon_large": "skills/repo-ops-lens/assets/icon-large.svg",
+  "default_prompt": "Use $repo-ops-lens to build a polished macOS menu-bar utility for a repo audit panel that turns a github link into a crisp operating brief, risk pass, and next-step suggestion.",
+  "install_command": "codex-goated install repo-ops-lens",
+  "packs": [
+    "launch-and-distribution"
+  ],
+  "docs_paths": [
+    "skills/repo-ops-lens/SKILL.md",
+    "skills/repo-ops-lens/manifest.json",
+    "skills/repo-ops-lens/agents/openai.yaml",
+    "skills/repo-ops-lens/assets/icon-small.svg",
+    "skills/repo-ops-lens/assets/icon-large.svg",
+    "skills/repo-ops-lens/assets/icon.svg",
+    "skills/repo-ops-lens/assets/preview.svg",
+    "skills/repo-ops-lens/prototype/README.md",
+    "skills/repo-ops-lens/prototype/SkillMenuBarApp.swift",
+    "skills/repo-ops-lens/prototype/SkillMenuBarView.swift",
+    "skills/repo-ops-lens/prototype/SkillDetailView.swift",
+    "skills/repo-ops-lens/prototype/SkillTheme.swift"
+  ],
+  "stars": 5,
   "audience": [
     "Maintainers",
     "AI-assisted coders",
@@ -17,19 +40,6 @@
     "analysis",
     "menu bar",
     "workflow"
-  ],
-  "install_command": "codex-skillctl install repo-ops-lens",
-  "docs_paths": [
-    "skills/repo-ops-lens/SKILL.md",
-    "skills/repo-ops-lens/manifest.json",
-    "skills/repo-ops-lens/agents/openai.yaml",
-    "skills/repo-ops-lens/assets/icon.svg",
-    "skills/repo-ops-lens/assets/preview.svg",
-    "skills/repo-ops-lens/prototype/README.md",
-    "skills/repo-ops-lens/prototype/SkillMenuBarApp.swift",
-    "skills/repo-ops-lens/prototype/SkillMenuBarView.swift",
-    "skills/repo-ops-lens/prototype/SkillDetailView.swift",
-    "skills/repo-ops-lens/prototype/SkillTheme.swift"
   ],
   "detail_lines": [
     "Takes a repository URL and reduces it to what matters next.",

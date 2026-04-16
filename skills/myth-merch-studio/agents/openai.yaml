@@ -1,0 +1,7 @@
+interface:
+  display_name: "Myth Merch Studio"
+  short_description: "Turn fandom lore into merch briefs"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#2E9A5F"
+  default_prompt: "Use $myth-merch-studio to turn this creator or founder's symbols, phrases, and fandom lore into merch concepts and export a merch brief."

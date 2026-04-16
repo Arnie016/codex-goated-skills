@@ -1,0 +1,24 @@
+{
+  "id": "on-this-day",
+  "name": "On This Day",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "Fetch the official Wikimedia On This Day feed for a given date, then turn it into a polished daily history brief or a refined macOS-style web app. Use when Codex needs reliable same-day historical events, births, deaths, or holidays without inventing facts or losing the presentation layer.",
+  "short_description": "Daily history brief, feed helper, and macOS-style web app",
+  "brand_color": "#D88B2C",
+  "icon_small": "skills/on-this-day/assets/icon-small.svg",
+  "icon_large": "skills/on-this-day/assets/icon-large.svg",
+  "default_prompt": "Use $on-this-day to fetch the official On This Day feed for today in Singapore, turn it into a polished source-linked brief, or refine the matching macOS-style web app with the repo-native fetch and run flow.",
+  "install_command": "codex-goated install on-this-day",
+  "packs": [
+    "daily-briefs-and-reference",
+    "productivity-and-workflow"
+  ],
+  "docs_paths": [
+    "skills/on-this-day/SKILL.md",
+    "skills/on-this-day/manifest.json",
+    "skills/on-this-day/agents/openai.yaml",
+    "skills/on-this-day/assets/icon-small.svg",
+    "skills/on-this-day/assets/icon-large.svg"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "inner-circle-director",
+  "name": "Inner Circle Director",
+  "category": "Audience and Fandom Strategy",
+  "status": "active",
+  "description": "Structure tiered access, VIP mechanics, recognition systems, and premium community experiences, then output a membership framework. Use when Codex needs to design belonging and access around a personality-led brand without making the structure exploitative, confusing, or socially corrosive.",
+  "short_description": "Design tiers and VIP community access",
+  "brand_color": "#BF9640",
+  "icon_small": "skills/inner-circle-director/assets/icon-small.svg",
+  "icon_large": "skills/inner-circle-director/assets/icon-large.svg",
+  "default_prompt": "Use $inner-circle-director to design tiered access, VIP mechanics, and recognition systems for this audience, then export a membership framework.",
+  "install_command": "codex-goated install inner-circle-director",
+  "packs": [
+    "audience-and-fandom-strategy",
+    "creator-and-fandom-stack",
+    "fandom-skill-pack"
+  ],
+  "docs_paths": [
+    "skills/inner-circle-director/SKILL.md",
+    "skills/inner-circle-director/manifest.json",
+    "skills/inner-circle-director/agents/openai.yaml",
+    "skills/inner-circle-director/assets/icon-small.svg",
+    "skills/inner-circle-director/assets/icon-large.svg"
+  ]
+}

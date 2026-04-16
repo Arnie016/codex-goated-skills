@@ -1,0 +1,7 @@
+interface:
+  display_name: "Lore Drop Planner"
+  short_description: "Plan lore reveals and callback-driven drops"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#5A63D8"
+  default_prompt: "Use $lore-drop-planner to plan episodic reveals, teasers, callbacks, and payoffs for this personality-led brand, then export a lore release schedule."

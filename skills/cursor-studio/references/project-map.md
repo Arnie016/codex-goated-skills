@@ -38,7 +38,7 @@ Default workspace: use the current repo when it contains `CursorStudioApp` and `
 - If the app lives outside the current repo, use:
   `bash scripts/run_cursor_studio.sh --workspace /path/to/workspace <command>`
 - `generate` uses `xcodegen`
-- `open` launches `VibeWidget.xcodeproj`
+- `open` launches the workspace's detected `.xcodeproj` file
 - `build` and `test` use the `CursorStudio` scheme on macOS
 
 ## Constraints

@@ -1,0 +1,10 @@
+interface:
+  display_name: "Context Shelf"
+  short_description: "Park work context in a menu-bar shelf"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#30D158"
+  default_prompt: "Use $context-shelf to build a polished macOS menu-bar utility that parks the current tab, clipboard snippet, and scratch note before a task switch, then makes resuming fast and calm."
+
+policy:
+  allow_implicit_invocation: true

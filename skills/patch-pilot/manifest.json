@@ -1,0 +1,56 @@
+{
+  "id": "patch-pilot",
+  "name": "Patch Pilot",
+  "category": "Productivity and Workflow",
+  "status": "active",
+  "description": "A menu-bar diff triage panel that turns a patch or file list into a crisp fix brief, risk scan, and next command.",
+  "short_description": "A menu-bar diff triage panel that turns a patch or file list into a crisp fix brief, risk scan, and next command.",
+  "brand_color": "#30D158",
+  "icon_small": "skills/patch-pilot/assets/icon-small.svg",
+  "icon_large": "skills/patch-pilot/assets/icon-large.svg",
+  "default_prompt": "Use $patch-pilot to turn a local diff, staged change list, or review thread into a clear fix brief, risk scan, and next command.",
+  "install_command": "codex-goated install patch-pilot",
+  "packs": [
+    "productivity-and-workflow"
+  ],
+  "docs_paths": [
+    "skills/patch-pilot/SKILL.md",
+    "skills/patch-pilot/manifest.json",
+    "skills/patch-pilot/agents/openai.yaml",
+    "skills/patch-pilot/assets/icon-small.svg",
+    "skills/patch-pilot/assets/icon-large.svg",
+    "skills/patch-pilot/assets/icon.svg",
+    "skills/patch-pilot/assets/preview.svg",
+    "skills/patch-pilot/prototype/README.md",
+    "skills/patch-pilot/prototype/SkillMenuBarApp.swift",
+    "skills/patch-pilot/prototype/SkillMenuBarView.swift",
+    "skills/patch-pilot/prototype/SkillDetailView.swift",
+    "skills/patch-pilot/prototype/SkillTheme.swift"
+  ],
+  "stars": 5,
+  "audience": [
+    "AI-assisted coders",
+    "Maintainers",
+    "People reviewing patches under time pressure"
+  ],
+  "tags": [
+    "diff",
+    "patch",
+    "review",
+    "git",
+    "triage",
+    "menu bar",
+    "workflow"
+  ],
+  "detail_lines": [
+    "Turns a copied diff or file list into the next safe move before the tool-switching spiral starts.",
+    "Keeps touched surfaces, likely regressions, and reply-ready notes in one compact panel.",
+    "Fits the pre-commit, pre-review, and pre-handoff moment where context usually fragments."
+  ],
+  "file_path_hints": [
+    "skills/patch-pilot/prototype/README.md",
+    "skills/patch-pilot/prototype/SkillMenuBarApp.swift",
+    "skills/patch-pilot/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "arrow.triangle.branch"
+}

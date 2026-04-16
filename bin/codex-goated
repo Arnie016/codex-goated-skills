@@ -11,17 +11,33 @@ usage() {
   cat <<EOF
 Usage:
   $SELF_NAME list
+  $SELF_NAME doctor [--repo-dir PATH] [--workspace PATH]
   $SELF_NAME install [--dest PATH] [--repo-dir PATH] [--repo-url URL] <skill-name> [<skill-name> ...]
   $SELF_NAME install --all [--dest PATH] [--repo-dir PATH] [--repo-url URL]
   $SELF_NAME update [--dest PATH] [--repo-dir PATH] [--repo-url URL] <skill-name> [<skill-name> ...]
   $SELF_NAME update --all [--dest PATH] [--repo-dir PATH] [--repo-url URL]
+  $SELF_NAME search [--repo-dir PATH] [--repo-url URL] <query>
+  $SELF_NAME audit [--repo-dir PATH] [--repo-url URL]
+  $SELF_NAME catalog build [--repo-dir PATH] [--output PATH]
+  $SELF_NAME catalog check [--repo-dir PATH] [--output PATH]
+  $SELF_NAME pack list [--repo-dir PATH] [--repo-url URL]
+  $SELF_NAME pack show [--repo-dir PATH] [--repo-url URL] <pack-name>
+  $SELF_NAME pack install [--dest PATH] [--repo-dir PATH] [--repo-url URL] <pack-name>
+  $SELF_NAME pack update [--dest PATH] [--repo-dir PATH] [--repo-url URL] <pack-name>
 
 Examples:
   $SELF_NAME list
+  $SELF_NAME doctor
+  $SELF_NAME doctor --workspace apps/skillbar
   $SELF_NAME install network-studio
   $SELF_NAME install minecraft-essentials vibe-bluetooth
   $SELF_NAME install --all
   $SELF_NAME update network-studio
+  $SELF_NAME search fandom
+  $SELF_NAME audit
+  $SELF_NAME catalog check
+  $SELF_NAME pack list
+  $SELF_NAME pack install fandom-skill-pack
 EOF
 }
 
@@ -71,6 +87,397 @@ list_skills() {
   done | sort
 }
 
+skill_description() {
+  local skill_name="$1"
+  local skill_file="$REPO_DIR/skills/$skill_name/SKILL.md"
+  [[ -f "$skill_file" ]] || return 0
+  sed -n 's/^description: //p' "$skill_file" | head -n 1 | sed 's/^"//; s/"$//'
+}
+
+frontmatter_value() {
+  local file_path="$1"
+  local key="$2"
+  [[ -f "$file_path" ]] || return 0
+  awk -v key="$key" '
+    NR == 1 && $0 == "---" { in_frontmatter = 1; next }
+    in_frontmatter && $0 == "---" { exit }
+    in_frontmatter && $0 ~ ("^" key ":") {
+      sub("^" key ":[[:space:]]*", "", $0)
+      gsub(/^"/, "", $0)
+      gsub(/"$/, "", $0)
+      print
+      exit
+    }
+  ' "$file_path"
+}
+
+interface_value() {
+  local file_path="$1"
+  local key="$2"
+  [[ -f "$file_path" ]] || return 0
+  sed -n "s/^[[:space:]]*$key:[[:space:]]*//p" "$file_path" | head -n 1 | sed "s/^['\"]//; s/['\"]$//"
+}
+
+resolve_skill_asset_path() {
+  local skill_dir="$1"
+  local asset_ref="$2"
+  if [[ "$asset_ref" == ./* ]]; then
+    printf '%s/%s\n' "$skill_dir" "${asset_ref#./}"
+  else
+    printf '%s/%s\n' "$skill_dir" "$asset_ref"
+  fi
+}
+
+pack_file_path() {
+  local pack_name="$1"
+  ensure_repo_dir
+  if [[ "$pack_name" == *.txt ]]; then
+    printf '%s\n' "$REPO_DIR/collections/$pack_name"
+  else
+    printf '%s\n' "$REPO_DIR/collections/$pack_name.txt"
+  fi
+}
+
+pack_metadata_value() {
+  local pack_name="$1"
+  local key="$2"
+  local pack_file
+  pack_file="$(pack_file_path "$pack_name")"
+  [[ -f "$pack_file" ]] || return 0
+  sed -n "s/^# $key: //p" "$pack_file" | head -n 1
+}
+
+read_pack_skills() {
+  local pack_file
+  pack_file="$(pack_file_path "$1")"
+  [[ -f "$pack_file" ]] || die "Unknown pack: $1"
+  grep -v '^[[:space:]]*$' "$pack_file" | grep -v '^[[:space:]]*#'
+}
+
+pack_skill_count() {
+  local pack_name="$1"
+  local count
+  count="$(read_pack_skills "$pack_name" | wc -l | tr -d ' ')"
+  printf '%s\n' "$count"
+}
+
+list_packs() {
+  local pack_file pack_name title summary count
+  ensure_repo_dir
+  [[ -d "$REPO_DIR/collections" ]] || return 0
+  for pack_file in "$REPO_DIR/collections"/*.txt; do
+    [[ -f "$pack_file" ]] || continue
+    pack_name="$(basename "$pack_file" .txt)"
+    title="$(pack_metadata_value "$pack_name" "title")"
+    summary="$(pack_metadata_value "$pack_name" "summary")"
+    count="$(pack_skill_count "$pack_name")"
+    if [[ -n "$title" ]]; then
+      printf '%s (%s skills)\n' "$pack_name" "$count"
+      printf '  %s\n' "$title"
+      [[ -n "$summary" ]] && printf '  %s\n' "$summary"
+    else
+      printf '%s (%s skills)\n' "$pack_name" "$count"
+    fi
+  done
+}
+
+show_pack() {
+  local pack_name="$1"
+  local title summary count skill_name desc
+  title="$(pack_metadata_value "$pack_name" "title")"
+  summary="$(pack_metadata_value "$pack_name" "summary")"
+  count="$(pack_skill_count "$pack_name")"
+  printf '%s\n' "$pack_name"
+  [[ -n "$title" ]] && printf 'Title: %s\n' "$title"
+  [[ -n "$summary" ]] && printf 'Summary: %s\n' "$summary"
+  printf 'Skills (%s):\n' "$count"
+  while IFS= read -r skill_name; do
+    [[ -n "$skill_name" ]] || continue
+    desc="$(skill_description "$skill_name")"
+    if [[ -n "$desc" ]]; then
+      printf -- '- %s: %s\n' "$skill_name" "$desc"
+    else
+      printf -- '- %s\n' "$skill_name"
+    fi
+  done < <(read_pack_skills "$pack_name")
+}
+
+run_catalog_builder() {
+  local mode="$1"
+  local script_path
+  ensure_repo_dir
+  script_path="$REPO_DIR/scripts/build-catalog.py"
+  [[ -f "$script_path" ]] || die "Missing catalog builder: $script_path"
+  command -v python3 >/dev/null 2>&1 || die "python3 is required."
+
+  case "$mode" in
+    build)
+      python3 "$script_path" --repo-dir "$REPO_DIR" "${CATALOG_ARGS[@]}"
+      ;;
+    check)
+      python3 "$script_path" --repo-dir "$REPO_DIR" --check "${CATALOG_ARGS[@]}"
+      ;;
+    *)
+      die "Unknown catalog mode: $mode"
+      ;;
+  esac
+}
+
+search_catalog() {
+  local query="$*"
+  local pack_file pack_name title summary skill_name desc haystack found_pack=0 found_skill=0
+  [[ -n "$query" ]] || die "Pass a search query"
+  ensure_repo_dir
+
+  if [[ -d "$REPO_DIR/collections" ]]; then
+    for pack_file in "$REPO_DIR/collections"/*.txt; do
+      [[ -f "$pack_file" ]] || continue
+      pack_name="$(basename "$pack_file" .txt)"
+      title="$(pack_metadata_value "$pack_name" "title")"
+      summary="$(pack_metadata_value "$pack_name" "summary")"
+      haystack="$pack_name $title $summary $(tr '\n' ' ' <"$pack_file")"
+      if printf '%s\n' "$haystack" | grep -Fqi -- "$query"; then
+        if [[ "$found_pack" -eq 0 ]]; then
+          printf 'Packs\n'
+          found_pack=1
+        fi
+        printf -- '- %s (%s skills)\n' "$pack_name" "$(pack_skill_count "$pack_name")"
+        [[ -n "$summary" ]] && printf '  %s\n' "$summary"
+      fi
+    done
+  fi
+
+  for skill_name in $(list_skills); do
+    desc="$(skill_description "$skill_name")"
+    haystack="$skill_name $desc"
+    if printf '%s\n' "$haystack" | grep -Fqi -- "$query"; then
+      if [[ "$found_skill" -eq 0 ]]; then
+        [[ "$found_pack" -eq 1 ]] && printf '\n'
+        printf 'Skills\n'
+        found_skill=1
+      fi
+      printf -- '- %s\n' "$skill_name"
+      [[ -n "$desc" ]] && printf '  %s\n' "$desc"
+    fi
+  done
+
+  if [[ "$found_pack" -eq 0 && "$found_skill" -eq 0 ]]; then
+    printf 'No matches found for "%s".\n' "$query"
+    return 1
+  fi
+}
+
+audit_repo() {
+  local skill_dir skill_name missing small_icon large_icon
+  local skill_file openai_file manifest_sync_script frontmatter_name frontmatter_desc
+  local display_name short_desc icon_small_ref icon_large_ref brand_color default_prompt
+  local icon_small_path icon_large_path
+  local pack_file pack_name pack_skill pack_title pack_summary seen_pack_skills
+  local catalog_issue_count=0 manifest_issue_count=0
+  local skill_count=0 package_issue_count=0 metadata_issue_count=0 pack_count=0 pack_issue_count=0 uncovered_count=0
+  local all_skills_file packed_skills_file uncovered_file
+
+  ensure_repo_dir
+  all_skills_file="$(mktemp)"
+  packed_skills_file="$(mktemp)"
+  uncovered_file="$(mktemp)"
+  manifest_sync_script="$REPO_DIR/scripts/sync-skill-manifests.py"
+
+  for skill_dir in "$REPO_DIR/skills"/*; do
+    [[ -d "$skill_dir" ]] || continue
+    skill_name="$(basename "$skill_dir")"
+    skill_file="$skill_dir/SKILL.md"
+    openai_file="$skill_dir/agents/openai.yaml"
+    skill_count=$((skill_count + 1))
+    printf '%s\n' "$skill_name" >> "$all_skills_file"
+    missing=""
+
+    [[ -f "$skill_file" ]] || missing="$missing SKILL.md"
+    [[ -f "$skill_dir/manifest.json" ]] || missing="$missing manifest.json"
+    [[ -f "$openai_file" ]] || missing="$missing agents/openai.yaml"
+
+    small_icon="$(find "$skill_dir/assets" -maxdepth 1 -type f \( -name '*small.svg' -o -name 'icon-small.svg' \) 2>/dev/null | head -n 1)"
+    large_icon="$(find "$skill_dir/assets" -maxdepth 1 -type f \( -name '*large.svg' -o -name 'icon-large.svg' \) 2>/dev/null | head -n 1)"
+
+    [[ -n "$small_icon" ]] || missing="$missing assets/small"
+    [[ -n "$large_icon" ]] || missing="$missing assets/large"
+
+    if [[ -n "$missing" ]]; then
+      printf 'MISSING %s:%s\n' "$skill_name" "$missing"
+      package_issue_count=$((package_issue_count + 1))
+    fi
+
+    if [[ -f "$skill_file" ]]; then
+      frontmatter_name="$(frontmatter_value "$skill_file" "name")"
+      frontmatter_desc="$(frontmatter_value "$skill_file" "description")"
+      if [[ -z "$frontmatter_name" ]]; then
+        printf 'METADATA %s missing frontmatter name\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      elif [[ "$frontmatter_name" != "$skill_name" ]]; then
+        printf 'METADATA %s frontmatter name mismatch (%s)\n' "$skill_name" "$frontmatter_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      fi
+
+      if [[ -z "$frontmatter_desc" ]]; then
+        printf 'METADATA %s missing frontmatter description\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      fi
+    fi
+
+    if [[ -f "$openai_file" ]]; then
+      display_name="$(interface_value "$openai_file" "display_name")"
+      short_desc="$(interface_value "$openai_file" "short_description")"
+      icon_small_ref="$(interface_value "$openai_file" "icon_small")"
+      icon_large_ref="$(interface_value "$openai_file" "icon_large")"
+      brand_color="$(interface_value "$openai_file" "brand_color")"
+      default_prompt="$(interface_value "$openai_file" "default_prompt")"
+
+      [[ -n "$display_name" ]] || {
+        printf 'METADATA %s missing interface.display_name\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+      [[ -n "$short_desc" ]] || {
+        printf 'METADATA %s missing interface.short_description\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+      [[ -n "$icon_small_ref" ]] || {
+        printf 'METADATA %s missing interface.icon_small\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+      [[ -n "$icon_large_ref" ]] || {
+        printf 'METADATA %s missing interface.icon_large\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+      [[ -n "$brand_color" ]] || {
+        printf 'METADATA %s missing interface.brand_color\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+      [[ -n "$default_prompt" ]] || {
+        printf 'METADATA %s missing interface.default_prompt\n' "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      }
+
+      if [[ -n "$icon_small_ref" ]]; then
+        icon_small_path="$(resolve_skill_asset_path "$skill_dir" "$icon_small_ref")"
+        if [[ ! -f "$icon_small_path" ]]; then
+          printf 'METADATA %s icon_small target missing (%s)\n' "$skill_name" "$icon_small_ref"
+          metadata_issue_count=$((metadata_issue_count + 1))
+        fi
+      fi
+
+      if [[ -n "$icon_large_ref" ]]; then
+        icon_large_path="$(resolve_skill_asset_path "$skill_dir" "$icon_large_ref")"
+        if [[ ! -f "$icon_large_path" ]]; then
+          printf 'METADATA %s icon_large target missing (%s)\n' "$skill_name" "$icon_large_ref"
+          metadata_issue_count=$((metadata_issue_count + 1))
+        fi
+      fi
+
+      if [[ -n "$default_prompt" && "$default_prompt" != *"\$$skill_name"* ]]; then
+        printf 'METADATA %s default_prompt missing $%s invocation\n' "$skill_name" "$skill_name"
+        metadata_issue_count=$((metadata_issue_count + 1))
+      fi
+    fi
+  done
+
+  if [[ -d "$REPO_DIR/collections" ]]; then
+    for pack_file in "$REPO_DIR/collections"/*.txt; do
+      [[ -f "$pack_file" ]] || continue
+      pack_name="$(basename "$pack_file" .txt)"
+      pack_title="$(pack_metadata_value "$pack_name" "title")"
+      pack_summary="$(pack_metadata_value "$pack_name" "summary")"
+      pack_count=$((pack_count + 1))
+      [[ -n "$pack_title" ]] || {
+        printf 'PACK %s missing # title metadata\n' "$pack_name"
+        pack_issue_count=$((pack_issue_count + 1))
+      }
+      [[ -n "$pack_summary" ]] || {
+        printf 'PACK %s missing # summary metadata\n' "$pack_name"
+        pack_issue_count=$((pack_issue_count + 1))
+      }
+      seen_pack_skills="$(mktemp)"
+      while IFS= read -r pack_skill; do
+        [[ -n "$pack_skill" ]] || continue
+        if grep -Fxq "$pack_skill" "$seen_pack_skills"; then
+          printf 'PACK %s duplicate skill reference -> %s\n' "$pack_name" "$pack_skill"
+          pack_issue_count=$((pack_issue_count + 1))
+          continue
+        fi
+        printf '%s\n' "$pack_skill" >> "$seen_pack_skills"
+        if [[ -d "$REPO_DIR/skills/$pack_skill" ]]; then
+          printf '%s\n' "$pack_skill" >> "$packed_skills_file"
+        else
+          printf 'BROKEN PACK %s -> %s\n' "$pack_name" "$pack_skill"
+          pack_issue_count=$((pack_issue_count + 1))
+        fi
+      done < <(read_pack_skills "$pack_name")
+      rm -f "$seen_pack_skills"
+    done
+  fi
+
+  if [[ -f "$REPO_DIR/scripts/build-catalog.py" ]]; then
+    if command -v python3 >/dev/null 2>&1; then
+      if [[ -f "$manifest_sync_script" ]]; then
+        if ! python3 "$manifest_sync_script" --repo-dir "$REPO_DIR" --check >/dev/null; then
+          printf 'CATALOG skill manifests are missing or stale\n'
+          manifest_issue_count=$((manifest_issue_count + 1))
+        fi
+      fi
+      if ! python3 "$REPO_DIR/scripts/build-catalog.py" --repo-dir "$REPO_DIR" --check >/dev/null; then
+        printf 'CATALOG catalog/index.json is missing or stale\n'
+        catalog_issue_count=$((catalog_issue_count + 1))
+      fi
+    else
+      printf 'CATALOG skipped freshness check (python3 not found)\n'
+    fi
+  fi
+
+  if [[ -s "$packed_skills_file" ]]; then
+    sort -u "$packed_skills_file" -o "$packed_skills_file"
+  fi
+
+  while IFS= read -r skill_name; do
+    [[ -n "$skill_name" ]] || continue
+    if ! grep -Fxq "$skill_name" "$packed_skills_file" 2>/dev/null; then
+      printf '%s\n' "$skill_name" >> "$uncovered_file"
+      uncovered_count=$((uncovered_count + 1))
+    fi
+  done < "$all_skills_file"
+
+  printf 'Summary\n'
+  printf '  Skills audited: %s\n' "$skill_count"
+  printf '  Pack files audited: %s\n' "$pack_count"
+  printf '  Package issues: %s\n' "$package_issue_count"
+  printf '  Metadata issues: %s\n' "$metadata_issue_count"
+  printf '  Broken pack references: %s\n' "$pack_issue_count"
+  printf '  Skills not covered by any pack: %s\n' "$uncovered_count"
+  printf '  Stale manifest files: %s\n' "$manifest_issue_count"
+  printf '  Stale catalog indexes: %s\n' "$catalog_issue_count"
+
+  if [[ "$uncovered_count" -gt 0 ]]; then
+    printf 'Uncovered skills:\n'
+    while IFS= read -r skill_name; do
+      [[ -n "$skill_name" ]] || continue
+      printf '  - %s\n' "$skill_name"
+    done < "$uncovered_file"
+  fi
+
+  rm -f "$all_skills_file" "$packed_skills_file" "$uncovered_file"
+
+  if [[ "$package_issue_count" -gt 0 || "$metadata_issue_count" -gt 0 || "$pack_issue_count" -gt 0 || "$uncovered_count" -gt 0 || "$manifest_issue_count" -gt 0 || "$catalog_issue_count" -gt 0 ]]; then
+    return 1
+  fi
+}
+
+run_workspace_doctor() {
+  local script_path
+
+  ensure_repo_dir
+  script_path="$REPO_DIR/skills/workspace-doctor/scripts/workspace_doctor.sh"
+  [[ -f "$script_path" ]] || die "Missing workspace doctor script: $script_path"
+  bash "$script_path" "${DOCTOR_ARGS[@]}"
+}
+
 copy_skill() {
   local skill_name="$1"
   local overwrite="${2:-0}"
@@ -103,50 +510,141 @@ copy_all_skills() {
   done
 }
 
+copy_pack() {
+  local pack_name="$1"
+  local overwrite="${2:-0}"
+  local skill_name
+  ensure_repo_dir
+  while IFS= read -r skill_name; do
+    [[ -n "$skill_name" ]] || continue
+    copy_skill "$skill_name" "$overwrite"
+  done < <(read_pack_skills "$pack_name")
+}
+
 COMMAND=""
+SUBCOMMAND=""
 OVERWRITE=0
 INSTALL_ALL=0
 SKILL_NAMES=()
+DOCTOR_ARGS=()
+CATALOG_ARGS=()
 
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-    list|install|update)
-      [[ -z "$COMMAND" ]] || die "Only one command can be used at a time."
-      COMMAND="$1"
-      if [[ "$1" == "update" ]]; then
-        OVERWRITE=1
-      fi
-      shift
-      ;;
-    --all)
-      INSTALL_ALL=1
-      shift
-      ;;
-    --dest)
-      [[ $# -ge 2 ]] || die "--dest requires a path"
-      DEST="$2"
-      shift 2
-      ;;
-    --repo-dir)
-      [[ $# -ge 2 ]] || die "--repo-dir requires a path"
-      REPO_DIR="$2"
-      shift 2
-      ;;
-    --repo-url)
-      [[ $# -ge 2 ]] || die "--repo-url requires a URL"
-      REPO_URL="$2"
-      shift 2
-      ;;
-    -h|--help)
-      usage
-      exit 0
-      ;;
-    *)
-      SKILL_NAMES+=("$1")
-      shift
-      ;;
-  esac
-done
+[[ $# -gt 0 ]] || {
+  usage
+  exit 1
+}
+
+case "$1" in
+  list|doctor|install|update|search|audit)
+    COMMAND="$1"
+    [[ "$1" == "update" ]] && OVERWRITE=1
+    shift
+    ;;
+  catalog)
+    COMMAND="catalog"
+    shift
+    [[ $# -gt 0 ]] || die "Pass a catalog subcommand: build or check"
+    case "$1" in
+      build|check)
+        SUBCOMMAND="$1"
+        shift
+        ;;
+      *)
+        die "Unknown catalog subcommand: $1"
+        ;;
+    esac
+    ;;
+  pack)
+    COMMAND="pack"
+    shift
+    [[ $# -gt 0 ]] || die "Pass a pack subcommand: list, show, install, or update"
+    case "$1" in
+      list|show|install|update)
+        SUBCOMMAND="$1"
+        [[ "$1" == "update" ]] && OVERWRITE=1
+        shift
+        ;;
+      *)
+        die "Unknown pack subcommand: $1"
+        ;;
+    esac
+    ;;
+  -h|--help)
+    usage
+    exit 0
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac
+
+if [[ "$COMMAND" == "doctor" ]]; then
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --repo-dir)
+        [[ $# -ge 2 ]] || die "--repo-dir requires a path"
+        REPO_DIR="$2"
+        shift 2
+        ;;
+      --repo-url)
+        [[ $# -ge 2 ]] || die "--repo-url requires a URL"
+        REPO_URL="$2"
+        shift 2
+        ;;
+      --workspace)
+        [[ $# -ge 2 ]] || die "--workspace requires a path"
+        DOCTOR_ARGS+=("--workspace" "$2")
+        shift 2
+        ;;
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      *)
+        DOCTOR_ARGS+=("$1")
+        shift
+        ;;
+    esac
+  done
+else
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --all)
+        INSTALL_ALL=1
+        shift
+        ;;
+      --dest)
+        [[ $# -ge 2 ]] || die "--dest requires a path"
+        DEST="$2"
+        shift 2
+        ;;
+      --repo-dir)
+        [[ $# -ge 2 ]] || die "--repo-dir requires a path"
+        REPO_DIR="$2"
+        shift 2
+        ;;
+      --repo-url)
+        [[ $# -ge 2 ]] || die "--repo-url requires a URL"
+        REPO_URL="$2"
+        shift 2
+        ;;
+      --output)
+        [[ $# -ge 2 ]] || die "--output requires a path"
+        CATALOG_ARGS+=("--output" "$2")
+        shift 2
+        ;;
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      *)
+        SKILL_NAMES+=("$1")
+        shift
+        ;;
+    esac
+  done
+fi
 
 [[ -n "$COMMAND" ]] || {
   usage
@@ -156,6 +654,9 @@ done
 case "$COMMAND" in
   list)
     list_skills
+    ;;
+  doctor)
+    run_workspace_doctor
     ;;
   install|update)
     ensure_repo_dir
@@ -168,5 +669,39 @@ case "$COMMAND" in
       done
     fi
     printf 'Restart Codex to pick up new skills.\n'
+    ;;
+  search)
+    [[ ${#SKILL_NAMES[@]} -gt 0 ]] || die "Pass a search query"
+    search_catalog "${SKILL_NAMES[*]}"
+    ;;
+  audit)
+    audit_repo
+    ;;
+  catalog)
+    case "$SUBCOMMAND" in
+      build)
+        run_catalog_builder "build"
+        ;;
+      check)
+        run_catalog_builder "check"
+        ;;
+    esac
+    ;;
+  pack)
+    ensure_repo_dir
+    case "$SUBCOMMAND" in
+      list)
+        list_packs
+        ;;
+      show)
+        [[ ${#SKILL_NAMES[@]} -eq 1 ]] || die "Pass exactly one pack name"
+        show_pack "${SKILL_NAMES[0]}"
+        ;;
+      install|update)
+        [[ ${#SKILL_NAMES[@]} -eq 1 ]] || die "Pass exactly one pack name"
+        copy_pack "${SKILL_NAMES[0]}" "$OVERWRITE"
+        printf 'Restart Codex to pick up new skills.\n'
+        ;;
+    esac
     ;;
 esac
