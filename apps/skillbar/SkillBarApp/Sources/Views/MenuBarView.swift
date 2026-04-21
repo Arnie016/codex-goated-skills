@@ -20,6 +20,7 @@ private enum SkillBarPalette {
 struct MenuBarView: View {
     @ObservedObject var model: SkillBarModel
     @State private var selectedIconID: String?
+    @State private var hoveredIconID: String?
 
     private var iconEntries: [SkillCatalogEntry] {
         model.filteredEntries.sorted {
@@ -125,6 +126,10 @@ struct MenuBarView: View {
                     .foregroundStyle(SkillBarPalette.mutedText)
                     .fixedSize(horizontal: false, vertical: true)
             }
+            .onTapGesture(count: 2) {
+                model.quitApp()
+            }
+            .help("Double-click to quit SkillBar.")
 
             VStack(spacing: 6) {
                 ForEach(SkillBarSection.allCases) { section in
@@ -138,6 +143,27 @@ struct MenuBarView: View {
                 compactSidebarMetric("Skills", "\(model.availableCount)")
                 compactSidebarMetric("Installed", "\(model.installedCount)")
                 compactSidebarMetric("Packs", "\(model.packCount)")
+
+                Button {
+                    model.quitApp()
+                } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "power")
+                            .font(.system(size: 12, weight: .bold))
+                        Text("Quit")
+                            .font(.caption.weight(.bold))
+                        Spacer(minLength: 0)
+                    }
+                    .foregroundStyle(SkillBarPalette.secondaryText)
+                    .padding(.horizontal, 9)
+                    .padding(.vertical, 7)
+                    .background(
+                        RoundedRectangle(cornerRadius: 9, style: .continuous)
+                            .fill(SkillBarPalette.surface.opacity(0.74))
+                    )
+                }
+                .buttonStyle(.plain)
+                .help("Quit SkillBar.")
             }
         }
         .padding(12)
@@ -162,6 +188,13 @@ struct MenuBarView: View {
             }
 
             Spacer()
+
+            if model.isBusy {
+                ProgressView()
+                    .controlSize(.small)
+                    .frame(width: 22, height: 22)
+                    .help(model.activeCommandLabel ?? "Working")
+            }
 
             statusChip("\(model.installedCount) installed", tint: SkillBarPalette.installed.opacity(0.18), foreground: SkillBarPalette.installed)
 
@@ -321,6 +354,43 @@ struct MenuBarView: View {
             Divider().overlay(SkillBarPalette.separator)
 
             VStack(alignment: .leading, spacing: 8) {
+                sectionLabel("Catalog Guardrails", trailing: model.catalogQualityLabel)
+
+                HStack(spacing: 6) {
+                    statusChip(
+                        "\(model.missingIconCount) missing icons",
+                        tint: model.missingIconCount == 0 ? SkillBarPalette.installed.opacity(0.18) : SkillBarPalette.warm.opacity(0.16),
+                        foreground: model.missingIconCount == 0 ? SkillBarPalette.installed : SkillBarPalette.warm
+                    )
+                    statusChip(
+                        "\(model.duplicateNameCount) repeats",
+                        tint: model.duplicateNameCount == 0 ? SkillBarPalette.installed.opacity(0.18) : SkillBarPalette.warm.opacity(0.16),
+                        foreground: model.duplicateNameCount == 0 ? SkillBarPalette.installed : SkillBarPalette.warm
+                    )
+                }
+
+                HStack(spacing: 8) {
+                    Button("Reveal Repo") {
+                        model.revealRepoInFinder()
+                    }
+                    .buttonStyle(.bordered)
+                    .disabled(!model.hasValidRepo)
+
+                    Button("Reveal Installs") {
+                        model.revealInstalledSkillsFolder()
+                    }
+                    .buttonStyle(.bordered)
+                }
+
+                Text("SkillBar installs from the selected local repo into the selected skills folder; audit before shipping changes, and preserve existing menu bar apps.")
+                    .font(.caption2)
+                    .foregroundStyle(SkillBarPalette.mutedText)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            Divider().overlay(SkillBarPalette.separator)
+
+            VStack(alignment: .leading, spacing: 8) {
                 sectionLabel("Repo Health", trailing: model.hasValidRepo ? "ready" : "needs repo")
 
                 HStack(spacing: 8) {
@@ -398,6 +468,24 @@ struct MenuBarView: View {
                         .font(.caption)
                         .foregroundStyle(SkillBarPalette.secondaryText)
                         .fixedSize(horizontal: false, vertical: true)
+
+                    HStack(spacing: 6) {
+                        statusChip(
+                            "\(model.installedCount) installed",
+                            tint: SkillBarPalette.installed.opacity(0.18),
+                            foreground: SkillBarPalette.installed
+                        )
+                        statusChip(
+                            "\(model.missingIconCount) missing icons",
+                            tint: model.missingIconCount == 0 ? SkillBarPalette.installed.opacity(0.18) : SkillBarPalette.warm.opacity(0.16),
+                            foreground: model.missingIconCount == 0 ? SkillBarPalette.installed : SkillBarPalette.warm
+                        )
+                        statusChip(
+                            "\(model.duplicateNameCount) repeats",
+                            tint: model.duplicateNameCount == 0 ? SkillBarPalette.installed.opacity(0.18) : SkillBarPalette.warm.opacity(0.16),
+                            foreground: model.duplicateNameCount == 0 ? SkillBarPalette.installed : SkillBarPalette.warm
+                        )
+                    }
                 }
             }
         }
@@ -536,7 +624,8 @@ struct MenuBarView: View {
     }
 
     private func skillRow(_ entry: SkillCatalogEntry) -> some View {
-        HStack(alignment: .top, spacing: 10) {
+        let isRunning = model.isRunning(entry)
+        return HStack(alignment: .top, spacing: 10) {
             iconView(for: entry)
 
             VStack(alignment: .leading, spacing: 4) {
@@ -565,14 +654,18 @@ struct MenuBarView: View {
                         .foregroundStyle(SkillBarPalette.mutedText)
                     Spacer()
                     if entry.isInstalled {
-                        Button(model.action(for: entry).buttonTitle) {
+                        Button {
                             model.runAction(for: entry)
+                        } label: {
+                            actionButtonLabel(title: isRunning ? "Updating" : model.action(for: entry).buttonTitle, isRunning: isRunning)
                         }
                         .buttonStyle(.bordered)
                         .disabled(model.isBusy || !model.hasValidRepo)
                     } else {
-                        Button(model.action(for: entry).buttonTitle) {
+                        Button {
                             model.runAction(for: entry)
+                        } label: {
+                            actionButtonLabel(title: isRunning ? "Installing" : model.action(for: entry).buttonTitle, isRunning: isRunning)
                         }
                         .buttonStyle(.borderedProminent)
                         .disabled(model.isBusy || !model.hasValidRepo)
@@ -635,6 +728,8 @@ struct MenuBarView: View {
 
     private func iconTile(_ entry: SkillCatalogEntry) -> some View {
         let isSelected = selectedIconEntry?.id == entry.id
+        let isHovered = hoveredIconID == entry.id
+        let isRunning = model.isRunning(entry)
         return Button {
             withAnimation(.easeInOut(duration: 0.16)) {
                 selectedIconID = entry.id
@@ -651,26 +746,50 @@ struct MenuBarView: View {
                     .frame(height: 28, alignment: .top)
 
                 Circle()
-                    .fill(entry.isInstalled ? SkillBarPalette.installed : SkillBarPalette.mutedText)
-                    .frame(width: 5, height: 5)
+                    .fill(isRunning ? SkillBarPalette.accent : (entry.isInstalled ? SkillBarPalette.installed : SkillBarPalette.mutedText))
+                    .frame(width: isRunning ? 7 : 5, height: isRunning ? 7 : 5)
             }
             .padding(9)
             .frame(width: 98, height: 112)
             .background(
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(isSelected ? SkillBarPalette.accent.opacity(0.16) : Color.white.opacity(0.035))
+                    .fill(isSelected || isHovered ? SkillBarPalette.accent.opacity(isSelected ? 0.16 : 0.10) : Color.white.opacity(0.035))
             )
             .overlay(
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .stroke(isSelected ? SkillBarPalette.accent.opacity(0.36) : SkillBarPalette.border, lineWidth: 1)
+                    .stroke(isSelected || isHovered ? SkillBarPalette.accent.opacity(0.36) : SkillBarPalette.border, lineWidth: 1)
+            )
+            .overlay(
+                Group {
+                    if isRunning {
+                        ProgressView()
+                            .controlSize(.small)
+                            .frame(width: 24, height: 24)
+                            .background(
+                                Circle()
+                                    .fill(SkillBarPalette.backgroundBottom.opacity(0.78))
+                            )
+                    }
+                },
+                alignment: .topTrailing
             )
         }
         .buttonStyle(.plain)
-        .help("\(entry.displayName) • \(entry.statusLabel)")
+        .onHover { hovering in
+            hoveredIconID = hovering ? entry.id : (hoveredIconID == entry.id ? nil : hoveredIconID)
+        }
+        .simultaneousGesture(
+            TapGesture(count: 2).onEnded {
+                guard !model.isBusy, model.hasValidRepo else { return }
+                model.runAction(for: entry)
+            }
+        )
+        .help("\(entry.displayName) • \(entry.statusLabel) • \(entry.category.rawValue)\n\(entry.primaryDescription)")
     }
 
     private func selectedIconDetail(_ entry: SkillCatalogEntry) -> some View {
-        groupedPanel {
+        let isRunning = model.isRunning(entry)
+        return groupedPanel {
             HStack(alignment: .top, spacing: 14) {
                 largeIconView(for: entry)
 
@@ -707,13 +826,17 @@ struct MenuBarView: View {
 
                     HStack(spacing: 8) {
                         if entry.isInstalled {
-                            Button("Update") {
+                            Button {
                                 model.runAction(for: entry)
+                            } label: {
+                                actionButtonLabel(title: isRunning ? "Updating" : "Update", isRunning: isRunning)
                             }
                             .buttonStyle(.bordered)
                         } else {
-                            Button("Install") {
+                            Button {
                                 model.runAction(for: entry)
+                            } label: {
+                                actionButtonLabel(title: isRunning ? "Installing" : "Install", isRunning: isRunning)
                             }
                             .buttonStyle(.borderedProminent)
                         }
@@ -728,6 +851,17 @@ struct MenuBarView: View {
                     .disabled(model.isBusy || !model.hasValidRepo)
                 }
             }
+        }
+    }
+
+    private func actionButtonLabel(title: String, isRunning: Bool) -> some View {
+        HStack(spacing: 6) {
+            if isRunning {
+                ProgressView()
+                    .controlSize(.small)
+                    .frame(width: 12, height: 12)
+            }
+            Text(title)
         }
     }
 

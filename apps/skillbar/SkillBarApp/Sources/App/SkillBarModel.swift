@@ -25,6 +25,7 @@ final class SkillBarModel: ObservableObject {
     @Published private(set) var statusDetail = "Browse, install, update, and refresh skills or packs from the top bar."
     @Published private(set) var isBusy = false
     @Published private(set) var activeCommandLabel: String?
+    @Published private(set) var activeSkillIDs: Set<String> = []
     @Published var pendingPreset: SkillPreset?
     @Published private(set) var lastCommandOutput = ""
 
@@ -85,6 +86,19 @@ final class SkillBarModel: ObservableObject {
     var availableCount: Int { entries.count }
     var packCount: Int { packEntries.count }
     var installedPackCount: Int { packEntries.filter(\.isComplete).count }
+    var missingIconCount: Int { entries.filter { $0.iconSmallPath == nil && $0.iconLargePath == nil }.count }
+    var duplicateNameCount: Int {
+        Dictionary(grouping: entries) { entry in
+            entry.displayName.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        }
+        .values
+        .filter { $0.count > 1 }
+        .reduce(0) { $0 + $1.count }
+    }
+    var catalogQualityLabel: String {
+        let issueCount = missingIconCount + duplicateNameCount
+        return issueCount == 0 ? "clean" : "\(issueCount) to review"
+    }
 
     func action(for entry: SkillCatalogEntry) -> SkillCommandAction {
         entry.isInstalled ? .update : .install
@@ -92,6 +106,10 @@ final class SkillBarModel: ObservableObject {
 
     func action(for pack: SkillPackEntry) -> SkillCommandAction {
         pack.isComplete ? .update : .install
+    }
+
+    func isRunning(_ entry: SkillCatalogEntry) -> Bool {
+        activeSkillIDs.contains(entry.id)
     }
 
     func refreshCatalog() {
@@ -188,6 +206,19 @@ final class SkillBarModel: ObservableObject {
         NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: entry.skillPath)])
     }
 
+    func revealRepoInFinder() {
+        guard let repoRootPath else { return }
+        NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: repoRootPath)])
+    }
+
+    func revealInstalledSkillsFolder() {
+        NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: installedSkillsPath)])
+    }
+
+    func quitApp() {
+        NSApplication.shared.terminate(nil)
+    }
+
     func requestPresetEnable(_ preset: SkillPreset) {
         pendingPreset = preset
     }
@@ -218,6 +249,7 @@ final class SkillBarModel: ObservableObject {
 
         isBusy = true
         activeCommandLabel = label
+        activeSkillIDs = Set(request.skillIDs)
         statusHeadline = label
         statusDetail = "Running through codex-goated..."
 
@@ -234,6 +266,7 @@ final class SkillBarModel: ObservableObject {
                 statusHeadline = "\(label) failed"
                 statusDetail = error.localizedDescription
             }
+            activeSkillIDs = []
             activeCommandLabel = nil
             isBusy = false
         }
