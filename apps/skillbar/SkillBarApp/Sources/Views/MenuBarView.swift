@@ -19,6 +19,7 @@ private enum SkillBarPalette {
 
 struct MenuBarView: View {
     @ObservedObject var model: SkillBarModel
+    @State private var selectedIconID: String?
 
     private var iconEntries: [SkillCatalogEntry] {
         model.filteredEntries.sorted {
@@ -32,6 +33,15 @@ struct MenuBarView: View {
 
             return $0.displayName.localizedCaseInsensitiveCompare($1.displayName) == .orderedAscending
         }
+    }
+
+    private var selectedIconEntry: SkillCatalogEntry? {
+        if let selectedIconID,
+           let entry = iconEntries.first(where: { $0.id == selectedIconID }) {
+            return entry
+        }
+
+        return iconEntries.first
     }
 
     var body: some View {
@@ -61,9 +71,18 @@ struct MenuBarView: View {
                     }
                     .padding(14)
                 }
-                .frame(width: 430, height: 630)
+                .frame(width: 590, height: 680)
             }
-            .frame(width: 570, height: 630)
+            .frame(width: 750, height: 680)
+        }
+        .onAppear {
+            syncSelectedIcon()
+        }
+        .onChange(of: model.searchText) { _, _ in
+            syncSelectedIcon()
+        }
+        .onChange(of: model.entries) { _, _ in
+            syncSelectedIcon()
         }
         .confirmationDialog(
             model.pendingPreset.map { "Enable \($0.title)?" } ?? "",
@@ -122,7 +141,7 @@ struct MenuBarView: View {
             }
         }
         .padding(12)
-        .frame(width: 140, height: 630, alignment: .topLeading)
+        .frame(width: 160, height: 680, alignment: .topLeading)
         .background(SkillBarPalette.backgroundBottom.opacity(0.72))
     }
 
@@ -293,7 +312,7 @@ struct MenuBarView: View {
                     .disabled(model.isBusy || !model.hasValidRepo)
                 }
 
-                Text("Every installed or available skill icon lives here, with asset-backed icons shown before fallback symbols.")
+                Text("Open a System Settings-style icon board for every installed or available skill, then click a tile to inspect, reveal, install, or update it.")
                     .font(.caption2)
                     .foregroundStyle(SkillBarPalette.mutedText)
                     .fixedSize(horizontal: false, vertical: true)
@@ -342,15 +361,59 @@ struct MenuBarView: View {
     }
 
     private var iconsPanel: some View {
-        groupedPanel {
-            sectionLabel("Menu Bar Icons", trailing: "\(iconEntries.count)")
+        VStack(alignment: .leading, spacing: 12) {
+            iconSettingsHeader
 
             if iconEntries.isEmpty {
-                emptyState("No icons match the current search.")
+                groupedPanel {
+                    emptyState("No icons match the current search.")
+                }
             } else {
-                ForEach(Array(iconEntries.enumerated()), id: \.element.id) { index, entry in
-                    if index > 0 { Divider().overlay(SkillBarPalette.separator) }
-                    iconLibraryRow(entry)
+                if let entry = selectedIconEntry {
+                    selectedIconDetail(entry)
+                }
+
+                iconSettingsGrid
+            }
+        }
+    }
+
+    private var iconSettingsHeader: some View {
+        groupedPanel {
+            HStack(alignment: .top, spacing: 12) {
+                Image(systemName: "menubar.rectangle")
+                    .font(.system(size: 22, weight: .bold))
+                    .foregroundStyle(SkillBarPalette.accent)
+                    .frame(width: 46, height: 46)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .fill(SkillBarPalette.accent.opacity(0.14))
+                    )
+
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack {
+                        sectionLabel("Skill Icon Settings", trailing: "\(iconEntries.count)")
+                    }
+                    Text("A local settings board for the \(model.availableCount)-skill catalog: each tile is an app-like icon you can inspect and manage without opening GitHub.")
+                        .font(.caption)
+                        .foregroundStyle(SkillBarPalette.secondaryText)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        }
+    }
+
+    private var iconSettingsGrid: some View {
+        groupedPanel {
+            sectionLabel("All Icons", trailing: "\(iconEntries.count)")
+
+            LazyVGrid(
+                columns: [GridItem(.adaptive(minimum: 92, maximum: 112), spacing: 10)],
+                alignment: .leading,
+                spacing: 10
+            ) {
+                ForEach(iconEntries) { entry in
+                    iconTile(entry)
                 }
             }
         }
@@ -570,6 +633,104 @@ struct MenuBarView: View {
         .padding(.vertical, 2)
     }
 
+    private func iconTile(_ entry: SkillCatalogEntry) -> some View {
+        let isSelected = selectedIconEntry?.id == entry.id
+        return Button {
+            withAnimation(.easeInOut(duration: 0.16)) {
+                selectedIconID = entry.id
+            }
+        } label: {
+            VStack(spacing: 7) {
+                largeIconView(for: entry)
+
+                Text(entry.displayName)
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(SkillBarPalette.primaryText)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .frame(height: 28, alignment: .top)
+
+                Circle()
+                    .fill(entry.isInstalled ? SkillBarPalette.installed : SkillBarPalette.mutedText)
+                    .frame(width: 5, height: 5)
+            }
+            .padding(9)
+            .frame(width: 98, height: 112)
+            .background(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(isSelected ? SkillBarPalette.accent.opacity(0.16) : Color.white.opacity(0.035))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(isSelected ? SkillBarPalette.accent.opacity(0.36) : SkillBarPalette.border, lineWidth: 1)
+            )
+        }
+        .buttonStyle(.plain)
+        .help("\(entry.displayName) • \(entry.statusLabel)")
+    }
+
+    private func selectedIconDetail(_ entry: SkillCatalogEntry) -> some View {
+        groupedPanel {
+            HStack(alignment: .top, spacing: 14) {
+                largeIconView(for: entry)
+
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                        Text(entry.displayName)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(SkillBarPalette.primaryText)
+
+                        statusChip(
+                            entry.statusLabel,
+                            tint: entry.isInstalled ? SkillBarPalette.installed.opacity(0.18) : SkillBarPalette.border,
+                            foreground: entry.isInstalled ? SkillBarPalette.installed : SkillBarPalette.secondaryText
+                        )
+
+                        Spacer(minLength: 0)
+                    }
+
+                    Text(entry.primaryDescription)
+                        .font(.caption)
+                        .foregroundStyle(SkillBarPalette.secondaryText)
+                        .lineLimit(3)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    HStack(spacing: 6) {
+                        statusChip(entry.category.rawValue, tint: SkillBarPalette.border, foreground: SkillBarPalette.secondaryText)
+                        statusChip(iconSourceLabel(for: entry), tint: SkillBarPalette.border, foreground: SkillBarPalette.mutedText)
+                    }
+
+                    Text(entry.id)
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(SkillBarPalette.mutedText)
+                        .lineLimit(1)
+
+                    HStack(spacing: 8) {
+                        if entry.isInstalled {
+                            Button("Update") {
+                                model.runAction(for: entry)
+                            }
+                            .buttonStyle(.bordered)
+                        } else {
+                            Button("Install") {
+                                model.runAction(for: entry)
+                            }
+                            .buttonStyle(.borderedProminent)
+                        }
+
+                        Button("Reveal") {
+                            model.revealSkillInFinder(entry)
+                        }
+                        .buttonStyle(.bordered)
+
+                        Spacer(minLength: 0)
+                    }
+                    .disabled(model.isBusy || !model.hasValidRepo)
+                }
+            }
+        }
+    }
+
     private func settingRow(title: String, value: String, action: @escaping () -> Void) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
@@ -718,6 +879,30 @@ struct MenuBarView: View {
         }
     }
 
+    @ViewBuilder
+    private func largeIconView(for entry: SkillCatalogEntry) -> some View {
+        if let image = skillImage(for: entry) {
+            Image(nsImage: image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 44, height: 44)
+                .padding(8)
+                .background(
+                    RoundedRectangle(cornerRadius: 13, style: .continuous)
+                        .fill(SkillBarPalette.raised)
+                )
+        } else {
+            Image(systemName: entry.category.symbolName)
+                .font(.system(size: 30, weight: .semibold))
+                .foregroundStyle(SkillBarPalette.accentSoft)
+                .frame(width: 60, height: 60)
+                .background(
+                    RoundedRectangle(cornerRadius: 13, style: .continuous)
+                        .fill(SkillBarPalette.raised)
+                )
+        }
+    }
+
     private func skillImage(for entry: SkillCatalogEntry) -> NSImage? {
         for path in [entry.iconSmallPath, entry.iconLargePath].compactMap({ $0 }) {
             if let image = NSImage(contentsOfFile: path) {
@@ -733,5 +918,19 @@ struct MenuBarView: View {
         }
 
         return "Fallback: \(entry.category.symbolName)"
+    }
+
+    private func syncSelectedIcon() {
+        guard !iconEntries.isEmpty else {
+            selectedIconID = nil
+            return
+        }
+
+        if let selectedIconID,
+           iconEntries.contains(where: { $0.id == selectedIconID }) {
+            return
+        }
+
+        selectedIconID = iconEntries.first?.id
     }
 }

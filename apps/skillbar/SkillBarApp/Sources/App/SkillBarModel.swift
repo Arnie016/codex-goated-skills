@@ -184,6 +184,10 @@ final class SkillBarModel: ObservableObject {
         runRepoHealthAction(action: .audit, label: "Audit")
     }
 
+    func revealSkillInFinder(_ entry: SkillCatalogEntry) {
+        NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: entry.skillPath)])
+    }
+
     func requestPresetEnable(_ preset: SkillPreset) {
         pendingPreset = preset
     }
