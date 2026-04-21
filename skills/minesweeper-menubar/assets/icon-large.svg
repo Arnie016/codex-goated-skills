@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Minesweeper Menu Bar">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081016"/>
+      <stop offset="100%" stop-color="#020406"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101820"/>
+      <stop offset="100%" stop-color="#0A1117"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7AF0B0"/>
+      <stop offset="100%" stop-color="#D6FFE7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="86" y="92" width="470" height="446" rx="40" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.1"/>
+  <rect x="118" y="120" width="406" height="58" rx="20" fill="#13202A"/>
+  <rect x="138" y="138" width="112" height="22" rx="11" fill="#7AF0B0" fill-opacity="0.22"/>
+  <rect x="392" y="138" width="108" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.08"/>
+  <g fill="#152029">
+    <rect x="122" y="204" width="42" height="42" rx="12"/>
+    <rect x="172" y="204" width="42" height="42" rx="12"/>
+    <rect x="222" y="204" width="42" height="42" rx="12"/>
+    <rect x="272" y="204" width="42" height="42" rx="12"/>
+    <rect x="322" y="204" width="42" height="42" rx="12"/>
+    <rect x="372" y="204" width="42" height="42" rx="12"/>
+    <rect x="422" y="204" width="42" height="42" rx="12"/>
+    <rect x="472" y="204" width="42" height="42" rx="12"/>
+    <rect x="122" y="254" width="42" height="42" rx="12"/>
+    <rect x="172" y="254" width="42" height="42" rx="12"/>
+    <rect x="222" y="254" width="42" height="42" rx="12"/>
+    <rect x="272" y="254" width="42" height="42" rx="12"/>
+    <rect x="322" y="254" width="42" height="42" rx="12"/>
+    <rect x="372" y="254" width="42" height="42" rx="12"/>
+    <rect x="422" y="254" width="42" height="42" rx="12"/>
+    <rect x="472" y="254" width="42" height="42" rx="12"/>
+    <rect x="122" y="304" width="42" height="42" rx="12"/>
+    <rect x="172" y="304" width="42" height="42" rx="12"/>
+    <rect x="222" y="304" width="42" height="42" rx="12"/>
+    <rect x="272" y="304" width="42" height="42" rx="12"/>
+    <rect x="322" y="304" width="42" height="42" rx="12"/>
+    <rect x="372" y="304" width="42" height="42" rx="12"/>
+    <rect x="422" y="304" width="42" height="42" rx="12"/>
+    <rect x="472" y="304" width="42" height="42" rx="12"/>
+    <rect x="122" y="354" width="42" height="42" rx="12"/>
+    <rect x="172" y="354" width="42" height="42" rx="12"/>
+    <rect x="222" y="354" width="42" height="42" rx="12"/>
+    <rect x="272" y="354" width="42" height="42" rx="12"/>
+    <rect x="322" y="354" width="42" height="42" rx="12"/>
+    <rect x="372" y="354" width="42" height="42" rx="12"/>
+    <rect x="422" y="354" width="42" height="42" rx="12"/>
+    <rect x="472" y="354" width="42" height="42" rx="12"/>
+  </g>
+  <rect x="272" y="254" width="42" height="42" rx="12" fill="#F3C34D"/>
+  <path d="M292 142 306 170 334 184 306 198 292 226 278 198 250 184 278 170Z" fill="url(#accent)"/>
+  <text x="632" y="232" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="56" font-weight="800" fill="#FFFFFF">Minesweeper Menu Bar</text>
+  <text x="632" y="286" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="28" fill="#D1D5DB">A Swift menu-bar icon app that keeps a real Minesweeper board playable in one popover.</text>
+  <text x="632" y="346" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="24" fill="#9CA3AF">Direct, native, compact. Click the icon, clear the board, reset instantly.</text>
+  <rect x="632" y="390" width="206" height="52" rx="18" fill="#7AF0B0" fill-opacity="0.18" stroke="#7AF0B0" stroke-opacity="0.5"/>
+  <text x="676" y="423" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="22" font-weight="700" fill="#E6FFF0">SwiftUI MenuBarExtra</text>
+  <rect x="856" y="390" width="182" height="52" rx="18" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <text x="894" y="423" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Playable board</text>
+</svg>

@@ -1,0 +1,49 @@
+{
+  "id": "meeting-link-bridge",
+  "name": "Meeting Link Bridge",
+  "category": "Workflow Automation",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A menu-bar handoff bridge that turns the current Teams or browser meeting link into a clean join note, email snippet, or fast open action.",
+  "audience": [
+    "Mac users joining meetings from browser tabs and copied links",
+    "Operators who keep pasting join URLs into notes, chat, or email",
+    "People working in Teams-heavy workflows without wanting a full calendar client"
+  ],
+  "tags": [
+    "meetings",
+    "Microsoft Teams",
+    "browser",
+    "handoff",
+    "menu bar",
+    "AppleScript",
+    "clipboard"
+  ],
+  "install_command": "codex-skillctl install meeting-link-bridge",
+  "docs_paths": [
+    "skills/meeting-link-bridge/SKILL.md",
+    "skills/meeting-link-bridge/manifest.json",
+    "skills/meeting-link-bridge/agents/openai.yaml",
+    "skills/meeting-link-bridge/assets/icon-small.svg",
+    "skills/meeting-link-bridge/assets/icon-large.svg",
+    "skills/meeting-link-bridge/assets/icon.svg",
+    "skills/meeting-link-bridge/assets/preview.svg",
+    "skills/meeting-link-bridge/scripts/meeting_link_bridge.py",
+    "skills/meeting-link-bridge/prototype/README.md",
+    "skills/meeting-link-bridge/prototype/SkillMenuBarApp.swift",
+    "skills/meeting-link-bridge/prototype/SkillMenuBarView.swift",
+    "skills/meeting-link-bridge/prototype/SkillDetailView.swift",
+    "skills/meeting-link-bridge/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Detects Teams-first meeting links from the front browser tab, clipboard, or a pasted URL without cloud access.",
+    "Turns the raw join URL into a ready-to-paste meeting note, markdown link, or email snippet in one step.",
+    "Keeps the pre-meeting handoff short so browser, notes, chat, and Outlook drafts stop competing for the same link."
+  ],
+  "file_path_hints": [
+    "skills/meeting-link-bridge/scripts/meeting_link_bridge.py",
+    "skills/meeting-link-bridge/prototype/SkillMenuBarView.swift",
+    "skills/meeting-link-bridge/prototype/SkillDetailView.swift"
+  ],
+  "system_symbol": "video.badge.plus"
+}

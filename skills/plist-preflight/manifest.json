@@ -1,0 +1,44 @@
+{
+  "id": "plist-preflight",
+  "name": "Plist Preflight",
+  "category": "Mac OS",
+  "status": "active",
+  "stars": 4,
+  "short_description": "Audit macOS app Info.plist and entitlement metadata before build, CI, or release changes.",
+  "audience": [
+    "Codex agents working on local macOS app workspaces",
+    "Developers maintaining menu-bar utilities",
+    "Reviewers checking metadata before project or signing edits"
+  ],
+  "tags": [
+    "macOS",
+    "Info.plist",
+    "entitlements",
+    "XcodeGen",
+    "metadata",
+    "CI",
+    "release",
+    "menu bar"
+  ],
+  "install_command": "codex-skillctl install plist-preflight",
+  "docs_paths": [
+    "skills/plist-preflight/SKILL.md",
+    "skills/plist-preflight/manifest.json",
+    "skills/plist-preflight/agents/openai.yaml",
+    "skills/plist-preflight/assets/icon-small.svg",
+    "skills/plist-preflight/assets/icon-large.svg",
+    "skills/plist-preflight/scripts/plist_preflight.py"
+  ],
+  "detail_lines": [
+    "Finds malformed plists, placeholder bundle IDs, missing versions, and missing core app metadata.",
+    "Checks menu-bar activation hints and common privacy usage strings without touching project files.",
+    "Supports markdown output and configurable fail severity for PR or CI preflight runs.",
+    "Keeps entitlement findings explicit so signing-sensitive changes stay deliberate."
+  ],
+  "file_path_hints": [
+    "skills/plist-preflight/scripts/plist_preflight.py",
+    "apps/*/*App/Info.plist",
+    "apps/**/*.entitlements"
+  ],
+  "system_symbol": "checklist.checked"
+}

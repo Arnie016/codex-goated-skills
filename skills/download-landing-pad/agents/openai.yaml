@@ -1,0 +1,10 @@
+interface:
+  display_name: "Download Landing Pad"
+  short_description: "Sort fresh downloads after a quick local readiness check"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#0A84FF"
+  default_prompt: "Use $download-landing-pad to build or refine a macOS menu-bar utility that checks local Downloads readiness first, lists the newest files, suggests where they belong, and keeps rename, reveal, copy-path, and explicit move actions one click away."
+
+policy:
+  allow_implicit_invocation: true

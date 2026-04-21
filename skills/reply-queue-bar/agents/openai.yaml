@@ -1,0 +1,10 @@
+interface:
+  display_name: "Reply Queue Bar"
+  short_description: "Premium menu-bar reply queue bar"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#FF375F"
+  default_prompt: "Use $reply-queue-bar to build a polished macOS menu-bar utility for a menu-bar reply queue for capturing copied comments or inbox snippets, sorting what deserves a response, and handing the next reply draft forward without reopening every tab."
+
+policy:
+  allow_implicit_invocation: true

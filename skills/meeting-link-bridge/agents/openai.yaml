@@ -1,0 +1,10 @@
+interface:
+  display_name: "Meeting Link Bridge"
+  short_description: "Meeting join relay for Teams and browser tabs"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#4F6BED"
+  default_prompt: "Use $meeting-link-bridge to build a polished macOS menu-bar utility that turns the current Teams or browser meeting link into a clean handoff for notes, chat, email, or a fast join action."
+
+policy:
+  allow_implicit_invocation: true

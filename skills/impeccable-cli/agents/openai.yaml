@@ -1,0 +1,10 @@
+interface:
+  display_name: "Impeccable CLI"
+  short_description: "Run detect scans or launch the live anti-pattern overlay"
+  icon_small: "./assets/impeccable-cli-small.svg"
+  icon_large: "./assets/impeccable-cli-large.svg"
+  brand_color: "#F97316"
+  default_prompt: "Use $impeccable-cli to run the official Impeccable workflow on this frontend path or live URL, choose between `detect` and `live` as appropriate, surface the highest-signal findings, and recommend the concrete fixes or command wiring that should happen next."
+
+policy:
+  allow_implicit_invocation: true

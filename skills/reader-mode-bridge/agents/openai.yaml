@@ -1,0 +1,10 @@
+interface:
+  display_name: "Reader Mode Bridge"
+  short_description: "Deterministic local reading cleanup helper"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#64D2FF"
+  default_prompt: "Use $reader-mode-bridge to turn saved HTML, copied article text, markdown, or PDF excerpts into a deterministic local reading handoff with clean metadata, cleanup notes, and export-ready output."
+
+policy:
+  allow_implicit_invocation: true

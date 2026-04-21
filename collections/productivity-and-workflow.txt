@@ -1,11 +1,18 @@
 # title: Productivity and Workflow
 # summary: Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.
 workspace-doctor
+branch-brief-bar
 context-shelf
 focus-runway
 front-tab-relay
+excel-range-relay
+meeting-link-bridge
 screen-snippet-studio
 doc-drop-bridge
+deck-export-bundle
+download-landing-pad
+finder-selection-relay
+impeccable-cli
 gain-tracker
 on-this-day
 trading-archive
@@ -13,6 +20,12 @@ skillbar
 clipboard-studio
 repo-ops-lens
 patch-pilot
+package-hygiene-audit
+plist-preflight
+reader-mode-bridge
+replay-relay
+reply-queue-bar
+svg-to-3d-forge
 network-studio
 dark-pdf-studio
 deckdrop-studio

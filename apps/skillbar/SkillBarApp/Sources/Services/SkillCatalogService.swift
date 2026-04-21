@@ -1,6 +1,18 @@
 import Foundation
 
 struct SkillCatalogService {
+    private struct SkillManifest: Decodable {
+        let name: String?
+        let category: String?
+        let shortDescription: String?
+
+        enum CodingKeys: String, CodingKey {
+            case name
+            case category
+            case shortDescription = "short_description"
+        }
+    }
+
     func resolveDefaultRepoRoot() -> String? {
         let fileManager = FileManager.default
         let startCandidates = [
@@ -92,10 +104,11 @@ struct SkillCatalogService {
         let markdown = try String(contentsOf: skillMarkdownURL, encoding: .utf8)
         let frontmatter = parseFrontmatter(markdown)
         let interface = parseOpenAIInterface(at: skillURL.appendingPathComponent("agents/openai.yaml"))
+        let manifest = parseManifest(at: skillURL.appendingPathComponent("manifest.json"))
         let installed = FileManager.default.fileExists(atPath: URL(fileURLWithPath: installedSkillsPath, isDirectory: true).appendingPathComponent(skillID).path)
 
-        let displayName = interface["display_name"] ?? frontmatter["name"] ?? skillID
-        let shortDescription = interface["short_description"] ?? frontmatter["description"] ?? ""
+        let displayName = interface["display_name"] ?? manifest?.name ?? frontmatter["name"] ?? skillID
+        let shortDescription = interface["short_description"] ?? manifest?.shortDescription ?? frontmatter["description"] ?? ""
         let longDescription = frontmatter["description"] ?? shortDescription
         let iconSmallPath = absoluteAssetPath(skillURL: skillURL, relativePath: interface["icon_small"])
         let iconLargePath = absoluteAssetPath(skillURL: skillURL, relativePath: interface["icon_large"])
@@ -105,7 +118,7 @@ struct SkillCatalogService {
             displayName: displayName.replacingOccurrences(of: "\"", with: ""),
             shortDescription: shortDescription.replacingOccurrences(of: "\"", with: ""),
             longDescription: longDescription.replacingOccurrences(of: "\"", with: ""),
-            category: category(for: skillID),
+            category: category(for: skillID, manifestCategory: manifest?.category),
             skillPath: skillURL.path,
             iconSmallPath: iconSmallPath,
             iconLargePath: iconLargePath,
@@ -211,6 +224,11 @@ struct SkillCatalogService {
         return interface
     }
 
+    private func parseManifest(at url: URL) -> SkillManifest? {
+        guard let data = try? Data(contentsOf: url) else { return nil }
+        return try? JSONDecoder().decode(SkillManifest.self, from: data)
+    }
+
     private func absoluteAssetPath(skillURL: URL, relativePath: String?) -> String? {
         guard let relativePath else { return nil }
         let cleaned = relativePath.replacingOccurrences(of: "\"", with: "")
@@ -218,7 +236,12 @@ struct SkillCatalogService {
         return skillURL.appendingPathComponent(cleaned).standardizedFileURL.path
     }
 
-    private func category(for skillID: String) -> SkillCategory {
+    private func category(for skillID: String, manifestCategory: String?) -> SkillCategory {
+        if let manifestCategory,
+           let category = category(fromManifestCategory: manifestCategory) {
+            return category
+        }
+
         switch skillID {
         case "workspace-doctor", "clipboard-studio", "network-studio", "dark-pdf-studio", "deckdrop-studio":
             return .productivity
@@ -234,6 +257,41 @@ struct SkillCatalogService {
             return .games
         default:
             return .other
+        }
+    }
+
+    private func category(fromManifestCategory value: String) -> SkillCategory? {
+        switch value.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() {
+        case "productivity":
+            return .productivity
+        case "launch", "launch and distribution":
+            return .launch
+        case "telegram":
+            return .telegram
+        case "utilities", "utility", "mac os", "macos":
+            return .utility
+        case "app-specific", "app specific":
+            return .appSpecific
+        case "developer tools":
+            return .developerTools
+        case "workflow automation":
+            return .workflowAutomation
+        case "documents":
+            return .documents
+        case "distribution":
+            return .distribution
+        case "connectivity":
+            return .connectivity
+        case "system monitoring":
+            return .systemMonitoring
+        case "community & narrative", "community and narrative", "community":
+            return .community
+        case "presentation":
+            return .presentation
+        case "games", "games and consoles":
+            return .games
+        default:
+            return nil
         }
     }
 }

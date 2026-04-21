@@ -1,0 +1,10 @@
+interface:
+  display_name: "Excel Range Relay"
+  short_description: "Clipboard relay for Excel ranges and prompt handoffs"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#107C41"
+  default_prompt: "Use $excel-range-relay to build a polished macOS menu-bar utility that captures the copied Excel range, preserves table structure, and hands it off as markdown, CSV, JSON, or prompt context with local workbook labels when available."
+
+policy:
+  allow_implicit_invocation: true

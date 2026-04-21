@@ -1,0 +1,10 @@
+interface:
+  display_name: "Minesweeper Menu Bar"
+  short_description: "Swift menu-bar icon app for Minesweeper"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#7AF0B0"
+  default_prompt: "Use $minesweeper-menubar to build a Swift macOS menu-bar icon app that plays Minesweeper inside a polished native popover."
+
+policy:
+  allow_implicit_invocation: true

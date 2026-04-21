@@ -3,3 +3,5 @@
 minecraft-essentials
 minecraft-skin-studio
 session-arcade
+minefield-menubar
+minesweeper-menubar

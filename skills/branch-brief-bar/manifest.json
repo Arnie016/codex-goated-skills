@@ -1,0 +1,61 @@
+{
+  "id": "branch-brief-bar",
+  "name": "Branch Brief Bar",
+  "category": "Developer Tools",
+  "status": "active",
+  "description": "A local git handoff skill that turns the current branch into a review-ready brief with a sensible compare base, working tree signal, changed files, recent commits, and the next action.",
+  "stars": 5,
+  "short_description": "A git-first branch brief that turns local repo state into a review-ready handoff with a sensible review base, upstream status, changed files, recent commits, and the next PR action.",
+  "brand_color": "#30D158",
+  "icon_small": "skills/branch-brief-bar/assets/icon-small.svg",
+  "icon_large": "skills/branch-brief-bar/assets/icon-large.svg",
+  "default_prompt": "Use $branch-brief-bar to inspect the current git branch locally, choose a review-ready compare base, summarize upstream status, touched areas, changed files, recent commits, and the next review action, or build a compact macOS menu-bar brief that keeps the handoff honest.",
+  "audience": [
+    "AI-assisted coders handing work from terminal sessions into review",
+    "Maintainers shipping branch updates across shell, PR, and chat",
+    "People who keep getting asked what changed and what should happen next"
+  ],
+  "tags": [
+    "git",
+    "branch",
+    "pull request",
+    "status",
+    "commits",
+    "review handoff",
+    "handoff",
+    "menu bar",
+    "developer tools",
+    "macOS"
+  ],
+  "install_command": "codex-skillctl install branch-brief-bar",
+  "packs": [
+    "productivity-and-workflow"
+  ],
+  "docs_paths": [
+    "skills/branch-brief-bar/SKILL.md",
+    "skills/branch-brief-bar/manifest.json",
+    "skills/branch-brief-bar/agents/openai.yaml",
+    "skills/branch-brief-bar/assets/icon-small.svg",
+    "skills/branch-brief-bar/assets/icon-large.svg",
+    "skills/branch-brief-bar/assets/icon.svg",
+    "skills/branch-brief-bar/assets/preview.svg",
+    "skills/branch-brief-bar/references/review-base-behavior.md",
+    "skills/branch-brief-bar/scripts/branch_brief.py",
+    "skills/branch-brief-bar/prototype/README.md",
+    "skills/branch-brief-bar/prototype/SkillMenuBarApp.swift",
+    "skills/branch-brief-bar/prototype/SkillMenuBarView.swift",
+    "skills/branch-brief-bar/prototype/SkillDetailView.swift",
+    "skills/branch-brief-bar/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Reads local git state and turns branch name, compare base, upstream distance, touched areas, status-aware changed-file previews, and recent commits into one compact review brief.",
+    "Defaults feature branches toward a main-like review base such as the remote default branch, main, master, or trunk when their upstream is only the same remote feature branch, so the handoff stays PR-oriented instead of push-oriented.",
+    "Stays honest about what local git can prove and does not invent GitHub metadata, CI state, or reviewer status."
+  ],
+  "file_path_hints": [
+    "skills/branch-brief-bar/scripts/branch_brief.py",
+    "skills/branch-brief-bar/prototype/SkillMenuBarView.swift",
+    "skills/branch-brief-bar/prototype/SkillDetailView.swift"
+  ],
+  "system_symbol": "square.and.arrow.up.fill"
+}

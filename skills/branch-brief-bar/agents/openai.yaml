@@ -1,0 +1,10 @@
+interface:
+  display_name: "Branch Brief Bar"
+  short_description: "Local git branch brief with a review-ready compare base, changed files, and next action"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#30D158"
+  default_prompt: "Use $branch-brief-bar to inspect the current git branch locally, choose a review-ready compare base, summarize upstream status, touched areas, changed files, recent commits, and the next review action, or build a compact macOS menu-bar brief that keeps the handoff honest."
+
+policy:
+  allow_implicit_invocation: true

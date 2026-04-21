@@ -28,6 +28,7 @@ codex-goated list
 codex-goated doctor
 codex-goated install network-studio
 codex-goated install wifi-watchtower
+codex-goated install meeting-link-bridge
 codex-goated install minecraft-essentials
 codex-goated install deckdrop-studio
 codex-goated install clipboard-studio
@@ -144,6 +145,7 @@ MACOS_ICON_BARS_TRACKING=0 bash <(curl -fsSL https://raw.githubusercontent.com/A
 - Browse all download packs in [`collections/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
 - Manage the whole pack from the top bar with `skillbar`
 - Create polished outputs with `dark-pdf-studio` and `deckdrop-studio`
+- Keep Teams and browser meeting links ready to hand off with `meeting-link-bridge`
 
 ## Skills
 
@@ -165,17 +167,26 @@ Browse by use case:
 | <img src="skills/content-pack/assets/content-pack-small.svg" width="26" alt="Content Pack" /><br/>[`content-pack`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/content-pack) | Turns one project into paste-ready launch and README copy | `content-pack` |
 | <img src="skills/release-ramp/assets/icon.svg" width="26" alt="Release Ramp" /><br/>[`release-ramp`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/release-ramp) | Turns a shipping checklist into a compact launch lane with one clear next step | `release-ramp` |
 | <img src="skills/launch-deck-lift/assets/icon.svg" width="26" alt="Launch Deck Lift" /><br/>[`launch-deck-lift`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/launch-deck-lift) | Shapes a rough idea into a cleaner launch-deck starter from a menu bar utility surface | `launch-deck-lift` |
+| <img src="skills/package-hygiene-audit/assets/icon-small.svg" width="26" alt="Package Hygiene Audit" /><br/>[`package-hygiene-audit`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/package-hygiene-audit) | Audits local release packages, app bundles, notes, screenshots, and ship-readiness | `package-hygiene-audit` |
+| <img src="skills/svg-to-3d-forge/assets/icon-small.svg" width="26" alt="SVG To 3D Forge" /><br/>[`svg-to-3d-forge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/svg-to-3d-forge) | Turns SVG assets into local STL, OBJ, or GLB export workflows | `svg-to-3d-forge` |
 
 ### Productivity and Workflow
 
 | Skill | What it does | Install name |
 | --- | --- | --- |
 | <img src="skills/workspace-doctor/assets/workspace-doctor-small.svg" width="26" alt="Workspace Doctor" /><br/>[`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor) | Finds the real blocker, catalog freshness, and next repo-native command fast | `workspace-doctor` |
+| <img src="skills/branch-brief-bar/assets/icon-small.svg" width="26" alt="Branch Brief Bar" /><br/>[`branch-brief-bar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/branch-brief-bar) | Turns local git state into a review-ready branch handoff | `branch-brief-bar` |
 | <img src="skills/context-shelf/assets/icon.svg" width="26" alt="Context Shelf" /><br/>[`context-shelf`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/context-shelf) | Parks the current tab, clipboard snippet, and scratch note so resuming after a task switch is one glance instead of a rebuild | `context-shelf` |
 | <img src="skills/focus-runway/assets/icon.svg" width="26" alt="Focus Runway" /><br/>[`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway) | Starts the next work block with less setup and less context switching | `focus-runway` |
 | <img src="skills/front-tab-relay/assets/icon.svg" width="26" alt="Front Tab Relay" /><br/>[`front-tab-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/front-tab-relay) | Captures the front browser tab and formats it for prompts, notes, tickets, or chat handoffs | `front-tab-relay` |
+| <img src="skills/excel-range-relay/assets/icon.svg" width="26" alt="Excel Range Relay" /><br/>[`excel-range-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/excel-range-relay) | Turns a copied Excel selection into clean markdown, CSV, JSON, or prompt-ready context without rebuilding the table by hand | `excel-range-relay` |
+| <img src="skills/meeting-link-bridge/assets/icon.svg" width="26" alt="Meeting Link Bridge" /><br/>[`meeting-link-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/meeting-link-bridge) | Turns the current Teams or browser meeting link into a clean join note, email snippet, or fast open action | `meeting-link-bridge` |
 | <img src="skills/screen-snippet-studio/assets/icon.svg" width="26" alt="Screen Snippet Studio" /><br/>[`screen-snippet-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/screen-snippet-studio) | Turns screen snippets into clean prompts, tickets, or handoffs from a menu bar capture flow | `screen-snippet-studio` |
 | <img src="skills/doc-drop-bridge/assets/icon.svg" width="26" alt="Doc Drop Bridge" /><br/>[`doc-drop-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/doc-drop-bridge) | Packages notes, markdown, and fragments into share-ready handoff files | `doc-drop-bridge` |
+| <img src="skills/deck-export-bundle/assets/icon-small.svg" width="26" alt="Deck Export Bundle" /><br/>[`deck-export-bundle`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/deck-export-bundle) | Packages a current slide deck, notes, and send-ready assets from one compact surface | `deck-export-bundle` |
+| <img src="skills/download-landing-pad/assets/icon-small.svg" width="26" alt="Download Landing Pad" /><br/>[`download-landing-pad`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/download-landing-pad) | Stages fresh downloads with safe rename, reveal, and route actions | `download-landing-pad` |
+| <img src="skills/finder-selection-relay/assets/icon-small.svg" width="26" alt="Finder Selection Relay" /><br/>[`finder-selection-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/finder-selection-relay) | Turns selected Finder items into clean paths and handoff-ready context | `finder-selection-relay` |
+| <img src="skills/impeccable-cli/assets/impeccable-cli-small.svg" width="26" alt="Impeccable CLI" /><br/>[`impeccable-cli`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/impeccable-cli) | Runs deterministic frontend design scans and live anti-pattern overlays | `impeccable-cli` |
 | <img src="skills/gain-tracker/assets/icon-small.svg" width="26" alt="Gain Tracker" /><br/>[`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker) | Connects GitHub, scans local repo folders, and turns daily git gains into reminder stories and progress toward 90x | `gain-tracker` |
 | <img src="skills/on-this-day/assets/icon-small.svg" width="26" alt="On This Day" /><br/>[`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day) | Pulls the official Wikimedia day feed into a polished historical briefing or Mac-style day browser | `on-this-day` |
 | <img src="skills/trading-archive/assets/icon-small.svg" width="26" alt="Trading Archive" /><br/>[`trading-archive`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/trading-archive) | Builds a saved archive of trading articles from public feeds, then surfaces a reading queue, source health, and a native menu bar workflow | `trading-archive` |
@@ -183,6 +194,11 @@ Browse by use case:
 | <img src="skills/clipboard-studio/assets/clipboard-studio-small.svg" width="26" alt="Context Assembly" /><br/>[`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio) | Shapes Context Assembly on macOS so code, logs, pages, and selections become one structured prompt with resumable state instead of Cmd+C, switch, Cmd+V loops | `clipboard-studio` |
 | <img src="skills/repo-ops-lens/assets/icon.svg" width="26" alt="Repo Ops Lens" /><br/>[`repo-ops-lens`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/repo-ops-lens) | Turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion | `repo-ops-lens` |
 | <img src="skills/patch-pilot/assets/icon.svg" width="26" alt="Patch Pilot" /><br/>[`patch-pilot`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/patch-pilot) | Turns a diff, staged change list, or review thread into a fix brief, risk scan, and next command | `patch-pilot` |
+| <img src="skills/package-hygiene-audit/assets/icon-small.svg" width="26" alt="Package Hygiene Audit" /><br/>[`package-hygiene-audit`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/package-hygiene-audit) | Audits a local package or release folder for ship-readiness | `package-hygiene-audit` |
+| <img src="skills/plist-preflight/assets/icon-small.svg" width="26" alt="Plist Preflight" /><br/>[`plist-preflight`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/plist-preflight) | Checks macOS Info.plist and entitlement metadata before build or signing changes | `plist-preflight` |
+| <img src="skills/reader-mode-bridge/assets/icon-small.svg" width="26" alt="Reader Mode Bridge" /><br/>[`reader-mode-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/reader-mode-bridge) | Cleans saved reading material into deterministic local handoffs | `reader-mode-bridge` |
+| <img src="skills/replay-relay/assets/icon-small.svg" width="26" alt="Replay Relay" /><br/>[`replay-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/replay-relay) | Packages clips, screenshots, and quick notes into send-ready replay handoffs | `replay-relay` |
+| <img src="skills/reply-queue-bar/assets/icon-small.svg" width="26" alt="Reply Queue Bar" /><br/>[`reply-queue-bar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/reply-queue-bar) | Captures comments or inbox snippets and queues the next useful reply | `reply-queue-bar` |
 | <img src="skills/network-studio/assets/network-studio-small.svg" width="26" alt="Network Studio" /><br/>[`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio) | macOS LAN monitor with SwiftBar and a dashboard | `network-studio` |
 | <img src="skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg" width="26" alt="Dark PDF Studio" /><br/>[`dark-pdf-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/dark-pdf-studio) | Converts PDFs, docs, and images into dark-background reading PDFs with a compact export flow | `dark-pdf-studio` |
 | <img src="skills/deckdrop-studio/assets/deckdrop-studio-small.svg" width="26" alt="Deckdrop Studio" /><br/>[`deckdrop-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/deckdrop-studio) | Builds and refines editable slide deck workflows for mixed-source inputs | `deckdrop-studio` |
@@ -218,6 +234,10 @@ Collection:
 | <img src="skills/battery-trend-scout/assets/icon.svg" width="26" alt="Battery Trend Scout" /><br/>[`battery-trend-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/battery-trend-scout) | Shows charge, power source, energy mode, and local drain trends in a calm battery panel | `battery-trend-scout` |
 | <img src="skills/power-sentry/assets/icon.svg" width="26" alt="Power Sentry" /><br/>[`power-sentry`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/power-sentry) | Gives a compact at-a-glance read of charging, drain, and energy mode from the menu bar | `power-sentry` |
 | <img src="skills/chrome-tab-sweeper/assets/icon.svg" width="26" alt="Chrome Tab Sweeper" /><br/>[`chrome-tab-sweeper`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/chrome-tab-sweeper) | Lists overloaded Chrome tabs, groups the mess, and closes explicit selected batches safely | `chrome-tab-sweeper` |
+| <img src="skills/download-landing-pad/assets/icon-small.svg" width="26" alt="Download Landing Pad" /><br/>[`download-landing-pad`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/download-landing-pad) | Keeps fresh browser exports from getting stuck in Downloads | `download-landing-pad` |
+| <img src="skills/finder-selection-relay/assets/icon-small.svg" width="26" alt="Finder Selection Relay" /><br/>[`finder-selection-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/finder-selection-relay) | Moves selected Finder items into the next app without manual path cleanup | `finder-selection-relay` |
+| <img src="skills/plist-preflight/assets/icon-small.svg" width="26" alt="Plist Preflight" /><br/>[`plist-preflight`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/plist-preflight) | Checks app metadata before signing, release, or Info.plist edits | `plist-preflight` |
+| <img src="skills/replay-relay/assets/icon-small.svg" width="26" alt="Replay Relay" /><br/>[`replay-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/replay-relay) | Keeps clips and screenshots moving through a compact share lane | `replay-relay` |
 
 ### App-Specific Skills
 
@@ -236,6 +256,8 @@ Collection:
 | <img src="skills/minecraft-essentials/assets/minecraft-essentials-small.svg" width="26" alt="Minecraft Essentials" /><br/>[`minecraft-essentials`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-essentials) | Runs, upgrades, and troubleshoots Minecraft Java servers | `minecraft-essentials` |
 | <img src="skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg" width="26" alt="Minecraft Skin Studio" /><br/>[`minecraft-skin-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-skin-studio) | Drafts, previews, and registers Minecraft Java skins from prompts or PNGs | `minecraft-skin-studio` |
 | <img src="skills/session-arcade/assets/icon.svg" width="26" alt="Session Arcade" /><br/>[`session-arcade`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/session-arcade) | Helps you launch the next game session or console handoff without extra setup loops | `session-arcade` |
+| <img src="skills/minefield-menubar/assets/icon-small.svg" width="26" alt="Minefield Menu Bar" /><br/>[`minefield-menubar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minefield-menubar) | Builds a playable Minesweeper-style menu bar game | `minefield-menubar` |
+| <img src="skills/minesweeper-menubar/assets/icon-small.svg" width="26" alt="Minesweeper Menu Bar" /><br/>[`minesweeper-menubar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minesweeper-menubar) | Builds and refines a Swift menu bar Minesweeper app | `minesweeper-menubar` |
 
 ## Apps
 

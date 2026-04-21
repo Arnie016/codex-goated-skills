@@ -6,3 +6,4 @@ gain-tracker
 network-studio
 dark-pdf-studio
 deckdrop-studio
+reader-mode-bridge

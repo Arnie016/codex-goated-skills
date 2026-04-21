@@ -1,0 +1,46 @@
+{
+  "id": "replay-relay",
+  "name": "Replay Relay",
+  "category": "Games and Consoles",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A menu-bar share lane for turning game clips, screenshots, and quick notes into send-ready handoffs without Finder hopping.",
+  "audience": [
+    "Players who share clips with friends",
+    "Streamers and community hosts",
+    "People moving game captures into chat fast"
+  ],
+  "tags": [
+    "games",
+    "clips",
+    "screenshots",
+    "share",
+    "menu bar",
+    "handoff",
+    "discord"
+  ],
+  "install_command": "codex-skillctl install replay-relay",
+  "docs_paths": [
+    "skills/replay-relay/SKILL.md",
+    "skills/replay-relay/manifest.json",
+    "skills/replay-relay/agents/openai.yaml",
+    "skills/replay-relay/assets/icon.svg",
+    "skills/replay-relay/assets/preview.svg",
+    "skills/replay-relay/prototype/README.md",
+    "skills/replay-relay/prototype/SkillMenuBarApp.swift",
+    "skills/replay-relay/prototype/SkillMenuBarView.swift",
+    "skills/replay-relay/prototype/SkillDetailView.swift",
+    "skills/replay-relay/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Stages the latest screenshot or a dropped clip with one note field and one destination choice.",
+    "Keeps rename, caption, copy-path, and reveal actions close to the menu bar so sharing starts without a Finder cleanup pass.",
+    "Focuses on the send-ready handoff instead of becoming another media library or editor."
+  ],
+  "file_path_hints": [
+    "skills/replay-relay/prototype/README.md",
+    "skills/replay-relay/prototype/SkillMenuBarApp.swift",
+    "skills/replay-relay/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "film.stack.fill"
+}

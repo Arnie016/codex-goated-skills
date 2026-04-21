@@ -1,0 +1,10 @@
+interface:
+  display_name: "Replay Relay"
+  short_description: "Premium menu-bar replay relay"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#32ADE6"
+  default_prompt: "Use $replay-relay to build a polished macOS menu-bar utility for a menu-bar share lane for turning game clips, screenshots, and quick notes into send-ready handoffs without finder hopping."
+
+policy:
+  allow_implicit_invocation: true

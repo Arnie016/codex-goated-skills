@@ -8,3 +8,7 @@ phone-handoff-panel
 battery-trend-scout
 power-sentry
 chrome-tab-sweeper
+download-landing-pad
+finder-selection-relay
+plist-preflight
+replay-relay

@@ -1,0 +1,50 @@
+{
+  "id": "package-hygiene-audit",
+  "name": "Package Hygiene Audit",
+  "category": "Distribution",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A deterministic local release audit that checks app bundles, packaged archives, notes, and screenshots before you ship from the Mac.",
+  "audience": [
+    "Indie Mac developers",
+    "Open-source maintainers",
+    "People packaging releases by hand"
+  ],
+  "tags": [
+    "distribution",
+    "release",
+    "package",
+    "audit",
+    "screenshots",
+    "notes",
+    "menu bar"
+  ],
+  "install_command": "codex-skillctl install package-hygiene-audit",
+  "docs_paths": [
+    "skills/package-hygiene-audit/SKILL.md",
+    "skills/package-hygiene-audit/manifest.json",
+    "skills/package-hygiene-audit/agents/openai.yaml",
+    "skills/package-hygiene-audit/references/audit-contract.md",
+    "skills/package-hygiene-audit/scripts/package_hygiene_audit.py",
+    "skills/package-hygiene-audit/assets/icon-small.svg",
+    "skills/package-hygiene-audit/assets/icon-large.svg",
+    "skills/package-hygiene-audit/assets/icon.svg",
+    "skills/package-hygiene-audit/assets/preview.svg",
+    "skills/package-hygiene-audit/prototype/README.md",
+    "skills/package-hygiene-audit/prototype/SkillMenuBarApp.swift",
+    "skills/package-hygiene-audit/prototype/SkillMenuBarView.swift",
+    "skills/package-hygiene-audit/prototype/SkillDetailView.swift",
+    "skills/package-hygiene-audit/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Scans a local release folder for app bundles, packaged archives, release notes, and screenshots before you ship.",
+    "Emits markdown, prompt, or JSON output so the audit can move cleanly into a release thread or Codex handoff.",
+    "Keeps the last-mile ship check deterministic instead of improvising in Finder, Notes, and chat."
+  ],
+  "file_path_hints": [
+    "skills/package-hygiene-audit/scripts/package_hygiene_audit.py",
+    "skills/package-hygiene-audit/references/audit-contract.md",
+    "skills/package-hygiene-audit/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "checklist.checked"
+}

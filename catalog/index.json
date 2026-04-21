@@ -1,6 +1,6 @@
 {
   "repo": "codex-goated-skills",
-  "skill_count": 49,
+  "skill_count": 64,
   "pack_count": 10,
   "skills": [
     {
@@ -17,6 +17,22 @@
       "default_prompt": "Use $battery-trend-scout to build a polished macOS battery menu-bar utility with charge, power source, energy mode, and trend context.",
       "packs": [
         "macos-utility-builders"
+      ]
+    },
+    {
+      "id": "branch-brief-bar",
+      "display_name": "Branch Brief Bar",
+      "description": "Turn the current git branch into a crisp review-ready brief with local status, touched areas, changed files, recent commits, and the next PR action.",
+      "short_description": "Local git branch brief with a review-ready compare base, changed files, and next action",
+      "brand_color": "#30D158",
+      "path": "skills/branch-brief-bar",
+      "skill_file": "skills/branch-brief-bar/SKILL.md",
+      "openai_yaml": "skills/branch-brief-bar/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $branch-brief-bar to inspect the current git branch locally, choose a review-ready compare base, summarize upstream status, touched areas, changed files, recent commits, and the next review action, or build a compact macOS menu-bar brief that keeps the handoff honest.",
+      "packs": [
+        "productivity-and-workflow"
       ]
     },
     {
@@ -173,6 +189,22 @@
       ]
     },
     {
+      "id": "deck-export-bundle",
+      "display_name": "Deck Export Bundle",
+      "description": "A menu-bar export bundle for packaging the current slide deck, speaker notes, and send-ready assets without bouncing between Keynote, Finder, and chat.",
+      "short_description": "Premium menu-bar deck export bundle",
+      "brand_color": "#FFD60A",
+      "path": "skills/deck-export-bundle",
+      "skill_file": "skills/deck-export-bundle/SKILL.md",
+      "openai_yaml": "skills/deck-export-bundle/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $deck-export-bundle to build a polished macOS menu-bar utility for a menu-bar export bundle for packaging the current slide deck, speaker notes, and send-ready assets without bouncing between keynote, finder, and chat.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
       "id": "deckdrop-studio",
       "display_name": "Deckdrop Studio",
       "description": "Build, run, troubleshoot, or extend a DeckDrop-style macOS slide workflow that turns PDFs, docs, presentations, and image sets into editable PowerPoint drafts with human review before export. Use when Codex needs to work on a workspace containing `DeckDropApp`; inspect the ingestion, extraction, planning, review, and export pipeline; regenerate the Xcode project; or validate the DeckDrop app and tests.",
@@ -201,6 +233,39 @@
       "icon_small": "./assets/icon.svg",
       "icon_large": "./assets/preview.svg",
       "default_prompt": "Use $doc-drop-bridge to build a polished macOS menu-bar utility for a document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "download-landing-pad",
+      "display_name": "Download Landing Pad",
+      "description": "Triage recent macOS downloads with a menu-bar staging surface that lists the newest files, supports safe rename or move actions, and keeps reveal, copy-path, and routing choices in one stop.",
+      "short_description": "Sort fresh downloads after a quick local readiness check",
+      "brand_color": "#0A84FF",
+      "path": "skills/download-landing-pad",
+      "skill_file": "skills/download-landing-pad/SKILL.md",
+      "openai_yaml": "skills/download-landing-pad/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $download-landing-pad to build or refine a macOS menu-bar utility that checks local Downloads readiness first, lists the newest files, suggests where they belong, and keeps rename, reveal, copy-path, and explicit move actions one click away.",
+      "packs": [
+        "macos-utility-builders",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "excel-range-relay",
+      "display_name": "Excel Range Relay",
+      "description": "Build or operate a macOS menu-bar relay that turns the current Excel selection into clean markdown, CSV, JSON, or prompt context, with workbook, sheet, and range labels when local Excel metadata is available.",
+      "short_description": "Clipboard relay for Excel ranges and prompt handoffs",
+      "brand_color": "#107C41",
+      "path": "skills/excel-range-relay",
+      "skill_file": "skills/excel-range-relay/SKILL.md",
+      "openai_yaml": "skills/excel-range-relay/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $excel-range-relay to build a polished macOS menu-bar utility that captures the copied Excel range, preserves table structure, and hands it off as markdown, CSV, JSON, or prompt context with local workbook labels when available.",
       "packs": [
         "productivity-and-workflow"
       ]
@@ -238,6 +303,23 @@
       "packs": [
         "macos-utility-builders",
         "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "finder-selection-relay",
+      "display_name": "Finder Selection Relay",
+      "description": "Build or operate a macOS menu-bar relay that turns the current Finder selection into prompt, note, ticket, or shell-ready context with clean paths and lightweight local metadata.",
+      "short_description": "Finder selection handoff for clean local paths and quick copy formats",
+      "brand_color": "#0A84FF",
+      "path": "skills/finder-selection-relay",
+      "skill_file": "skills/finder-selection-relay/SKILL.md",
+      "openai_yaml": "skills/finder-selection-relay/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $finder-selection-relay to turn the current Finder selection into prompt, markdown, ticket, or shell-safe path output without manual cleanup, and keep the macOS handoff compact and local-first.",
+      "packs": [
+        "macos-utility-builders",
+        "productivity-and-workflow"
       ]
     },
     {
@@ -357,6 +439,22 @@
       ]
     },
     {
+      "id": "impeccable-cli",
+      "display_name": "Impeccable CLI",
+      "description": "Run the official `impeccable` CLI against HTML, CSS, JSX, TSX, Vue, Svelte, directories, or live URLs to catch deterministic UI anti-patterns before they ship, or use `impeccable live` to open the Visual Mode overlay on a page. Use when Codex needs a frontend design audit, CI-friendly JSON findings, fast local scans, or live in-browser anti-pattern triage.",
+      "short_description": "Run detect scans or launch the live anti-pattern overlay",
+      "brand_color": "#F97316",
+      "path": "skills/impeccable-cli",
+      "skill_file": "skills/impeccable-cli/SKILL.md",
+      "openai_yaml": "skills/impeccable-cli/agents/openai.yaml",
+      "icon_small": "./assets/impeccable-cli-small.svg",
+      "icon_large": "./assets/impeccable-cli-large.svg",
+      "default_prompt": "Use $impeccable-cli to run the official Impeccable workflow on this frontend path or live URL, choose between `detect` and `live` as appropriate, surface the highest-signal findings, and recommend the concrete fixes or command wiring that should happen next.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
       "id": "inner-circle-director",
       "display_name": "Inner Circle Director",
       "description": "Structure tiered access, VIP mechanics, recognition systems, and premium community experiences, then output a membership framework. Use when Codex needs to design belonging and access around a personality-led brand without making the structure exploitative, confusing, or socially corrosive.",
@@ -409,6 +507,22 @@
       ]
     },
     {
+      "id": "meeting-link-bridge",
+      "display_name": "Meeting Link Bridge",
+      "description": "Build or operate a macOS menu-bar bridge that turns the current meeting join link into a clean handoff for notes, chat, email, or a fast open action, with extra weight for Microsoft Teams and browser-based meeting flows.",
+      "short_description": "Meeting join relay for Teams and browser tabs",
+      "brand_color": "#4F6BED",
+      "path": "skills/meeting-link-bridge",
+      "skill_file": "skills/meeting-link-bridge/SKILL.md",
+      "openai_yaml": "skills/meeting-link-bridge/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $meeting-link-bridge to build a polished macOS menu-bar utility that turns the current Teams or browser meeting link into a clean handoff for notes, chat, email, or a fast join action.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
       "id": "minecraft-essentials",
       "display_name": "Minecraft Essentials",
       "description": "Install, upgrade, run, migrate, back up, and troubleshoot Minecraft Java servers. Use when Codex needs to work on a Minecraft-only setup such as Vanilla, Paper, Fabric, plugin compatibility, Java versioning, LAN join info, backups, Bedrock bridging, or moving a local server toward a more stable always-on setup.",
@@ -436,6 +550,38 @@
       "icon_small": "./assets/minecraft-skin-studio-small.svg",
       "icon_large": "./assets/minecraft-skin-studio-large.svg",
       "default_prompt": "Use $minecraft-skin-studio to draft or import a Minecraft Java skin, save a clean 64x64 PNG, render a preview, register it into my local Minecraft Launcher custom skins list, or work on the bundled Minecraft Skin Bar menu bar app.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    },
+    {
+      "id": "minefield-menubar",
+      "display_name": "Minefield Menu Bar",
+      "description": "A polished macOS menu-bar puzzle that turns Minesweeper-style rounds into quick coffee-break runs.",
+      "short_description": "Playable menu-bar Minesweeper-style arcade",
+      "brand_color": "#61ED9F",
+      "path": "skills/minefield-menubar",
+      "skill_file": "skills/minefield-menubar/SKILL.md",
+      "openai_yaml": "skills/minefield-menubar/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $minefield-menubar to build a polished macOS menu-bar game with a Minesweeper-style board, quick replay loop, and native-feeling popover controls.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    },
+    {
+      "id": "minesweeper-menubar",
+      "display_name": "Minesweeper Menu Bar",
+      "description": "A Swift macOS menu-bar icon app concept for playing Minesweeper in a compact native popover.",
+      "short_description": "Swift menu-bar icon app for Minesweeper",
+      "brand_color": "#7AF0B0",
+      "path": "skills/minesweeper-menubar",
+      "skill_file": "skills/minesweeper-menubar/SKILL.md",
+      "openai_yaml": "skills/minesweeper-menubar/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $minesweeper-menubar to build a Swift macOS menu-bar icon app that plays Minesweeper inside a polished native popover.",
       "packs": [
         "games-and-minecraft"
       ]
@@ -510,6 +656,23 @@
       ]
     },
     {
+      "id": "package-hygiene-audit",
+      "display_name": "Package Hygiene Audit",
+      "description": "Audit a local release folder for app bundles, packaged archives, release notes, and screenshots before you ship from the Mac. Use when Codex needs a deterministic packaging check instead of a manual Finder scavenger hunt.",
+      "short_description": "Deterministic local release package audit",
+      "brand_color": "#BF5AF2",
+      "path": "skills/package-hygiene-audit",
+      "skill_file": "skills/package-hygiene-audit/SKILL.md",
+      "openai_yaml": "skills/package-hygiene-audit/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $package-hygiene-audit to audit a local release folder or build a polished macOS menu-bar utility around that audit: check app bundles, packaged archives, release notes, and screenshots, then return a deterministic ship-readiness report without inventing cloud release state.",
+      "packs": [
+        "launch-and-distribution",
+        "productivity-and-workflow"
+      ]
+    },
+    {
       "id": "parasocial-studio",
       "display_name": "Parasocial Studio",
       "description": "Shape safe closeness mechanics like acknowledgements, voice-note drops, recurring touchpoints, and community intimacy patterns, then output a relationship cadence plan. Use when Codex needs to help a public figure feel present and personal without encouraging dependency, false intimacy, or harmful boundary erosion.",
@@ -560,6 +723,23 @@
       ]
     },
     {
+      "id": "plist-preflight",
+      "display_name": "Plist Preflight",
+      "description": "Audit macOS app Info.plist and entitlement files before build or release. Use when Codex needs to check bundle metadata, menu-bar app activation policy hints, permission usage strings, sandbox entitlements, or repo-wide plist hygiene without changing signing settings or project files.",
+      "short_description": "macOS Info.plist and entitlement metadata preflight",
+      "brand_color": "#5E5CE6",
+      "path": "skills/plist-preflight",
+      "skill_file": "skills/plist-preflight/SKILL.md",
+      "openai_yaml": "skills/plist-preflight/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $plist-preflight to audit this macOS app's Info.plist and entitlement metadata before changing build, signing, CI, or release settings.",
+      "packs": [
+        "macos-utility-builders",
+        "productivity-and-workflow"
+      ]
+    },
+    {
       "id": "power-sentry",
       "display_name": "Power Sentry",
       "description": "A battery-and-power watch that helps you read drain, charging, and energy mode at a glance.",
@@ -576,6 +756,23 @@
       ]
     },
     {
+      "id": "reader-mode-bridge",
+      "display_name": "Reader Mode Bridge",
+      "description": "Turn saved HTML, copied article text, or PDF excerpts into a deterministic local reading handoff with clean metadata and export-ready output.",
+      "short_description": "Deterministic local reading cleanup helper",
+      "brand_color": "#64D2FF",
+      "path": "skills/reader-mode-bridge",
+      "skill_file": "skills/reader-mode-bridge/SKILL.md",
+      "openai_yaml": "skills/reader-mode-bridge/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $reader-mode-bridge to turn saved HTML, copied article text, markdown, or PDF excerpts into a deterministic local reading handoff with clean metadata, cleanup notes, and export-ready output.",
+      "packs": [
+        "daily-briefs-and-reference",
+        "productivity-and-workflow"
+      ]
+    },
+    {
       "id": "release-ramp",
       "display_name": "Release Ramp",
       "description": "A release-prep board that turns a shipping checklist into a clean launch lane.",
@@ -589,6 +786,39 @@
       "default_prompt": "Use $release-ramp to build a polished macOS menu-bar utility for a release-prep board that turns a shipping checklist into a clean launch lane.",
       "packs": [
         "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "replay-relay",
+      "display_name": "Replay Relay",
+      "description": "A menu-bar share lane for turning game clips, screenshots, and quick notes into send-ready handoffs without Finder hopping.",
+      "short_description": "Premium menu-bar replay relay",
+      "brand_color": "#32ADE6",
+      "path": "skills/replay-relay",
+      "skill_file": "skills/replay-relay/SKILL.md",
+      "openai_yaml": "skills/replay-relay/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $replay-relay to build a polished macOS menu-bar utility for a menu-bar share lane for turning game clips, screenshots, and quick notes into send-ready handoffs without finder hopping.",
+      "packs": [
+        "macos-utility-builders",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "reply-queue-bar",
+      "display_name": "Reply Queue Bar",
+      "description": "A menu-bar reply queue for capturing copied comments or inbox snippets, sorting what deserves a response, and handing the next reply draft forward without reopening every tab.",
+      "short_description": "Premium menu-bar reply queue bar",
+      "brand_color": "#FF375F",
+      "path": "skills/reply-queue-bar",
+      "skill_file": "skills/reply-queue-bar/SKILL.md",
+      "openai_yaml": "skills/reply-queue-bar/agents/openai.yaml",
+      "icon_small": "./assets/icon.svg",
+      "icon_large": "./assets/preview.svg",
+      "default_prompt": "Use $reply-queue-bar to build a polished macOS menu-bar utility for a menu-bar reply queue for capturing copied comments or inbox snippets, sorting what deserves a response, and handing the next reply draft forward without reopening every tab.",
+      "packs": [
+        "productivity-and-workflow"
       ]
     },
     {
@@ -722,6 +952,23 @@
       "default_prompt": "Use $story-arc-board to build a polished macOS menu-bar utility that captures recurring hooks from notes, captions, and comments without forcing extra tab switching.",
       "packs": [
         "audience-and-fandom-strategy"
+      ]
+    },
+    {
+      "id": "svg-to-3d-forge",
+      "display_name": "SVG To 3D Forge",
+      "description": "Create simple SVG assets locally and turn them into STL, OBJ, or GLB model files with an explicit Blender-based extrusion workflow.",
+      "short_description": "Local SVG scaffold and Blender-based STL, OBJ, or GLB export",
+      "brand_color": "#F97316",
+      "path": "skills/svg-to-3d-forge",
+      "skill_file": "skills/svg-to-3d-forge/SKILL.md",
+      "openai_yaml": "skills/svg-to-3d-forge/agents/openai.yaml",
+      "icon_small": "./assets/icon-small.svg",
+      "icon_large": "./assets/icon-large.svg",
+      "default_prompt": "Use $svg-to-3d-forge to scaffold a simple SVG asset or turn an existing SVG into a local STL, OBJ, or GLB export with explicit Blender-based extrusion settings.",
+      "packs": [
+        "launch-and-distribution",
+        "productivity-and-workflow"
       ]
     },
     {
@@ -885,14 +1132,15 @@
       "title": "Daily Briefs and Reference",
       "summary": "Skills for daily historical context, market-reading archives, git momentum check-ins, local monitoring, and readable exports.",
       "path": "collections/daily-briefs-and-reference.txt",
-      "skill_count": 6,
+      "skill_count": 7,
       "skills": [
         "on-this-day",
         "trading-archive",
         "gain-tracker",
         "network-studio",
         "dark-pdf-studio",
-        "deckdrop-studio"
+        "deckdrop-studio",
+        "reader-mode-bridge"
       ]
     },
     {
@@ -919,11 +1167,13 @@
       "title": "Games and Minecraft",
       "summary": "Minecraft server operations and skin tooling for play, hosting, and customization workflows.",
       "path": "collections/games-and-minecraft.txt",
-      "skill_count": 3,
+      "skill_count": 5,
       "skills": [
         "minecraft-essentials",
         "minecraft-skin-studio",
-        "session-arcade"
+        "session-arcade",
+        "minefield-menubar",
+        "minesweeper-menubar"
       ]
     },
     {
@@ -931,14 +1181,16 @@
       "title": "Launch and Distribution",
       "summary": "Skills for shaping a project, packaging it well, and getting it ready to publish or ship.",
       "path": "collections/launch-and-distribution.txt",
-      "skill_count": 6,
+      "skill_count": 8,
       "skills": [
         "repo-launch",
         "website-drop",
         "brand-kit",
         "content-pack",
         "release-ramp",
-        "launch-deck-lift"
+        "launch-deck-lift",
+        "package-hygiene-audit",
+        "svg-to-3d-forge"
       ]
     },
     {
@@ -946,7 +1198,7 @@
       "title": "macOS Utility Builders",
       "summary": "Skills for planning, shaping, or refining focused macOS utilities and menu bar tools.",
       "path": "collections/macos-utility-builders.txt",
-      "skill_count": 8,
+      "skill_count": 12,
       "skills": [
         "find-my-phone-studio",
         "cursor-studio",
@@ -955,7 +1207,11 @@
         "phone-handoff-panel",
         "battery-trend-scout",
         "power-sentry",
-        "chrome-tab-sweeper"
+        "chrome-tab-sweeper",
+        "download-landing-pad",
+        "finder-selection-relay",
+        "plist-preflight",
+        "replay-relay"
       ]
     },
     {
@@ -963,14 +1219,21 @@
       "title": "Productivity and Workflow",
       "summary": "Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.",
       "path": "collections/productivity-and-workflow.txt",
-      "skill_count": 16,
+      "skill_count": 29,
       "skills": [
         "workspace-doctor",
+        "branch-brief-bar",
         "context-shelf",
         "focus-runway",
         "front-tab-relay",
+        "excel-range-relay",
+        "meeting-link-bridge",
         "screen-snippet-studio",
         "doc-drop-bridge",
+        "deck-export-bundle",
+        "download-landing-pad",
+        "finder-selection-relay",
+        "impeccable-cli",
         "gain-tracker",
         "on-this-day",
         "trading-archive",
@@ -978,6 +1241,12 @@
         "clipboard-studio",
         "repo-ops-lens",
         "patch-pilot",
+        "package-hygiene-audit",
+        "plist-preflight",
+        "reader-mode-bridge",
+        "replay-relay",
+        "reply-queue-bar",
+        "svg-to-3d-forge",
         "network-studio",
         "dark-pdf-studio",
         "deckdrop-studio"

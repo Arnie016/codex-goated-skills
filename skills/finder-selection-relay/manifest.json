@@ -1,0 +1,49 @@
+{
+  "id": "finder-selection-relay",
+  "name": "Finder Selection Relay",
+  "category": "Workflow Automation",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A menu-bar relay for turning the current Finder selection into clean paths and handoff-ready context.",
+  "audience": [
+    "Mac users moving Finder selections into chat, notes, tickets, or terminal commands",
+    "Developers and operators who need exact local paths without Finder cleanup",
+    "People who hand off files and folders across apps all day"
+  ],
+  "tags": [
+    "Finder",
+    "files",
+    "paths",
+    "handoff",
+    "menu bar",
+    "AppleScript",
+    "clipboard"
+  ],
+  "install_command": "codex-skillctl install finder-selection-relay",
+  "docs_paths": [
+    "skills/finder-selection-relay/SKILL.md",
+    "skills/finder-selection-relay/manifest.json",
+    "skills/finder-selection-relay/agents/openai.yaml",
+    "skills/finder-selection-relay/assets/icon.svg",
+    "skills/finder-selection-relay/assets/icon-small.svg",
+    "skills/finder-selection-relay/assets/icon-large.svg",
+    "skills/finder-selection-relay/assets/preview.svg",
+    "skills/finder-selection-relay/scripts/finder_selection_relay.py",
+    "skills/finder-selection-relay/prototype/README.md",
+    "skills/finder-selection-relay/prototype/SkillMenuBarApp.swift",
+    "skills/finder-selection-relay/prototype/SkillMenuBarView.swift",
+    "skills/finder-selection-relay/prototype/SkillDetailView.swift",
+    "skills/finder-selection-relay/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Reads the current Finder selection through macOS automation and can fall back to explicit local paths without opening file contents or using the network.",
+    "Formats selected files and folders for prompt context, markdown notes, ticket bullets, or shell-safe path lists in one step.",
+    "Keeps the handoff small and menu-bar first so chosen Finder items move cleanly into the next tool."
+  ],
+  "file_path_hints": [
+    "skills/finder-selection-relay/scripts/finder_selection_relay.py",
+    "skills/finder-selection-relay/prototype/SkillMenuBarView.swift",
+    "skills/finder-selection-relay/prototype/SkillDetailView.swift"
+  ],
+  "system_symbol": "folder.badge.plus"
+}

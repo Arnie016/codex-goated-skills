@@ -1,0 +1,51 @@
+{
+  "id": "svg-to-3d-forge",
+  "name": "SVG To 3D Forge",
+  "category": "Mac OS",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A Mac-first vector forge for scaffolding SVG assets and turning them into local STL, OBJ, or GLB model files with an explicit Blender export step.",
+  "audience": [
+    "Indie makers building icons, badges, or plaques for physical output",
+    "Mac users who want a repeatable SVG-to-mesh workflow without cloud tooling",
+    "People shaping logos or interface marks into simple 3D assets"
+  ],
+  "tags": [
+    "svg",
+    "3d",
+    "blender",
+    "stl",
+    "obj",
+    "glb",
+    "vector",
+    "macOS",
+    "workflow"
+  ],
+  "install_command": "codex-skillctl install svg-to-3d-forge",
+  "docs_paths": [
+    "skills/svg-to-3d-forge/SKILL.md",
+    "skills/svg-to-3d-forge/manifest.json",
+    "skills/svg-to-3d-forge/agents/openai.yaml",
+    "skills/svg-to-3d-forge/assets/icon-small.svg",
+    "skills/svg-to-3d-forge/assets/icon-large.svg",
+    "skills/svg-to-3d-forge/assets/icon.svg",
+    "skills/svg-to-3d-forge/assets/preview.svg",
+    "skills/svg-to-3d-forge/scripts/svg_to_3d_forge.py",
+    "skills/svg-to-3d-forge/prototype/README.md",
+    "skills/svg-to-3d-forge/prototype/SkillMenuBarApp.swift",
+    "skills/svg-to-3d-forge/prototype/SkillMenuBarView.swift",
+    "skills/svg-to-3d-forge/prototype/SkillDetailView.swift",
+    "skills/svg-to-3d-forge/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Scaffolds simple vector marks, badges, plaques, or keycap-style SVG assets from deterministic local presets before they go near a mesh export.",
+    "Uses Blender locally to import SVG curves, extrude them, and export STL, OBJ, or GLB models with explicit depth, bevel, and size controls.",
+    "Keeps the workflow honest about what is good for fast prototypes versus what still needs slicer or CAD validation for production geometry."
+  ],
+  "file_path_hints": [
+    "skills/svg-to-3d-forge/scripts/svg_to_3d_forge.py",
+    "skills/svg-to-3d-forge/prototype/SkillMenuBarView.swift",
+    "skills/svg-to-3d-forge/prototype/SkillDetailView.swift"
+  ],
+  "system_symbol": "cube.transparent"
+}

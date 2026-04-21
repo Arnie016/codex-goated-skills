@@ -20,6 +20,20 @@ private enum SkillBarPalette {
 struct MenuBarView: View {
     @ObservedObject var model: SkillBarModel
 
+    private var iconEntries: [SkillCatalogEntry] {
+        model.filteredEntries.sorted {
+            if $0.isInstalled != $1.isInstalled {
+                return $0.isInstalled && !$1.isInstalled
+            }
+
+            if $0.category.rawValue != $1.category.rawValue {
+                return $0.category.rawValue < $1.category.rawValue
+            }
+
+            return $0.displayName.localizedCaseInsensitiveCompare($1.displayName) == .orderedAscending
+        }
+    }
+
     var body: some View {
         ZStack {
             LinearGradient(
@@ -32,17 +46,24 @@ struct MenuBarView: View {
                 endPoint: .bottomTrailing
             )
 
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 12) {
-                    header
-                    controlPanel
-                    sectionPicker
-                    content
-                    footer
+            HStack(spacing: 0) {
+                sidebar
+
+                Divider()
+                    .overlay(SkillBarPalette.separator)
+
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        header
+                        controlPanel
+                        content
+                        footer
+                    }
+                    .padding(14)
                 }
-                .padding(12)
+                .frame(width: 430, height: 630)
             }
-            .frame(width: 390, height: 610)
+            .frame(width: 570, height: 630)
         }
         .confirmationDialog(
             model.pendingPreset.map { "Enable \($0.title)?" } ?? "",
@@ -65,10 +86,50 @@ struct MenuBarView: View {
         }
     }
 
+    private var sidebar: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                Image(systemName: "menubar.rectangle")
+                    .font(.system(size: 22, weight: .bold))
+                    .foregroundStyle(SkillBarPalette.accent)
+                    .frame(width: 34, height: 34)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill(SkillBarPalette.accent.opacity(0.14))
+                    )
+
+                Text("SkillBar")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundStyle(SkillBarPalette.primaryText)
+                Text("Manage what Codex can use.")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(SkillBarPalette.mutedText)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            VStack(spacing: 6) {
+                ForEach(SkillBarSection.allCases) { section in
+                    sidebarButton(section)
+                }
+            }
+
+            Spacer(minLength: 0)
+
+            VStack(alignment: .leading, spacing: 7) {
+                compactSidebarMetric("Skills", "\(model.availableCount)")
+                compactSidebarMetric("Installed", "\(model.installedCount)")
+                compactSidebarMetric("Packs", "\(model.packCount)")
+            }
+        }
+        .padding(12)
+        .frame(width: 140, height: 630, alignment: .topLeading)
+        .background(SkillBarPalette.backgroundBottom.opacity(0.72))
+    }
+
     private var header: some View {
         HStack(alignment: .top, spacing: 10) {
             VStack(alignment: .leading, spacing: 3) {
-                Text("SkillBar")
+                Text(model.selectedSection.title)
                     .font(.system(size: 17, weight: .bold))
                     .foregroundStyle(SkillBarPalette.primaryText)
                 Text(model.statusHeadline)
@@ -128,7 +189,7 @@ struct MenuBarView: View {
     private var sectionPicker: some View {
         Picker("Section", selection: $model.selectedSection) {
             ForEach(SkillBarSection.allCases) { section in
-                Text(section.rawValue).tag(section)
+                Text(section.title).tag(section)
             }
         }
         .pickerStyle(.segmented)
@@ -164,6 +225,8 @@ struct MenuBarView: View {
                     }
                 }
             }
+        case .icons:
+            iconsPanel
         case .presets:
             presetsPanel
         case .packs:
@@ -214,6 +277,31 @@ struct MenuBarView: View {
             Divider().overlay(SkillBarPalette.separator)
 
             VStack(alignment: .leading, spacing: 8) {
+                sectionLabel("Menu Bar Icons", trailing: "\(model.availableCount)")
+
+                HStack(spacing: 8) {
+                    Button("Open Icons") {
+                        model.selectedSection = .icons
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .disabled(model.entries.isEmpty)
+
+                    Button("Refresh") {
+                        model.refreshCatalog()
+                    }
+                    .buttonStyle(.bordered)
+                    .disabled(model.isBusy || !model.hasValidRepo)
+                }
+
+                Text("Every installed or available skill icon lives here, with asset-backed icons shown before fallback symbols.")
+                    .font(.caption2)
+                    .foregroundStyle(SkillBarPalette.mutedText)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            Divider().overlay(SkillBarPalette.separator)
+
+            VStack(alignment: .leading, spacing: 8) {
                 sectionLabel("Repo Health", trailing: model.hasValidRepo ? "ready" : "needs repo")
 
                 HStack(spacing: 8) {
@@ -249,6 +337,21 @@ struct MenuBarView: View {
                     .font(.system(size: 11.5, weight: .medium, design: .monospaced))
                     .foregroundStyle(SkillBarPalette.primaryText)
                     .lineLimit(10)
+            }
+        }
+    }
+
+    private var iconsPanel: some View {
+        groupedPanel {
+            sectionLabel("Menu Bar Icons", trailing: "\(iconEntries.count)")
+
+            if iconEntries.isEmpty {
+                emptyState("No icons match the current search.")
+            } else {
+                ForEach(Array(iconEntries.enumerated()), id: \.element.id) { index, entry in
+                    if index > 0 { Divider().overlay(SkillBarPalette.separator) }
+                    iconLibraryRow(entry)
+                }
             }
         }
     }
@@ -417,6 +520,56 @@ struct MenuBarView: View {
         .padding(.vertical, 2)
     }
 
+    private func iconLibraryRow(_ entry: SkillCatalogEntry) -> some View {
+        HStack(alignment: .center, spacing: 10) {
+            iconView(for: entry)
+
+            VStack(alignment: .leading, spacing: 3) {
+                HStack(spacing: 6) {
+                    Text(entry.displayName)
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(SkillBarPalette.primaryText)
+                        .lineLimit(1)
+
+                    statusChip(
+                        entry.isInstalled ? "Installed" : "Available",
+                        tint: entry.isInstalled ? SkillBarPalette.installed.opacity(0.18) : SkillBarPalette.border,
+                        foreground: entry.isInstalled ? SkillBarPalette.installed : SkillBarPalette.secondaryText
+                    )
+                }
+
+                Text(iconSourceLabel(for: entry))
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(SkillBarPalette.mutedText)
+                    .lineLimit(1)
+
+                Text(entry.category.rawValue)
+                    .font(.caption2)
+                    .foregroundStyle(SkillBarPalette.secondaryText)
+                    .lineLimit(1)
+            }
+
+            Spacer(minLength: 0)
+
+            if entry.isInstalled {
+                Button(model.action(for: entry).buttonTitle) {
+                    model.runAction(for: entry)
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+                .disabled(model.isBusy || !model.hasValidRepo)
+            } else {
+                Button(model.action(for: entry).buttonTitle) {
+                    model.runAction(for: entry)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.small)
+                .disabled(model.isBusy || !model.hasValidRepo)
+            }
+        }
+        .padding(.vertical, 2)
+    }
+
     private func settingRow(title: String, value: String, action: @escaping () -> Void) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
@@ -460,6 +613,51 @@ struct MenuBarView: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 8)
         .background(groupedBackground())
+    }
+
+    private func compactSidebarMetric(_ title: String, _ value: String) -> some View {
+        HStack {
+            Text(title)
+                .font(.caption2.weight(.semibold))
+                .foregroundStyle(SkillBarPalette.mutedText)
+            Spacer(minLength: 0)
+            Text(value)
+                .font(.caption.weight(.bold))
+                .foregroundStyle(SkillBarPalette.primaryText)
+        }
+        .padding(.horizontal, 9)
+        .padding(.vertical, 7)
+        .background(
+            RoundedRectangle(cornerRadius: 9, style: .continuous)
+                .fill(SkillBarPalette.surface.opacity(0.74))
+        )
+    }
+
+    private func sidebarButton(_ section: SkillBarSection) -> some View {
+        let isSelected = model.selectedSection == section
+        return Button {
+            withAnimation(.easeInOut(duration: 0.16)) {
+                model.selectedSection = section
+            }
+        } label: {
+            HStack(spacing: 8) {
+                Image(systemName: section.symbolName)
+                    .font(.system(size: 13, weight: .semibold))
+                    .frame(width: 17)
+                Text(section == .icons ? "Icons" : section.title)
+                    .font(.caption.weight(.bold))
+                    .lineLimit(1)
+                Spacer(minLength: 0)
+            }
+            .foregroundStyle(isSelected ? SkillBarPalette.primaryText : SkillBarPalette.secondaryText)
+            .padding(.horizontal, 9)
+            .padding(.vertical, 8)
+            .background(
+                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                    .fill(isSelected ? SkillBarPalette.accent.opacity(0.18) : Color.clear)
+            )
+        }
+        .buttonStyle(.plain)
     }
 
     private func statusChip(_ title: String, tint: Color, foreground: Color) -> some View {
@@ -527,5 +725,13 @@ struct MenuBarView: View {
             }
         }
         return nil
+    }
+
+    private func iconSourceLabel(for entry: SkillCatalogEntry) -> String {
+        if let path = entry.iconSmallPath ?? entry.iconLargePath {
+            return "Asset: \(URL(fileURLWithPath: path).lastPathComponent)"
+        }
+
+        return "Fallback: \(entry.category.symbolName)"
     }
 }

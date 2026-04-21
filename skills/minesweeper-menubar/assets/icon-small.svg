@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Minesweeper Menu Bar">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0C1014"/>
+      <stop offset="100%" stop-color="#040608"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7AF0B0"/>
+      <stop offset="100%" stop-color="#D6FFE7"/>
+    </linearGradient>
+  </defs>
+  <rect x="52" y="52" width="408" height="408" rx="104" fill="url(#bg)"/>
+  <rect x="110" y="124" width="292" height="264" rx="38" fill="#0E151B" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <g fill="#17212A">
+    <rect x="140" y="160" width="58" height="58" rx="14"/>
+    <rect x="208" y="160" width="58" height="58" rx="14"/>
+    <rect x="276" y="160" width="58" height="58" rx="14"/>
+    <rect x="140" y="228" width="58" height="58" rx="14"/>
+    <rect x="208" y="228" width="58" height="58" rx="14"/>
+    <rect x="276" y="228" width="58" height="58" rx="14"/>
+    <rect x="140" y="296" width="58" height="58" rx="14"/>
+    <rect x="208" y="296" width="58" height="58" rx="14"/>
+    <rect x="276" y="296" width="58" height="58" rx="14"/>
+  </g>
+  <path d="M236 152 252 184 284 200 252 216 236 248 220 216 188 200 220 184Z" fill="url(#accent)"/>
+  <rect x="208" y="228" width="58" height="58" rx="14" fill="#F3C34D"/>
+  <path d="M227 241c8 0 13 4 13 13v3h11v9h-11v17h-9v-42h-4Z" fill="#11161C"/>
+  <text x="116" y="416" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="22" fill="#D1D5DB">Swift menu-bar Minesweeper</text>
+</svg>

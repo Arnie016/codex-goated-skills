@@ -6,6 +6,14 @@ enum SkillCategory: String, CaseIterable, Identifiable, Codable {
     case telegram = "Telegram"
     case utility = "Utilities"
     case appSpecific = "App-Specific"
+    case developerTools = "Developer Tools"
+    case workflowAutomation = "Workflow Automation"
+    case documents = "Documents"
+    case distribution = "Distribution"
+    case connectivity = "Connectivity"
+    case systemMonitoring = "System Monitoring"
+    case community = "Community"
+    case presentation = "Presentation"
     case games = "Games"
     case other = "Other"
 
@@ -18,6 +26,14 @@ enum SkillCategory: String, CaseIterable, Identifiable, Codable {
         case .telegram: return "paperplane"
         case .utility: return "menubar.rectangle"
         case .appSpecific: return "app.connected.to.app.below.fill"
+        case .developerTools: return "terminal"
+        case .workflowAutomation: return "wand.and.sparkles"
+        case .documents: return "doc.text"
+        case .distribution: return "shippingbox"
+        case .connectivity: return "network"
+        case .systemMonitoring: return "gauge.with.dots.needle.bottom.50percent"
+        case .community: return "bubble.left.and.bubble.right"
+        case .presentation: return "rectangle.3.group.fill"
         case .games: return "gamecontroller"
         case .other: return "square.grid.2x2"
         }
@@ -83,11 +99,34 @@ struct SkillPackEntry: Identifiable, Hashable, Codable {
 enum SkillBarSection: String, CaseIterable, Identifiable {
     case discover = "Discover"
     case installed = "Installed"
+    case icons = "Icons"
     case presets = "Presets"
     case packs = "Packs"
     case setup = "Setup"
 
     var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .discover: return "Discover"
+        case .installed: return "Installed"
+        case .icons: return "Menu Bar Icons"
+        case .presets: return "Presets"
+        case .packs: return "Packs"
+        case .setup: return "Settings"
+        }
+    }
+
+    var symbolName: String {
+        switch self {
+        case .discover: return "sparkle.magnifyingglass"
+        case .installed: return "checkmark.seal"
+        case .icons: return "menubar.rectangle"
+        case .presets: return "sparkles.rectangle.stack"
+        case .packs: return "shippingbox"
+        case .setup: return "gearshape"
+        }
+    }
 }
 
 enum SkillCommandAction: String, Hashable {
