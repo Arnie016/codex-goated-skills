@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Security Sentry Bar preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111F"/>
+      <stop offset="100%" stop-color="#03060A"/>
+    </linearGradient>
+    <linearGradient id="status" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34C759"/>
+      <stop offset="55%" stop-color="#F7C948"/>
+      <stop offset="100%" stop-color="#FF453A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="42" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1056" height="486" rx="34" fill="#0F172A" stroke="#FFFFFF" stroke-opacity="0.09"/>
+  <text x="112" y="142" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="24" font-weight="700" fill="#9CA3AF">Local SwiftBar security monitor</text>
+  <text x="112" y="226" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="64" font-weight="800" fill="#FFFFFF">Security Sentry Bar</text>
+  <text x="112" y="284" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="28" fill="#D1D5DB">Connections, ports, LaunchAgents, processes, and recent files at a glance.</text>
+  <rect x="112" y="334" width="360" height="12" rx="6" fill="url(#status)"/>
+  <g transform="translate(112 390)">
+    <circle cx="12" cy="12" r="12" fill="#34C759"/>
+    <text x="42" y="20" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="23" fill="#D1D5DB">Green when local checks are quiet.</text>
+    <circle cx="12" cy="62" r="12" fill="#F7C948"/>
+    <text x="42" y="70" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="23" fill="#D1D5DB">Yellow for unusual but explainable activity.</text>
+    <circle cx="12" cy="112" r="12" fill="#FF453A"/>
+    <text x="42" y="120" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="23" fill="#D1D5DB">Red for watchlist ranges or suspicious paths.</text>
+  </g>
+  <g transform="translate(812 118)">
+    <path d="M148 0l126 48v88c0 82-48 148-126 192C70 284 22 218 22 136V48L148 0z" fill="#111827" stroke="#263244" stroke-width="12"/>
+    <path d="M148 40l84 32v64c0 54-30 101-84 134-54-33-84-80-84-134V72l84-32z" fill="url(#status)"/>
+    <circle cx="148" cy="146" r="50" fill="#07111F" opacity="0.88"/>
+    <path d="M124 148l20 20 42-50" fill="none" stroke="#34C759" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect x="772" y="454" width="290" height="44" rx="14" fill="#152238"/>
+  <text x="917" y="483" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Run Full Scan</text>
+</svg>

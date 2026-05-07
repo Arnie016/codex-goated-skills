@@ -1,0 +1,10 @@
+interface:
+  display_name: "Security Sentry Bar"
+  short_description: "SwiftBar host-security monitor for ports, agents, processes, and recent file changes"
+  icon_small: "./assets/security-sentry-bar-small.svg"
+  icon_large: "./assets/security-sentry-bar-large.svg"
+  brand_color: "#34C759"
+  default_prompt: "Use $security-sentry-bar to install or refine a local SwiftBar security monitor with network, port, LaunchAgent, process, and recent-file checks."
+
+policy:
+  allow_implicit_invocation: true

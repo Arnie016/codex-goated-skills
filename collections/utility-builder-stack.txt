@@ -11,6 +11,7 @@ folder-studio
 vibe-bluetooth
 battery-trend-scout
 chrome-tab-sweeper
+security-sentry-bar
 doc-drop-bridge
 focus-runway
 handoff-courier

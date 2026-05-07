@@ -1,6 +1,6 @@
 {
   "repo": "codex-goated-skills",
-  "skill_count": 54,
+  "skill_count": 55,
   "pack_count": 10,
   "skills": [
     {
@@ -1545,6 +1545,56 @@
       ]
     },
     {
+      "id": "security-sentry-bar",
+      "display_name": "Security Sentry Bar",
+      "category": "macOS Utility Builders",
+      "status": "active",
+      "description": "Build, install, or refine a local-first macOS security monitor for SwiftBar/XBar that summarizes network connections, listening ports, LaunchAgents, unusual processes, and recent file changes from the menu bar without hidden network feeds.",
+      "short_description": "SwiftBar host-security monitor for ports, agents, processes, and recent file changes",
+      "brand_color": "#34C759",
+      "path": "skills/security-sentry-bar",
+      "skill_file": "skills/security-sentry-bar/SKILL.md",
+      "manifest_file": "skills/security-sentry-bar/manifest.json",
+      "openai_yaml": "skills/security-sentry-bar/agents/openai.yaml",
+      "icon_small": "skills/security-sentry-bar/assets/security-sentry-bar-small.svg",
+      "icon_large": "skills/security-sentry-bar/assets/security-sentry-bar-large.svg",
+      "default_prompt": "Use $security-sentry-bar to install or refine a local SwiftBar security monitor with network, port, LaunchAgent, process, and recent-file checks.",
+      "install_command": "codex-goated install security-sentry-bar",
+      "docs_paths": [
+        "skills/security-sentry-bar/SKILL.md",
+        "skills/security-sentry-bar/manifest.json",
+        "skills/security-sentry-bar/agents/openai.yaml",
+        "skills/security-sentry-bar/assets/security-sentry-bar-small.svg",
+        "skills/security-sentry-bar/assets/security-sentry-bar-large.svg",
+        "skills/security-sentry-bar/assets/icon.svg",
+        "skills/security-sentry-bar/assets/preview.svg",
+        "skills/security-sentry-bar/scripts/security-sentry-bar.1m.sh",
+        "skills/security-sentry-bar/scripts/run_security_sentry_bar.sh",
+        "skills/security-sentry-bar/references/security-sentry-map.md",
+        "skills/security-sentry-bar/references/task-spec-2026-05-07-security-sentry-bar.md",
+        "skills/security-sentry-bar/prototype/README.md",
+        "skills/security-sentry-bar/prototype/SkillMenuBarApp.swift",
+        "skills/security-sentry-bar/prototype/SkillMenuBarView.swift",
+        "skills/security-sentry-bar/prototype/SkillDetailView.swift",
+        "skills/security-sentry-bar/prototype/SkillTheme.swift"
+      ],
+      "tags": [
+        "macOS",
+        "SwiftBar",
+        "security",
+        "network",
+        "LaunchAgents",
+        "processes",
+        "local first",
+        "menu bar"
+      ],
+      "system_symbol": "checkmark.shield.fill",
+      "packs": [
+        "macos-utility-builders",
+        "utility-builder-stack"
+      ]
+    },
+    {
       "id": "session-arcade",
       "display_name": "Session Arcade",
       "category": "Games and Minecraft",
@@ -1995,14 +2045,15 @@
       "title": "macOS Utility Builders",
       "summary": "Skills for planning, shaping, or refining focused macOS utilities and menu bar tools.",
       "path": "collections/macos-utility-builders.txt",
-      "skill_count": 6,
+      "skill_count": 7,
       "skills": [
         "find-my-phone-studio",
         "cursor-studio",
         "folder-studio",
         "handoff-courier",
         "phone-handoff-panel",
-        "chrome-tab-sweeper"
+        "chrome-tab-sweeper",
+        "security-sentry-bar"
       ]
     },
     {
@@ -2039,7 +2090,7 @@
       "title": "Utility Builder Stack",
       "summary": "A practical bundle for shipping Mac utilities, local monitors, workflow tools, and app-adjacent builders.",
       "path": "collections/utility-builder-stack.txt",
-      "skill_count": 17,
+      "skill_count": 18,
       "skills": [
         "workspace-doctor",
         "project-hail-mary",
@@ -2052,6 +2103,7 @@
         "vibe-bluetooth",
         "battery-trend-scout",
         "chrome-tab-sweeper",
+        "security-sentry-bar",
         "doc-drop-bridge",
         "focus-runway",
         "handoff-courier",
