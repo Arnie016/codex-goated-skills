@@ -1,0 +1,10 @@
+interface:
+  display_name: "Plist Preflight"
+  short_description: "macOS Info.plist and entitlement metadata preflight"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#5E5CE6"
+  default_prompt: "Use $plist-preflight to audit this macOS app's Info.plist and entitlement metadata before changing build, signing, CI, or release settings."
+
+policy:
+  allow_implicit_invocation: true

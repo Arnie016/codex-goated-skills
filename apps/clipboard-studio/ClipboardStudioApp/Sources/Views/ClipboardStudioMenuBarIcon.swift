@@ -25,11 +25,11 @@ struct ClipboardStudioMenuBarIcon: View {
 
     private var accessibilityLabel: String {
         if isAlerting {
-            return "Clipboard Studio clipboard fallback ready"
+            return "\(ContextAssemblyBrand.appName) clipboard fallback ready"
         }
         if isActive {
-            return "Clipboard Studio ready"
+            return "\(ContextAssemblyBrand.appName) ready"
         }
-        return "Clipboard Studio"
+        return ContextAssemblyBrand.appName
     }
 }

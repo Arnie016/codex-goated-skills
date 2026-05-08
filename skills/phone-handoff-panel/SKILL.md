@@ -5,7 +5,7 @@ description: A device handoff panel for opening your phone, jump-starting a task
 
 # Phone Handoff Panel
 
-Use this skill when the user wants a polished macOS surface for device handoff panel for opening your phone, jump-starting a task, and keeping the Mac in the loop.
+Use this skill when the user wants a polished macOS surface for A device handoff panel for opening your phone, jump-starting a task, and keeping the Mac in the loop.
 
 ## Presentation
 

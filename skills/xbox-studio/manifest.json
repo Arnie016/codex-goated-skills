@@ -1,0 +1,46 @@
+{
+  "id": "xbox-studio",
+  "name": "Xbox Studio",
+  "category": "Games and Consoles",
+  "status": "active",
+  "stars": 4,
+  "brand_color": "#107C10",
+  "short_description": "A Mac helper for Xbox controller readiness, Bluetooth setup, cloud gaming links, Remote Play, and capture handoff.",
+  "audience": [
+    "Xbox players on Mac",
+    "Controller-first gamers",
+    "People who want official Xbox surfaces one click away"
+  ],
+  "tags": [
+    "xbox",
+    "controller",
+    "cloud gaming",
+    "bluetooth",
+    "menu bar"
+  ],
+  "install_command": "codex-skillctl install xbox-studio",
+  "docs_paths": [
+    "skills/xbox-studio/SKILL.md",
+    "skills/xbox-studio/manifest.json",
+    "skills/xbox-studio/agents/openai.yaml",
+    "skills/xbox-studio/references/controller-symptom-matrix.md",
+    "skills/xbox-studio/references/official-supported-paths.md",
+    "skills/xbox-studio/scripts/run_xbox_studio.sh",
+    "skills/xbox-studio/scripts/xbox_brief.py",
+    "skills/xbox-studio/assets/xbox-studio-small.svg",
+    "skills/xbox-studio/assets/xbox-studio-large.svg"
+  ],
+  "detail_lines": [
+    "Keeps Microsoft sign-in and account actions inside official browser or app surfaces.",
+    "Prioritizes Bluetooth and controller setup before deeper gaming links.",
+    "Avoids unsupported console-control promises and focuses on reliable Mac handoffs."
+  ],
+  "file_path_hints": [
+    "skills/xbox-studio/scripts/xbox_brief.py",
+    "skills/xbox-studio/scripts/run_xbox_studio.sh",
+    "skills/xbox-studio/references/controller-symptom-matrix.md"
+  ],
+  "icon_small": "skills/xbox-studio/assets/xbox-studio-small.svg",
+  "icon_large": "skills/xbox-studio/assets/xbox-studio-large.svg",
+  "system_symbol": "gamecontroller.fill"
+}

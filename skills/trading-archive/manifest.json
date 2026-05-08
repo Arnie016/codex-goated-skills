@@ -1,0 +1,50 @@
+{
+  "id": "trading-archive",
+  "name": "Trading Archive",
+  "category": "Productivity",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or refine Trading Archive, especially the bundled `apps/trading-archive-bar` macOS menu bar app and its feed-ingest helper.",
+  "stars": 4,
+  "short_description": "Trading article archive, reading queue, and menu bar app.",
+  "brand_color": "#2FAE7F",
+  "audience": [
+    "Traders and market readers who want a dependable research reading queue",
+    "Builders maintaining RSS or Atom feed ingest and the native trading archive menu bar app",
+    "Mac users replacing ad hoc finance tabs with a local searchable archive"
+  ],
+  "tags": [
+    "trading",
+    "research",
+    "RSS",
+    "Atom",
+    "archive",
+    "reading queue",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install trading-archive",
+  "docs_paths": [
+    "skills/trading-archive/SKILL.md",
+    "skills/trading-archive/manifest.json",
+    "skills/trading-archive/agents/openai.yaml",
+    "skills/trading-archive/assets/icon-small.svg",
+    "skills/trading-archive/assets/icon-large.svg",
+    "skills/trading-archive/references/product-spec.md",
+    "skills/trading-archive/references/project-map.md",
+    "skills/trading-archive/scripts/fetch_trading_feeds.py",
+    "skills/trading-archive/scripts/run_trading_archive.sh"
+  ],
+  "detail_lines": [
+    "Turns public or user-authorized RSS and Atom feeds into a deduped reading queue, digest, source-health report, or local archive snapshot.",
+    "Keeps the native Trading Archive Bar app and helper flow grounded in cached, searchable local reading state.",
+    "Does not assume paywalled access, brokerage account access, trading permissions, or hidden market-data subscriptions."
+  ],
+  "file_path_hints": [
+    "apps/trading-archive-bar/",
+    "skills/trading-archive/scripts/fetch_trading_feeds.py",
+    "skills/trading-archive/scripts/run_trading_archive.sh",
+    "skills/trading-archive/references/project-map.md"
+  ],
+  "icon_small": "skills/trading-archive/assets/icon-small.svg",
+  "icon_large": "skills/trading-archive/assets/icon-large.svg",
+  "system_symbol": "newspaper.fill"
+}

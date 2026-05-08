@@ -33,8 +33,8 @@ struct ReleaseRampDetailView: View {
 extension ReleaseRampDetailView {
     static var previewSections: [SkillSection] {
         [
-        SkillSection(title: "Launch surface", body: "The app shows the current release step, what is left, and the next clean move."),
-        SkillSection(title: "Why it helps", body: "It reduces the friction of remembering release steps when the room is already busy."),
+        SkillSection(title: "Launch surface", body: "The app shows the current release step, what is left, and the next clean move.")
+        SkillSection(title: "Why it helps", body: "It reduces the friction of remembering release steps when the room is already busy.")
         SkillSection(title: "Design direction", body: "Use one bold action, two supporting checks, and a restrained progress strip.")
         ]
     }

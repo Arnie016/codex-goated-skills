@@ -33,8 +33,8 @@ struct PhoneHandoffPanelDetailView: View {
 extension PhoneHandoffPanelDetailView {
     static var previewSections: [SkillSection] {
         [
-        SkillSection(title: "Device loop", body: "Surface the phone actions that matter now instead of every possible option."),
-        SkillSection(title: "Behavior", body: "Lead with open, locate, and continue actions because those are the ones people repeat."),
+        SkillSection(title: "Device loop", body: "Surface the phone actions that matter now instead of every possible option.")
+        SkillSection(title: "Behavior", body: "Lead with open, locate, and continue actions because those are the ones people repeat.")
         SkillSection(title: "Mac feel", body: "The UI should stay calm, compact, and native so it belongs in the menu bar.")
         ]
     }

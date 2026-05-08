@@ -24,6 +24,17 @@ Top-level README should include:
 - compact table of skills
 - app or extras table only if needed
 
+## Multi-Project Collection
+
+Best when the repo intentionally bundles several apps, skills, packs, or outputs that share one top-level launch surface.
+
+Top-level README should include:
+
+- a compact index of the primary products or workspaces
+- the repo's first command or manager surface
+- one-line notes on where each subproject lives
+- only the setup steps that are shared across the bundle
+
 ## Library Or SDK Repo
 
 Best when the repo is meant to be imported into another project.

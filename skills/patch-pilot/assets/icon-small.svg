@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Patch Pilot">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F14"/>
+      <stop offset="100%" stop-color="#05070B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#30D158"/>
+      <stop offset="100%" stop-color="#9AF0B8"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <circle cx="394" cy="114" r="88" fill="#30D158" opacity="0.16"/>
+  <circle cx="126" cy="390" r="106" fill="#30D158" opacity="0.10"/>
+  <rect x="92" y="100" width="328" height="312" rx="68" fill="#11161E" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="120" y="128" width="272" height="70" rx="22" fill="url(#accent)"/>
+  <text x="146" y="173" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="34" font-weight="800" fill="#FFFFFF">Patch Pilot</text>
+  <rect x="120" y="224" width="272" height="150" rx="28" fill="#0E131A" stroke="#FFFFFF" stroke-opacity="0.06"/>
+  <rect x="148" y="252" width="94" height="94" rx="24" fill="#30D158" opacity="0.96"/>
+  <text x="195" y="309" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="36" font-weight="800" fill="#FFFFFF">PP</text>
+  <text x="270" y="288" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">Diff triage</text>
+  <text x="270" y="320" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="16" fill="#C9D1D9">Next safe move</text>
+</svg>

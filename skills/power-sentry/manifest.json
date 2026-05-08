@@ -40,5 +40,7 @@
     "skills/power-sentry/prototype/SkillMenuBarApp.swift",
     "skills/power-sentry/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/power-sentry/assets/icon-small.svg",
+  "icon_large": "skills/power-sentry/assets/icon-large.svg",
   "system_symbol": "battery.100"
 }

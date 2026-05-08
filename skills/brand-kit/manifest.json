@@ -1,0 +1,46 @@
+{
+  "id": "brand-kit",
+  "name": "Brand Kit",
+  "category": "Distribution",
+  "status": "active",
+  "description": "Create lightweight brand assets and launch metadata for a project. Use when Codex needs to give a repo, product, or skill a simple visual identity with a logo direction, banner ideas, social preview copy, and short positioning text.",
+  "stars": 4,
+  "short_description": "Lightweight visual identity and launch metadata for projects.",
+  "brand_color": "#EC4899",
+  "audience": [
+    "Solo builders preparing a repo, app, or skill for sharing",
+    "Launch operators who need consistent copy and visual direction",
+    "Teams turning rough product language into reusable brand assets"
+  ],
+  "tags": [
+    "brand",
+    "identity",
+    "logo",
+    "launch",
+    "metadata",
+    "copy",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install brand-kit",
+  "docs_paths": [
+    "skills/brand-kit/SKILL.md",
+    "skills/brand-kit/manifest.json",
+    "skills/brand-kit/agents/openai.yaml",
+    "skills/brand-kit/assets/brand-kit-small.svg",
+    "skills/brand-kit/assets/brand-kit-large.svg",
+    "skills/brand-kit/references/brand-system.md"
+  ],
+  "detail_lines": [
+    "Turns a project name, audience, and current tone into one reusable brand direction instead of a pile of disconnected options.",
+    "Produces practical launch artifacts: positioning, compact color direction, logo concept, README or page headline, meta description, and social preview text.",
+    "Keeps the workflow local-first and prompt-driven, with no hidden network calls, account tokens, or persistent brand database."
+  ],
+  "file_path_hints": [
+    "skills/brand-kit/SKILL.md",
+    "skills/brand-kit/references/brand-system.md",
+    "skills/brand-kit/assets/"
+  ],
+  "icon_small": "skills/brand-kit/assets/brand-kit-small.svg",
+  "icon_large": "skills/brand-kit/assets/brand-kit-large.svg",
+  "system_symbol": "paintpalette.fill"
+}

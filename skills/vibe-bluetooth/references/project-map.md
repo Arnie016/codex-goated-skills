@@ -16,6 +16,8 @@ Default workspace: use `apps/vibe-widget` when working inside this repository. O
 - `VibeWidgetApp/Sources/Views/`: onboarding, dashboard, and AI panel
 - `VibeWidgetWidget/Sources/`: widget timeline and quick intents
 - `VibeWidgetCore/Sources/`: shared models and app-group storage
+- `VibeWidgetCore/Tests/ContextLibraryTests.swift`: deterministic coverage for token estimation and chunk sizing
+- `VibeWidgetCore/Tests/FallbackIntentParserTests.swift`: deterministic coverage for the fallback command parser
 
 ## Run And Build Notes
 
@@ -23,10 +25,13 @@ Default workspace: use `apps/vibe-widget` when working inside this repository. O
   `bash scripts/run_vibe_bluetooth.sh <command>`
 - If the app lives outside the current repo, use:
   `bash scripts/run_vibe_bluetooth.sh --workspace /path/to/vibe-widget <command>`
+- `inspect` prints the key app, widget, core, and test files for quick orientation.
 - `generate` uses `xcodegen`.
 - `open` launches `VibeWidget.xcodeproj`.
-- `typecheck` uses the local SDK and a temporary core module for a lightweight sanity pass.
-- `build` requires the Xcode license to be accepted and full Xcode to be available.
+- `typecheck` uses the local SDK, a temporary core module, and a workspace-local module cache for a lightweight sanity pass.
+- `test` runs the `VibeWidgetCoreTests` bundle with `xcodebuild test` and unsigned local validation.
+- `build` uses the workspace-local `.build-debug` folder and unsigned local validation so it stays usable without a development certificate, while still requiring full Xcode.
+- `run` builds the app, stops any existing `VibeWidget` process, and opens the local app bundle from `.build-debug/Build/Products/Debug/VibeWidget.app`.
 
 ## Constraints
 

@@ -1,0 +1,46 @@
+# On This Day Bar Project Map
+
+Default workspace: use `apps/on-this-day-bar` when working inside this repository. Otherwise pass `--workspace /path/to/on-this-day-bar` to the runner.
+
+## Target
+
+- `OnThisDayBar`: macOS SwiftUI menu bar app with cached-feed fallback and a settings scene
+
+## Main Files
+
+- `project.yml`: XcodeGen spec for the app and unit-test target
+- `OnThisDayBarApp/Info.plist`: menu-bar-only metadata
+- `OnThisDayBarApp/Sources/App/OnThisDayBarApp.swift`: app entry point and settings scene wiring
+- `OnThisDayBarApp/Sources/App/OnThisDayBarAppModel.swift`: date navigation, category selection, and user-facing state
+- `OnThisDayBarApp/Sources/App/OnThisDayBarModels.swift`: feed and presentation models
+- `OnThisDayBarApp/Sources/Services/OnThisDayFeedService.swift`: live Wikimedia fetch and decode path
+- `OnThisDayBarApp/Sources/Services/OnThisDayStore.swift`: local cache and fallback state
+- `OnThisDayBarApp/Sources/Views/OnThisDayBarMenuBarView.swift`: compact menu bar UI
+- `OnThisDayBarApp/Sources/Views/OnThisDayBarSettingsView.swift`: default-category and story-depth settings
+- `OnThisDayBarApp/Sources/Views/OnThisDayBarTheme.swift`: app-level styling tokens
+- `OnThisDayBarApp/Tests/OnThisDayBarTests.swift`: date, feed, and view-model coverage
+
+## Run And Build Notes
+
+- Use the runner script first:
+  `bash scripts/run_on_this_day_bar.sh <command>`
+- If the app lives outside the current repo, use:
+  `bash scripts/run_on_this_day_bar.sh --workspace /path/to/on-this-day-bar <command>`
+- `generate` uses `xcodegen`.
+- `open` launches `OnThisDayBar.xcodeproj`.
+- `build` and `test` use `xcodebuild` with a local `.build-debug` derived-data folder.
+- `run` builds and opens `OnThisDayBar.app` from `.build-debug/Build/Products/Debug`.
+
+## Helper Scripts
+
+- `scripts/run_on_this_day_bar.sh`
+  - local wrapper for doctor, inspect, generate, open, build, test, and run
+- `scripts/fetch_on_this_day.py`
+  - local wrapper for deterministic Wikimedia feed snapshots
+
+## Constraints
+
+- Keep the app menu-bar-first and compact.
+- Preserve local-only feed inspection and cached fallback behavior.
+- Treat historical results as source-grounded guidance, not invented fact.
+- Keep current-day source state and stale-cache messaging explicit.

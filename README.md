@@ -1,42 +1,110 @@
-# codex-goated-skills
+# Iconbar
 
-Community Codex skills and apps for macOS, automation, deployment, design, networking, PDFs, slides, developer workflows, creator-side tooling, and game-side helpers.
+Local-first skills and Swift macOS icon-bar apps for automation, deployment, design, networking, PDFs, slides, developer workflows, and personality-led audience strategy.
 
 Install by name, browse by use case, or pull the full pack when you want a broader toolbox.
+
+`SkillBar` is now the primary local manager for the pack: a professional macOS menu bar app that reads this repo, shows what is already installed under `~/.codex/skills`, and enables curated preset bundles from the top bar.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-111827?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/LICENSE)
 [![Install All](https://img.shields.io/badge/install-all_skills-0f172a?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-all-skills.sh)
 [![Install By Name](https://img.shields.io/badge/install-by_name-1d4ed8?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-skill.sh)
+[![Install Fandom Pack](https://img.shields.io/badge/install-fandom_pack-e76f51?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/scripts/install-fandom-pack.sh)
+[![Browse Packs](https://img.shields.io/badge/browse-packs-0ea5e9?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
+[![Catalog Audit](https://img.shields.io/badge/catalog-audit-10b981?style=flat-square)](https://github.com/Arnie016/codex-goated-skills/blob/main/catalog/README.md)
 
 ## Install
 
-Install the CLI once:
+Recommended install:
+
+```bash
+pipx install git+https://github.com/Arnie016/codex-goated-skills.git
+```
+
+If you do not use `pipx`:
+
+```bash
+python3 -m pip install --user git+https://github.com/Arnie016/codex-goated-skills.git
+```
+
+After publishing to PyPI, the install command becomes:
+
+```bash
+pipx install iconbar
+```
+
+Shell installer fallback:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-cli.sh | sh
 ```
 
-Then use:
+No `cd` is needed after install. Open any terminal folder and run:
 
 ```bash
-codex-goated list
-codex-goated install network-studio
-codex-goated install handoff-courier
-codex-goated install repo-ops-lens
-codex-goated install screen-snippet-studio
-codex-goated install xbox-studio
-codex-goated install minecraft-essentials
-codex-goated install session-arcade
-codex-goated install deckdrop-studio
-codex-goated install clipboard-studio
-codex-goated install project-hail-mary
-codex-goated install find-my-phone-studio
-codex-goated install cursor-studio
-codex-goated install folder-studio
-codex-goated install dark-pdf-studio
-codex-goated install --all
-codex-goated update vibe-bluetooth
+iconbar search workflow
+iconbar pack list
+iconbar security
 ```
+
+Common commands:
+
+```bash
+iconbar list
+iconbar doctor
+iconbar install network-studio
+iconbar install wifi-watchtower
+iconbar install meeting-link-bridge
+iconbar install minecraft-essentials
+iconbar install deckdrop-studio
+iconbar install clipboard-studio
+iconbar install gain-tracker
+iconbar install on-this-day
+iconbar install on-this-day-bar
+iconbar install trading-archive
+iconbar install skillbar
+iconbar install find-my-phone-studio
+iconbar install flight-scout
+iconbar install cursor-studio
+iconbar install folder-studio
+iconbar install dark-pdf-studio
+iconbar install fan-canon-miner comment-pulse-board iconography-lab
+iconbar search minecraft
+iconbar security
+iconbar catalog check
+iconbar audit
+iconbar pack list
+iconbar pack show daily-briefs-and-reference
+iconbar pack show fandom-skill-pack
+iconbar pack show creator-and-fandom-stack
+iconbar pack install daily-briefs-and-reference
+iconbar pack install fandom-skill-pack
+iconbar pack install launch-and-distribution
+iconbar install --all
+iconbar update vibe-bluetooth
+```
+
+The same CLI can print a downloadable product bundle for sharing or release:
+
+```bash
+iconbar press --output dist
+```
+
+That produces a `iconbar-cli.tar.gz` archive with the CLI, catalog, packs, skills, local scripts, and source app workspaces. The archive includes an `install.sh` entrypoint, so a user can unpack it and install the CLI without depending on a live checkout:
+
+```bash
+tar -xzf dist/iconbar-cli.tar.gz
+cd iconbar-cli
+./install.sh
+```
+
+Security guardrails are visible from the CLI:
+
+```bash
+iconbar security
+```
+
+Iconbar installs into the current user's skills folder, rejects path-like skill and pack names, refuses non-HTTPS custom repo URLs, refuses to overwrite symlinked skill directories, and runs a catalog audit before printing release bundles.
 
 Raw script fallback:
 
@@ -44,55 +112,99 @@ Raw script fallback:
 bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-skill.sh) network-studio
 ```
 
-Then restart Codex.
+Install a pack:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/main/scripts/install-pack.sh) creator-and-fandom-stack
+```
+
+Then restart your assistant app.
+
+## Install the Codex plugin
+
+Clone the repo, run the plugin installer, then reopen Codex:
+
+```bash
+git clone https://github.com/Arnie016/codex-goated-skills.git
+cd codex-goated-skills
+./scripts/install_macos_icon_bars.sh
+```
+
+That installs the `macOS Icon Bars` plugin into `~/plugins/macos-icon-bars`, registers it in `~/.agents/plugins/marketplace.json`, and makes this repo's bundled skills available through one Codex plugin.
+
+One-command branch installer:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/refs/heads/codex/macos-icon-bars-plugin/scripts/install_macos_icon_bars_from_github.sh)
+```
+
+After install, fully quit and reopen Codex, then ask: `What can macOS Icon Bars do?`
+
+Tracking notes:
+
+- The installer sends anonymous aggregate counters for starts and successful installs.
+- Approximate unique installs are counted once per Mac by storing a tiny local state file under `~/Library/Application Support/macos-icon-bars/`.
+- No username, hostname, or local file paths are sent.
+- Disable tracking for a run with:
+
+```bash
+MACOS_ICON_BARS_TRACKING=0 bash <(curl -fsSL https://raw.githubusercontent.com/Arnie016/codex-goated-skills/refs/heads/codex/macos-icon-bars-plugin/scripts/install_macos_icon_bars_from_github.sh)
+```
+
+- View the current counters locally with:
+
+```bash
+./scripts/show_macos_icon_bars_metrics.sh
+```
 
 ## Skills vs Apps
 
 - `skills/` are installable Codex skill packages
 - `apps/` are standalone project codebases you can open, build, and run
 
+## Collections and Catalog
+
+- Browse all use-case packs in [`collections/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
+- Browse the full audited skill catalog in [`catalog/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/catalog/README.md)
+- Use the machine-readable index at [`catalog/index.json`](https://github.com/Arnie016/codex-goated-skills/blob/main/catalog/index.json)
+- Use `iconbar search <query>` when you know the problem but not the skill name yet
+- Use `iconbar catalog check` to confirm the generated catalog is current
+- Use `iconbar audit` to validate the skill packages and pack coverage locally
+
+## Popular Packs
+
+| Use case | Pack | Install command |
+| --- | --- | --- |
+| Launch a project cleanly | `launch-and-distribution` | `iconbar pack install launch-and-distribution` |
+| Build out creator and fandom strategy | `creator-and-fandom-stack` | `iconbar pack install creator-and-fandom-stack` |
+| Install only the personality-led audience suite | `fandom-skill-pack` | `iconbar pack install fandom-skill-pack` |
+| Build a daily ritual stack for facts, pulse, and market-reading archives | `daily-briefs-and-reference` | `iconbar pack install daily-briefs-and-reference` |
+| Build focused Mac utilities | `macos-utility-builders` | `iconbar pack install macos-utility-builders` |
+| Pull the workflow and local tooling stack | `productivity-and-workflow` | `iconbar pack install productivity-and-workflow` |
+
 ## Start Here
 
-- Fix the blocker first with `workspace-doctor`
+- Fix the blocker first with `iconbar doctor` or `workspace-doctor`
 - Ship a project with `repo-launch`, `website-drop`, or `content-pack`
-- Build a utility with `network-studio`, `find-my-phone-studio`, `clipboard-studio`, or `project-hail-mary`
-- Tighten Mac handoffs and AI-assisted workflows with `handoff-courier`, `screen-snippet-studio`, `repo-ops-lens`, or `focus-runway`
-- Set up Xbox play, controller, and capture helpers with `xbox-studio`
+- Build a utility with `network-studio`, `wifi-watchtower`, `find-my-phone-studio`, or `clipboard-studio`
+- Connect GitHub, scan a workspace folder for repos, track daily git gains, and measure a before-versus-now output climb with `gain-tracker`
+- Open a same-day historical briefing ritual with `on-this-day` or `on-this-day-bar`
+- Build a reusable market-reading archive with `trading-archive`
+- Build a personality-led audience strategy stack with the [`Fandom Skill Pack`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/fandom-skill-pack.md)
+- Browse all download packs in [`collections/README.md`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/README.md)
+- Manage the whole pack from the top bar with `skillbar`
 - Create polished outputs with `dark-pdf-studio` and `deckdrop-studio`
-
-## Recent Skill Factory Additions
-
-These newer skills are now synced into `main`. They also work as lightweight market intelligence for where this repo can keep compounding: AI-assisted developer tooling, browser-native creative handoffs, and compact OSS-style utilities that are easy to understand fast.
-
-- AI infra for developers: `repo-ops-lens`, `screen-snippet-studio`, and `chrome-tab-sweeper`
-- Browser-native creative and handoff tools: `launch-deck-lift`, `doc-drop-bridge`, and `handoff-courier`
-- Compact Mac utilities with obvious value fast: `battery-trend-scout`, `power-sentry`, `focus-runway`, and `phone-handoff-panel`
-
-| Skill | Category | What it does |
-| --- | --- | --- |
-| [`battery-trend-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/battery-trend-scout) | System Monitoring | Calm Mac-style battery panel with charge, power source, energy mode, and trend context. |
-| [`chrome-tab-sweeper`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/chrome-tab-sweeper) | Mac OS | A Mac menu-bar tab control surface for understanding overloaded Chrome windows and closing selected tab piles in one shot. |
-| [`doc-drop-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/doc-drop-bridge) | Documents | A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files. |
-| [`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway) | Productivity | A quiet focus launcher that trims context switching and starts the next working block cleanly. |
-| [`handoff-courier`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/handoff-courier) | Mac OS | A polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics. |
-| [`launch-deck-lift`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/launch-deck-lift) | Presentation | A presentation helper that turns a rough idea into a clean launch deck starter. |
-| [`phone-handoff-panel`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/phone-handoff-panel) | Connectivity | A device handoff panel for opening your phone, jump-starting a task, and keeping the Mac in the loop. |
-| [`power-sentry`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/power-sentry) | System Monitoring | A battery-and-power watch that helps you read drain, charging, and energy mode at a glance. |
-| [`release-ramp`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/release-ramp) | Distribution | A release-prep board that turns a shipping checklist into a clean launch lane. |
-| [`repo-ops-lens`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/repo-ops-lens) | Developer Tools | A repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion. |
-| [`screen-snippet-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/screen-snippet-studio) | Workflow Automation | A menu-bar capture studio for clipping the current screen into clean prompts, tickets, or handoffs. |
-| [`session-arcade`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/session-arcade) | Games and Consoles | A launch-night helper for game sessions, cloud gaming, and quick console handoffs. |
-| [`story-arc-board`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/story-arc-board) | Community & Narrative | A menu-bar board for capturing repeated hooks from notes, captions, and comments before they disappear into app sprawl. |
+- Keep Teams and browser meeting links ready to hand off with `meeting-link-bridge`
 
 ## Skills
 
 Browse by use case:
 [Launch and Distribution](#launch-and-distribution) ·
 [Productivity and Workflow](#productivity-and-workflow) ·
-[Audience and Narrative](#audience-and-narrative) ·
+[Audience and Fandom Strategy](#audience-and-fandom-strategy) ·
 [macOS Utility Builders](#macos-utility-builders) ·
 [App-Specific Skills](#app-specific-skills) ·
-[Games and Consoles](#games-and-consoles)
+[Games and Minecraft](#games-and-minecraft)
 
 ### Launch and Distribution
 
@@ -102,31 +214,62 @@ Browse by use case:
 | <img src="skills/website-drop/assets/website-drop-small.svg" width="26" alt="Website Drop" /><br/>[`website-drop`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/website-drop) | Audits a web app, picks a host, and gets it live fast | `website-drop` |
 | <img src="skills/brand-kit/assets/brand-kit-small.svg" width="26" alt="Brand Kit" /><br/>[`brand-kit`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/brand-kit) | Builds a reusable logo, color, and launch metadata system | `brand-kit` |
 | <img src="skills/content-pack/assets/content-pack-small.svg" width="26" alt="Content Pack" /><br/>[`content-pack`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/content-pack) | Turns one project into paste-ready launch and README copy | `content-pack` |
-| <img src="skills/release-ramp/assets/icon-small.svg" width="26" alt="Release Ramp" /><br/>[`release-ramp`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/release-ramp) | A release-prep board that turns a shipping checklist into a clean launch lane | `release-ramp` |
-| <img src="skills/repo-ops-lens/assets/icon-small.svg" width="26" alt="Repo Ops Lens" /><br/>[`repo-ops-lens`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/repo-ops-lens) | A repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion | `repo-ops-lens` |
-| <img src="skills/launch-deck-lift/assets/icon-small.svg" width="26" alt="Launch Deck Lift" /><br/>[`launch-deck-lift`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/launch-deck-lift) | A presentation helper that turns a rough idea into a clean launch deck starter | `launch-deck-lift` |
+| <img src="skills/release-ramp/assets/icon.svg" width="26" alt="Release Ramp" /><br/>[`release-ramp`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/release-ramp) | Turns a shipping checklist into a compact launch lane with one clear next step | `release-ramp` |
+| <img src="skills/launch-deck-lift/assets/icon.svg" width="26" alt="Launch Deck Lift" /><br/>[`launch-deck-lift`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/launch-deck-lift) | Shapes a rough idea into a cleaner launch-deck starter from a menu bar utility surface | `launch-deck-lift` |
+| <img src="skills/package-hygiene-audit/assets/icon-small.svg" width="26" alt="Package Hygiene Audit" /><br/>[`package-hygiene-audit`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/package-hygiene-audit) | Audits local release packages, app bundles, notes, screenshots, and ship-readiness | `package-hygiene-audit` |
+| <img src="skills/svg-to-3d-forge/assets/icon-small.svg" width="26" alt="SVG To 3D Forge" /><br/>[`svg-to-3d-forge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/svg-to-3d-forge) | Turns SVG assets into local STL, OBJ, or GLB export workflows | `svg-to-3d-forge` |
 
 ### Productivity and Workflow
 
 | Skill | What it does | Install name |
 | --- | --- | --- |
-| <img src="skills/workspace-doctor/assets/workspace-doctor-small.svg" width="26" alt="Workspace Doctor" /><br/>[`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor) | Finds the real local setup blocker and next fix fast | `workspace-doctor` |
-| <img src="skills/clipboard-studio/assets/clipboard-studio-small.svg" width="26" alt="Clipboard Studio" /><br/>[`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio) | Shapes a macOS copy-and-paste power tool with history, pinned snippets, and transforms | `clipboard-studio` |
-| <img src="skills/project-hail-mary/assets/project-hail-mary-small.svg" width="26" alt="Project Hail Mary" /><br/>[`project-hail-mary`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/project-hail-mary) | Builds a macOS rescue launcher that can kick off a hype track, open critical work surfaces, start a countdown, and copy a heads-down status update | `project-hail-mary` |
+| <img src="skills/workspace-doctor/assets/workspace-doctor-small.svg" width="26" alt="Workspace Doctor" /><br/>[`workspace-doctor`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/workspace-doctor) | Finds the real blocker, catalog freshness, and next repo-native command fast | `workspace-doctor` |
+| <img src="skills/branch-brief-bar/assets/icon-small.svg" width="26" alt="Branch Brief Bar" /><br/>[`branch-brief-bar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/branch-brief-bar) | Turns local git state into a review-ready branch handoff | `branch-brief-bar` |
+| <img src="skills/context-shelf/assets/icon.svg" width="26" alt="Context Shelf" /><br/>[`context-shelf`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/context-shelf) | Parks the current tab, clipboard snippet, and scratch note so resuming after a task switch is one glance instead of a rebuild | `context-shelf` |
+| <img src="skills/focus-runway/assets/icon.svg" width="26" alt="Focus Runway" /><br/>[`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway) | Starts the next work block with less setup and less context switching | `focus-runway` |
+| <img src="skills/front-tab-relay/assets/icon.svg" width="26" alt="Front Tab Relay" /><br/>[`front-tab-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/front-tab-relay) | Captures the front browser tab and formats it for prompts, notes, tickets, or chat handoffs | `front-tab-relay` |
+| <img src="skills/excel-range-relay/assets/icon.svg" width="26" alt="Excel Range Relay" /><br/>[`excel-range-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/excel-range-relay) | Turns a copied Excel selection into clean markdown, CSV, JSON, or prompt-ready context without rebuilding the table by hand | `excel-range-relay` |
+| <img src="skills/meeting-link-bridge/assets/icon.svg" width="26" alt="Meeting Link Bridge" /><br/>[`meeting-link-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/meeting-link-bridge) | Turns the current Teams or browser meeting link into a clean join note, email snippet, or fast open action | `meeting-link-bridge` |
+| <img src="skills/screen-snippet-studio/assets/icon.svg" width="26" alt="Screen Snippet Studio" /><br/>[`screen-snippet-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/screen-snippet-studio) | Turns screen snippets into clean prompts, tickets, or handoffs from a menu bar capture flow | `screen-snippet-studio` |
+| <img src="skills/doc-drop-bridge/assets/icon.svg" width="26" alt="Doc Drop Bridge" /><br/>[`doc-drop-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/doc-drop-bridge) | Packages notes, markdown, and fragments into share-ready handoff files | `doc-drop-bridge` |
+| <img src="skills/deck-export-bundle/assets/icon-small.svg" width="26" alt="Deck Export Bundle" /><br/>[`deck-export-bundle`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/deck-export-bundle) | Packages a current slide deck, notes, and send-ready assets from one compact surface | `deck-export-bundle` |
+| <img src="skills/download-landing-pad/assets/icon-small.svg" width="26" alt="Download Landing Pad" /><br/>[`download-landing-pad`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/download-landing-pad) | Stages fresh downloads with safe rename, reveal, and route actions | `download-landing-pad` |
+| <img src="skills/finder-selection-relay/assets/icon-small.svg" width="26" alt="Finder Selection Relay" /><br/>[`finder-selection-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/finder-selection-relay) | Turns selected Finder items into clean paths and handoff-ready context | `finder-selection-relay` |
+| <img src="skills/impeccable-cli/assets/impeccable-cli-small.svg" width="26" alt="Impeccable CLI" /><br/>[`impeccable-cli`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/impeccable-cli) | Runs deterministic frontend design scans and live anti-pattern overlays | `impeccable-cli` |
+| <img src="skills/gain-tracker/assets/icon-small.svg" width="26" alt="Gain Tracker" /><br/>[`gain-tracker`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/gain-tracker) | Connects GitHub, scans local repo folders, and turns daily git gains into reminder stories and progress toward 90x | `gain-tracker` |
+| <img src="skills/on-this-day/assets/icon-small.svg" width="26" alt="On This Day" /><br/>[`on-this-day`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day) | Pulls the official Wikimedia day feed into a polished historical briefing or Mac-style day browser | `on-this-day` |
+| <img src="skills/trading-archive/assets/icon-small.svg" width="26" alt="Trading Archive" /><br/>[`trading-archive`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/trading-archive) | Builds a saved archive of trading articles from public feeds, then surfaces a reading queue, source health, and a native menu bar workflow | `trading-archive` |
+| <img src="skills/skillbar/assets/skillbar-small.svg" width="26" alt="SkillBar" /><br/>[`skillbar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/skillbar) | Builds and refines SkillBar, the macOS top-bar manager for the goated skill catalog, installed state, and preset bundles | `skillbar` |
+| <img src="skills/clipboard-studio/assets/clipboard-studio-small.svg" width="26" alt="Context Assembly" /><br/>[`clipboard-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clipboard-studio) | Shapes Context Assembly on macOS so code, logs, pages, and selections become one structured prompt with resumable state instead of Cmd+C, switch, Cmd+V loops | `clipboard-studio` |
+| <img src="skills/repo-ops-lens/assets/icon.svg" width="26" alt="Repo Ops Lens" /><br/>[`repo-ops-lens`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/repo-ops-lens) | Turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion | `repo-ops-lens` |
+| <img src="skills/patch-pilot/assets/icon.svg" width="26" alt="Patch Pilot" /><br/>[`patch-pilot`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/patch-pilot) | Turns a diff, staged change list, or review thread into a fix brief, risk scan, and next command | `patch-pilot` |
+| <img src="skills/package-hygiene-audit/assets/icon-small.svg" width="26" alt="Package Hygiene Audit" /><br/>[`package-hygiene-audit`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/package-hygiene-audit) | Audits a local package or release folder for ship-readiness | `package-hygiene-audit` |
+| <img src="skills/plist-preflight/assets/icon-small.svg" width="26" alt="Plist Preflight" /><br/>[`plist-preflight`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/plist-preflight) | Checks macOS Info.plist and entitlement metadata before build or signing changes | `plist-preflight` |
+| <img src="skills/reader-mode-bridge/assets/icon-small.svg" width="26" alt="Reader Mode Bridge" /><br/>[`reader-mode-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/reader-mode-bridge) | Cleans saved reading material into deterministic local handoffs | `reader-mode-bridge` |
+| <img src="skills/replay-relay/assets/icon-small.svg" width="26" alt="Replay Relay" /><br/>[`replay-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/replay-relay) | Packages clips, screenshots, and quick notes into send-ready replay handoffs | `replay-relay` |
+| <img src="skills/reply-queue-bar/assets/icon-small.svg" width="26" alt="Reply Queue Bar" /><br/>[`reply-queue-bar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/reply-queue-bar) | Captures comments or inbox snippets and queues the next useful reply | `reply-queue-bar` |
 | <img src="skills/network-studio/assets/network-studio-small.svg" width="26" alt="Network Studio" /><br/>[`network-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/network-studio) | macOS LAN monitor with SwiftBar and a dashboard | `network-studio` |
 | <img src="skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg" width="26" alt="Dark PDF Studio" /><br/>[`dark-pdf-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/dark-pdf-studio) | Converts PDFs, docs, and images into dark-background reading PDFs with a compact export flow | `dark-pdf-studio` |
 | <img src="skills/deckdrop-studio/assets/deckdrop-studio-small.svg" width="26" alt="Deckdrop Studio" /><br/>[`deckdrop-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/deckdrop-studio) | Builds and refines editable slide deck workflows for mixed-source inputs | `deckdrop-studio` |
-| <img src="skills/focus-runway/assets/icon-small.svg" width="26" alt="Focus Runway" /><br/>[`focus-runway`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/focus-runway) | A quiet focus launcher that trims context switching and starts the next working block cleanly | `focus-runway` |
-| <img src="skills/screen-snippet-studio/assets/icon-small.svg" width="26" alt="Screen Snippet Studio" /><br/>[`screen-snippet-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/screen-snippet-studio) | A menu-bar capture studio for clipping the current screen into clean prompts, tickets, or handoffs | `screen-snippet-studio` |
-| <img src="skills/doc-drop-bridge/assets/icon-small.svg" width="26" alt="Doc Drop Bridge" /><br/>[`doc-drop-bridge`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/doc-drop-bridge) | A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files | `doc-drop-bridge` |
-| <img src="skills/battery-trend-scout/assets/icon-small.svg" width="26" alt="Battery Trend Scout" /><br/>[`battery-trend-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/battery-trend-scout) | Calm Mac-style battery panel with charge, power source, energy mode, and trend context | `battery-trend-scout` |
-| <img src="skills/power-sentry/assets/icon-small.svg" width="26" alt="Power Sentry" /><br/>[`power-sentry`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/power-sentry) | A battery-and-power watch that helps you read drain, charging, and energy mode at a glance | `power-sentry` |
 
-### Audience and Narrative
+### Audience and Fandom Strategy
+
+Collection:
+[`Fandom Skill Pack`](https://github.com/Arnie016/codex-goated-skills/blob/main/collections/fandom-skill-pack.md)
 
 | Skill | What it does | Install name |
 | --- | --- | --- |
-| <img src="skills/story-arc-board/assets/icon-small.svg" width="26" alt="Story Arc Board" /><br/>[`story-arc-board`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/story-arc-board) | A menu-bar board for capturing repeated hooks from notes, captions, and comments before they disappear into app sprawl | `story-arc-board` |
+| <img src="skills/fan-canon-miner/assets/icon-small.svg" width="26" alt="Fan Canon Miner" /><br/>[`fan-canon-miner`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/fan-canon-miner) | Mines comments, interviews, captions, and fan chatter into a usable canon map | `fan-canon-miner` |
+| <img src="skills/comment-pulse-board/assets/icon-small.svg" width="26" alt="Comment Pulse Board" /><br/>[`comment-pulse-board`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/comment-pulse-board) | Clusters obsession points, recurring questions, sentiment shifts, and backlash signals | `comment-pulse-board` |
+| <img src="skills/clip-to-canon-finder/assets/icon-small.svg" width="26" alt="Clip To Canon Finder" /><br/>[`clip-to-canon-finder`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/clip-to-canon-finder) | Scores clips, transcripts, and reactions to find moments that deserve repeat canon | `clip-to-canon-finder` |
+| <img src="skills/iconography-lab/assets/icon-small.svg" width="26" alt="Iconography Lab" /><br/>[`iconography-lab`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/iconography-lab) | Defines the recognizable visual and verbal codes of a personality-led brand | `iconography-lab` |
+| <img src="skills/ritual-engine/assets/icon-small.svg" width="26" alt="Ritual Engine" /><br/>[`ritual-engine`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/ritual-engine) | Designs repeatable fan rituals, loops, naming systems, and recurring formats | `ritual-engine` |
+| <img src="skills/parasocial-studio/assets/icon-small.svg" width="26" alt="Parasocial Studio" /><br/>[`parasocial-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/parasocial-studio) | Shapes safe closeness mechanics and recurring relationship touchpoints | `parasocial-studio` |
+| <img src="skills/lore-drop-planner/assets/icon-small.svg" width="26" alt="Lore Drop Planner" /><br/>[`lore-drop-planner`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/lore-drop-planner) | Plans episodic reveals, callbacks, teasers, and payoff arcs | `lore-drop-planner` |
+| <img src="skills/inner-circle-director/assets/icon-small.svg" width="26" alt="Inner Circle Director" /><br/>[`inner-circle-director`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/inner-circle-director) | Structures tiered access, VIP mechanics, and premium community experiences | `inner-circle-director` |
+| <img src="skills/myth-merch-studio/assets/icon-small.svg" width="26" alt="Myth Merch Studio" /><br/>[`myth-merch-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/myth-merch-studio) | Turns symbols, phrases, and fandom lore into merch and collectible concepts | `myth-merch-studio` |
+| <img src="skills/reputation-heatmap/assets/icon-small.svg" width="26" alt="Reputation Heatmap" /><br/>[`reputation-heatmap`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/reputation-heatmap) | Separates healthy mystique from rumor, overreach, parasocial risk, or brand harm | `reputation-heatmap` |
+| <img src="skills/story-arc-board/assets/icon.svg" width="26" alt="Story Arc Board" /><br/>[`story-arc-board`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/story-arc-board) | Captures recurring phrases, symbols, and post ideas before they disappear into notes and comment sprawl | `story-arc-board` |
 
 ### macOS Utility Builders
 
@@ -135,36 +278,48 @@ Browse by use case:
 | <img src="skills/find-my-phone-studio/assets/find-my-phone-studio-small.svg" width="26" alt="Find My Phone Studio" /><br/>[`find-my-phone-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/find-my-phone-studio) | Builds a realistic Mac phone-finder utility with locate, ring, call, QR pairing, and provider-aware handoff flows | `find-my-phone-studio` |
 | <img src="skills/cursor-studio/assets/cursor-studio-small.svg" width="26" alt="Cursor Studio" /><br/>[`cursor-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/cursor-studio) | Builds and refines a macOS cursor-pack planner with preset, slot, and export workflows | `cursor-studio` |
 | <img src="skills/folder-studio/assets/folder-studio-small.svg" width="26" alt="Folder Studio" /><br/>[`folder-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/folder-studio) | Builds and refines a macOS folder-skin app with context-aware Finder icon workflows | `folder-studio` |
-| <img src="skills/handoff-courier/assets/icon-small.svg" width="26" alt="Handoff Courier" /><br/>[`handoff-courier`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/handoff-courier) | A polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics | `handoff-courier` |
-| <img src="skills/phone-handoff-panel/assets/icon-small.svg" width="26" alt="Phone Handoff Panel" /><br/>[`phone-handoff-panel`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/phone-handoff-panel) | A device handoff panel for opening your phone, jump-starting a task, and keeping the Mac in the loop | `phone-handoff-panel` |
-| <img src="skills/chrome-tab-sweeper/assets/icon-small.svg" width="26" alt="Chrome Tab Sweeper" /><br/>[`chrome-tab-sweeper`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/chrome-tab-sweeper) | A Mac menu-bar tab control surface for understanding overloaded Chrome windows and closing selected tab piles in one shot | `chrome-tab-sweeper` |
+| <img src="skills/handoff-courier/assets/icon.svg" width="26" alt="Handoff Courier" /><br/>[`handoff-courier`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/handoff-courier) | Moves files, snippets, and exports between apps without window gymnastics | `handoff-courier` |
+| <img src="skills/phone-handoff-panel/assets/icon.svg" width="26" alt="Phone Handoff Panel" /><br/>[`phone-handoff-panel`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/phone-handoff-panel) | Keeps your phone handoff close with open, locate, and continue actions from the Mac menu bar | `phone-handoff-panel` |
+| <img src="skills/battery-trend-scout/assets/icon.svg" width="26" alt="Battery Trend Scout" /><br/>[`battery-trend-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/battery-trend-scout) | Shows charge, power source, energy mode, and local drain trends in a calm battery panel | `battery-trend-scout` |
+| <img src="skills/power-sentry/assets/icon.svg" width="26" alt="Power Sentry" /><br/>[`power-sentry`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/power-sentry) | Gives a compact at-a-glance read of charging, drain, and energy mode from the menu bar | `power-sentry` |
+| <img src="skills/chrome-tab-sweeper/assets/icon.svg" width="26" alt="Chrome Tab Sweeper" /><br/>[`chrome-tab-sweeper`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/chrome-tab-sweeper) | Lists overloaded Chrome tabs, groups the mess, and closes explicit selected batches safely | `chrome-tab-sweeper` |
+| <img src="skills/download-landing-pad/assets/icon-small.svg" width="26" alt="Download Landing Pad" /><br/>[`download-landing-pad`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/download-landing-pad) | Keeps fresh browser exports from getting stuck in Downloads | `download-landing-pad` |
+| <img src="skills/finder-selection-relay/assets/icon-small.svg" width="26" alt="Finder Selection Relay" /><br/>[`finder-selection-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/finder-selection-relay) | Moves selected Finder items into the next app without manual path cleanup | `finder-selection-relay` |
+| <img src="skills/plist-preflight/assets/icon-small.svg" width="26" alt="Plist Preflight" /><br/>[`plist-preflight`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/plist-preflight) | Checks app metadata before signing, release, or Info.plist edits | `plist-preflight` |
+| <img src="skills/replay-relay/assets/icon-small.svg" width="26" alt="Replay Relay" /><br/>[`replay-relay`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/replay-relay) | Keeps clips and screenshots moving through a compact share lane | `replay-relay` |
 
 ### App-Specific Skills
 
 | Skill | What it does | Install name |
 | --- | --- | --- |
 | <img src="skills/telebar/assets/telebar-small.svg" width="26" alt="TeleBar" /><br/>[`telebar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/telebar) | Builds and runs the TeleBar Telegram + AI menu bar app | `telebar` |
+| <img src="skills/flight-scout/assets/flight-scout-small.svg" width="26" alt="Flight Scout" /><br/>[`flight-scout`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/flight-scout) | Builds and runs the Flight Scout menu bar app | `flight-scout` |
+| <img src="skills/on-this-day-bar/assets/icon-small.svg" width="26" alt="On This Day Bar" /><br/>[`on-this-day-bar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/on-this-day-bar) | Builds and runs the On This Day Bar macOS menu bar app | `on-this-day-bar` |
 | <img src="skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg" width="26" alt="VibeBluetooth" /><br/>[`vibe-bluetooth`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/vibe-bluetooth) | Dev skill for the VibeWidget macOS app and widget | `vibe-bluetooth` |
-| <img src="skills/framecrawler/assets/framecrawler-small.svg" width="26" alt="FrameCrawler" /><br/>[`framecrawler`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/framecrawler) | Builds and extends the FrameCrawler prompt-to-Blender SceneSpec workflow, menu bar app, and Blender handoff | `framecrawler` |
+| <img src="skills/wifi-watchtower/assets/wifi-watchtower-small.svg" width="26" alt="WiFi Watchtower" /><br/>[`wifi-watchtower`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/wifi-watchtower) | Builds and runs the WiFi Watchtower macOS menu bar app | `wifi-watchtower` |
 
-### Games and Consoles
+### Games and Minecraft
 
 | Skill | What it does | Install name |
 | --- | --- | --- |
-| <img src="skills/xbox-studio/assets/xbox-studio-small.svg" width="26" alt="Xbox Studio" /><br/>[`xbox-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/xbox-studio) | Builds, runs, and troubleshoots a controller-first macOS Xbox helper for Bluetooth readiness, pairing, cloud gaming, Remote Play, captures, and official account flows | `xbox-studio` |
 | <img src="skills/minecraft-essentials/assets/minecraft-essentials-small.svg" width="26" alt="Minecraft Essentials" /><br/>[`minecraft-essentials`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-essentials) | Runs, upgrades, and troubleshoots Minecraft Java servers | `minecraft-essentials` |
 | <img src="skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg" width="26" alt="Minecraft Skin Studio" /><br/>[`minecraft-skin-studio`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minecraft-skin-studio) | Drafts, previews, and registers Minecraft Java skins from prompts or PNGs | `minecraft-skin-studio` |
-| <img src="skills/session-arcade/assets/icon-small.svg" width="26" alt="Session Arcade" /><br/>[`session-arcade`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/session-arcade) | A launch-night helper for game sessions, cloud gaming, and quick console handoffs | `session-arcade` |
+| <img src="skills/session-arcade/assets/icon.svg" width="26" alt="Session Arcade" /><br/>[`session-arcade`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/session-arcade) | Helps you launch the next game session or console handoff without extra setup loops | `session-arcade` |
+| <img src="skills/minefield-menubar/assets/icon-small.svg" width="26" alt="Minefield Menu Bar" /><br/>[`minefield-menubar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minefield-menubar) | Builds a playable Minesweeper-style menu bar game | `minefield-menubar` |
+| <img src="skills/minesweeper-menubar/assets/icon-small.svg" width="26" alt="Minesweeper Menu Bar" /><br/>[`minesweeper-menubar`](https://github.com/Arnie016/codex-goated-skills/tree/main/skills/minesweeper-menubar) | Builds and refines a Swift menu bar Minesweeper app | `minesweeper-menubar` |
 
 ## Apps
 
 | App | What it is | Path |
 | --- | --- | --- |
 | `minecraft-skinbar` | macOS menu bar app for generating, importing, and opening Minecraft skins | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/minecraft-skinbar) |
-| `clipboard-studio` | macOS menu bar clipboard context stacker for capture, history, and quick paste back into your editor | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/clipboard-studio) |
-| `xbox-studio` | macOS menu bar Xbox control center with Bluetooth and controller readiness first, then cloud gaming, Remote Play launch, connectivity testing, and drag-and-drop capture imports | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/xbox-studio) |
+| `clipboard-studio` | Context Assembly, a macOS menu bar app that turns code, logs, pages, and saved app state into one structured prompt, Apple Note, or Markdown export instead of manual copy-paste switching | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/clipboard-studio) |
 | `phone-spotter` | macOS menu bar phone recovery utility with QR pairing, saved clues, and Apple or Google provider handoff | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/phone-spotter) |
 | `flight-scout` | macOS menu bar flight watcher with live fare signals, booking deeplinks, and travel risk scoring | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/flight-scout) |
+| `on-this-day` | macOS-style daily history web app with official Wikimedia same-day events, births, deaths, and holidays | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/on-this-day) |
+| `on-this-day-bar` | native macOS menu bar app for same-day history with curated events, cached fallback, and one-click article handoff | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/on-this-day-bar) |
+| `trading-archive-bar` | native macOS menu bar archive for trading and macro articles with feed ingest, search, favorites, and cached fallback | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/trading-archive-bar) |
+| `skillbar` | macOS menu bar manager for browsing the goated skill catalog, installed local skills, and preset bundles | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/skillbar) |
 | `telebar` | macOS Telegram control center for inbox, AI writing, and setup flows | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/telebar) |
 | `wifi-watchtower` | macOS menu bar Wi-Fi trust monitor with nearby scan grading | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/wifi-watchtower) |
 | `vibe-widget` | macOS SwiftUI app + widget for voice-first vibe control | [link](https://github.com/Arnie016/codex-goated-skills/tree/main/apps/vibe-widget) |

@@ -1,0 +1,48 @@
+{
+  "id": "folder-studio",
+  "name": "Folder Studio",
+  "category": "Mac OS",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend a Folder Studio macOS menu bar app that reads folder context, suggests engravings, colors folders, previews Finder-style skins, and applies custom icons. Use when Codex needs to work on a workspace containing `FolderStudioApp`, keep Folder Studio separate from Cursor Studio, regenerate the Xcode project, or validate the `FolderStudio` scheme and tests.",
+  "stars": 5,
+  "short_description": "Context-aware Finder folder skins and icon workflows",
+  "brand_color": "#4C9E5A",
+  "audience": [
+    "Mac users who want Finder folders to be easier to recognize",
+    "Builders shipping compact menu-bar utilities with icon preview and apply flows",
+    "Teams keeping Folder Studio separate from cursor-pack generation work"
+  ],
+  "tags": [
+    "macOS",
+    "Finder",
+    "folder icons",
+    "menu bar",
+    "icon preview",
+    "folder skins",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install folder-studio",
+  "docs_paths": [
+    "skills/folder-studio/SKILL.md",
+    "skills/folder-studio/manifest.json",
+    "skills/folder-studio/agents/openai.yaml",
+    "skills/folder-studio/assets/folder-studio-small.svg",
+    "skills/folder-studio/assets/folder-studio-large.svg",
+    "skills/folder-studio/references/project-map.md",
+    "skills/folder-studio/scripts/run_folder_studio.sh"
+  ],
+  "detail_lines": [
+    "Reads local folder context and keeps the category, content counts, engraving, badge, palette, and apply/reset state visible in a compact menu-bar panel.",
+    "Owns Finder-style preview and custom folder-icon apply flows while keeping cursor-pack planning in Cursor Studio.",
+    "Uses explicit local workspace and folder inputs, with no hidden network calls or broad persistence requirements."
+  ],
+  "file_path_hints": [
+    "FolderStudioApp/Sources/Services/",
+    "FolderStudioApp/Sources/App/",
+    "FolderStudioApp/Sources/Views/",
+    "skills/folder-studio/scripts/run_folder_studio.sh"
+  ],
+  "icon_small": "skills/folder-studio/assets/folder-studio-small.svg",
+  "icon_large": "skills/folder-studio/assets/folder-studio-large.svg",
+  "system_symbol": "folder.fill.badge.gearshape"
+}

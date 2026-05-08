@@ -1,0 +1,10 @@
+interface:
+  display_name: "Deck Export Bundle"
+  short_description: "Premium menu-bar deck export bundle"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#FFD60A"
+  default_prompt: "Use $deck-export-bundle to build a polished macOS menu-bar utility for a menu-bar export bundle for packaging the current slide deck, speaker notes, and send-ready assets without bouncing between keynote, finder, and chat."
+
+policy:
+  allow_implicit_invocation: true

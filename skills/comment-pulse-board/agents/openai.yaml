@@ -1,0 +1,7 @@
+interface:
+  display_name: "Comment Pulse Board"
+  short_description: "Cluster audience chatter into a pulse digest"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#D85A62"
+  default_prompt: "Use $comment-pulse-board to analyze this audience chatter, cluster the obsession points and recurring questions, spot sentiment shifts or backlash signals, and export a pulse digest."

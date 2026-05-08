@@ -1,0 +1,7 @@
+interface:
+  display_name: "Inner Circle Director"
+  short_description: "Design tiers and VIP community access"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#BF9640"
+  default_prompt: "Use $inner-circle-director to design tiered access, VIP mechanics, and recognition systems for this audience, then export a membership framework."

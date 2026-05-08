@@ -1,0 +1,48 @@
+{
+  "id": "dark-pdf-studio",
+  "name": "Dark PDF Studio",
+  "category": "Document Tools",
+  "status": "active",
+  "description": "Convert PDFs, document files, or images into dark-background reading PDFs with a compact local input-to-output workflow.",
+  "stars": 5,
+  "short_description": "Compact dark-background PDF conversion.",
+  "brand_color": "#1D2738",
+  "audience": [
+    "Mac users who want high-contrast reading copies of local documents",
+    "Students and researchers converting PDFs, docs, or images for dark-mode review",
+    "Builders maintaining a small deterministic document export utility"
+  ],
+  "tags": [
+    "PDF",
+    "documents",
+    "dark mode",
+    "conversion",
+    "macOS",
+    "local first",
+    "export"
+  ],
+  "install_command": "codex-skillctl install dark-pdf-studio",
+  "docs_paths": [
+    "skills/dark-pdf-studio/SKILL.md",
+    "skills/dark-pdf-studio/manifest.json",
+    "skills/dark-pdf-studio/agents/openai.yaml",
+    "skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg",
+    "skills/dark-pdf-studio/assets/dark-pdf-studio-large.svg",
+    "skills/dark-pdf-studio/references/workflow-map.md",
+    "skills/dark-pdf-studio/scripts/dark_pdf.py",
+    "skills/dark-pdf-studio/scripts/run_dark_pdf_studio.sh"
+  ],
+  "detail_lines": [
+    "Keeps conversion centered on one selected input file, one dark theme, one local output path, and clear open or reveal actions.",
+    "Supports PDFs first, with document and image normalization handled through explicit local backends.",
+    "Fails with clear dependency guidance when a converter is missing instead of pretending an export succeeded."
+  ],
+  "file_path_hints": [
+    "skills/dark-pdf-studio/scripts/run_dark_pdf_studio.sh",
+    "skills/dark-pdf-studio/scripts/dark_pdf.py",
+    "skills/dark-pdf-studio/references/workflow-map.md"
+  ],
+  "icon_small": "skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg",
+  "icon_large": "skills/dark-pdf-studio/assets/dark-pdf-studio-large.svg",
+  "system_symbol": "doc.text.fill"
+}

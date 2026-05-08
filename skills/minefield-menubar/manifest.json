@@ -1,0 +1,48 @@
+{
+  "id": "minefield-menubar",
+  "name": "Minefield Menu Bar",
+  "category": "Games and Consoles",
+  "status": "active",
+  "stars": 4,
+  "short_description": "A polished macOS menu-bar puzzle that turns Minesweeper-style rounds into quick coffee-break runs.",
+  "audience": [
+    "Mac users who want a quick puzzle break",
+    "Builders exploring playful menu bar apps",
+    "People who like compact strategy games"
+  ],
+  "tags": [
+    "macOS",
+    "menu bar",
+    "game",
+    "puzzle",
+    "minesweeper",
+    "swiftui",
+    "arcade"
+  ],
+  "install_command": "codex-skillctl install minefield-menubar",
+  "docs_paths": [
+    "skills/minefield-menubar/SKILL.md",
+    "skills/minefield-menubar/manifest.json",
+    "skills/minefield-menubar/agents/openai.yaml",
+    "skills/minefield-menubar/references/product-spec.md",
+    "skills/minefield-menubar/prototype/README.md",
+    "skills/minefield-menubar/prototype/SkillMenuBarApp.swift",
+    "skills/minefield-menubar/prototype/SkillMenuBarView.swift",
+    "skills/minefield-menubar/prototype/SkillGameModel.swift",
+    "skills/minefield-menubar/prototype/SkillDetailView.swift",
+    "skills/minefield-menubar/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Fits a full Minesweeper-style board into a compact macOS menu-bar popover.",
+    "Keeps reveal, flag, timer, and replay flow readable instead of turning into a tiny desktop app.",
+    "Creates a strong pattern for other top-bar micro games once the shell feels right."
+  ],
+  "file_path_hints": [
+    "skills/minefield-menubar/references/product-spec.md",
+    "skills/minefield-menubar/prototype/SkillGameModel.swift",
+    "skills/minefield-menubar/prototype/SkillMenuBarView.swift"
+  ],
+  "icon_small": "skills/minefield-menubar/assets/icon-small.svg",
+  "icon_large": "skills/minefield-menubar/assets/icon-large.svg",
+  "system_symbol": "diamond.fill"
+}

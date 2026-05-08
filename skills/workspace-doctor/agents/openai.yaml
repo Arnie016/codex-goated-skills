@@ -1,7 +1,7 @@
 interface:
   display_name: "Workspace Doctor"
-  short_description: "Find the real blocker in a local workspace fast"
+  short_description: "Find the real blocker, catalog freshness, overlap map, and next command fast"
   icon_small: "./assets/workspace-doctor-small.svg"
   icon_large: "./assets/workspace-doctor-large.svg"
   brand_color: "#16A34A"
-  default_prompt: "Use $workspace-doctor to inspect this workspace, run a quick environment audit, identify the main blocker, and get it into a runnable state."
+  default_prompt: "Use $workspace-doctor to inspect this workspace, run a quick environment audit, check generated catalog freshness when this repo ships skills or packs, surface the app-skill overlap map and runner families at the repo root, identify the main blocker, and point me at the right local doctor, build, or runner command."

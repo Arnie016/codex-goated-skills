@@ -1,0 +1,7 @@
+interface:
+  display_name: "Clip to Canon Finder"
+  short_description: "Find clips likely to become fandom canon"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#1A9B8C"
+  default_prompt: "Use $clip-to-canon-finder to analyze these short-form clips, transcripts, and reactions, identify which moments are most likely to become fandom canon, and export a shortlist with reuse angles."

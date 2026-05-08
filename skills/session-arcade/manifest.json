@@ -40,5 +40,7 @@
     "skills/session-arcade/prototype/SkillMenuBarApp.swift",
     "skills/session-arcade/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/session-arcade/assets/icon-small.svg",
+  "icon_large": "skills/session-arcade/assets/icon-large.svg",
   "system_symbol": "gamecontroller.fill"
 }

@@ -33,8 +33,8 @@ struct DocDropBridgeDetailView: View {
 extension DocDropBridgeDetailView {
     static var previewSections: [SkillSection] {
         [
-        SkillSection(title: "Input", body: "Drop in a note, outline, or rough draft and the bridge prepares it for sharing."),
-        SkillSection(title: "Output", body: "Choose a compact export path that keeps the result easy to move into another app."),
+        SkillSection(title: "Input", body: "Drop in a note, outline, or rough draft and the bridge prepares it for sharing.")
+        SkillSection(title: "Output", body: "Choose a compact export path that keeps the result easy to move into another app.")
         SkillSection(title: "Presentation", body: "The interface should read like an Apple utility with one clear action at a time.")
         ]
     }

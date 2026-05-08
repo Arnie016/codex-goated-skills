@@ -1,0 +1,48 @@
+{
+  "id": "wifi-watchtower",
+  "name": "WiFi Watchtower",
+  "category": "System Monitoring",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or refine the WiFi Watchtower macOS menu bar app in `apps/wifi-watchtower`. Use when Codex needs the exact app workspace, repo-native doctor/typecheck/build/test flows, or menu bar and dashboard changes for local Wi-Fi trust scoring.",
+  "stars": 5,
+  "short_description": "Native Wi-Fi trust scoring menu bar app",
+  "brand_color": "#0EA5E9",
+  "audience": [
+    "Mac users who want a compact local Wi-Fi trust readout",
+    "Builders refining native menu-bar network safety surfaces",
+    "Teams keeping native Wi-Fi scoring separate from portable SwiftBar network monitoring"
+  ],
+  "tags": [
+    "macOS",
+    "Wi-Fi",
+    "menu bar",
+    "trust scoring",
+    "network safety",
+    "nearby networks",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install wifi-watchtower",
+  "docs_paths": [
+    "skills/wifi-watchtower/SKILL.md",
+    "skills/wifi-watchtower/manifest.json",
+    "skills/wifi-watchtower/agents/openai.yaml",
+    "skills/wifi-watchtower/assets/wifi-watchtower-small.svg",
+    "skills/wifi-watchtower/assets/wifi-watchtower-large.svg",
+    "skills/wifi-watchtower/references/project-map.md",
+    "skills/wifi-watchtower/scripts/run_wifi_watchtower.sh"
+  ],
+  "detail_lines": [
+    "Owns the native MenuBarExtra app for current-network trust grades, nearby Wi-Fi risk context, and dashboard explanations.",
+    "Keeps current-network trust, nearby-network context, and recommendation copy separate so the UI stays honest about uncertainty.",
+    "Uses local Wi-Fi inspection only, with no remote telemetry, account-bound sync, packet-sniffing claims, or hidden network calls."
+  ],
+  "file_path_hints": [
+    "apps/wifi-watchtower/WifiWatchtowerApp/Sources/App/",
+    "apps/wifi-watchtower/WifiWatchtowerApp/Sources/Services/",
+    "apps/wifi-watchtower/WifiWatchtowerApp/Sources/Views/",
+    "skills/wifi-watchtower/scripts/run_wifi_watchtower.sh"
+  ],
+  "icon_small": "skills/wifi-watchtower/assets/wifi-watchtower-small.svg",
+  "icon_large": "skills/wifi-watchtower/assets/wifi-watchtower-large.svg",
+  "system_symbol": "wifi"
+}

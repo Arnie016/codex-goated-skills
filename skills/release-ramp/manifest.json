@@ -40,5 +40,7 @@
     "skills/release-ramp/prototype/SkillMenuBarApp.swift",
     "skills/release-ramp/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/release-ramp/assets/icon-small.svg",
+  "icon_large": "skills/release-ramp/assets/icon-large.svg",
   "system_symbol": "shippingbox.fill"
 }

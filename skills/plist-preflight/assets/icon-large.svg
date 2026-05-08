@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="Plist Preflight preview">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15182A"/>
+      <stop offset="100%" stop-color="#050711"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#242644"/>
+      <stop offset="100%" stop-color="#111426"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#8B8CFF"/>
+      <stop offset="100%" stop-color="#5E5CE6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <rect x="104" y="88" width="992" height="544" rx="56" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="168" y="148" width="244" height="324" rx="36" fill="#F6F7FB"/>
+  <path d="M340 148v74h72" fill="#D9DDF7"/>
+  <rect x="202" y="252" width="166" height="24" rx="12" fill="#D1D5EA"/>
+  <rect x="202" y="304" width="124" height="20" rx="10" fill="#E1E4F2"/>
+  <rect x="202" y="348" width="146" height="20" rx="10" fill="#E1E4F2"/>
+  <circle cx="258" cy="436" r="52" fill="url(#accent)"/>
+  <path d="M234 436l16 17 34-39" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="480" y="220" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="56" font-weight="700" fill="#FFFFFF">Plist Preflight</text>
+  <text x="480" y="278" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="24" fill="#C9D0E8">Check macOS app metadata before build, signing, or release edits.</text>
+  <rect x="480" y="340" width="482" height="56" rx="18" fill="#FFFFFF" fill-opacity="0.08"/>
+  <text x="512" y="376" font-family="-apple-system, BlinkMacSystemFont, 'SF Mono', monospace" font-size="20" fill="#DDE3FF">scan apps/telebar --format json</text>
+  <circle cx="504" cy="466" r="9" fill="#8B8CFF"/>
+  <text x="530" y="474" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="22" fill="#EEF2FF">Info.plist and entitlement checks</text>
+  <circle cx="504" cy="516" r="9" fill="#8B8CFF"/>
+  <text x="530" y="524" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="22" fill="#EEF2FF">No project-file rewrites or signing guesses</text>
+</svg>

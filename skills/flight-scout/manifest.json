@@ -1,0 +1,47 @@
+{
+  "id": "flight-scout",
+  "name": "Flight Scout",
+  "category": "App-Specific",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend the Flight Scout macOS menu bar app. Use when working in `apps/flight-scout`, regenerating the XcodeGen project, running local doctor/typecheck/build/test checks, or editing route watching, live fare signals, booking deeplinks, travel-risk scoring, or the board and menu bar UI.",
+  "stars": 5,
+  "short_description": "Run and extend the Flight Scout app.",
+  "brand_color": "#1D7DD7",
+  "audience": [
+    "Mac users watching repeat flight routes from a compact menu bar surface",
+    "Builders maintaining Flight Scout route scoring, fare signals, and booking handoff",
+    "Travel planners who need direct local app checks before changing route UI or data flows"
+  ],
+  "tags": [
+    "macOS",
+    "travel",
+    "flights",
+    "menu bar",
+    "route watch",
+    "fare signals",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install flight-scout",
+  "docs_paths": [
+    "skills/flight-scout/SKILL.md",
+    "skills/flight-scout/manifest.json",
+    "skills/flight-scout/agents/openai.yaml",
+    "skills/flight-scout/assets/flight-scout-small.svg",
+    "skills/flight-scout/assets/flight-scout-large.svg",
+    "skills/flight-scout/references/project-map.md",
+    "skills/flight-scout/scripts/run_flight_scout.sh"
+  ],
+  "detail_lines": [
+    "Keeps Flight Scout app work anchored to the repo-native doctor, inspect, generate, typecheck, build, test, and run loop.",
+    "Owns route watching, fare signal freshness, travel-risk scoring, booking deeplinks, and compact menu bar or board UI checks.",
+    "Preserves explicit local app validation and avoids hiding account, payment, or booking-side effects behind the SkillBar install surface."
+  ],
+  "file_path_hints": [
+    "apps/flight-scout/",
+    "skills/flight-scout/references/project-map.md",
+    "skills/flight-scout/scripts/run_flight_scout.sh"
+  ],
+  "icon_small": "skills/flight-scout/assets/flight-scout-small.svg",
+  "icon_large": "skills/flight-scout/assets/flight-scout-large.svg",
+  "system_symbol": "airplane"
+}

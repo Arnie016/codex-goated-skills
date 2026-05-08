@@ -33,8 +33,8 @@ struct PowerSentryDetailView: View {
 extension PowerSentryDetailView {
     static var previewSections: [SkillSection] {
         [
-        SkillSection(title: "At a glance", body: "Show charge, power source, and energy mode first so the user can check the state in one glance."),
-        SkillSection(title: "Deeper read", body: "Add trend context only when it helps a real decision like charging or low power mode."),
+        SkillSection(title: "At a glance", body: "Show charge, power source, and energy mode first so the user can check the state in one glance.")
+        SkillSection(title: "Deeper read", body: "Add trend context only when it helps a real decision like charging or low power mode.")
         SkillSection(title: "Design", body: "Keep the styling monochrome and premium so it feels like a first-party utility.")
         ]
     }

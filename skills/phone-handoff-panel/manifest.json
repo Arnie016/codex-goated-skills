@@ -40,5 +40,7 @@
     "skills/phone-handoff-panel/prototype/SkillMenuBarApp.swift",
     "skills/phone-handoff-panel/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/phone-handoff-panel/assets/icon-small.svg",
+  "icon_large": "skills/phone-handoff-panel/assets/icon-large.svg",
   "system_symbol": "iphone"
 }

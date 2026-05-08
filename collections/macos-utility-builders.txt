@@ -1,0 +1,14 @@
+# title: macOS Utility Builders
+# summary: Skills for planning, shaping, or refining focused macOS utilities and menu bar tools.
+find-my-phone-studio
+cursor-studio
+folder-studio
+handoff-courier
+phone-handoff-panel
+battery-trend-scout
+power-sentry
+chrome-tab-sweeper
+download-landing-pad
+finder-selection-relay
+plist-preflight
+replay-relay

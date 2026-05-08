@@ -1,0 +1,6 @@
+- Scope: tighten SkillBar's Quick Setup CTA hierarchy without changing repo detection, folder creation, or install wiring.
+- Problem: when the installs folder is missing, Quick Setup currently shows both `Finish Setup`/`Use Detected Repo` and `Create Folder` as prominent buttons even though the primary setup action already creates the folder. That makes the "one obvious next step" ambiguous.
+- Goals:
+  - keep the existing quick-setup behavior and folder creation logic unchanged
+  - leave exactly one prominent primary action when a quick-setup repo target is available
+  - keep manual folder creation available as a secondary fallback when users want to create the installs directory without switching repo state

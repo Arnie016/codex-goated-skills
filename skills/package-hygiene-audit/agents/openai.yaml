@@ -1,0 +1,10 @@
+interface:
+  display_name: "Package Hygiene Audit"
+  short_description: "Deterministic local release package audit"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#BF5AF2"
+  default_prompt: "Use $package-hygiene-audit to audit a local release folder or build a polished macOS menu-bar utility around that audit: check app bundles, packaged archives, release notes, and screenshots, then return a deterministic ship-readiness report without inventing cloud release state."
+
+policy:
+  allow_implicit_invocation: true

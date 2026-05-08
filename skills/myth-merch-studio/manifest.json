@@ -1,0 +1,46 @@
+{
+  "id": "myth-merch-studio",
+  "name": "Myth Merch Studio",
+  "category": "Community & Narrative",
+  "status": "active",
+  "description": "Turn symbols, phrases, and fandom lore into merch, collectible, and limited-drop concepts, then output a merch brief.",
+  "stars": 4,
+  "short_description": "Translate fandom lore into merch and drop briefs.",
+  "brand_color": "#2E9A5F",
+  "audience": [
+    "Merch leads translating community lore into product ideas",
+    "Creative directors mapping symbols and phrases to drop concepts",
+    "Talent and founder teams checking product meaning, rights, and manufacturing fit"
+  ],
+  "tags": [
+    "merch",
+    "fandom",
+    "drops",
+    "collectibles",
+    "creator strategy",
+    "local first",
+    "safety"
+  ],
+  "install_command": "codex-skillctl install myth-merch-studio",
+  "docs_paths": [
+    "skills/myth-merch-studio/SKILL.md",
+    "skills/myth-merch-studio/manifest.json",
+    "skills/myth-merch-studio/agents/openai.yaml",
+    "skills/myth-merch-studio/assets/icon-small.svg",
+    "skills/myth-merch-studio/assets/icon-large.svg",
+    "skills/myth-merch-studio/references/product-spec.md"
+  ],
+  "detail_lines": [
+    "Maps canon, iconography kits, phrases, price bands, product constraints, drop timing, and licensing boundaries into practical concept routes.",
+    "Exports concept rationale, phrase or symbol mapping, material notes, packaging ideas, drop framing, no-go ideas, and rights review.",
+    "Works only from public or user-authorized material and rejects unlicensed likeness use, collaborator appropriation, and empty scarcity pressure."
+  ],
+  "file_path_hints": [
+    "skills/myth-merch-studio/SKILL.md",
+    "skills/myth-merch-studio/references/product-spec.md",
+    "skills/myth-merch-studio/assets/icon-small.svg"
+  ],
+  "icon_small": "skills/myth-merch-studio/assets/icon-small.svg",
+  "icon_large": "skills/myth-merch-studio/assets/icon-large.svg",
+  "system_symbol": "tag.fill"
+}

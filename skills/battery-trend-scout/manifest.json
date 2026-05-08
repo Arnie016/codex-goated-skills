@@ -3,8 +3,12 @@
   "name": "Battery Trend Scout",
   "category": "System Monitoring",
   "status": "active",
+  "description": "Build a polished macOS battery utility that shows charge, power source, energy mode, significant energy users, and local drain trends from a menu bar surface.",
   "stars": 5,
   "short_description": "Calm Mac-style battery panel with charge, power source, energy mode, and trend context.",
+  "brand_color": "#0A84FF",
+  "icon_small": "skills/battery-trend-scout/assets/icon-small.svg",
+  "icon_large": "skills/battery-trend-scout/assets/icon-large.svg",
   "audience": [
     "Mac laptop users",
     "Remote workers",
@@ -22,6 +26,11 @@
   "docs_paths": [
     "skills/battery-trend-scout/SKILL.md",
     "skills/battery-trend-scout/manifest.json",
-    "skills/battery-trend-scout/agents/openai.yaml"
-  ]
+    "skills/battery-trend-scout/agents/openai.yaml",
+    "skills/battery-trend-scout/assets/icon-small.svg",
+    "skills/battery-trend-scout/assets/icon-large.svg",
+    "skills/battery-trend-scout/assets/icon.svg",
+    "skills/battery-trend-scout/assets/preview.svg"
+  ],
+  "system_symbol": "battery.100percent"
 }

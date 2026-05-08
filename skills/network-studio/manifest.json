@@ -1,0 +1,49 @@
+{
+  "id": "network-studio",
+  "name": "Network Studio",
+  "category": "System Monitoring",
+  "status": "active",
+  "description": "Install or update a portable macOS local-network monitor workspace with a SwiftBar plugin, dashboard opener, and continuous LAN presence watch loop for networks the user owns or administers.",
+  "stars": 5,
+  "short_description": "Portable LAN presence monitoring with SwiftBar and a local dashboard.",
+  "brand_color": "#0F8ED8",
+  "audience": [
+    "Mac users monitoring a home or office LAN they administer",
+    "SwiftBar users who want a portable network status surface",
+    "Builders comparing portable network workspaces against native menu-bar apps"
+  ],
+  "tags": [
+    "network",
+    "LAN",
+    "SwiftBar",
+    "dashboard",
+    "macOS",
+    "local first",
+    "device presence"
+  ],
+  "install_command": "codex-skillctl install network-studio",
+  "docs_paths": [
+    "skills/network-studio/SKILL.md",
+    "skills/network-studio/manifest.json",
+    "skills/network-studio/agents/openai.yaml",
+    "skills/network-studio/assets/network-studio-small.svg",
+    "skills/network-studio/assets/network-studio-large.svg",
+    "skills/network-studio/references/project-map.md",
+    "skills/network-studio/scripts/run_network_studio.sh",
+    "skills/network-studio/scripts/install_network_studio.py"
+  ],
+  "detail_lines": [
+    "Installs or refreshes a user-chosen portable workspace with a local watcher, CSV history, dashboard output, and optional SwiftBar wrapper.",
+    "Owns LAN presence monitoring and dashboard handoff while keeping native Wi-Fi trust scoring in WiFi Watchtower.",
+    "Preserves user labels and logs on update, limits use to networks the user owns or administers, and avoids hidden telemetry."
+  ],
+  "file_path_hints": [
+    "skills/network-studio/scripts/run_network_studio.sh",
+    "skills/network-studio/scripts/install_network_studio.py",
+    "skills/network-studio/assets/workspace/network-watch.sh",
+    "skills/network-studio/assets/workspace/.swiftbar-support/"
+  ],
+  "icon_small": "skills/network-studio/assets/network-studio-small.svg",
+  "icon_large": "skills/network-studio/assets/network-studio-large.svg",
+  "system_symbol": "network"
+}

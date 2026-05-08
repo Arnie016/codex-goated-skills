@@ -4,4 +4,4 @@ interface:
   icon_small: "./assets/vibe-bluetooth-small.svg"
   icon_large: "./assets/vibe-bluetooth-large.svg"
   brand_color: "#6E54FF"
-  default_prompt: "Use $vibe-bluetooth to work on the VibeWidget macOS app, regenerate the project if needed, and run local doctor or typecheck checks."
+  default_prompt: "Use $vibe-bluetooth to work on the VibeWidget macOS app, regenerate the project if needed, and run local doctor, typecheck, or app relaunch commands."

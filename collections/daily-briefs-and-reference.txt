@@ -1,0 +1,9 @@
+# title: Daily Briefs and Reference
+# summary: Skills for daily historical context, market-reading archives, git momentum check-ins, local monitoring, and readable exports.
+on-this-day
+trading-archive
+gain-tracker
+network-studio
+dark-pdf-studio
+deckdrop-studio
+reader-mode-bridge

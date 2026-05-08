@@ -1,0 +1,45 @@
+{
+  "id": "project-hail-mary",
+  "name": "Project Hail Mary",
+  "category": "Productivity",
+  "status": "active",
+  "stars": 4,
+  "brand_color": "#F97316",
+  "short_description": "A local crunch-mode launcher for music handoff, critical work surfaces, countdowns, and copied status updates.",
+  "audience": [
+    "Developers under deadline",
+    "Founders preparing launches",
+    "People who need a repeatable focus ritual"
+  ],
+  "tags": [
+    "focus",
+    "launcher",
+    "deadline",
+    "macos",
+    "workflow"
+  ],
+  "install_command": "codex-skillctl install project-hail-mary",
+  "docs_paths": [
+    "skills/project-hail-mary/SKILL.md",
+    "skills/project-hail-mary/manifest.json",
+    "skills/project-hail-mary/agents/openai.yaml",
+    "skills/project-hail-mary/references/supported-surfaces.md",
+    "skills/project-hail-mary/scripts/hail_mary_brief.py",
+    "skills/project-hail-mary/scripts/hail_mary_launch.py",
+    "skills/project-hail-mary/assets/project-hail-mary-small.svg",
+    "skills/project-hail-mary/assets/project-hail-mary-large.svg"
+  ],
+  "detail_lines": [
+    "Opens the user-owned music, docs, repo, or ticket surfaces needed for a deadline push.",
+    "Copies status text instead of silently posting into private accounts.",
+    "Keeps service sign-in inside the user's existing apps or browser."
+  ],
+  "file_path_hints": [
+    "skills/project-hail-mary/scripts/hail_mary_brief.py",
+    "skills/project-hail-mary/scripts/hail_mary_launch.py",
+    "skills/project-hail-mary/references/supported-surfaces.md"
+  ],
+  "icon_small": "skills/project-hail-mary/assets/project-hail-mary-small.svg",
+  "icon_large": "skills/project-hail-mary/assets/project-hail-mary-large.svg",
+  "system_symbol": "bolt.circle.fill"
+}

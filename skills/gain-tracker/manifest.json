@@ -1,0 +1,51 @@
+{
+  "id": "gain-tracker",
+  "name": "Gain Tracker",
+  "category": "Productivity",
+  "status": "active",
+  "description": "Track daily git productivity or broader output gains against a historical baseline and a target multiplier, then turn the numbers into a gain scorecard or reminder story.",
+  "stars": 4,
+  "short_description": "Connect GitHub, scan repos, and track daily gains.",
+  "brand_color": "#0F9D58",
+  "audience": [
+    "Builders who want daily repo activity turned into a readable progress story",
+    "Mac users comparing current output against a historical productivity baseline",
+    "Operators tracking local repos without turning the loop into a remote dashboard"
+  ],
+  "tags": [
+    "git",
+    "GitHub",
+    "productivity",
+    "daily brief",
+    "scorecard",
+    "local repos",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install gain-tracker",
+  "docs_paths": [
+    "skills/gain-tracker/SKILL.md",
+    "skills/gain-tracker/manifest.json",
+    "skills/gain-tracker/agents/openai.yaml",
+    "skills/gain-tracker/assets/icon-small.svg",
+    "skills/gain-tracker/assets/icon-large.svg",
+    "skills/gain-tracker/references/product-spec.md",
+    "skills/gain-tracker/scripts/run_gain_tracker.sh",
+    "skills/gain-tracker/scripts/daily_git_story.py",
+    "skills/gain-tracker/scripts/git_gain.py",
+    "skills/gain-tracker/scripts/github_connect.py"
+  ],
+  "detail_lines": [
+    "Turns local git activity, optional GitHub identity, and baseline numbers into daily gain stories or broader scorecards.",
+    "Keeps tracked repo config under the user's Codex data area and makes repo selection explicit before measuring output.",
+    "Uses local git data first and does not store GitHub credentials or hidden telemetry in skill metadata."
+  ],
+  "file_path_hints": [
+    "skills/gain-tracker/scripts/run_gain_tracker.sh",
+    "skills/gain-tracker/scripts/daily_git_story.py",
+    "skills/gain-tracker/scripts/git_gain.py",
+    "skills/gain-tracker/references/product-spec.md"
+  ],
+  "icon_small": "skills/gain-tracker/assets/icon-small.svg",
+  "icon_large": "skills/gain-tracker/assets/icon-large.svg",
+  "system_symbol": "chart.line.uptrend.xyaxis"
+}

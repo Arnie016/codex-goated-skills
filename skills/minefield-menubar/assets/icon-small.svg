@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Minefield Menu Bar">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0C1014"/>
+      <stop offset="100%" stop-color="#05070A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#61ED9F"/>
+      <stop offset="100%" stop-color="#B6FFC9"/>
+    </linearGradient>
+  </defs>
+  <rect x="52" y="52" width="408" height="408" rx="104" fill="url(#bg)"/>
+  <rect x="116" y="132" width="280" height="248" rx="34" fill="#0F151B" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <g fill="#17212A">
+    <rect x="144" y="160" width="56" height="56" rx="14"/>
+    <rect x="212" y="160" width="56" height="56" rx="14"/>
+    <rect x="280" y="160" width="56" height="56" rx="14"/>
+    <rect x="144" y="228" width="56" height="56" rx="14"/>
+    <rect x="212" y="228" width="56" height="56" rx="14"/>
+    <rect x="280" y="228" width="56" height="56" rx="14"/>
+    <rect x="144" y="296" width="56" height="56" rx="14"/>
+    <rect x="212" y="296" width="56" height="56" rx="14"/>
+    <rect x="280" y="296" width="56" height="56" rx="14"/>
+  </g>
+  <rect x="212" y="228" width="56" height="56" rx="14" fill="#EB5F4D"/>
+  <path d="M240 178 256 212 290 228 256 244 240 278 224 244 190 228 224 212Z" fill="url(#accent)"/>
+  <circle cx="390" cy="128" r="16" fill="#61ED9F"/>
+  <g>
+    <rect x="142" y="400" width="88" height="24" rx="12" fill="#61ED9F" fill-opacity="0.2" stroke="#61ED9F" stroke-opacity="0.42"/>
+    <circle cx="164" cy="412" r="6" fill="#61ED9F"/>
+    <rect x="178" y="407" width="34" height="10" rx="5" fill="#DDFDE8" fill-opacity="0.7"/>
+    <rect x="246" y="400" width="70" height="24" rx="12" fill="#EB5F4D" fill-opacity="0.18" stroke="#EB5F4D" stroke-opacity="0.38"/>
+    <path d="M281 405 287 416 299 422 287 428 281 439 275 428 263 422 275 416Z" fill="#EB5F4D"/>
+    <rect x="332" y="400" width="38" height="24" rx="12" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  </g>
+</svg>

@@ -5,7 +5,7 @@ description: A battery-and-power watch that helps you read drain, charging, and 
 
 # Power Sentry
 
-Use this skill when the user wants a polished macOS surface for battery-and-power watch that helps you read drain, charging, and energy mode at a glance.
+Use this skill when the user wants a polished macOS surface for A battery-and-power watch that helps you read drain, charging, and energy mode at a glance.
 
 ## Presentation
 

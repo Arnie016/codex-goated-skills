@@ -5,7 +5,7 @@ description: A release-prep board that turns a shipping checklist into a clean l
 
 # Release Ramp
 
-Use this skill when the user wants a polished macOS surface for release-prep board that turns a shipping checklist into a clean launch lane.
+Use this skill when the user wants a polished macOS surface for A release-prep board that turns a shipping checklist into a clean launch lane.
 
 ## Presentation
 

@@ -1,0 +1,47 @@
+{
+  "id": "telebar",
+  "name": "TeleBar",
+  "category": "Telegram",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend the TeleBar macOS menu bar app, especially the repo app at `apps/telebar`.",
+  "stars": 5,
+  "short_description": "Run and extend the TeleBar menu bar app.",
+  "brand_color": "#2B79FF",
+  "audience": [
+    "Mac users who want a compact Telegram control center",
+    "Builders maintaining TeleBar setup, keychain storage, inbox visibility, and AI writing flows",
+    "Teams keeping bot setup links and chat access honest inside a native popover"
+  ],
+  "tags": [
+    "Telegram",
+    "macOS",
+    "menu bar",
+    "bot setup",
+    "Keychain",
+    "inbox",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install telebar",
+  "docs_paths": [
+    "skills/telebar/SKILL.md",
+    "skills/telebar/manifest.json",
+    "skills/telebar/agents/openai.yaml",
+    "skills/telebar/assets/telebar-small.svg",
+    "skills/telebar/assets/telebar-large.svg",
+    "skills/telebar/references/project-map.md",
+    "skills/telebar/scripts/run_telebar.sh"
+  ],
+  "detail_lines": [
+    "Keeps TeleBar work menu-bar-only, with short setup paths, grouped rows, and compact native popover controls.",
+    "Treats Telegram bot tokens and OpenAI keys as Keychain-only secrets, never plaintext catalog or defaults data.",
+    "Shows only chats the bot can actually access and uses supported Telegram setup links instead of fake autonomous setup."
+  ],
+  "file_path_hints": [
+    "apps/telebar/",
+    "skills/telebar/references/project-map.md",
+    "skills/telebar/scripts/run_telebar.sh"
+  ],
+  "icon_small": "skills/telebar/assets/telebar-small.svg",
+  "icon_large": "skills/telebar/assets/telebar-large.svg",
+  "system_symbol": "paperplane.fill"
+}

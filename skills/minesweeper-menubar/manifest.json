@@ -1,0 +1,48 @@
+{
+  "id": "minesweeper-menubar",
+  "name": "Minesweeper Menu Bar",
+  "category": "Games and Consoles",
+  "status": "active",
+  "stars": 4,
+  "short_description": "A Swift macOS menu-bar icon app concept for playing Minesweeper in a compact native popover.",
+  "audience": [
+    "Mac users who want a quick puzzle in the menu bar",
+    "SwiftUI builders exploring playful menu bar apps",
+    "People who like Minesweeper-style logic games"
+  ],
+  "tags": [
+    "macOS",
+    "SwiftUI",
+    "menu bar",
+    "Minesweeper",
+    "game",
+    "puzzle",
+    "icon app"
+  ],
+  "install_command": "codex-skillctl install minesweeper-menubar",
+  "docs_paths": [
+    "skills/minesweeper-menubar/SKILL.md",
+    "skills/minesweeper-menubar/manifest.json",
+    "skills/minesweeper-menubar/agents/openai.yaml",
+    "skills/minesweeper-menubar/references/product-spec.md",
+    "skills/minesweeper-menubar/prototype/README.md",
+    "skills/minesweeper-menubar/prototype/SkillMenuBarApp.swift",
+    "skills/minesweeper-menubar/prototype/SkillMenuBarView.swift",
+    "skills/minesweeper-menubar/prototype/SkillGameModel.swift",
+    "skills/minesweeper-menubar/prototype/SkillDetailView.swift",
+    "skills/minesweeper-menubar/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Turns Minesweeper into a native Swift menu bar icon app instead of a full desktop game.",
+    "Keeps the board, timer, flags, and reset flow fully playable inside one compact popover.",
+    "Gives the repo a direct template for shipping a real puzzle game as a top-bar utility."
+  ],
+  "file_path_hints": [
+    "skills/minesweeper-menubar/references/product-spec.md",
+    "skills/minesweeper-menubar/prototype/SkillGameModel.swift",
+    "skills/minesweeper-menubar/prototype/SkillMenuBarView.swift"
+  ],
+  "icon_small": "skills/minesweeper-menubar/assets/icon-small.svg",
+  "icon_large": "skills/minesweeper-menubar/assets/icon-large.svg",
+  "system_symbol": "flag.pattern.checkered"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "vibe-bluetooth",
+  "name": "VibeBluetooth",
+  "category": "Mac OS",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend the VibeWidget macOS SwiftUI app and widget. Use when Codex needs to work on a VibeWidget or VibeBluetooth workspace, especially the repo app at `apps/vibe-widget`; regenerate the Xcode project; launch it in Xcode; run local doctor, build, or typecheck checks; or modify the HomeKit, Spotify, widget, voice panel, or shared-core flows.",
+  "stars": 5,
+  "short_description": "Run and extend the VibeWidget macOS app, widget, and shared core.",
+  "brand_color": "#6E54FF",
+  "audience": [
+    "Builders maintaining the VibeWidget macOS app and WidgetKit extension",
+    "Mac users shaping a compact HomeKit, Spotify, voice, and output-routing control surface",
+    "Teams keeping app-group state, parser tests, and credential storage boundaries clear"
+  ],
+  "tags": [
+    "macOS",
+    "SwiftUI",
+    "WidgetKit",
+    "HomeKit",
+    "Spotify",
+    "voice",
+    "Keychain",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install vibe-bluetooth",
+  "docs_paths": [
+    "skills/vibe-bluetooth/SKILL.md",
+    "skills/vibe-bluetooth/manifest.json",
+    "skills/vibe-bluetooth/agents/openai.yaml",
+    "skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg",
+    "skills/vibe-bluetooth/assets/vibe-bluetooth-large.svg",
+    "skills/vibe-bluetooth/references/project-map.md",
+    "skills/vibe-bluetooth/scripts/run_vibe_bluetooth.sh",
+    "skills/vibe-bluetooth/LICENSE.txt"
+  ],
+  "detail_lines": [
+    "Keeps app, widget, shared core, parser tests, and runner commands represented as one VibeWidget maintenance workflow.",
+    "Owns HomeKit, Spotify, voice panel, widget, and output-routing app work while avoiding private Bluetooth pairing or control automation.",
+    "Keeps OpenAI and Spotify credentials in Keychain and preserves compile-safe local validation for unsigned developer builds."
+  ],
+  "file_path_hints": [
+    "apps/vibe-widget/",
+    "VibeWidgetApp/Sources/",
+    "VibeWidgetWidget/Sources/",
+    "VibeWidgetCore/Sources/",
+    "skills/vibe-bluetooth/scripts/run_vibe_bluetooth.sh"
+  ],
+  "icon_small": "skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg",
+  "icon_large": "skills/vibe-bluetooth/assets/vibe-bluetooth-large.svg",
+  "system_symbol": "speaker.wave.3.fill"
+}

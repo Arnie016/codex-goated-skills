@@ -1,0 +1,49 @@
+{
+  "id": "deck-export-bundle",
+  "name": "Deck Export Bundle",
+  "category": "Presentation",
+  "status": "active",
+  "stars": 5,
+  "short_description": "Package the current deck, speaker notes, and send-ready assets from the menu bar.",
+  "audience": [
+    "Founders and operators",
+    "Designers and presenters",
+    "People sending deck updates under time pressure"
+  ],
+  "tags": [
+    "presentation",
+    "slides",
+    "Keynote",
+    "PowerPoint",
+    "export",
+    "speaker notes",
+    "menu bar",
+    "handoff"
+  ],
+  "install_command": "codex-skillctl install deck-export-bundle",
+  "docs_paths": [
+    "skills/deck-export-bundle/SKILL.md",
+    "skills/deck-export-bundle/manifest.json",
+    "skills/deck-export-bundle/agents/openai.yaml",
+    "skills/deck-export-bundle/assets/icon.svg",
+    "skills/deck-export-bundle/assets/preview.svg",
+    "skills/deck-export-bundle/prototype/README.md",
+    "skills/deck-export-bundle/prototype/SkillMenuBarApp.swift",
+    "skills/deck-export-bundle/prototype/SkillMenuBarView.swift",
+    "skills/deck-export-bundle/prototype/SkillDetailView.swift",
+    "skills/deck-export-bundle/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Pulls the live deck, speaker notes, and output format into one send-ready bundle card.",
+    "Keeps PDF export, notes text, and reveal-in-Finder actions together before the handoff leaves your Mac.",
+    "Turns last-mile deck packaging into one calm menu-bar step instead of a Finder and chat scramble."
+  ],
+  "file_path_hints": [
+    "skills/deck-export-bundle/prototype/README.md",
+    "skills/deck-export-bundle/prototype/SkillMenuBarApp.swift",
+    "skills/deck-export-bundle/prototype/SkillMenuBarView.swift"
+  ],
+  "icon_small": "skills/deck-export-bundle/assets/icon-small.svg",
+  "icon_large": "skills/deck-export-bundle/assets/icon-large.svg",
+  "system_symbol": "square.and.arrow.up"
+}

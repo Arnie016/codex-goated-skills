@@ -1,0 +1,51 @@
+{
+  "id": "download-landing-pad",
+  "name": "Download Landing Pad",
+  "category": "Mac OS",
+  "status": "active",
+  "stars": 5,
+  "short_description": "A menu-bar staging pad for fresh downloads with safe rename, reveal, and route actions.",
+  "audience": [
+    "Mac users exporting screenshots, PDFs, and spreadsheets from the browser",
+    "Operators who constantly move files into chat, notes, or project folders",
+    "People who want Downloads cleanup to be deliberate instead of manual Finder churn"
+  ],
+  "tags": [
+    "macOS",
+    "downloads",
+    "menu bar",
+    "Finder",
+    "rename",
+    "handoff",
+    "routing"
+  ],
+  "install_command": "codex-skillctl install download-landing-pad",
+  "docs_paths": [
+    "skills/download-landing-pad/SKILL.md",
+    "skills/download-landing-pad/manifest.json",
+    "skills/download-landing-pad/agents/openai.yaml",
+    "skills/download-landing-pad/assets/icon-small.svg",
+    "skills/download-landing-pad/assets/icon-large.svg",
+    "skills/download-landing-pad/assets/icon.svg",
+    "skills/download-landing-pad/assets/preview.svg",
+    "skills/download-landing-pad/scripts/download_landing_pad.py",
+    "skills/download-landing-pad/prototype/README.md",
+    "skills/download-landing-pad/prototype/SkillMenuBarApp.swift",
+    "skills/download-landing-pad/prototype/SkillMenuBarView.swift",
+    "skills/download-landing-pad/prototype/SkillDetailView.swift",
+    "skills/download-landing-pad/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Starts with a deterministic doctor so Downloads path, source metadata, reveal support, and copy-path support are explicit before you act.",
+    "Surfaces the newest files in Downloads as one calm queue with age, size, and source hints once the local path is ready.",
+    "Keeps rename, reveal, copy-path, and explicit move actions in the same stop where the file first lands so browser exports leave Downloads on purpose."
+  ],
+  "file_path_hints": [
+    "skills/download-landing-pad/scripts/download_landing_pad.py",
+    "skills/download-landing-pad/prototype/SkillMenuBarView.swift",
+    "skills/download-landing-pad/prototype/SkillDetailView.swift"
+  ],
+  "icon_small": "skills/download-landing-pad/assets/icon-small.svg",
+  "icon_large": "skills/download-landing-pad/assets/icon-large.svg",
+  "system_symbol": "tray.and.arrow.down.fill"
+}

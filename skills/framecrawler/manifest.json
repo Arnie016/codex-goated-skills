@@ -1,0 +1,42 @@
+{
+  "id": "framecrawler",
+  "name": "FrameCrawler",
+  "category": "Creative Tooling",
+  "status": "active",
+  "stars": 4,
+  "brand_color": "#8B5CF6",
+  "short_description": "A prompt-to-Blender workflow for SceneSpec JSON, local UI, menu-bar inspection, and watched-file handoff.",
+  "audience": [
+    "Blender users",
+    "Creative tool builders",
+    "People blocking cinematic scenes locally"
+  ],
+  "tags": [
+    "blender",
+    "scene",
+    "json",
+    "creative",
+    "menu bar"
+  ],
+  "install_command": "codex-skillctl install framecrawler",
+  "docs_paths": [
+    "skills/framecrawler/SKILL.md",
+    "skills/framecrawler/manifest.json",
+    "skills/framecrawler/agents/openai.yaml",
+    "skills/framecrawler/assets/framecrawler-small.svg",
+    "skills/framecrawler/assets/framecrawler-large.svg"
+  ],
+  "detail_lines": [
+    "Keeps prompt output aligned with the SceneSpec file Blender is watching.",
+    "Makes the handoff between Codex, a local UI, menu bar inspector, and Blender explicit.",
+    "Preserves local run archives so generated scenes stay inspectable."
+  ],
+  "file_path_hints": [
+    "plugins/framecrawler/scripts/generate_scenespec.js",
+    "skills/framecrawler/SKILL.md",
+    "skills/framecrawler/agents/openai.yaml"
+  ],
+  "icon_small": "skills/framecrawler/assets/framecrawler-small.svg",
+  "icon_large": "skills/framecrawler/assets/framecrawler-large.svg",
+  "system_symbol": "film.stack.fill"
+}

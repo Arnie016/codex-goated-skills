@@ -1,0 +1,50 @@
+{
+  "id": "minecraft-essentials",
+  "name": "Minecraft Essentials",
+  "category": "Games and Consoles",
+  "status": "active",
+  "description": "Install, upgrade, run, migrate, back up, and troubleshoot Minecraft Java servers with clear local setup and join guidance.",
+  "stars": 5,
+  "short_description": "Run, upgrade, and fix Minecraft Java servers.",
+  "brand_color": "#4CAF50",
+  "audience": [
+    "Minecraft server hosts maintaining local or small-group Java servers",
+    "Players moving from ad hoc launch scripts to safer Paper, Vanilla, or Fabric setups",
+    "Builders troubleshooting backups, plugins, Java versions, LAN joins, and migration paths"
+  ],
+  "tags": [
+    "Minecraft",
+    "server",
+    "Paper",
+    "Fabric",
+    "backup",
+    "LAN",
+    "local first",
+    "operations"
+  ],
+  "install_command": "codex-skillctl install minecraft-essentials",
+  "docs_paths": [
+    "skills/minecraft-essentials/SKILL.md",
+    "skills/minecraft-essentials/manifest.json",
+    "skills/minecraft-essentials/agents/openai.yaml",
+    "skills/minecraft-essentials/assets/minecraft-essentials-small.svg",
+    "skills/minecraft-essentials/assets/minecraft-essentials-large.svg",
+    "skills/minecraft-essentials/scripts/mc_lan_info.sh",
+    "skills/minecraft-essentials/references/server-modes.md",
+    "skills/minecraft-essentials/references/plugin-packs.md",
+    "skills/minecraft-essentials/references/operations-checklist.md"
+  ],
+  "detail_lines": [
+    "Starts with a server audit, world and config backup, Java version check, and clear choice between Vanilla, Paper, or Fabric.",
+    "Surfaces same-machine, LAN, and hostname join info without implying that public exposure is safe by default.",
+    "Treats compatibility plugins, Bedrock bridging, major upgrades, and always-on hosting as explicit operational decisions."
+  ],
+  "file_path_hints": [
+    "skills/minecraft-essentials/scripts/mc_lan_info.sh",
+    "skills/minecraft-essentials/references/server-modes.md",
+    "skills/minecraft-essentials/references/operations-checklist.md"
+  ],
+  "icon_small": "skills/minecraft-essentials/assets/minecraft-essentials-small.svg",
+  "icon_large": "skills/minecraft-essentials/assets/minecraft-essentials-large.svg",
+  "system_symbol": "server.rack"
+}

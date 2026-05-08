@@ -1,4 +1,7 @@
 interface:
   display_name: "Xbox Studio"
   short_description: "macOS Xbox controller and Bluetooth hub"
+  icon_small: "./assets/xbox-studio-small.svg"
+  icon_large: "./assets/xbox-studio-large.svg"
+  brand_color: "#107C10"
   default_prompt: "Use $xbox-studio to run, build, or improve a realistic macOS Xbox controller and Bluetooth control center, then layer in cloud gaming, Remote Play, captures, or account flows."

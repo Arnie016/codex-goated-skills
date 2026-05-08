@@ -13,6 +13,8 @@ enum WifiInspectorError: LocalizedError {
 }
 
 struct WifiInspector {
+    private let scorer = WifiTrustScorer()
+
     func captureSnapshot() async throws -> NetworkSnapshot {
         async let wifiInfo = currentWifiInfo()
         async let gateway = currentGateway()
@@ -31,7 +33,7 @@ struct WifiInspector {
         let nearby = await nearbyNetworks
         let kind = await connectionKind
 
-        let assessment = assessNetwork(
+        let assessment = scorer.assessNetwork(
             current: current,
             connectionKind: kind,
             gateway: gatewayValue,
@@ -74,16 +76,6 @@ struct WifiInspector {
     private func isPrivateAddress(_ value: String) -> Bool {
         value.hasPrefix("10.") || value.hasPrefix("192.168.") || value.range(of: #"^172\.(1[6-9]|2\d|3[0-1])\."#, options: .regularExpression) != nil
     }
-}
-
-private struct ParsedCurrentNetwork {
-    let name: String
-    let security: String
-    let channel: String
-    let phyMode: String
-    let signal: Int?
-    let noise: Int?
-    let txRate: Int?
 }
 
 private extension WifiInspector {
@@ -482,8 +474,8 @@ private extension WifiInspector {
                             channel: currentChannel,
                             type: currentType,
                             signal: nil,
-                            band: bandLabel(from: currentChannel),
-                            riskProbability: riskProbability(security: currentSecurity, channel: currentChannel, signal: nil),
+                            band: scorer.bandLabel(from: currentChannel),
+                            riskProbability: scorer.riskProbability(security: currentSecurity, channel: currentChannel, signal: nil),
                             estimatedDistance: "Unknown"
                         )
                     )
@@ -513,8 +505,8 @@ private extension WifiInspector {
                     channel: currentChannel,
                     type: currentType,
                     signal: nil,
-                    band: bandLabel(from: currentChannel),
-                    riskProbability: riskProbability(security: currentSecurity, channel: currentChannel, signal: nil),
+                    band: scorer.bandLabel(from: currentChannel),
+                    riskProbability: scorer.riskProbability(security: currentSecurity, channel: currentChannel, signal: nil),
                     estimatedDistance: "Unknown"
                 )
             )
@@ -637,9 +629,9 @@ private extension WifiInspector {
                 channel: channel,
                 type: "Infrastructure",
                 signal: signal,
-                band: bandLabel(from: channel),
-                riskProbability: riskProbability(security: security, channel: channel, signal: signal),
-                estimatedDistance: estimatedDistance(from: signal)
+                band: scorer.bandLabel(from: channel),
+                riskProbability: scorer.riskProbability(security: security, channel: channel, signal: signal),
+                estimatedDistance: scorer.estimatedDistance(from: signal)
             )
         }
     }

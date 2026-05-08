@@ -5,7 +5,7 @@ description: A document packaging bridge that turns notes, markdown, and fragmen
 
 # Doc Drop Bridge
 
-Use this skill when the user wants a polished macOS surface for document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.
+Use this skill when the user wants a polished macOS surface for A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.
 
 ## Presentation
 

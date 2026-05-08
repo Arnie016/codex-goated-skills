@@ -1,0 +1,48 @@
+{
+  "id": "clipboard-studio",
+  "name": "Context Assembly",
+  "category": "Productivity",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or refine Context Assembly, especially the bundled apps/clipboard-studio macOS menu bar app. Use when Codex needs to work on clipboard-heavy context assembly, keep the panel compact, wire pasteboard or app-state capture, or validate the local Xcode workspace and tests without leaking sensitive data.",
+  "stars": 5,
+  "short_description": "Build and validate the Context Assembly menu bar app for capture, export, and fast cross-app handoff.",
+  "brand_color": "#22C55E",
+  "icon_small": "skills/clipboard-studio/assets/clipboard-studio-small.svg",
+  "icon_large": "skills/clipboard-studio/assets/clipboard-studio-large.svg",
+  "audience": [
+    "Mac users assembling context across apps",
+    "Builders moving clipboard snippets into prompts, notes, and markdown",
+    "Teams that need explicit local-first clipboard handling"
+  ],
+  "tags": [
+    "clipboard",
+    "context assembly",
+    "menu bar",
+    "macOS",
+    "handoff",
+    "privacy",
+    "export"
+  ],
+  "install_command": "codex-skillctl install clipboard-studio",
+  "docs_paths": [
+    "skills/clipboard-studio/SKILL.md",
+    "skills/clipboard-studio/manifest.json",
+    "skills/clipboard-studio/agents/openai.yaml",
+    "skills/clipboard-studio/assets/clipboard-studio-small.svg",
+    "skills/clipboard-studio/assets/clipboard-studio-large.svg",
+    "skills/clipboard-studio/references/workspace-map.md",
+    "skills/clipboard-studio/references/workflow-map.md",
+    "skills/clipboard-studio/scripts/run_clipboard_studio.sh"
+  ],
+  "detail_lines": [
+    "Turns scattered clipboard snippets into one structured prompt, note, or markdown export.",
+    "Keeps capture, preview, send, and export actions compact enough for a menu-bar workflow.",
+    "Treats clipboard contents as sensitive by default and avoids hidden sync or broad persistence."
+  ],
+  "file_path_hints": [
+    "apps/clipboard-studio",
+    "skills/clipboard-studio/references/workspace-map.md",
+    "skills/clipboard-studio/scripts/run_clipboard_studio.sh"
+  ],
+  "system_symbol": "doc.on.clipboard.fill"
+}

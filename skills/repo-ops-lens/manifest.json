@@ -41,5 +41,7 @@
     "skills/repo-ops-lens/prototype/SkillMenuBarApp.swift",
     "skills/repo-ops-lens/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/repo-ops-lens/assets/icon-small.svg",
+  "icon_large": "skills/repo-ops-lens/assets/icon-large.svg",
   "system_symbol": "magnifyingglass.circle.fill"
 }

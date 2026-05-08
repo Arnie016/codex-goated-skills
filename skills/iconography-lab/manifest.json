@@ -1,0 +1,46 @@
+{
+  "id": "iconography-lab",
+  "name": "Iconography Lab",
+  "category": "Community & Narrative",
+  "status": "active",
+  "description": "Define the instantly recognizable visual and verbal codes of a public figure, including palette, props, silhouettes, poses, moods, and catchphrases, then output an identity kit.",
+  "stars": 4,
+  "short_description": "Map visual and verbal codes into an identity kit.",
+  "brand_color": "#3E6DFF",
+  "audience": [
+    "Creative directors shaping personality-led visual systems",
+    "Brand strategists finding durable cues in public references",
+    "Talent and founder teams turning recognizable codes into practical guidance"
+  ],
+  "tags": [
+    "iconography",
+    "identity kit",
+    "visual codes",
+    "brand strategy",
+    "creator strategy",
+    "local first",
+    "safety"
+  ],
+  "install_command": "codex-skillctl install iconography-lab",
+  "docs_paths": [
+    "skills/iconography-lab/SKILL.md",
+    "skills/iconography-lab/manifest.json",
+    "skills/iconography-lab/agents/openai.yaml",
+    "skills/iconography-lab/assets/icon-small.svg",
+    "skills/iconography-lab/assets/icon-large.svg",
+    "skills/iconography-lab/references/product-spec.md"
+  ],
+  "detail_lines": [
+    "Clusters photo sets, captions, slogans, props, wardrobe, gestures, and moods into reusable visual and verbal code systems.",
+    "Exports palette, prop, silhouette, framing, phrase, and do-or-do-not guidance for future content, events, and merch.",
+    "Works only from public or user-authorized material and flags impersonation, likeness misuse, and overly close copying risks."
+  ],
+  "file_path_hints": [
+    "skills/iconography-lab/SKILL.md",
+    "skills/iconography-lab/references/product-spec.md",
+    "skills/iconography-lab/assets/icon-small.svg"
+  ],
+  "icon_small": "skills/iconography-lab/assets/icon-small.svg",
+  "icon_large": "skills/iconography-lab/assets/icon-large.svg",
+  "system_symbol": "eye.fill"
+}

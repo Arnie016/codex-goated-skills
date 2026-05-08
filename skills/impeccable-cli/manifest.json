@@ -1,0 +1,57 @@
+{
+  "id": "impeccable-cli",
+  "name": "Impeccable CLI",
+  "category": "Developer Tools",
+  "status": "active",
+  "description": "Run the official impeccable CLI against frontend files, directories, or live URLs to catch deterministic UI anti-patterns and launch the Visual Mode overlay when a page needs in-browser triage.",
+  "stars": 5,
+  "short_description": "The official Impeccable design-audit skill for deterministic code scans and live anti-pattern overlays.",
+  "brand_color": "#F97316",
+  "icon_small": "skills/impeccable-cli/assets/impeccable-cli-small.svg",
+  "icon_large": "skills/impeccable-cli/assets/impeccable-cli-large.svg",
+  "audience": [
+    "Frontend engineers shipping AI-assisted interfaces",
+    "Maintainers who want CI-friendly design audit output",
+    "Codex users who need a truthful anti-pattern pass before polishing UI"
+  ],
+  "tags": [
+    "frontend",
+    "design",
+    "audit",
+    "cli",
+    "CI",
+    "HTML",
+    "CSS",
+    "React",
+    "Vue",
+    "Svelte"
+  ],
+  "install_command": "codex-skillctl install impeccable-cli",
+  "docs_paths": [
+    "skills/impeccable-cli/SKILL.md",
+    "skills/impeccable-cli/manifest.json",
+    "skills/impeccable-cli/agents/openai.yaml",
+    "skills/impeccable-cli/references/cli-quick-reference.md",
+    "skills/impeccable-cli/scripts/impeccable_detect.sh",
+    "skills/impeccable-cli/scripts/impeccable_live.sh",
+    "skills/impeccable-cli/assets/impeccable-cli-small.svg",
+    "skills/impeccable-cli/assets/impeccable-cli-large.svg",
+    "skills/impeccable-cli/prototype/README.md",
+    "skills/impeccable-cli/prototype/SkillMenuBarApp.swift",
+    "skills/impeccable-cli/prototype/SkillMenuBarView.swift",
+    "skills/impeccable-cli/prototype/SkillDetailView.swift",
+    "skills/impeccable-cli/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Runs the official `impeccable detect` workflow against local frontend files, folders, or live URLs.",
+    "Covers `impeccable live` too, so agents can launch the overlay workflow when a page needs in-place visual triage.",
+    "Keeps deterministic findings separate from broader design judgment while still fitting CI, local review, and browser debugging."
+  ],
+  "file_path_hints": [
+    "skills/impeccable-cli/scripts/impeccable_detect.sh",
+    "skills/impeccable-cli/scripts/impeccable_live.sh",
+    "skills/impeccable-cli/references/cli-quick-reference.md",
+    "skills/impeccable-cli/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "paintbrush.pointed.fill"
+}

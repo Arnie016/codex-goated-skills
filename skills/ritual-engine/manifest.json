@@ -1,0 +1,46 @@
+{
+  "id": "ritual-engine",
+  "name": "Ritual Engine",
+  "category": "Community & Narrative",
+  "status": "active",
+  "description": "Design repeatable fan rituals, naming systems, participation loops, and recurring community formats, then output a ritual calendar.",
+  "stars": 4,
+  "short_description": "Design sustainable rituals, loops, and cadence plans.",
+  "brand_color": "#C96A34",
+  "audience": [
+    "Community designers building repeatable participation formats",
+    "Creator strategists matching rituals to publishing cadence",
+    "Brand operators checking moderation capacity and fatigue safeguards"
+  ],
+  "tags": [
+    "rituals",
+    "community",
+    "cadence",
+    "participation",
+    "creator strategy",
+    "local first",
+    "safety"
+  ],
+  "install_command": "codex-skillctl install ritual-engine",
+  "docs_paths": [
+    "skills/ritual-engine/SKILL.md",
+    "skills/ritual-engine/manifest.json",
+    "skills/ritual-engine/agents/openai.yaml",
+    "skills/ritual-engine/assets/icon-small.svg",
+    "skills/ritual-engine/assets/icon-large.svg",
+    "skills/ritual-engine/references/product-spec.md"
+  ],
+  "detail_lines": [
+    "Turns publishing cadence, community habits, launch moments, moderation capacity, and tone limits into named recurring rituals.",
+    "Exports participation loops, weekly or event-driven cadence, guardrails, fatigue safeguards, and pilot plans with stop conditions.",
+    "Works only from public or user-authorized material and rejects compulsive streaks, guilt-driven participation, and emotionally coercive loops."
+  ],
+  "file_path_hints": [
+    "skills/ritual-engine/SKILL.md",
+    "skills/ritual-engine/references/product-spec.md",
+    "skills/ritual-engine/assets/icon-small.svg"
+  ],
+  "icon_small": "skills/ritual-engine/assets/icon-small.svg",
+  "icon_large": "skills/ritual-engine/assets/icon-large.svg",
+  "system_symbol": "arrow.triangle.2.circlepath"
+}

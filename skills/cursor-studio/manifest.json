@@ -1,0 +1,52 @@
+{
+  "id": "cursor-studio",
+  "name": "Cursor Studio",
+  "category": "Mac OS",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend a Cursor Studio macOS menu bar app that plans custom cursor packs from presets, prompt notes, slot lists, hotspot guidance, and exportable briefs. Use when Codex needs to work on a workspace containing `CursorStudioApp`, keep Cursor Studio separate from Folder Studio, regenerate the Xcode project, or validate the `CursorStudio` scheme and tests.",
+  "stars": 5,
+  "short_description": "Preset-driven cursor pack workflows for macOS",
+  "brand_color": "#4F86FF",
+  "audience": [
+    "Mac users designing repeatable cursor-pack briefs and role lists",
+    "Builders shipping compact menu-bar utilities with deterministic export flows",
+    "Teams keeping cursor-pack planning separate from Finder folder icon work"
+  ],
+  "tags": [
+    "macOS",
+    "cursor packs",
+    "menu bar",
+    "preset planning",
+    "hotspot notes",
+    "export briefs",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install cursor-studio",
+  "packs": [
+    "macos-utility-builders",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/cursor-studio/SKILL.md",
+    "skills/cursor-studio/manifest.json",
+    "skills/cursor-studio/agents/openai.yaml",
+    "skills/cursor-studio/assets/cursor-studio-small.svg",
+    "skills/cursor-studio/assets/cursor-studio-large.svg",
+    "skills/cursor-studio/references/project-map.md",
+    "skills/cursor-studio/scripts/run_cursor_studio.sh"
+  ],
+  "detail_lines": [
+    "Keeps preset, accent palette, cursor-role scope, exact slot selection, hotspot notes, and export target visible in a compact menu-bar workflow.",
+    "Produces deterministic markdown or JSON briefs for cursor-pack work instead of pretending to generate live cursor artwork when no generator is wired in.",
+    "Uses explicit local workspace inputs and does not require hidden network calls, account tokens, or broad filesystem persistence."
+  ],
+  "file_path_hints": [
+    "CursorStudioApp/Sources/App/",
+    "CursorStudioApp/Sources/Views/",
+    "CursorStudioApp/Tests/",
+    "skills/cursor-studio/scripts/run_cursor_studio.sh"
+  ],
+  "icon_small": "skills/cursor-studio/assets/cursor-studio-small.svg",
+  "icon_large": "skills/cursor-studio/assets/cursor-studio-large.svg",
+  "system_symbol": "cursorarrow.click"
+}

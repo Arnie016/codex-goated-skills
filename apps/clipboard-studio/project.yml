@@ -18,12 +18,14 @@ targets:
     info:
       path: ClipboardStudioApp/Info.plist
       properties:
-        CFBundleDisplayName: Clipboard Studio
+        CFBundleDisplayName: Context Assembly
         LSApplicationCategoryType: public.app-category.productivity
         LSUIElement: true
         NSPrincipalClass: NSApplication
+        NSAppleEventsUsageDescription: Context Assembly uses browser and document state to save, resume, and assemble your current work context.
     settings:
       base:
+        PRODUCT_NAME: Context Assembly
         PRODUCT_BUNDLE_IDENTIFIER: com.arnav.ClipboardStudio
         INFOPLIST_FILE: ClipboardStudioApp/Info.plist
         PRODUCT_MODULE_NAME: ClipboardStudio
@@ -40,6 +42,8 @@ targets:
       base:
         GENERATE_INFOPLIST_FILE: YES
         PRODUCT_BUNDLE_IDENTIFIER: com.arnav.ClipboardStudioTests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Context Assembly.app/Contents/MacOS/Context Assembly"
+        BUNDLE_LOADER: "$(TEST_HOST)"
 schemes:
   ClipboardStudio:
     build:

@@ -1,0 +1,46 @@
+{
+  "id": "parasocial-studio",
+  "name": "Parasocial Studio",
+  "category": "Community & Narrative",
+  "status": "active",
+  "description": "Shape safe closeness mechanics like acknowledgements, voice-note drops, recurring touchpoints, and boundary language, then output a relationship cadence plan.",
+  "stars": 4,
+  "short_description": "Plan safe closeness rhythms for public figures.",
+  "brand_color": "#D66B87",
+  "audience": [
+    "Talent teams designing audience touchpoints with clear boundaries",
+    "Creator strategists planning warm but scalable acknowledgement rhythms",
+    "Founder-led brands reviewing closeness mechanics before they create unhealthy expectations"
+  ],
+  "tags": [
+    "community",
+    "boundaries",
+    "creator strategy",
+    "touchpoints",
+    "relationship cadence",
+    "local first",
+    "safety"
+  ],
+  "install_command": "codex-skillctl install parasocial-studio",
+  "docs_paths": [
+    "skills/parasocial-studio/SKILL.md",
+    "skills/parasocial-studio/manifest.json",
+    "skills/parasocial-studio/agents/openai.yaml",
+    "skills/parasocial-studio/assets/icon-small.svg",
+    "skills/parasocial-studio/assets/icon-large.svg",
+    "skills/parasocial-studio/references/product-spec.md"
+  ],
+  "detail_lines": [
+    "Converts current touchpoints, tone goals, maturity signals, and operational limits into a cadence plan.",
+    "Makes boundary language, refusal patterns, red flags, and stop conditions first-class parts of the output.",
+    "Works only from public or user-authorized inputs and rejects pseudo-romantic framing, dependency hooks, harassment, and covert profiling."
+  ],
+  "file_path_hints": [
+    "skills/parasocial-studio/SKILL.md",
+    "skills/parasocial-studio/references/product-spec.md",
+    "skills/parasocial-studio/assets/icon-small.svg"
+  ],
+  "icon_small": "skills/parasocial-studio/assets/icon-small.svg",
+  "icon_large": "skills/parasocial-studio/assets/icon-large.svg",
+  "system_symbol": "bubble.left.and.bubble.right.fill"
+}

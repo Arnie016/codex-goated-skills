@@ -41,5 +41,7 @@
     "skills/screen-snippet-studio/prototype/SkillMenuBarApp.swift",
     "skills/screen-snippet-studio/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/screen-snippet-studio/assets/icon-small.svg",
+  "icon_large": "skills/screen-snippet-studio/assets/icon-large.svg",
   "system_symbol": "viewfinder"
 }

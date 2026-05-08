@@ -1,0 +1,52 @@
+{
+  "id": "find-my-phone-studio",
+  "name": "Find My Phone Studio",
+  "category": "Mac OS",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or refine a realistic Mac phone-recovery workflow, especially the bundled `apps/phone-spotter` menu bar app. Use when Codex needs a repo-native path for locate, ring, call, pairing, directions, or provider handoff on iPhone or Android without inventing unsupported tracking APIs.",
+  "stars": 5,
+  "short_description": "macOS phone recovery helper for locate, ring, call, and provider handoff flows.",
+  "brand_color": "#3B82F6",
+  "audience": [
+    "Mac users who want urgent phone-finding actions one click away",
+    "Builders maintaining the Phone Spotter menu-bar app and local pairing flow",
+    "Teams separating supported provider handoff from unsupported tracking promises"
+  ],
+  "tags": [
+    "macOS",
+    "phone recovery",
+    "Find My",
+    "Android",
+    "menu bar",
+    "provider handoff",
+    "local first",
+    "privacy"
+  ],
+  "install_command": "codex-skillctl install find-my-phone-studio",
+  "docs_paths": [
+    "skills/find-my-phone-studio/SKILL.md",
+    "skills/find-my-phone-studio/manifest.json",
+    "skills/find-my-phone-studio/agents/openai.yaml",
+    "skills/find-my-phone-studio/assets/find-my-phone-studio-small.svg",
+    "skills/find-my-phone-studio/assets/find-my-phone-studio-large.svg",
+    "skills/find-my-phone-studio/references/project-map.md",
+    "skills/find-my-phone-studio/references/apple-supported-paths.md",
+    "skills/find-my-phone-studio/scripts/run_phone_spotter.sh",
+    "skills/find-my-phone-studio/scripts/find_my_phone_brief.py"
+  ],
+  "detail_lines": [
+    "Keeps locate, ring, call, directions, provider handoff, pairing, and Quit actions shaped around the bundled Phone Spotter menu-bar app.",
+    "Treats Apple Find My, Google Find, Shortcuts, and signed-in browser handoff as explicit user-owned provider surfaces instead of hidden tracking APIs.",
+    "Stores clues and pairing state locally, avoids credential capture, and limits the workflow to the user's own or authorized devices."
+  ],
+  "file_path_hints": [
+    "apps/phone-spotter/",
+    "PhoneSpotterApp/Sources/App/",
+    "PhoneSpotterApp/Sources/Views/",
+    "skills/find-my-phone-studio/references/project-map.md",
+    "skills/find-my-phone-studio/scripts/run_phone_spotter.sh"
+  ],
+  "icon_small": "skills/find-my-phone-studio/assets/find-my-phone-studio-small.svg",
+  "icon_large": "skills/find-my-phone-studio/assets/find-my-phone-studio-large.svg",
+  "system_symbol": "location.fill"
+}

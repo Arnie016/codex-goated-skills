@@ -1,0 +1,50 @@
+{
+  "id": "on-this-day",
+  "name": "On This Day",
+  "category": "Productivity",
+  "status": "active",
+  "description": "Fetch the official Wikimedia On This Day feed for a given date, then turn it into a polished daily history brief or a refined macOS-style web app.",
+  "stars": 4,
+  "short_description": "Daily history brief, feed helper, and macOS-style web app.",
+  "brand_color": "#D88B2C",
+  "audience": [
+    "Readers who want a source-linked same-day history brief",
+    "Builders refining the matching macOS-style browser app",
+    "Daily context workflows that need deterministic Wikimedia feed snapshots"
+  ],
+  "tags": [
+    "history",
+    "Wikimedia",
+    "daily brief",
+    "web app",
+    "date picker",
+    "source linked",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install on-this-day",
+  "docs_paths": [
+    "skills/on-this-day/SKILL.md",
+    "skills/on-this-day/manifest.json",
+    "skills/on-this-day/agents/openai.yaml",
+    "skills/on-this-day/assets/icon-small.svg",
+    "skills/on-this-day/assets/icon-large.svg",
+    "skills/on-this-day/references/product-spec.md",
+    "skills/on-this-day/references/project-map.md",
+    "skills/on-this-day/scripts/fetch_on_this_day.py",
+    "skills/on-this-day/scripts/run_on_this_day.sh"
+  ],
+  "detail_lines": [
+    "Uses the official Wikimedia On This Day feed for date-specific events, births, deaths, and holidays instead of inventing facts.",
+    "Supports concise briefs, JSON snapshots, and the repo-native macOS-style web app flow.",
+    "Keeps source links and timezone basis explicit, with no hidden account access or private browsing history collection."
+  ],
+  "file_path_hints": [
+    "skills/on-this-day/scripts/fetch_on_this_day.py",
+    "skills/on-this-day/scripts/run_on_this_day.sh",
+    "skills/on-this-day/references/project-map.md",
+    "apps/on-this-day/"
+  ],
+  "icon_small": "skills/on-this-day/assets/icon-small.svg",
+  "icon_large": "skills/on-this-day/assets/icon-large.svg",
+  "system_symbol": "calendar"
+}

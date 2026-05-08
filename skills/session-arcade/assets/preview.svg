@@ -17,7 +17,7 @@
   <circle cx="980" cy="110" r="120" fill="#32ADE6" opacity="0.16"/>
   <circle cx="140" cy="520" r="150" fill="#32ADE6" opacity="0.08"/>
   <rect x="64" y="64" width="1072" height="502" rx="36" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.08"/>
-  <text x="104" y="154" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="24" font-weight="700" fill="#9CA3AF">Generated macOS skill prototype</text>
+  <text x="104" y="154" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="24" font-weight="700" fill="#9CA3AF">Local-first game launcher</text>
   <text x="104" y="244" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="60" font-weight="800" fill="#FFFFFF">Session Arcade</text>
   <text x="104" y="294" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="28" fill="#D1D5DB">A compact gaming helper for launch-night flow.</text>
   <text x="104" y="352" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="26" fill="#FFFFFF">Start the next session without bouncing through extra screens.</text>

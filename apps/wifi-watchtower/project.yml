@@ -26,8 +26,26 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.arnav.WifiWatchtower
         INFOPLIST_FILE: WifiWatchtowerApp/Info.plist
         PRODUCT_MODULE_NAME: WifiWatchtower
+
+  WifiWatchtowerTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: WifiWatchtowerApp/Tests
+    dependencies:
+      - target: WifiWatchtower
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.arnav.WifiWatchtowerTests
+
 schemes:
   WifiWatchtower:
     build:
       targets:
         WifiWatchtower: all
+        WifiWatchtowerTests: [test]
+    test:
+      targets:
+        - WifiWatchtowerTests

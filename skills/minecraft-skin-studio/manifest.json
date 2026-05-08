@@ -1,0 +1,51 @@
+{
+  "id": "minecraft-skin-studio",
+  "name": "Minecraft Skin Studio",
+  "category": "Games and Consoles",
+  "status": "active",
+  "description": "Draft, clean, preview, register, or build a Minecraft Java skin workflow, including the bundled Minecraft Skin Bar app.",
+  "stars": 5,
+  "short_description": "Build launcher-ready skins or the bundled menu bar app.",
+  "brand_color": "#22C55E",
+  "audience": [
+    "Minecraft players creating or importing Java skin PNGs",
+    "Mac users who want local preview and launcher registration handoff",
+    "Builders maintaining the bundled Minecraft Skin Bar app and helper scripts"
+  ],
+  "tags": [
+    "Minecraft",
+    "skins",
+    "launcher",
+    "menu bar",
+    "PNG",
+    "preview",
+    "local first",
+    "SwiftUI"
+  ],
+  "install_command": "codex-skillctl install minecraft-skin-studio",
+  "docs_paths": [
+    "skills/minecraft-skin-studio/SKILL.md",
+    "skills/minecraft-skin-studio/manifest.json",
+    "skills/minecraft-skin-studio/agents/openai.yaml",
+    "skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg",
+    "skills/minecraft-skin-studio/assets/minecraft-skin-studio-large.svg",
+    "skills/minecraft-skin-studio/scripts/minecraft_skin_studio.py",
+    "skills/minecraft-skin-studio/scripts/run_minecraft_skinbar.sh",
+    "skills/minecraft-skin-studio/references/launcher-flow.md",
+    "skills/minecraft-skin-studio/references/project-map.md"
+  ],
+  "detail_lines": [
+    "Keeps the launcher-ready deliverable explicit: a 64x64 skin PNG, preview image, and optional local launcher registration entry.",
+    "Supports generate, import, clean, render-preview, and register lanes without pretending to change Mojang account state silently.",
+    "Preserves the bundled app's local-first boundary, including Keychain or environment-only API key handling."
+  ],
+  "file_path_hints": [
+    "skills/minecraft-skin-studio/scripts/run_minecraft_skinbar.sh",
+    "skills/minecraft-skin-studio/scripts/minecraft_skin_studio.py",
+    "skills/minecraft-skin-studio/references/project-map.md",
+    "apps/minecraft-skinbar/"
+  ],
+  "icon_small": "skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg",
+  "icon_large": "skills/minecraft-skin-studio/assets/minecraft-skin-studio-large.svg",
+  "system_symbol": "person.crop.square.fill"
+}

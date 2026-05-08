@@ -1,0 +1,47 @@
+{
+  "id": "website-drop",
+  "name": "Website Drop",
+  "category": "Distribution",
+  "status": "active",
+  "description": "Audit a local web app, choose the simplest host, and get it to a live URL fast. Use when Codex needs to prep a site for deploy, confirm the build path, and ship it with minimal hosting overhead.",
+  "stars": 5,
+  "short_description": "Audit a web app, pick a host, and ship it live fast.",
+  "brand_color": "#F97316",
+  "audience": [
+    "Builders who need a local web project checked before deployment",
+    "Teams choosing between Vercel, Netlify, Cloudflare, or existing config",
+    "Maintainers who want one repeatable build and handoff path"
+  ],
+  "tags": [
+    "website",
+    "deploy",
+    "hosting",
+    "build",
+    "Vercel",
+    "Netlify",
+    "Cloudflare",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install website-drop",
+  "docs_paths": [
+    "skills/website-drop/SKILL.md",
+    "skills/website-drop/manifest.json",
+    "skills/website-drop/agents/openai.yaml",
+    "skills/website-drop/assets/website-drop-small.svg",
+    "skills/website-drop/assets/website-drop-large.svg",
+    "skills/website-drop/references/deploy-heuristics.md"
+  ],
+  "detail_lines": [
+    "Detects the app type, install command, build command, output directory, and existing deploy config before recommending a host.",
+    "Optimizes for the smallest deploy path that fits the project instead of adding multi-host clutter.",
+    "Calls out environment-variable and account handoff requirements explicitly, without storing tokens or adding hidden network behavior."
+  ],
+  "file_path_hints": [
+    "skills/website-drop/SKILL.md",
+    "skills/website-drop/references/deploy-heuristics.md",
+    "skills/website-drop/assets/website-drop-small.svg"
+  ],
+  "icon_small": "skills/website-drop/assets/website-drop-small.svg",
+  "icon_large": "skills/website-drop/assets/website-drop-large.svg",
+  "system_symbol": "globe"
+}

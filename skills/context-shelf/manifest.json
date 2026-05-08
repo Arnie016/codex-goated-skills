@@ -1,0 +1,52 @@
+{
+  "id": "context-shelf",
+  "name": "Context Shelf",
+  "category": "Productivity",
+  "status": "active",
+  "description": "Build a polished macOS menu-bar shelf for parking the current tab, clipboard snippet, and scratch note before switching tasks, then make resuming fast and calm.",
+  "stars": 5,
+  "short_description": "Park the front tab, clipboard snippet, and scratch note in a compact resume shelf.",
+  "brand_color": "#30D158",
+  "icon_small": "skills/context-shelf/assets/icon-small.svg",
+  "icon_large": "skills/context-shelf/assets/icon-large.svg",
+  "audience": [
+    "Mac users who get interrupted and need to resume fast",
+    "Researchers and operators juggling browser tabs, notes, and chat",
+    "Builders who want a calm parking spot for in-flight context"
+  ],
+  "tags": [
+    "productivity",
+    "context switching",
+    "menu bar",
+    "clipboard",
+    "browser",
+    "notes",
+    "resume"
+  ],
+  "install_command": "codex-skillctl install context-shelf",
+  "docs_paths": [
+    "skills/context-shelf/SKILL.md",
+    "skills/context-shelf/manifest.json",
+    "skills/context-shelf/agents/openai.yaml",
+    "skills/context-shelf/assets/icon-small.svg",
+    "skills/context-shelf/assets/icon-large.svg",
+    "skills/context-shelf/assets/icon.svg",
+    "skills/context-shelf/assets/preview.svg",
+    "skills/context-shelf/prototype/README.md",
+    "skills/context-shelf/prototype/SkillMenuBarApp.swift",
+    "skills/context-shelf/prototype/SkillMenuBarView.swift",
+    "skills/context-shelf/prototype/SkillDetailView.swift",
+    "skills/context-shelf/prototype/SkillTheme.swift"
+  ],
+  "detail_lines": [
+    "Parks the front tab, clipboard text, and a short scratch note into one compact resume bundle.",
+    "Keeps the next thing to reopen visible in the menu bar so task switches stop turning into scavenger hunts.",
+    "Stays deliberately small with shelf, pin, resume, and clear actions instead of a sprawling workspace manager."
+  ],
+  "file_path_hints": [
+    "skills/context-shelf/prototype/README.md",
+    "skills/context-shelf/prototype/SkillMenuBarApp.swift",
+    "skills/context-shelf/prototype/SkillMenuBarView.swift"
+  ],
+  "system_symbol": "square.stack.3d.up.fill"
+}

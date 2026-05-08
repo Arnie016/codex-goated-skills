@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Finder Selection Relay">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09111B"/>
+      <stop offset="100%" stop-color="#05080D"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A84FF"/>
+      <stop offset="100%" stop-color="#5AC8FA"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#bg)"/>
+  <circle cx="388" cy="120" r="92" fill="#0A84FF" opacity="0.16"/>
+  <circle cx="132" cy="386" r="102" fill="#5AC8FA" opacity="0.10"/>
+  <rect x="90" y="120" width="332" height="270" rx="64" fill="#101720" stroke="#FFFFFF" stroke-opacity="0.08" filter="url(#shadow)"/>
+  <path d="M126 172c0-17.7 14.3-32 32-32h68l24 24h104c17.7 0 32 14.3 32 32v18H126v-42z" fill="#FFFFFF" fill-opacity="0.10"/>
+  <rect x="126" y="186" width="260" height="152" rx="28" fill="url(#accent)"/>
+  <rect x="154" y="216" width="86" height="86" rx="18" fill="#FFFFFF" fill-opacity="0.18"/>
+  <path d="M172 242h38m-38 24h52m-52 24h68" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <text x="258" y="240" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">Finder Selection</text>
+  <text x="258" y="272" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="18" fill="#E5F1FF">Relay</text>
+  <rect x="258" y="298" width="96" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.20"/>
+  <text x="126" y="428" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="15" fill="#9CB3C9">Generated Mac skill</text>
+</svg>

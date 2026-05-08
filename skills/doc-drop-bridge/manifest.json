@@ -41,5 +41,7 @@
     "skills/doc-drop-bridge/prototype/SkillMenuBarApp.swift",
     "skills/doc-drop-bridge/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/doc-drop-bridge/assets/icon-small.svg",
+  "icon_large": "skills/doc-drop-bridge/assets/icon-large.svg",
   "system_symbol": "doc.fill"
 }

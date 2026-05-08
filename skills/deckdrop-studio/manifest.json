@@ -1,0 +1,51 @@
+{
+  "id": "deckdrop-studio",
+  "name": "Deckdrop Studio",
+  "category": "Presentation",
+  "status": "active",
+  "description": "Build, run, troubleshoot, or extend a DeckDrop-style macOS slide workflow that turns PDFs, docs, presentations, and image sets into editable PowerPoint drafts with human review before export. Use when Codex needs to work on a workspace containing `DeckDropApp`; inspect the ingestion, extraction, planning, review, and export pipeline; regenerate the Xcode project; or validate the DeckDrop app and tests.",
+  "stars": 5,
+  "short_description": "Editable slide workflows for mixed-source decks",
+  "brand_color": "#4F86FF",
+  "audience": [
+    "Mac users turning PDFs, docs, presentations, and image sets into editable slide drafts",
+    "Teams that need a human review step before PowerPoint export",
+    "Builders maintaining the DeckDrop ingestion, planning, and export pipeline"
+  ],
+  "tags": [
+    "macOS",
+    "slides",
+    "PowerPoint",
+    "presentation",
+    "deck generation",
+    "document intake",
+    "draft review",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install deckdrop-studio",
+  "docs_paths": [
+    "skills/deckdrop-studio/SKILL.md",
+    "skills/deckdrop-studio/manifest.json",
+    "skills/deckdrop-studio/agents/openai.yaml",
+    "skills/deckdrop-studio/assets/deckdrop-studio-small.svg",
+    "skills/deckdrop-studio/assets/deckdrop-studio-large.svg",
+    "skills/deckdrop-studio/references/project-map.md",
+    "skills/deckdrop-studio/scripts/run_deckdrop_studio.sh"
+  ],
+  "detail_lines": [
+    "Keeps mixed source intake, extraction, planning, draft review, and `.pptx` export represented as one DeckDrop workflow.",
+    "Presents DeckDrop as a review-first slide builder, not a last-mile deck packaging shortcut.",
+    "Uses explicit local workspaces and user-selected source files, with no hidden network sync or broad account-token requirements."
+  ],
+  "file_path_hints": [
+    "DeckDropApp/Sources/App/",
+    "DeckDropApp/Sources/Services/",
+    "DeckDropApp/Sources/Views/",
+    "DeckDropApp/Resources/scripts/",
+    "DeckDropApp/DeckWriter/",
+    "skills/deckdrop-studio/scripts/run_deckdrop_studio.sh"
+  ],
+  "icon_small": "skills/deckdrop-studio/assets/deckdrop-studio-small.svg",
+  "icon_large": "skills/deckdrop-studio/assets/deckdrop-studio-large.svg",
+  "system_symbol": "rectangle.stack.fill"
+}

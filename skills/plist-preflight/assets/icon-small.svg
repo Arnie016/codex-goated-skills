@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Plist Preflight">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18162D"/>
+      <stop offset="100%" stop-color="#070814"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#8B8CFF"/>
+      <stop offset="100%" stop-color="#5E5CE6"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="118" y="82" width="276" height="348" rx="42" fill="#F6F7FB"/>
+  <path d="M322 82v82h72" fill="#D9DDF7"/>
+  <rect x="154" y="178" width="204" height="28" rx="14" fill="#CDD1E8"/>
+  <rect x="154" y="230" width="154" height="24" rx="12" fill="#E1E4F2"/>
+  <rect x="154" y="280" width="178" height="24" rx="12" fill="#E1E4F2"/>
+  <circle cx="170" cy="356" r="52" fill="url(#accent)"/>
+  <path d="M146 356l16 17 33-38" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

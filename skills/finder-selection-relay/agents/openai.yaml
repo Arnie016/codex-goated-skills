@@ -1,0 +1,10 @@
+interface:
+  display_name: "Finder Selection Relay"
+  short_description: "Finder selection handoff for clean local paths and quick copy formats"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#0A84FF"
+  default_prompt: "Use $finder-selection-relay to turn the current Finder selection into prompt, markdown, ticket, or shell-safe path output without manual cleanup, and keep the macOS handoff compact and local-first."
+
+policy:
+  allow_implicit_invocation: true

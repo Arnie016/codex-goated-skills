@@ -42,5 +42,7 @@
     "skills/handoff-courier/prototype/SkillMenuBarApp.swift",
     "skills/handoff-courier/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/handoff-courier/assets/icon-small.svg",
+  "icon_large": "skills/handoff-courier/assets/icon-large.svg",
   "system_symbol": "tray.and.arrow.down.fill"
 }

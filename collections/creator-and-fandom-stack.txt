@@ -1,0 +1,14 @@
+# title: Creator and Fandom Stack
+# summary: A fuller creator-brand workflow covering canon, rituals, identity, merch, messaging, and launch-ready packaging.
+brand-kit
+content-pack
+fan-canon-miner
+comment-pulse-board
+clip-to-canon-finder
+iconography-lab
+ritual-engine
+parasocial-studio
+lore-drop-planner
+inner-circle-director
+myth-merch-studio
+reputation-heatmap

@@ -40,5 +40,7 @@
     "skills/focus-runway/prototype/SkillMenuBarApp.swift",
     "skills/focus-runway/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/focus-runway/assets/icon-small.svg",
+  "icon_large": "skills/focus-runway/assets/icon-large.svg",
   "system_symbol": "arrow.clockwise"
 }

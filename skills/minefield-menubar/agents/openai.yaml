@@ -1,0 +1,10 @@
+interface:
+  display_name: "Minefield Menu Bar"
+  short_description: "Playable menu-bar Minesweeper-style arcade"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/preview.svg"
+  brand_color: "#61ED9F"
+  default_prompt: "Use $minefield-menubar to build a polished macOS menu-bar game with a Minesweeper-style board, quick replay loop, and native-feeling popover controls."
+
+policy:
+  allow_implicit_invocation: true

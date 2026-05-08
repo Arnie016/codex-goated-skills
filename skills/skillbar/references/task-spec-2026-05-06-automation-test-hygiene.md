@@ -1,0 +1,23 @@
+## Task Spec
+
+- Scope: audit the Skill Ecosystem Agent automation, tighten its run instructions, and make SkillBar verification reliable in the current local workspace.
+- Goal: prevent the hourly automation from mixing wrapper and nested repo roots, stop carrying stale test-blocker notes forward, and restore a meaningful local `test` signal.
+- Planned edits:
+  - convert the automation prompt to a maintainable multiline TOML string
+  - add explicit automation guidance to use the repo root reported by `doctor`
+  - add explicit automation guidance to report the current `test` blocker only when tests cannot run
+  - make SkillBar model repo discovery scoped when tests or callers pass a repo-root override
+  - refresh brittle SkillBar model tests so temp fixtures do not leak real Desktop repo suggestions
+- Verification:
+  - parse `/Users/arnav/.codex/automations/skillbar-audit-agent/automation.toml` with `tomllib`
+  - `bash scripts/run_skillbar.sh doctor`
+  - `bash scripts/run_skillbar.sh inspect`
+  - `bash scripts/run_skillbar.sh typecheck`
+  - `bash scripts/run_skillbar.sh test`
+  - `bash scripts/run_skillbar.sh catalog-check`
+  - `bash scripts/run_skillbar.sh audit`
+  - `bash scripts/run_skillbar.sh smoke-install skillbar`
+  - `bash scripts/run_skillbar.sh smoke-update skillbar`
+  - `python scripts/build_skill_market_index.py`
+  - `python scripts/skill_market_loop.py sync`
+  - `python scripts/skill_market_loop.py audit`

@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		120BA40D6CBB7F54981F33A1 /* TradingArchiveBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E23D7A8A513C74462830C /* TradingArchiveBarTests.swift */; };
+		4D6E8A4E372CA3BA1FC40BFD /* TradingArchiveBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908E3D1D9EFD45A377EF86B /* TradingArchiveBarApp.swift */; };
+		698A574B22218AD5EFC832D2 /* TradingArchiveBarMenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4376B4C1097903786CBCC853 /* TradingArchiveBarMenuBarView.swift */; };
+		6C122801329C47DC4850C28D /* TradingArchiveFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02591C5E7AE4FDD2C2BB5E9D /* TradingArchiveFeedService.swift */; };
+		909145D275429708A7C7CB03 /* TradingArchiveBarTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC325F2F97B3BE5C1E44C1 /* TradingArchiveBarTheme.swift */; };
+		978BC898E2DECCF6A5572D24 /* TradingArchiveBarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809EF4A1DBD56BBF587BA036 /* TradingArchiveBarModels.swift */; };
+		A13D7739D53ACFA2B7C0CB7B /* TradingArchiveBarAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED60DF3AC43B29967DBDC31 /* TradingArchiveBarAppModel.swift */; };
+		BD107A6BA034A1F09868E1A5 /* TradingArchiveBarSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C916FA3AFD1BDEB3763914 /* TradingArchiveBarSettingsView.swift */; };
+		EE200AAD2B7460600FC7A4A3 /* TradingArchiveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B13982A2331A017FB501F3 /* TradingArchiveStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B109D15E012F59DA96CFD02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19CDF43D0AAF7D1558CFDE78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1D942C0AEEA06E3A26C0730;
+			remoteInfo = TradingArchiveBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02591C5E7AE4FDD2C2BB5E9D /* TradingArchiveFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingArchiveFeedService.swift; sourceTree = "<group>"; };
+		0A2E23D7A8A513C74462830C /* TradingArchiveBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingArchiveBarTests.swift; sourceTree = "<group>"; };
+		26C916FA3AFD1BDEB3763914 /* TradingArchiveBarSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingArchiveBarSettingsView.swift; sourceTree = "<group>"; };
+		34DC325F2F97B3BE5C1E44C1 /* TradingArchiveBarTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingArchiveBarTheme.swift; sourceTree = "<group>"; };
+		4376B4C1097903786CBCC853 /* TradingArchiveBarMenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingArchiveBarMenuBarView.swift; sourceTree = "<group>"; };
+		4ED60DF3AC43B29967DBDC31 /* TradingArchiveBarAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingArchiveBarAppModel.swift; sourceTree = "<group>"; };
+		5908E3D1D9EFD45A377EF86B /* TradingArchiveBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingArchiveBarApp.swift; sourceTree = "<group>"; };
+		809EF4A1DBD56BBF587BA036 /* TradingArchiveBarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingArchiveBarModels.swift; sourceTree = "<group>"; };
+		BC2C11FA67D86F8E2323B14B /* TradingArchiveBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TradingArchiveBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D363256AB6A3511A16F6781A /* TradingArchiveBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradingArchiveBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B13982A2331A017FB501F3 /* TradingArchiveStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingArchiveStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		07D4228C8EC6EB1369AEA657 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E23D7A8A513C74462830C /* TradingArchiveBarTests.swift */,
+			);
+			name = Tests;
+			path = TradingArchiveBarApp/Tests;
+			sourceTree = "<group>";
+		};
+		70DF767955BC2F97F87F8738 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				02591C5E7AE4FDD2C2BB5E9D /* TradingArchiveFeedService.swift */,
+				F0B13982A2331A017FB501F3 /* TradingArchiveStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7820F3FAFB8A8C42EAA1EA0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D363256AB6A3511A16F6781A /* TradingArchiveBar.app */,
+				BC2C11FA67D86F8E2323B14B /* TradingArchiveBarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79ED58FD53CA94597C8931F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4376B4C1097903786CBCC853 /* TradingArchiveBarMenuBarView.swift */,
+				26C916FA3AFD1BDEB3763914 /* TradingArchiveBarSettingsView.swift */,
+				34DC325F2F97B3BE5C1E44C1 /* TradingArchiveBarTheme.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBF1C24AE422BDA3F9106CFC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F77F140751C190909B4FCE67 /* App */,
+				70DF767955BC2F97F87F8738 /* Services */,
+				79ED58FD53CA94597C8931F2 /* Views */,
+			);
+			name = Sources;
+			path = TradingArchiveBarApp/Sources;
+			sourceTree = "<group>";
+		};
+		F676E30DDAE562E4100C88BB = {
+			isa = PBXGroup;
+			children = (
+				DBF1C24AE422BDA3F9106CFC /* Sources */,
+				07D4228C8EC6EB1369AEA657 /* Tests */,
+				7820F3FAFB8A8C42EAA1EA0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F77F140751C190909B4FCE67 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5908E3D1D9EFD45A377EF86B /* TradingArchiveBarApp.swift */,
+				4ED60DF3AC43B29967DBDC31 /* TradingArchiveBarAppModel.swift */,
+				809EF4A1DBD56BBF587BA036 /* TradingArchiveBarModels.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1D942C0AEEA06E3A26C0730 /* TradingArchiveBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A53566EF75A15001ECBA7936 /* Build configuration list for PBXNativeTarget "TradingArchiveBar" */;
+			buildPhases = (
+				BB6DCCC7EAE2A75B565513C7 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TradingArchiveBar;
+			packageProductDependencies = (
+			);
+			productName = TradingArchiveBar;
+			productReference = D363256AB6A3511A16F6781A /* TradingArchiveBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D9DB6BDAC01215957AC7AC3A /* TradingArchiveBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CE6B32926773AD602C8732E /* Build configuration list for PBXNativeTarget "TradingArchiveBarTests" */;
+			buildPhases = (
+				47BD9689811B8AA65283316A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4C307FC9A4B760D70C4CDC2 /* PBXTargetDependency */,
+			);
+			name = TradingArchiveBarTests;
+			packageProductDependencies = (
+			);
+			productName = TradingArchiveBarTests;
+			productReference = BC2C11FA67D86F8E2323B14B /* TradingArchiveBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19CDF43D0AAF7D1558CFDE78 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A1D942C0AEEA06E3A26C0730 = {
+						ProvisioningStyle = Automatic;
+					};
+					D9DB6BDAC01215957AC7AC3A = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E40A650917C07103CBD9E4F6 /* Build configuration list for PBXProject "TradingArchiveBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F676E30DDAE562E4100C88BB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7820F3FAFB8A8C42EAA1EA0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1D942C0AEEA06E3A26C0730 /* TradingArchiveBar */,
+				D9DB6BDAC01215957AC7AC3A /* TradingArchiveBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47BD9689811B8AA65283316A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				120BA40D6CBB7F54981F33A1 /* TradingArchiveBarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB6DCCC7EAE2A75B565513C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D6E8A4E372CA3BA1FC40BFD /* TradingArchiveBarApp.swift in Sources */,
+				A13D7739D53ACFA2B7C0CB7B /* TradingArchiveBarAppModel.swift in Sources */,
+				698A574B22218AD5EFC832D2 /* TradingArchiveBarMenuBarView.swift in Sources */,
+				978BC898E2DECCF6A5572D24 /* TradingArchiveBarModels.swift in Sources */,
+				BD107A6BA034A1F09868E1A5 /* TradingArchiveBarSettingsView.swift in Sources */,
+				909145D275429708A7C7CB03 /* TradingArchiveBarTheme.swift in Sources */,
+				6C122801329C47DC4850C28D /* TradingArchiveFeedService.swift in Sources */,
+				EE200AAD2B7460600FC7A4A3 /* TradingArchiveStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4C307FC9A4B760D70C4CDC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1D942C0AEEA06E3A26C0730 /* TradingArchiveBar */;
+			targetProxy = 5B109D15E012F59DA96CFD02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		026D0002648309FCEF2FF0B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TradingArchiveBarApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.TradingArchiveBar;
+				PRODUCT_MODULE_NAME = TradingArchiveBar;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0DCF4818AAA3B3FC1DC1EBBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.TradingArchiveBarTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradingArchiveBar.app/Contents/MacOS/TradingArchiveBar";
+			};
+			name = Debug;
+		};
+		7BFD5B69A3FA9455EA81D73D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.TradingArchiveBarTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradingArchiveBar.app/Contents/MacOS/TradingArchiveBar";
+			};
+			name = Release;
+		};
+		8048BE2E4A49DF4C23C16422 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TradingArchiveBarApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.TradingArchiveBar;
+				PRODUCT_MODULE_NAME = TradingArchiveBar;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AD88C1DC2E098DAC418C0819 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		DE3CFED0A1E34B066F797678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CE6B32926773AD602C8732E /* Build configuration list for PBXNativeTarget "TradingArchiveBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DCF4818AAA3B3FC1DC1EBBA /* Debug */,
+				7BFD5B69A3FA9455EA81D73D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A53566EF75A15001ECBA7936 /* Build configuration list for PBXNativeTarget "TradingArchiveBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8048BE2E4A49DF4C23C16422 /* Debug */,
+				026D0002648309FCEF2FF0B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E40A650917C07103CBD9E4F6 /* Build configuration list for PBXProject "TradingArchiveBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD88C1DC2E098DAC418C0819 /* Debug */,
+				DE3CFED0A1E34B066F797678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19CDF43D0AAF7D1558CFDE78 /* Project object */;
+}

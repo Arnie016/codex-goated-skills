@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iconbar"
+version = "0.1.0"
+description = "Local-first CLI for macOS icon-bar skills, Swift utility workflows, and installable packs."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  { name = "Iconbar" }
+]
+keywords = ["macos", "cli", "swift", "menu-bar", "automation", "skills"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: MacOS",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development",
+  "Topic :: Utilities"
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Arnie016/codex-goated-skills"
+Repository = "https://github.com/Arnie016/codex-goated-skills"
+Issues = "https://github.com/Arnie016/codex-goated-skills/issues"
+
+[project.scripts]
+iconbar = "iconbar_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

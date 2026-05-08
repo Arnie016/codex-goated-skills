@@ -10,15 +10,20 @@
 		05FA86A12E277F82D43B90FF /* InstantContextPackOverlayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D8CDC3B9059ED2CD7D98FC /* InstantContextPackOverlayCoordinator.swift */; };
 		06721F4E438B3FA82700C9A9 /* PackOverlayViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8162DD594F812A8DC66ED790 /* PackOverlayViews.swift */; };
 		0B21C455F3FAC7FAC445DD9C /* ClipboardStudioMenuBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2540666C0BFD51997DE042 /* ClipboardStudioMenuBarIcon.swift */; };
+		19399A636C158712770307DD /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0729AF96B0599B2894D9FA /* KeychainStore.swift */; };
+		3BB3E67F0F43F4538279BD40 /* CurrentContextSnapshotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66EAF58D679A478AEADD9E6 /* CurrentContextSnapshotService.swift */; };
 		4C1057417DAF73C7CD4362F0 /* GlobalHotKeyMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154B891825C4201F9E5AC284 /* GlobalHotKeyMonitor.swift */; };
 		4C68F00B050CC13A1B7650D1 /* ClipboardStudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE43B009082FEF92B7A0BD /* ClipboardStudioModel.swift */; };
 		4F98F51E42CC5EB95A4CD754 /* ClipboardAutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAB1A93B0B7A05C315C7EB1 /* ClipboardAutomationService.swift */; };
 		50469EDC01E450A2862846E0 /* ClipboardStudioDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64925F735F0903712DB2F1F /* ClipboardStudioDomain.swift */; };
 		55EC4138D58E328B3BCC3C89 /* ContextPackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A4B9C763781819E14156C4 /* ContextPackTests.swift */; };
 		5C93A1DFEDF37091992725A0 /* ContextPackFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B6F77300249298CC60FFD /* ContextPackFormatter.swift */; };
+		5E0C96E88D04C70EFFBE8927 /* ContextAssemblyExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3931A3DCD985F3568F45E847 /* ContextAssemblyExportService.swift */; };
 		83AD381C453ACDCAC7C360D6 /* ClipboardStudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08F5D2F33C6CA2F38C2248B /* ClipboardStudioApp.swift */; };
+		9DD880707E9549D8EB24712D /* ContextAssemblyExportServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF4827DD55C1327DC24C3B /* ContextAssemblyExportServiceTests.swift */; };
 		A76856A4D6CC0CF2ED1D1E60 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E7B1677B2C5C5E336135F3 /* MenuBarView.swift */; };
 		D849CB1639248E2FD25982CF /* ContextPackFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C064E73F6776841D3B43BF5D /* ContextPackFormatterTests.swift */; };
+		F19AF42F4AE04F62534D850D /* ContextAssemblyResearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925EE9460F7D7C5D5C6190B0 /* ContextAssemblyResearchService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,15 +38,20 @@
 
 /* Begin PBXFileReference section */
 		154B891825C4201F9E5AC284 /* GlobalHotKeyMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHotKeyMonitor.swift; sourceTree = "<group>"; };
+		3931A3DCD985F3568F45E847 /* ContextAssemblyExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextAssemblyExportService.swift; sourceTree = "<group>"; };
 		3AAB1A93B0B7A05C315C7EB1 /* ClipboardAutomationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardAutomationService.swift; sourceTree = "<group>"; };
 		49DCDABCDD7FC0E04FC26FF9 /* ClipboardStudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClipboardStudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		501B6F77300249298CC60FFD /* ContextPackFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextPackFormatter.swift; sourceTree = "<group>"; };
 		52A4B9C763781819E14156C4 /* ContextPackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextPackTests.swift; sourceTree = "<group>"; };
 		53AE43B009082FEF92B7A0BD /* ClipboardStudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardStudioModel.swift; sourceTree = "<group>"; };
 		61E7B1677B2C5C5E336135F3 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		6E0729AF96B0599B2894D9FA /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
 		79D8CDC3B9059ED2CD7D98FC /* InstantContextPackOverlayCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantContextPackOverlayCoordinator.swift; sourceTree = "<group>"; };
 		8162DD594F812A8DC66ED790 /* PackOverlayViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackOverlayViews.swift; sourceTree = "<group>"; };
+		87FF4827DD55C1327DC24C3B /* ContextAssemblyExportServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextAssemblyExportServiceTests.swift; sourceTree = "<group>"; };
+		925EE9460F7D7C5D5C6190B0 /* ContextAssemblyResearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextAssemblyResearchService.swift; sourceTree = "<group>"; };
 		C064E73F6776841D3B43BF5D /* ContextPackFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextPackFormatterTests.swift; sourceTree = "<group>"; };
+		C66EAF58D679A478AEADD9E6 /* CurrentContextSnapshotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentContextSnapshotService.swift; sourceTree = "<group>"; };
 		CD2540666C0BFD51997DE042 /* ClipboardStudioMenuBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardStudioMenuBarIcon.swift; sourceTree = "<group>"; };
 		E08F5D2F33C6CA2F38C2248B /* ClipboardStudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardStudioApp.swift; sourceTree = "<group>"; };
 		E4EEF5AF0B0EDE0FFDC7C0BE /* ClipboardStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipboardStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +72,7 @@
 		2EB3009A7491F13C44E4431D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				87FF4827DD55C1327DC24C3B /* ContextAssemblyExportServiceTests.swift */,
 				C064E73F6776841D3B43BF5D /* ContextPackFormatterTests.swift */,
 				52A4B9C763781819E14156C4 /* ContextPackTests.swift */,
 			);
@@ -84,9 +95,13 @@
 			isa = PBXGroup;
 			children = (
 				3AAB1A93B0B7A05C315C7EB1 /* ClipboardAutomationService.swift */,
+				3931A3DCD985F3568F45E847 /* ContextAssemblyExportService.swift */,
+				925EE9460F7D7C5D5C6190B0 /* ContextAssemblyResearchService.swift */,
 				501B6F77300249298CC60FFD /* ContextPackFormatter.swift */,
+				C66EAF58D679A478AEADD9E6 /* CurrentContextSnapshotService.swift */,
 				154B891825C4201F9E5AC284 /* GlobalHotKeyMonitor.swift */,
 				79D8CDC3B9059ED2CD7D98FC /* InstantContextPackOverlayCoordinator.swift */,
+				6E0729AF96B0599B2894D9FA /* KeychainStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -199,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD880707E9549D8EB24712D /* ContextAssemblyExportServiceTests.swift in Sources */,
 				D849CB1639248E2FD25982CF /* ContextPackFormatterTests.swift in Sources */,
 				55EC4138D58E328B3BCC3C89 /* ContextPackTests.swift in Sources */,
 			);
@@ -213,9 +229,13 @@
 				50469EDC01E450A2862846E0 /* ClipboardStudioDomain.swift in Sources */,
 				0B21C455F3FAC7FAC445DD9C /* ClipboardStudioMenuBarIcon.swift in Sources */,
 				4C68F00B050CC13A1B7650D1 /* ClipboardStudioModel.swift in Sources */,
+				5E0C96E88D04C70EFFBE8927 /* ContextAssemblyExportService.swift in Sources */,
+				F19AF42F4AE04F62534D850D /* ContextAssemblyResearchService.swift in Sources */,
 				5C93A1DFEDF37091992725A0 /* ContextPackFormatter.swift in Sources */,
+				3BB3E67F0F43F4538279BD40 /* CurrentContextSnapshotService.swift in Sources */,
 				4C1057417DAF73C7CD4362F0 /* GlobalHotKeyMonitor.swift in Sources */,
 				05FA86A12E277F82D43B90FF /* InstantContextPackOverlayCoordinator.swift in Sources */,
+				19399A636C158712770307DD /* KeychainStore.swift in Sources */,
 				A76856A4D6CC0CF2ED1D1E60 /* MenuBarView.swift in Sources */,
 				06721F4E438B3FA82700C9A9 /* PackOverlayViews.swift in Sources */,
 			);
@@ -245,6 +265,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.ClipboardStudio;
 				PRODUCT_MODULE_NAME = ClipboardStudio;
+				PRODUCT_NAME = "Context Assembly";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -384,7 +405,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.ClipboardStudioTests;
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipboardStudio.app/Contents/MacOS/ClipboardStudio";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Context Assembly.app/Contents/MacOS/Context Assembly";
 			};
 			name = Release;
 		};
@@ -401,6 +422,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.ClipboardStudio;
 				PRODUCT_MODULE_NAME = ClipboardStudio;
+				PRODUCT_NAME = "Context Assembly";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -419,7 +441,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.arnav.ClipboardStudioTests;
 				SDKROOT = macosx;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClipboardStudio.app/Contents/MacOS/ClipboardStudio";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Context Assembly.app/Contents/MacOS/Context Assembly";
 			};
 			name = Debug;
 		};

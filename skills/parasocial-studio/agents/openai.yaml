@@ -1,0 +1,7 @@
+interface:
+  display_name: "Parasocial Studio"
+  short_description: "Plan safe closeness rhythms for public figures"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#D66B87"
+  default_prompt: "Use $parasocial-studio to shape safe closeness mechanics for this public figure, including acknowledgements and recurring touchpoints, then output a relationship cadence plan."

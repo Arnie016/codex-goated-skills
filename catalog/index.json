@@ -1,0 +1,4006 @@
+{
+  "repo": "codex-goated-skills",
+  "skill_count": 67,
+  "pack_count": 10,
+  "skills": [
+    {
+      "id": "battery-trend-scout",
+      "display_name": "Battery Trend Scout",
+      "description": "Build a polished macOS battery utility that shows charge, power source, energy mode, significant energy users, and local drain trends from a menu bar surface.",
+      "short_description": "Calm Mac-style battery panel with charge, power source, energy mode, and trend context.",
+      "category": "System Monitoring",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac laptop users",
+        "Remote workers",
+        "System builders"
+      ],
+      "tags": [
+        "battery",
+        "menu bar",
+        "macOS",
+        "power",
+        "energy mode",
+        "trend"
+      ],
+      "install_command": "codex-skillctl install battery-trend-scout",
+      "docs_paths": [
+        "skills/battery-trend-scout/SKILL.md",
+        "skills/battery-trend-scout/manifest.json",
+        "skills/battery-trend-scout/agents/openai.yaml",
+        "skills/battery-trend-scout/assets/icon-small.svg",
+        "skills/battery-trend-scout/assets/icon-large.svg",
+        "skills/battery-trend-scout/assets/icon.svg",
+        "skills/battery-trend-scout/assets/preview.svg"
+      ],
+      "detail_lines": [],
+      "file_path_hints": [],
+      "brand_color": "#0A84FF",
+      "path": "skills/battery-trend-scout",
+      "skill_file": "skills/battery-trend-scout/SKILL.md",
+      "openai_yaml": "skills/battery-trend-scout/agents/openai.yaml",
+      "icon_small": "skills/battery-trend-scout/assets/icon-small.svg",
+      "icon_large": "skills/battery-trend-scout/assets/icon-large.svg",
+      "system_symbol": "battery.100percent",
+      "default_prompt": "Use $battery-trend-scout to build a polished macOS battery menu-bar utility with charge, power source, energy mode, and trend context.",
+      "packs": [
+        "macos-utility-builders"
+      ]
+    },
+    {
+      "id": "branch-brief-bar",
+      "display_name": "Branch Brief Bar",
+      "description": "Turn the current git branch into a crisp review-ready brief with local status, touched areas, changed files, recent commits, and the next PR action.",
+      "short_description": "Local git branch brief with review base, changed files, commits, and next PR action.",
+      "category": "Developer Tools",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "AI-assisted coders handing work from terminal sessions into review",
+        "Maintainers shipping branch updates across shell, PR, and chat",
+        "People who keep getting asked what changed and what should happen next"
+      ],
+      "tags": [
+        "git",
+        "branch",
+        "pull request",
+        "status",
+        "commits",
+        "review handoff",
+        "handoff",
+        "menu bar",
+        "developer tools",
+        "macOS"
+      ],
+      "install_command": "codex-skillctl install branch-brief-bar",
+      "docs_paths": [
+        "skills/branch-brief-bar/SKILL.md",
+        "skills/branch-brief-bar/manifest.json",
+        "skills/branch-brief-bar/agents/openai.yaml",
+        "skills/branch-brief-bar/assets/icon-small.svg",
+        "skills/branch-brief-bar/assets/icon-large.svg",
+        "skills/branch-brief-bar/assets/icon.svg",
+        "skills/branch-brief-bar/assets/preview.svg",
+        "skills/branch-brief-bar/references/review-base-behavior.md",
+        "skills/branch-brief-bar/scripts/branch_brief.py",
+        "skills/branch-brief-bar/prototype/README.md",
+        "skills/branch-brief-bar/prototype/SkillMenuBarApp.swift",
+        "skills/branch-brief-bar/prototype/SkillMenuBarView.swift",
+        "skills/branch-brief-bar/prototype/SkillDetailView.swift",
+        "skills/branch-brief-bar/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Reads local git state and turns branch name, compare base, upstream distance, touched areas, status-aware changed-file previews, and recent commits into one compact review brief.",
+        "Defaults feature branches toward a main-like review base such as the remote default branch, main, master, or trunk when their upstream is only the same remote feature branch, so the handoff stays PR-oriented instead of push-oriented.",
+        "Stays honest about what local git can prove and does not invent GitHub metadata, CI state, or reviewer status."
+      ],
+      "file_path_hints": [
+        "skills/branch-brief-bar/scripts/branch_brief.py",
+        "skills/branch-brief-bar/prototype/SkillMenuBarView.swift",
+        "skills/branch-brief-bar/prototype/SkillDetailView.swift"
+      ],
+      "brand_color": "#30D158",
+      "path": "skills/branch-brief-bar",
+      "skill_file": "skills/branch-brief-bar/SKILL.md",
+      "openai_yaml": "skills/branch-brief-bar/agents/openai.yaml",
+      "icon_small": "skills/branch-brief-bar/assets/icon-small.svg",
+      "icon_large": "skills/branch-brief-bar/assets/icon-large.svg",
+      "system_symbol": "square.and.arrow.up.fill",
+      "default_prompt": "Use $branch-brief-bar to inspect the current git branch locally, choose a review-ready compare base, summarize upstream status, touched areas, changed files, recent commits, and the next review action, or build a compact macOS menu-bar brief that keeps the handoff honest.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "brand-kit",
+      "display_name": "Brand Kit",
+      "description": "Create lightweight brand assets and launch metadata for a project. Use when Codex needs to give a repo, product, or skill a simple visual identity with a logo direction, banner ideas, social preview copy, and short positioning text.",
+      "short_description": "Lightweight visual identity and launch metadata for projects.",
+      "category": "Distribution",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Solo builders preparing a repo, app, or skill for sharing",
+        "Launch operators who need consistent copy and visual direction",
+        "Teams turning rough product language into reusable brand assets"
+      ],
+      "tags": [
+        "brand",
+        "identity",
+        "logo",
+        "launch",
+        "metadata",
+        "copy",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install brand-kit",
+      "docs_paths": [
+        "skills/brand-kit/SKILL.md",
+        "skills/brand-kit/manifest.json",
+        "skills/brand-kit/agents/openai.yaml",
+        "skills/brand-kit/assets/brand-kit-small.svg",
+        "skills/brand-kit/assets/brand-kit-large.svg",
+        "skills/brand-kit/references/brand-system.md"
+      ],
+      "detail_lines": [
+        "Turns a project name, audience, and current tone into one reusable brand direction instead of a pile of disconnected options.",
+        "Produces practical launch artifacts: positioning, compact color direction, logo concept, README or page headline, meta description, and social preview text.",
+        "Keeps the workflow local-first and prompt-driven, with no hidden network calls, account tokens, or persistent brand database."
+      ],
+      "file_path_hints": [
+        "skills/brand-kit/SKILL.md",
+        "skills/brand-kit/references/brand-system.md",
+        "skills/brand-kit/assets/"
+      ],
+      "brand_color": "#EC4899",
+      "path": "skills/brand-kit",
+      "skill_file": "skills/brand-kit/SKILL.md",
+      "openai_yaml": "skills/brand-kit/agents/openai.yaml",
+      "icon_small": "skills/brand-kit/assets/brand-kit-small.svg",
+      "icon_large": "skills/brand-kit/assets/brand-kit-large.svg",
+      "system_symbol": "paintpalette.fill",
+      "default_prompt": "Use $brand-kit to audit this project and create a tighter brand direction, logo concept, color system, and launch metadata.",
+      "packs": [
+        "creator-and-fandom-stack",
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "chrome-tab-sweeper",
+      "display_name": "Chrome Tab Sweeper",
+      "description": "Build or operate a local macOS menu-bar Chrome tab control surface that lists overloaded browser tabs, groups them by domain, and closes explicit selected tab batches with a safe review step.",
+      "short_description": "A Mac menu-bar tab control surface for understanding overloaded Chrome windows and closing selected tab piles in one shot.",
+      "category": "Mac OS",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "People with too many Chrome tabs open",
+        "Mac power users",
+        "AI-assisted operators cleaning browser context"
+      ],
+      "tags": [
+        "Chrome",
+        "tabs",
+        "menu bar",
+        "macOS",
+        "browser control",
+        "cleanup",
+        "AppleScript"
+      ],
+      "install_command": "codex-skillctl install chrome-tab-sweeper",
+      "docs_paths": [
+        "skills/chrome-tab-sweeper/SKILL.md",
+        "skills/chrome-tab-sweeper/manifest.json",
+        "skills/chrome-tab-sweeper/agents/openai.yaml",
+        "skills/chrome-tab-sweeper/assets/icon-small.svg",
+        "skills/chrome-tab-sweeper/assets/icon-large.svg",
+        "skills/chrome-tab-sweeper/assets/icon.svg",
+        "skills/chrome-tab-sweeper/assets/preview.svg",
+        "skills/chrome-tab-sweeper/scripts/chrome_tab_sweeper.py",
+        "skills/chrome-tab-sweeper/prototype/README.md",
+        "skills/chrome-tab-sweeper/prototype/SkillMenuBarApp.swift",
+        "skills/chrome-tab-sweeper/prototype/SkillMenuBarView.swift",
+        "skills/chrome-tab-sweeper/prototype/SkillDetailView.swift",
+        "skills/chrome-tab-sweeper/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Lists every Chrome window and tab from a top-bar control surface.",
+        "Groups the overload by domain so the mess becomes readable fast.",
+        "Closes only explicit tab tokens, making one-shot cleanup deliberate instead of scary."
+      ],
+      "file_path_hints": [
+        "skills/chrome-tab-sweeper/scripts/chrome_tab_sweeper.py",
+        "skills/chrome-tab-sweeper/prototype/SkillMenuBarView.swift",
+        "skills/chrome-tab-sweeper/prototype/SkillDetailView.swift"
+      ],
+      "brand_color": "#22C55E",
+      "path": "skills/chrome-tab-sweeper",
+      "skill_file": "skills/chrome-tab-sweeper/SKILL.md",
+      "openai_yaml": "skills/chrome-tab-sweeper/agents/openai.yaml",
+      "icon_small": "skills/chrome-tab-sweeper/assets/icon-small.svg",
+      "icon_large": "skills/chrome-tab-sweeper/assets/icon-large.svg",
+      "system_symbol": "rectangle.stack.badge.minus",
+      "default_prompt": "Use $chrome-tab-sweeper to build a macOS menu-bar utility that lists Chrome tabs, groups the mess by domain, and closes explicit selected tab batches safely.",
+      "packs": [
+        "macos-utility-builders"
+      ]
+    },
+    {
+      "id": "clip-to-canon-finder",
+      "display_name": "Clip to Canon Finder",
+      "description": "Identify short-form moments most likely to turn into fandom artifacts, edits, or memes from clips, transcripts, and reaction data, then output a shortlist with reuse angles.",
+      "short_description": "Score clips and transcripts for repeatable canon moments.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Short-form editors deciding which moments deserve repeat exposure",
+        "Creator teams comparing clips, transcripts, and audience reactions",
+        "Founder-led brands turning memorable public moments into grounded callbacks"
+      ],
+      "tags": [
+        "clips",
+        "canon",
+        "short-form",
+        "editing",
+        "creator strategy",
+        "local first",
+        "safety"
+      ],
+      "install_command": "codex-skillctl install clip-to-canon-finder",
+      "docs_paths": [
+        "skills/clip-to-canon-finder/SKILL.md",
+        "skills/clip-to-canon-finder/manifest.json",
+        "skills/clip-to-canon-finder/agents/openai.yaml",
+        "skills/clip-to-canon-finder/assets/icon-small.svg",
+        "skills/clip-to-canon-finder/assets/icon-large.svg",
+        "skills/clip-to-canon-finder/references/product-spec.md"
+      ],
+      "detail_lines": [
+        "Scores video links, timestamps, transcripts, subtitles, comments, and editor notes for replay value, quotability, and canon fit.",
+        "Exports a shortlist with cut points, reuse angles, thumbnail guidance, and skip rationales for weak or risky moments.",
+        "Works only from public or user-authorized material and rejects harmful quote-mining, harassment bait, rumor laundering, and context distortion."
+      ],
+      "file_path_hints": [
+        "skills/clip-to-canon-finder/SKILL.md",
+        "skills/clip-to-canon-finder/references/product-spec.md",
+        "skills/clip-to-canon-finder/assets/icon-small.svg"
+      ],
+      "brand_color": "#1A9B8C",
+      "path": "skills/clip-to-canon-finder",
+      "skill_file": "skills/clip-to-canon-finder/SKILL.md",
+      "openai_yaml": "skills/clip-to-canon-finder/agents/openai.yaml",
+      "icon_small": "skills/clip-to-canon-finder/assets/icon-small.svg",
+      "icon_large": "skills/clip-to-canon-finder/assets/icon-large.svg",
+      "system_symbol": "play.rectangle.fill",
+      "default_prompt": "Use $clip-to-canon-finder to analyze these short-form clips, transcripts, and reactions, identify which moments are most likely to become fandom canon, and export a shortlist with reuse angles.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "clipboard-studio",
+      "display_name": "Context Assembly",
+      "description": "Build, run, troubleshoot, or refine Context Assembly, especially the bundled apps/clipboard-studio macOS menu bar app. Use when Codex needs to work on clipboard-heavy context assembly, keep the panel compact, wire pasteboard or app-state capture, or validate the local Xcode workspace and tests without leaking sensitive data.",
+      "short_description": "Build and validate the Context Assembly menu bar app for capture, export, and fast cross-app handoff.",
+      "category": "Productivity",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users assembling context across apps",
+        "Builders moving clipboard snippets into prompts, notes, and markdown",
+        "Teams that need explicit local-first clipboard handling"
+      ],
+      "tags": [
+        "clipboard",
+        "context assembly",
+        "menu bar",
+        "macOS",
+        "handoff",
+        "privacy",
+        "export"
+      ],
+      "install_command": "codex-skillctl install clipboard-studio",
+      "docs_paths": [
+        "skills/clipboard-studio/SKILL.md",
+        "skills/clipboard-studio/manifest.json",
+        "skills/clipboard-studio/agents/openai.yaml",
+        "skills/clipboard-studio/assets/clipboard-studio-small.svg",
+        "skills/clipboard-studio/assets/clipboard-studio-large.svg",
+        "skills/clipboard-studio/references/workspace-map.md",
+        "skills/clipboard-studio/references/workflow-map.md",
+        "skills/clipboard-studio/scripts/run_clipboard_studio.sh"
+      ],
+      "detail_lines": [
+        "Turns scattered clipboard snippets into one structured prompt, note, or markdown export.",
+        "Keeps capture, preview, send, and export actions compact enough for a menu-bar workflow.",
+        "Treats clipboard contents as sensitive by default and avoids hidden sync or broad persistence."
+      ],
+      "file_path_hints": [
+        "apps/clipboard-studio",
+        "skills/clipboard-studio/references/workspace-map.md",
+        "skills/clipboard-studio/scripts/run_clipboard_studio.sh"
+      ],
+      "brand_color": "#22C55E",
+      "path": "skills/clipboard-studio",
+      "skill_file": "skills/clipboard-studio/SKILL.md",
+      "openai_yaml": "skills/clipboard-studio/agents/openai.yaml",
+      "icon_small": "skills/clipboard-studio/assets/clipboard-studio-small.svg",
+      "icon_large": "skills/clipboard-studio/assets/clipboard-studio-large.svg",
+      "system_symbol": "doc.on.clipboard.fill",
+      "default_prompt": "Use $clipboard-studio to work on the bundled Context Assembly macOS app in apps/clipboard-studio: inspect the workspace, run the local doctor and typecheck or test flow, and improve clipboard capture, current-focus snapshots, or Notes/Markdown export without weakening privacy boundaries.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "comment-pulse-board",
+      "display_name": "Comment Pulse Board",
+      "description": "Cluster obsession points, recurring questions, sentiment shifts, and backlash signals across public or user-authorized audience chatter, then produce a source-aware pulse digest.",
+      "short_description": "Cluster audience chatter into a source-aware pulse digest.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Community managers tracking fast-moving audience questions",
+        "Creator teams comparing current chatter with a prior source window",
+        "Operators turning comments and support excerpts into response priorities"
+      ],
+      "tags": [
+        "audience",
+        "comments",
+        "sentiment",
+        "community",
+        "pulse digest",
+        "creator strategy",
+        "local first",
+        "safety"
+      ],
+      "install_command": "codex-skillctl install comment-pulse-board",
+      "docs_paths": [
+        "skills/comment-pulse-board/SKILL.md",
+        "skills/comment-pulse-board/manifest.json",
+        "skills/comment-pulse-board/agents/openai.yaml",
+        "skills/comment-pulse-board/assets/icon-small.svg",
+        "skills/comment-pulse-board/assets/icon-large.svg",
+        "skills/comment-pulse-board/references/product-spec.md"
+      ],
+      "detail_lines": [
+        "Clusters repeated topics, questions, praise, confusion, criticism, and backlash signals while preserving source labels.",
+        "Compares current and prior windows so rising, stable, cooling, and risky signals are visible without turning the workflow into a full analytics dashboard.",
+        "Keeps analysis bounded to public or user-authorized material and rejects targeting, brigading, rumor laundering, or harassment tactics."
+      ],
+      "file_path_hints": [
+        "skills/comment-pulse-board/SKILL.md",
+        "skills/comment-pulse-board/references/product-spec.md",
+        "skills/comment-pulse-board/assets/icon-small.svg"
+      ],
+      "brand_color": "#D85A62",
+      "path": "skills/comment-pulse-board",
+      "skill_file": "skills/comment-pulse-board/SKILL.md",
+      "openai_yaml": "skills/comment-pulse-board/agents/openai.yaml",
+      "icon_small": "skills/comment-pulse-board/assets/icon-small.svg",
+      "icon_large": "skills/comment-pulse-board/assets/icon-large.svg",
+      "system_symbol": "chart.line.uptrend.xyaxis",
+      "default_prompt": "Use $comment-pulse-board to analyze this audience chatter, cluster the obsession points and recurring questions, spot sentiment shifts or backlash signals, and export a pulse digest.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "content-pack",
+      "display_name": "Content Pack",
+      "description": "Turn a project or product idea into a compact set of launch-ready copy. Use when Codex needs to generate practical messaging such as a tagline, README blurb, changelog summary, tweet or thread copy, release notes, or listing text from a single source idea.",
+      "short_description": "A paste-ready launch copy generator for README blurbs, release notes, listings, and posts.",
+      "category": "Distribution",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Solo builders preparing a repo, app, or skill for sharing",
+        "Open-source maintainers turning changes into publishable release copy",
+        "Launch operators who need consistent paste-ready distribution assets"
+      ],
+      "tags": [
+        "copy",
+        "launch",
+        "readme",
+        "release notes",
+        "distribution",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install content-pack",
+      "docs_paths": [
+        "skills/content-pack/SKILL.md",
+        "skills/content-pack/manifest.json",
+        "skills/content-pack/agents/openai.yaml",
+        "skills/content-pack/assets/content-pack-small.svg",
+        "skills/content-pack/assets/content-pack-large.svg",
+        "skills/content-pack/references/content-formats.md"
+      ],
+      "detail_lines": [
+        "Starts from one project truth and turns it into short, reusable launch copy instead of disconnected one-off blurbs.",
+        "Produces concrete formats such as README intros, changelog summaries, listing text, and social posts.",
+        "Keeps claims grounded in the product and uses explicit user-provided context rather than hidden account or marketplace access."
+      ],
+      "file_path_hints": [
+        "skills/content-pack/SKILL.md",
+        "skills/content-pack/references/content-formats.md",
+        "skills/content-pack/assets/content-pack-small.svg"
+      ],
+      "brand_color": "#14B8A6",
+      "path": "skills/content-pack",
+      "skill_file": "skills/content-pack/SKILL.md",
+      "openai_yaml": "skills/content-pack/agents/openai.yaml",
+      "icon_small": "skills/content-pack/assets/content-pack-small.svg",
+      "icon_large": "skills/content-pack/assets/content-pack-large.svg",
+      "system_symbol": "doc.text.fill",
+      "default_prompt": "Use $content-pack to audit this project and turn it into a tagline, README intro, changelog summary, and launch-ready distribution copy.",
+      "packs": [
+        "creator-and-fandom-stack",
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "context-shelf",
+      "display_name": "Context Shelf",
+      "description": "Build a polished macOS menu-bar shelf for parking the current tab, clipboard snippet, and scratch note before switching tasks, then make resuming fast and calm.",
+      "short_description": "Park the front tab, clipboard snippet, and scratch note in a compact resume shelf.",
+      "category": "Productivity",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users who get interrupted and need to resume fast",
+        "Researchers and operators juggling browser tabs, notes, and chat",
+        "Builders who want a calm parking spot for in-flight context"
+      ],
+      "tags": [
+        "productivity",
+        "context switching",
+        "menu bar",
+        "clipboard",
+        "browser",
+        "notes",
+        "resume"
+      ],
+      "install_command": "codex-skillctl install context-shelf",
+      "docs_paths": [
+        "skills/context-shelf/SKILL.md",
+        "skills/context-shelf/manifest.json",
+        "skills/context-shelf/agents/openai.yaml",
+        "skills/context-shelf/assets/icon-small.svg",
+        "skills/context-shelf/assets/icon-large.svg",
+        "skills/context-shelf/assets/icon.svg",
+        "skills/context-shelf/assets/preview.svg",
+        "skills/context-shelf/prototype/README.md",
+        "skills/context-shelf/prototype/SkillMenuBarApp.swift",
+        "skills/context-shelf/prototype/SkillMenuBarView.swift",
+        "skills/context-shelf/prototype/SkillDetailView.swift",
+        "skills/context-shelf/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Parks the front tab, clipboard text, and a short scratch note into one compact resume bundle.",
+        "Keeps the next thing to reopen visible in the menu bar so task switches stop turning into scavenger hunts.",
+        "Stays deliberately small with shelf, pin, resume, and clear actions instead of a sprawling workspace manager."
+      ],
+      "file_path_hints": [
+        "skills/context-shelf/prototype/README.md",
+        "skills/context-shelf/prototype/SkillMenuBarApp.swift",
+        "skills/context-shelf/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#30D158",
+      "path": "skills/context-shelf",
+      "skill_file": "skills/context-shelf/SKILL.md",
+      "openai_yaml": "skills/context-shelf/agents/openai.yaml",
+      "icon_small": "skills/context-shelf/assets/icon-small.svg",
+      "icon_large": "skills/context-shelf/assets/icon-large.svg",
+      "system_symbol": "square.stack.3d.up.fill",
+      "default_prompt": "Use $context-shelf to build a polished macOS menu-bar utility that parks the current tab, clipboard snippet, and scratch note before a task switch, then makes resuming fast and calm.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "cursor-studio",
+      "display_name": "Cursor Studio",
+      "description": "Build, run, troubleshoot, or extend a Cursor Studio macOS menu bar app that plans custom cursor packs from presets, prompt notes, slot lists, hotspot guidance, and exportable briefs. Use when Codex needs to work on a workspace containing `CursorStudioApp`, keep Cursor Studio separate from Folder Studio, regenerate the Xcode project, or validate the `CursorStudio` scheme and tests.",
+      "short_description": "Preset-driven cursor pack workflows for macOS",
+      "category": "Mac OS",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users designing repeatable cursor-pack briefs and role lists",
+        "Builders shipping compact menu-bar utilities with deterministic export flows",
+        "Teams keeping cursor-pack planning separate from Finder folder icon work"
+      ],
+      "tags": [
+        "macOS",
+        "cursor packs",
+        "menu bar",
+        "preset planning",
+        "hotspot notes",
+        "export briefs",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install cursor-studio",
+      "docs_paths": [
+        "skills/cursor-studio/SKILL.md",
+        "skills/cursor-studio/manifest.json",
+        "skills/cursor-studio/agents/openai.yaml",
+        "skills/cursor-studio/assets/cursor-studio-small.svg",
+        "skills/cursor-studio/assets/cursor-studio-large.svg",
+        "skills/cursor-studio/references/project-map.md",
+        "skills/cursor-studio/scripts/run_cursor_studio.sh"
+      ],
+      "detail_lines": [
+        "Keeps preset, accent palette, cursor-role scope, exact slot selection, hotspot notes, and export target visible in a compact menu-bar workflow.",
+        "Produces deterministic markdown or JSON briefs for cursor-pack work instead of pretending to generate live cursor artwork when no generator is wired in.",
+        "Uses explicit local workspace inputs and does not require hidden network calls, account tokens, or broad filesystem persistence."
+      ],
+      "file_path_hints": [
+        "CursorStudioApp/Sources/App/",
+        "CursorStudioApp/Sources/Views/",
+        "CursorStudioApp/Tests/",
+        "skills/cursor-studio/scripts/run_cursor_studio.sh"
+      ],
+      "brand_color": "#4F86FF",
+      "path": "skills/cursor-studio",
+      "skill_file": "skills/cursor-studio/SKILL.md",
+      "openai_yaml": "skills/cursor-studio/agents/openai.yaml",
+      "icon_small": "skills/cursor-studio/assets/cursor-studio-small.svg",
+      "icon_large": "skills/cursor-studio/assets/cursor-studio-large.svg",
+      "system_symbol": "cursorarrow.click",
+      "default_prompt": "Use $cursor-studio to inspect this Cursor Studio workspace, keep the menu bar UX compact and professional, and help me ship a polished cursor-pack workflow.",
+      "packs": [
+        "macos-utility-builders",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "dark-pdf-studio",
+      "display_name": "Dark PDF Studio",
+      "description": "Convert PDFs, document files, or images into dark-background reading PDFs with a compact local input-to-output workflow.",
+      "short_description": "Compact dark-background PDF conversion.",
+      "category": "Document Tools",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users who want high-contrast reading copies of local documents",
+        "Students and researchers converting PDFs, docs, or images for dark-mode review",
+        "Builders maintaining a small deterministic document export utility"
+      ],
+      "tags": [
+        "PDF",
+        "documents",
+        "dark mode",
+        "conversion",
+        "macOS",
+        "local first",
+        "export"
+      ],
+      "install_command": "codex-skillctl install dark-pdf-studio",
+      "docs_paths": [
+        "skills/dark-pdf-studio/SKILL.md",
+        "skills/dark-pdf-studio/manifest.json",
+        "skills/dark-pdf-studio/agents/openai.yaml",
+        "skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg",
+        "skills/dark-pdf-studio/assets/dark-pdf-studio-large.svg",
+        "skills/dark-pdf-studio/references/workflow-map.md",
+        "skills/dark-pdf-studio/scripts/dark_pdf.py",
+        "skills/dark-pdf-studio/scripts/run_dark_pdf_studio.sh"
+      ],
+      "detail_lines": [
+        "Keeps conversion centered on one selected input file, one dark theme, one local output path, and clear open or reveal actions.",
+        "Supports PDFs first, with document and image normalization handled through explicit local backends.",
+        "Fails with clear dependency guidance when a converter is missing instead of pretending an export succeeded."
+      ],
+      "file_path_hints": [
+        "skills/dark-pdf-studio/scripts/run_dark_pdf_studio.sh",
+        "skills/dark-pdf-studio/scripts/dark_pdf.py",
+        "skills/dark-pdf-studio/references/workflow-map.md"
+      ],
+      "brand_color": "#1D2738",
+      "path": "skills/dark-pdf-studio",
+      "skill_file": "skills/dark-pdf-studio/SKILL.md",
+      "openai_yaml": "skills/dark-pdf-studio/agents/openai.yaml",
+      "icon_small": "skills/dark-pdf-studio/assets/dark-pdf-studio-small.svg",
+      "icon_large": "skills/dark-pdf-studio/assets/dark-pdf-studio-large.svg",
+      "system_symbol": "doc.text.fill",
+      "default_prompt": "Use $dark-pdf-studio to convert this file into a clean dark-background PDF, keep the workflow compact and essential, and make sure the exported output is easy to open or share.",
+      "packs": [
+        "daily-briefs-and-reference",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "deck-export-bundle",
+      "display_name": "Deck Export Bundle",
+      "description": "A menu-bar export bundle for packaging the current slide deck, speaker notes, and send-ready assets without bouncing between Keynote, Finder, and chat.",
+      "short_description": "Package the current deck, speaker notes, and send-ready assets from the menu bar.",
+      "category": "Presentation",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Founders and operators",
+        "Designers and presenters",
+        "People sending deck updates under time pressure"
+      ],
+      "tags": [
+        "presentation",
+        "slides",
+        "Keynote",
+        "PowerPoint",
+        "export",
+        "speaker notes",
+        "menu bar",
+        "handoff"
+      ],
+      "install_command": "codex-skillctl install deck-export-bundle",
+      "docs_paths": [
+        "skills/deck-export-bundle/SKILL.md",
+        "skills/deck-export-bundle/manifest.json",
+        "skills/deck-export-bundle/agents/openai.yaml",
+        "skills/deck-export-bundle/assets/icon.svg",
+        "skills/deck-export-bundle/assets/preview.svg",
+        "skills/deck-export-bundle/prototype/README.md",
+        "skills/deck-export-bundle/prototype/SkillMenuBarApp.swift",
+        "skills/deck-export-bundle/prototype/SkillMenuBarView.swift",
+        "skills/deck-export-bundle/prototype/SkillDetailView.swift",
+        "skills/deck-export-bundle/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Pulls the live deck, speaker notes, and output format into one send-ready bundle card.",
+        "Keeps PDF export, notes text, and reveal-in-Finder actions together before the handoff leaves your Mac.",
+        "Turns last-mile deck packaging into one calm menu-bar step instead of a Finder and chat scramble."
+      ],
+      "file_path_hints": [
+        "skills/deck-export-bundle/prototype/README.md",
+        "skills/deck-export-bundle/prototype/SkillMenuBarApp.swift",
+        "skills/deck-export-bundle/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#FFD60A",
+      "path": "skills/deck-export-bundle",
+      "skill_file": "skills/deck-export-bundle/SKILL.md",
+      "openai_yaml": "skills/deck-export-bundle/agents/openai.yaml",
+      "icon_small": "skills/deck-export-bundle/assets/icon-small.svg",
+      "icon_large": "skills/deck-export-bundle/assets/icon-large.svg",
+      "system_symbol": "square.and.arrow.up",
+      "default_prompt": "Use $deck-export-bundle to build a polished macOS menu-bar utility for a menu-bar export bundle for packaging the current slide deck, speaker notes, and send-ready assets without bouncing between keynote, finder, and chat.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "deckdrop-studio",
+      "display_name": "Deckdrop Studio",
+      "description": "Build, run, troubleshoot, or extend a DeckDrop-style macOS slide workflow that turns PDFs, docs, presentations, and image sets into editable PowerPoint drafts with human review before export. Use when Codex needs to work on a workspace containing `DeckDropApp`; inspect the ingestion, extraction, planning, review, and export pipeline; regenerate the Xcode project; or validate the DeckDrop app and tests.",
+      "short_description": "Editable slide workflows for mixed-source decks",
+      "category": "Presentation",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users turning PDFs, docs, presentations, and image sets into editable slide drafts",
+        "Teams that need a human review step before PowerPoint export",
+        "Builders maintaining the DeckDrop ingestion, planning, and export pipeline"
+      ],
+      "tags": [
+        "macOS",
+        "slides",
+        "PowerPoint",
+        "presentation",
+        "deck generation",
+        "document intake",
+        "draft review",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install deckdrop-studio",
+      "docs_paths": [
+        "skills/deckdrop-studio/SKILL.md",
+        "skills/deckdrop-studio/manifest.json",
+        "skills/deckdrop-studio/agents/openai.yaml",
+        "skills/deckdrop-studio/assets/deckdrop-studio-small.svg",
+        "skills/deckdrop-studio/assets/deckdrop-studio-large.svg",
+        "skills/deckdrop-studio/references/project-map.md",
+        "skills/deckdrop-studio/scripts/run_deckdrop_studio.sh"
+      ],
+      "detail_lines": [
+        "Keeps mixed source intake, extraction, planning, draft review, and `.pptx` export represented as one DeckDrop workflow.",
+        "Presents DeckDrop as a review-first slide builder, not a last-mile deck packaging shortcut.",
+        "Uses explicit local workspaces and user-selected source files, with no hidden network sync or broad account-token requirements."
+      ],
+      "file_path_hints": [
+        "DeckDropApp/Sources/App/",
+        "DeckDropApp/Sources/Services/",
+        "DeckDropApp/Sources/Views/",
+        "DeckDropApp/Resources/scripts/",
+        "DeckDropApp/DeckWriter/",
+        "skills/deckdrop-studio/scripts/run_deckdrop_studio.sh"
+      ],
+      "brand_color": "#4F86FF",
+      "path": "skills/deckdrop-studio",
+      "skill_file": "skills/deckdrop-studio/SKILL.md",
+      "openai_yaml": "skills/deckdrop-studio/agents/openai.yaml",
+      "icon_small": "skills/deckdrop-studio/assets/deckdrop-studio-small.svg",
+      "icon_large": "skills/deckdrop-studio/assets/deckdrop-studio-large.svg",
+      "system_symbol": "rectangle.stack.fill",
+      "default_prompt": "Use $deckdrop-studio to inspect this DeckDrop workspace, keep the draft-review workflow intact, and help me ship an editable slide deck pipeline.",
+      "packs": [
+        "daily-briefs-and-reference",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "doc-drop-bridge",
+      "display_name": "Doc Drop Bridge",
+      "description": "A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.",
+      "short_description": "A document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.",
+      "category": "Documents",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Writers",
+        "Operators",
+        "People moving content between apps"
+      ],
+      "tags": [
+        "documents",
+        "PDF",
+        "handoff",
+        "export",
+        "menu bar",
+        "packaging"
+      ],
+      "install_command": "codex-skillctl install doc-drop-bridge",
+      "docs_paths": [
+        "skills/doc-drop-bridge/SKILL.md",
+        "skills/doc-drop-bridge/manifest.json",
+        "skills/doc-drop-bridge/agents/openai.yaml",
+        "skills/doc-drop-bridge/assets/icon.svg",
+        "skills/doc-drop-bridge/assets/preview.svg",
+        "skills/doc-drop-bridge/prototype/README.md",
+        "skills/doc-drop-bridge/prototype/SkillMenuBarApp.swift",
+        "skills/doc-drop-bridge/prototype/SkillMenuBarView.swift",
+        "skills/doc-drop-bridge/prototype/SkillDetailView.swift",
+        "skills/doc-drop-bridge/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Makes it easy to wrap a working note into a shareable artifact.",
+        "Keeps PDF, markdown, and plain-text exports close at hand.",
+        "Focuses on fast delivery rather than a giant document suite."
+      ],
+      "file_path_hints": [
+        "skills/doc-drop-bridge/prototype/README.md",
+        "skills/doc-drop-bridge/prototype/SkillMenuBarApp.swift",
+        "skills/doc-drop-bridge/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#64D2FF",
+      "path": "skills/doc-drop-bridge",
+      "skill_file": "skills/doc-drop-bridge/SKILL.md",
+      "openai_yaml": "skills/doc-drop-bridge/agents/openai.yaml",
+      "icon_small": "skills/doc-drop-bridge/assets/icon-small.svg",
+      "icon_large": "skills/doc-drop-bridge/assets/icon-large.svg",
+      "system_symbol": "doc.fill",
+      "default_prompt": "Use $doc-drop-bridge to build a polished macOS menu-bar utility for a document packaging bridge that turns notes, markdown, and fragments into share-ready handoff files.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "download-landing-pad",
+      "display_name": "Download Landing Pad",
+      "description": "Triage recent macOS downloads with a menu-bar staging surface that lists the newest files, supports safe rename or move actions, and keeps reveal, copy-path, and routing choices in one stop.",
+      "short_description": "A menu-bar staging pad for fresh downloads with safe rename, reveal, and route actions.",
+      "category": "Mac OS",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users exporting screenshots, PDFs, and spreadsheets from the browser",
+        "Operators who constantly move files into chat, notes, or project folders",
+        "People who want Downloads cleanup to be deliberate instead of manual Finder churn"
+      ],
+      "tags": [
+        "macOS",
+        "downloads",
+        "menu bar",
+        "Finder",
+        "rename",
+        "handoff",
+        "routing"
+      ],
+      "install_command": "codex-skillctl install download-landing-pad",
+      "docs_paths": [
+        "skills/download-landing-pad/SKILL.md",
+        "skills/download-landing-pad/manifest.json",
+        "skills/download-landing-pad/agents/openai.yaml",
+        "skills/download-landing-pad/assets/icon-small.svg",
+        "skills/download-landing-pad/assets/icon-large.svg",
+        "skills/download-landing-pad/assets/icon.svg",
+        "skills/download-landing-pad/assets/preview.svg",
+        "skills/download-landing-pad/scripts/download_landing_pad.py",
+        "skills/download-landing-pad/prototype/README.md",
+        "skills/download-landing-pad/prototype/SkillMenuBarApp.swift",
+        "skills/download-landing-pad/prototype/SkillMenuBarView.swift",
+        "skills/download-landing-pad/prototype/SkillDetailView.swift",
+        "skills/download-landing-pad/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Starts with a deterministic doctor so Downloads path, source metadata, reveal support, and copy-path support are explicit before you act.",
+        "Surfaces the newest files in Downloads as one calm queue with age, size, and source hints once the local path is ready.",
+        "Keeps rename, reveal, copy-path, and explicit move actions in the same stop where the file first lands so browser exports leave Downloads on purpose."
+      ],
+      "file_path_hints": [
+        "skills/download-landing-pad/scripts/download_landing_pad.py",
+        "skills/download-landing-pad/prototype/SkillMenuBarView.swift",
+        "skills/download-landing-pad/prototype/SkillDetailView.swift"
+      ],
+      "brand_color": "#0A84FF",
+      "path": "skills/download-landing-pad",
+      "skill_file": "skills/download-landing-pad/SKILL.md",
+      "openai_yaml": "skills/download-landing-pad/agents/openai.yaml",
+      "icon_small": "skills/download-landing-pad/assets/icon-small.svg",
+      "icon_large": "skills/download-landing-pad/assets/icon-large.svg",
+      "system_symbol": "tray.and.arrow.down.fill",
+      "default_prompt": "Use $download-landing-pad to build or refine a macOS menu-bar utility that checks local Downloads readiness first, lists the newest files, suggests where they belong, and keeps rename, reveal, copy-path, and explicit move actions one click away.",
+      "packs": [
+        "macos-utility-builders",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "excel-range-relay",
+      "display_name": "Excel Range Relay",
+      "description": "Build or operate a macOS menu-bar relay that turns the current Excel selection into clean markdown, CSV, JSON, or prompt context, with workbook, sheet, and range labels when local Excel metadata is available.",
+      "short_description": "Clipboard relay for Excel ranges and prompt handoffs.",
+      "category": "Workflow Automation",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users who hand spreadsheet slices into prompts or docs",
+        "Operators working between Excel, chat, and notes",
+        "People who need one clean spreadsheet handoff instead of manual cleanup"
+      ],
+      "tags": [
+        "Excel",
+        "Microsoft Excel",
+        "spreadsheet",
+        "clipboard",
+        "markdown",
+        "CSV",
+        "menu bar",
+        "workflow"
+      ],
+      "install_command": "codex-skillctl install excel-range-relay",
+      "docs_paths": [
+        "skills/excel-range-relay/SKILL.md",
+        "skills/excel-range-relay/manifest.json",
+        "skills/excel-range-relay/agents/openai.yaml",
+        "skills/excel-range-relay/assets/icon.svg",
+        "skills/excel-range-relay/assets/preview.svg",
+        "skills/excel-range-relay/scripts/excel_range_relay.py",
+        "skills/excel-range-relay/prototype/README.md",
+        "skills/excel-range-relay/prototype/SkillMenuBarApp.swift",
+        "skills/excel-range-relay/prototype/SkillMenuBarView.swift",
+        "skills/excel-range-relay/prototype/SkillDetailView.swift",
+        "skills/excel-range-relay/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Reads the copied Excel selection from the clipboard and preserves the table shape for markdown, CSV, JSON, or prompt-ready output.",
+        "Uses lightweight macOS automation only for workbook, sheet, and range labels when Microsoft Excel is frontmost.",
+        "Keeps header handling deterministic with first-row or generated-column modes instead of guessing what the copied slice means."
+      ],
+      "file_path_hints": [
+        "skills/excel-range-relay/scripts/excel_range_relay.py",
+        "skills/excel-range-relay/prototype/SkillMenuBarView.swift",
+        "skills/excel-range-relay/prototype/SkillDetailView.swift"
+      ],
+      "brand_color": "#107C41",
+      "path": "skills/excel-range-relay",
+      "skill_file": "skills/excel-range-relay/SKILL.md",
+      "openai_yaml": "skills/excel-range-relay/agents/openai.yaml",
+      "icon_small": "skills/excel-range-relay/assets/icon-small.svg",
+      "icon_large": "skills/excel-range-relay/assets/icon-large.svg",
+      "system_symbol": "tablecells",
+      "default_prompt": "Use $excel-range-relay to build a polished macOS menu-bar utility that captures the copied Excel range, preserves table structure, and hands it off as markdown, CSV, JSON, or prompt context with local workbook labels when available.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "fan-canon-miner",
+      "display_name": "Fan Canon Miner",
+      "description": "Mine comments, interviews, captions, and fan chatter around a creator, celebrity, or founder to identify the symbols, phrases, moments, and myths people repeat, then turn them into a canon map. Use when Codex needs fandom analysis grounded in public or user-authorized material.",
+      "short_description": "A local-first workflow for turning public or user-authorized fan chatter into a grounded canon map of symbols, phrases, moments, and myths.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Creators and community teams",
+        "Founder-led brands tracking repeatable audience lore",
+        "Editors and strategists turning chatter into respectful content direction"
+      ],
+      "tags": [
+        "fan canon",
+        "community",
+        "narrative",
+        "comments",
+        "creator strategy",
+        "local-first",
+        "safety"
+      ],
+      "install_command": "codex-skillctl install fan-canon-miner",
+      "docs_paths": [
+        "skills/fan-canon-miner/SKILL.md",
+        "skills/fan-canon-miner/manifest.json",
+        "skills/fan-canon-miner/agents/openai.yaml",
+        "skills/fan-canon-miner/assets/icon-small.svg",
+        "skills/fan-canon-miner/assets/icon-large.svg",
+        "skills/fan-canon-miner/references/product-spec.md"
+      ],
+      "detail_lines": [
+        "Clusters repeated comments, captions, interviews, and fan references into core, rising, and fragile canon buckets.",
+        "Keeps source handling local and bounded to public or user-authorized material.",
+        "Separates audience-native lore from forced or speculative narratives so content recommendations stay grounded."
+      ],
+      "file_path_hints": [
+        "SKILL.md: canon-mining workflow and safety boundaries",
+        "references/product-spec.md: menu-bar product surface and artifact shape",
+        "assets/: small and large catalog icons"
+      ],
+      "brand_color": "#C67A2B",
+      "path": "skills/fan-canon-miner",
+      "skill_file": "skills/fan-canon-miner/SKILL.md",
+      "openai_yaml": "skills/fan-canon-miner/agents/openai.yaml",
+      "icon_small": "skills/fan-canon-miner/assets/icon-small.svg",
+      "icon_large": "skills/fan-canon-miner/assets/icon-large.svg",
+      "system_symbol": "sparkles.rectangle.stack",
+      "default_prompt": "Use $fan-canon-miner to analyze this creator's public or user-provided comments, captions, interviews, and fan chatter, then turn the repeated symbols, phrases, moments, and myths into a canon map.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "find-my-phone-studio",
+      "display_name": "Find My Phone Studio",
+      "description": "Build, run, troubleshoot, or refine a realistic Mac phone-recovery workflow, especially the bundled `apps/phone-spotter` menu bar app. Use when Codex needs a repo-native path for locate, ring, call, pairing, directions, or provider handoff on iPhone or Android without inventing unsupported tracking APIs.",
+      "short_description": "macOS phone recovery helper for locate, ring, call, and provider handoff flows.",
+      "category": "Mac OS",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users who want urgent phone-finding actions one click away",
+        "Builders maintaining the Phone Spotter menu-bar app and local pairing flow",
+        "Teams separating supported provider handoff from unsupported tracking promises"
+      ],
+      "tags": [
+        "macOS",
+        "phone recovery",
+        "Find My",
+        "Android",
+        "menu bar",
+        "provider handoff",
+        "local first",
+        "privacy"
+      ],
+      "install_command": "codex-skillctl install find-my-phone-studio",
+      "docs_paths": [
+        "skills/find-my-phone-studio/SKILL.md",
+        "skills/find-my-phone-studio/manifest.json",
+        "skills/find-my-phone-studio/agents/openai.yaml",
+        "skills/find-my-phone-studio/assets/find-my-phone-studio-small.svg",
+        "skills/find-my-phone-studio/assets/find-my-phone-studio-large.svg",
+        "skills/find-my-phone-studio/references/project-map.md",
+        "skills/find-my-phone-studio/references/apple-supported-paths.md",
+        "skills/find-my-phone-studio/scripts/run_phone_spotter.sh",
+        "skills/find-my-phone-studio/scripts/find_my_phone_brief.py"
+      ],
+      "detail_lines": [
+        "Keeps locate, ring, call, directions, provider handoff, pairing, and Quit actions shaped around the bundled Phone Spotter menu-bar app.",
+        "Treats Apple Find My, Google Find, Shortcuts, and signed-in browser handoff as explicit user-owned provider surfaces instead of hidden tracking APIs.",
+        "Stores clues and pairing state locally, avoids credential capture, and limits the workflow to the user's own or authorized devices."
+      ],
+      "file_path_hints": [
+        "apps/phone-spotter/",
+        "PhoneSpotterApp/Sources/App/",
+        "PhoneSpotterApp/Sources/Views/",
+        "skills/find-my-phone-studio/references/project-map.md",
+        "skills/find-my-phone-studio/scripts/run_phone_spotter.sh"
+      ],
+      "brand_color": "#3B82F6",
+      "path": "skills/find-my-phone-studio",
+      "skill_file": "skills/find-my-phone-studio/SKILL.md",
+      "openai_yaml": "skills/find-my-phone-studio/agents/openai.yaml",
+      "icon_small": "skills/find-my-phone-studio/assets/find-my-phone-studio-small.svg",
+      "icon_large": "skills/find-my-phone-studio/assets/find-my-phone-studio-large.svg",
+      "system_symbol": "location.fill",
+      "default_prompt": "Use $find-my-phone-studio to design or build a realistic macOS menu bar app or helper that helps me find my iPhone or Android phone, open its location fast, ring it, call it when a number is stored, hand off to provider or directions flows, and include a clear Quit action.",
+      "packs": [
+        "macos-utility-builders",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "finder-selection-relay",
+      "display_name": "Finder Selection Relay",
+      "description": "Build or operate a macOS menu-bar relay that turns the current Finder selection into prompt, note, ticket, or shell-ready context with clean paths and lightweight local metadata.",
+      "short_description": "A menu-bar relay for turning the current Finder selection into clean paths and handoff-ready context.",
+      "category": "Workflow Automation",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users moving Finder selections into chat, notes, tickets, or terminal commands",
+        "Developers and operators who need exact local paths without Finder cleanup",
+        "People who hand off files and folders across apps all day"
+      ],
+      "tags": [
+        "Finder",
+        "files",
+        "paths",
+        "handoff",
+        "menu bar",
+        "AppleScript",
+        "clipboard"
+      ],
+      "install_command": "codex-skillctl install finder-selection-relay",
+      "docs_paths": [
+        "skills/finder-selection-relay/SKILL.md",
+        "skills/finder-selection-relay/manifest.json",
+        "skills/finder-selection-relay/agents/openai.yaml",
+        "skills/finder-selection-relay/assets/icon.svg",
+        "skills/finder-selection-relay/assets/icon-small.svg",
+        "skills/finder-selection-relay/assets/icon-large.svg",
+        "skills/finder-selection-relay/assets/preview.svg",
+        "skills/finder-selection-relay/scripts/finder_selection_relay.py",
+        "skills/finder-selection-relay/prototype/README.md",
+        "skills/finder-selection-relay/prototype/SkillMenuBarApp.swift",
+        "skills/finder-selection-relay/prototype/SkillMenuBarView.swift",
+        "skills/finder-selection-relay/prototype/SkillDetailView.swift",
+        "skills/finder-selection-relay/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Reads the current Finder selection through macOS automation and can fall back to explicit local paths without opening file contents or using the network.",
+        "Formats selected files and folders for prompt context, markdown notes, ticket bullets, or shell-safe path lists in one step.",
+        "Keeps the handoff small and menu-bar first so chosen Finder items move cleanly into the next tool."
+      ],
+      "file_path_hints": [
+        "skills/finder-selection-relay/scripts/finder_selection_relay.py",
+        "skills/finder-selection-relay/prototype/SkillMenuBarView.swift",
+        "skills/finder-selection-relay/prototype/SkillDetailView.swift"
+      ],
+      "brand_color": "#0A84FF",
+      "path": "skills/finder-selection-relay",
+      "skill_file": "skills/finder-selection-relay/SKILL.md",
+      "openai_yaml": "skills/finder-selection-relay/agents/openai.yaml",
+      "icon_small": "skills/finder-selection-relay/assets/icon-small.svg",
+      "icon_large": "skills/finder-selection-relay/assets/icon-large.svg",
+      "system_symbol": "folder.badge.plus",
+      "default_prompt": "Use $finder-selection-relay to turn the current Finder selection into prompt, markdown, ticket, or shell-safe path output without manual cleanup, and keep the macOS handoff compact and local-first.",
+      "packs": [
+        "macos-utility-builders",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "flight-scout",
+      "display_name": "Flight Scout",
+      "description": "Build, run, troubleshoot, or extend the Flight Scout macOS menu bar app. Use when working in `apps/flight-scout`, regenerating the XcodeGen project, running local doctor/typecheck/build/test checks, or editing route watching, live fare signals, booking deeplinks, travel-risk scoring, or the board and menu bar UI.",
+      "short_description": "Run and extend the Flight Scout app.",
+      "category": "App-Specific",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users watching repeat flight routes from a compact menu bar surface",
+        "Builders maintaining Flight Scout route scoring, fare signals, and booking handoff",
+        "Travel planners who need direct local app checks before changing route UI or data flows"
+      ],
+      "tags": [
+        "macOS",
+        "travel",
+        "flights",
+        "menu bar",
+        "route watch",
+        "fare signals",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install flight-scout",
+      "docs_paths": [
+        "skills/flight-scout/SKILL.md",
+        "skills/flight-scout/manifest.json",
+        "skills/flight-scout/agents/openai.yaml",
+        "skills/flight-scout/assets/flight-scout-small.svg",
+        "skills/flight-scout/assets/flight-scout-large.svg",
+        "skills/flight-scout/references/project-map.md",
+        "skills/flight-scout/scripts/run_flight_scout.sh"
+      ],
+      "detail_lines": [
+        "Keeps Flight Scout app work anchored to the repo-native doctor, inspect, generate, typecheck, build, test, and run loop.",
+        "Owns route watching, fare signal freshness, travel-risk scoring, booking deeplinks, and compact menu bar or board UI checks.",
+        "Preserves explicit local app validation and avoids hiding account, payment, or booking-side effects behind the SkillBar install surface."
+      ],
+      "file_path_hints": [
+        "apps/flight-scout/",
+        "skills/flight-scout/references/project-map.md",
+        "skills/flight-scout/scripts/run_flight_scout.sh"
+      ],
+      "brand_color": "#1D7DD7",
+      "path": "skills/flight-scout",
+      "skill_file": "skills/flight-scout/SKILL.md",
+      "openai_yaml": "skills/flight-scout/agents/openai.yaml",
+      "icon_small": "skills/flight-scout/assets/flight-scout-small.svg",
+      "icon_large": "skills/flight-scout/assets/flight-scout-large.svg",
+      "system_symbol": "airplane",
+      "default_prompt": "Use $flight-scout to work on the Flight Scout macOS menu bar app, regenerate the project if needed, and run local doctor, typecheck, build, or test checks.",
+      "packs": [
+        "app-specific-skills"
+      ]
+    },
+    {
+      "id": "focus-runway",
+      "display_name": "Focus Runway",
+      "description": "A quiet focus launcher that trims context switching and starts the next working block cleanly.",
+      "short_description": "A quiet focus launcher that trims context switching and starts the next working block cleanly.",
+      "category": "Productivity",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Deep workers",
+        "Students",
+        "People who need less switching and more flow"
+      ],
+      "tags": [
+        "focus",
+        "productivity",
+        "launch",
+        "menu bar",
+        "workflow"
+      ],
+      "install_command": "codex-skillctl install focus-runway",
+      "docs_paths": [
+        "skills/focus-runway/SKILL.md",
+        "skills/focus-runway/manifest.json",
+        "skills/focus-runway/agents/openai.yaml",
+        "skills/focus-runway/assets/icon.svg",
+        "skills/focus-runway/assets/preview.svg",
+        "skills/focus-runway/prototype/README.md",
+        "skills/focus-runway/prototype/SkillMenuBarApp.swift",
+        "skills/focus-runway/prototype/SkillMenuBarView.swift",
+        "skills/focus-runway/prototype/SkillDetailView.swift",
+        "skills/focus-runway/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Starts the next work block with less setup and fewer interruptions.",
+        "Keeps just enough context visible to begin quickly.",
+        "Prefers one calm action over a stack of settings."
+      ],
+      "file_path_hints": [
+        "skills/focus-runway/prototype/README.md",
+        "skills/focus-runway/prototype/SkillMenuBarApp.swift",
+        "skills/focus-runway/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#64D2FF",
+      "path": "skills/focus-runway",
+      "skill_file": "skills/focus-runway/SKILL.md",
+      "openai_yaml": "skills/focus-runway/agents/openai.yaml",
+      "icon_small": "skills/focus-runway/assets/icon-small.svg",
+      "icon_large": "skills/focus-runway/assets/icon-large.svg",
+      "system_symbol": "arrow.clockwise",
+      "default_prompt": "Use $focus-runway to build a polished macOS menu-bar utility for a quiet focus launcher that trims context switching and starts the next working block cleanly.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "folder-studio",
+      "display_name": "Folder Studio",
+      "description": "Build, run, troubleshoot, or extend a Folder Studio macOS menu bar app that reads folder context, suggests engravings, colors folders, previews Finder-style skins, and applies custom icons. Use when Codex needs to work on a workspace containing `FolderStudioApp`, keep Folder Studio separate from Cursor Studio, regenerate the Xcode project, or validate the `FolderStudio` scheme and tests.",
+      "short_description": "Context-aware Finder folder skins and icon workflows",
+      "category": "Mac OS",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users who want Finder folders to be easier to recognize",
+        "Builders shipping compact menu-bar utilities with icon preview and apply flows",
+        "Teams keeping Folder Studio separate from cursor-pack generation work"
+      ],
+      "tags": [
+        "macOS",
+        "Finder",
+        "folder icons",
+        "menu bar",
+        "icon preview",
+        "folder skins",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install folder-studio",
+      "docs_paths": [
+        "skills/folder-studio/SKILL.md",
+        "skills/folder-studio/manifest.json",
+        "skills/folder-studio/agents/openai.yaml",
+        "skills/folder-studio/assets/folder-studio-small.svg",
+        "skills/folder-studio/assets/folder-studio-large.svg",
+        "skills/folder-studio/references/project-map.md",
+        "skills/folder-studio/scripts/run_folder_studio.sh"
+      ],
+      "detail_lines": [
+        "Reads local folder context and keeps the category, content counts, engraving, badge, palette, and apply/reset state visible in a compact menu-bar panel.",
+        "Owns Finder-style preview and custom folder-icon apply flows while keeping cursor-pack planning in Cursor Studio.",
+        "Uses explicit local workspace and folder inputs, with no hidden network calls or broad persistence requirements."
+      ],
+      "file_path_hints": [
+        "FolderStudioApp/Sources/Services/",
+        "FolderStudioApp/Sources/App/",
+        "FolderStudioApp/Sources/Views/",
+        "skills/folder-studio/scripts/run_folder_studio.sh"
+      ],
+      "brand_color": "#4C9E5A",
+      "path": "skills/folder-studio",
+      "skill_file": "skills/folder-studio/SKILL.md",
+      "openai_yaml": "skills/folder-studio/agents/openai.yaml",
+      "icon_small": "skills/folder-studio/assets/folder-studio-small.svg",
+      "icon_large": "skills/folder-studio/assets/folder-studio-large.svg",
+      "system_symbol": "folder.fill.badge.gearshape",
+      "default_prompt": "Use $folder-studio to inspect this Folder Studio workspace, keep the menu bar UX compact and professional, and help me ship a polished Finder folder-skin workflow.",
+      "packs": [
+        "macos-utility-builders",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "framecrawler",
+      "display_name": "FrameCrawler",
+      "description": "Build, run, troubleshoot, or extend FrameCrawler, including the local prompt UI, Codex plugin, SceneSpec generator, macOS menu-bar inspector, and Blender add-on handoff flow. Use when Codex needs to turn prompts into Blender-ready SceneSpec output or refine the editable blockout workflow.",
+      "short_description": "A prompt-to-Blender workflow for SceneSpec JSON, local UI, menu-bar inspection, and watched-file handoff.",
+      "category": "Creative Tooling",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Blender users",
+        "Creative tool builders",
+        "People blocking cinematic scenes locally"
+      ],
+      "tags": [
+        "blender",
+        "scene",
+        "json",
+        "creative",
+        "menu bar"
+      ],
+      "install_command": "codex-skillctl install framecrawler",
+      "docs_paths": [
+        "skills/framecrawler/SKILL.md",
+        "skills/framecrawler/manifest.json",
+        "skills/framecrawler/agents/openai.yaml",
+        "skills/framecrawler/assets/framecrawler-small.svg",
+        "skills/framecrawler/assets/framecrawler-large.svg"
+      ],
+      "detail_lines": [
+        "Keeps prompt output aligned with the SceneSpec file Blender is watching.",
+        "Makes the handoff between Codex, a local UI, menu bar inspector, and Blender explicit.",
+        "Preserves local run archives so generated scenes stay inspectable."
+      ],
+      "file_path_hints": [
+        "plugins/framecrawler/scripts/generate_scenespec.js",
+        "skills/framecrawler/SKILL.md",
+        "skills/framecrawler/agents/openai.yaml"
+      ],
+      "brand_color": "#8B5CF6",
+      "path": "skills/framecrawler",
+      "skill_file": "skills/framecrawler/SKILL.md",
+      "openai_yaml": "skills/framecrawler/agents/openai.yaml",
+      "icon_small": "skills/framecrawler/assets/framecrawler-small.svg",
+      "icon_large": "skills/framecrawler/assets/framecrawler-large.svg",
+      "system_symbol": "film.stack.fill",
+      "default_prompt": "Use $framecrawler to work on the FrameCrawler prompt-to-Blender workflow, keep the watched scene_spec.json path aligned with Blender, and tell me exactly what to click next in Blender.",
+      "packs": [
+        "app-specific-skills"
+      ]
+    },
+    {
+      "id": "front-tab-relay",
+      "display_name": "Front Tab Relay",
+      "description": "Build or operate a macOS menu-bar relay that captures the front browser tab and formats it for prompts, notes, tickets, or chat handoffs.",
+      "short_description": "A menu-bar relay for grabbing the front browser tab and routing its title and URL into prompts, notes, or tickets without losing your place.",
+      "category": "Workflow Automation",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users who hand browser context into other tools",
+        "Researchers and operators moving links into notes or tickets",
+        "AI-assisted builders who keep bouncing between browser, chat, and docs"
+      ],
+      "tags": [
+        "browser",
+        "URL",
+        "handoff",
+        "menu bar",
+        "workflow",
+        "AppleScript",
+        "clipboard"
+      ],
+      "install_command": "codex-skillctl install front-tab-relay",
+      "docs_paths": [
+        "skills/front-tab-relay/SKILL.md",
+        "skills/front-tab-relay/manifest.json",
+        "skills/front-tab-relay/agents/openai.yaml",
+        "skills/front-tab-relay/assets/icon.svg",
+        "skills/front-tab-relay/assets/preview.svg",
+        "skills/front-tab-relay/scripts/front_tab_relay.py",
+        "skills/front-tab-relay/prototype/README.md",
+        "skills/front-tab-relay/prototype/SkillMenuBarApp.swift",
+        "skills/front-tab-relay/prototype/SkillMenuBarView.swift",
+        "skills/front-tab-relay/prototype/SkillDetailView.swift",
+        "skills/front-tab-relay/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Reads the visible front tab from Safari or common Chrome-family browsers without network access.",
+        "Formats the title and URL for markdown, prompts, tickets, or plain-text notes in one step.",
+        "Keeps the relay action close to the menu bar so browser context leaves the tab strip cleanly."
+      ],
+      "file_path_hints": [
+        "skills/front-tab-relay/scripts/front_tab_relay.py",
+        "skills/front-tab-relay/prototype/SkillMenuBarView.swift",
+        "skills/front-tab-relay/prototype/SkillDetailView.swift"
+      ],
+      "brand_color": "#5E5CE6",
+      "path": "skills/front-tab-relay",
+      "skill_file": "skills/front-tab-relay/SKILL.md",
+      "openai_yaml": "skills/front-tab-relay/agents/openai.yaml",
+      "icon_small": "skills/front-tab-relay/assets/icon-small.svg",
+      "icon_large": "skills/front-tab-relay/assets/icon-large.svg",
+      "system_symbol": "link.badge.plus",
+      "default_prompt": "Use $front-tab-relay to build a polished macOS menu-bar utility for a menu-bar relay for grabbing the front browser tab and routing its title and url into prompts, notes, or tickets without losing your place.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "gain-tracker",
+      "display_name": "Gain Tracker",
+      "description": "Track daily git productivity or broader output gains against a historical baseline and a target multiplier, then turn the numbers into a gain scorecard or reminder story.",
+      "short_description": "Connect GitHub, scan repos, and track daily gains.",
+      "category": "Productivity",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Builders who want daily repo activity turned into a readable progress story",
+        "Mac users comparing current output against a historical productivity baseline",
+        "Operators tracking local repos without turning the loop into a remote dashboard"
+      ],
+      "tags": [
+        "git",
+        "GitHub",
+        "productivity",
+        "daily brief",
+        "scorecard",
+        "local repos",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install gain-tracker",
+      "docs_paths": [
+        "skills/gain-tracker/SKILL.md",
+        "skills/gain-tracker/manifest.json",
+        "skills/gain-tracker/agents/openai.yaml",
+        "skills/gain-tracker/assets/icon-small.svg",
+        "skills/gain-tracker/assets/icon-large.svg",
+        "skills/gain-tracker/references/product-spec.md",
+        "skills/gain-tracker/scripts/run_gain_tracker.sh",
+        "skills/gain-tracker/scripts/daily_git_story.py",
+        "skills/gain-tracker/scripts/git_gain.py",
+        "skills/gain-tracker/scripts/github_connect.py"
+      ],
+      "detail_lines": [
+        "Turns local git activity, optional GitHub identity, and baseline numbers into daily gain stories or broader scorecards.",
+        "Keeps tracked repo config under the user's Codex data area and makes repo selection explicit before measuring output.",
+        "Uses local git data first and does not store GitHub credentials or hidden telemetry in skill metadata."
+      ],
+      "file_path_hints": [
+        "skills/gain-tracker/scripts/run_gain_tracker.sh",
+        "skills/gain-tracker/scripts/daily_git_story.py",
+        "skills/gain-tracker/scripts/git_gain.py",
+        "skills/gain-tracker/references/product-spec.md"
+      ],
+      "brand_color": "#0F9D58",
+      "path": "skills/gain-tracker",
+      "skill_file": "skills/gain-tracker/SKILL.md",
+      "openai_yaml": "skills/gain-tracker/agents/openai.yaml",
+      "icon_small": "skills/gain-tracker/assets/icon-small.svg",
+      "icon_large": "skills/gain-tracker/assets/icon-large.svg",
+      "system_symbol": "chart.line.uptrend.xyaxis",
+      "default_prompt": "Use $gain-tracker to connect my GitHub account, scan a folder for repos I should track, summarize what code I shipped today from git activity, and turn it into a reminder story plus gain scorecard with progress toward my target.",
+      "packs": [
+        "daily-briefs-and-reference",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "handoff-courier",
+      "display_name": "Handoff Courier",
+      "description": "A polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics.",
+      "short_description": "A polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics.",
+      "category": "Mac OS",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac power users",
+        "Founders and operators",
+        "People juggling files across chat and browser apps"
+      ],
+      "tags": [
+        "macOS",
+        "menu bar",
+        "handoff",
+        "files",
+        "clipboard",
+        "exports",
+        "workflow"
+      ],
+      "install_command": "codex-skillctl install handoff-courier",
+      "docs_paths": [
+        "skills/handoff-courier/SKILL.md",
+        "skills/handoff-courier/manifest.json",
+        "skills/handoff-courier/agents/openai.yaml",
+        "skills/handoff-courier/assets/icon.svg",
+        "skills/handoff-courier/assets/preview.svg",
+        "skills/handoff-courier/prototype/README.md",
+        "skills/handoff-courier/prototype/SkillMenuBarApp.swift",
+        "skills/handoff-courier/prototype/SkillMenuBarView.swift",
+        "skills/handoff-courier/prototype/SkillDetailView.swift",
+        "skills/handoff-courier/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Collects files, text, and export bundles into a single calm handoff tray.",
+        "Shows the next destination and the cleanest transfer path before you commit.",
+        "Keeps the transfer UI minimal so it feels native on macOS instead of bolted on."
+      ],
+      "file_path_hints": [
+        "skills/handoff-courier/prototype/README.md",
+        "skills/handoff-courier/prototype/SkillMenuBarApp.swift",
+        "skills/handoff-courier/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#0A84FF",
+      "path": "skills/handoff-courier",
+      "skill_file": "skills/handoff-courier/SKILL.md",
+      "openai_yaml": "skills/handoff-courier/agents/openai.yaml",
+      "icon_small": "skills/handoff-courier/assets/icon-small.svg",
+      "icon_large": "skills/handoff-courier/assets/icon-large.svg",
+      "system_symbol": "tray.and.arrow.down.fill",
+      "default_prompt": "Use $handoff-courier to build a polished macOS menu-bar utility for a polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics.",
+      "packs": [
+        "macos-utility-builders"
+      ]
+    },
+    {
+      "id": "iconography-lab",
+      "display_name": "Iconography Lab",
+      "description": "Define the instantly recognizable visual and verbal codes of a public figure, including palette, props, silhouettes, poses, moods, and catchphrases, then output an identity kit.",
+      "short_description": "Map visual and verbal codes into an identity kit.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Creative directors shaping personality-led visual systems",
+        "Brand strategists finding durable cues in public references",
+        "Talent and founder teams turning recognizable codes into practical guidance"
+      ],
+      "tags": [
+        "iconography",
+        "identity kit",
+        "visual codes",
+        "brand strategy",
+        "creator strategy",
+        "local first",
+        "safety"
+      ],
+      "install_command": "codex-skillctl install iconography-lab",
+      "docs_paths": [
+        "skills/iconography-lab/SKILL.md",
+        "skills/iconography-lab/manifest.json",
+        "skills/iconography-lab/agents/openai.yaml",
+        "skills/iconography-lab/assets/icon-small.svg",
+        "skills/iconography-lab/assets/icon-large.svg",
+        "skills/iconography-lab/references/product-spec.md"
+      ],
+      "detail_lines": [
+        "Clusters photo sets, captions, slogans, props, wardrobe, gestures, and moods into reusable visual and verbal code systems.",
+        "Exports palette, prop, silhouette, framing, phrase, and do-or-do-not guidance for future content, events, and merch.",
+        "Works only from public or user-authorized material and flags impersonation, likeness misuse, and overly close copying risks."
+      ],
+      "file_path_hints": [
+        "skills/iconography-lab/SKILL.md",
+        "skills/iconography-lab/references/product-spec.md",
+        "skills/iconography-lab/assets/icon-small.svg"
+      ],
+      "brand_color": "#3E6DFF",
+      "path": "skills/iconography-lab",
+      "skill_file": "skills/iconography-lab/SKILL.md",
+      "openai_yaml": "skills/iconography-lab/agents/openai.yaml",
+      "icon_small": "skills/iconography-lab/assets/icon-small.svg",
+      "icon_large": "skills/iconography-lab/assets/icon-large.svg",
+      "system_symbol": "eye.fill",
+      "default_prompt": "Use $iconography-lab to analyze this public figure's visual and verbal codes, then build an identity kit with palette, props, silhouette cues, and catchphrases.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "impeccable-cli",
+      "display_name": "Impeccable CLI",
+      "description": "Run the official impeccable CLI against frontend files, directories, or live URLs to catch deterministic UI anti-patterns and launch the Visual Mode overlay when a page needs in-browser triage.",
+      "short_description": "The official Impeccable design-audit skill for deterministic code scans and live anti-pattern overlays.",
+      "category": "Developer Tools",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Frontend engineers shipping AI-assisted interfaces",
+        "Maintainers who want CI-friendly design audit output",
+        "Codex users who need a truthful anti-pattern pass before polishing UI"
+      ],
+      "tags": [
+        "frontend",
+        "design",
+        "audit",
+        "cli",
+        "CI",
+        "HTML",
+        "CSS",
+        "React",
+        "Vue",
+        "Svelte"
+      ],
+      "install_command": "codex-skillctl install impeccable-cli",
+      "docs_paths": [
+        "skills/impeccable-cli/SKILL.md",
+        "skills/impeccable-cli/manifest.json",
+        "skills/impeccable-cli/agents/openai.yaml",
+        "skills/impeccable-cli/references/cli-quick-reference.md",
+        "skills/impeccable-cli/scripts/impeccable_detect.sh",
+        "skills/impeccable-cli/scripts/impeccable_live.sh",
+        "skills/impeccable-cli/assets/impeccable-cli-small.svg",
+        "skills/impeccable-cli/assets/impeccable-cli-large.svg",
+        "skills/impeccable-cli/prototype/README.md",
+        "skills/impeccable-cli/prototype/SkillMenuBarApp.swift",
+        "skills/impeccable-cli/prototype/SkillMenuBarView.swift",
+        "skills/impeccable-cli/prototype/SkillDetailView.swift",
+        "skills/impeccable-cli/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Runs the official `impeccable detect` workflow against local frontend files, folders, or live URLs.",
+        "Covers `impeccable live` too, so agents can launch the overlay workflow when a page needs in-place visual triage.",
+        "Keeps deterministic findings separate from broader design judgment while still fitting CI, local review, and browser debugging."
+      ],
+      "file_path_hints": [
+        "skills/impeccable-cli/scripts/impeccable_detect.sh",
+        "skills/impeccable-cli/scripts/impeccable_live.sh",
+        "skills/impeccable-cli/references/cli-quick-reference.md",
+        "skills/impeccable-cli/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#F97316",
+      "path": "skills/impeccable-cli",
+      "skill_file": "skills/impeccable-cli/SKILL.md",
+      "openai_yaml": "skills/impeccable-cli/agents/openai.yaml",
+      "icon_small": "skills/impeccable-cli/assets/impeccable-cli-small.svg",
+      "icon_large": "skills/impeccable-cli/assets/impeccable-cli-large.svg",
+      "system_symbol": "paintbrush.pointed.fill",
+      "default_prompt": "Use $impeccable-cli to run the official Impeccable workflow on this frontend path or live URL, choose between `detect` and `live` as appropriate, surface the highest-signal findings, and recommend the concrete fixes or command wiring that should happen next.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "inner-circle-director",
+      "display_name": "Inner Circle Director",
+      "description": "Structure tiered access, VIP mechanics, recognition systems, and premium community experiences, then output a membership framework with fairness and maintenance guardrails.",
+      "short_description": "Design tiers and VIP community access.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Community operators planning paid or recognition-based access",
+        "Talent teams balancing VIP mechanics with fairness",
+        "Founder-led brands stress-testing membership promises before launch"
+      ],
+      "tags": [
+        "membership",
+        "community",
+        "VIP access",
+        "creator strategy",
+        "fairness",
+        "local first",
+        "safety"
+      ],
+      "install_command": "codex-skillctl install inner-circle-director",
+      "docs_paths": [
+        "skills/inner-circle-director/SKILL.md",
+        "skills/inner-circle-director/manifest.json",
+        "skills/inner-circle-director/agents/openai.yaml",
+        "skills/inner-circle-director/assets/icon-small.svg",
+        "skills/inner-circle-director/assets/icon-large.svg",
+        "skills/inner-circle-director/references/product-spec.md"
+      ],
+      "detail_lines": [
+        "Turns audience structure, perks, pricing context, and moderation capacity into a clear membership framework.",
+        "Keeps non-paid participation, downgrade paths, and operational limits visible so access design does not become arbitrary status pressure.",
+        "Works only from public or user-authorized inputs and rejects stalking, rumor laundering, harassment, and exploitative spend pressure."
+      ],
+      "file_path_hints": [
+        "skills/inner-circle-director/SKILL.md",
+        "skills/inner-circle-director/references/product-spec.md",
+        "skills/inner-circle-director/assets/icon-small.svg"
+      ],
+      "brand_color": "#BF9640",
+      "path": "skills/inner-circle-director",
+      "skill_file": "skills/inner-circle-director/SKILL.md",
+      "openai_yaml": "skills/inner-circle-director/agents/openai.yaml",
+      "icon_small": "skills/inner-circle-director/assets/icon-small.svg",
+      "icon_large": "skills/inner-circle-director/assets/icon-large.svg",
+      "system_symbol": "person.3.fill",
+      "default_prompt": "Use $inner-circle-director to design tiered access, VIP mechanics, and recognition systems for this audience, then export a membership framework.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "launch-deck-lift",
+      "display_name": "Launch Deck Lift",
+      "description": "A presentation helper that turns a rough idea into a clean launch deck starter.",
+      "short_description": "A presentation helper that turns a rough idea into a clean launch deck starter.",
+      "category": "Presentation",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Founders",
+        "Designers",
+        "People who need a sharp deck quickly"
+      ],
+      "tags": [
+        "deck",
+        "presentation",
+        "launch",
+        "story",
+        "menu bar"
+      ],
+      "install_command": "codex-skillctl install launch-deck-lift",
+      "docs_paths": [
+        "skills/launch-deck-lift/SKILL.md",
+        "skills/launch-deck-lift/manifest.json",
+        "skills/launch-deck-lift/agents/openai.yaml",
+        "skills/launch-deck-lift/assets/icon.svg",
+        "skills/launch-deck-lift/assets/preview.svg",
+        "skills/launch-deck-lift/prototype/README.md",
+        "skills/launch-deck-lift/prototype/SkillMenuBarApp.swift",
+        "skills/launch-deck-lift/prototype/SkillMenuBarView.swift",
+        "skills/launch-deck-lift/prototype/SkillDetailView.swift",
+        "skills/launch-deck-lift/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Helps you move from idea to slide order without losing the thread.",
+        "Focuses on the one-page summary and the opening story first.",
+        "Keeps the UI approachable for fast deck prep."
+      ],
+      "file_path_hints": [
+        "skills/launch-deck-lift/prototype/README.md",
+        "skills/launch-deck-lift/prototype/SkillMenuBarApp.swift",
+        "skills/launch-deck-lift/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#FFD60A",
+      "path": "skills/launch-deck-lift",
+      "skill_file": "skills/launch-deck-lift/SKILL.md",
+      "openai_yaml": "skills/launch-deck-lift/agents/openai.yaml",
+      "icon_small": "skills/launch-deck-lift/assets/icon-small.svg",
+      "icon_large": "skills/launch-deck-lift/assets/icon-large.svg",
+      "system_symbol": "rectangle.3.group.fill",
+      "default_prompt": "Use $launch-deck-lift to build a polished macOS menu-bar utility for a presentation helper that turns a rough idea into a clean launch deck starter.",
+      "packs": [
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "lore-drop-planner",
+      "display_name": "Lore Drop Planner",
+      "description": "Plan episodic reveals, callbacks, teasers, and payoff arcs for personality-led brands, then output a lore release schedule.",
+      "short_description": "Sequence reveals, callbacks, teasers, and payoffs.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Content strategists planning episodic storytelling",
+        "Launch teams coordinating teasers, reveals, and callbacks",
+        "Founder-led brands turning open loops into clear payoff arcs"
+      ],
+      "tags": [
+        "lore",
+        "content calendar",
+        "reveals",
+        "callbacks",
+        "creator strategy",
+        "local first",
+        "safety"
+      ],
+      "install_command": "codex-skillctl install lore-drop-planner",
+      "docs_paths": [
+        "skills/lore-drop-planner/SKILL.md",
+        "skills/lore-drop-planner/manifest.json",
+        "skills/lore-drop-planner/agents/openai.yaml",
+        "skills/lore-drop-planner/assets/icon-small.svg",
+        "skills/lore-drop-planner/assets/icon-large.svg",
+        "skills/lore-drop-planner/references/product-spec.md"
+      ],
+      "detail_lines": [
+        "Turns canon maps, campaign notes, unresolved mysteries, callbacks, launch windows, and dates into a timed release schedule.",
+        "Keeps reveal, teaser, callback, payoff, cross-format, pause, and reset rules visible so arcs stay coherent.",
+        "Works only from public or user-authorized material and rejects fake emergencies, manipulative ambiguity, and anxiety-driven bait."
+      ],
+      "file_path_hints": [
+        "skills/lore-drop-planner/SKILL.md",
+        "skills/lore-drop-planner/references/product-spec.md",
+        "skills/lore-drop-planner/assets/icon-small.svg"
+      ],
+      "brand_color": "#5A63D8",
+      "path": "skills/lore-drop-planner",
+      "skill_file": "skills/lore-drop-planner/SKILL.md",
+      "openai_yaml": "skills/lore-drop-planner/agents/openai.yaml",
+      "icon_small": "skills/lore-drop-planner/assets/icon-small.svg",
+      "icon_large": "skills/lore-drop-planner/assets/icon-large.svg",
+      "system_symbol": "calendar.badge.clock",
+      "default_prompt": "Use $lore-drop-planner to plan episodic reveals, teasers, callbacks, and payoffs for this personality-led brand, then export a lore release schedule.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "meeting-link-bridge",
+      "display_name": "Meeting Link Bridge",
+      "description": "Build or operate a macOS menu-bar bridge that turns the current meeting join link into a clean handoff for notes, chat, email, or a fast open action, with extra weight for Microsoft Teams and browser-based meeting flows.",
+      "short_description": "A menu-bar handoff bridge that turns the current Teams or browser meeting link into a clean join note, email snippet, or fast open action.",
+      "category": "Workflow Automation",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users joining meetings from browser tabs and copied links",
+        "Operators who keep pasting join URLs into notes, chat, or email",
+        "People working in Teams-heavy workflows without wanting a full calendar client"
+      ],
+      "tags": [
+        "meetings",
+        "Microsoft Teams",
+        "browser",
+        "handoff",
+        "menu bar",
+        "AppleScript",
+        "clipboard"
+      ],
+      "install_command": "codex-skillctl install meeting-link-bridge",
+      "docs_paths": [
+        "skills/meeting-link-bridge/SKILL.md",
+        "skills/meeting-link-bridge/manifest.json",
+        "skills/meeting-link-bridge/agents/openai.yaml",
+        "skills/meeting-link-bridge/assets/icon-small.svg",
+        "skills/meeting-link-bridge/assets/icon-large.svg",
+        "skills/meeting-link-bridge/assets/icon.svg",
+        "skills/meeting-link-bridge/assets/preview.svg",
+        "skills/meeting-link-bridge/scripts/meeting_link_bridge.py",
+        "skills/meeting-link-bridge/prototype/README.md",
+        "skills/meeting-link-bridge/prototype/SkillMenuBarApp.swift",
+        "skills/meeting-link-bridge/prototype/SkillMenuBarView.swift",
+        "skills/meeting-link-bridge/prototype/SkillDetailView.swift",
+        "skills/meeting-link-bridge/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Detects Teams-first meeting links from the front browser tab, clipboard, or a pasted URL without cloud access.",
+        "Turns the raw join URL into a ready-to-paste meeting note, markdown link, or email snippet in one step.",
+        "Keeps the pre-meeting handoff short so browser, notes, chat, and Outlook drafts stop competing for the same link."
+      ],
+      "file_path_hints": [
+        "skills/meeting-link-bridge/scripts/meeting_link_bridge.py",
+        "skills/meeting-link-bridge/prototype/SkillMenuBarView.swift",
+        "skills/meeting-link-bridge/prototype/SkillDetailView.swift"
+      ],
+      "brand_color": "#4F6BED",
+      "path": "skills/meeting-link-bridge",
+      "skill_file": "skills/meeting-link-bridge/SKILL.md",
+      "openai_yaml": "skills/meeting-link-bridge/agents/openai.yaml",
+      "icon_small": "skills/meeting-link-bridge/assets/icon-small.svg",
+      "icon_large": "skills/meeting-link-bridge/assets/icon-large.svg",
+      "system_symbol": "video.badge.plus",
+      "default_prompt": "Use $meeting-link-bridge to build a polished macOS menu-bar utility that turns the current Teams or browser meeting link into a clean handoff for notes, chat, email, or a fast join action.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "minecraft-essentials",
+      "display_name": "Minecraft Essentials",
+      "description": "Install, upgrade, run, migrate, back up, and troubleshoot Minecraft Java servers with clear local setup and join guidance.",
+      "short_description": "Run, upgrade, and fix Minecraft Java servers.",
+      "category": "Games and Consoles",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Minecraft server hosts maintaining local or small-group Java servers",
+        "Players moving from ad hoc launch scripts to safer Paper, Vanilla, or Fabric setups",
+        "Builders troubleshooting backups, plugins, Java versions, LAN joins, and migration paths"
+      ],
+      "tags": [
+        "Minecraft",
+        "server",
+        "Paper",
+        "Fabric",
+        "backup",
+        "LAN",
+        "local first",
+        "operations"
+      ],
+      "install_command": "codex-skillctl install minecraft-essentials",
+      "docs_paths": [
+        "skills/minecraft-essentials/SKILL.md",
+        "skills/minecraft-essentials/manifest.json",
+        "skills/minecraft-essentials/agents/openai.yaml",
+        "skills/minecraft-essentials/assets/minecraft-essentials-small.svg",
+        "skills/minecraft-essentials/assets/minecraft-essentials-large.svg",
+        "skills/minecraft-essentials/scripts/mc_lan_info.sh",
+        "skills/minecraft-essentials/references/server-modes.md",
+        "skills/minecraft-essentials/references/plugin-packs.md",
+        "skills/minecraft-essentials/references/operations-checklist.md"
+      ],
+      "detail_lines": [
+        "Starts with a server audit, world and config backup, Java version check, and clear choice between Vanilla, Paper, or Fabric.",
+        "Surfaces same-machine, LAN, and hostname join info without implying that public exposure is safe by default.",
+        "Treats compatibility plugins, Bedrock bridging, major upgrades, and always-on hosting as explicit operational decisions."
+      ],
+      "file_path_hints": [
+        "skills/minecraft-essentials/scripts/mc_lan_info.sh",
+        "skills/minecraft-essentials/references/server-modes.md",
+        "skills/minecraft-essentials/references/operations-checklist.md"
+      ],
+      "brand_color": "#4CAF50",
+      "path": "skills/minecraft-essentials",
+      "skill_file": "skills/minecraft-essentials/SKILL.md",
+      "openai_yaml": "skills/minecraft-essentials/agents/openai.yaml",
+      "icon_small": "skills/minecraft-essentials/assets/minecraft-essentials-small.svg",
+      "icon_large": "skills/minecraft-essentials/assets/minecraft-essentials-large.svg",
+      "system_symbol": "server.rack",
+      "default_prompt": "Use $minecraft-essentials to audit this Minecraft server, back it up safely, improve the run setup, and show the right join info.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    },
+    {
+      "id": "minecraft-skin-studio",
+      "display_name": "Minecraft Skin Studio",
+      "description": "Draft, clean, preview, register, or build a Minecraft Java skin workflow, including the bundled Minecraft Skin Bar app.",
+      "short_description": "Build launcher-ready skins or the bundled menu bar app.",
+      "category": "Games and Consoles",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Minecraft players creating or importing Java skin PNGs",
+        "Mac users who want local preview and launcher registration handoff",
+        "Builders maintaining the bundled Minecraft Skin Bar app and helper scripts"
+      ],
+      "tags": [
+        "Minecraft",
+        "skins",
+        "launcher",
+        "menu bar",
+        "PNG",
+        "preview",
+        "local first",
+        "SwiftUI"
+      ],
+      "install_command": "codex-skillctl install minecraft-skin-studio",
+      "docs_paths": [
+        "skills/minecraft-skin-studio/SKILL.md",
+        "skills/minecraft-skin-studio/manifest.json",
+        "skills/minecraft-skin-studio/agents/openai.yaml",
+        "skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg",
+        "skills/minecraft-skin-studio/assets/minecraft-skin-studio-large.svg",
+        "skills/minecraft-skin-studio/scripts/minecraft_skin_studio.py",
+        "skills/minecraft-skin-studio/scripts/run_minecraft_skinbar.sh",
+        "skills/minecraft-skin-studio/references/launcher-flow.md",
+        "skills/minecraft-skin-studio/references/project-map.md"
+      ],
+      "detail_lines": [
+        "Keeps the launcher-ready deliverable explicit: a 64x64 skin PNG, preview image, and optional local launcher registration entry.",
+        "Supports generate, import, clean, render-preview, and register lanes without pretending to change Mojang account state silently.",
+        "Preserves the bundled app's local-first boundary, including Keychain or environment-only API key handling."
+      ],
+      "file_path_hints": [
+        "skills/minecraft-skin-studio/scripts/run_minecraft_skinbar.sh",
+        "skills/minecraft-skin-studio/scripts/minecraft_skin_studio.py",
+        "skills/minecraft-skin-studio/references/project-map.md",
+        "apps/minecraft-skinbar/"
+      ],
+      "brand_color": "#22C55E",
+      "path": "skills/minecraft-skin-studio",
+      "skill_file": "skills/minecraft-skin-studio/SKILL.md",
+      "openai_yaml": "skills/minecraft-skin-studio/agents/openai.yaml",
+      "icon_small": "skills/minecraft-skin-studio/assets/minecraft-skin-studio-small.svg",
+      "icon_large": "skills/minecraft-skin-studio/assets/minecraft-skin-studio-large.svg",
+      "system_symbol": "person.crop.square.fill",
+      "default_prompt": "Use $minecraft-skin-studio to draft or import a Minecraft Java skin, save a clean 64x64 PNG, render a preview, register it into my local Minecraft Launcher custom skins list, or work on the bundled Minecraft Skin Bar menu bar app.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    },
+    {
+      "id": "minefield-menubar",
+      "display_name": "Minefield Menu Bar",
+      "description": "A polished macOS menu-bar puzzle that turns Minesweeper-style rounds into quick coffee-break runs.",
+      "short_description": "A polished macOS menu-bar puzzle that turns Minesweeper-style rounds into quick coffee-break runs.",
+      "category": "Games and Consoles",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Mac users who want a quick puzzle break",
+        "Builders exploring playful menu bar apps",
+        "People who like compact strategy games"
+      ],
+      "tags": [
+        "macOS",
+        "menu bar",
+        "game",
+        "puzzle",
+        "minesweeper",
+        "swiftui",
+        "arcade"
+      ],
+      "install_command": "codex-skillctl install minefield-menubar",
+      "docs_paths": [
+        "skills/minefield-menubar/SKILL.md",
+        "skills/minefield-menubar/manifest.json",
+        "skills/minefield-menubar/agents/openai.yaml",
+        "skills/minefield-menubar/references/product-spec.md",
+        "skills/minefield-menubar/prototype/README.md",
+        "skills/minefield-menubar/prototype/SkillMenuBarApp.swift",
+        "skills/minefield-menubar/prototype/SkillMenuBarView.swift",
+        "skills/minefield-menubar/prototype/SkillGameModel.swift",
+        "skills/minefield-menubar/prototype/SkillDetailView.swift",
+        "skills/minefield-menubar/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Fits a full Minesweeper-style board into a compact macOS menu-bar popover.",
+        "Keeps reveal, flag, timer, and replay flow readable instead of turning into a tiny desktop app.",
+        "Creates a strong pattern for other top-bar micro games once the shell feels right."
+      ],
+      "file_path_hints": [
+        "skills/minefield-menubar/references/product-spec.md",
+        "skills/minefield-menubar/prototype/SkillGameModel.swift",
+        "skills/minefield-menubar/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#61ED9F",
+      "path": "skills/minefield-menubar",
+      "skill_file": "skills/minefield-menubar/SKILL.md",
+      "openai_yaml": "skills/minefield-menubar/agents/openai.yaml",
+      "icon_small": "skills/minefield-menubar/assets/icon-small.svg",
+      "icon_large": "skills/minefield-menubar/assets/icon-large.svg",
+      "system_symbol": "diamond.fill",
+      "default_prompt": "Use $minefield-menubar to build a polished macOS menu-bar game with a Minesweeper-style board, quick replay loop, and native-feeling popover controls.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    },
+    {
+      "id": "minesweeper-menubar",
+      "display_name": "Minesweeper Menu Bar",
+      "description": "A Swift macOS menu-bar icon app concept for playing Minesweeper in a compact native popover.",
+      "short_description": "A Swift macOS menu-bar icon app concept for playing Minesweeper in a compact native popover.",
+      "category": "Games and Consoles",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Mac users who want a quick puzzle in the menu bar",
+        "SwiftUI builders exploring playful menu bar apps",
+        "People who like Minesweeper-style logic games"
+      ],
+      "tags": [
+        "macOS",
+        "SwiftUI",
+        "menu bar",
+        "Minesweeper",
+        "game",
+        "puzzle",
+        "icon app"
+      ],
+      "install_command": "codex-skillctl install minesweeper-menubar",
+      "docs_paths": [
+        "skills/minesweeper-menubar/SKILL.md",
+        "skills/minesweeper-menubar/manifest.json",
+        "skills/minesweeper-menubar/agents/openai.yaml",
+        "skills/minesweeper-menubar/references/product-spec.md",
+        "skills/minesweeper-menubar/prototype/README.md",
+        "skills/minesweeper-menubar/prototype/SkillMenuBarApp.swift",
+        "skills/minesweeper-menubar/prototype/SkillMenuBarView.swift",
+        "skills/minesweeper-menubar/prototype/SkillGameModel.swift",
+        "skills/minesweeper-menubar/prototype/SkillDetailView.swift",
+        "skills/minesweeper-menubar/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Turns Minesweeper into a native Swift menu bar icon app instead of a full desktop game.",
+        "Keeps the board, timer, flags, and reset flow fully playable inside one compact popover.",
+        "Gives the repo a direct template for shipping a real puzzle game as a top-bar utility."
+      ],
+      "file_path_hints": [
+        "skills/minesweeper-menubar/references/product-spec.md",
+        "skills/minesweeper-menubar/prototype/SkillGameModel.swift",
+        "skills/minesweeper-menubar/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#7AF0B0",
+      "path": "skills/minesweeper-menubar",
+      "skill_file": "skills/minesweeper-menubar/SKILL.md",
+      "openai_yaml": "skills/minesweeper-menubar/agents/openai.yaml",
+      "icon_small": "skills/minesweeper-menubar/assets/icon-small.svg",
+      "icon_large": "skills/minesweeper-menubar/assets/icon-large.svg",
+      "system_symbol": "flag.pattern.checkered",
+      "default_prompt": "Use $minesweeper-menubar to build a Swift macOS menu-bar icon app that plays Minesweeper inside a polished native popover.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    },
+    {
+      "id": "myth-merch-studio",
+      "display_name": "Myth Merch Studio",
+      "description": "Turn symbols, phrases, and fandom lore into merch, collectible, and limited-drop concepts, then output a merch brief.",
+      "short_description": "Translate fandom lore into merch and drop briefs.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Merch leads translating community lore into product ideas",
+        "Creative directors mapping symbols and phrases to drop concepts",
+        "Talent and founder teams checking product meaning, rights, and manufacturing fit"
+      ],
+      "tags": [
+        "merch",
+        "fandom",
+        "drops",
+        "collectibles",
+        "creator strategy",
+        "local first",
+        "safety"
+      ],
+      "install_command": "codex-skillctl install myth-merch-studio",
+      "docs_paths": [
+        "skills/myth-merch-studio/SKILL.md",
+        "skills/myth-merch-studio/manifest.json",
+        "skills/myth-merch-studio/agents/openai.yaml",
+        "skills/myth-merch-studio/assets/icon-small.svg",
+        "skills/myth-merch-studio/assets/icon-large.svg",
+        "skills/myth-merch-studio/references/product-spec.md"
+      ],
+      "detail_lines": [
+        "Maps canon, iconography kits, phrases, price bands, product constraints, drop timing, and licensing boundaries into practical concept routes.",
+        "Exports concept rationale, phrase or symbol mapping, material notes, packaging ideas, drop framing, no-go ideas, and rights review.",
+        "Works only from public or user-authorized material and rejects unlicensed likeness use, collaborator appropriation, and empty scarcity pressure."
+      ],
+      "file_path_hints": [
+        "skills/myth-merch-studio/SKILL.md",
+        "skills/myth-merch-studio/references/product-spec.md",
+        "skills/myth-merch-studio/assets/icon-small.svg"
+      ],
+      "brand_color": "#2E9A5F",
+      "path": "skills/myth-merch-studio",
+      "skill_file": "skills/myth-merch-studio/SKILL.md",
+      "openai_yaml": "skills/myth-merch-studio/agents/openai.yaml",
+      "icon_small": "skills/myth-merch-studio/assets/icon-small.svg",
+      "icon_large": "skills/myth-merch-studio/assets/icon-large.svg",
+      "system_symbol": "tag.fill",
+      "default_prompt": "Use $myth-merch-studio to turn this creator or founder's symbols, phrases, and fandom lore into merch concepts and export a merch brief.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "network-studio",
+      "display_name": "Network Studio",
+      "description": "Install or update a portable macOS local-network monitor workspace with a SwiftBar plugin, dashboard opener, and continuous LAN presence watch loop for networks the user owns or administers.",
+      "short_description": "Portable LAN presence monitoring with SwiftBar and a local dashboard.",
+      "category": "System Monitoring",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users monitoring a home or office LAN they administer",
+        "SwiftBar users who want a portable network status surface",
+        "Builders comparing portable network workspaces against native menu-bar apps"
+      ],
+      "tags": [
+        "network",
+        "LAN",
+        "SwiftBar",
+        "dashboard",
+        "macOS",
+        "local first",
+        "device presence"
+      ],
+      "install_command": "codex-skillctl install network-studio",
+      "docs_paths": [
+        "skills/network-studio/SKILL.md",
+        "skills/network-studio/manifest.json",
+        "skills/network-studio/agents/openai.yaml",
+        "skills/network-studio/assets/network-studio-small.svg",
+        "skills/network-studio/assets/network-studio-large.svg",
+        "skills/network-studio/references/project-map.md",
+        "skills/network-studio/scripts/run_network_studio.sh",
+        "skills/network-studio/scripts/install_network_studio.py"
+      ],
+      "detail_lines": [
+        "Installs or refreshes a user-chosen portable workspace with a local watcher, CSV history, dashboard output, and optional SwiftBar wrapper.",
+        "Owns LAN presence monitoring and dashboard handoff while keeping native Wi-Fi trust scoring in WiFi Watchtower.",
+        "Preserves user labels and logs on update, limits use to networks the user owns or administers, and avoids hidden telemetry."
+      ],
+      "file_path_hints": [
+        "skills/network-studio/scripts/run_network_studio.sh",
+        "skills/network-studio/scripts/install_network_studio.py",
+        "skills/network-studio/assets/workspace/network-watch.sh",
+        "skills/network-studio/assets/workspace/.swiftbar-support/"
+      ],
+      "brand_color": "#0F8ED8",
+      "path": "skills/network-studio",
+      "skill_file": "skills/network-studio/SKILL.md",
+      "openai_yaml": "skills/network-studio/agents/openai.yaml",
+      "icon_small": "skills/network-studio/assets/network-studio-small.svg",
+      "icon_large": "skills/network-studio/assets/network-studio-large.svg",
+      "system_symbol": "network",
+      "default_prompt": "Use $network-studio to install or update a portable Network Studio workspace, wire SwiftBar if needed, and keep the local dashboard and watcher flows honest.",
+      "packs": [
+        "daily-briefs-and-reference",
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "on-this-day",
+      "display_name": "On This Day",
+      "description": "Fetch the official Wikimedia On This Day feed for a given date, then turn it into a polished daily history brief or a refined macOS-style web app.",
+      "short_description": "Daily history brief, feed helper, and macOS-style web app.",
+      "category": "Productivity",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Readers who want a source-linked same-day history brief",
+        "Builders refining the matching macOS-style browser app",
+        "Daily context workflows that need deterministic Wikimedia feed snapshots"
+      ],
+      "tags": [
+        "history",
+        "Wikimedia",
+        "daily brief",
+        "web app",
+        "date picker",
+        "source linked",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install on-this-day",
+      "docs_paths": [
+        "skills/on-this-day/SKILL.md",
+        "skills/on-this-day/manifest.json",
+        "skills/on-this-day/agents/openai.yaml",
+        "skills/on-this-day/assets/icon-small.svg",
+        "skills/on-this-day/assets/icon-large.svg",
+        "skills/on-this-day/references/product-spec.md",
+        "skills/on-this-day/references/project-map.md",
+        "skills/on-this-day/scripts/fetch_on_this_day.py",
+        "skills/on-this-day/scripts/run_on_this_day.sh"
+      ],
+      "detail_lines": [
+        "Uses the official Wikimedia On This Day feed for date-specific events, births, deaths, and holidays instead of inventing facts.",
+        "Supports concise briefs, JSON snapshots, and the repo-native macOS-style web app flow.",
+        "Keeps source links and timezone basis explicit, with no hidden account access or private browsing history collection."
+      ],
+      "file_path_hints": [
+        "skills/on-this-day/scripts/fetch_on_this_day.py",
+        "skills/on-this-day/scripts/run_on_this_day.sh",
+        "skills/on-this-day/references/project-map.md",
+        "apps/on-this-day/"
+      ],
+      "brand_color": "#D88B2C",
+      "path": "skills/on-this-day",
+      "skill_file": "skills/on-this-day/SKILL.md",
+      "openai_yaml": "skills/on-this-day/agents/openai.yaml",
+      "icon_small": "skills/on-this-day/assets/icon-small.svg",
+      "icon_large": "skills/on-this-day/assets/icon-large.svg",
+      "system_symbol": "calendar",
+      "default_prompt": "Use $on-this-day to fetch the official On This Day feed for today in Singapore, turn it into a polished source-linked brief, or refine the matching macOS-style web app with the repo-native fetch and run flow.",
+      "packs": [
+        "daily-briefs-and-reference",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "on-this-day-bar",
+      "display_name": "On This Day Bar",
+      "description": "Build, run, troubleshoot, or refine the native On This Day Bar macOS menu bar app in `apps/on-this-day-bar`.",
+      "short_description": "Run and refine the native daily history menu bar app.",
+      "category": "App-Specific",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users who want a cached daily history brief in the menu bar",
+        "Builders maintaining native On This Day feed parsing, cache, and popover UI",
+        "Daily context workflows that need stale-data messaging to stay honest"
+      ],
+      "tags": [
+        "macOS",
+        "menu bar",
+        "history",
+        "Wikimedia",
+        "cache",
+        "daily brief",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install on-this-day-bar",
+      "docs_paths": [
+        "skills/on-this-day-bar/SKILL.md",
+        "skills/on-this-day-bar/manifest.json",
+        "skills/on-this-day-bar/agents/openai.yaml",
+        "skills/on-this-day-bar/assets/icon-small.svg",
+        "skills/on-this-day-bar/assets/icon-large.svg",
+        "skills/on-this-day-bar/references/project-map.md",
+        "skills/on-this-day-bar/scripts/fetch_on_this_day.py",
+        "skills/on-this-day-bar/scripts/run_on_this_day_bar.sh"
+      ],
+      "detail_lines": [
+        "Owns the native MenuBarExtra app, cached fallback per date, category settings, and copyable daily briefs.",
+        "Keeps native app work separate from the browser-based On This Day helper and web app.",
+        "Preserves explicit stale-cache messaging and source-grounded Wikimedia feed behavior."
+      ],
+      "file_path_hints": [
+        "apps/on-this-day-bar/",
+        "skills/on-this-day-bar/references/project-map.md",
+        "skills/on-this-day-bar/scripts/run_on_this_day_bar.sh",
+        "skills/on-this-day-bar/scripts/fetch_on_this_day.py"
+      ],
+      "brand_color": "#D88B2C",
+      "path": "skills/on-this-day-bar",
+      "skill_file": "skills/on-this-day-bar/SKILL.md",
+      "openai_yaml": "skills/on-this-day-bar/agents/openai.yaml",
+      "icon_small": "skills/on-this-day-bar/assets/icon-small.svg",
+      "icon_large": "skills/on-this-day-bar/assets/icon-large.svg",
+      "system_symbol": "calendar.badge.clock",
+      "default_prompt": "Use $on-this-day-bar to work on the native On This Day Bar macOS app in apps/on-this-day-bar: inspect the workspace, run doctor, and validate build or test changes around the cached daily history menu bar workflow.",
+      "packs": [
+        "app-specific-skills"
+      ]
+    },
+    {
+      "id": "package-hygiene-audit",
+      "display_name": "Package Hygiene Audit",
+      "description": "Audit a local release folder for app bundles, packaged archives, release notes, and screenshots before you ship from the Mac. Use when Codex needs a deterministic packaging check instead of a manual Finder scavenger hunt.",
+      "short_description": "A deterministic local release audit that checks app bundles, packaged archives, notes, and screenshots before you ship from the Mac.",
+      "category": "Distribution",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Indie Mac developers",
+        "Open-source maintainers",
+        "People packaging releases by hand"
+      ],
+      "tags": [
+        "distribution",
+        "release",
+        "package",
+        "audit",
+        "screenshots",
+        "notes",
+        "menu bar"
+      ],
+      "install_command": "codex-skillctl install package-hygiene-audit",
+      "docs_paths": [
+        "skills/package-hygiene-audit/SKILL.md",
+        "skills/package-hygiene-audit/manifest.json",
+        "skills/package-hygiene-audit/agents/openai.yaml",
+        "skills/package-hygiene-audit/references/audit-contract.md",
+        "skills/package-hygiene-audit/scripts/package_hygiene_audit.py",
+        "skills/package-hygiene-audit/assets/icon-small.svg",
+        "skills/package-hygiene-audit/assets/icon-large.svg",
+        "skills/package-hygiene-audit/assets/icon.svg",
+        "skills/package-hygiene-audit/assets/preview.svg",
+        "skills/package-hygiene-audit/prototype/README.md",
+        "skills/package-hygiene-audit/prototype/SkillMenuBarApp.swift",
+        "skills/package-hygiene-audit/prototype/SkillMenuBarView.swift",
+        "skills/package-hygiene-audit/prototype/SkillDetailView.swift",
+        "skills/package-hygiene-audit/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Scans a local release folder for app bundles, packaged archives, release notes, and screenshots before you ship.",
+        "Emits markdown, prompt, or JSON output so the audit can move cleanly into a release thread or Codex handoff.",
+        "Keeps the last-mile ship check deterministic instead of improvising in Finder, Notes, and chat."
+      ],
+      "file_path_hints": [
+        "skills/package-hygiene-audit/scripts/package_hygiene_audit.py",
+        "skills/package-hygiene-audit/references/audit-contract.md",
+        "skills/package-hygiene-audit/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#BF5AF2",
+      "path": "skills/package-hygiene-audit",
+      "skill_file": "skills/package-hygiene-audit/SKILL.md",
+      "openai_yaml": "skills/package-hygiene-audit/agents/openai.yaml",
+      "icon_small": "skills/package-hygiene-audit/assets/icon-small.svg",
+      "icon_large": "skills/package-hygiene-audit/assets/icon-large.svg",
+      "system_symbol": "checklist.checked",
+      "default_prompt": "Use $package-hygiene-audit to audit a local release folder or build a polished macOS menu-bar utility around that audit: check app bundles, packaged archives, release notes, and screenshots, then return a deterministic ship-readiness report without inventing cloud release state.",
+      "packs": [
+        "launch-and-distribution",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "parasocial-studio",
+      "display_name": "Parasocial Studio",
+      "description": "Shape safe closeness mechanics like acknowledgements, voice-note drops, recurring touchpoints, and boundary language, then output a relationship cadence plan.",
+      "short_description": "Plan safe closeness rhythms for public figures.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Talent teams designing audience touchpoints with clear boundaries",
+        "Creator strategists planning warm but scalable acknowledgement rhythms",
+        "Founder-led brands reviewing closeness mechanics before they create unhealthy expectations"
+      ],
+      "tags": [
+        "community",
+        "boundaries",
+        "creator strategy",
+        "touchpoints",
+        "relationship cadence",
+        "local first",
+        "safety"
+      ],
+      "install_command": "codex-skillctl install parasocial-studio",
+      "docs_paths": [
+        "skills/parasocial-studio/SKILL.md",
+        "skills/parasocial-studio/manifest.json",
+        "skills/parasocial-studio/agents/openai.yaml",
+        "skills/parasocial-studio/assets/icon-small.svg",
+        "skills/parasocial-studio/assets/icon-large.svg",
+        "skills/parasocial-studio/references/product-spec.md"
+      ],
+      "detail_lines": [
+        "Converts current touchpoints, tone goals, maturity signals, and operational limits into a cadence plan.",
+        "Makes boundary language, refusal patterns, red flags, and stop conditions first-class parts of the output.",
+        "Works only from public or user-authorized inputs and rejects pseudo-romantic framing, dependency hooks, harassment, and covert profiling."
+      ],
+      "file_path_hints": [
+        "skills/parasocial-studio/SKILL.md",
+        "skills/parasocial-studio/references/product-spec.md",
+        "skills/parasocial-studio/assets/icon-small.svg"
+      ],
+      "brand_color": "#D66B87",
+      "path": "skills/parasocial-studio",
+      "skill_file": "skills/parasocial-studio/SKILL.md",
+      "openai_yaml": "skills/parasocial-studio/agents/openai.yaml",
+      "icon_small": "skills/parasocial-studio/assets/icon-small.svg",
+      "icon_large": "skills/parasocial-studio/assets/icon-large.svg",
+      "system_symbol": "bubble.left.and.bubble.right.fill",
+      "default_prompt": "Use $parasocial-studio to shape safe closeness mechanics for this public figure, including acknowledgements and recurring touchpoints, then output a relationship cadence plan.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "patch-pilot",
+      "display_name": "Patch Pilot",
+      "description": "A menu-bar diff triage panel that turns a patch or file list into a crisp fix brief, risk scan, and next command.",
+      "short_description": "A menu-bar diff triage panel that turns a patch or file list into a crisp fix brief, risk scan, and next command.",
+      "category": "Developer Tools",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "AI-assisted coders",
+        "Maintainers",
+        "People reviewing patches under time pressure"
+      ],
+      "tags": [
+        "diff",
+        "patch",
+        "review",
+        "git",
+        "triage",
+        "menu bar",
+        "workflow"
+      ],
+      "install_command": "codex-skillctl install patch-pilot",
+      "docs_paths": [
+        "skills/patch-pilot/SKILL.md",
+        "skills/patch-pilot/manifest.json",
+        "skills/patch-pilot/agents/openai.yaml",
+        "skills/patch-pilot/assets/icon.svg",
+        "skills/patch-pilot/assets/preview.svg",
+        "skills/patch-pilot/prototype/README.md",
+        "skills/patch-pilot/prototype/SkillMenuBarApp.swift",
+        "skills/patch-pilot/prototype/SkillMenuBarView.swift",
+        "skills/patch-pilot/prototype/SkillDetailView.swift",
+        "skills/patch-pilot/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Turns a copied diff or file list into the next safe move before the tool-switching spiral starts.",
+        "Keeps touched surfaces, likely regressions, and reply-ready notes in one compact panel.",
+        "Fits the pre-commit, pre-review, and pre-handoff moment where context usually fragments."
+      ],
+      "file_path_hints": [
+        "skills/patch-pilot/prototype/README.md",
+        "skills/patch-pilot/prototype/SkillMenuBarApp.swift",
+        "skills/patch-pilot/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#30D158",
+      "path": "skills/patch-pilot",
+      "skill_file": "skills/patch-pilot/SKILL.md",
+      "openai_yaml": "skills/patch-pilot/agents/openai.yaml",
+      "icon_small": "skills/patch-pilot/assets/icon-small.svg",
+      "icon_large": "skills/patch-pilot/assets/icon-large.svg",
+      "system_symbol": "arrow.triangle.branch",
+      "default_prompt": "Use $patch-pilot to turn a local diff, staged change list, or review thread into a clear fix brief, risk scan, and next command.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "phone-handoff-panel",
+      "display_name": "Phone Handoff Panel",
+      "description": "A device handoff panel for opening your phone, jump-starting a task, and keeping the Mac in the loop.",
+      "short_description": "A device handoff panel for opening your phone, jump-starting a task, and keeping the Mac in the loop.",
+      "category": "Connectivity",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Cross-device workers",
+        "People coordinating between phone and Mac",
+        "Remote operators"
+      ],
+      "tags": [
+        "phone",
+        "handoff",
+        "connectivity",
+        "macOS",
+        "menu bar"
+      ],
+      "install_command": "codex-skillctl install phone-handoff-panel",
+      "docs_paths": [
+        "skills/phone-handoff-panel/SKILL.md",
+        "skills/phone-handoff-panel/manifest.json",
+        "skills/phone-handoff-panel/agents/openai.yaml",
+        "skills/phone-handoff-panel/assets/icon.svg",
+        "skills/phone-handoff-panel/assets/preview.svg",
+        "skills/phone-handoff-panel/prototype/README.md",
+        "skills/phone-handoff-panel/prototype/SkillMenuBarApp.swift",
+        "skills/phone-handoff-panel/prototype/SkillMenuBarView.swift",
+        "skills/phone-handoff-panel/prototype/SkillDetailView.swift",
+        "skills/phone-handoff-panel/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Puts the phone-centric actions behind a quick Mac surface.",
+        "Keeps a compact link between the desk and the device in your pocket.",
+        "Feels more like a coordination tool than a gadget dashboard."
+      ],
+      "file_path_hints": [
+        "skills/phone-handoff-panel/prototype/README.md",
+        "skills/phone-handoff-panel/prototype/SkillMenuBarApp.swift",
+        "skills/phone-handoff-panel/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#FF9F0A",
+      "path": "skills/phone-handoff-panel",
+      "skill_file": "skills/phone-handoff-panel/SKILL.md",
+      "openai_yaml": "skills/phone-handoff-panel/agents/openai.yaml",
+      "icon_small": "skills/phone-handoff-panel/assets/icon-small.svg",
+      "icon_large": "skills/phone-handoff-panel/assets/icon-large.svg",
+      "system_symbol": "iphone",
+      "default_prompt": "Use $phone-handoff-panel to build a polished macOS menu-bar utility for a device handoff panel for opening your phone, jump-starting a task, and keeping the mac in the loop.",
+      "packs": [
+        "macos-utility-builders"
+      ]
+    },
+    {
+      "id": "plist-preflight",
+      "display_name": "Plist Preflight",
+      "description": "Audit macOS app Info.plist and entitlement files before build or release. Use when Codex needs to check bundle metadata, menu-bar app activation policy hints, permission usage strings, sandbox entitlements, or repo-wide plist hygiene without changing signing settings or project files.",
+      "short_description": "Audit macOS app Info.plist and entitlement metadata before build, CI, or release changes.",
+      "category": "Mac OS",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Codex agents working on local macOS app workspaces",
+        "Developers maintaining menu-bar utilities",
+        "Reviewers checking metadata before project or signing edits"
+      ],
+      "tags": [
+        "macOS",
+        "Info.plist",
+        "entitlements",
+        "XcodeGen",
+        "metadata",
+        "CI",
+        "release",
+        "menu bar"
+      ],
+      "install_command": "codex-skillctl install plist-preflight",
+      "docs_paths": [
+        "skills/plist-preflight/SKILL.md",
+        "skills/plist-preflight/manifest.json",
+        "skills/plist-preflight/agents/openai.yaml",
+        "skills/plist-preflight/assets/icon-small.svg",
+        "skills/plist-preflight/assets/icon-large.svg",
+        "skills/plist-preflight/scripts/plist_preflight.py"
+      ],
+      "detail_lines": [
+        "Finds malformed plists, placeholder bundle IDs, missing versions, and missing core app metadata.",
+        "Checks menu-bar activation hints and common privacy usage strings without touching project files.",
+        "Supports markdown output and configurable fail severity for PR or CI preflight runs.",
+        "Keeps entitlement findings explicit so signing-sensitive changes stay deliberate."
+      ],
+      "file_path_hints": [
+        "skills/plist-preflight/scripts/plist_preflight.py",
+        "apps/*/*App/Info.plist",
+        "apps/**/*.entitlements"
+      ],
+      "brand_color": "#5E5CE6",
+      "path": "skills/plist-preflight",
+      "skill_file": "skills/plist-preflight/SKILL.md",
+      "openai_yaml": "skills/plist-preflight/agents/openai.yaml",
+      "icon_small": "skills/plist-preflight/assets/icon-small.svg",
+      "icon_large": "skills/plist-preflight/assets/icon-large.svg",
+      "system_symbol": "checklist.checked",
+      "default_prompt": "Use $plist-preflight to audit this macOS app's Info.plist and entitlement metadata before changing build, signing, CI, or release settings.",
+      "packs": [
+        "macos-utility-builders",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "power-sentry",
+      "display_name": "Power Sentry",
+      "description": "A battery-and-power watch that helps you read drain, charging, and energy mode at a glance.",
+      "short_description": "A battery-and-power watch that helps you read drain, charging, and energy mode at a glance.",
+      "category": "System Monitoring",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac laptop users",
+        "Travelers",
+        "People who care about battery life"
+      ],
+      "tags": [
+        "battery",
+        "power",
+        "energy mode",
+        "monitoring",
+        "menu bar"
+      ],
+      "install_command": "codex-skillctl install power-sentry",
+      "docs_paths": [
+        "skills/power-sentry/SKILL.md",
+        "skills/power-sentry/manifest.json",
+        "skills/power-sentry/agents/openai.yaml",
+        "skills/power-sentry/assets/icon.svg",
+        "skills/power-sentry/assets/preview.svg",
+        "skills/power-sentry/prototype/README.md",
+        "skills/power-sentry/prototype/SkillMenuBarApp.swift",
+        "skills/power-sentry/prototype/SkillMenuBarView.swift",
+        "skills/power-sentry/prototype/SkillDetailView.swift",
+        "skills/power-sentry/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Shows battery state and energy mode without the noise of a diagnostics dump.",
+        "Pairs well with lightweight trend cues and significant energy usage.",
+        "Stays calm enough to live in the menu bar all day."
+      ],
+      "file_path_hints": [
+        "skills/power-sentry/prototype/README.md",
+        "skills/power-sentry/prototype/SkillMenuBarApp.swift",
+        "skills/power-sentry/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#FF453A",
+      "path": "skills/power-sentry",
+      "skill_file": "skills/power-sentry/SKILL.md",
+      "openai_yaml": "skills/power-sentry/agents/openai.yaml",
+      "icon_small": "skills/power-sentry/assets/icon-small.svg",
+      "icon_large": "skills/power-sentry/assets/icon-large.svg",
+      "system_symbol": "battery.100",
+      "default_prompt": "Use $power-sentry to build a polished macOS menu-bar utility for a battery-and-power watch that helps you read drain, charging, and energy mode at a glance.",
+      "packs": [
+        "macos-utility-builders"
+      ]
+    },
+    {
+      "id": "project-hail-mary",
+      "display_name": "Project Hail Mary",
+      "description": "Build, scaffold, troubleshoot, or product-shape a macOS rescue launcher, focus ritual, or last-minute shipping workflow that can start a hype song, open critical apps and docs, start a countdown, and copy a heads-down status update. Use when Codex needs to turn \"Project Hail Mary\", \"panic mode\", or \"play Sign of the Times and open everything I need\" into a realistic menu bar app, shortcut, script, or launch sequence without inventing unsupported music or messaging APIs.",
+      "short_description": "A local crunch-mode launcher for music handoff, critical work surfaces, countdowns, and copied status updates.",
+      "category": "Productivity",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Developers under deadline",
+        "Founders preparing launches",
+        "People who need a repeatable focus ritual"
+      ],
+      "tags": [
+        "focus",
+        "launcher",
+        "deadline",
+        "macos",
+        "workflow"
+      ],
+      "install_command": "codex-skillctl install project-hail-mary",
+      "docs_paths": [
+        "skills/project-hail-mary/SKILL.md",
+        "skills/project-hail-mary/manifest.json",
+        "skills/project-hail-mary/agents/openai.yaml",
+        "skills/project-hail-mary/references/supported-surfaces.md",
+        "skills/project-hail-mary/scripts/hail_mary_brief.py",
+        "skills/project-hail-mary/scripts/hail_mary_launch.py",
+        "skills/project-hail-mary/assets/project-hail-mary-small.svg",
+        "skills/project-hail-mary/assets/project-hail-mary-large.svg"
+      ],
+      "detail_lines": [
+        "Opens the user-owned music, docs, repo, or ticket surfaces needed for a deadline push.",
+        "Copies status text instead of silently posting into private accounts.",
+        "Keeps service sign-in inside the user's existing apps or browser."
+      ],
+      "file_path_hints": [
+        "skills/project-hail-mary/scripts/hail_mary_brief.py",
+        "skills/project-hail-mary/scripts/hail_mary_launch.py",
+        "skills/project-hail-mary/references/supported-surfaces.md"
+      ],
+      "brand_color": "#F97316",
+      "path": "skills/project-hail-mary",
+      "skill_file": "skills/project-hail-mary/SKILL.md",
+      "openai_yaml": "skills/project-hail-mary/agents/openai.yaml",
+      "icon_small": "skills/project-hail-mary/assets/project-hail-mary-small.svg",
+      "icon_large": "skills/project-hail-mary/assets/project-hail-mary-large.svg",
+      "system_symbol": "bolt.circle.fill",
+      "default_prompt": "Use $project-hail-mary to build a realistic macOS rescue launcher, ritual script, or menu bar app that can kick off a hype track, open work surfaces, and start a countdown.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "reader-mode-bridge",
+      "display_name": "Reader Mode Bridge",
+      "description": "Turn saved HTML, copied article text, or PDF excerpts into a deterministic local reading handoff with clean metadata and export-ready output.",
+      "short_description": "A deterministic local reader cleanup helper that turns saved HTML, copied article text, or PDF excerpts into a clean handoff with preserved metadata.",
+      "category": "Documents",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Researchers",
+        "Knowledge workers",
+        "People moving long reads into notes or read-later stacks"
+      ],
+      "tags": [
+        "documents",
+        "reading",
+        "PDF",
+        "web article",
+        "menu bar",
+        "markdown",
+        "handoff"
+      ],
+      "install_command": "codex-skillctl install reader-mode-bridge",
+      "docs_paths": [
+        "skills/reader-mode-bridge/SKILL.md",
+        "skills/reader-mode-bridge/manifest.json",
+        "skills/reader-mode-bridge/agents/openai.yaml",
+        "skills/reader-mode-bridge/assets/icon.svg",
+        "skills/reader-mode-bridge/assets/preview.svg",
+        "skills/reader-mode-bridge/references/cleanup-contract.md",
+        "skills/reader-mode-bridge/scripts/reader_mode_bridge.py",
+        "skills/reader-mode-bridge/prototype/README.md",
+        "skills/reader-mode-bridge/prototype/SkillMenuBarApp.swift",
+        "skills/reader-mode-bridge/prototype/SkillMenuBarView.swift",
+        "skills/reader-mode-bridge/prototype/SkillDetailView.swift",
+        "skills/reader-mode-bridge/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Cleans clipboard text, saved HTML, markdown, text files, and local PDF excerpts into one readable handoff without remote services.",
+        "Can attach front-browser-tab metadata so copied article text keeps its title and source URL when it moves into notes or prompts.",
+        "Exports markdown, plain text, prompt text, or JSON while surfacing cleanup notes, reading length, and any truncation clearly."
+      ],
+      "file_path_hints": [
+        "skills/reader-mode-bridge/scripts/reader_mode_bridge.py",
+        "skills/reader-mode-bridge/references/cleanup-contract.md",
+        "skills/reader-mode-bridge/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#64D2FF",
+      "path": "skills/reader-mode-bridge",
+      "skill_file": "skills/reader-mode-bridge/SKILL.md",
+      "openai_yaml": "skills/reader-mode-bridge/agents/openai.yaml",
+      "icon_small": "skills/reader-mode-bridge/assets/icon-small.svg",
+      "icon_large": "skills/reader-mode-bridge/assets/icon-large.svg",
+      "system_symbol": "doc.text.magnifyingglass",
+      "default_prompt": "Use $reader-mode-bridge to turn saved HTML, copied article text, markdown, or PDF excerpts into a deterministic local reading handoff with clean metadata, cleanup notes, and export-ready output.",
+      "packs": [
+        "daily-briefs-and-reference",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "release-ramp",
+      "display_name": "Release Ramp",
+      "description": "A release-prep board that turns a shipping checklist into a clean launch lane.",
+      "short_description": "A release-prep board that turns a shipping checklist into a clean launch lane.",
+      "category": "Distribution",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Solo founders",
+        "Open-source maintainers",
+        "Launch operators"
+      ],
+      "tags": [
+        "release",
+        "distribution",
+        "checklist",
+        "launch",
+        "menu bar"
+      ],
+      "install_command": "codex-skillctl install release-ramp",
+      "docs_paths": [
+        "skills/release-ramp/SKILL.md",
+        "skills/release-ramp/manifest.json",
+        "skills/release-ramp/agents/openai.yaml",
+        "skills/release-ramp/assets/icon.svg",
+        "skills/release-ramp/assets/preview.svg",
+        "skills/release-ramp/prototype/README.md",
+        "skills/release-ramp/prototype/SkillMenuBarApp.swift",
+        "skills/release-ramp/prototype/SkillMenuBarView.swift",
+        "skills/release-ramp/prototype/SkillDetailView.swift",
+        "skills/release-ramp/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Turns the shipping checklist into something visible and manageable.",
+        "Highlights missing steps before a release goes live.",
+        "Feels like a small launch control panel instead of a giant PM app."
+      ],
+      "file_path_hints": [
+        "skills/release-ramp/prototype/README.md",
+        "skills/release-ramp/prototype/SkillMenuBarApp.swift",
+        "skills/release-ramp/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#BF5AF2",
+      "path": "skills/release-ramp",
+      "skill_file": "skills/release-ramp/SKILL.md",
+      "openai_yaml": "skills/release-ramp/agents/openai.yaml",
+      "icon_small": "skills/release-ramp/assets/icon-small.svg",
+      "icon_large": "skills/release-ramp/assets/icon-large.svg",
+      "system_symbol": "shippingbox.fill",
+      "default_prompt": "Use $release-ramp to build a polished macOS menu-bar utility for a release-prep board that turns a shipping checklist into a clean launch lane.",
+      "packs": [
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "replay-relay",
+      "display_name": "Replay Relay",
+      "description": "A menu-bar share lane for turning game clips, screenshots, and quick notes into send-ready handoffs without Finder hopping.",
+      "short_description": "A menu-bar share lane for turning game clips, screenshots, and quick notes into send-ready handoffs without Finder hopping.",
+      "category": "Games and Consoles",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Players who share clips with friends",
+        "Streamers and community hosts",
+        "People moving game captures into chat fast"
+      ],
+      "tags": [
+        "games",
+        "clips",
+        "screenshots",
+        "share",
+        "menu bar",
+        "handoff",
+        "discord"
+      ],
+      "install_command": "codex-skillctl install replay-relay",
+      "docs_paths": [
+        "skills/replay-relay/SKILL.md",
+        "skills/replay-relay/manifest.json",
+        "skills/replay-relay/agents/openai.yaml",
+        "skills/replay-relay/assets/icon.svg",
+        "skills/replay-relay/assets/preview.svg",
+        "skills/replay-relay/prototype/README.md",
+        "skills/replay-relay/prototype/SkillMenuBarApp.swift",
+        "skills/replay-relay/prototype/SkillMenuBarView.swift",
+        "skills/replay-relay/prototype/SkillDetailView.swift",
+        "skills/replay-relay/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Stages the latest screenshot or a dropped clip with one note field and one destination choice.",
+        "Keeps rename, caption, copy-path, and reveal actions close to the menu bar so sharing starts without a Finder cleanup pass.",
+        "Focuses on the send-ready handoff instead of becoming another media library or editor."
+      ],
+      "file_path_hints": [
+        "skills/replay-relay/prototype/README.md",
+        "skills/replay-relay/prototype/SkillMenuBarApp.swift",
+        "skills/replay-relay/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#32ADE6",
+      "path": "skills/replay-relay",
+      "skill_file": "skills/replay-relay/SKILL.md",
+      "openai_yaml": "skills/replay-relay/agents/openai.yaml",
+      "icon_small": "skills/replay-relay/assets/icon-small.svg",
+      "icon_large": "skills/replay-relay/assets/icon-large.svg",
+      "system_symbol": "film.stack.fill",
+      "default_prompt": "Use $replay-relay to build a polished macOS menu-bar utility for a menu-bar share lane for turning game clips, screenshots, and quick notes into send-ready handoffs without finder hopping.",
+      "packs": [
+        "macos-utility-builders",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "reply-queue-bar",
+      "display_name": "Reply Queue Bar",
+      "description": "A menu-bar reply queue for capturing copied comments or inbox snippets, sorting what deserves a response, and handing the next reply draft forward without reopening every tab.",
+      "short_description": "Capture copied comments or inbox snippets, triage responses, and hand off the next draft.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Creators and community leads",
+        "Founders replying across social and product channels",
+        "Operators who turn copied feedback into fast responses"
+      ],
+      "tags": [
+        "community",
+        "reply",
+        "comments",
+        "inbox",
+        "clipboard",
+        "menu bar",
+        "macOS",
+        "triage"
+      ],
+      "install_command": "codex-skillctl install reply-queue-bar",
+      "docs_paths": [
+        "skills/reply-queue-bar/SKILL.md",
+        "skills/reply-queue-bar/manifest.json",
+        "skills/reply-queue-bar/agents/openai.yaml",
+        "skills/reply-queue-bar/assets/icon-small.svg",
+        "skills/reply-queue-bar/assets/icon-large.svg",
+        "skills/reply-queue-bar/assets/icon.svg",
+        "skills/reply-queue-bar/assets/preview.svg",
+        "skills/reply-queue-bar/scripts/reply_queue_bar.py",
+        "skills/reply-queue-bar/prototype/README.md",
+        "skills/reply-queue-bar/prototype/SkillMenuBarApp.swift",
+        "skills/reply-queue-bar/prototype/SkillMenuBarView.swift",
+        "skills/reply-queue-bar/prototype/SkillDetailView.swift",
+        "skills/reply-queue-bar/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Captures copied comments, DMs, or feedback snippets into a local reply queue with source labels, buckets, urgency, and optional draft text.",
+        "Ranks urgent and reusable reply work ahead of archive material so the next response is obvious without reopening every tab.",
+        "Ships with a deterministic helper script and a menu-bar prototype so the reply handoff works before a full app target exists."
+      ],
+      "file_path_hints": [
+        "skills/reply-queue-bar/scripts/reply_queue_bar.py",
+        "skills/reply-queue-bar/prototype/SkillMenuBarView.swift",
+        "skills/reply-queue-bar/prototype/SkillDetailView.swift"
+      ],
+      "brand_color": "#FF375F",
+      "path": "skills/reply-queue-bar",
+      "skill_file": "skills/reply-queue-bar/SKILL.md",
+      "openai_yaml": "skills/reply-queue-bar/agents/openai.yaml",
+      "icon_small": "skills/reply-queue-bar/assets/icon-small.svg",
+      "icon_large": "skills/reply-queue-bar/assets/icon-large.svg",
+      "system_symbol": "ellipsis.bubble.fill",
+      "default_prompt": "Use $reply-queue-bar to build a polished macOS menu-bar utility for a menu-bar reply queue for capturing copied comments or inbox snippets, sorting what deserves a response, and handing the next reply draft forward without reopening every tab.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "repo-launch",
+      "display_name": "Repo Launch",
+      "description": "Audit and polish a GitHub-ready repository. Use when Codex needs to classify a rough project, choose the right README shape, and add only the minimum launch essentials needed for a clean shareable repo.",
+      "short_description": "Turn a rough project into a clean public repo.",
+      "category": "Distribution",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Solo builders preparing a prototype or rough folder for GitHub",
+        "Maintainers who need a compact README, license, and start path",
+        "Teams cleaning multi-project repos without adding documentation sprawl"
+      ],
+      "tags": [
+        "repo",
+        "GitHub",
+        "README",
+        "launch",
+        "license",
+        "local first",
+        "documentation"
+      ],
+      "install_command": "codex-skillctl install repo-launch",
+      "docs_paths": [
+        "skills/repo-launch/SKILL.md",
+        "skills/repo-launch/manifest.json",
+        "skills/repo-launch/agents/openai.yaml",
+        "skills/repo-launch/assets/repo-launch-small.svg",
+        "skills/repo-launch/assets/repo-launch-large.svg",
+        "skills/repo-launch/references/repo-patterns.md"
+      ],
+      "detail_lines": [
+        "Classifies the repository shape first, then adds only the README, license, gitignore, and start-path polish the repo actually needs.",
+        "Keeps launch cleanup grounded in existing files and runner commands instead of forcing a generic open-source template.",
+        "Works local-first on the selected checkout and avoids hidden registry, account, or marketplace behavior."
+      ],
+      "file_path_hints": [
+        "skills/repo-launch/SKILL.md",
+        "skills/repo-launch/references/repo-patterns.md",
+        "skills/repo-launch/assets/repo-launch-small.svg"
+      ],
+      "brand_color": "#2563EB",
+      "path": "skills/repo-launch",
+      "skill_file": "skills/repo-launch/SKILL.md",
+      "openai_yaml": "skills/repo-launch/agents/openai.yaml",
+      "icon_small": "skills/repo-launch/assets/repo-launch-small.svg",
+      "icon_large": "skills/repo-launch/assets/repo-launch-large.svg",
+      "system_symbol": "folder.fill.badge.plus",
+      "default_prompt": "Use $repo-launch to audit this repo shape first, then add only the minimum README, license, and start-path polish needed to make it GitHub-ready.",
+      "packs": [
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "repo-ops-lens",
+      "display_name": "Repo Ops Lens",
+      "description": "A repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion.",
+      "short_description": "A repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion.",
+      "category": "Developer Tools",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Maintainers",
+        "AI-assisted coders",
+        "People reviewing repos quickly"
+      ],
+      "tags": [
+        "repo",
+        "audit",
+        "GitHub",
+        "analysis",
+        "menu bar",
+        "workflow"
+      ],
+      "install_command": "codex-skillctl install repo-ops-lens",
+      "docs_paths": [
+        "skills/repo-ops-lens/SKILL.md",
+        "skills/repo-ops-lens/manifest.json",
+        "skills/repo-ops-lens/agents/openai.yaml",
+        "skills/repo-ops-lens/assets/icon.svg",
+        "skills/repo-ops-lens/assets/preview.svg",
+        "skills/repo-ops-lens/prototype/README.md",
+        "skills/repo-ops-lens/prototype/SkillMenuBarApp.swift",
+        "skills/repo-ops-lens/prototype/SkillMenuBarView.swift",
+        "skills/repo-ops-lens/prototype/SkillDetailView.swift",
+        "skills/repo-ops-lens/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Takes a repository URL and reduces it to what matters next.",
+        "Makes risk and architecture notes visible without a long read.",
+        "Builds a clean bridge between research and action."
+      ],
+      "file_path_hints": [
+        "skills/repo-ops-lens/prototype/README.md",
+        "skills/repo-ops-lens/prototype/SkillMenuBarApp.swift",
+        "skills/repo-ops-lens/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#30D158",
+      "path": "skills/repo-ops-lens",
+      "skill_file": "skills/repo-ops-lens/SKILL.md",
+      "openai_yaml": "skills/repo-ops-lens/agents/openai.yaml",
+      "icon_small": "skills/repo-ops-lens/assets/icon-small.svg",
+      "icon_large": "skills/repo-ops-lens/assets/icon-large.svg",
+      "system_symbol": "magnifyingglass.circle.fill",
+      "default_prompt": "Use $repo-ops-lens to build a polished macOS menu-bar utility for a repo audit panel that turns a github link into a crisp operating brief, risk pass, and next-step suggestion.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "reputation-heatmap",
+      "display_name": "Reputation Heatmap",
+      "description": "Separate healthy mystique from rumor, overreach, parasocial risk, or brand harm, then produce a calm response playbook with thresholds and no-response rules.",
+      "short_description": "Map mystique, rumor, and brand risk into a response playbook.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "PR leads and talent teams reviewing public narrative shifts",
+        "Founder-led brands separating confirmed concerns from speculation",
+        "Community operators defining escalation thresholds and no-response rules"
+      ],
+      "tags": [
+        "reputation",
+        "risk",
+        "community",
+        "PR",
+        "rumor control",
+        "response playbook",
+        "local first",
+        "safety"
+      ],
+      "install_command": "codex-skillctl install reputation-heatmap",
+      "docs_paths": [
+        "skills/reputation-heatmap/SKILL.md",
+        "skills/reputation-heatmap/manifest.json",
+        "skills/reputation-heatmap/agents/openai.yaml",
+        "skills/reputation-heatmap/assets/icon-small.svg",
+        "skills/reputation-heatmap/assets/icon-large.svg",
+        "skills/reputation-heatmap/references/product-spec.md"
+      ],
+      "detail_lines": [
+        "Labels signals by severity, confidence, amplification risk, and response mode before recommending action.",
+        "Makes do-not-amplify and privacy boundaries explicit so risk review does not accidentally launder rumors.",
+        "Works from public or user-authorized material and flags legal, PR, or leadership review needs instead of automating retaliation."
+      ],
+      "file_path_hints": [
+        "skills/reputation-heatmap/SKILL.md",
+        "skills/reputation-heatmap/references/product-spec.md",
+        "skills/reputation-heatmap/assets/icon-small.svg"
+      ],
+      "brand_color": "#D26B4E",
+      "path": "skills/reputation-heatmap",
+      "skill_file": "skills/reputation-heatmap/SKILL.md",
+      "openai_yaml": "skills/reputation-heatmap/agents/openai.yaml",
+      "icon_small": "skills/reputation-heatmap/assets/icon-small.svg",
+      "icon_large": "skills/reputation-heatmap/assets/icon-large.svg",
+      "system_symbol": "shield.lefthalf.filled",
+      "default_prompt": "Use $reputation-heatmap to map healthy mystique, rumor, parasocial risk, and brand harm around this public figure, then export a response playbook.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "ritual-engine",
+      "display_name": "Ritual Engine",
+      "description": "Design repeatable fan rituals, naming systems, participation loops, and recurring community formats, then output a ritual calendar.",
+      "short_description": "Design sustainable rituals, loops, and cadence plans.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Community designers building repeatable participation formats",
+        "Creator strategists matching rituals to publishing cadence",
+        "Brand operators checking moderation capacity and fatigue safeguards"
+      ],
+      "tags": [
+        "rituals",
+        "community",
+        "cadence",
+        "participation",
+        "creator strategy",
+        "local first",
+        "safety"
+      ],
+      "install_command": "codex-skillctl install ritual-engine",
+      "docs_paths": [
+        "skills/ritual-engine/SKILL.md",
+        "skills/ritual-engine/manifest.json",
+        "skills/ritual-engine/agents/openai.yaml",
+        "skills/ritual-engine/assets/icon-small.svg",
+        "skills/ritual-engine/assets/icon-large.svg",
+        "skills/ritual-engine/references/product-spec.md"
+      ],
+      "detail_lines": [
+        "Turns publishing cadence, community habits, launch moments, moderation capacity, and tone limits into named recurring rituals.",
+        "Exports participation loops, weekly or event-driven cadence, guardrails, fatigue safeguards, and pilot plans with stop conditions.",
+        "Works only from public or user-authorized material and rejects compulsive streaks, guilt-driven participation, and emotionally coercive loops."
+      ],
+      "file_path_hints": [
+        "skills/ritual-engine/SKILL.md",
+        "skills/ritual-engine/references/product-spec.md",
+        "skills/ritual-engine/assets/icon-small.svg"
+      ],
+      "brand_color": "#C96A34",
+      "path": "skills/ritual-engine",
+      "skill_file": "skills/ritual-engine/SKILL.md",
+      "openai_yaml": "skills/ritual-engine/agents/openai.yaml",
+      "icon_small": "skills/ritual-engine/assets/icon-small.svg",
+      "icon_large": "skills/ritual-engine/assets/icon-large.svg",
+      "system_symbol": "arrow.triangle.2.circlepath",
+      "default_prompt": "Use $ritual-engine to design repeatable fan rituals, naming systems, and participation loops for this audience, then output a ritual calendar.",
+      "packs": [
+        "audience-and-fandom-strategy",
+        "creator-and-fandom-stack",
+        "fandom-skill-pack"
+      ]
+    },
+    {
+      "id": "screen-snippet-studio",
+      "display_name": "Screen Snippet Studio",
+      "description": "A menu-bar capture studio for clipping the current screen into clean prompts, tickets, or handoffs.",
+      "short_description": "A menu-bar capture studio for clipping the current screen into clean prompts, tickets, or handoffs.",
+      "category": "Workflow Automation",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Engineers",
+        "Product builders",
+        "People who turn screenshots into tasks"
+      ],
+      "tags": [
+        "screenshot",
+        "prompt",
+        "capture",
+        "menu bar",
+        "workflow",
+        "handoff"
+      ],
+      "install_command": "codex-skillctl install screen-snippet-studio",
+      "docs_paths": [
+        "skills/screen-snippet-studio/SKILL.md",
+        "skills/screen-snippet-studio/manifest.json",
+        "skills/screen-snippet-studio/agents/openai.yaml",
+        "skills/screen-snippet-studio/assets/icon.svg",
+        "skills/screen-snippet-studio/assets/preview.svg",
+        "skills/screen-snippet-studio/prototype/README.md",
+        "skills/screen-snippet-studio/prototype/SkillMenuBarApp.swift",
+        "skills/screen-snippet-studio/prototype/SkillMenuBarView.swift",
+        "skills/screen-snippet-studio/prototype/SkillDetailView.swift",
+        "skills/screen-snippet-studio/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Turns a quick screen shot into a usable prompt or note without extra context switching.",
+        "Keeps the capture flow one click away in the menu bar.",
+        "Pairs well with AI review, bug reports, and launch handoffs."
+      ],
+      "file_path_hints": [
+        "skills/screen-snippet-studio/prototype/README.md",
+        "skills/screen-snippet-studio/prototype/SkillMenuBarApp.swift",
+        "skills/screen-snippet-studio/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#5E5CE6",
+      "path": "skills/screen-snippet-studio",
+      "skill_file": "skills/screen-snippet-studio/SKILL.md",
+      "openai_yaml": "skills/screen-snippet-studio/agents/openai.yaml",
+      "icon_small": "skills/screen-snippet-studio/assets/icon-small.svg",
+      "icon_large": "skills/screen-snippet-studio/assets/icon-large.svg",
+      "system_symbol": "viewfinder",
+      "default_prompt": "Use $screen-snippet-studio to build a polished macOS menu-bar capture utility for turning screen snippets into clean prompts, tickets, or handoffs.",
+      "packs": [
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "session-arcade",
+      "display_name": "Session Arcade",
+      "description": "A launch-night helper for game sessions, cloud gaming, and quick console handoffs.",
+      "short_description": "A launch-night helper for game sessions, cloud gaming, and quick console handoffs.",
+      "category": "Games and Consoles",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Casual gamers",
+        "Console owners",
+        "People who launch and switch play sessions often"
+      ],
+      "tags": [
+        "games",
+        "console",
+        "launch",
+        "menu bar",
+        "session"
+      ],
+      "install_command": "codex-skillctl install session-arcade",
+      "docs_paths": [
+        "skills/session-arcade/SKILL.md",
+        "skills/session-arcade/manifest.json",
+        "skills/session-arcade/agents/openai.yaml",
+        "skills/session-arcade/assets/icon.svg",
+        "skills/session-arcade/assets/preview.svg",
+        "skills/session-arcade/prototype/README.md",
+        "skills/session-arcade/prototype/SkillMenuBarApp.swift",
+        "skills/session-arcade/prototype/SkillMenuBarView.swift",
+        "skills/session-arcade/prototype/SkillDetailView.swift",
+        "skills/session-arcade/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Keeps the next game or session within a few clicks.",
+        "Makes it easier to move from launcher to play mode.",
+        "Feels like a fun utility instead of a generic gaming dashboard."
+      ],
+      "file_path_hints": [
+        "skills/session-arcade/prototype/README.md",
+        "skills/session-arcade/prototype/SkillMenuBarApp.swift",
+        "skills/session-arcade/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#32ADE6",
+      "path": "skills/session-arcade",
+      "skill_file": "skills/session-arcade/SKILL.md",
+      "openai_yaml": "skills/session-arcade/agents/openai.yaml",
+      "icon_small": "skills/session-arcade/assets/icon-small.svg",
+      "icon_large": "skills/session-arcade/assets/icon-large.svg",
+      "system_symbol": "gamecontroller.fill",
+      "default_prompt": "Use $session-arcade to build a polished macOS menu-bar utility for a launch-night helper for game sessions, cloud gaming, and quick console handoffs.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    },
+    {
+      "id": "skillbar",
+      "display_name": "SkillBar",
+      "description": "Build, run, troubleshoot, and extend the local SkillBar macOS menu-bar manager for codex-goated skills, packs, installs, updates, and catalog integrity checks.",
+      "short_description": "Build and refine the goated skills and pack menu bar manager.",
+      "category": "Utilities",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Maintainers of the codex-goated skill catalog",
+        "Local-first Codex users installing skill packs",
+        "Mac utility builders validating menu-bar install flows"
+      ],
+      "tags": [
+        "SkillBar",
+        "menu bar",
+        "skills",
+        "catalog",
+        "packs",
+        "install",
+        "update",
+        "local-first",
+        "macOS"
+      ],
+      "install_command": "codex-skillctl install skillbar",
+      "docs_paths": [
+        "skills/skillbar/SKILL.md",
+        "skills/skillbar/manifest.json",
+        "skills/skillbar/agents/openai.yaml",
+        "skills/skillbar/assets/skillbar-small.svg",
+        "skills/skillbar/assets/skillbar-large.svg",
+        "skills/skillbar/references/project-map.md",
+        "skills/skillbar/scripts/run_skillbar.sh"
+      ],
+      "detail_lines": [
+        "Keeps the real app surface in apps/skillbar aligned with the repo-driven catalog, installed-state model, pack browser, and bin/codex-goated install/update paths.",
+        "Provides a compact validation workflow for doctor, inspect, catalog-check, audit, typecheck, smoke-install, smoke-update, and test.",
+        "Stays local-first by reading checkout metadata and installed skill folders without adding remote marketplace sync or unrelated secrets."
+      ],
+      "file_path_hints": [
+        "apps/skillbar/SkillBarApp/Sources/Services/SkillCatalogService.swift",
+        "apps/skillbar/SkillBarApp/Sources/App/SkillBarModel.swift",
+        "apps/skillbar/SkillBarApp/Sources/Views/MenuBarView.swift",
+        "skills/skillbar/scripts/run_skillbar.sh"
+      ],
+      "brand_color": "#8AB6FF",
+      "path": "skills/skillbar",
+      "skill_file": "skills/skillbar/SKILL.md",
+      "openai_yaml": "skills/skillbar/agents/openai.yaml",
+      "icon_small": "skills/skillbar/assets/skillbar-small.svg",
+      "icon_large": "skills/skillbar/assets/skillbar-large.svg",
+      "system_symbol": "menubar.rectangle",
+      "default_prompt": "Use $skillbar to work on SkillBar, the macOS menu bar manager for codex-goated-skills, including the catalog UI, preset bundles, repo pack browsing, metadata parsing, install or update flows, and repo catalog or integrity checks.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "story-arc-board",
+      "display_name": "Story Arc Board",
+      "description": "A menu-bar board for capturing repeated hooks from notes, captions, and comments before they disappear into app sprawl.",
+      "short_description": "A menu-bar board for capturing repeated hooks from notes, captions, and comments before they disappear into app sprawl.",
+      "category": "Community & Narrative",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Creators",
+        "Community builders",
+        "People mapping recurring narrative beats"
+      ],
+      "tags": [
+        "narrative",
+        "community",
+        "tracking",
+        "canon",
+        "menu bar",
+        "snippets"
+      ],
+      "install_command": "codex-skillctl install story-arc-board",
+      "docs_paths": [
+        "skills/story-arc-board/SKILL.md",
+        "skills/story-arc-board/manifest.json",
+        "skills/story-arc-board/agents/openai.yaml",
+        "skills/story-arc-board/assets/icon.svg",
+        "skills/story-arc-board/assets/preview.svg",
+        "skills/story-arc-board/prototype/README.md",
+        "skills/story-arc-board/prototype/SkillMenuBarApp.swift",
+        "skills/story-arc-board/prototype/SkillMenuBarView.swift",
+        "skills/story-arc-board/prototype/SkillDetailView.swift",
+        "skills/story-arc-board/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Pulls recurring phrases, symbols, and post ideas into one compact Mac surface.",
+        "Cuts the tab-hopping between Notes, social drafts, and comment threads when shaping the next beat.",
+        "Keeps the board lightweight so it feels like a real menu-bar relay instead of a full social dashboard."
+      ],
+      "file_path_hints": [
+        "skills/story-arc-board/prototype/README.md",
+        "skills/story-arc-board/prototype/SkillMenuBarApp.swift",
+        "skills/story-arc-board/prototype/SkillMenuBarView.swift"
+      ],
+      "brand_color": "#FF375F",
+      "path": "skills/story-arc-board",
+      "skill_file": "skills/story-arc-board/SKILL.md",
+      "openai_yaml": "skills/story-arc-board/agents/openai.yaml",
+      "icon_small": "skills/story-arc-board/assets/icon-small.svg",
+      "icon_large": "skills/story-arc-board/assets/icon-large.svg",
+      "system_symbol": "bubble.left.and.bubble.right.fill",
+      "default_prompt": "Use $story-arc-board to build a polished macOS menu-bar utility that captures recurring hooks from notes, captions, and comments without forcing extra tab switching.",
+      "packs": [
+        "audience-and-fandom-strategy"
+      ]
+    },
+    {
+      "id": "svg-to-3d-forge",
+      "display_name": "SVG To 3D Forge",
+      "description": "Create simple SVG assets locally and turn them into STL, OBJ, or GLB model files with an explicit Blender-based extrusion workflow.",
+      "short_description": "A Mac-first vector forge for scaffolding SVG assets and turning them into local STL, OBJ, or GLB model files with an explicit Blender export step.",
+      "category": "Mac OS",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Indie makers building icons, badges, or plaques for physical output",
+        "Mac users who want a repeatable SVG-to-mesh workflow without cloud tooling",
+        "People shaping logos or interface marks into simple 3D assets"
+      ],
+      "tags": [
+        "svg",
+        "3d",
+        "blender",
+        "stl",
+        "obj",
+        "glb",
+        "vector",
+        "macOS",
+        "workflow"
+      ],
+      "install_command": "codex-skillctl install svg-to-3d-forge",
+      "docs_paths": [
+        "skills/svg-to-3d-forge/SKILL.md",
+        "skills/svg-to-3d-forge/manifest.json",
+        "skills/svg-to-3d-forge/agents/openai.yaml",
+        "skills/svg-to-3d-forge/assets/icon-small.svg",
+        "skills/svg-to-3d-forge/assets/icon-large.svg",
+        "skills/svg-to-3d-forge/assets/icon.svg",
+        "skills/svg-to-3d-forge/assets/preview.svg",
+        "skills/svg-to-3d-forge/scripts/svg_to_3d_forge.py",
+        "skills/svg-to-3d-forge/prototype/README.md",
+        "skills/svg-to-3d-forge/prototype/SkillMenuBarApp.swift",
+        "skills/svg-to-3d-forge/prototype/SkillMenuBarView.swift",
+        "skills/svg-to-3d-forge/prototype/SkillDetailView.swift",
+        "skills/svg-to-3d-forge/prototype/SkillTheme.swift"
+      ],
+      "detail_lines": [
+        "Scaffolds simple vector marks, badges, plaques, or keycap-style SVG assets from deterministic local presets before they go near a mesh export.",
+        "Uses Blender locally to import SVG curves, extrude them, and export STL, OBJ, or GLB models with explicit depth, bevel, and size controls.",
+        "Keeps the workflow honest about what is good for fast prototypes versus what still needs slicer or CAD validation for production geometry."
+      ],
+      "file_path_hints": [
+        "skills/svg-to-3d-forge/scripts/svg_to_3d_forge.py",
+        "skills/svg-to-3d-forge/prototype/SkillMenuBarView.swift",
+        "skills/svg-to-3d-forge/prototype/SkillDetailView.swift"
+      ],
+      "brand_color": "#F97316",
+      "path": "skills/svg-to-3d-forge",
+      "skill_file": "skills/svg-to-3d-forge/SKILL.md",
+      "openai_yaml": "skills/svg-to-3d-forge/agents/openai.yaml",
+      "icon_small": "skills/svg-to-3d-forge/assets/icon-small.svg",
+      "icon_large": "skills/svg-to-3d-forge/assets/icon-large.svg",
+      "system_symbol": "cube.transparent",
+      "default_prompt": "Use $svg-to-3d-forge to scaffold a simple SVG asset or turn an existing SVG into a local STL, OBJ, or GLB export with explicit Blender-based extrusion settings.",
+      "packs": [
+        "launch-and-distribution",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "telebar",
+      "display_name": "TeleBar",
+      "description": "Build, run, troubleshoot, or extend the TeleBar macOS menu bar app, especially the repo app at `apps/telebar`.",
+      "short_description": "Run and extend the TeleBar menu bar app.",
+      "category": "Telegram",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users who want a compact Telegram control center",
+        "Builders maintaining TeleBar setup, keychain storage, inbox visibility, and AI writing flows",
+        "Teams keeping bot setup links and chat access honest inside a native popover"
+      ],
+      "tags": [
+        "Telegram",
+        "macOS",
+        "menu bar",
+        "bot setup",
+        "Keychain",
+        "inbox",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install telebar",
+      "docs_paths": [
+        "skills/telebar/SKILL.md",
+        "skills/telebar/manifest.json",
+        "skills/telebar/agents/openai.yaml",
+        "skills/telebar/assets/telebar-small.svg",
+        "skills/telebar/assets/telebar-large.svg",
+        "skills/telebar/references/project-map.md",
+        "skills/telebar/scripts/run_telebar.sh"
+      ],
+      "detail_lines": [
+        "Keeps TeleBar work menu-bar-only, with short setup paths, grouped rows, and compact native popover controls.",
+        "Treats Telegram bot tokens and OpenAI keys as Keychain-only secrets, never plaintext catalog or defaults data.",
+        "Shows only chats the bot can actually access and uses supported Telegram setup links instead of fake autonomous setup."
+      ],
+      "file_path_hints": [
+        "apps/telebar/",
+        "skills/telebar/references/project-map.md",
+        "skills/telebar/scripts/run_telebar.sh"
+      ],
+      "brand_color": "#2B79FF",
+      "path": "skills/telebar",
+      "skill_file": "skills/telebar/SKILL.md",
+      "openai_yaml": "skills/telebar/agents/openai.yaml",
+      "icon_small": "skills/telebar/assets/telebar-small.svg",
+      "icon_large": "skills/telebar/assets/telebar-large.svg",
+      "system_symbol": "paperplane.fill",
+      "default_prompt": "Use $telebar to work on the TeleBar macOS menu bar app, regenerate the project if needed, and run local doctor, build, or run checks.",
+      "packs": [
+        "app-specific-skills"
+      ]
+    },
+    {
+      "id": "trading-archive",
+      "display_name": "Trading Archive",
+      "description": "Build, run, troubleshoot, or refine Trading Archive, especially the bundled `apps/trading-archive-bar` macOS menu bar app and its feed-ingest helper.",
+      "short_description": "Trading article archive, reading queue, and menu bar app.",
+      "category": "Productivity",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Traders and market readers who want a dependable research reading queue",
+        "Builders maintaining RSS or Atom feed ingest and the native trading archive menu bar app",
+        "Mac users replacing ad hoc finance tabs with a local searchable archive"
+      ],
+      "tags": [
+        "trading",
+        "research",
+        "RSS",
+        "Atom",
+        "archive",
+        "reading queue",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install trading-archive",
+      "docs_paths": [
+        "skills/trading-archive/SKILL.md",
+        "skills/trading-archive/manifest.json",
+        "skills/trading-archive/agents/openai.yaml",
+        "skills/trading-archive/assets/icon-small.svg",
+        "skills/trading-archive/assets/icon-large.svg",
+        "skills/trading-archive/references/product-spec.md",
+        "skills/trading-archive/references/project-map.md",
+        "skills/trading-archive/scripts/fetch_trading_feeds.py",
+        "skills/trading-archive/scripts/run_trading_archive.sh"
+      ],
+      "detail_lines": [
+        "Turns public or user-authorized RSS and Atom feeds into a deduped reading queue, digest, source-health report, or local archive snapshot.",
+        "Keeps the native Trading Archive Bar app and helper flow grounded in cached, searchable local reading state.",
+        "Does not assume paywalled access, brokerage account access, trading permissions, or hidden market-data subscriptions."
+      ],
+      "file_path_hints": [
+        "apps/trading-archive-bar/",
+        "skills/trading-archive/scripts/fetch_trading_feeds.py",
+        "skills/trading-archive/scripts/run_trading_archive.sh",
+        "skills/trading-archive/references/project-map.md"
+      ],
+      "brand_color": "#2FAE7F",
+      "path": "skills/trading-archive",
+      "skill_file": "skills/trading-archive/SKILL.md",
+      "openai_yaml": "skills/trading-archive/agents/openai.yaml",
+      "icon_small": "skills/trading-archive/assets/icon-small.svg",
+      "icon_large": "skills/trading-archive/assets/icon-large.svg",
+      "system_symbol": "newspaper.fill",
+      "default_prompt": "Use $trading-archive to fetch public trading or macro feeds, build a reliable reading archive, surface the strongest articles for the current moment, or refine the matching macOS menu bar app.",
+      "packs": [
+        "daily-briefs-and-reference",
+        "productivity-and-workflow"
+      ]
+    },
+    {
+      "id": "vibe-bluetooth",
+      "display_name": "VibeBluetooth",
+      "description": "Build, run, troubleshoot, or extend the VibeWidget macOS SwiftUI app and widget. Use when Codex needs to work on a VibeWidget or VibeBluetooth workspace, especially the repo app at `apps/vibe-widget`; regenerate the Xcode project; launch it in Xcode; run local doctor, build, or typecheck checks; or modify the HomeKit, Spotify, widget, voice panel, or shared-core flows.",
+      "short_description": "Run and extend the VibeWidget macOS app, widget, and shared core.",
+      "category": "Mac OS",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Builders maintaining the VibeWidget macOS app and WidgetKit extension",
+        "Mac users shaping a compact HomeKit, Spotify, voice, and output-routing control surface",
+        "Teams keeping app-group state, parser tests, and credential storage boundaries clear"
+      ],
+      "tags": [
+        "macOS",
+        "SwiftUI",
+        "WidgetKit",
+        "HomeKit",
+        "Spotify",
+        "voice",
+        "Keychain",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install vibe-bluetooth",
+      "docs_paths": [
+        "skills/vibe-bluetooth/SKILL.md",
+        "skills/vibe-bluetooth/manifest.json",
+        "skills/vibe-bluetooth/agents/openai.yaml",
+        "skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg",
+        "skills/vibe-bluetooth/assets/vibe-bluetooth-large.svg",
+        "skills/vibe-bluetooth/references/project-map.md",
+        "skills/vibe-bluetooth/scripts/run_vibe_bluetooth.sh",
+        "skills/vibe-bluetooth/LICENSE.txt"
+      ],
+      "detail_lines": [
+        "Keeps app, widget, shared core, parser tests, and runner commands represented as one VibeWidget maintenance workflow.",
+        "Owns HomeKit, Spotify, voice panel, widget, and output-routing app work while avoiding private Bluetooth pairing or control automation.",
+        "Keeps OpenAI and Spotify credentials in Keychain and preserves compile-safe local validation for unsigned developer builds."
+      ],
+      "file_path_hints": [
+        "apps/vibe-widget/",
+        "VibeWidgetApp/Sources/",
+        "VibeWidgetWidget/Sources/",
+        "VibeWidgetCore/Sources/",
+        "skills/vibe-bluetooth/scripts/run_vibe_bluetooth.sh"
+      ],
+      "brand_color": "#6E54FF",
+      "path": "skills/vibe-bluetooth",
+      "skill_file": "skills/vibe-bluetooth/SKILL.md",
+      "openai_yaml": "skills/vibe-bluetooth/agents/openai.yaml",
+      "icon_small": "skills/vibe-bluetooth/assets/vibe-bluetooth-small.svg",
+      "icon_large": "skills/vibe-bluetooth/assets/vibe-bluetooth-large.svg",
+      "system_symbol": "speaker.wave.3.fill",
+      "default_prompt": "Use $vibe-bluetooth to work on the VibeWidget macOS app, regenerate the project if needed, and run local doctor, typecheck, or app relaunch commands.",
+      "packs": [
+        "app-specific-skills",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "website-drop",
+      "display_name": "Website Drop",
+      "description": "Audit a local web app, choose the simplest host, and get it to a live URL fast. Use when Codex needs to prep a site for deploy, confirm the build path, and ship it with minimal hosting overhead.",
+      "short_description": "Audit a web app, pick a host, and ship it live fast.",
+      "category": "Distribution",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Builders who need a local web project checked before deployment",
+        "Teams choosing between Vercel, Netlify, Cloudflare, or existing config",
+        "Maintainers who want one repeatable build and handoff path"
+      ],
+      "tags": [
+        "website",
+        "deploy",
+        "hosting",
+        "build",
+        "Vercel",
+        "Netlify",
+        "Cloudflare",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install website-drop",
+      "docs_paths": [
+        "skills/website-drop/SKILL.md",
+        "skills/website-drop/manifest.json",
+        "skills/website-drop/agents/openai.yaml",
+        "skills/website-drop/assets/website-drop-small.svg",
+        "skills/website-drop/assets/website-drop-large.svg",
+        "skills/website-drop/references/deploy-heuristics.md"
+      ],
+      "detail_lines": [
+        "Detects the app type, install command, build command, output directory, and existing deploy config before recommending a host.",
+        "Optimizes for the smallest deploy path that fits the project instead of adding multi-host clutter.",
+        "Calls out environment-variable and account handoff requirements explicitly, without storing tokens or adding hidden network behavior."
+      ],
+      "file_path_hints": [
+        "skills/website-drop/SKILL.md",
+        "skills/website-drop/references/deploy-heuristics.md",
+        "skills/website-drop/assets/website-drop-small.svg"
+      ],
+      "brand_color": "#F97316",
+      "path": "skills/website-drop",
+      "skill_file": "skills/website-drop/SKILL.md",
+      "openai_yaml": "skills/website-drop/agents/openai.yaml",
+      "icon_small": "skills/website-drop/assets/website-drop-small.svg",
+      "icon_large": "skills/website-drop/assets/website-drop-large.svg",
+      "system_symbol": "globe",
+      "default_prompt": "Use $website-drop to audit this web project, choose the simplest stable deploy path, and get me to a live URL with minimal config and a clean handoff.",
+      "packs": [
+        "launch-and-distribution"
+      ]
+    },
+    {
+      "id": "wifi-watchtower",
+      "display_name": "WiFi Watchtower",
+      "description": "Build, run, troubleshoot, or refine the WiFi Watchtower macOS menu bar app in `apps/wifi-watchtower`. Use when Codex needs the exact app workspace, repo-native doctor/typecheck/build/test flows, or menu bar and dashboard changes for local Wi-Fi trust scoring.",
+      "short_description": "Native Wi-Fi trust scoring menu bar app",
+      "category": "System Monitoring",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Mac users who want a compact local Wi-Fi trust readout",
+        "Builders refining native menu-bar network safety surfaces",
+        "Teams keeping native Wi-Fi scoring separate from portable SwiftBar network monitoring"
+      ],
+      "tags": [
+        "macOS",
+        "Wi-Fi",
+        "menu bar",
+        "trust scoring",
+        "network safety",
+        "nearby networks",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install wifi-watchtower",
+      "docs_paths": [
+        "skills/wifi-watchtower/SKILL.md",
+        "skills/wifi-watchtower/manifest.json",
+        "skills/wifi-watchtower/agents/openai.yaml",
+        "skills/wifi-watchtower/assets/wifi-watchtower-small.svg",
+        "skills/wifi-watchtower/assets/wifi-watchtower-large.svg",
+        "skills/wifi-watchtower/references/project-map.md",
+        "skills/wifi-watchtower/scripts/run_wifi_watchtower.sh"
+      ],
+      "detail_lines": [
+        "Owns the native MenuBarExtra app for current-network trust grades, nearby Wi-Fi risk context, and dashboard explanations.",
+        "Keeps current-network trust, nearby-network context, and recommendation copy separate so the UI stays honest about uncertainty.",
+        "Uses local Wi-Fi inspection only, with no remote telemetry, account-bound sync, packet-sniffing claims, or hidden network calls."
+      ],
+      "file_path_hints": [
+        "apps/wifi-watchtower/WifiWatchtowerApp/Sources/App/",
+        "apps/wifi-watchtower/WifiWatchtowerApp/Sources/Services/",
+        "apps/wifi-watchtower/WifiWatchtowerApp/Sources/Views/",
+        "skills/wifi-watchtower/scripts/run_wifi_watchtower.sh"
+      ],
+      "brand_color": "#0EA5E9",
+      "path": "skills/wifi-watchtower",
+      "skill_file": "skills/wifi-watchtower/SKILL.md",
+      "openai_yaml": "skills/wifi-watchtower/agents/openai.yaml",
+      "icon_small": "skills/wifi-watchtower/assets/wifi-watchtower-small.svg",
+      "icon_large": "skills/wifi-watchtower/assets/wifi-watchtower-large.svg",
+      "system_symbol": "wifi",
+      "default_prompt": "Use $wifi-watchtower to work on the WiFi Watchtower macOS menu bar app in apps/wifi-watchtower: inspect the workspace, run doctor, and validate build or test changes around trust scoring, nearby Wi-Fi context, and the menu bar dashboard.",
+      "packs": [
+        "app-specific-skills"
+      ]
+    },
+    {
+      "id": "workspace-doctor",
+      "display_name": "Workspace Doctor",
+      "description": "Diagnose local workspace readiness, generated catalog freshness, and common setup problems, then point to the right repo-native next command. Use when Codex needs to check project health, missing tools, Xcode or XcodeGen blockers, auth gaps, environment mismatches, broken install steps, or other practical issues that stop a user from building or running something.",
+      "short_description": "Find the real blocker, catalog freshness, overlap map, and next repo-native command fast.",
+      "category": "Productivity",
+      "status": "active",
+      "stars": 5,
+      "audience": [
+        "Codex agents diagnosing local workspaces",
+        "Developers working across repo apps and skills",
+        "Maintainers checking build, catalog, and setup readiness"
+      ],
+      "tags": [
+        "workspace",
+        "doctor",
+        "diagnostics",
+        "catalog",
+        "toolchain",
+        "Xcode",
+        "repo health",
+        "local first"
+      ],
+      "install_command": "codex-skillctl install workspace-doctor",
+      "docs_paths": [
+        "skills/workspace-doctor/SKILL.md",
+        "skills/workspace-doctor/manifest.json",
+        "skills/workspace-doctor/agents/openai.yaml",
+        "skills/workspace-doctor/references/diagnostic-order.md",
+        "skills/workspace-doctor/scripts/workspace_doctor.sh",
+        "skills/workspace-doctor/assets/workspace-doctor-small.svg",
+        "skills/workspace-doctor/assets/workspace-doctor-large.svg"
+      ],
+      "detail_lines": [
+        "Checks repo markers, common CLIs, Xcode readiness, generated catalog freshness, and repo-native runner paths before deeper edits.",
+        "Ranks likely blockers as machine, environment, dependency, or code issues so the next action is concrete.",
+        "Surfaces bundled app and skill overlap in this repo to reduce duplicate work and point Codex at the right local command."
+      ],
+      "file_path_hints": [
+        "skills/workspace-doctor/scripts/workspace_doctor.sh",
+        "skills/workspace-doctor/references/diagnostic-order.md",
+        "scripts/repo_launch_audit.py"
+      ],
+      "brand_color": "#16A34A",
+      "path": "skills/workspace-doctor",
+      "skill_file": "skills/workspace-doctor/SKILL.md",
+      "openai_yaml": "skills/workspace-doctor/agents/openai.yaml",
+      "icon_small": "skills/workspace-doctor/assets/workspace-doctor-small.svg",
+      "icon_large": "skills/workspace-doctor/assets/workspace-doctor-large.svg",
+      "system_symbol": "stethoscope",
+      "default_prompt": "Use $workspace-doctor to inspect this workspace, run a quick environment audit, check generated catalog freshness when this repo ships skills or packs, surface the app-skill overlap map and runner families at the repo root, identify the main blocker, and point me at the right local doctor, build, or runner command.",
+      "packs": [
+        "productivity-and-workflow",
+        "utility-builder-stack"
+      ]
+    },
+    {
+      "id": "xbox-studio",
+      "display_name": "Xbox Studio",
+      "description": "Build, run, scaffold, troubleshoot, or product-shape a controller-first macOS Xbox helper for Bluetooth readiness, controller pairing, cloud gaming, Remote Play, captures, and account support using official Xbox, Microsoft, Apple, and browser-supported surfaces. Use when Codex needs to turn \"control my Xbox stuff from my Mac\" into a realistic menu bar app, launcher, or support workflow without inventing unsupported Xbox APIs.",
+      "short_description": "A Mac helper for Xbox controller readiness, Bluetooth setup, cloud gaming links, Remote Play, and capture handoff.",
+      "category": "Games and Consoles",
+      "status": "active",
+      "stars": 4,
+      "audience": [
+        "Xbox players on Mac",
+        "Controller-first gamers",
+        "People who want official Xbox surfaces one click away"
+      ],
+      "tags": [
+        "xbox",
+        "controller",
+        "cloud gaming",
+        "bluetooth",
+        "menu bar"
+      ],
+      "install_command": "codex-skillctl install xbox-studio",
+      "docs_paths": [
+        "skills/xbox-studio/SKILL.md",
+        "skills/xbox-studio/manifest.json",
+        "skills/xbox-studio/agents/openai.yaml",
+        "skills/xbox-studio/references/controller-symptom-matrix.md",
+        "skills/xbox-studio/references/official-supported-paths.md",
+        "skills/xbox-studio/scripts/run_xbox_studio.sh",
+        "skills/xbox-studio/scripts/xbox_brief.py",
+        "skills/xbox-studio/assets/xbox-studio-small.svg",
+        "skills/xbox-studio/assets/xbox-studio-large.svg"
+      ],
+      "detail_lines": [
+        "Keeps Microsoft sign-in and account actions inside official browser or app surfaces.",
+        "Prioritizes Bluetooth and controller setup before deeper gaming links.",
+        "Avoids unsupported console-control promises and focuses on reliable Mac handoffs."
+      ],
+      "file_path_hints": [
+        "skills/xbox-studio/scripts/xbox_brief.py",
+        "skills/xbox-studio/scripts/run_xbox_studio.sh",
+        "skills/xbox-studio/references/controller-symptom-matrix.md"
+      ],
+      "brand_color": "#107C10",
+      "path": "skills/xbox-studio",
+      "skill_file": "skills/xbox-studio/SKILL.md",
+      "openai_yaml": "skills/xbox-studio/agents/openai.yaml",
+      "icon_small": "skills/xbox-studio/assets/xbox-studio-small.svg",
+      "icon_large": "skills/xbox-studio/assets/xbox-studio-large.svg",
+      "system_symbol": "gamecontroller.fill",
+      "default_prompt": "Use $xbox-studio to run, build, or improve a realistic macOS Xbox controller and Bluetooth control center, then layer in cloud gaming, Remote Play, captures, or account flows.",
+      "packs": [
+        "games-and-minecraft"
+      ]
+    }
+  ],
+  "packs": [
+    {
+      "id": "app-specific-skills",
+      "title": "App-Specific Skills",
+      "summary": "Skills tied closely to specific local app codebases and their live product surfaces.",
+      "path": "collections/app-specific-skills.txt",
+      "skill_count": 6,
+      "skills": [
+        "telebar",
+        "flight-scout",
+        "on-this-day-bar",
+        "vibe-bluetooth",
+        "wifi-watchtower",
+        "framecrawler"
+      ]
+    },
+    {
+      "id": "audience-and-fandom-strategy",
+      "title": "Audience and Fandom Strategy",
+      "summary": "Personality-led audience analysis, fandom design, and creator-world strategy for public or user-authorized material.",
+      "path": "collections/audience-and-fandom-strategy.txt",
+      "skill_count": 11,
+      "skills": [
+        "fan-canon-miner",
+        "comment-pulse-board",
+        "clip-to-canon-finder",
+        "iconography-lab",
+        "ritual-engine",
+        "parasocial-studio",
+        "lore-drop-planner",
+        "inner-circle-director",
+        "myth-merch-studio",
+        "reputation-heatmap",
+        "story-arc-board"
+      ]
+    },
+    {
+      "id": "creator-and-fandom-stack",
+      "title": "Creator and Fandom Stack",
+      "summary": "A fuller creator-brand workflow covering canon, rituals, identity, merch, messaging, and launch-ready packaging.",
+      "path": "collections/creator-and-fandom-stack.txt",
+      "skill_count": 12,
+      "skills": [
+        "brand-kit",
+        "content-pack",
+        "fan-canon-miner",
+        "comment-pulse-board",
+        "clip-to-canon-finder",
+        "iconography-lab",
+        "ritual-engine",
+        "parasocial-studio",
+        "lore-drop-planner",
+        "inner-circle-director",
+        "myth-merch-studio",
+        "reputation-heatmap"
+      ]
+    },
+    {
+      "id": "daily-briefs-and-reference",
+      "title": "Daily Briefs and Reference",
+      "summary": "Skills for daily historical context, market-reading archives, git momentum check-ins, local monitoring, and readable exports.",
+      "path": "collections/daily-briefs-and-reference.txt",
+      "skill_count": 7,
+      "skills": [
+        "on-this-day",
+        "trading-archive",
+        "gain-tracker",
+        "network-studio",
+        "dark-pdf-studio",
+        "deckdrop-studio",
+        "reader-mode-bridge"
+      ]
+    },
+    {
+      "id": "fandom-skill-pack",
+      "title": "Fandom Skill Pack",
+      "summary": "Audience strategy skills for canon mining, community rituals, lore pacing, merch concepts, and narrative risk review.",
+      "path": "collections/fandom-skill-pack.txt",
+      "skill_count": 10,
+      "skills": [
+        "fan-canon-miner",
+        "comment-pulse-board",
+        "clip-to-canon-finder",
+        "iconography-lab",
+        "ritual-engine",
+        "parasocial-studio",
+        "lore-drop-planner",
+        "inner-circle-director",
+        "myth-merch-studio",
+        "reputation-heatmap"
+      ]
+    },
+    {
+      "id": "games-and-minecraft",
+      "title": "Games and Minecraft",
+      "summary": "Minecraft server operations and skin tooling for play, hosting, and customization workflows.",
+      "path": "collections/games-and-minecraft.txt",
+      "skill_count": 6,
+      "skills": [
+        "minecraft-essentials",
+        "minecraft-skin-studio",
+        "session-arcade",
+        "minefield-menubar",
+        "minesweeper-menubar",
+        "xbox-studio"
+      ]
+    },
+    {
+      "id": "launch-and-distribution",
+      "title": "Launch and Distribution",
+      "summary": "Skills for shaping a project, packaging it well, and getting it ready to publish or ship.",
+      "path": "collections/launch-and-distribution.txt",
+      "skill_count": 8,
+      "skills": [
+        "repo-launch",
+        "website-drop",
+        "brand-kit",
+        "content-pack",
+        "release-ramp",
+        "launch-deck-lift",
+        "package-hygiene-audit",
+        "svg-to-3d-forge"
+      ]
+    },
+    {
+      "id": "macos-utility-builders",
+      "title": "macOS Utility Builders",
+      "summary": "Skills for planning, shaping, or refining focused macOS utilities and menu bar tools.",
+      "path": "collections/macos-utility-builders.txt",
+      "skill_count": 12,
+      "skills": [
+        "find-my-phone-studio",
+        "cursor-studio",
+        "folder-studio",
+        "handoff-courier",
+        "phone-handoff-panel",
+        "battery-trend-scout",
+        "power-sentry",
+        "chrome-tab-sweeper",
+        "download-landing-pad",
+        "finder-selection-relay",
+        "plist-preflight",
+        "replay-relay"
+      ]
+    },
+    {
+      "id": "productivity-and-workflow",
+      "title": "Productivity and Workflow",
+      "summary": "Skills for workspace setup, document workflows, local utilities, and repo-driven skill management.",
+      "path": "collections/productivity-and-workflow.txt",
+      "skill_count": 30,
+      "skills": [
+        "workspace-doctor",
+        "branch-brief-bar",
+        "context-shelf",
+        "focus-runway",
+        "front-tab-relay",
+        "excel-range-relay",
+        "meeting-link-bridge",
+        "screen-snippet-studio",
+        "doc-drop-bridge",
+        "deck-export-bundle",
+        "download-landing-pad",
+        "finder-selection-relay",
+        "impeccable-cli",
+        "gain-tracker",
+        "on-this-day",
+        "trading-archive",
+        "skillbar",
+        "clipboard-studio",
+        "repo-ops-lens",
+        "patch-pilot",
+        "package-hygiene-audit",
+        "plist-preflight",
+        "reader-mode-bridge",
+        "replay-relay",
+        "reply-queue-bar",
+        "svg-to-3d-forge",
+        "network-studio",
+        "dark-pdf-studio",
+        "deckdrop-studio",
+        "project-hail-mary"
+      ]
+    },
+    {
+      "id": "utility-builder-stack",
+      "title": "Utility Builder Stack",
+      "summary": "A practical bundle for shipping Mac utilities, local monitors, workflow tools, and app-adjacent builders.",
+      "path": "collections/utility-builder-stack.txt",
+      "skill_count": 8,
+      "skills": [
+        "workspace-doctor",
+        "skillbar",
+        "clipboard-studio",
+        "network-studio",
+        "find-my-phone-studio",
+        "cursor-studio",
+        "folder-studio",
+        "vibe-bluetooth"
+      ]
+    }
+  ]
+}

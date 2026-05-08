@@ -1,0 +1,46 @@
+{
+  "id": "inner-circle-director",
+  "name": "Inner Circle Director",
+  "category": "Community & Narrative",
+  "status": "active",
+  "description": "Structure tiered access, VIP mechanics, recognition systems, and premium community experiences, then output a membership framework with fairness and maintenance guardrails.",
+  "stars": 4,
+  "short_description": "Design tiers and VIP community access.",
+  "brand_color": "#BF9640",
+  "audience": [
+    "Community operators planning paid or recognition-based access",
+    "Talent teams balancing VIP mechanics with fairness",
+    "Founder-led brands stress-testing membership promises before launch"
+  ],
+  "tags": [
+    "membership",
+    "community",
+    "VIP access",
+    "creator strategy",
+    "fairness",
+    "local first",
+    "safety"
+  ],
+  "install_command": "codex-skillctl install inner-circle-director",
+  "docs_paths": [
+    "skills/inner-circle-director/SKILL.md",
+    "skills/inner-circle-director/manifest.json",
+    "skills/inner-circle-director/agents/openai.yaml",
+    "skills/inner-circle-director/assets/icon-small.svg",
+    "skills/inner-circle-director/assets/icon-large.svg",
+    "skills/inner-circle-director/references/product-spec.md"
+  ],
+  "detail_lines": [
+    "Turns audience structure, perks, pricing context, and moderation capacity into a clear membership framework.",
+    "Keeps non-paid participation, downgrade paths, and operational limits visible so access design does not become arbitrary status pressure.",
+    "Works only from public or user-authorized inputs and rejects stalking, rumor laundering, harassment, and exploitative spend pressure."
+  ],
+  "file_path_hints": [
+    "skills/inner-circle-director/SKILL.md",
+    "skills/inner-circle-director/references/product-spec.md",
+    "skills/inner-circle-director/assets/icon-small.svg"
+  ],
+  "icon_small": "skills/inner-circle-director/assets/icon-small.svg",
+  "icon_large": "skills/inner-circle-director/assets/icon-large.svg",
+  "system_symbol": "person.3.fill"
+}

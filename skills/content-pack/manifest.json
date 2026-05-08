@@ -1,0 +1,45 @@
+{
+  "id": "content-pack",
+  "name": "Content Pack",
+  "category": "Distribution",
+  "status": "active",
+  "description": "Turn a project or product idea into a compact set of launch-ready copy. Use when Codex needs to generate practical messaging such as a tagline, README blurb, changelog summary, tweet or thread copy, release notes, or listing text from a single source idea.",
+  "stars": 4,
+  "short_description": "A paste-ready launch copy generator for README blurbs, release notes, listings, and posts.",
+  "brand_color": "#14B8A6",
+  "audience": [
+    "Solo builders preparing a repo, app, or skill for sharing",
+    "Open-source maintainers turning changes into publishable release copy",
+    "Launch operators who need consistent paste-ready distribution assets"
+  ],
+  "tags": [
+    "copy",
+    "launch",
+    "readme",
+    "release notes",
+    "distribution",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install content-pack",
+  "docs_paths": [
+    "skills/content-pack/SKILL.md",
+    "skills/content-pack/manifest.json",
+    "skills/content-pack/agents/openai.yaml",
+    "skills/content-pack/assets/content-pack-small.svg",
+    "skills/content-pack/assets/content-pack-large.svg",
+    "skills/content-pack/references/content-formats.md"
+  ],
+  "detail_lines": [
+    "Starts from one project truth and turns it into short, reusable launch copy instead of disconnected one-off blurbs.",
+    "Produces concrete formats such as README intros, changelog summaries, listing text, and social posts.",
+    "Keeps claims grounded in the product and uses explicit user-provided context rather than hidden account or marketplace access."
+  ],
+  "file_path_hints": [
+    "skills/content-pack/SKILL.md",
+    "skills/content-pack/references/content-formats.md",
+    "skills/content-pack/assets/content-pack-small.svg"
+  ],
+  "icon_small": "skills/content-pack/assets/content-pack-small.svg",
+  "icon_large": "skills/content-pack/assets/content-pack-large.svg",
+  "system_symbol": "doc.text.fill"
+}

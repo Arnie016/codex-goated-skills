@@ -1,0 +1,55 @@
+{
+  "id": "skillbar",
+  "name": "SkillBar",
+  "category": "Utilities",
+  "status": "active",
+  "description": "Build, run, troubleshoot, and extend the local SkillBar macOS menu-bar manager for codex-goated skills, packs, installs, updates, and catalog integrity checks.",
+  "stars": 5,
+  "short_description": "Build and refine the goated skills and pack menu bar manager.",
+  "brand_color": "#8AB6FF",
+  "icon_small": "skills/skillbar/assets/skillbar-small.svg",
+  "icon_large": "skills/skillbar/assets/skillbar-large.svg",
+  "default_prompt": "Use $skillbar to work on SkillBar, the macOS menu bar manager for codex-goated-skills, including the catalog UI, preset bundles, repo pack browsing, metadata parsing, install or update flows, and repo catalog or integrity checks.",
+  "audience": [
+    "Maintainers of the codex-goated skill catalog",
+    "Local-first Codex users installing skill packs",
+    "Mac utility builders validating menu-bar install flows"
+  ],
+  "tags": [
+    "SkillBar",
+    "menu bar",
+    "skills",
+    "catalog",
+    "packs",
+    "install",
+    "update",
+    "local-first",
+    "macOS"
+  ],
+  "install_command": "codex-skillctl install skillbar",
+  "packs": [
+    "productivity-and-workflow",
+    "utility-builder-stack"
+  ],
+  "docs_paths": [
+    "skills/skillbar/SKILL.md",
+    "skills/skillbar/manifest.json",
+    "skills/skillbar/agents/openai.yaml",
+    "skills/skillbar/assets/skillbar-small.svg",
+    "skills/skillbar/assets/skillbar-large.svg",
+    "skills/skillbar/references/project-map.md",
+    "skills/skillbar/scripts/run_skillbar.sh"
+  ],
+  "detail_lines": [
+    "Keeps the real app surface in apps/skillbar aligned with the repo-driven catalog, installed-state model, pack browser, and bin/codex-goated install/update paths.",
+    "Provides a compact validation workflow for doctor, inspect, catalog-check, audit, typecheck, smoke-install, smoke-update, and test.",
+    "Stays local-first by reading checkout metadata and installed skill folders without adding remote marketplace sync or unrelated secrets."
+  ],
+  "file_path_hints": [
+    "apps/skillbar/SkillBarApp/Sources/Services/SkillCatalogService.swift",
+    "apps/skillbar/SkillBarApp/Sources/App/SkillBarModel.swift",
+    "apps/skillbar/SkillBarApp/Sources/Views/MenuBarView.swift",
+    "skills/skillbar/scripts/run_skillbar.sh"
+  ],
+  "system_symbol": "menubar.rectangle"
+}

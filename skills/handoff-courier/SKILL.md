@@ -5,7 +5,7 @@ description: A polished menu-bar courier for moving files, snippets, and exports
 
 # Handoff Courier
 
-Use this skill when the user wants a polished macOS surface for polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics.
+Use this skill when the user wants a polished macOS surface for A polished menu-bar courier for moving files, snippets, and exports between apps without window gymnastics.
 
 ## Presentation
 

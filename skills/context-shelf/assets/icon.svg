@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Context Shelf">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#18211D"/>
+      <stop offset="1" stop-color="#060907"/>
+    </linearGradient>
+    <linearGradient id="card" x1="108" y1="104" x2="406" y2="410" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#182720"/>
+      <stop offset="1" stop-color="#0D1310"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="145%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.46"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <path d="M122 134C122 113.01 139.01 96 160 96H352C372.99 96 390 113.01 390 134V374C390 394.99 372.99 412 352 412H160C139.01 412 122 394.99 122 374V134Z" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="150" y="130" width="212" height="52" rx="18" fill="#30D158"/>
+  <path d="M198 156H314" stroke="#06220F" stroke-width="14" stroke-linecap="round" opacity="0.45"/>
+  <rect x="152" y="212" width="208" height="58" rx="22" fill="#14231B" stroke="#30D158" stroke-opacity="0.72" stroke-width="4"/>
+  <rect x="152" y="286" width="208" height="58" rx="22" fill="#101812" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="2"/>
+  <path d="M184 232H232C243.05 232 252 240.95 252 252V270" fill="none" stroke="#F8FFF9" stroke-width="14" stroke-linecap="round"/>
+  <path d="M184 318H310" stroke="#F8FFF9" stroke-opacity="0.72" stroke-width="14" stroke-linecap="round"/>
+  <path d="M184 244L200 260L230 228" fill="none" stroke="#30D158" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M320 214V250C320 265.46 307.46 278 292 278H220" fill="none" stroke="#30D158" stroke-width="12" stroke-linecap="round"/>
+  <path d="M320 214L344 238L320 262" fill="none" stroke="#30D158" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="198" y="360" width="116" height="18" rx="9" fill="#30D158"/>
+</svg>

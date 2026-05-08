@@ -40,5 +40,7 @@
     "skills/launch-deck-lift/prototype/SkillMenuBarApp.swift",
     "skills/launch-deck-lift/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/launch-deck-lift/assets/icon-small.svg",
+  "icon_large": "skills/launch-deck-lift/assets/icon-large.svg",
   "system_symbol": "rectangle.3.group.fill"
 }

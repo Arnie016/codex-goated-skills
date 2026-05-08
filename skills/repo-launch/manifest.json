@@ -1,0 +1,46 @@
+{
+  "id": "repo-launch",
+  "name": "Repo Launch",
+  "category": "Distribution",
+  "status": "active",
+  "description": "Audit and polish a GitHub-ready repository. Use when Codex needs to classify a rough project, choose the right README shape, and add only the minimum launch essentials needed for a clean shareable repo.",
+  "stars": 5,
+  "short_description": "Turn a rough project into a clean public repo.",
+  "brand_color": "#2563EB",
+  "audience": [
+    "Solo builders preparing a prototype or rough folder for GitHub",
+    "Maintainers who need a compact README, license, and start path",
+    "Teams cleaning multi-project repos without adding documentation sprawl"
+  ],
+  "tags": [
+    "repo",
+    "GitHub",
+    "README",
+    "launch",
+    "license",
+    "local first",
+    "documentation"
+  ],
+  "install_command": "codex-skillctl install repo-launch",
+  "docs_paths": [
+    "skills/repo-launch/SKILL.md",
+    "skills/repo-launch/manifest.json",
+    "skills/repo-launch/agents/openai.yaml",
+    "skills/repo-launch/assets/repo-launch-small.svg",
+    "skills/repo-launch/assets/repo-launch-large.svg",
+    "skills/repo-launch/references/repo-patterns.md"
+  ],
+  "detail_lines": [
+    "Classifies the repository shape first, then adds only the README, license, gitignore, and start-path polish the repo actually needs.",
+    "Keeps launch cleanup grounded in existing files and runner commands instead of forcing a generic open-source template.",
+    "Works local-first on the selected checkout and avoids hidden registry, account, or marketplace behavior."
+  ],
+  "file_path_hints": [
+    "skills/repo-launch/SKILL.md",
+    "skills/repo-launch/references/repo-patterns.md",
+    "skills/repo-launch/assets/repo-launch-small.svg"
+  ],
+  "icon_small": "skills/repo-launch/assets/repo-launch-small.svg",
+  "icon_large": "skills/repo-launch/assets/repo-launch-large.svg",
+  "system_symbol": "folder.fill.badge.plus"
+}

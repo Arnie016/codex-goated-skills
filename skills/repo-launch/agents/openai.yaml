@@ -4,4 +4,4 @@ interface:
   icon_small: "./assets/repo-launch-small.svg"
   icon_large: "./assets/repo-launch-large.svg"
   brand_color: "#2563EB"
-  default_prompt: "Use $repo-launch to audit this project and turn it into a clean GitHub-ready repository with a sharp README, license, and simple start path."
+  default_prompt: "Use $repo-launch to audit this repo shape first, then add only the minimum README, license, and start-path polish needed to make it GitHub-ready."

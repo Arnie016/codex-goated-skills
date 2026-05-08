@@ -5,7 +5,7 @@ description: A repo audit panel that turns a GitHub link into a crisp operating 
 
 # Repo Ops Lens
 
-Use this skill when the user wants a polished macOS surface for repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion.
+Use this skill when the user wants a polished macOS surface for A repo audit panel that turns a GitHub link into a crisp operating brief, risk pass, and next-step suggestion.
 
 ## Presentation
 

@@ -1,0 +1,46 @@
+{
+  "id": "workspace-doctor",
+  "name": "Workspace Doctor",
+  "category": "Productivity",
+  "status": "active",
+  "stars": 5,
+  "short_description": "Find the real blocker, catalog freshness, overlap map, and next repo-native command fast.",
+  "audience": [
+    "Codex agents diagnosing local workspaces",
+    "Developers working across repo apps and skills",
+    "Maintainers checking build, catalog, and setup readiness"
+  ],
+  "tags": [
+    "workspace",
+    "doctor",
+    "diagnostics",
+    "catalog",
+    "toolchain",
+    "Xcode",
+    "repo health",
+    "local first"
+  ],
+  "install_command": "codex-skillctl install workspace-doctor",
+  "docs_paths": [
+    "skills/workspace-doctor/SKILL.md",
+    "skills/workspace-doctor/manifest.json",
+    "skills/workspace-doctor/agents/openai.yaml",
+    "skills/workspace-doctor/references/diagnostic-order.md",
+    "skills/workspace-doctor/scripts/workspace_doctor.sh",
+    "skills/workspace-doctor/assets/workspace-doctor-small.svg",
+    "skills/workspace-doctor/assets/workspace-doctor-large.svg"
+  ],
+  "detail_lines": [
+    "Checks repo markers, common CLIs, Xcode readiness, generated catalog freshness, and repo-native runner paths before deeper edits.",
+    "Ranks likely blockers as machine, environment, dependency, or code issues so the next action is concrete.",
+    "Surfaces bundled app and skill overlap in this repo to reduce duplicate work and point Codex at the right local command."
+  ],
+  "file_path_hints": [
+    "skills/workspace-doctor/scripts/workspace_doctor.sh",
+    "skills/workspace-doctor/references/diagnostic-order.md",
+    "scripts/repo_launch_audit.py"
+  ],
+  "icon_small": "skills/workspace-doctor/assets/workspace-doctor-small.svg",
+  "icon_large": "skills/workspace-doctor/assets/workspace-doctor-large.svg",
+  "system_symbol": "stethoscope"
+}

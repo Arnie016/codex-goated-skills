@@ -1,0 +1,10 @@
+# title: Utility Builder Stack
+# summary: A practical bundle for shipping Mac utilities, local monitors, workflow tools, and app-adjacent builders.
+workspace-doctor
+skillbar
+clipboard-studio
+network-studio
+find-my-phone-studio
+cursor-studio
+folder-studio
+vibe-bluetooth

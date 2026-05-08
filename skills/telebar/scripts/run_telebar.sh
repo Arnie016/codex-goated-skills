@@ -15,20 +15,32 @@ Usage:
 
 Commands:
   doctor     Check local prerequisites, project state, and secret availability
+  inspect    Print the main TeleBar files for quick orientation
   generate   Regenerate the Xcode project from project.yml
   open       Generate if needed, then open the Xcode project
   build      Build the TeleBar scheme with xcodebuild
+  typecheck  Run a lightweight Swift source check
   run        Build and relaunch the TeleBar menu bar app
 
 Examples:
   bash run_telebar.sh doctor
+  bash run_telebar.sh inspect
   bash run_telebar.sh --workspace /path/to/telebar run
+  bash run_telebar.sh --workspace /path/to/telebar typecheck
 EOF
 }
 
 die() {
   printf 'Error: %s\n' "$*" >&2
   exit 1
+}
+
+have_tool() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+require_tool() {
+  have_tool "$1" || die "$1 is not available on this Mac."
 }
 
 guess_workspace() {
@@ -99,6 +111,7 @@ doctor() {
   else
     printf 'not ready\n'
   fi
+  printf 'xcrun: %s\n' "$(command -v xcrun || echo missing)"
   printf 'TELEGRAM_BOT_TOKEN env: '
   if [[ -n "${TELEGRAM_BOT_TOKEN:-}" ]]; then
     printf 'set\n'
@@ -111,6 +124,23 @@ doctor() {
   else
     printf 'not set\n'
   fi
+}
+
+inspect_workspace() {
+  ensure_workspace
+  cat <<EOF
+Workspace: $WORKSPACE
+Main files:
+- $WORKSPACE/project.yml
+- $WORKSPACE/TeleBarApp/Info.plist
+- $WORKSPACE/TeleBarApp/Sources/App/TeleBarApp.swift
+- $WORKSPACE/TeleBarApp/Sources/App/TeleBarModel.swift
+- $WORKSPACE/TeleBarApp/Sources/Models/TelegramModels.swift
+- $WORKSPACE/TeleBarApp/Sources/Services/TelegramService.swift
+- $WORKSPACE/TeleBarApp/Sources/Services/OpenAIService.swift
+- $WORKSPACE/TeleBarApp/Sources/Services/KeychainStore.swift
+- $WORKSPACE/TeleBarApp/Sources/Views/MenuBarView.swift
+EOF
 }
 
 open_project() {
@@ -127,6 +157,32 @@ build_project() {
   [[ -d "$WORKSPACE/$PROJECT_NAME" ]] || generate_project
   check_xcode_license
   (cd "$WORKSPACE" && DEVELOPER_DIR="$XCODE_DIR" xcodebuild -project "$PROJECT_NAME" -scheme TeleBar -configuration Debug -derivedDataPath .build-debug -destination 'platform=macOS' build)
+}
+
+typecheck_project() {
+  require_tool swiftc
+  require_tool xcrun
+  ensure_workspace
+
+  local sdkroot cache_dir
+  local sources=()
+
+  sdkroot="$(xcrun --sdk macosx --show-sdk-path)"
+  cache_dir="$(mktemp -d /tmp/telebar-typecheck-XXXXXX)"
+  trap 'rm -rf "$cache_dir"' RETURN
+
+  while IFS= read -r file; do
+    sources+=("$file")
+  done < <(find "$WORKSPACE/TeleBarApp/Sources" -name '*.swift' | sort)
+
+  [[ ${#sources[@]} -gt 0 ]] || die "No Swift sources found in $WORKSPACE/TeleBarApp/Sources"
+
+  swiftc -typecheck \
+    -sdk "$sdkroot" \
+    -target arm64-apple-macosx15.0 \
+    -module-name TeleBar \
+    -module-cache-path "$cache_dir" \
+    "${sources[@]}"
 }
 
 run_app() {
@@ -159,6 +215,9 @@ case "$COMMAND" in
   doctor)
     doctor
     ;;
+  inspect)
+    inspect_workspace
+    ;;
   generate)
     generate_project
     ;;
@@ -167,6 +226,9 @@ case "$COMMAND" in
     ;;
   build)
     build_project
+    ;;
+  typecheck)
+    typecheck_project
     ;;
   run)
     run_app

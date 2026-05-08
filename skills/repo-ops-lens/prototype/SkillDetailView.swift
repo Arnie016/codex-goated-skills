@@ -33,8 +33,8 @@ struct RepoOpsLensDetailView: View {
 extension RepoOpsLensDetailView {
     static var previewSections: [SkillSection] {
         [
-        SkillSection(title: "What it scans", body: "The app can summarize a repo, surface high-risk areas, and show the next safe command or fix to run."),
-        SkillSection(title: "Why it matters", body: "It cuts the time spent switching between browser, terminal, and notes when you only need the gist."),
+        SkillSection(title: "What it scans", body: "The app can summarize a repo, surface high-risk areas, and show the next safe command or fix to run.")
+        SkillSection(title: "Why it matters", body: "It cuts the time spent switching between browser, terminal, and notes when you only need the gist.")
         SkillSection(title: "UI tone", body: "Use a narrow, readable panel with strong hierarchy and one primary recommendation.")
         ]
     }

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Flight Scout"
+  short_description: "Run and extend the Flight Scout app"
+  default_prompt: "Use $flight-scout to work on the Flight Scout macOS menu bar app, regenerate the project if needed, and run local doctor, typecheck, build, or test checks."
+  brand_color: "#1D7DD7"
+  icon_small: "./assets/flight-scout-small.svg"
+  icon_large: "./assets/flight-scout-large.svg"

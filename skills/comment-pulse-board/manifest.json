@@ -1,0 +1,47 @@
+{
+  "id": "comment-pulse-board",
+  "name": "Comment Pulse Board",
+  "category": "Community & Narrative",
+  "status": "active",
+  "description": "Cluster obsession points, recurring questions, sentiment shifts, and backlash signals across public or user-authorized audience chatter, then produce a source-aware pulse digest.",
+  "stars": 4,
+  "short_description": "Cluster audience chatter into a source-aware pulse digest.",
+  "brand_color": "#D85A62",
+  "audience": [
+    "Community managers tracking fast-moving audience questions",
+    "Creator teams comparing current chatter with a prior source window",
+    "Operators turning comments and support excerpts into response priorities"
+  ],
+  "tags": [
+    "audience",
+    "comments",
+    "sentiment",
+    "community",
+    "pulse digest",
+    "creator strategy",
+    "local first",
+    "safety"
+  ],
+  "install_command": "codex-skillctl install comment-pulse-board",
+  "docs_paths": [
+    "skills/comment-pulse-board/SKILL.md",
+    "skills/comment-pulse-board/manifest.json",
+    "skills/comment-pulse-board/agents/openai.yaml",
+    "skills/comment-pulse-board/assets/icon-small.svg",
+    "skills/comment-pulse-board/assets/icon-large.svg",
+    "skills/comment-pulse-board/references/product-spec.md"
+  ],
+  "detail_lines": [
+    "Clusters repeated topics, questions, praise, confusion, criticism, and backlash signals while preserving source labels.",
+    "Compares current and prior windows so rising, stable, cooling, and risky signals are visible without turning the workflow into a full analytics dashboard.",
+    "Keeps analysis bounded to public or user-authorized material and rejects targeting, brigading, rumor laundering, or harassment tactics."
+  ],
+  "file_path_hints": [
+    "skills/comment-pulse-board/SKILL.md",
+    "skills/comment-pulse-board/references/product-spec.md",
+    "skills/comment-pulse-board/assets/icon-small.svg"
+  ],
+  "icon_small": "skills/comment-pulse-board/assets/icon-small.svg",
+  "icon_large": "skills/comment-pulse-board/assets/icon-large.svg",
+  "system_symbol": "chart.line.uptrend.xyaxis"
+}

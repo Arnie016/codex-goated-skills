@@ -41,5 +41,7 @@
     "skills/story-arc-board/prototype/SkillMenuBarApp.swift",
     "skills/story-arc-board/prototype/SkillMenuBarView.swift"
   ],
+  "icon_small": "skills/story-arc-board/assets/icon-small.svg",
+  "icon_large": "skills/story-arc-board/assets/icon-large.svg",
   "system_symbol": "bubble.left.and.bubble.right.fill"
 }
